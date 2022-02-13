@@ -1,6 +1,10 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
+#include "stdafx.h"
 
+/// 
+/// @brief 
+///
+/// @return 
+/// 
 int main()
 {
 	// tweeker
