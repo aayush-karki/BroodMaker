@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "Board.h"
 
 /// 
 /// @brief 
@@ -20,9 +21,7 @@ int main()
 	sf::Event events;
 
 	// create a board
-	sf::RectangleShape recShape;
-	recShape.setFillColor( sf::Color::Green );
-	recShape.setSize( sf::Vector2f( 100.f, 100.f ) );
+	Board myBoard( 2, 2, 520, 520, 100, 100 );
 
 	//app loop
 	while( !exit )
@@ -40,9 +39,8 @@ int main()
 
 		// rendering 
 		window.clear();
-		window.draw( recShape );
+		myBoard.Draw(window);
 		window.display();
-
 	}
 
 	// clean up
