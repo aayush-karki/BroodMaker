@@ -4,17 +4,36 @@
 /// 
 /// @brief  This file is a source file for Tiles class.
 /// 
-/// It contains the defininaiton of the member 
-///		funciton of Tiles class.
+/// It contains the definaiton of the member 
+///		funcitons of Tiles class.
 /// 
 /************************************************************************/
 #include "Tiles.h"
 
+/// 
+/// @public
+/// @brief Draw funciton draws tiles to the screen.
+///			
+/// @param a_window reference to the render window
+/// 
 void Tiles::Draw( sf::RenderWindow& a_window )
 {
 	a_window.draw( m_TileBody );
 }
 
+/// 
+/// @private
+/// @brief sets up a tile
+/// 
+/// @param a_tileRowNum represents row number of the board -> default 0
+/// @param a_tileColNum represents column of the board  -> default 0
+/// @param a_tileSizeX size of each tile in x-asix -> default 0.f
+/// @param a_tileSizeY size of each tile in y-asix -> default 0.f
+/// @param a_boardPosX board's x-position on screen -> default 0.f
+///			relative to the render window -> default 0.f
+/// @param a_boardPosY board's y-position on screen; 
+///			realtive to the render window -> default 0.f
+/// 
 void Tiles::InitializeTile( int a_tileRowNum, int a_tileColNum, float a_tileSizeX,
 							float a_tileSizeY, float a_boardPosX, float a_boardPosY )
 {
