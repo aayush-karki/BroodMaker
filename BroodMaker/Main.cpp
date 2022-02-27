@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include "Board.h"
+#include "Dice.h"
+#include <filesystem>
 
-/// 
-/// @brief 
-///
-/// @return 
-/// 
 int main()
 {
+	// initializing the randon seed
+	std::srand( std::time( nullptr ) );
+
 	// tweeker
 	const uint32_t WINDOW_HEIGHT = 900;
 	const uint32_t WINDOW_WIDTH = 900;
@@ -21,7 +21,33 @@ int main()
 	sf::Event events;
 
 	// create a board
-	Board myBoard( 2, 2, 520, 520, 100, 100 );
+	Board myBoard( 2, 2, 520.f, 520.f, 100.f, 100.f );
+
+	/// @todo maybe it is better to make a textureManager
+	// loading dice texture
+	std::vector<sf::Texture> diceTexture;
+
+	for( unsigned i = 0; i < 6; ++i )
+	{
+		sf::Texture tempTexture;
+
+		/// @warning this might cause problem latter; cwd path might differ 
+		std::string fileName = std::filesystem::current_path().string();
+
+		// appending the path that has the dice texture
+		fileName += "\\Assets\\DiceTexture\\dice_";
+		fileName += std::to_string(i + 1);
+		fileName += "_50_50.png";
+		
+		if( !( tempTexture.loadFromFile( fileName ) ) ) 
+		{
+			std::cout << "Error! Could not load " << fileName << "!!!!!!!" << std::endl;
+		}
+
+		diceTexture.push_back( std::move_if_noexcept( tempTexture ) );
+	}
+
+	Dice dice(&diceTexture, 50.f, 50.f, 0.f );
 
 	//app loop
 	while( !exit )
@@ -33,19 +59,27 @@ int main()
 			{
 				exit = true;
 			}
+			else if( events.type == sf::Event::KeyPressed)
+			{
+				///@todo: delete me
+				if( sf::Keyboard::isKeyPressed( sf::Keyboard::Enter ) )
+				{
+					std::cout << dice.RollDice() << std::endl;
+				}
+			}
 		}
 
 		// logics
 
 		// rendering 
 		window.clear();
-		myBoard.Draw(window);
+		myBoard.Draw( window );
+		dice.Draw(window);
 		window.display();
 	}
 
 	// clean up
-
+	
 	// closing the window
 	window.close();
-
 }

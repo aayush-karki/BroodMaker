@@ -17,6 +17,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
+#include <cstdlib> // for rand
+#include <ctime>
 
 // sfml include files
 #include <SFML/Graphics.hpp>
