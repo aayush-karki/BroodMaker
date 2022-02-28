@@ -5,8 +5,11 @@
 #include "Dice.h"
 #include "Player.h"
 
+#include "struct_path.h"
+
 int main()
 {
+
 	// initializing the randon seed
 	std::srand( std::time( nullptr ) );
 

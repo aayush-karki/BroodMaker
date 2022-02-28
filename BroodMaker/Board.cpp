@@ -61,6 +61,34 @@ void Board::Draw( sf::RenderWindow& a_window )
 }
 
 /// 
+/// @public
+/// @brief adds a player
+/// 
+/// @param a_playerSizeX size of the player in x-asix -> default 0.f
+/// @param a_playerSizeY size of the player in y-asix -> default 0.f
+/// @param a_playerStartRow represents on which row number 
+///			the player starts -> default 0
+/// @param a_PlayerStartCol represents on which column number 
+///			the player starts-> default 0
+///  
+void Board::AddNewPlayer( float a_playerSizeX, float a_playerSizeY, 
+						  int a_playerStartRow, int a_PlayerStartCol )
+{
+	st_path tempPath( a_playerStartRow, a_PlayerStartCol );
+
+	// getting the path 
+	std::list<st_path*>::iterator playerPathIte = m_paths.begin();
+	for( ; playerPathIte != m_paths.end(); ++playerPathIte )
+	{
+		// check if this is the path
+		break;
+
+	}
+
+	// Player tempPlayer = new Player()
+}
+
+/// 
 /// @ private
 /// @brief sets up the board 
 /// 

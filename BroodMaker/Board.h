@@ -41,7 +41,8 @@ public:
 	~Board(); //Destructor
 	/// @todo add copy constuctor and copy assignment
 	void Draw( sf::RenderWindow& a_window );
-	//void AdNewPlayer()
+	void AddNewPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
+					  int a_playerStartRow = 0, int a_PlayerStartCol = 0 );
 
 	// ===== private member functions =====
 private:
