@@ -54,6 +54,8 @@ private:
 
 };
 
+// ================== definations  =================
+
 /// 
 /// @public
 /// @brief Rolls the dice to get a number between 0 and m_numSides

@@ -26,7 +26,9 @@ public:
 
 	// ============== private memeber variables =================
 private:
-	
+	//sf::RectangleShape m_cardBody;
 
 };
 
+
+// ================== definations  =================

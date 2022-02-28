@@ -13,8 +13,11 @@
 #pragma once
 #include "stdafx.h"
 
+#include <list>
+
 #include "Tiles.h"
 #include "Player.h"
+#include "Struct_path.h"
 
 ///
 /// @class Board  "Board.h"
@@ -28,8 +31,8 @@
 /// 
 class Board
 {
-public: 
 	// ================== public member fuction =======================
+public: 
 
 	// default constroctor
 	Board( int a_numRows = 0, int a_numCols = 0,
@@ -38,22 +41,30 @@ public:
 	~Board(); //Destructor
 	/// @todo add copy constuctor and copy assignment
 	void Draw( sf::RenderWindow& a_window );
+	//void AdNewPlayer()
 
-private:
 	// ===== private member functions =====
+private:
 	void InitializeBoard( int  a_numRows = 0, int a_numCols = 0,
 						 float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
 						 float a_boardPosX = 0.f, float a_boardPosY = 0.f );
+	
 
-private:
+
 	// ========== private member varibles ===============
+private:
 
 	sf::RectangleShape m_boardBody;  // main board
 	int m_numRows; // number of cell rows in the board
 	int m_numCols; // number of cell columns in the board
-
+	
+	float m_boardPosX; // board's x-postion relative to the screen
+	float m_boardPosY; // board's y-postion relative to the screen
+	
 	std::vector<std::vector<Tiles*>> m_boardTiles; // contains the board tiles
-	std::vector<Player*> m_llPlayers; // contains all the player playing the game
+	
+	std::vector<Player*> m_allPlayers; // contains all the player playing the game
+	std::list<st_path*> m_paths; // contains the path of the game
 };
 
 

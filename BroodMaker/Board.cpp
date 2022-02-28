@@ -27,6 +27,13 @@ Board::~Board()
 			delete ( *colTile );
 		}
 	}
+
+	// destroying the dynamically created paths
+	std::list<st_path*>::iterator currPath = m_paths.begin();
+	for( ; currPath != m_paths.end(); ++currPath )
+	{
+		delete( *currPath );
+	}
 }
 
 /// 
@@ -73,6 +80,9 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 							 float a_boardSizeX, float a_boardSizeY,
 							 float a_boardPosX, float a_boardPosY )
 {
+	this->m_boardPosX = a_boardPosX;
+	this->m_boardPosY = a_boardPosY;
+
 	// setting up the column and row number
 	this->m_numRows = a_numRows;
 	this->m_numCols = a_numCols;
@@ -94,9 +104,9 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 	int currRow = 0;
 	std::vector<Tiles*>::iterator colTile;
 	int currCol = 0;
+
 	for( rowTile = m_boardTiles.begin(); rowTile != m_boardTiles.end(); rowTile++ )
 	{
-
 		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
 		{
 			*colTile = new Tiles( currRow, currCol, tileSizex, tileSizeY, a_boardPosX, a_boardPosY );
@@ -107,5 +117,29 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 		}
 		currCol = 0; // resetting the col value
 		++currRow;
+	}
+
+	// saving path
+
+	currRow = currCol = 0;
+	bool dirRight = true;
+	for( ; currRow < a_numRows; ++currRow )
+	{
+		if( currCol == a_numCols )
+		{
+			dirRight = false;
+		}
+		else if( currCol < 0 )
+		{
+			dirRight = true;
+		}
+		if( dirRight )
+		{
+			for( ; currCol < a_numCols; ++currCol )
+			{
+				st_path* tempPath = new st_path( currRow, currCol );
+				m_paths.push_back( tempPath );
+			}
+		}
 	}
 }

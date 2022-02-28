@@ -11,17 +11,6 @@
 #include "Tiles.h"
 
 /// 
-/// @public
-/// @brief Draw funciton draws tiles to the screen.
-///			
-/// @param a_window reference to the render window
-/// 
-void Tiles::Draw( sf::RenderWindow& a_window )
-{
-	a_window.draw( m_TileBody );
-}
-
-/// 
 /// @private
 /// @brief sets up a tile
 /// 
@@ -45,6 +34,7 @@ void Tiles::InitializeTile( int a_tileRowNum, int a_tileColNum, float a_tileSize
 	this->m_TileBody.setSize( sf::Vector2f( a_tileSizeX, a_tileSizeY ) );
 	this->m_TileBody.setPosition( a_boardPosX + a_tileColNum * a_tileSizeX,
 								  a_boardPosY + a_tileRowNum * a_tileSizeY );
-	this->m_TileBody.setFillColor( sf::Color::Green );
+	/// @todo currently tiles are of random color
+	this->m_TileBody.setFillColor( sf::Color( std::rand() % 256, std::rand() % 256, std::rand() % 256 ) );
 
 }

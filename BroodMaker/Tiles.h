@@ -77,11 +77,26 @@ inline Tiles::Tiles( int  a_tileRowNum, int a_tileColNum,
 					a_boardPosX, a_boardPosY );
 }
 
+/// 
+/// @public
+/// @brief Draw funciton draws tiles to the screen.
+///			
+/// @param a_window reference to the render window
+/// 
+inline void Tiles::Draw( sf::RenderWindow& a_window )
+{
+	a_window.draw( m_TileBody );
+}
 
 /// 
 /// @public
-/// @brief 
-/// @return 
+/// @brief  Getter Function to get the postion of the tile 
+///			relative to the board's column and row
+/// 
+/// @return a vector2f containing the position of the tile;
+///			.x-> is the tile's column number;
+///			.y-> is the tile's row number.
+///  
 inline const sf::Vector2f Tiles::GetPos() const
 {
 	return sf::Vector2f( m_tileColNum, m_tileRowNum ); 

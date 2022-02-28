@@ -1,7 +1,9 @@
 #include "stdafx.h"
+#include <filesystem>
+
 #include "Board.h"
 #include "Dice.h"
-#include <filesystem>
+#include "Player.h"
 
 int main()
 {
@@ -21,7 +23,7 @@ int main()
 	sf::Event events;
 
 	// create a board
-	Board myBoard( 2, 2, 520.f, 520.f, 100.f, 100.f );
+	Board myBoard( 10,10, 520.f, 520.f, 100.f, 100.f );
 
 	/// @todo maybe it is better to make a textureManager
 	// loading dice texture
@@ -49,6 +51,10 @@ int main()
 
 	Dice dice(&diceTexture, 50.f, 50.f, 0.f );
 
+	// create a player
+	Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
+
+
 	//app loop
 	while( !exit )
 	{
@@ -74,7 +80,8 @@ int main()
 		// rendering 
 		window.clear();
 		myBoard.Draw( window );
-		dice.Draw(window);
+		dice.Draw( window );
+		player1.Draw(window);
 		window.display();
 	}
 
