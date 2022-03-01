@@ -19,6 +19,7 @@
 #include <vector>
 #include <cstdlib> // for rand
 #include <ctime>
+#include <string>
 
 // sfml include files
 #include <SFML/Graphics.hpp>

@@ -9,7 +9,6 @@
 
 int main()
 {
-
 	// initializing the randon seed
 	std::srand( std::time( nullptr ) );
 
@@ -48,15 +47,14 @@ int main()
 		{
 			std::cout << "Error! Could not load " << fileName << "!!!!!!!" << std::endl;
 		}
-
 		diceTexture.push_back( std::move_if_noexcept( tempTexture ) );
 	}
 
 	Dice dice(&diceTexture, 50.f, 50.f, 0.f );
 
 	// create a player
-	Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
-
+	//Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
+	myBoard.AddNewPlayer( 25.f, 25.f );
 
 	//app loop
 	while( !exit )
@@ -84,7 +82,7 @@ int main()
 		window.clear();
 		myBoard.Draw( window );
 		dice.Draw( window );
-		player1.Draw(window);
+		//player1.Draw(window);
 		window.display();
 	}
 

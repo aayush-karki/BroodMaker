@@ -28,6 +28,10 @@ public:
 	Player( int  a_playerStartRow = 0, int a_PlayerStartCol = 0,
 			float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
 			float a_boardPosX = 0.f, float a_boardPosY = 0.f );
+	// constructor when start is in path
+	Player( st_path *a_startPos,
+			float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
+			float a_boardPosX = 0.f, float a_boardPosY = 0.f );
 	void Draw( sf::RenderWindow& a_window );
 	void SetRow( int a_newRow ); // setter function
 	void SetCol( int a_newCol ); // setter function
@@ -70,6 +74,31 @@ inline Player::Player( int a_playerStartRow, int a_PlayerStartCol,
 					   float a_boardPosX, float a_boardPosY )
 {
 	InitializePlayer( a_playerStartRow, a_PlayerStartCol,
+					  a_playerSizeX, a_playerSizeY,
+					  a_boardPosX, a_boardPosY );
+}
+
+/// 
+/// @public
+/// @brief  Constructor
+/// 
+/// This Construc is called when a pointer to st_path is passed.
+/// 
+/// @param a_startPos a pointer to st_path node which contains the start
+///			row and column number inside it
+/// @param a_playerSizeX size of the player in x-asix -> default 0.f
+/// @param a_playerSizeY size of the player in y-asix -> default 0.f
+/// @param a_boardPosX board's x-position on screen -> default 0.f
+///			relative to the render window -> default 0.f
+/// @param a_boardPosY board's y-position on screen; 
+///			realtive to the render window -> default 0.f
+/// 
+inline Player::Player( st_path *a_startPos, float a_playerSizeX, float a_playerSizeY, float a_boardPosX, float a_boardPosY )
+{
+	int startRow = a_startPos->stm_rowNum;
+	int startCol = a_startPos->stm_colNum;
+
+	InitializePlayer( startRow, startCol,
 					  a_playerSizeX, a_playerSizeY,
 					  a_boardPosX, a_boardPosY );
 }
