@@ -13,7 +13,6 @@
 #pragma once
 #include "stdafx.h"
 
-#include <list>
 
 #include "Tiles.h"
 #include "Player.h"
@@ -47,7 +46,9 @@ public:
 	void Draw( sf::RenderWindow& a_window );
 	void AddNewPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
 					  int a_playerStartRow = 0, int a_PlayerStartCol = 0 );
-	Dice& GetDice();
+	Dice& GetDice(); // getter funciton 
+	void PlayerRollAndMove( Player* );
+	Player* GetNextPlayer();
 
 	// ===== private member functions =====
 private:
@@ -68,12 +69,14 @@ private:
 	float m_boardPosX; // board's x-postion relative to the screen
 	float m_boardPosY; // board's y-postion relative to the screen
 	
+	
 	std::vector<std::vector<Tiles*>> m_boardTiles; // contains the board tiles
 	std::list<st_path*> m_paths; // contains the path of the game
 	
 	std::vector<Player*> m_allPlayers; // contains all the player playing the game
 	
 	Dice m_dice; // dice obj
+	int m_currPlayerIdx; // index of current playing player
 };
 
 

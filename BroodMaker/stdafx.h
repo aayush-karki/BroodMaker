@@ -19,6 +19,7 @@
 #include <vector>
 #include <cstdlib> // for rand
 #include <ctime>
+#include <list>
 #include <string>
 
 // sfml include files

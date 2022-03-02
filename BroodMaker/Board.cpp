@@ -112,11 +112,20 @@ void Board::AddNewPlayer( float a_playerSizeX, float a_playerSizeY,
 		return;
 	}
 
-	Player *tempPlayer = new Player( *playerPathIte, a_playerSizeX, a_playerSizeY,
-									m_boardPosX, m_boardPosY );
+	// getting the tile size
+	float tileSizeX = m_boardBody.getSize().x / m_numCols;
+	float tileSizeY = m_boardBody.getSize().y / m_numRows;
+
+	Player *tempPlayer = new Player( playerPathIte, a_playerSizeX, a_playerSizeY,
+									m_boardPosX, m_boardPosY, tileSizeX, tileSizeY);
 	// adding tempPlayer to the m_allPlayers
 	m_allPlayers.push_back( tempPlayer );
 
+	// checking if this is the first player created
+	if( m_allPlayers.size() == 1 )
+	{
+		m_currPlayerIdx = 0;
+	}
 }
 
 /// 
@@ -139,6 +148,9 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 							 float a_boardSizeX, float a_boardSizeY,
 							 float a_boardPosX, float a_boardPosY )
 {
+	// initialize currPlayer to -1
+	m_currPlayerIdx = -1;
+
 	this->m_boardPosX = a_boardPosX;
 	this->m_boardPosY = a_boardPosY;
 
@@ -219,10 +231,54 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 			}
 		}
 	}
+}
 
 
-	/*/// @todo delete me
-	std::cout << m_paths.back()->stm_colNum << " " << m_paths.back()->stm_rowNum << std::endl;*/
+/// 
+/// @public
+/// @brief Moves the player along the path with 
+///		respect to the dice roll
+/// 
+/// @param a_player pointer to the player to move
+///  
+void Board::PlayerRollAndMove( Player* a_player )
+{
+	// rolling the dice
+	unsigned diceRoll = m_dice.RollDice();
 
+	// getting the listIterator stored in the a_player
+	std::list<st_path*>::iterator tempPathIte = a_player->GetCurrPathPos();
 
+	// increasing the player along the path according the the dice roll
+	for( unsigned i = 0; i < diceRoll; ++i )
+	{
+		++tempPathIte;
+
+		// check if end is reached
+		if( tempPathIte == m_paths.end() )
+		{
+			// end reached 
+			--tempPathIte;
+			break;
+		}
+	}
+
+	// updating the player with new pos
+	a_player->SetPosition( tempPathIte );
+}
+
+/// 
+/// @public
+/// @brief Getter function to get next player in the list
+/// @return 
+Player* Board::GetNextPlayer()
+{
+	++m_currPlayerIdx;
+	if( m_currPlayerIdx == m_allPlayers.size() )
+	{
+		// looping to the first player
+		m_currPlayerIdx = 0;
+	}
+
+	return m_allPlayers.at(m_currPlayerIdx);
 }

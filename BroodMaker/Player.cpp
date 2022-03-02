@@ -25,14 +25,45 @@
 ///			relative to the render window -> default 0.f
 /// @param a_boardPosY board's y-position on screen; 
 ///			realtive to the render window -> default 0.f
-///  
+/// @param a_tileSizeX tile size in x-axis
+/// @param a_tileSizeY tile size in y-axis
 void Player::InitializePlayer( int a_playerStartRow, int a_PlayerStartCol, 
 							   float a_playerSizeX, float a_playerSizeY, 
-							   float a_boardPosX, float a_boardPosY )
+							   float a_boardPosX, float a_boardPosY,
+							   float a_tileSizeX, float a_tileSizeY)
 {
+	// setting the boardPos 
+	this->m_boardPosX = a_boardPosX;
+	this->m_boardPosY = a_boardPosY;
+
+	// setting the tile width and length
+	this->m_tileSizeX = a_tileSizeX;
+	this->m_tileSizeY = a_tileSizeY;
+
 	this->m_playerBody.setSize( sf::Vector2f( a_playerSizeX, a_playerSizeY ) );
-	this->m_playerBody.setPosition( a_boardPosX, a_boardPosY );
 	this->m_playerBody.setFillColor( sf::Color::White );
 
-	//m_playerTile = nullptr;
+	// setting theposition 
+	float xPos = m_currCol * m_tileSizeY + m_boardPosX;
+	float yPos = m_currRow * m_tileSizeX + m_boardPosY;
+
+	SetPosition( xPos, yPos ); // calling member funcition
+}
+
+/// 
+/// @brief setter function if st_path is passed
+/// @param a_playerCurrPathPos  iterator that points to the current path node
+/// 
+void Player::SetPosition( std::list<st_path*>::iterator a_playerCurrPathPos )
+{
+	m_playerCurrPathPos = a_playerCurrPathPos;
+	// updating row and col
+	m_currRow = ( *a_playerCurrPathPos )->stm_rowNum;
+	m_currCol = ( *a_playerCurrPathPos )->stm_colNum;
+
+	// calculating the position
+	float xPos = m_currCol * m_tileSizeY + m_boardPosX;
+	float yPos = m_currRow * m_tileSizeX + m_boardPosY;
+
+	SetPosition( xPos, yPos ); // calling member funcition
 }

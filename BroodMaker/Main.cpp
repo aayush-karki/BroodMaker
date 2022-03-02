@@ -74,7 +74,8 @@ int main()
 				///@todo: delete me
 				if( sf::Keyboard::isKeyPressed( sf::Keyboard::Enter ) )
 				{
-					std::cout << myBoard.GetDice().RollDice() << std::endl;
+					//std::cout << myBoard.() << std::endl;
+					myBoard.PlayerRollAndMove( myBoard.GetNextPlayer() );
 				}
 			}
 		}
