@@ -11,7 +11,7 @@
 int main()
 {
 	// initializing the randon seed
-	std::srand( std::time( nullptr ) );
+	std::srand( ( unsigned int ) std::time( nullptr ) );
 
 	// tweeker
 	const uint32_t WINDOW_HEIGHT = 900;

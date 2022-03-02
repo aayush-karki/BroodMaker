@@ -37,7 +37,7 @@ public:
 	/// @todo add destructor, copy constructor and assignment
 	
 	void Draw( sf::RenderWindow& a_window );
-	const sf::Vector2f GetPos() const;
+	const sf::Vector2i GetRowAndCol() const;
 
 	// ===== private member functions =====
 private:
@@ -93,11 +93,11 @@ inline void Tiles::Draw( sf::RenderWindow& a_window )
 /// @brief  Getter Function to get the postion of the tile 
 ///			relative to the board's column and row
 /// 
-/// @return a vector2f containing the position of the tile;
+/// @return a vector2i containing the position of the tile;
 ///			.x-> is the tile's column number;
 ///			.y-> is the tile's row number.
 ///  
-inline const sf::Vector2f Tiles::GetPos() const
+inline const sf::Vector2i Tiles::GetRowAndCol() const
 {
-	return sf::Vector2f( m_tileColNum, m_tileRowNum ); 
+	return sf::Vector2i( m_tileColNum, m_tileRowNum ); 
 }
