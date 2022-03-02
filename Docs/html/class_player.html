@@ -108,12 +108,12 @@ $(document).ready(function(){initNavTree('class_player.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7ff5448e41bcc4fa1c33729d58227d19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7ff5448e41bcc4fa1c33729d58227d19">Player</a> (int a_playerStartRow=0, int a_PlayerStartCol=0, float a_playerSizeX=0.f, float a_playerSizeY=0.f, float a_boardPosX=0.f, float a_boardPosY=0.f)</td></tr>
-<tr class="memdesc:a7ff5448e41bcc4fa1c33729d58227d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="class_player.html#a7ff5448e41bcc4fa1c33729d58227d19">More...</a><br /></td></tr>
-<tr class="separator:a7ff5448e41bcc4fa1c33729d58227d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab0647625d53da281478cbaabe105120"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aab0647625d53da281478cbaabe105120">Player</a> (<a class="el" href="structst__path.html">st_path</a> *a_startPos, float a_playerSizeX=0.f, float a_playerSizeY=0.f, float a_boardPosX=0.f, float a_boardPosY=0.f)</td></tr>
-<tr class="memdesc:aab0647625d53da281478cbaabe105120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_player.html#aab0647625d53da281478cbaabe105120">More...</a><br /></td></tr>
-<tr class="separator:aab0647625d53da281478cbaabe105120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd1074de0c1bd6b293b3ab64850470e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aefd1074de0c1bd6b293b3ab64850470e">Player</a> (int a_playerStartRow=0, int a_PlayerStartCol=0, float a_playerSizeX=0.f, float a_playerSizeY=0.f, float a_boardPosX=0.f, float a_boardPosY=0.f, float a_tileWidth=0.f, float a_tileLength=0.f)</td></tr>
+<tr class="memdesc:aefd1074de0c1bd6b293b3ab64850470e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="class_player.html#aefd1074de0c1bd6b293b3ab64850470e">More...</a><br /></td></tr>
+<tr class="separator:aefd1074de0c1bd6b293b3ab64850470e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4551e75baa73a80415e2acd631d58618"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4551e75baa73a80415e2acd631d58618">Player</a> (std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator a_startPosIte, float a_playerSizeX=0.f, float a_playerSizeY=0.f, float a_boardPosX=0.f, float a_boardPosY=0.f, float a_tileWidth=0.f, float a_tileLength=0.f)</td></tr>
+<tr class="memdesc:a4551e75baa73a80415e2acd631d58618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_player.html#a4551e75baa73a80415e2acd631d58618">More...</a><br /></td></tr>
+<tr class="separator:a4551e75baa73a80415e2acd631d58618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47ec1d618efadb76b2ac1a3acb810155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a47ec1d618efadb76b2ac1a3acb810155">Draw</a> (sf::RenderWindow &amp;a_window)</td></tr>
 <tr class="memdesc:a47ec1d618efadb76b2ac1a3acb810155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw funciton draws tiles to the screen.  <a href="class_player.html#a47ec1d618efadb76b2ac1a3acb810155">More...</a><br /></td></tr>
 <tr class="separator:a47ec1d618efadb76b2ac1a3acb810155"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,30 +123,49 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49524d2712b2576e2db0d07608af592f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a49524d2712b2576e2db0d07608af592f">SetCol</a> (int a_newCol)</td></tr>
 <tr class="memdesc:a49524d2712b2576e2db0d07608af592f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter funciton to set the col the player is in.  <a href="class_player.html#a49524d2712b2576e2db0d07608af592f">More...</a><br /></td></tr>
 <tr class="separator:a49524d2712b2576e2db0d07608af592f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeadfbbeb09b5c34812a34fcb74e4483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afeadfbbeb09b5c34812a34fcb74e4483">UpdateRowNCol</a> (int a_newRow, int a_newCol)</td></tr>
+<tr class="memdesc:afeadfbbeb09b5c34812a34fcb74e4483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the col and row the player is in.  <a href="class_player.html#afeadfbbeb09b5c34812a34fcb74e4483">More...</a><br /></td></tr>
+<tr class="separator:afeadfbbeb09b5c34812a34fcb74e4483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adddd25e6e5989506b86233dcbede640a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adddd25e6e5989506b86233dcbede640a">SetPosition</a> (float a_posX, float a_posY)</td></tr>
 <tr class="memdesc:adddd25e6e5989506b86233dcbede640a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter funciton to set the player positon.  <a href="class_player.html#adddd25e6e5989506b86233dcbede640a">More...</a><br /></td></tr>
 <tr class="separator:adddd25e6e5989506b86233dcbede640a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584960c520a7c97774fb8617af15586f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a584960c520a7c97774fb8617af15586f">SetPosition</a> (std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator a_playerCurrPathPos)</td></tr>
+<tr class="memdesc:a584960c520a7c97774fb8617af15586f"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter function if <a class="el" href="structst__path.html" title="st_path is a node used for linkedlist.">st_path</a> is passed  <a href="class_player.html#a584960c520a7c97774fb8617af15586f">More...</a><br /></td></tr>
+<tr class="separator:a584960c520a7c97774fb8617af15586f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8931ca541c8d673f8f21906b7d839af1"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8931ca541c8d673f8f21906b7d839af1">GetCurrPathPos</a> () const</td></tr>
+<tr class="memdesc:a8931ca541c8d673f8f21906b7d839af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function to get the iterator to list that points to currPath pos.  <a href="class_player.html#a8931ca541c8d673f8f21906b7d839af1">More...</a><br /></td></tr>
+<tr class="separator:a8931ca541c8d673f8f21906b7d839af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:af26fdb7dee6c72bbe055c537ad4768cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af26fdb7dee6c72bbe055c537ad4768cc">InitializePlayer</a> (int a_playerStartRow=0, int a_PlayerStartCol=0, float a_playerSizeX=0.f, float a_playerSizeY=0.f, float a_boardPosX=0.f, float a_boardPosY=0.f)</td></tr>
-<tr class="memdesc:af26fdb7dee6c72bbe055c537ad4768cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the  <a href="class_player.html#af26fdb7dee6c72bbe055c537ad4768cc">More...</a><br /></td></tr>
-<tr class="separator:af26fdb7dee6c72bbe055c537ad4768cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3075a6998d9b796a0bc437f8b9c72430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3075a6998d9b796a0bc437f8b9c72430">InitializePlayer</a> (int a_playerStartRow=0, int a_PlayerStartCol=0, float a_playerSizeX=0.f, float a_playerSizeY=0.f, float a_boardPos=0.f, float a_boardPosY=0.f, float a_tileWidth=0.f, float a_tileLength=0.f)</td></tr>
+<tr class="memdesc:a3075a6998d9b796a0bc437f8b9c72430"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the  <a href="class_player.html#a3075a6998d9b796a0bc437f8b9c72430">More...</a><br /></td></tr>
+<tr class="separator:a3075a6998d9b796a0bc437f8b9c72430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac1a2893d5bd1223e9ba54e771cd80d7b"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac1a2893d5bd1223e9ba54e771cd80d7b">m_playerBody</a></td></tr>
 <tr class="separator:ac1a2893d5bd1223e9ba54e771cd80d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ae084e0939b8f1adb8f3bb0aad1919"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa2ae084e0939b8f1adb8f3bb0aad1919">m_playerCurrPathPos</a></td></tr>
+<tr class="separator:aa2ae084e0939b8f1adb8f3bb0aad1919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a446c0943f02b6014a0709cf5e136c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae5a446c0943f02b6014a0709cf5e136c">m_currRow</a></td></tr>
 <tr class="separator:ae5a446c0943f02b6014a0709cf5e136c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cc4a082c48c0780b2f7aaa19c7afdfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9cc4a082c48c0780b2f7aaa19c7afdfd">m_currCol</a></td></tr>
 <tr class="separator:a9cc4a082c48c0780b2f7aaa19c7afdfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efabfecc68d0bb1f60fa7018128880b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3efabfecc68d0bb1f60fa7018128880b">m_boardPosX</a></td></tr>
+<tr class="separator:a3efabfecc68d0bb1f60fa7018128880b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9eab602d7086ed02b2cadd9eeb7028"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#acd9eab602d7086ed02b2cadd9eeb7028">m_boardPosY</a></td></tr>
+<tr class="separator:acd9eab602d7086ed02b2cadd9eeb7028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af221feb1b94fdfc0005f1c11853f56dc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af221feb1b94fdfc0005f1c11853f56dc">m_tileSizeX</a></td></tr>
+<tr class="separator:af221feb1b94fdfc0005f1c11853f56dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c7b5dcc3229c46b533bb1a4433dfdd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a30c7b5dcc3229c46b533bb1a4433dfdd">m_tileSizeY</a></td></tr>
+<tr class="separator:a30c7b5dcc3229c46b533bb1a4433dfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A <a class="el" href="class_player.html" title="A Player Class.">Player</a> Class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7ff5448e41bcc4fa1c33729d58227d19" name="a7ff5448e41bcc4fa1c33729d58227d19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ff5448e41bcc4fa1c33729d58227d19">&#9670;&nbsp;</a></span>Player() <span class="overload">[1/2]</span></h2>
+<a id="aefd1074de0c1bd6b293b3ab64850470e" name="aefd1074de0c1bd6b293b3ab64850470e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd1074de0c1bd6b293b3ab64850470e">&#9670;&nbsp;</a></span>Player() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +207,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a_boardPosY</em> = <code>0.f</code>&#160;</td>
+          <td class="paramname"><em>a_boardPosY</em> = <code>0.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_tileSizeX</em> = <code>0.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_tileSizeY</em> = <code>0.f</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -212,14 +243,16 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">a_playerSizeY</td><td>size of the player in y-asix -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_boardPosX</td><td>board's x-position on screen -&gt; default 0.f relative to the render window -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_boardPosY</td><td>board's y-position on screen; realtive to the render window -&gt; default 0.f </td></tr>
+    <tr><td class="paramname">a_tileSizeX</td><td>tile size in x-axis </td></tr>
+    <tr><td class="paramname">a_tileSizeY</td><td>tile size in y-axis </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aab0647625d53da281478cbaabe105120" name="aab0647625d53da281478cbaabe105120"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab0647625d53da281478cbaabe105120">&#9670;&nbsp;</a></span>Player() <span class="overload">[2/2]</span></h2>
+<a id="a4551e75baa73a80415e2acd631d58618" name="a4551e75baa73a80415e2acd631d58618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4551e75baa73a80415e2acd631d58618">&#9670;&nbsp;</a></span>Player() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,8 +263,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Player::Player </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structst__path.html">st_path</a> *&#160;</td>
-          <td class="paramname"><em>a_startPos</em>, </td>
+          <td class="paramtype">std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator&#160;</td>
+          <td class="paramname"><em>a_startPosIte</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -255,7 +288,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a_boardPosY</em> = <code>0.f</code>&#160;</td>
+          <td class="paramname"><em>a_boardPosY</em> = <code>0.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_tileSizeX</em> = <code>0.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_tileSizeY</em> = <code>0.f</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -271,14 +316,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p >This Construc is called when a pointer to <a class="el" href="structst__path.html" title="st_path is a node used for linkedlist.">st_path</a> is passed.</p>
+<p >This Constructor is called when a pointer to <a class="el" href="structst__path.html" title="st_path is a node used for linkedlist.">st_path</a> is passed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a_startPos</td><td>a pointer to <a class="el" href="structst__path.html" title="st_path is a node used for linkedlist.">st_path</a> node which contains the start row and column number inside it </td></tr>
+    <tr><td class="paramname">a_startPosIte</td><td>a iterator that holds to <a class="el" href="structst__path.html" title="st_path is a node used for linkedlist.">st_path</a> node which contains the start row and column number inside it </td></tr>
     <tr><td class="paramname">a_playerSizeX</td><td>size of the player in x-asix -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_playerSizeY</td><td>size of the player in y-asix -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_boardPosX</td><td>board's x-position on screen -&gt; default 0.f relative to the render window -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_boardPosY</td><td>board's y-position on screen; realtive to the render window -&gt; default 0.f </td></tr>
+    <tr><td class="paramname">a_tileSizeX</td><td>tile size in x-axis </td></tr>
+    <tr><td class="paramname">a_tileSizeY</td><td>tile size in y-axis </td></tr>
   </table>
   </dd>
 </dl>
@@ -320,8 +367,36 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af26fdb7dee6c72bbe055c537ad4768cc" name="af26fdb7dee6c72bbe055c537ad4768cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af26fdb7dee6c72bbe055c537ad4768cc">&#9670;&nbsp;</a></span>InitializePlayer()</h2>
+<a id="a8931ca541c8d673f8f21906b7d839af1" name="a8931ca541c8d673f8f21906b7d839af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8931ca541c8d673f8f21906b7d839af1">&#9670;&nbsp;</a></span>GetCurrPathPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator Player::GetCurrPathPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter function to get the iterator to list that points to currPath pos. </p>
+<dl class="section return"><dt>Returns</dt><dd>iterator to list that points to currPath pos </dd></dl>
+
+</div>
+</div>
+<a id="a3075a6998d9b796a0bc437f8b9c72430" name="a3075a6998d9b796a0bc437f8b9c72430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3075a6998d9b796a0bc437f8b9c72430">&#9670;&nbsp;</a></span>InitializePlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +438,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a_boardPosY</em> = <code>0.f</code>&#160;</td>
+          <td class="paramname"><em>a_boardPosY</em> = <code>0.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_tileSizeX</em> = <code>0.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_tileSizeY</em> = <code>0.f</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -387,6 +474,8 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">a_playerSizeY</td><td>size of the player in y-asix -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_boardPosX</td><td>board's x-position on screen -&gt; default 0.f relative to the render window -&gt; default 0.f </td></tr>
     <tr><td class="paramname">a_boardPosY</td><td>board's y-position on screen; realtive to the render window -&gt; default 0.f </td></tr>
+    <tr><td class="paramname">a_tileSizeX</td><td>tile size in x-axis </td></tr>
+    <tr><td class="paramname">a_tileSizeY</td><td>tile size in y-axis </td></tr>
   </table>
   </dd>
 </dl>
@@ -428,7 +517,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="adddd25e6e5989506b86233dcbede640a" name="adddd25e6e5989506b86233dcbede640a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adddd25e6e5989506b86233dcbede640a">&#9670;&nbsp;</a></span>SetPosition()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adddd25e6e5989506b86233dcbede640a">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,6 +561,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a584960c520a7c97774fb8617af15586f" name="a584960c520a7c97774fb8617af15586f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584960c520a7c97774fb8617af15586f">&#9670;&nbsp;</a></span>SetPosition() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="structst__path.html">st_path</a> * &gt;::iterator&#160;</td>
+          <td class="paramname"><em>a_playerCurrPathPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>setter function if <a class="el" href="structst__path.html" title="st_path is a node used for linkedlist.">st_path</a> is passed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_playerCurrPathPos</td><td>iterator that points to the current path node </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a818b2a8304455d220db2ddb8594b21e9" name="a818b2a8304455d220db2ddb8594b21e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a818b2a8304455d220db2ddb8594b21e9">&#9670;&nbsp;</a></span>SetRow()</h2>
 
@@ -506,7 +621,96 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="afeadfbbeb09b5c34812a34fcb74e4483" name="afeadfbbeb09b5c34812a34fcb74e4483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeadfbbeb09b5c34812a34fcb74e4483">&#9670;&nbsp;</a></span>UpdateRowNCol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::UpdateRowNCol </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a_newRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a_newCol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the col and row the player is in. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_newRow</td><td>new row where the player is in </td></tr>
+    <tr><td class="paramname">a_newCol</td><td>new col where the player is in </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3efabfecc68d0bb1f60fa7018128880b" name="a3efabfecc68d0bb1f60fa7018128880b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efabfecc68d0bb1f60fa7018128880b">&#9670;&nbsp;</a></span>m_boardPosX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::m_boardPosX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd9eab602d7086ed02b2cadd9eeb7028" name="acd9eab602d7086ed02b2cadd9eeb7028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd9eab602d7086ed02b2cadd9eeb7028">&#9670;&nbsp;</a></span>m_boardPosY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::m_boardPosY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9cc4a082c48c0780b2f7aaa19c7afdfd" name="a9cc4a082c48c0780b2f7aaa19c7afdfd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cc4a082c48c0780b2f7aaa19c7afdfd">&#9670;&nbsp;</a></span>m_currCol</h2>
 
@@ -562,6 +766,72 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">sf::RectangleShape Player::m_playerBody</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2ae084e0939b8f1adb8f3bb0aad1919" name="aa2ae084e0939b8f1adb8f3bb0aad1919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2ae084e0939b8f1adb8f3bb0aad1919">&#9670;&nbsp;</a></span>m_playerCurrPathPos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="structst__path.html">st_path</a>*&gt;::iterator Player::m_playerCurrPathPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af221feb1b94fdfc0005f1c11853f56dc" name="af221feb1b94fdfc0005f1c11853f56dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af221feb1b94fdfc0005f1c11853f56dc">&#9670;&nbsp;</a></span>m_tileSizeX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::m_tileSizeX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30c7b5dcc3229c46b533bb1a4433dfdd" name="a30c7b5dcc3229c46b533bb1a4433dfdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c7b5dcc3229c46b533bb1a4433dfdd">&#9670;&nbsp;</a></span>m_tileSizeY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::m_tileSizeY</td>
         </tr>
       </table>
   </td>

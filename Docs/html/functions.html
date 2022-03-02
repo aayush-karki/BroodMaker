@@ -111,7 +111,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>GetCurrPathPos()&#160;:&#160;<a class="el" href="class_player.html#a8931ca541c8d673f8f21906b7d839af1">Player</a></li>
 <li>GetDice()&#160;:&#160;<a class="el" href="class_board.html#aef37e78630c2250d3954da9e1909da49">Board</a></li>
+<li>GetNextPlayer()&#160;:&#160;<a class="el" href="class_board.html#a54b879f0000a896e05138ce296a2298c">Board</a></li>
 <li>GetPos()&#160;:&#160;<a class="el" href="class_tiles.html#af1852078037f9771ad6f4aee34d07382">Tiles</a></li>
 </ul>
 
@@ -119,7 +121,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>InitializeBoard()&#160;:&#160;<a class="el" href="class_board.html#ae3783ce74228b53936f84f1187e05e57">Board</a></li>
 <li>InitializeDice()&#160;:&#160;<a class="el" href="class_dice.html#aa188a36e6f9a5145aa6340cdf88002e6">Dice</a></li>
-<li>InitializePlayer()&#160;:&#160;<a class="el" href="class_player.html#af26fdb7dee6c72bbe055c537ad4768cc">Player</a></li>
+<li>InitializePlayer()&#160;:&#160;<a class="el" href="class_player.html#a3075a6998d9b796a0bc437f8b9c72430">Player</a></li>
 <li>InitializeTile()&#160;:&#160;<a class="el" href="class_tiles.html#a76048d6387befe1eec7bed128c455424">Tiles</a></li>
 </ul>
 
@@ -127,10 +129,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>m_allPlayers&#160;:&#160;<a class="el" href="class_board.html#a935138193fd1d5cf9c4ee6247726768a">Board</a></li>
 <li>m_boardBody&#160;:&#160;<a class="el" href="class_board.html#a06ad58f947c9ff852f7de8001bd8ad3a">Board</a></li>
-<li>m_boardPosX&#160;:&#160;<a class="el" href="class_board.html#a0535ca163afbf2ce621ef60319b257cc">Board</a></li>
-<li>m_boardPosY&#160;:&#160;<a class="el" href="class_board.html#ae950d4cea59a28c8623f56a6b3608fb8">Board</a></li>
+<li>m_boardPosX&#160;:&#160;<a class="el" href="class_board.html#a0535ca163afbf2ce621ef60319b257cc">Board</a>, <a class="el" href="class_player.html#a3efabfecc68d0bb1f60fa7018128880b">Player</a></li>
+<li>m_boardPosY&#160;:&#160;<a class="el" href="class_board.html#ae950d4cea59a28c8623f56a6b3608fb8">Board</a>, <a class="el" href="class_player.html#acd9eab602d7086ed02b2cadd9eeb7028">Player</a></li>
 <li>m_boardTiles&#160;:&#160;<a class="el" href="class_board.html#a3f5c8d709a7da5c0087740d27f3d8f7b">Board</a></li>
 <li>m_currCol&#160;:&#160;<a class="el" href="class_player.html#a9cc4a082c48c0780b2f7aaa19c7afdfd">Player</a></li>
+<li>m_currPlayerIdx&#160;:&#160;<a class="el" href="class_board.html#a740dd478a7773bfa5fdbc66a7cc3c260">Board</a></li>
 <li>m_currRow&#160;:&#160;<a class="el" href="class_player.html#ae5a446c0943f02b6014a0709cf5e136c">Player</a></li>
 <li>m_dice&#160;:&#160;<a class="el" href="class_board.html#a4c6d29df5c9dd8902a1ae91add5fc702">Board</a></li>
 <li>m_diceBody&#160;:&#160;<a class="el" href="class_dice.html#ad56eab6de150fab52141cfd0a4f76d47">Dice</a></li>
@@ -139,10 +142,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>m_numSides&#160;:&#160;<a class="el" href="class_dice.html#ad728fd3eb6cfe232a5550705ae3778d9">Dice</a></li>
 <li>m_paths&#160;:&#160;<a class="el" href="class_board.html#a14057a34a62c9ba6791bd4032c7f8d08">Board</a></li>
 <li>m_playerBody&#160;:&#160;<a class="el" href="class_player.html#ac1a2893d5bd1223e9ba54e771cd80d7b">Player</a></li>
+<li>m_playerCurrPathPos&#160;:&#160;<a class="el" href="class_player.html#aa2ae084e0939b8f1adb8f3bb0aad1919">Player</a></li>
 <li>m_texturesVecPtr&#160;:&#160;<a class="el" href="class_dice.html#ab231ab5edf4420218b10e40516a54022">Dice</a></li>
 <li>m_TileBody&#160;:&#160;<a class="el" href="class_tiles.html#acc03621577481d31f09090604ba7cc59">Tiles</a></li>
 <li>m_tileColNum&#160;:&#160;<a class="el" href="class_tiles.html#a108e4fbbc0a1d624fc16d07083ea6921">Tiles</a></li>
 <li>m_tileRowNum&#160;:&#160;<a class="el" href="class_tiles.html#a29436b030abb509a1f4338b406af3419">Tiles</a></li>
+<li>m_tileSizeX&#160;:&#160;<a class="el" href="class_player.html#af221feb1b94fdfc0005f1c11853f56dc">Player</a></li>
+<li>m_tileSizeY&#160;:&#160;<a class="el" href="class_player.html#a30c7b5dcc3229c46b533bb1a4433dfdd">Player</a></li>
 </ul>
 
 
@@ -152,7 +158,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>Player()&#160;:&#160;<a class="el" href="class_player.html#a7ff5448e41bcc4fa1c33729d58227d19">Player</a></li>
+<li>Player()&#160;:&#160;<a class="el" href="class_player.html#aefd1074de0c1bd6b293b3ab64850470e">Player</a></li>
+<li>PlayerRollAndMove()&#160;:&#160;<a class="el" href="class_board.html#a58c4b4ecd01595cb3c70ffd0a55fa89f">Board</a></li>
 </ul>
 
 
@@ -188,6 +195,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
 <li>Tiles()&#160;:&#160;<a class="el" href="class_tiles.html#aacbe80d9e70d6b999585a43fef0eaaa6">Tiles</a></li>
+</ul>
+
+
+<h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>UpdateRowNCol()&#160;:&#160;<a class="el" href="class_player.html#afeadfbbeb09b5c34812a34fcb74e4483">Player</a></li>
 </ul>
 
 

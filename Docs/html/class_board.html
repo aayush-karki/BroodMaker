@@ -127,6 +127,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef37e78630c2250d3954da9e1909da49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dice.html">Dice</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#aef37e78630c2250d3954da9e1909da49">GetDice</a> ()</td></tr>
 <tr class="memdesc:aef37e78630c2250d3954da9e1909da49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function.  <a href="class_board.html#aef37e78630c2250d3954da9e1909da49">More...</a><br /></td></tr>
 <tr class="separator:aef37e78630c2250d3954da9e1909da49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58c4b4ecd01595cb3c70ffd0a55fa89f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a58c4b4ecd01595cb3c70ffd0a55fa89f">PlayerRollAndMove</a> (<a class="el" href="class_player.html">Player</a> *)</td></tr>
+<tr class="memdesc:a58c4b4ecd01595cb3c70ffd0a55fa89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player along the path with respect to the dice roll.  <a href="class_board.html#a58c4b4ecd01595cb3c70ffd0a55fa89f">More...</a><br /></td></tr>
+<tr class="separator:a58c4b4ecd01595cb3c70ffd0a55fa89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b879f0000a896e05138ce296a2298c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a54b879f0000a896e05138ce296a2298c">GetNextPlayer</a> ()</td></tr>
+<tr class="memdesc:a54b879f0000a896e05138ce296a2298c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function to get next player in the list.  <a href="class_board.html#a54b879f0000a896e05138ce296a2298c">More...</a><br /></td></tr>
+<tr class="separator:a54b879f0000a896e05138ce296a2298c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -154,6 +160,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a935138193fd1d5cf9c4ee6247726768a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c6d29df5c9dd8902a1ae91add5fc702"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dice.html">Dice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a4c6d29df5c9dd8902a1ae91add5fc702">m_dice</a></td></tr>
 <tr class="separator:a4c6d29df5c9dd8902a1ae91add5fc702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740dd478a7773bfa5fdbc66a7cc3c260"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a740dd478a7773bfa5fdbc66a7cc3c260">m_currPlayerIdx</a></td></tr>
+<tr class="separator:a740dd478a7773bfa5fdbc66a7cc3c260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A container Class that holds the component that make the <a class="el" href="class_board.html" title="A container Class that holds the component that make the Board.">Board</a>. <br  />
@@ -408,6 +416,27 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a54b879f0000a896e05138ce296a2298c" name="a54b879f0000a896e05138ce296a2298c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b879f0000a896e05138ce296a2298c">&#9670;&nbsp;</a></span>GetNextPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html">Player</a> * Board::GetNextPlayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function to get next player in the list. </p>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+
+</div>
+</div>
 <a id="ae3783ce74228b53936f84f1187e05e57" name="ae3783ce74228b53936f84f1187e05e57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3783ce74228b53936f84f1187e05e57">&#9670;&nbsp;</a></span>InitializeBoard()</h2>
 
@@ -484,6 +513,32 @@ Private Attributes</h2></td></tr>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>something is worng here </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>delete me </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>delete me </dd></dl>
+
+</div>
+</div>
+<a id="a58c4b4ecd01595cb3c70ffd0a55fa89f" name="a58c4b4ecd01595cb3c70ffd0a55fa89f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58c4b4ecd01595cb3c70ffd0a55fa89f">&#9670;&nbsp;</a></span>PlayerRollAndMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board::PlayerRollAndMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>a_player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Moves the player along the path with respect to the dice roll. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_player</td><td>pointer to the player to move </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -587,6 +642,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="class_tiles.html">Tiles</a>*&gt; &gt; Board::m_boardTiles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a740dd478a7773bfa5fdbc66a7cc3c260" name="a740dd478a7773bfa5fdbc66a7cc3c260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740dd478a7773bfa5fdbc66a7cc3c260">&#9670;&nbsp;</a></span>m_currPlayerIdx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Board::m_currPlayerIdx</td>
         </tr>
       </table>
   </td>
