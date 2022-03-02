@@ -2,10 +2,11 @@
 #include <filesystem>
 
 #include "Board.h"
-#include "Dice.h"
 #include "Player.h"
 
 #include "struct_path.h"
+#include "Struct_CtorParam.h"
+
 
 int main()
 {
@@ -23,9 +24,6 @@ int main()
 
 	// event object 
 	sf::Event events;
-
-	// create a board
-	Board myBoard( 10,10, 520.f, 520.f, 100.f, 100.f );
 
 	/// @todo maybe it is better to make a textureManager
 	// loading dice texture
@@ -50,7 +48,12 @@ int main()
 		diceTexture.push_back( std::move_if_noexcept( tempTexture ) );
 	}
 
-	Dice dice(&diceTexture, 50.f, 50.f, 0.f );
+	// create a board
+	const std::vector<sf::Texture>* diceTexturesVecPtr = &diceTexture;
+	
+	St_DiceParam diceParam( diceTexturesVecPtr, 50.f, 50.f, 0.f );
+	St_BoardParam boardParam( 10, 10, 520.f, 520.f, 100.f, 100.f );
+	Board myBoard( boardParam, diceParam);
 
 	// create a player
 	//Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
@@ -71,7 +74,7 @@ int main()
 				///@todo: delete me
 				if( sf::Keyboard::isKeyPressed( sf::Keyboard::Enter ) )
 				{
-					std::cout << dice.RollDice() << std::endl;
+					std::cout << myBoard.GetDice().RollDice() << std::endl;
 				}
 			}
 		}
@@ -81,8 +84,6 @@ int main()
 		// rendering 
 		window.clear();
 		myBoard.Draw( window );
-		dice.Draw( window );
-		//player1.Draw(window);
 		window.display();
 	}
 

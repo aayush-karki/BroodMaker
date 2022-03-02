@@ -13,6 +13,8 @@
 #pragma once
 #include "stdafx.h"
 
+#include "Struct_CtorParam.h"
+
 ///
 /// @class Dice  "Dice.h"
 /// 
@@ -25,6 +27,7 @@ class Dice
 	// ============= public member funciton =====================
 public: 
 
+
 	// default constructor
 	Dice( float a_diceSizeX = 0.f, float a_diceSizeY = 0.f,
 		  float a_dicePosX = 0.f, float a_dicePosY = 0.f,
@@ -34,6 +37,8 @@ public:
 		  float a_diceSizeX = 0.f, float a_diceSizeY = 0.f,
 		  float a_dicePosX = 0.f, float a_dicePosY = 0.f,
 		  int a_numSides = 6 );
+	// constructor when a St_DiceParam is passed
+	Dice( St_DiceParam a_StBoardInializer );
 	void Draw( sf::RenderWindow& a_window ); // draw to screen
 	unsigned RollDice(); // get a random num between 0 and m_numSides
 
@@ -44,6 +49,8 @@ private:
 						 int a_numSides = 6 ); 
 
 	void SetTextureFromTextureVec( unsigned a_num ); // testure setter from the tetuer vec
+
+	
 	// ================ private member variables ==============
 private:
 	unsigned m_numSides; // number of side in a die
@@ -55,21 +62,6 @@ private:
 };
 
 // ================== definations  =================
-
-/// 
-/// @public
-/// @brief Rolls the dice to get a number between 0 and m_numSides
-/// 
-/// @return random number between 0 and m_numSides
-/// 
-inline unsigned Dice::RollDice()
-{
-	
-	unsigned currRoll = std::rand() % m_numSides;
-	SetTextureFromTextureVec( currRoll );
-
-	return currRoll + 1;
-}
 
 /// 
 /// @public
@@ -91,7 +83,6 @@ inline Dice::Dice( float a_diceSizeX, float a_diceSizeY,
 	InitializeDice( a_diceSizeX, a_diceSizeY, a_dicePosX, a_dicePosY, a_numSides );
 }
 
-
 /// 
 /// @public
 /// @brief constructor
@@ -112,15 +103,28 @@ inline Dice::Dice( float a_diceSizeX, float a_diceSizeY,
 inline Dice::Dice( const std::vector<sf::Texture> *a_diceTextures,
 				   float a_diceSizeX, float a_diceSizeY,
 				   float a_dicePosX, float a_dicePosY,
-				   int a_numSides ) : Dice( a_diceSizeX, a_diceSizeY,
-											a_dicePosX, a_dicePosY,
-											a_numSides )
+				   int a_numSides ) : 
+	Dice( a_diceSizeX, a_diceSizeY, a_dicePosX, a_dicePosY, a_numSides )
 {
 	m_texturesVecPtr = a_diceTextures;
 
 	// settig curr texture  
 	SetTextureFromTextureVec( 0  ); 
 }
+
+/// 
+/// @public
+/// @brief Constructor for when the St_DiceParam is passed.
+/// 
+/// @param a_StDiceInializer structure that contains parameter that board 
+///		constructor needs
+///
+inline Dice::Dice( St_DiceParam a_StBoardInializer ):
+	Dice( a_StBoardInializer.stm_texturesVecPtr,
+		  a_StBoardInializer.stm_diceSizeX, a_StBoardInializer.stm_diceSizeY,
+		  a_StBoardInializer.stm_dicePosX, a_StBoardInializer.stm_dicePosY,
+		  a_StBoardInializer.stm_numSides )
+{}
 
 /// 
 /// @private
@@ -132,8 +136,23 @@ inline Dice::Dice( const std::vector<sf::Texture> *a_diceTextures,
 /// 
 inline void Dice::SetTextureFromTextureVec( unsigned a_num )
 {
-	if( !m_texturesVecPtr->empty() )
+	if( !(m_texturesVecPtr->empty()) )
 	{
 		m_diceBody.setTexture( &m_texturesVecPtr->at( a_num ) );
 	}
+}
+
+/// 
+/// @public
+/// @brief Rolls the dice to get a number between 0 and m_numSides
+/// 
+/// @return random number between 0 and m_numSides
+/// 
+inline unsigned Dice::RollDice()
+{
+
+	unsigned currRoll = std::rand() % m_numSides;
+	SetTextureFromTextureVec( currRoll );
+
+	return currRoll + 1;
 }

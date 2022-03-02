@@ -46,9 +46,9 @@ Board::~Board()
 
 /// 
 /// @public
-/// @brief Draw funciton draws the board and tiles to the screen
+/// @brief Draw funciton draws the board to the screen
 /// 
-/// I also envokes the tiles draw funcitons.
+/// It also envokes the tiles', dice's, and player draw funcitons.
 ///			
 /// @param a_window reference to the render window
 /// 
@@ -73,6 +73,9 @@ void Board::Draw( sf::RenderWindow& a_window )
 	{
 		(*currPlayer)->Draw(a_window);
 	}
+
+	// drawing the dice
+	m_dice.Draw( a_window );
 }
 
 /// 
