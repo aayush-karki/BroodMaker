@@ -17,6 +17,7 @@
 #include "Tiles.h"
 #include "Player.h"
 #include "Dice.h"
+#include "PathManager.h"
 
 #include "Struct_path.h"
 #include "Struct_CtorParam.h"
@@ -56,8 +57,6 @@ private:
 						 float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
 						 float a_boardPosX = 0.f, float a_boardPosY = 0.f );
 	
-
-
 	// ========== private member varibles ===============
 private:
 
@@ -71,7 +70,8 @@ private:
 	
 	
 	std::vector<std::vector<Tiles*>> m_boardTiles; // contains the board tiles
-	std::list<st_path*> m_paths; // contains the path of the game
+
+	PathManager m_pathsList; // contains the path of the game
 	
 	std::vector<Player*> m_allPlayers; // contains all the player playing the game
 	
@@ -99,7 +99,8 @@ private:
 ///  
 inline Board::Board( int a_numRows, int a_numCols,
 					 float a_boardSizeX, float a_boardSizeY,
-					 float a_boardPosX, float a_boardPosY )
+					 float a_boardPosX, float a_boardPosY ):
+	m_pathsList(a_numRows, a_numCols)
 {
 	InitializeBoard( a_numRows, a_numCols, 
 					 a_boardSizeX, a_boardSizeY,
@@ -115,6 +116,7 @@ inline Board::Board( int a_numRows, int a_numCols,
 ///		constructor needs
 /// 
 inline Board::Board( St_BoardParam a_StBoardInializer, St_DiceParam a_StDiceInializer ) : 
+	m_pathsList( a_StBoardInializer.stm_numRows, a_StBoardInializer.stm_numCols ),
 	m_dice( a_StDiceInializer )
 {
 	InitializeBoard( a_StBoardInializer.stm_numRows, a_StBoardInializer.stm_numCols,

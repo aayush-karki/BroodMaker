@@ -95,7 +95,6 @@ inline Player::Player( int  a_playerStartRow, int a_PlayerStartCol,
 					  a_playerSizeX, a_playerSizeY,
 					  a_boardPosX, a_boardPosY,
 					  a_tileSizeX, a_tileSizeY );
-
 }
 
 /// 

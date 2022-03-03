@@ -67,3 +67,4 @@ void Player::SetPosition( std::list<st_path*>::iterator a_playerCurrPathPos )
 
 	SetPosition( xPos, yPos ); // calling member funcition
 }
+

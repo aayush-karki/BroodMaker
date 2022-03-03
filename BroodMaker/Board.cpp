@@ -28,13 +28,6 @@ Board::~Board()
 		}
 	}
 
-	// destroying the dynamically created paths
-	std::list<st_path*>::iterator currPath = m_paths.begin();
-	for( ; currPath != m_paths.end(); ++currPath )
-	{
-		delete( *currPath );
-	}
-
 	// destroying the players
 	std::vector<Player*>::iterator currPlayer = m_allPlayers.begin();
 	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
@@ -94,8 +87,8 @@ void Board::AddNewPlayer( float a_playerSizeX, float a_playerSizeY,
 {
 	// getting the path 
 	st_path tempPath( a_playerStartRow, a_PlayerStartCol );
-	std::list<st_path*>::iterator playerPathIte = m_paths.begin();
-	for( ; playerPathIte != m_paths.end(); ++playerPathIte )
+	std::list<st_path*>::iterator playerPathIte = m_pathsList.GetPathBegin();
+	for( ; playerPathIte != m_pathsList.GetPathEnd(); ++playerPathIte )
 	{
 		if( tempPath == *( *playerPathIte ) )
 		{
@@ -106,7 +99,7 @@ void Board::AddNewPlayer( float a_playerSizeX, float a_playerSizeY,
 	// checking the path was found
 	// this should not be a concernt for now as this is hard coded
 	///@todo proper error handeling
-	if( playerPathIte == m_paths.end() )
+	if( playerPathIte == m_pathsList.GetPathEnd() )
 	{
 		std::cout <<  "Error! Invalid row or column number" << std::endl;
 		return;
@@ -189,48 +182,6 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 		currCol = 0; // resetting the col value
 		++currRow;
 	}
-
-	// saving path
-
-	currRow = currCol = 0;
-	bool dirRight = true;
-	std::cout << a_numCols << std::endl;
-	
-	for( ; currRow < a_numRows; ++currRow )
-	{
-		if( currCol == a_numCols )
-		{
-			dirRight = false;
-			--currCol; // adjusting col to be 9-> largest legal col num
-		}
-		else if( currCol < 0 )
-		{
-			dirRight = true;
-			++currCol; // adjusting col to be 0-> smallest legal col num 
-		}
-		/// @todo something is worng here 
-		if( dirRight )
-		{
-			for( ; currCol < a_numCols; ++currCol )
-			{
-				st_path* tempPath = new st_path( currRow, currCol );
-				m_paths.push_back( tempPath );
-				/// @todo delete me
-				st_path* temp = m_paths.back();
-				std::cout << temp->stm_rowNum << " " << temp->stm_colNum << std::endl;
-			}
-		}
-		else
-		{
-			for( ; currCol >= 0; --currCol )
-			{
-				st_path* tempPath = new st_path( currRow, currCol );
-				m_paths.push_back( tempPath );
-				/// @todo delete me
-				std::cout << m_paths.back()->stm_rowNum << " " << m_paths.back()->stm_colNum << std::endl;
-			}
-		}
-	}
 }
 
 
@@ -255,7 +206,7 @@ void Board::PlayerRollAndMove( Player* a_player )
 		++tempPathIte;
 
 		// check if end is reached
-		if( tempPathIte == m_paths.end() )
+		if( tempPathIte == m_pathsList.GetPathEnd() )
 		{
 			// end reached 
 			--tempPathIte;
