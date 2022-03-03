@@ -25,6 +25,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Struct_CtorParam.cpp" />
     <ClCompile Include="Struct_path.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="Card.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="PathManager.h" />
+    <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="Struct_CtorParam.h" />
     <ClInclude Include="Struct_path.h" />
     <ClInclude Include="Player.h" />

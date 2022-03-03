@@ -31,9 +31,10 @@ class PathManager
 public:
 	PathManager( unsigned a_numRows = 0, unsigned a_numCols = 0 ); // default constructor
 	~PathManager(); // destructor
-	std::list<st_path*>::iterator GetPathBegin(); // returns the begin of list 
-	std::list<st_path*>::iterator GetPathEnd(); // returns the end of list 
+	const std::list<st_path*>::iterator GetPathBegin(); // returns the begin of list 
+	const std::list<st_path*>::iterator GetPathEnd(); // returns the end of list 
 
+	// ===================== private member variables ===================
 private:
 	std::list<st_path*> m_paths; // contains the path of the game
 
@@ -46,7 +47,7 @@ private:
 /// @brief Getter function; for begin of path list
 /// @return a iterator that points to the begining of the path list
 /// 
-inline std::list<st_path*>::iterator PathManager::GetPathBegin()
+inline const std::list<st_path*>::iterator PathManager::GetPathBegin()
 {
 	return m_paths.begin();
 }
@@ -57,7 +58,7 @@ inline std::list<st_path*>::iterator PathManager::GetPathBegin()
 /// @brief Getter function; for end of path list
 /// @return a iterator that points to the end of the path list
 /// 
-inline std::list<st_path*>::iterator PathManager::GetPathEnd()
+inline const std::list<st_path*>::iterator PathManager::GetPathEnd()
 {
 	return m_paths.end();
 }

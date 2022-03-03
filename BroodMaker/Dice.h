@@ -38,7 +38,7 @@ public:
 		  float a_dicePosX = 0.f, float a_dicePosY = 0.f,
 		  int a_numSides = 6 );
 	// constructor when a St_DiceParam is passed
-	Dice( St_DiceParam a_StBoardInializer );
+	Dice( St_DiceParam* a_StBoardInializer );
 	void Draw( sf::RenderWindow& a_window ); // draw to screen
 	unsigned RollDice(); // get a random num between 0 and m_numSides
 
@@ -116,14 +116,14 @@ inline Dice::Dice( const std::vector<sf::Texture> *a_diceTextures,
 /// @public
 /// @brief Constructor for when the St_DiceParam is passed.
 /// 
-/// @param a_StDiceInializer structure that contains parameter that board 
+/// @param a_StDiceInializer pointer to the structure that contains parameter that board 
 ///		constructor needs
 ///
-inline Dice::Dice( St_DiceParam a_StBoardInializer ):
-	Dice( a_StBoardInializer.stm_texturesVecPtr,
-		  a_StBoardInializer.stm_diceSizeX, a_StBoardInializer.stm_diceSizeY,
-		  a_StBoardInializer.stm_dicePosX, a_StBoardInializer.stm_dicePosY,
-		  a_StBoardInializer.stm_numSides )
+inline Dice::Dice( St_DiceParam* a_StBoardInializer ):
+	Dice( a_StBoardInializer->stm_texturesVecPtr,
+		  a_StBoardInializer->stm_diceSizeX, a_StBoardInializer->stm_diceSizeY,
+		  a_StBoardInializer->stm_dicePosX, a_StBoardInializer->stm_dicePosY,
+		  a_StBoardInializer->stm_numSides )
 {}
 
 /// 

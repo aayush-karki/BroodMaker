@@ -28,13 +28,6 @@ Board::~Board()
 		}
 	}
 
-	// destroying the players
-	std::vector<Player*>::iterator currPlayer = m_allPlayers.begin();
-	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
-	{
-		delete( *currPlayer );
-	}
-
 }
 
 /// 
@@ -61,64 +54,14 @@ void Board::Draw( sf::RenderWindow& a_window )
 	}
 
 	// drawing the players
-	std::vector<Player*>::iterator currPlayer = m_allPlayers.begin();
-	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
+	std::vector<Player*>::iterator currPlayer = m_playerManger.GetAllPlayerBegin();
+	for( ; currPlayer != m_playerManger.GetAllPlayerEnd(); ++currPlayer )
 	{
 		(*currPlayer)->Draw(a_window);
 	}
 
 	// drawing the dice
 	m_dice.Draw( a_window );
-}
-
-/// 
-/// @public
-/// @brief adds a player
-/// 
-/// @param a_playerSizeX size of the player in x-asix -> default 0.f
-/// @param a_playerSizeY size of the player in y-asix -> default 0.f
-/// @param a_playerStartRow represents on which row number 
-///			the player starts -> default 0
-/// @param a_PlayerStartCol represents on which column number 
-///			the player starts-> default 0
-///  
-void Board::AddNewPlayer( float a_playerSizeX, float a_playerSizeY, 
-						  int a_playerStartRow, int a_PlayerStartCol )
-{
-	// getting the path 
-	st_path tempPath( a_playerStartRow, a_PlayerStartCol );
-	std::list<st_path*>::iterator playerPathIte = m_pathsList.GetPathBegin();
-	for( ; playerPathIte != m_pathsList.GetPathEnd(); ++playerPathIte )
-	{
-		if( tempPath == *( *playerPathIte ) )
-		{
-			break;
-		}
-	}
-
-	// checking the path was found
-	// this should not be a concernt for now as this is hard coded
-	///@todo proper error handeling
-	if( playerPathIte == m_pathsList.GetPathEnd() )
-	{
-		std::cout <<  "Error! Invalid row or column number" << std::endl;
-		return;
-	}
-
-	// getting the tile size
-	float tileSizeX = m_boardBody.getSize().x / m_numCols;
-	float tileSizeY = m_boardBody.getSize().y / m_numRows;
-
-	Player *tempPlayer = new Player( playerPathIte, a_playerSizeX, a_playerSizeY,
-									m_boardPosX, m_boardPosY, tileSizeX, tileSizeY);
-	// adding tempPlayer to the m_allPlayers
-	m_allPlayers.push_back( tempPlayer );
-
-	// checking if this is the first player created
-	if( m_allPlayers.size() == 1 )
-	{
-		m_currPlayerIdx = 0;
-	}
 }
 
 /// 
@@ -141,9 +84,6 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 							 float a_boardSizeX, float a_boardSizeY,
 							 float a_boardPosX, float a_boardPosY )
 {
-	// initialize currPlayer to -1
-	m_currPlayerIdx = -1;
-
 	this->m_boardPosX = a_boardPosX;
 	this->m_boardPosY = a_boardPosY;
 
@@ -192,13 +132,21 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 /// 
 /// @param a_player pointer to the player to move
 ///  
-void Board::PlayerRollAndMove( Player* a_player )
+void Board::PlayerRollAndMove( )
 {
+	// checking if there are players or not
+	Player* currPlayer = m_playerManger.GetNextPlayer();
+
+	if( currPlayer == nullptr )
+	{
+		std::cout << "no player in the board" << std::endl;
+	}
+
 	// rolling the dice
 	unsigned diceRoll = m_dice.RollDice();
 
 	// getting the listIterator stored in the a_player
-	std::list<st_path*>::iterator tempPathIte = a_player->GetCurrPathPos();
+	std::list<st_path*>::iterator tempPathIte = currPlayer->GetCurrPathPos();
 
 	// increasing the player along the path according the the dice roll
 	for( unsigned i = 0; i < diceRoll; ++i )
@@ -215,21 +163,6 @@ void Board::PlayerRollAndMove( Player* a_player )
 	}
 
 	// updating the player with new pos
-	a_player->SetPosition( tempPathIte );
+	currPlayer->SetPosition( tempPathIte );
 }
 
-/// 
-/// @public
-/// @brief Getter function to get next player in the list
-/// @return 
-Player* Board::GetNextPlayer()
-{
-	++m_currPlayerIdx;
-	if( m_currPlayerIdx == m_allPlayers.size() )
-	{
-		// looping to the first player
-		m_currPlayerIdx = 0;
-	}
-
-	return m_allPlayers.at(m_currPlayerIdx);
-}

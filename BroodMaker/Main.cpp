@@ -53,11 +53,11 @@ int main()
 	
 	St_DiceParam diceParam( diceTexturesVecPtr, 50.f, 50.f, 0.f );
 	St_BoardParam boardParam( 10, 10, 520.f, 520.f, 100.f, 100.f );
-	Board myBoard( boardParam, diceParam);
+	Board myBoard( &boardParam, &diceParam);
 
 	// create a player
 	//Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
-	myBoard.AddNewPlayer( 25.f, 25.f );
+	myBoard.AddPlayer( 25.f, 25.f );
 
 	//app loop
 	while( !exit )
@@ -75,7 +75,7 @@ int main()
 				if( sf::Keyboard::isKeyPressed( sf::Keyboard::Enter ) )
 				{
 					//std::cout << myBoard.() << std::endl;
-					myBoard.PlayerRollAndMove( myBoard.GetNextPlayer() );
+					myBoard.PlayerRollAndMove( );
 				}
 			}
 		}
