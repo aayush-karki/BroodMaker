@@ -34,7 +34,8 @@ Board::~Board()
 /// @public
 /// @brief Draw funciton draws the board to the screen
 /// 
-/// It also envokes the tiles', dice's, and player draw funcitons.
+/// It also envokes the tiles', dice's, and playermanger's
+///		draw funcitons.
 ///			
 /// @param a_window reference to the render window
 /// 
@@ -52,13 +53,9 @@ void Board::Draw( sf::RenderWindow& a_window )
 			( *colTile )->Draw( a_window );
 		}
 	}
-
-	// drawing the players
-	std::vector<Player*>::iterator currPlayer = m_playerManger.GetAllPlayerBegin();
-	for( ; currPlayer != m_playerManger.GetAllPlayerEnd(); ++currPlayer )
-	{
-		(*currPlayer)->Draw(a_window);
-	}
+	
+	// drawing players
+	m_playerManger.Draw( a_window );
 
 	// drawing the dice
 	m_dice.Draw( a_window );

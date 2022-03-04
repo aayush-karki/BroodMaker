@@ -3,6 +3,7 @@
 
 #include "Board.h"
 #include "Player.h"
+#include "Card.h"
 
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
@@ -58,6 +59,21 @@ int main()
 	// create a player
 	//Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
 	myBoard.AddPlayer( 25.f, 25.f );
+	Card myCard( 300, 300, "5+3", "8", 3, 2, 1 );
+
+
+	sf::Text text;
+	// select the font
+	//text.setFont( font ); // font is a sf::Font
+	// set the string to display
+	text.setString( "Hello world" );
+	// set the character size
+	text.setCharacterSize( 24 ); // in pixels, not points!
+	// set the color
+	text.setFillColor( sf::Color::Red );
+	// set the text style
+	text.setStyle( sf::Text::Bold | sf::Text::Underlined );
+
 
 	//app loop
 	while( !exit )
@@ -84,7 +100,10 @@ int main()
 
 		// rendering 
 		window.clear();
-		myBoard.Draw( window );
+		/*myBoard.Draw( window );
+		myCard.Draw( window );
+		*/
+		window.draw(text);
 		window.display();
 	}
 

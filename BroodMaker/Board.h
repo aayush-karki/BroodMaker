@@ -132,7 +132,10 @@ inline Dice& Board::GetDice()
 	return m_dice;
 }
 
+/// 
+/// @public
 /// @brief incapsulate the player Manager addNewPlayer
+/// 
 inline void Board::AddPlayer( float a_playerSizeX, float a_playerSizeY,
 							  int a_playerStartRow, int a_playerStartCol )
 {

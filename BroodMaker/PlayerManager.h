@@ -37,6 +37,7 @@ public:
 	Player* GetNextPlayer(); // returns next player in the list
 	const std::vector<Player*>::iterator GetAllPlayerBegin();
 	const std::vector<Player*>::iterator GetAllPlayerEnd();
+	void Draw( sf::RenderWindow& a_window );
 
 	// ===================== private member variables ===================
 private:
@@ -59,7 +60,6 @@ inline PlayerManager::PlayerManager( St_BoardParam* a_BoardParm, PathManager* a_
 	m_PathManagerIte (a_PathManagerIte), m_BoardParmIte (a_BoardParm)
 
 {
-	
 	m_currPlayerIdx = -1;
 }
 

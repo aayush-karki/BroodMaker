@@ -87,3 +87,11 @@ Player* PlayerManager::GetNextPlayer()
 }
 
 
+void PlayerManager::Draw( sf::RenderWindow& a_window )
+{
+	std::vector<Player*>::iterator currPlayer = m_allPlayers.begin();
+	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
+	{
+		( *currPlayer )->Draw( a_window );
+	}
+}
