@@ -13,7 +13,7 @@ int main()
 {
 	// initializing the randon seed
 	std::srand( ( unsigned int ) std::time( nullptr ) );
-
+	std::string cwd = std::filesystem::current_path().string();
 	// tweeker
 	const uint32_t WINDOW_HEIGHT = 900;
 	const uint32_t WINDOW_WIDTH = 900;
@@ -35,8 +35,7 @@ int main()
 		sf::Texture tempTexture;
 
 		/// @warning this might cause problem latter; cwd path might differ 
-		std::string fileName = std::filesystem::current_path().string();
-
+		std::string fileName = cwd;
 		// appending the path that has the dice texture
 		fileName += "\\Assets\\DiceTexture\\dice_";
 		fileName += std::to_string(i + 1);
@@ -59,21 +58,15 @@ int main()
 	// create a player
 	//Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );
 	myBoard.AddPlayer( 25.f, 25.f );
-	Card myCard( 300, 300, "5+3", "8", 3, 2, 1 );
 
-
-	sf::Text text;
-	// select the font
-	//text.setFont( font ); // font is a sf::Font
-	// set the string to display
-	text.setString( "Hello world" );
-	// set the character size
-	text.setCharacterSize( 24 ); // in pixels, not points!
-	// set the color
-	text.setFillColor( sf::Color::Red );
-	// set the text style
-	text.setStyle( sf::Text::Bold | sf::Text::Underlined );
-
+	// loading font
+	sf::Font font;
+	std::string fontFileLoc = cwd + "\\Assets\\Fonts\\arial.ttf";
+	if( !( font.loadFromFile( fontFileLoc ) ) )
+	{
+		std::cout << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
+	}
+	Card myCard(font, 300, 300, "5+3", "8", 3, 2, 1 );
 
 	//app loop
 	while( !exit )
@@ -100,10 +93,10 @@ int main()
 
 		// rendering 
 		window.clear();
-		/*myBoard.Draw( window );
+		myBoard.Draw( window );
 		myCard.Draw( window );
-		*/
-		window.draw(text);
+		
+		//window.draw(text);
 		window.display();
 	}
 

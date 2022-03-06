@@ -13,6 +13,7 @@
 #pragma once
 #include "stdafx.h"
 #include "Struct_CtorParam.h"
+#include "TextBox.h"
 
 ///
 /// @class Card  "Card.h"
@@ -24,7 +25,7 @@ class Card
 	// ============== public memeber function =================
 public:
 	// default constructor
-	Card( float a_cardSizeX = 0.f, float a_cardSizeY = 0.f,
+	Card( sf::Font& a_font, float a_cardSizeX = 0.f, float a_cardSizeY = 0.f,
 		  std::string a_question = "", std::string a_corrAnswer = "",
 		  float a_time = 0.0f,
 		  unsigned a_correctNumSteps = 0, unsigned a_incorrectNumSteps = 0); 
@@ -32,9 +33,14 @@ public:
 public:
 	struct St_QAnspair
 	{
-		sf::String stm_question = "";
-		sf::String stm_corrAnswer = "";
+		sf::Text stm_question;
+		sf::String stm_corrAnswer;
 	};
+
+	// ============== private memeber function =================
+private:
+	void TextMemberVarSetter( sf::Font& a_font, sf::Text& a_textVarName, 
+							  std::string a_textStr, float a_offsetPercent );
 
 	// ============== private memeber variables =================
 private:
@@ -42,13 +48,14 @@ private:
 
 	// in card
 	sf::Text m_time;
-	sf::Text text;
-	sf::String m_correctNumSteps;
-	sf::String m_incorrectNumSteps;
+	sf::Text m_correctNumSteps;
+	sf::Text m_incorrectNumSteps;
 
 	// back of the card
 	St_QAnspair m_queAns;
-	sf::String m_userAns;
+	sf::Text m_userAns;
+
+	//TextBox m_userAns;
 
 	bool m_displayBack;
 
