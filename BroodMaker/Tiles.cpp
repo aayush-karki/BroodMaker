@@ -8,6 +8,7 @@
 ///		funcitons of Tiles class.
 /// 
 /************************************************************************/
+#include "stdafx.h"
 #include "Tiles.h"
 
 /// 

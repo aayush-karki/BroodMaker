@@ -1,5 +1,5 @@
+#include "stdafx.h"
 #include "Button.h"
-#include <iostream>
 
 /// @brief Default Constructor
 /// @param a_text text to show inside the button 
