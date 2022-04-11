@@ -24,6 +24,7 @@
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MouseHandler.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerManager.cpp" />
@@ -32,12 +33,15 @@
     <ClCompile Include="Struct_path.cpp" />
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="Tiles.cpp" />
+    <ClCompile Include="UIElement.cpp" />
+    <ClCompile Include="UtilityFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Dice.h" />
+    <ClInclude Include="MouseHandler.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="Struct_CtorParam.h" />
@@ -46,6 +50,8 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="Tiles.h" />
+    <ClInclude Include="UIElement.h" />
+    <ClInclude Include="UtilityFunctions.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -119,6 +125,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(solutionDir)Dependencies\SFML-2.5.1\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,6 +144,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(solutionDir)Dependencies\SFML-2.5.1\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
