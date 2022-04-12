@@ -34,6 +34,7 @@
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="Tiles.cpp" />
     <ClCompile Include="UIElement.cpp" />
+    <ClCompile Include="UI_ID.cpp" />
     <ClCompile Include="UtilityFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +52,7 @@
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="Tiles.h" />
     <ClInclude Include="UIElement.h" />
+    <ClInclude Include="UI_ID.h" />
     <ClInclude Include="UtilityFunctions.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

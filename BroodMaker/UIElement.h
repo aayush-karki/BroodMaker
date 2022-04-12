@@ -5,7 +5,7 @@
 /// @brief  This file is a header file for UIElement class.
 /// 
 /// This is a abstract base class that is parent to all the different 
-///		UI elments 
+///		UI elements 
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of Board class.
@@ -15,6 +15,7 @@
 /************************************************************************/
 
 #pragma once
+#include "UI_ID.h"
 
 namespace Brood
 {
@@ -22,7 +23,7 @@ namespace Brood
 	///
 	/// @ingroup Brood
 	/// @addtogroup BroodUI
-	/// @brief contains the UI used by BroodMaker
+	/// @brief scopes the UI used by BroodMaker
 	/// 
 	namespace BroodUI
 	{
@@ -41,8 +42,27 @@ namespace Brood
 			UI_scrollBar
 		};
 
+		/// 
+		/// @ingroup BroodUI
+		/// @class UIElement  "UIElement.h"
+		/// @brief a abstract base class that is parent to all the different 
+		///		UI elements 
+		/// 
 		class UIElement
-		{};
+		{
+
+			// ================= public member function =================  
+			UIElement(); // default constructor
+			virtual ~UIElement(); // virtual default destructor
+
+			virtual bool ProcessMouseDown(sf::Mouse::Button a_button) = 0; // called in the event that mouse button is pressed
+			virtual bool ProcessMouseUp( sf::Mouse::Button a_button ) = 0; // called in the event that mouse button is released
+			// ================= private member function =================  
+
+			// ================= private data member =================  
+			ENUM_UIType m_elementType; // stores the type of element stored
+			Brood::BroodUI::Id m_elementId; // uniqie id of the element
+		};
 
 	}
 }

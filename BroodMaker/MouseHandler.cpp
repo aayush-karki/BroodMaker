@@ -9,7 +9,6 @@
 /// 
 /************************************************************************/
 
-
 #include "stdafx.h"
 #include "MouseHandler.h"
 #include "UtilityFunctions.h"

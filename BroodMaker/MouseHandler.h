@@ -16,13 +16,10 @@
 
 namespace Brood
 {
-
-
 	///
 	/// @static 
 	/// @class MouseHandler  "MouseHandler.h"
 	/// @brief A class to handeler all mouse changes
-	/// 
 	/// 
 	class MouseHandler
 	{

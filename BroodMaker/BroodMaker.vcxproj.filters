@@ -71,6 +71,9 @@
     <ClCompile Include="UtilityFunctions.cpp">
       <Filter>src\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UI_ID.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -116,5 +119,8 @@
       <Filter>src\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UtilityFunctions.h" />
+    <ClInclude Include="UI_ID.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
