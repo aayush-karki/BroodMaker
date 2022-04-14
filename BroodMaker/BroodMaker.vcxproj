@@ -23,7 +23,9 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Dice.cpp" />
+    <ClCompile Include="ElementSelection.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MapIdToElement.cpp" />
     <ClCompile Include="MouseHandler.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -42,6 +44,8 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Dice.h" />
+    <ClInclude Include="ElementSelection.h" />
+    <ClInclude Include="MapIdToElement.h" />
     <ClInclude Include="MouseHandler.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="PlayerManager.h" />

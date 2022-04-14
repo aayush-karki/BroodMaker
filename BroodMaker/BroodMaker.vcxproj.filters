@@ -74,6 +74,12 @@
     <ClCompile Include="UI_ID.cpp">
       <Filter>UI\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ElementSelection.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapIdToElement.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -120,6 +126,12 @@
     </ClInclude>
     <ClInclude Include="UtilityFunctions.h" />
     <ClInclude Include="UI_ID.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementSelection.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapIdToElement.h">
       <Filter>UI\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,6 +9,7 @@
 ///		funciton of Id class.
 /// 
 /************************************************************************/
+
 #include "stdafx.h"
 #include "UI_ID.h"
 
@@ -45,5 +46,4 @@ const Brood::BroodUI::Id* Brood::BroodUI::Id::GetChildIdAtIdx( const int a_index
 		return m_allChildPtrs.at( a_index );
 	}
 }
-
 

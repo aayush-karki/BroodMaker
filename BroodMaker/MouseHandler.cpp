@@ -101,3 +101,27 @@ void Brood::MouseHandler::ChangeCursorTo( sf::RenderWindow& a_window,
 	// update the window's cursor 
 	a_window.setMouseCursor( m_cursor );
 }
+/// 
+/// @static
+/// @public
+/// @brief Check if the mouse is hovering over the passed element
+/// 
+/// @param a_uiElementPtr pointer to the element
+/// @return 
+/// 
+inline bool Brood::MouseHandler::IsHit( BroodUI::UIElement* a_uiElementPtr )
+{
+	sf::Vector2f elementSize = a_uiElementPtr->GetBodySize();
+	sf::Vector2f elementPos = a_uiElementPtr->GetBodyPosition();
+
+	// chekcing if the mouse curr pos lies inside the element
+	if( m_currFrameMousePos.x > elementPos.x &&
+		m_currFrameMousePos.x < elementPos.x + elementSize.x &&
+		m_currFrameMousePos.y > elementPos.y &&
+		m_currFrameMousePos.y < elementPos.y + elementSize.y )
+	{
+		return true; // the mouse pointer is inside the element
+	}
+
+	return false;
+}

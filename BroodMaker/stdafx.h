@@ -22,7 +22,5 @@
 #include <list>
 #include <string>
 
-
 // sfml include files
 #include <SFML/Graphics.hpp>
-
