@@ -5,6 +5,8 @@
 #include "Player.h"
 #include "Card.h"
 #include "MouseHandler.h"
+#include "Button.h"
+#include "TextBox.h"
 
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
@@ -29,33 +31,14 @@ int main()
 	
 	// initializing the mouse cursor
 	Brood::MouseHandler::InitializeCursor( window );
-	
-	/// @todo maybe it is better to make a textureManager
-	// loading dice texture
-	std::vector<sf::Texture> diceTexture;
-
-	for( unsigned i = 0; i < 6; ++i )
-	{
-		sf::Texture tempTexture;
-
-		/// @warning this might cause problem latter; cwd path might differ 
-		std::string fileName = cwd;
-		// appending the path that has the dice texture
-		fileName += "\\Assets\\DiceTexture\\dice_";
-		fileName += std::to_string( i + 1 );
-		fileName += "_50_50.png";
-
-		if( !( tempTexture.loadFromFile( fileName ) ) )
-		{
-			std::cout << "Error! Could not load " << fileName << "!!!!!!!" << std::endl;
-		}
-		diceTexture.push_back( std::move_if_noexcept( tempTexture ) );
-	}
 
 	// create a board
-	const std::vector<sf::Texture>* diceTexturesVecPtr = &diceTexture;
-
-	St_DiceParam diceParam( diceTexturesVecPtr, 50.f, 50.f, 0.f );
+	
+	std::string fileName = cwd;
+	fileName += "\\Assets\\DiceTexture\\dice_";
+	fileName += std::to_string( 0 + 1 );
+	fileName += "_50_50.png";
+	Brood::St_DiceParam diceParam( fileName, 50.f, 1 );
 	St_BoardParam boardParam( 10, 10, 520.f, 520.f, 100.f, 100.f );
 	Board myBoard( &boardParam, &diceParam );
 
@@ -71,6 +54,24 @@ int main()
 		std::cout << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
 	}
 	Card myCard( font, 300, 300, "5+3", "8", 3, 2, 1 );
+
+
+	Brood::BroodUI::Button myButton;
+	myButton.SetBodySize( 100, 50 );
+	myButton.SetBodyPosition( 200, 0 );
+	myButton.SetFont( font );
+	myButton.SetBodyColor( sf::Color::Red );
+
+	myButton.SetText( "-----" );
+
+	Brood::BroodUI::TextBox myTextBox;
+	myTextBox.SetBodySize( 100, 50 );
+	myTextBox.SetBodyPosition( 350, 0 );
+	myTextBox.SetBodyColor( sf::Color::White );
+	myTextBox.SetFont( font );
+	myTextBox.SetFontColor ( sf::Color::Black );
+	myTextBox.SetText( "hello" );
+	myTextBox.SetEditable( true );
 
 	//app loop
 	while( !exit )
@@ -95,20 +96,48 @@ int main()
 					}
 					break;
 				}
-				case sf::Event::MouseMoved:
+				case sf::Event::TextEntered:
+				{
+					///@todo: delete me
+					myTextBox.TypeOn( events );
+					break;
+				}
+				/*case sf::Event::MouseMoved:
 				{
 					Brood::MouseHandler::UpdateMousePos( window );
-				}
+					break;
+				}*/
 			}
 		}
 
-		// logics
+		// ========================== logics ================================
+		
+		// updateing the mouse
+		Brood::MouseHandler::UpdateMousePos( window );
+		Brood::MouseHandler::UpdateMouseButtonStatus();
+
+		myBoard.Update();
+		myButton.DoElement();
+		
+		myTextBox.DoElement();
+
+		if( myTextBox.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
+		{
+			myTextBox.SetSelected( true );
+
+		}
+		else
+		{
+			myTextBox.SetSelected( false );
+		}
+
 
 		// rendering 
 		window.clear();
 		myBoard.Draw( window );
 		myCard.Draw( window );
-
+		myButton.Draw( window );
+		myTextBox.Draw(window);
 		//window.draw(text);
 		window.display();
 	}

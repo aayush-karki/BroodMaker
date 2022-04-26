@@ -12,6 +12,7 @@ namespace Brood
 	namespace UtilityFuncs
 	{
 		// a function to load the texture from a file
-		bool LoadTextureFromFile(sf::Texture& a_texture, const std::string& a_cwd, std::string a_filePath);
+		bool LoadTextureFromFile( sf::Texture& a_texture, const std::string& a_cwd, std::string a_filePath );
+		bool LoadTextureFromFile(sf::Texture& a_texture, std::string a_filePath);
 	}
 }

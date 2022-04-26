@@ -1,42 +1,69 @@
+/*************************************************************************/
+/// 
+/// @file TextBox.h 
+/// 
+/// @brief  This file is a source file for TextBox class.
+/// 
+/// It contains all of the defination of the member 
+///		funciton of TextBox class.
+///
+/************************************************************************/
+
 #include "stdafx.h"
 #include "TextBox.h"
 
 /// 
-/// @public
-/// @brief  Constructor
+/// @brief setter funciton to set the text that is displayed in the button
 /// 
-/// @param a_size Size of the character in pixel
-/// @param a_color color of the character
-/// @param a_selected if the current is selected or not
+/// @warning It assumes that the font for the text is already set
 /// 
-TextBox::TextBox( int a_size, sf::Color a_color, bool a_selected)
+/// @param a_text text to show on the buttom -> default empty string
+/// 
+void Brood::BroodUI::TextBox::SetText( std::string a_text )
 {
-	m_textBox.setCharacterSize( a_size );
-	m_textBox.setFillColor( a_color );
+	m_text.setString( a_text );
 
-	m_isSelected = a_selected;
-	if( m_isSelected )
-	{
-		m_textBox.setString( "_" );
-	}
-	else
-	{
-		m_textBox.setString( "" );
-	}
+	// clearing the stringstream and copying the data
+	m_ossText.str( "" );
+	m_ossText << a_text;
 
-	SetLimit();
+	Brood::BroodUI::TextBox::SetTextPosition();
 }
 
 /// 
+/// @public
+/// @brief setter funciton to set the limit
+/// 
+/// @note setting the limit to zero will have 1  char limit
+/// 
+/// @param a_hasLimit true if the text box has a limit attached to it
+/// @param a_limit max number of character allowed
+/// 
+void Brood::BroodUI::TextBox::SetLimit( bool a_hasLimit, int a_limit )
+{
+	if( a_hasLimit && a_limit > 0 )
+	{
+		m_hasLimit = a_hasLimit;
+		m_limit = a_limit;
+	}
+	else if( a_limit <= 0 )
+	{
+		std::cerr << "limit cannot be less than 1" << std::endl;
+	}
+}
+
+/// 
+/// @public
 /// @brief setter function
+/// 
 /// @param a_selected true if current text box is selected or not
 /// 
-void TextBox::setSelected( bool a_selected )
+void Brood::BroodUI::TextBox::SetSelected( bool a_selected )
 {
 	m_isSelected = a_selected;
 	if( !a_selected )
 	{
-		std::string tempStr = m_text.str();
+		std::string tempStr = m_ossText.str();
 		std::string newStr = "";
 
 		// copying the string except the last char
@@ -44,15 +71,19 @@ void TextBox::setSelected( bool a_selected )
 		{
 			newStr += tempStr[ i ];
 		}
-		m_textBox.setString( newStr );
+		m_text.setString( newStr );
 	}
 }
 
+
+
 /// 
+/// @public
 /// @brief Called when a character is typed 
+/// 
 /// @param a_input a copy of sf::Event::TextEntered
 /// 
-void TextBox::TypeOn( sf::Event a_input )
+void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 {
 	if( m_isSelected )
 	{
@@ -62,11 +93,11 @@ void TextBox::TypeOn( sf::Event a_input )
 		{
 			if( m_hasLimit )
 			{
-				if( m_text.str().length() <= m_limit )
+				if( m_ossText.str().length() <= m_limit )
 				{
 					InputLogic( charTyped );
 				}
-				else if( m_text.str().length() > m_limit && charTyped == DELETE_KEY )
+				else if( m_ossText.str().length() > m_limit && charTyped == DELETE_KEY )
 				{
 					DeleteLastChar();
 				}
@@ -75,6 +106,9 @@ void TextBox::TypeOn( sf::Event a_input )
 			{
 				InputLogic( charTyped );
 			}
+
+			// setting the text position
+			SetTextPosition();
 		}
 	}
 }
@@ -82,25 +116,26 @@ void TextBox::TypeOn( sf::Event a_input )
 /// 
 /// @private
 /// @brief logic of what happens when different keys are pressed
+///
 /// @param charTyped ascii number that represent the char
 /// 
-void TextBox::InputLogic( int charTyped )
+void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 {
 	if( charTyped != DELETE_KEY && charTyped != ENTER_KEY && charTyped != ESCAPE_KEY )
 	{
 		// appending the typed char to the text if it is not the special char
-		m_text << static_cast< char >( charTyped );
-		std::cout << charTyped << ": " << m_text.str() << std::endl;
+		m_ossText << static_cast< char >( charTyped );
+		std::cout << charTyped << ": " << m_ossText.str() << std::endl;
 	}
 	else if( charTyped == DELETE_KEY )
 	{
 		// checking that there is something in the stringstream
-		if( m_text.str().length() > 0 )
+		if( m_ossText.str().length() > 0 )
 		{
 			DeleteLastChar();
 		}
 	}
-	m_textBox.setString( m_text.str() + "_" );
+	m_text.setString( m_ossText.str() + "_" );
 
 }
 
@@ -108,9 +143,9 @@ void TextBox::InputLogic( int charTyped )
 /// @private
 /// @brief delete the last char form the user enterd string
 /// 
-void TextBox::DeleteLastChar()
+void Brood::BroodUI::TextBox::DeleteLastChar()
 {
-	std::string tempStr = m_text.str();
+	std::string tempStr = m_ossText.str();
 	std::string newStr = "";
 
 	// copying the string except the last char
@@ -120,9 +155,30 @@ void TextBox::DeleteLastChar()
 	}
 
 	// clearing the stringstream and copying the data
-	m_text.str( "" );
-	m_text << newStr;
+	m_ossText.str( "" );
+	m_ossText << newStr;
 
-	m_textBox.setString( m_text.str() );
+	m_text.setString( m_ossText.str() );
 
+}
+
+/// 
+/// @private
+/// @brief setter funciton to set the position of the text.
+/// 
+/// Sets the position of the text such that it is always centered
+/// 
+void Brood::BroodUI::TextBox::SetTextPosition()
+{
+	// getting m_text's center
+	float textCenterX = m_text.getLocalBounds().width / 2;
+	float textCenterY = m_text.getLocalBounds().height / 2;
+
+	// getting te postion of the text; origin is at the top left of the text
+
+	float xPosText = ( GetBodyPosition().x + GetBodySize().x / 2 ) - textCenterX;
+	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
+
+	m_text.setPosition( xPosText, yPosText );
+	std::cout << m_text.getPosition().x << m_text.getPosition().y << std::endl;;
 }

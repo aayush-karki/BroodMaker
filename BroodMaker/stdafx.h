@@ -21,6 +21,8 @@
 #include <ctime>
 #include <list>
 #include <string>
+#include <sstream>
+#include <filesystem>
 
 // sfml include files
 #include <SFML/Graphics.hpp>

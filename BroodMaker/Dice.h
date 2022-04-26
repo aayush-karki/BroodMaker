@@ -14,117 +14,98 @@
 #include "stdafx.h"
 
 #include "Struct_CtorParam.h"
+#include "Button.h"
+#include "UtilityFunctions.h"
+
+namespace Brood
+{
+	// defining what component of this file will be inside namespace BroodUI
+	class Dice;
+	struct St_DiceSerialization;
+	struct St_DiceParam;
+}
+
+/// 
+/// @ingroup Brood
+/// @brief serialization for dice
+struct Brood::St_DiceSerialization
+{
+	std::string m_texturePath; ///> file path to to the texture containing face of the dice
+	float m_spriteLength; ///> sprite length and width
+	unsigned m_numSides; // number of side in a die
+
+};
+
+struct Brood::St_DiceParam
+{
+	std::string  stm_texturePath;
+	float stm_spriteLength;
+	Brood::BroodUI::UIElement* stm_parentPtr;
+	int  stm_index;
+	int  stm_numSides;
+
+	///
+	/// @public
+	/// @brief  Default constructor of the struct
+	/// 
+	St_DiceParam( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
+				  Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 ) :
+		stm_texturePath( a_texturePath ), stm_spriteLength( a_spriteLength ),
+		stm_numSides( a_numSides ), stm_parentPtr( a_parentPtr ), stm_index( a_index )
+	{};
+};
 
 ///
 /// @class Dice  "Dice.h"
 /// 
-/// @brief A Dice Class
+/// @brief A class to create a dice. 
 /// 
+/// This class is derived form the Button class.
 /// This Dice is a unbiased Dice. 
 /// 
-class Dice
+class Brood::Dice : public Brood::BroodUI::Button
 {
 	// ============= public member funciton =====================
-public: 
+public:
 
 
 	// default constructor
-	Dice( float a_diceSizeX = 0.f, float a_diceSizeY = 0.f,
-		  float a_dicePosX = 0.f, float a_dicePosY = 0.f,
-		  int a_numSides = 6);
+	Dice( int a_numSides = 6, Brood::BroodUI::UIElement* a_parentPtr = nullptr,
+		  int a_index = -1 );
 	// constructor when a texture is passed
-	Dice( const std::vector<sf::Texture> *a_texturesVecPtr,
-		  float a_diceSizeX = 0.f, float a_diceSizeY = 0.f,
-		  float a_dicePosX = 0.f, float a_dicePosY = 0.f,
-		  int a_numSides = 6 );
-	// constructor when a St_DiceParam is passed
-	Dice( St_DiceParam* a_StBoardInializer );
-	void Draw( sf::RenderWindow& a_window ); // draw to screen
+	Dice( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
+		  Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 );
+	// constructor when diceParam is passed
+	Dice( Brood::St_DiceParam& a_diceParam );
+
+	~Dice();
+
+	bool SetTextureFromFilePath( std::string a_texturePath );
+	bool SetTextureFromSavedFilePath();
+
+	virtual bool ProcessMouseDown( sf::Mouse::Button a_button ) { return false; } // when mouse button is pressed
+	virtual bool ProcessMouseUp( sf::Mouse::Button a_button ) { return false; } // when mouse button is released
+	virtual bool OnMouseMove() { return false; } // what happens to the element on mouse move
+	virtual bool Update() { return false; } // update the element
+	virtual void Draw( sf::RenderWindow& a_window ) override; // draw to screen
 	unsigned RollDice(); // get a random num between 0 and m_numSides
 
 	// ================ private member function ==============
 private:
-	void InitializeDice( float a_diceSizeX = 0.f, float a_diceSizeY = 0.f,
-						 float a_dicePosX = 0.f, float a_dicePosY = 0.f,
-						 int a_numSides = 6 ); 
 
-	void SetTextureFromTextureVec( unsigned a_num ); // testure setter from the tetuer vec
+	void SetSpriteFromTexture( unsigned a_num ); // setter
 
-	
+
 	// ================ private member variables ==============
 private:
 	unsigned m_numSides; // number of side in a die
-	sf::RectangleShape m_diceBody; // body of the die; this is what render
 
-	const std::vector<sf::Texture> *m_texturesVecPtr; // pointer to the a vector that stores the texture of faces of dice
-	/// @todo could do this with a code?
-
+	std::string m_texturePath;
+	sf::Texture m_texture; // reference to the a the texture of faces of dice
+	float m_spriteLength; // sprite length and width
 };
 
 // ================== definations  =================
-
-/// 
-/// @public
-/// @brief Default constructor
-/// 
-/// @param a_diceSizeX dice's width -> default 0.f
-/// @param a_diceSizeY dice's length -> default 0.f
-/// @param a_dicePosX dice's x-position on the screen;
-///			relative to the render window -> default 0.f
-/// @param a_dicePosY dice's y-position on the screen;
-///			relative to the render window -> default 0.f
-/// @param a_numSides number of a side that the dice has;
-///			-> default 6
-/// 
-inline Dice::Dice( float a_diceSizeX, float a_diceSizeY,
-			float a_dicePosX, float a_dicePosY,
-			int a_numSides )
-{
-	InitializeDice( a_diceSizeX, a_diceSizeY, a_dicePosX, a_dicePosY, a_numSides );
-}
-
-/// 
-/// @public
-/// @brief constructor
-/// 
-/// This constuctor is called when the texture is also passed.
-/// 
-/// @param a_diceTextures reference to the vector containing 
-///				list of the texture
-/// @param a_diceSizeX dice's width -> default 0.f
-/// @param a_diceSizeY dice's length -> default 0.f
-/// @param a_dicePosX dice's x-position on the screen;
-///			relative to the render window -> default 0.f
-/// @param a_dicePosY dice's y-position on the screen;
-///			relative to the render window -> default 0.f
-/// @param a_numSides number of a side that the dice has;
-///			-> default 6
-///
-inline Dice::Dice( const std::vector<sf::Texture> *a_diceTextures,
-				   float a_diceSizeX, float a_diceSizeY,
-				   float a_dicePosX, float a_dicePosY,
-				   int a_numSides ) : 
-	Dice( a_diceSizeX, a_diceSizeY, a_dicePosX, a_dicePosY, a_numSides )
-{
-	m_texturesVecPtr = a_diceTextures;
-
-	// settig curr texture  
-	SetTextureFromTextureVec( 0  ); 
-}
-
-/// 
-/// @public
-/// @brief Constructor for when the St_DiceParam is passed.
-/// 
-/// @param a_StDiceInializer pointer to the structure that contains parameter that board 
-///		constructor needs
-///
-inline Dice::Dice( St_DiceParam* a_StBoardInializer ):
-	Dice( a_StBoardInializer->stm_texturesVecPtr,
-		  a_StBoardInializer->stm_diceSizeX, a_StBoardInializer->stm_diceSizeY,
-		  a_StBoardInializer->stm_dicePosX, a_StBoardInializer->stm_dicePosY,
-		  a_StBoardInializer->stm_numSides )
-{}
 
 /// 
 /// @private
@@ -132,14 +113,17 @@ inline Dice::Dice( St_DiceParam* a_StBoardInializer ):
 /// 
 /// sets the texture from the texture vector if it is not empty
 /// 
+/// @warning Assumes that The sprite for the faces are lined linearly.
+///		That is assumes that there is only one row of sprite.
+/// @warning Assumus that the sprites are square. 
+/// 
 /// @param a_num index of the texture
 /// 
-inline void Dice::SetTextureFromTextureVec( unsigned a_num )
+inline void Brood::Dice::SetSpriteFromTexture( unsigned a_num )
 {
-	if( !(m_texturesVecPtr->empty()) )
-	{
-		m_diceBody.setTexture( &m_texturesVecPtr->at( a_num ) );
-	}
+	sf::IntRect tempRect( m_spriteLength * a_num, 0, m_spriteLength, m_spriteLength );
+	m_body.setTextureRect( tempRect );
+
 }
 
 /// 
@@ -148,11 +132,20 @@ inline void Dice::SetTextureFromTextureVec( unsigned a_num )
 /// 
 /// @return random number between 0 and m_numSides
 /// 
-inline unsigned Dice::RollDice()
+inline unsigned Brood::Dice::RollDice()
 {
 
 	unsigned currRoll = std::rand() % m_numSides;
-	SetTextureFromTextureVec( currRoll );
-
 	return currRoll + 1;
+}
+
+/// 
+/// @public
+/// @brief Opens a texture from the stored texturePath
+/// 
+/// @return returns true if texture was successfully set; else false
+/// 
+inline bool Brood::Dice::SetTextureFromSavedFilePath()
+{
+	return SetTextureFromFilePath( m_texturePath );
 }

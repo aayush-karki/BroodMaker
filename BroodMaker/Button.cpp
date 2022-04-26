@@ -1,60 +1,66 @@
+/*************************************************************************/
+/// 
+/// @file Button.h 
+/// 
+/// @brief  This file is a source file for Button class.
+/// 
+/// It contains all of the defination of the member 
+///		funciton of Button class.
+///
+/************************************************************************/
+
 #include "stdafx.h"
 #include "Button.h"
 
-/// @brief Default Constructor
-/// @param a_text text to show inside the button 
-/// @param a_size size of the button
-/// @param a_charSize size of each character of text
-/// @param a_bgColor initaial bg color
-/// @param a_textColor text color
-Button::Button( std::string a_text, sf::Vector2f a_size, int a_charSize,
-		sf::Color a_bgColor, sf::Color a_textColor )
+/// 
+/// @brief setter funciton to set the text that is displayed in the button
+/// 
+/// @note if the text is empty, it only sets the color and charSize. It also sets the 
+///		drawText to false. 
+/// 
+/// @warning It assumes that the font for the text is already set
+/// 
+/// @param a_text text to show on the buttom -> default empty string
+/// @param a_color text color -> default sf::color::white
+/// @param a_charSize -> size of indivisual character in the text -> deafult 12
+/// 
+void Brood::BroodUI::Button::SetText( std::string a_text, sf::Color a_color, unsigned a_charSize )
 {
-	m_text.setString( a_text );
-	m_text.setFillColor( a_textColor );
+
+	m_text.setFillColor( a_color );
 	m_text.setCharacterSize( a_charSize );
 
-
-	m_button.setSize( a_size );
-	m_button.setFillColor( a_bgColor );
+	// if the text is empty there is no point in displaying the text
+	if( !a_text.empty() )
+	{
+		m_text.setString( a_text );
+		Brood::BroodUI::Button::SetTextPosition();
+		m_drawText = true;
+	}
+	else
+	{
+		m_drawText = false;
+	}
 
 }
 
 /// 
-/// @brief setter funciton to set the position
+/// @private
+/// @brief setter funciton to set the position of the text.
 /// 
-/// sets the button and then centers the text
+/// Sets the position of the text such that it is always centered
 /// 
-void Button::SetPosition( sf::Vector2f a_pos )
+void Brood::BroodUI::Button::SetTextPosition()
 {
-	m_button.setPosition( a_pos );
+	// getting m_text's center
+	float textCenterX = m_text.getLocalBounds().width / 2;
+	float textCenterY = m_text.getLocalBounds().height / 2;
 
-	// getting the start pos of the text such that it is always centered
-	std::cout << m_text.getString().toAnsiString() << "----m_text.getLoc()width : " << m_text.getLocalBounds().height << std::endl;
-	float xPosText = ( a_pos.x + m_button.getLocalBounds().width / 2 ) - ( m_text.getLocalBounds().width / 2 );
-	float yPosText = ( a_pos.y + m_button.getLocalBounds().height / 2 ) - ( m_text.getLocalBounds().height  );
+	// getting te postion of the text; origin is at the top left of the text
+
+	float xPosText = ( GetBodyPosition().x + GetBodySize().x / 2 ) - textCenterX;
+	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
 
 	m_text.setPosition( xPosText, yPosText );
-
-}
-
-bool Button::IsMouseOverBtn( sf::RenderWindow& a_window )
-{
-	int mousePosX = sf::Mouse::getPosition( a_window ).x;
-	int mousePosY = sf::Mouse::getPosition( a_window ).y;
-
-	// getting the upper left x and y pos of button
-	float btnUpperPosX = m_button.getPosition().x;
-	float btnUpperPosY = m_button.getPosition().y;
-
-	// getting the lower right x and y pos of button
-	float btnLowerPosX = btnUpperPosX + m_button.getLocalBounds().width;
-	float btnLowerPosY = btnUpperPosY + m_button.getLocalBounds().height;
-
-	if( mousePosX > btnUpperPosX && mousePosX < btnLowerPosX &&
-		mousePosY > btnUpperPosY && mousePosY < btnLowerPosY )
-	{
-		return true;
-	}
-	return false;
+	std::cout << m_text.getPosition().x << m_text.getPosition().y << std::endl;;
 }

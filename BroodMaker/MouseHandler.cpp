@@ -18,6 +18,10 @@
 sf::Cursor Brood::MouseHandler::m_cursor;
 sf::Vector2i Brood::MouseHandler::m_currFrameMousePos;
 sf::Vector2i Brood::MouseHandler::m_lastFrameMousePos;
+bool Brood::MouseHandler::m_lastFrameLeftMouseButtonStatus;
+bool Brood::MouseHandler::m_lastFrameRightMouseButtonStatus;
+bool Brood::MouseHandler::m_currFrameLeftMouseButtonStatus;
+bool Brood::MouseHandler::m_currFrameRightMouseButtonStatus;
 
 /// 
 /// @static
@@ -71,7 +75,7 @@ void Brood::MouseHandler::ChangeCursorTo( sf::RenderWindow& a_window,
 			m_cursor.loadFromSystem( sf::Cursor::Wait );
 			break;
 		}
-		case (ENUM_MouseCursorType::CURSOR_text ):
+		case ( ENUM_MouseCursorType::CURSOR_text ):
 		{
 			m_cursor.loadFromSystem( sf::Cursor::Text );
 			break;
@@ -101,27 +105,44 @@ void Brood::MouseHandler::ChangeCursorTo( sf::RenderWindow& a_window,
 	// update the window's cursor 
 	a_window.setMouseCursor( m_cursor );
 }
+
+
 /// 
 /// @static
 /// @public
-/// @brief Check if the mouse is hovering over the passed element
+/// @brief  Updates mouse button status based and saves the mouse button status 
+///		this frame and last frame
 /// 
-/// @param a_uiElementPtr pointer to the element
-/// @return 
+/// @note only consideres left and right mouse button
 /// 
-inline bool Brood::MouseHandler::IsHit( BroodUI::UIElement* a_uiElementPtr )
+void Brood::MouseHandler::UpdateMouseButtonStatus()
 {
-	sf::Vector2f elementSize = a_uiElementPtr->GetBodySize();
-	sf::Vector2f elementPos = a_uiElementPtr->GetBodyPosition();
+	// save the current state
+	m_lastFrameLeftMouseButtonStatus = m_currFrameLeftMouseButtonStatus;
+	m_lastFrameRightMouseButtonStatus = m_currFrameRightMouseButtonStatus;
 
-	// chekcing if the mouse curr pos lies inside the element
-	if( m_currFrameMousePos.x > elementPos.x &&
-		m_currFrameMousePos.x < elementPos.x + elementSize.x &&
-		m_currFrameMousePos.y > elementPos.y &&
-		m_currFrameMousePos.y < elementPos.y + elementSize.y )
+	// checking if it was press or release event
+	if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) )
 	{
-		return true; // the mouse pointer is inside the element
+		m_currFrameLeftMouseButtonStatus = true;
+	}
+	else
+	{
+		m_currFrameLeftMouseButtonStatus = false;
 	}
 
-	return false;
+	// checking if it was press or release event
+	if( sf::Mouse::isButtonPressed( sf::Mouse::Right ) )
+	{
+		m_currFrameRightMouseButtonStatus = true;
+	}
+	else
+	{
+		m_currFrameRightMouseButtonStatus = false;
+	}
+
+	std::cout << "Left-curr: " << m_currFrameLeftMouseButtonStatus << std::endl;
+	std::cout << "Left-last: " << m_lastFrameLeftMouseButtonStatus << std::endl;
+	std::cout << "Right-curr: " << m_currFrameRightMouseButtonStatus << std::endl;
+	std::cout << "Right-last: " << m_lastFrameRightMouseButtonStatus << std::endl;
 }

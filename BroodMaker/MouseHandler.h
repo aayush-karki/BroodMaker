@@ -12,8 +12,6 @@
 /************************************************************************/
 
 #pragma once
-#include "UIElement.h"
-
 
 // =============================== defining namespace =======================
 namespace Brood
@@ -58,15 +56,35 @@ public:
 	static sf::Vector2i GetLastFrameMousePos();
 	static sf::Vector2i GetCurrFrameMousePos();
 
-	static bool IsButtonPressed( sf::Mouse::Button 	button ); // returns true if button was pressed
-	static bool IsHit( BroodUI::UIElement* a_uiElementPtr ); /// return true if mouse is inside the element
+	static bool GetlastFrameLMSStatus();
+	static bool GetCurrFrameLMSStatus();
+	static bool GetCurrFrameRMSStatus();
+	static bool GetlastFrameRMSStatus();
 
-	// ================= private data amember =================  
+	
+	// setter function
+	static void UpdateMouseButtonStatus( );
+	//static bool UpdateMouseStatus();
+	
+	static bool IsLeftButtonHold();
+	static bool IsLeftButtonPressed();
+	static bool IsLeftButtonReleased();
+
+	static bool IsRightButtonHold();
+	static bool IsRightButtonPressed();
+	static bool IsRightButtonReleased();
+
+	// ================= private member variables =================  
 private:
 	static sf::Cursor m_cursor;
 
 	static sf::Vector2i m_lastFrameMousePos;
 	static sf::Vector2i m_currFrameMousePos;
+
+	static bool m_lastFrameLeftMouseButtonStatus; // true == was pressed
+	static bool m_lastFrameRightMouseButtonStatus; // true == was pressed
+	static bool m_currFrameLeftMouseButtonStatus; // true == was pressed
+	static bool m_currFrameRightMouseButtonStatus; // true == was pressed
 };
 
 
@@ -74,6 +92,7 @@ private:
 /// @static
 /// @public
 /// @brief Getter function to get the currrent frame mouse position
+///
 /// @return  currrent frame mouse position
 /// 
 inline sf::Vector2i Brood::MouseHandler::GetCurrFrameMousePos()
@@ -95,13 +114,125 @@ inline sf::Vector2i Brood::MouseHandler::GetLastFrameMousePos()
 /// 
 /// @static
 /// @public
-/// @brief Check if the button specified was pressed or not
+/// @brief Getter function to get the last frame left mouse 
+///		button press status
+///
+/// @return  currrent last frame left mouse button press status
 /// 
-/// @param button  mouse button; its a enum defined in sf::Mouse
-/// 
-/// @return  true if the passed button is pressed
-/// 
-inline bool Brood::MouseHandler::IsButtonPressed( sf::Mouse::Button button )
+inline bool Brood::MouseHandler::GetlastFrameLMSStatus()
 {
-	return sf::Mouse::isButtonPressed( button );
+	return m_lastFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the current frame left mouse 
+///		button press status
+///
+/// @return  currrent current frame left mouse button press status
+/// 
+inline bool Brood::MouseHandler::GetCurrFrameLMSStatus()
+{
+	return m_currFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the last frame right mouse 
+///		button press status
+///
+/// @return  currrent last frame right mouse button press status
+/// 
+inline bool Brood::MouseHandler::GetlastFrameRMSStatus()
+{
+	return m_lastFrameRightMouseButtonStatus;
+}
+
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the current frame right mouse 
+///		button press status
+///
+/// @return  currrent current frame right mouse button press status
+/// 
+inline bool Brood::MouseHandler::GetCurrFrameRMSStatus()
+{
+	return m_currFrameRightMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the left mouse button is in hold state
+/// 
+/// @return  true if the left mouse button is in hold state
+/// 
+inline bool Brood::MouseHandler::IsLeftButtonHold()
+{
+	return m_lastFrameLeftMouseButtonStatus && m_currFrameLeftMouseButtonStatus;
+}
+
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the left mouse button is pressed or not
+/// 
+/// @return  true if the left mouse button is pressed
+/// 
+inline bool Brood::MouseHandler::IsLeftButtonPressed()
+{
+	return !m_lastFrameLeftMouseButtonStatus && m_currFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the left mouse button is released or not
+/// 
+/// @return  true if the left mouse button is released
+/// 
+inline bool Brood::MouseHandler::IsLeftButtonReleased()
+{
+	return m_lastFrameLeftMouseButtonStatus && !m_currFrameLeftMouseButtonStatus;
+}
+/// 
+/// @static
+/// @public
+/// @brief Check if the right mouse button is in hold state
+/// 
+/// @return  true if the right mouse button is in hold state
+/// 
+inline bool Brood::MouseHandler::IsRightButtonHold()
+{
+	return m_lastFrameRightMouseButtonStatus && m_currFrameRightMouseButtonStatus;
+}
+
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the right mouse button is pressed or not
+/// 
+/// @return  true if the right mouse button is pressed
+/// 
+inline bool Brood::MouseHandler::IsRightButtonPressed()
+{
+	return !m_lastFrameRightMouseButtonStatus && m_currFrameRightMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the right mouse button is released or not
+/// 
+/// @return  true if the rrght mouse button is released
+/// 
+inline bool Brood::MouseHandler::IsRightButtonReleased()
+{
+	return m_lastFrameRightMouseButtonStatus && !m_currFrameRightMouseButtonStatus;
 }

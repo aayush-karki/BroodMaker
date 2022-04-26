@@ -11,14 +11,15 @@
 ///
 /************************************************************************/
 #pragma once
-#include "stdafx.h"
-
 
 #include "Tiles.h"
 #include "Player.h"
 #include "Dice.h"
 #include "PathManager.h"
 #include "PlayerManager.h"
+
+#include "ElementSelection.h"
+
 
 #include "Struct_path.h"
 #include "Struct_CtorParam.h"
@@ -38,19 +39,20 @@ class Board
 	// ================== public member fuction =======================
 public: 
 
-	// default constroctor
+	// default constructor
 	Board( int a_numRows = 0, int a_numCols = 0,
 		   float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
 		   float a_boardPosX = 0.f, float a_boardPosY = 0.f );
-	Board( St_BoardParam* a_StBoardInializer, St_DiceParam* a_StDiceInializer );
+	Board( St_BoardParam* a_StBoardInializer, Brood::St_DiceParam* a_StDiceInializer );
 	~Board(); //Destructor
 	/// @todo add copy constuctor and copy assignment
 	void Draw( sf::RenderWindow& a_window );
-	Dice& GetDice(); // getter funciton 
+	Brood::Dice& GetDice(); // getter funciton 
 	void PlayerRollAndMove( );
 	void AddPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
 					int a_playerStartRow = 0, int a_playerStartCol = 0 );
 	
+	void Update();
 
 	// ===== private member functions =====
 private:
@@ -75,7 +77,7 @@ private:
 	PathManager m_pathsList; // contains the path of the game
 	PlayerManager m_playerManger; // contains all the player in the game
 
-	Dice m_dice; // dice obj
+	Brood::Dice m_dice; // dice obj
 };
 
 
@@ -104,6 +106,8 @@ inline Board::Board( int a_numRows, int a_numCols,
 	InitializeBoard( a_numRows, a_numCols, 
 					 a_boardSizeX, a_boardSizeY,
 					 a_boardPosX, a_boardPosY );
+
+	
 }
 
 /// 
@@ -114,20 +118,24 @@ inline Board::Board( int a_numRows, int a_numCols,
 /// @param a_StDiceInializer pointer to structure that contains parameter that board 
 ///		constructor needs
 /// 
-inline Board::Board( St_BoardParam* a_StBoardInializer, St_DiceParam* a_StDiceInializer ) : 
+inline Board::Board( St_BoardParam* a_StBoardInializer, Brood::St_DiceParam* a_StDiceInializer ) : 
 	m_pathsList( a_StBoardInializer->stm_numRows, a_StBoardInializer->stm_numCols ),
-	m_dice( a_StDiceInializer ), m_playerManger(a_StBoardInializer, &m_pathsList)
+	m_dice( *a_StDiceInializer ), m_playerManger(a_StBoardInializer, &m_pathsList)
 {
 	InitializeBoard( a_StBoardInializer->stm_numRows, a_StBoardInializer->stm_numCols,
 					 a_StBoardInializer->stm_boardSizeX, a_StBoardInializer->stm_boardSizeY,
 					 a_StBoardInializer->stm_boardPosX, a_StBoardInializer->stm_boardPosY );
+
+	// setting the dice
+	m_dice.SetBodySize( 50, 50 );
+	m_dice.SetTextureFromSavedFilePath();
 }
 
 /// 
 /// @public
 /// @brief Getter function 
 /// @return a const reference to the dice member variable
-inline Dice& Board::GetDice()
+inline Brood::Dice& Board::GetDice()
 {
 	return m_dice;
 }
@@ -142,3 +150,4 @@ inline void Board::AddPlayer( float a_playerSizeX, float a_playerSizeY,
 	m_playerManger.AddNewPlayer( a_playerSizeX, a_playerSizeY,
 								 a_playerStartRow, a_playerStartCol );
 }
+

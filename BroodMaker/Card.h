@@ -11,9 +11,10 @@
 ///
 /************************************************************************/
 #pragma once
+
 #include "stdafx.h"
 #include "Struct_CtorParam.h"
-#include "TextBox.h"
+
 
 ///
 /// @class Card  "Card.h"

@@ -47,3 +47,31 @@ const Brood::BroodUI::Id* Brood::BroodUI::Id::GetChildIdAtIdx( const int a_index
 	}
 }
 
+
+///
+/// @public
+/// @brief deletes the child at a_index from the child list
+/// 
+/// It erases the element at the given index
+/// 
+/// @param a_index index at which the child's pointer is to be deleted
+/// 
+void Brood::BroodUI::Id::DeleteChildIdAtIdx( const int a_index )
+{
+	if( m_allChildPtrs.empty() )
+	{
+		// child list is empty. 
+		std::cerr << "Error! Cannot erase as the child list is empty." << std::endl;
+		return;
+	}
+	else if( a_index > ( int )m_allChildPtrs.size() - 1 )
+	{
+		// trying to delete invalid index
+		std::cerr << "Error! Tying to erase invalid index" << std::endl;
+		return;
+	}
+
+	// delete the index
+	std::vector<const Brood::BroodUI::Id*>::iterator elementToDelete = m_allChildPtrs.begin() + a_index;
+	m_allChildPtrs.erase( elementToDelete, elementToDelete + 1 );
+}

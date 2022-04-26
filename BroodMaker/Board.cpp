@@ -54,7 +54,7 @@ void Board::Draw( sf::RenderWindow& a_window )
 			( *colTile )->Draw( a_window );
 		}
 	}
-	
+
 	// drawing players
 	m_playerManger.Draw( a_window );
 
@@ -113,7 +113,7 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 		{
 			*colTile = new Tiles( currRow, currCol, tileSizex, tileSizeY, a_boardPosX, a_boardPosY );
 			++currCol;
-			
+
 			/// todo: deleteme
 			//std::cout << ( *colTile )->GetPos().x << " " << ( *colTile )->GetPos().y << std::endl;
 		}
@@ -130,7 +130,7 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 /// 
 /// @param a_player pointer to the player to move
 ///  
-void Board::PlayerRollAndMove( )
+void Board::PlayerRollAndMove()
 {
 	// checking if there are players or not
 	Player* currPlayer = m_playerManger.GetNextPlayer();
@@ -164,3 +164,14 @@ void Board::PlayerRollAndMove( )
 	currPlayer->SetPosition( tempPathIte );
 }
 
+
+
+void Board::Update()
+{
+	
+	// checking if dice was clicked
+	if( m_dice.DoElement() )
+	{
+		PlayerRollAndMove();
+	}
+}
