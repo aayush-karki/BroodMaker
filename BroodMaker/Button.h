@@ -32,6 +32,8 @@ namespace Brood
 /// @class Button  "Button.h"
 /// @brief a uielemnt to work as a Button.
 /// 
+/// @todo: make this a derived from textBox
+/// 
 /// A class derived from UI elements class.
 /// 
 class Brood::BroodUI::Button : public Brood::BroodUI::UIElement
@@ -40,7 +42,8 @@ class Brood::BroodUI::Button : public Brood::BroodUI::UIElement
 public:
 
 	// default constructor
-	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 );
+	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1,
+			Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_button);
 	virtual ~Button(); // destructor
 	//getter function
 	Brood::BroodUI::TextBox* GetTextBoxPtr();

@@ -25,19 +25,24 @@
 /// @param a_index the nth child of the parent; 
 ///		if parent does not exist then -1 -> default value -1
 /// 
-Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_button,
-							   a_parentPtr, a_index ), m_drawText( false )
+Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr, 
+								int a_index, 
+								Brood::BroodUI::ENUM_UIType a_enumType ) :
+	Brood::BroodUI::UIElement( a_enumType, a_parentPtr, a_index ), 
+	m_drawText( false )
 {
-	// adding the button as parent of the textbox
-	m_text.GetElementIdPtr()->SetParent( GetElementIdPtr(), 0 );
 	// adding the textBox as child of the button
 	int textIndex = GetElementIdPtr()->AddChild( m_text.GetElementIdPtr());
+	// adding the button as parent of the textbox
 	m_text.GetElementIdPtr()->SetParent( GetElementIdPtr(), textIndex );
 
 	m_text.SetEditable( false );
 }
 
+/// 
+/// @public
+/// @brief default destrctor
+///
 Brood::BroodUI::Button::~Button()
 {}
 

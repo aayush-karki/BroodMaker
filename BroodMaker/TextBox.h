@@ -44,7 +44,8 @@ private:
 // ============ public member function =============== 
 public:
 	// default constructor
-	TextBox( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 );
+	TextBox( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1,
+			 Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_textBox);
 	// default destructor
 	virtual ~TextBox();
 

@@ -98,6 +98,7 @@ public:
 	const sf::RectangleShape& GetBody() const;
 	const sf::Vector2f GetBodyPosition() const;
 	const sf::Vector2f GetBodySize() const;
+	const sf::Color GetBodyColor();
 	Brood::BroodUI::Id* GetElementIdPtr();
 	const sf::Color GetActiveOverlayColor();
 	const sf::Color GetHotOverlayColor();

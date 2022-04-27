@@ -112,8 +112,23 @@ const sf::Vector2f Brood::BroodUI::UIElement::GetBodySize() const
 	return m_body.getSize();
 }
 
-/// @brief 
-/// @return 
+/// 
+/// @public
+/// @brief Getter function to get the element's body color
+/// 
+/// @reutrn color of the body; sf::color
+///
+const sf::Color Brood::BroodUI::UIElement::GetBodyColor()
+{
+	return m_body.getFillColor();
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the pointer to the element Id
+/// 
+/// @return  pointer to the element Id
+/// 
 Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
 {
 	return &m_elementId;

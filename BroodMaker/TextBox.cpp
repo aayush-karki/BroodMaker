@@ -27,9 +27,10 @@
 /// @param a_index the nth child of the parent; 
 ///		if parent does not exist then -1 -> default value -1
 /// 
-Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_textBox,
-							   a_parentPtr, a_index ),
+Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr, 
+								  int a_index,
+								  Brood::BroodUI::ENUM_UIType a_enumType) :
+	Brood::BroodUI::UIElement( a_enumType, a_parentPtr, a_index ),
 	m_isEditable( false ), m_isSelected( false ), m_hasLimit( false ),
 	m_limit( -1 )
 {}
