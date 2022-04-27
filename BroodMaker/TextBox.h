@@ -44,12 +44,14 @@ private:
 // ============ public member function =============== 
 public:
 	// default constructor
-	TextBox( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1,
+	TextBox( Brood::BroodUI::UIElement* a_parentPtr = nullptr,
 			 Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_textBox);
 	// default destructor
 	virtual ~TextBox();
 
-	std::string GetText(); // getter function to get the text
+	// getter funcitons
+	std::string GetText(); 
+	bool IsSelected();
 
 	// setter fucnitons
 	virtual  void SetBodySize( sf::Vector2f  a_size ) override;

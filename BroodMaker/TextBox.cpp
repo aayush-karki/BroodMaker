@@ -24,13 +24,10 @@
 /// 
 /// @param m_parentPtr pointer to the parent element;
 ///		if parent does not exist then nullptr -> default value nullptr
-/// @param a_index the nth child of the parent; 
-///		if parent does not exist then -1 -> default value -1
 /// 
-Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr, 
-								  int a_index,
+Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
 								  Brood::BroodUI::ENUM_UIType a_enumType) :
-	Brood::BroodUI::UIElement( a_enumType, a_parentPtr, a_index ),
+	Brood::BroodUI::UIElement( a_enumType, a_parentPtr ),
 	m_isEditable( false ), m_isSelected( false ), m_hasLimit( false ),
 	m_limit( -1 )
 {}
@@ -47,6 +44,11 @@ Brood::BroodUI::TextBox::~TextBox()
 std::string Brood::BroodUI::TextBox::TextBox::GetText()
 {
 	return m_ossText.str();
+}
+
+bool Brood::BroodUI::TextBox::IsSelected( )
+{
+	return m_isSelected;
 }
 
 /// 
@@ -128,7 +130,7 @@ void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
 /// @public
 /// @brief setter funciton to set the Font Color
 /// 
-/// @param a_charSize -> size of indivisual character in the text -> deafult 12
+/// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
 /// 
 void Brood::BroodUI::TextBox::SetFontSize( int a_charSize )
 {
@@ -280,7 +282,6 @@ void Brood::BroodUI::TextBox::SetTextPosition()
 	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
 
 	m_text.setPosition( xPosText, yPosText );
-	std::cout << m_text.getPosition().x << m_text.getPosition().y << std::endl;;
 }
 
 /// 
@@ -295,7 +296,6 @@ void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 	{
 		// appending the typed char to the text if it is not the special char
 		m_ossText << static_cast< char >( charTyped );
-		std::cout << charTyped << ": " << m_ossText.str() << std::endl;
 	}
 	else if( charTyped == DELETE_KEY )
 	{

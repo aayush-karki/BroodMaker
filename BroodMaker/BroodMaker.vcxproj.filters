@@ -80,6 +80,12 @@
     <ClCompile Include="DropDownMenu.cpp">
       <Filter>UI\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuBar.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -132,6 +138,12 @@
       <Filter>UI\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DropDownMenu.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuBar.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel.h">
       <Filter>UI\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

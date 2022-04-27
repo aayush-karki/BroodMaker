@@ -61,12 +61,11 @@ namespace Brood
 ///
 enum class Brood::BroodUI::ENUM_UIType
 {
-	UI_text, ///< stores a text; user-typed text or predefined text
-	UI_textBox, ///< container for editText
-
-	UI_button, ///< a button
-	UI_dropDownMenu, ///< drop down menu; has items inside it 
-	UI_scrollBar
+	UI_textBox, ///< container for text -> derived from UI_Element
+	UI_button, ///< a button -> derived from UI_TextBox
+	UI_dropDownMenu, ///< drop down menu; has items inside it -> derived from UI_Button
+	UI_menuBar,
+	UI_scrollBar /// @TODO add latter
 };
 
 /**************************************************************************************/
@@ -89,8 +88,7 @@ class Brood::BroodUI::UIElement
 	// ================= public member function =================  
 public:
 	UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
-			   Brood::BroodUI::UIElement* a_parentPtr = nullptr,
-			   int a_index = -1 ); // default constructor
+			   Brood::BroodUI::UIElement* a_parentPtr = nullptr); // default constructor
 
 	virtual ~UIElement(); // virtual default destructor
 

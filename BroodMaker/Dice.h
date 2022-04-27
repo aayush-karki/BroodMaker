@@ -37,7 +37,6 @@ struct Brood::St_DiceParam
 	std::string  stm_texturePath;
 	float stm_spriteLength;
 	Brood::BroodUI::UIElement* stm_parentPtr;
-	int  stm_index;
 	int  stm_numSides;
 
 	///
@@ -45,9 +44,9 @@ struct Brood::St_DiceParam
 	/// @brief  Default constructor of the struct
 	/// 
 	St_DiceParam( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
-				  Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 ) :
+				  Brood::BroodUI::UIElement* a_parentPtr = nullptr) :
 		stm_texturePath( a_texturePath ), stm_spriteLength( a_spriteLength ),
-		stm_numSides( a_numSides ), stm_parentPtr( a_parentPtr ), stm_index( a_index )
+		stm_numSides( a_numSides ), stm_parentPtr( a_parentPtr )
 	{};
 };
 
@@ -64,11 +63,10 @@ class Brood::Dice : public Brood::BroodUI::Button
 	// ============= public member funciton =====================
 public:
 	// default constructor
-	Dice( int a_numSides = 6, Brood::BroodUI::UIElement* a_parentPtr = nullptr,
-		  int a_index = -1 );
+	Dice( int a_numSides = 6, Brood::BroodUI::UIElement* a_parentPtr = nullptr);
 	// constructor when a texture is passed
 	Dice( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
-		  Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 );
+		  Brood::BroodUI::UIElement* a_parentPtr = nullptr );
 	// constructor when diceParam is passed
 	Dice( Brood::St_DiceParam& a_diceParam );
 

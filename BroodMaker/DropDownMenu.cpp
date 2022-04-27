@@ -1,11 +1,11 @@
 /*************************************************************************/
 /// 
-/// @file Button.h 
+/// @file DropDownMenu.h 
 /// 
-/// @brief  This file is a source file for Button class.
+/// @brief  This file is a source file for DropDownMenu class.
 /// 
 /// It contains all of the defination of the member 
-///		funciton of Button class.
+///		funciton of DropDownMenu class.
 ///
 /************************************************************************/
 
@@ -20,18 +20,38 @@
 /// 
 /// @param m_parentPtr pointer to the parent element;
 ///		if parent does not exist then nullptr -> default value nullptr
-/// @param a_index the nth child of the parent; 
-///		if parent does not exist then -1 -> default value -1
 /// 
-Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::Button( a_parentPtr, a_index,
-							Brood::BroodUI::ENUM_UIType::UI_dropDownMenu),
-	m_isSelected( false ), m_font( nullptr )
+Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr) :
+	Brood::BroodUI::Button( a_parentPtr, Brood::BroodUI::ENUM_UIType::UI_dropDownMenu),
+	m_font( nullptr )
 {}
 
+///
+/// @public
+/// @brief Default Destructor
+/// 
 Brood::BroodUI::DropDownMenu::~DropDownMenu()
 {
-	/// @TODO: delete all the item in the menu
+	// deleting the menus 
+	if( !m_items.empty() )
+	{
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			delete m_items.at( i );
+		}
+	}
+	
+}
+
+///
+/// @public
+/// @brief Getter funciton to get the item List
+/// 
+/// @return reference to the item list
+/// 
+std::vector<Brood::BroodUI::TextBox*>& Brood::BroodUI::DropDownMenu::GetItemList()
+{
+	return m_items;
 }
 
 /// 
@@ -69,6 +89,30 @@ void Brood::BroodUI::DropDownMenu::SetEachItemSize( sf::Vector2f a_eachItemSize 
 void Brood::BroodUI::DropDownMenu::SetEachItemSize( float a_itemSizeX, float a_itemSizeY )
 {
 	Brood::BroodUI::DropDownMenu::SetEachItemSize( sf::Vector2f( a_itemSizeX, a_itemSizeY ) );
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the DropDownMenu's item Size
+/// 
+/// @param a_size size of the DropDownMenu's item 
+/// 
+void Brood::BroodUI::DropDownMenu::SetBodySize( sf::Vector2f a_size )
+{
+	Brood::BroodUI::DropDownMenu::SetEachItemSize( a_size );
+}
+
+/// 
+/// @public
+/// @overload
+/// @brief Setter function to set the DropDownMenu's item Size
+/// 
+/// @param a_sizeX length of the DropDownMenu's item 
+/// @param a_sizeY width of the DropDownMenu's item 
+/// 
+void Brood::BroodUI::DropDownMenu::SetBodySize( float a_sizeX, float a_sizeY )
+{
+	Brood::BroodUI::DropDownMenu::SetEachItemSize( sf::Vector2f( a_sizeX, a_sizeY ) );
 }
 
 /// 
@@ -121,6 +165,17 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 {
 	m_font = a_font;
 	Brood::BroodUI::Button::SetFont( *a_font );
+
+	// setting fonts of all the menu in the dropdown
+	// positining the itemes
+	if( !m_items.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			m_items.at( i )->SetFont(*m_font);
+		}
+	}
 }
 
 /// 
@@ -130,7 +185,7 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 /// It dynamically allocates memory for the item
 /// 
 /// @param a_menuName name of the item
-/// param a_color font color -> default sf::Color::White
+/// @param a_color font color -> default sf::Color::White
 /// 
 void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Color a_color )
 {
@@ -145,15 +200,12 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	item->SetFont( *m_font );
 	item->SetFontColor( a_color );
 	item->SetText( a_menuName );
-	item->SetEditable( false );
 
 	// setting up the id
 	// adding the item as child of the dropDown
-	int itemIndex = GetElementIdPtr()->AddChild( item->GetElementIdPtr() );
+	GetElementIdPtr()->AddChild( item->GetElementIdPtr() );
 	// adding the dropdown as parent of the item
-	item->GetElementIdPtr()->SetParent( GetElementIdPtr(), itemIndex );
-
-	item->SetEditable( false );
+	item->GetElementIdPtr()->SetParent( GetElementIdPtr());
 }
 
 /// 
@@ -167,11 +219,22 @@ void Brood::BroodUI::DropDownMenu::Draw( sf::RenderWindow& a_window )
 	// drawing the menu identifier
 	Brood::BroodUI::Button::Draw( a_window );
 
+	if( IsSelected() )
+	{
+		// draw its items
+		if( !m_items.empty() )
+		{
+			for( int i = 0; i < m_items.size(); ++i )
+			{
+				m_items.at( i )->Draw( a_window );
+			}
+		}
+	}
 }
 
 /// 
 /// @private
-/// @brief helper funciton to set the items position correctly in the drop down list
+/// @brief helper funciton to position the items correctly in the drop down list
 ///
 /// @param a_itemIndex index of the item in the drop down list
 /// 
@@ -179,7 +242,7 @@ void Brood::BroodUI::DropDownMenu::SetItemPos( int a_itemIndex )
 {
 	// calculating the items positon, 
 	// it is index + 1 as the menu's title itself occupies the first slot
-	float itemPosX = GetBodyPosition().x + m_eachItemSize.x;
+	float itemPosX = GetBodyPosition().x;
 	float itemPosY = GetBodyPosition().y + ( (a_itemIndex + 1) * m_eachItemSize.y );
 
 	m_items.at( a_itemIndex )->SetBodyPosition( itemPosX, itemPosY );

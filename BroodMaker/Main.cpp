@@ -5,7 +5,7 @@
 #include "Player.h"
 #include "Card.h"
 #include "MouseHandler.h"
-#include "TextBox.h"
+#include "MenuBar.h"
 
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
@@ -71,6 +71,38 @@ int main()
 	myTextBox.SetText( "hello" );
 	myTextBox.SetEditable( true );
 
+	// making a dropdownmenu
+	Brood::BroodUI::DropDownMenu myDropDown;
+	myDropDown.SetBodySize( 150, 50 );
+	myDropDown.SetBodyPosition( 500, 0 );
+	myDropDown.SetFont( &font );
+	myDropDown.SetBodyColor( sf::Color::Green );
+	myDropDown.SetText( "MyDDM" );
+
+	myDropDown.AddItemToMenu( "1st item" );
+	myDropDown.AddItemToMenu( "2st item" );
+
+	// making a dropdownmenu
+	Brood::BroodUI::MenuBar myMenu;
+	myMenu.SetBodySize( 150, 50 );
+	myMenu.SetBodyPosition( 500, 75 );
+	myMenu.SetFont( &font );
+	myMenu.SetBodyColor( sf::Color::Magenta );
+
+	myMenu.AddMenuToMenuBar( "a" );
+	myMenu.AddMenuToMenuBar( "b" );
+	myMenu.AddMenuToMenuBar( "c" );
+
+	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "aa" );
+	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ab" );
+	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ac" );
+	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ad" );
+
+	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "ba" );
+	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bb" );
+	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bc" );
+	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bd" );
+
 	//app loop
 	while( !exit )
 	{
@@ -89,7 +121,6 @@ int main()
 					///@todo: delete me
 					if( sf::Keyboard::isKeyPressed( sf::Keyboard::Enter ) )
 					{
-						//std::cout << myBoard.() << std::endl;
 						myBoard.PlayerRollAndMove();
 					}
 					break;
@@ -118,7 +149,6 @@ int main()
 		myButton.DoElement();
 		
 		myTextBox.DoElement();
-
 		if( myTextBox.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
 		{
 			myTextBox.SetSelected( true );
@@ -128,13 +158,72 @@ int main()
 			myTextBox.SetSelected( false );
 		}
 
+		myDropDown.DoElement();
+		if( myDropDown.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
+		{
+			myDropDown.SetSelected( true );
+		}
+		else
+		{
+			myDropDown.SetSelected( false );
+		}
+		if( myDropDown.IsSelected() )
+		{
+			auto itemList = myDropDown.GetItemList();
+			// draw its items
+			// positining the itemes
+			if( !itemList.empty() )
+			{
+				// postion all items according to the new menu position
+				for( int i = 0; i < itemList.size(); ++i )
+				{
+					itemList.at( i )->DoElement();
+				}
+			}
+		}
 
+		if( !myMenu.GetMenuList().empty() )
+		{
+			auto menus = myMenu.GetMenuList();
+
+			// draw its menus
+			// positining the itemes
+			// postion all items according to the new menu position
+			for( int i = 0; i < menus.size(); ++i )
+			{
+				menus.at(i)->DoElement();
+				if( menus.at( i )->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
+				{
+					menus.at( i )->SetSelected( true );
+				}
+				else
+				{
+					menus.at( i )->SetSelected( false );
+				}
+				if( menus.at( i )->IsSelected() )
+				{
+					auto itemList = menus.at( i )->GetItemList();
+					// draw its items
+					// positining the itemes
+					if( !itemList.empty() )
+					{
+						// postion all items according to the new menu position
+						for( int i = 0; i < itemList.size(); ++i )
+						{
+							itemList.at( i )->DoElement();
+						}
+					}
+				}
+			}
+		}
 		// rendering 
 		window.clear();
 		myBoard.Draw( window );
 		myCard.Draw( window );
 		myButton.Draw( window );
-		myTextBox.Draw(window);
+		myTextBox.Draw( window );
+		myDropDown.Draw( window );
+		myMenu.Draw(window);
 		//window.draw(text);
 		window.display();
 	}

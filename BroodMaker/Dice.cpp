@@ -25,9 +25,8 @@
 /// @param a_numSides number of a side that the dice has;
 ///			-> default 6
 /// 
-Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr,
-				   int a_index ) :
-	Brood::Dice::Dice( "", 0.0, a_numSides, a_parentPtr, a_index ) 
+Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr) :
+	Brood::Dice::Dice( "", 0.0, a_numSides, a_parentPtr ) 
 {}
 
 /// 
@@ -54,8 +53,8 @@ Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr,
 /// 
 Brood::Dice::Dice( std::string a_texturePath, float a_spriteLength,
 				   int a_numSides,
-				   Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::Button( a_parentPtr, a_index ), m_numSides( a_numSides )
+				   Brood::BroodUI::UIElement* a_parentPtr ) :
+	Brood::BroodUI::Button( a_parentPtr), m_numSides( a_numSides )
 {
 	// settomg sprite height and length 
 	SetSpriteLength( a_spriteLength );
@@ -68,8 +67,7 @@ Brood::Dice::Dice( std::string a_texturePath, float a_spriteLength,
 
 Brood::Dice::Dice( Brood::St_DiceParam& a_diceParam ) :
 	Dice( a_diceParam.stm_texturePath, a_diceParam.stm_spriteLength,
-		  a_diceParam.stm_numSides, a_diceParam.stm_parentPtr,
-		  a_diceParam.stm_index )
+		  a_diceParam.stm_numSides, a_diceParam.stm_parentPtr)
 {}
 
 Brood::Dice::~Dice()

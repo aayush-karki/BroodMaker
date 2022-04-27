@@ -34,13 +34,10 @@ std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::ST_MapIdToElemen
 /// @param a_elementType Type of UI element 
 /// @param m_parentPtr pointer to the parent element;
 ///		if parent does not exist then nullptr -> default value nullptr
-/// @param a_index the nth child of the parent; 
-///		if parent does not exist then -1 -> default value -1
 /// 
 Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
-									  Brood::BroodUI::UIElement* a_parentPtr,
-									  int a_index ) :
-	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr, a_index ),
+									  Brood::BroodUI::UIElement* a_parentPtr) :
+	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr),
 	m_elementType( a_elementType )
 {
 	// adding the elementID to map
@@ -64,7 +61,8 @@ Brood::BroodUI::UIElement::~UIElement()
 	{
 		// delete the this element from its parents child index array
 		elementParentPtr = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
-	    elementParentPtr->GetElementIdPtr()->DeleteChildIdAtIdx( m_elementId.GetIdIndex() );
+		int childIdx = elementParentPtr->GetElementIdPtr()->GetChildIdx( &m_elementId );
+		elementParentPtr->GetElementIdPtr()->DeleteChildIdAtIdx( childIdx );
 	}
 
 	if( m_elementId.HasChild() )
@@ -73,10 +71,13 @@ Brood::BroodUI::UIElement::~UIElement()
 		for( unsigned i = 0; i < m_elementId.GetTotalChildNum(); ++i )
 		{
 			auto childId = m_elementId.GetChildIdAtIdx( i );
-			int childNewIndex = elementParentPtr->GetElementIdPtr()->AddChild( childId );
-			childId->SetParent( elementParentPtr->GetElementIdPtr(), childNewIndex );
+			elementParentPtr->GetElementIdPtr()->AddChild( childId );
+			childId->SetParent( elementParentPtr->GetElementIdPtr());
 		}
 	}
+
+	// delete the id form the map
+	Brood::BroodUI::ST_MapIdToElement::ReomveFromMap( m_elementId.GetElementID() );
 }
 
 /// 
@@ -189,7 +190,7 @@ void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
 /// 
 void Brood::BroodUI::UIElement::SetBodySize( float a_sizeX, float a_sizeY )
 {
-	Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ));
+	Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ) );
 }
 
 /// 
@@ -336,6 +337,24 @@ bool Brood::BroodUI::UIElement::DoElement()
 	if( IsMouseOverElement() )
 	{
 		Brood::BroodUI::ElementSelection::SetHotElement( &m_elementId );
+
+		// if current active element's parent and hot element parent are the 
+		// same then set the hot element as the current active element
+		if( m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
+			Brood::BroodUI::ElementSelection::GetCurrActiveElement() != nullptr )
+		{
+			const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement();
+
+			Brood::BroodUI::ENUM_UIType currActiveElementType = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveId->GetElementID() )->m_elementType;
+			if( currActiveElementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
+				GetElementIdPtr()->GetParentID() == currActiveId->GetParentID() )
+			{
+				auto parentId = GetElementIdPtr()->GetParentID();
+				auto currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetParentID();
+
+				Brood::BroodUI::ElementSelection::SetCurrActiveElement( &m_elementId );
+			}
+		}
 	}
 	else
 	{
@@ -387,6 +406,12 @@ bool Brood::BroodUI::UIElement::DoElement()
 		m_bodyOverLay.setFillColor( m_hotOverlayColor );
 		m_drawOverlay = true;
 	}
+	else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() &&
+			 m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu )
+	{
+		m_bodyOverLay.setFillColor( m_activeOverlayColor );
+		m_drawOverlay = true;
+	}
 	else
 	{
 		m_drawOverlay = false;
@@ -404,7 +429,6 @@ bool Brood::BroodUI::UIElement::DoElement()
 /// 
 void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
 {
-	std::cout << GetElementIdPtr()->GetElementID() << ": " << m_drawOverlay << std::endl;
 	a_window.draw( m_body );
 
 	// draw the over lay only if the overlay is turned on

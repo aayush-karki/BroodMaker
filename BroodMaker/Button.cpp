@@ -22,13 +22,12 @@
 /// 
 /// @param m_parentPtr pointer to the parent element;
 ///		if parent does not exist then nullptr -> default value nullptr
-/// @param a_index the nth child of the parent; 
-///		if parent does not exist then -1 -> default value -1
 /// 
-Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr, 
-								int a_index, 
-								Brood::BroodUI::ENUM_UIType a_enumType ) : 
-	m_drawText( false )
+Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr,
+								Brood::BroodUI::ENUM_UIType a_enumType ) :
+	Brood::BroodUI::TextBox( a_parentPtr, a_enumType ),
+	m_drawText( false ), m_texturePath( "" ),
+	m_spriteLength( 0.0f ), m_spriteHeight( 0.0f )
 {
 	SetEditable( false );
 }
@@ -124,7 +123,7 @@ void Brood::BroodUI::Button::Draw( sf::RenderWindow& a_window )
 /// 
 /// @param a_num index of the texture
 /// 
- void Brood::BroodUI::Button::SetSpriteFromTexture( unsigned a_num )
+void Brood::BroodUI::Button::SetSpriteFromTexture( unsigned a_num )
 {
 	sf::IntRect tempRect( m_spriteLength * a_num, 0, m_spriteLength, m_spriteHeight );
 	m_body.setTextureRect( tempRect );

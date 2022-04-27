@@ -41,7 +41,7 @@ class Brood::BroodUI::Button : public Brood::BroodUI::TextBox
 public:
 
 	// default constructor
-	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1,
+	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr,
 			Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_button);
 	// default destructor
 	virtual ~Button(); 
@@ -49,7 +49,6 @@ public:
 	// setter function
 	void SetSpriteLength( float a_spriteLength );
 	void SetSpriteHeight( float a_spriteHwight );
-
 
 	bool SetTextureFromFilePath( std::string a_texturePath );
 	bool SetTextureFromSavedFilePath();
