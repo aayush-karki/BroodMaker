@@ -253,9 +253,11 @@ void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 /// 
 void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
 {
-	if( m_isEditable || m_text.getString() != "" )
+	Brood::BroodUI::UIElement::Draw( a_window );
+	
+	// draw the text only when the text is present
+	if( m_text.getString() != "" )
 	{
-		Brood::BroodUI::UIElement::Draw( a_window );
 		a_window.draw( m_text );
 	}
 }

@@ -15,6 +15,7 @@
 #include "UIElement.h"
 #include "TextBox.h"
 #include "MouseHandler.h"
+#include "UtilityFunctions.h"
 
 // =============================== defining namespace =======================
 namespace Brood
@@ -32,11 +33,9 @@ namespace Brood
 /// @class Button  "Button.h"
 /// @brief a uielemnt to work as a Button.
 /// 
-/// @todo: make this a derived from textBox
+/// A class derived from TextBox class.
 /// 
-/// A class derived from UI elements class.
-/// 
-class Brood::BroodUI::Button : public Brood::BroodUI::UIElement
+class Brood::BroodUI::Button : public Brood::BroodUI::TextBox
 {
 	// ============ public member function =============== 
 public:
@@ -44,16 +43,17 @@ public:
 	// default constructor
 	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1,
 			Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_button);
-	virtual ~Button(); // destructor
-	//getter function
-	Brood::BroodUI::TextBox* GetTextBoxPtr();
+	// default destructor
+	virtual ~Button(); 
 
-	// setter funcitons
-	virtual  void SetBodySize( sf::Vector2f  a_size ) override;
-	virtual void SetBodySize( float a_sizeX, float a_sizeY ) override;
-	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
-	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
+	// setter function
+	void SetSpriteLength( float a_spriteLength );
+	void SetSpriteHeight( float a_spriteHwight );
 
+
+	bool SetTextureFromFilePath( std::string a_texturePath );
+	bool SetTextureFromSavedFilePath();
+	
 	// overrided funciton 
 	///@todo redefine these functions 
 	virtual bool ProcessMouseDown( sf::Mouse::Button a_button ) { return false; } // when mouse button is pressed
@@ -63,8 +63,18 @@ public:
 
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
+
+	// ================ private member function ==============
+private:
+
+	void SetSpriteFromTexture( unsigned a_num ); // setter
+
 	// ============ private member variables =============== 
 private:
 	bool m_drawText; // is true if text is set
-	Brood::BroodUI::TextBox m_text;
+
+	std::string m_texturePath;
+	sf::Texture m_texture; // reference to the a the texture opened from the path
+	float m_spriteLength; 
+	float m_spriteHeight;
 };

@@ -27,16 +27,10 @@
 /// 
 Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr, 
 								int a_index, 
-								Brood::BroodUI::ENUM_UIType a_enumType ) :
-	Brood::BroodUI::UIElement( a_enumType, a_parentPtr, a_index ), 
+								Brood::BroodUI::ENUM_UIType a_enumType ) : 
 	m_drawText( false )
 {
-	// adding the textBox as child of the button
-	int textIndex = GetElementIdPtr()->AddChild( m_text.GetElementIdPtr());
-	// adding the button as parent of the textbox
-	m_text.GetElementIdPtr()->SetParent( GetElementIdPtr(), textIndex );
-
-	m_text.SetEditable( false );
+	SetEditable( false );
 }
 
 /// 
@@ -49,69 +43,62 @@ Brood::BroodUI::Button::~Button()
 
 /// 
 /// @public
-/// @brief getter funciton 
+/// @brief setter funciton to set the sprite length
 ///
-/// @return pointer to the textBox
+/// @param a_spriteLength length of the sprite
 /// 
-Brood::BroodUI::TextBox* Brood::BroodUI::Button::GetTextBoxPtr()
+void Brood::BroodUI::Button::SetSpriteLength( float a_spriteLength )
 {
-	return &m_text;
+	m_spriteLength = a_spriteLength;
 }
 
 /// 
 /// @public
-/// @brief Setter function to set the button's Size
+/// @brief setter funciton to set the sprite height
+///
+/// @param a_spriteLength height of the sprite
 /// 
-/// @param a_size size of the element
-/// 
-void Brood::BroodUI::Button::SetBodySize( sf::Vector2f a_size )
+void Brood::BroodUI::Button::SetSpriteHeight( float a_spriteHeight )
 {
-	Brood::BroodUI::UIElement::SetBodySize( a_size );
-	m_text.SetBodySize( a_size );
+	m_spriteHeight = a_spriteHeight;
 }
 
 /// 
 /// @public
-/// @overload
-/// @brief Setter function to set the button's Size
+/// @brief sets the texture from the file path 
 /// 
-/// @param a_sizeX length of the element
-/// @param a_sizeY width of the element
+/// It also saves the textureFilepath
 /// 
-void Brood::BroodUI::Button::SetBodySize( float a_sizeX, float a_sizeY )
+/// @param a_texturePath file path to to the texture containing face of the dice;
+/// 
+/// @return returns true if texture was successfully set; else false
+/// 
+bool Brood::BroodUI::Button::SetTextureFromFilePath( std::string a_texturePath )
 {
-	Brood::BroodUI::Button::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ) );
+	// open texture
+	if( !Brood::UtilityFuncs::LoadTextureFromFile( m_texture, a_texturePath ) )
+	{
+		return false;
+	}
+	// saving the texture path
+	m_texturePath = a_texturePath;
+
+	// setting the texture
+	m_body.setTexture( &m_texture );
+	Brood::BroodUI::Button::SetSpriteFromTexture( 0 );
+
+	return true;
 }
 
 /// 
-/// @virtual
 /// @public
-/// @brief Setter function to set the Button's Position.
+/// @brief Opens a texture from the stored texturePath
 /// 
-/// @param a_pos position of the element 
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-///  
-void Brood::BroodUI::Button::SetBodyPosition( sf::Vector2f a_pos, bool a_relativeToParent )
+/// @return returns true if texture was successfully set; else false
+/// 
+bool Brood::BroodUI::Button::SetTextureFromSavedFilePath()
 {
-	Brood::BroodUI::UIElement::SetBodyPosition( a_pos, a_relativeToParent );
-	m_text.SetBodyPosition( a_pos, a_relativeToParent );
-}
-
-/// 
-/// @virtual
-/// @public
-/// @overload
-/// @brief Setter function to set the Button's Position
-/// 
-/// @param a_posX x-position of the element
-/// @param a_posY y-position of the element
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-/// 
-void Brood::BroodUI::Button::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
-{
-	Brood::BroodUI::Button::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
+	return SetTextureFromFilePath( m_texturePath );
 }
 
 /// 
@@ -121,12 +108,24 @@ void Brood::BroodUI::Button::SetBodyPosition( float a_posX, float a_posY, bool a
 /// 
 void Brood::BroodUI::Button::Draw( sf::RenderWindow& a_window )
 {
-	a_window.draw( Brood::BroodUI::UIElement::m_body );
-	m_text.Draw( a_window );
+	Brood::BroodUI::TextBox::Draw( a_window );
+}
 
-	// draw the over lay only if the overlay is turned on
-	if( m_drawOverlay )
-	{
-		a_window.draw( Brood::BroodUI::UIElement::m_bodyOverLay );
-	}
+/// 
+/// @private
+/// @brief Setter for texture
+/// 
+/// sets the texture from the texture vector if it is not empty
+/// 
+/// @warning Assumes that The sprite for the faces are lined linearly.
+///		That is assumes that there is only one row of sprite.
+/// 
+/// @todo make the adaptable for number of rows and column
+/// 
+/// @param a_num index of the texture
+/// 
+ void Brood::BroodUI::Button::SetSpriteFromTexture( unsigned a_num )
+{
+	sf::IntRect tempRect( m_spriteLength * a_num, 0, m_spriteLength, m_spriteHeight );
+	m_body.setTextureRect( tempRect );
 }

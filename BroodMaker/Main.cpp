@@ -58,9 +58,9 @@ int main()
 	Brood::BroodUI::Button myButton;
 	myButton.SetBodySize( 100, 50 );
 	myButton.SetBodyPosition( 200, 0 );
-	myButton.GetTextBoxPtr()->SetFont( font );
-	myButton.GetTextBoxPtr()->SetBodyColor( sf::Color::Red );
-	myButton.GetTextBoxPtr()->SetText( "-----" );
+	myButton.SetFont( font );
+	myButton.SetBodyColor( sf::Color::Red );
+	myButton.SetText( "-----" );
 
 	Brood::BroodUI::TextBox myTextBox;
 	myTextBox.SetBodySize( 100, 50 );

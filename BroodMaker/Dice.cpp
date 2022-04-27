@@ -55,9 +55,16 @@ Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr,
 Brood::Dice::Dice( std::string a_texturePath, float a_spriteLength,
 				   int a_numSides,
 				   Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::Button( a_parentPtr, a_index ), m_numSides( a_numSides ),
-	m_texturePath( a_texturePath ), m_spriteLength( a_spriteLength )
-{};
+	Brood::BroodUI::Button( a_parentPtr, a_index ), m_numSides( a_numSides )
+{
+	// settomg sprite height and length 
+	SetSpriteLength( a_spriteLength );
+	SetSpriteHeight( a_spriteLength );
+
+	// loading the texture
+	SetTextureFromFilePath( a_texturePath );
+
+};
 
 Brood::Dice::Dice( Brood::St_DiceParam& a_diceParam ) :
 	Dice( a_diceParam.stm_texturePath, a_diceParam.stm_spriteLength,
@@ -82,29 +89,13 @@ void Brood::Dice::Draw( sf::RenderWindow& a_window )
 
 /// 
 /// @public
-/// @brief sets the texture from the file path 
+/// @brief Rolls the dice to get a number between 0 and m_numSides
 /// 
-/// It also saves the textureFilepath
+/// @return random number between 0 and m_numSides
 /// 
-/// @param a_texturePath file path to to the texture containing face of the dice;
-/// 
-/// @return returns true if texture was successfully set; else false
-/// 
-bool Brood::Dice::SetTextureFromFilePath( std::string a_texturePath )
+ unsigned Brood::Dice::RollDice()
 {
-	// open texture
-	if( !Brood::UtilityFuncs::LoadTextureFromFile( m_texture, a_texturePath ) )
-	{
-		return false;
-	}
-	// saving the texture path
-	m_texturePath = a_texturePath; 
-	
-	// setting the texture
-	m_body.setTexture( &m_texture );
-	Brood::Dice::SetSpriteFromTexture( 0 );
 
-	return true;
+	unsigned currRoll = std::rand() % m_numSides;
+	return currRoll + 1;
 }
-
-

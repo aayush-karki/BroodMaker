@@ -30,7 +30,9 @@ Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentP
 {}
 
 Brood::BroodUI::DropDownMenu::~DropDownMenu()
-{}
+{
+	/// @TODO: delete all the item in the menu
+}
 
 /// 
 /// @public
@@ -118,7 +120,7 @@ void Brood::BroodUI::DropDownMenu::SetBodyPosition( float a_posX, float a_posY, 
 void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 {
 	m_font = a_font;
-	GetTextBoxPtr()->SetFont( *a_font );
+	Brood::BroodUI::Button::SetFont( *a_font );
 }
 
 /// 
