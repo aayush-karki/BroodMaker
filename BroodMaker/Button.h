@@ -7,14 +7,13 @@
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of Button class.
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of Button class
 ///
 /************************************************************************/
 
 #pragma once
 
 #include "UIElement.h"
+#include "TextBox.h"
 #include "MouseHandler.h"
 
 // =============================== defining namespace =======================
@@ -42,13 +41,15 @@ public:
 
 	// default constructor
 	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 );
+	virtual ~Button(); // destructor
+	//getter function
+	Brood::BroodUI::TextBox* GetTextBoxPtr();
 
-	// setter functions
-	void SetFont( sf::Font& a_font ); // sets the font
-	void SetTextColor( sf::Color a_color ); // set the text color
-	void SetText( std::string a_text = "",
-				  sf::Color a_color = sf::Color::White,
-				  unsigned a_charSize = 12 ); // sets text
+	// setter funcitons
+	virtual  void SetBodySize( sf::Vector2f  a_size ) override;
+	virtual void SetBodySize( float a_sizeX, float a_sizeY ) override;
+	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
+	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
 
 	// overrided funciton 
 	///@todo redefine these functions 
@@ -59,65 +60,8 @@ public:
 
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
-	// ============ private member funciton =============== 
-private:
-	void SetTextPosition(); // set the position of the text relatice to the element body
-
 	// ============ private member variables =============== 
 private:
 	bool m_drawText; // is true if text is set
-	sf::Text m_text; // text to show on the Brood::BroodUI::Button
+	Brood::BroodUI::TextBox m_text;
 };
-
-/// 
-/// @public
-/// @brief Default Constructor
-///	
-/// Initializes the button object
-/// 
-/// @note by default it sets the text that is displayed on the button to empty string
-/// 
-/// @param m_parentPtr pointer to the parent element;
-///		if parent does not exist then nullptr -> default value nullptr
-/// @param a_index the nth child of the parent; 
-///		if parent does not exist then -1 -> default value -1
-/// 
-inline Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_button,
-							   a_parentPtr, a_index ), m_drawText( false )
-{}
-
-/// 
-/// @public
-/// @brief setter funciton to set the font size
-/// 
-inline void Brood::BroodUI::Button::SetFont( sf::Font& a_font )
-{
-	m_text.setFont( a_font );
-}
-
-/// 
-/// @public
-/// @brief setter funciton to set the text color
-/// param a_color font color
-/// 
-inline void Brood::BroodUI::Button::SetTextColor( sf::Color a_color )
-{
-	m_text.setFillColor( a_color );
-}
-
-/// 
-/// @public
-/// @brief Draw function 
-/// @param a_window reference to render window
-/// 
-inline void Brood::BroodUI::Button::Draw( sf::RenderWindow& a_window )
-{
-	Brood::BroodUI::UIElement::Draw( a_window );
-	
-	if( m_drawText )
-	{
-		a_window.draw( m_text );
-	}
-}
-

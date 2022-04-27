@@ -13,6 +13,128 @@
 #include "TextBox.h"
 
 /// 
+/// @public
+/// @brief Default Constructor
+///	
+/// Initializes the textBox object
+/// 
+/// It alse sets the default value of isEditable, isSelected, 
+///		and hasLimit to false.
+/// It sets the limit to -1.
+/// 
+/// @param m_parentPtr pointer to the parent element;
+///		if parent does not exist then nullptr -> default value nullptr
+/// @param a_index the nth child of the parent; 
+///		if parent does not exist then -1 -> default value -1
+/// 
+Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
+	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_textBox,
+							   a_parentPtr, a_index ),
+	m_isEditable( false ), m_isSelected( false ), m_hasLimit( false ),
+	m_limit( -1 )
+{}
+
+Brood::BroodUI::TextBox::~TextBox()
+{}
+
+/// 
+/// @public
+/// @brief getter funciton to get the typed text
+/// 
+/// @return text that user typed
+/// 
+std::string Brood::BroodUI::TextBox::TextBox::GetText()
+{
+	return m_ossText.str();
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the TextBox's Size
+/// 
+/// @param a_size size of the element
+/// 
+void Brood::BroodUI::TextBox::SetBodySize( sf::Vector2f a_size )
+{
+	Brood::BroodUI::UIElement::SetBodySize( a_size );
+}
+
+/// 
+/// @public
+/// @overload
+/// @brief Setter function to set the TextBox's Size
+/// 
+/// @param a_sizeX length of the element
+/// @param a_sizeY width of the element
+/// 
+void Brood::BroodUI::TextBox::SetBodySize( float a_sizeX, float a_sizeY )
+{
+	Brood::BroodUI::TextBox::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ) );
+}
+
+/// 
+/// @virtual
+/// @public
+/// @brief Setter function to set the textbox's Position.
+/// 
+/// @param a_pos position of the element 
+/// @param a_relativeToParent is true if the passed position is relative to its parent;
+///			default -> false.
+///  
+void Brood::BroodUI::TextBox::SetBodyPosition( sf::Vector2f a_pos, bool a_relativeToParent )
+{
+	Brood::BroodUI::UIElement::SetBodyPosition( a_pos, a_relativeToParent );
+	SetTextPosition();
+}
+
+/// 
+/// @virtual
+/// @public
+/// @overload
+/// @brief Setter function to set the textbox's Position
+/// 
+/// @param a_posX x-position of the element
+/// @param a_posY y-position of the element
+/// @param a_relativeToParent is true if the passed position is relative to its parent;
+///			default -> false.
+/// 
+void Brood::BroodUI::TextBox::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
+{
+	Brood::BroodUI::TextBox::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
+}
+
+/// 
+/// @public
+/// @brief setter funciton to set the font size
+/// 
+void Brood::BroodUI::TextBox::SetFont( sf::Font& a_font )
+{
+	m_text.setFont( a_font );
+}
+
+/// 
+/// @public
+/// @brief setter funciton to set the Font color
+/// 
+/// param a_color font color -> default sf::Color::White
+/// 
+void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
+{
+	m_text.setFillColor( a_color );
+}
+
+/// 
+/// @public
+/// @brief setter funciton to set the Font Color
+/// 
+/// @param a_charSize -> size of indivisual character in the text -> deafult 12
+/// 
+void Brood::BroodUI::TextBox::SetFontSize( int a_charSize )
+{
+	m_text.setCharacterSize( a_charSize );
+}
+
+/// 
 /// @brief setter funciton to set the text that is displayed in the button
 /// 
 /// @warning It assumes that the font for the text is already set
@@ -75,7 +197,16 @@ void Brood::BroodUI::TextBox::SetSelected( bool a_selected )
 	}
 }
 
-
+/// 
+/// @public
+/// @brief setter function
+/// 
+/// @param a_isEditable true if text box is editable
+/// 
+void Brood::BroodUI::TextBox::SetEditable( bool a_isEditable )
+{
+	m_isEditable = a_isEditable;
+}
 
 /// 
 /// @public
@@ -114,6 +245,42 @@ void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 }
 
 /// 
+/// @public
+/// @brief Draw function 
+/// 
+/// @param a_window reference to render window
+/// 
+void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
+{
+	if( m_isEditable || m_text.getString() != "" )
+	{
+		Brood::BroodUI::UIElement::Draw( a_window );
+		a_window.draw( m_text );
+	}
+}
+
+/// 
+/// @private
+/// @brief setter funciton to set the position of the text.
+/// 
+/// Sets the position of the text such that it is always centered
+/// 
+void Brood::BroodUI::TextBox::SetTextPosition()
+{
+	// getting m_text's center
+	float textCenterX = m_text.getLocalBounds().width / ( float )2;
+	float textCenterY = m_text.getCharacterSize() / float(1.5);
+
+	// getting te postion of the text; origin is at the top left of the text
+
+	float xPosText = ( GetBodyPosition().x + GetBodySize().x / 2 ) - textCenterX;
+	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
+
+	m_text.setPosition( xPosText, yPosText );
+	std::cout << m_text.getPosition().x << m_text.getPosition().y << std::endl;;
+}
+
+/// 
 /// @private
 /// @brief logic of what happens when different keys are pressed
 ///
@@ -136,7 +303,6 @@ void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 		}
 	}
 	m_text.setString( m_ossText.str() + "_" );
-
 }
 
 /// 
@@ -159,26 +325,4 @@ void Brood::BroodUI::TextBox::DeleteLastChar()
 	m_ossText << newStr;
 
 	m_text.setString( m_ossText.str() );
-
-}
-
-/// 
-/// @private
-/// @brief setter funciton to set the position of the text.
-/// 
-/// Sets the position of the text such that it is always centered
-/// 
-void Brood::BroodUI::TextBox::SetTextPosition()
-{
-	// getting m_text's center
-	float textCenterX = m_text.getLocalBounds().width / 2;
-	float textCenterY = m_text.getLocalBounds().height / 2;
-
-	// getting te postion of the text; origin is at the top left of the text
-
-	float xPosText = ( GetBodyPosition().x + GetBodySize().x / 2 ) - textCenterX;
-	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
-
-	m_text.setPosition( xPosText, yPosText );
-	std::cout << m_text.getPosition().x << m_text.getPosition().y << std::endl;;
 }

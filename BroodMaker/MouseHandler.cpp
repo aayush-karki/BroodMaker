@@ -110,6 +110,81 @@ void Brood::MouseHandler::ChangeCursorTo( sf::RenderWindow& a_window,
 /// 
 /// @static
 /// @public
+/// @brief Getter function to get the last frame mouse position
+/// @return  last frame mouse position
+/// 
+sf::Vector2i Brood::MouseHandler::GetLastFrameMousePos()
+{
+	return m_lastFrameMousePos;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the currrent frame mouse position
+///
+/// @return  currrent frame mouse position
+/// 
+sf::Vector2i Brood::MouseHandler::GetCurrFrameMousePos()
+{
+	return m_currFrameMousePos;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the last frame left mouse 
+///		button press status
+///
+/// @return  currrent last frame left mouse button press status
+/// 
+bool Brood::MouseHandler::GetlastFrameLMSStatus()
+{
+	return m_lastFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the current frame left mouse 
+///		button press status
+///
+/// @return  currrent current frame left mouse button press status
+/// 
+bool Brood::MouseHandler::GetCurrFrameLMSStatus()
+{
+	return m_currFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the current frame right mouse 
+///		button press status
+///
+/// @return  currrent current frame right mouse button press status
+/// 
+bool Brood::MouseHandler::GetCurrFrameRMSStatus()
+{
+	return m_currFrameRightMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter function to get the last frame right mouse 
+///		button press status
+///
+/// @return  currrent last frame right mouse button press status
+/// 
+bool Brood::MouseHandler::GetlastFrameRMSStatus()
+{
+	return m_lastFrameRightMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
 /// @brief  Updates mouse button status based and saves the mouse button status 
 ///		this frame and last frame
 /// 
@@ -140,9 +215,76 @@ void Brood::MouseHandler::UpdateMouseButtonStatus()
 	{
 		m_currFrameRightMouseButtonStatus = false;
 	}
+}
 
-	std::cout << "Left-curr: " << m_currFrameLeftMouseButtonStatus << std::endl;
-	std::cout << "Left-last: " << m_lastFrameLeftMouseButtonStatus << std::endl;
-	std::cout << "Right-curr: " << m_currFrameRightMouseButtonStatus << std::endl;
-	std::cout << "Right-last: " << m_lastFrameRightMouseButtonStatus << std::endl;
+/// 
+/// @static
+/// @public
+/// @brief Check if the left mouse button is in hold state
+/// 
+/// @return  true if the left mouse button is in hold state
+/// 
+bool Brood::MouseHandler::IsLeftButtonHold()
+{
+	return m_lastFrameLeftMouseButtonStatus && m_currFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the left mouse button is pressed or not
+/// 
+/// @return  true if the left mouse button is pressed
+/// 
+bool Brood::MouseHandler::IsLeftButtonPressed()
+{
+	return !m_lastFrameLeftMouseButtonStatus && m_currFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the left mouse button is released or not
+/// 
+/// @return  true if the left mouse button is released
+/// 
+bool Brood::MouseHandler::IsLeftButtonReleased()
+{
+	return m_lastFrameLeftMouseButtonStatus && !m_currFrameLeftMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the right mouse button is in hold state
+/// 
+/// @return  true if the right mouse button is in hold state
+/// 
+bool Brood::MouseHandler::IsRightButtonHold()
+{
+	return m_lastFrameRightMouseButtonStatus && m_currFrameRightMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the right mouse button is pressed or not
+/// 
+/// @return  true if the right mouse button is pressed
+/// 
+bool Brood::MouseHandler::IsRightButtonPressed()
+{
+	return !m_lastFrameRightMouseButtonStatus && m_currFrameRightMouseButtonStatus;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Check if the right mouse button is released or not
+/// 
+/// @return  true if the rrght mouse button is released
+/// 
+bool Brood::MouseHandler::IsRightButtonReleased()
+{
+	return m_lastFrameRightMouseButtonStatus && !m_currFrameRightMouseButtonStatus;
 }

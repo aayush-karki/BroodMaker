@@ -12,7 +12,6 @@
 #include "stdafx.h"
 #include "Dice.h"
 
-
 /// 
 /// @public
 /// @brief Default Constructor
@@ -28,12 +27,8 @@
 /// 
 Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr,
 				   int a_index ) :
-	Brood::BroodUI::Button( a_parentPtr, a_index ),
-	m_numSides( a_numSides )
-{
-	m_spriteLength = 0.0;
-	m_texturePath = "";
-}
+	Brood::Dice::Dice( "", 0.0, a_numSides, a_parentPtr, a_index ) 
+{}
 
 /// 
 /// @public

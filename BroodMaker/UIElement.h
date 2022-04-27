@@ -21,10 +21,6 @@
 /// It contains all of the declaration of the member 
 ///		funciton of UIElement class, ST_UIELementCtorParam struct, and 
 ///		ST_MapIdToElement struct.
-/// 
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of UIElement class, ST_UIELementCtorParam 
-///		struct, and ST_MapIdToElement struct
 ///
 /************************************************************************/
 
@@ -103,19 +99,19 @@ public:
 	const sf::Vector2f GetBodyPosition() const;
 	const sf::Vector2f GetBodySize() const;
 	Brood::BroodUI::Id* GetElementIdPtr();
-	const sf::Color GetInactiveOverlayColor();
 	const sf::Color GetActiveOverlayColor();
 	const sf::Color GetHotOverlayColor();
 
 	// setter functions
-	void SetBodySize( sf::Vector2f  a_size );
-	void SetBodySize( float a_sizeX, float a_sizeY );
 	void SetBodyColor( sf::Color a_bodyColor );
+	virtual  void SetBodySize( sf::Vector2f  a_size );
+	virtual void SetBodySize( float a_sizeX, float a_sizeY );
+	virtual void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false );
+	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
+	
 	void SetActiveOverlayColor( sf::Color a_color );
 	void SetHotOverlayColor( sf::Color a_color );
 	void SetDrawOverlay( bool a_drawOverlay = false );
-	virtual void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false );
-	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
 
 	// funciton to check if the
 	bool IsMouseOverElement();
@@ -180,232 +176,3 @@ public:
 private:
 	static std::map<const int, Brood::BroodUI::UIElement*> stm_mapper;
 };
-
-/**************************************************************************************/
-/**************************************************************************************/
-/**************************************************************************************/
-/**						UIElement's member function declarations					  */
-/**************************************************************************************/
-/**************************************************************************************/
-/**************************************************************************************/
-/**************************************************************************************/
-
-/// 
-/// @public
-/// @brief Getter function to reference to the element
-/// 
-/// @return constant reference to the element
-/// 
-inline const sf::RectangleShape& Brood::BroodUI::UIElement::GetBody() const
-{
-	return m_body;
-}
-
-/// 
-/// @public
-/// @brief Getter function to get the positon
-/// 
-/// @return postion of the element
-///
-inline const sf::Vector2f Brood::BroodUI::UIElement::GetBodyPosition() const
-{
-	return m_body.getPosition();
-}
-
-/// 
-/// @public
-/// @brief Getter function to get the size of element
-/// 
-/// @return size of the body
-///
-inline const sf::Vector2f Brood::BroodUI::UIElement::GetBodySize() const
-{
-	return m_body.getSize();
-}
-
-/// @brief 
-/// @return 
-inline Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
-{
-	return &m_elementId;
-}
-
-/// 
-/// @public
-/// @brief Getter function to get the element's active color
-/// 
-/// @reutrn color of the body when it is active; sf::color
-///
-inline const sf::Color Brood::BroodUI::UIElement::GetActiveOverlayColor()
-{
-	return m_activeOverlayColor;
-}
-
-/// 
-/// @public
-/// @brief Getter function to get the element's hot color
-/// 
-/// @reutrn color of the body when it is hot; sf::color
-///
-inline const sf::Color Brood::BroodUI::UIElement::GetHotOverlayColor()
-{
-	return m_hotOverlayColor;
-}
-
-/// 
-/// @virtual
-/// @public
-/// @overload
-/// @brief Setter function to set the element's Position
-/// 
-/// @param a_posX x-position of the element
-/// @param a_posY y-position of the element
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-/// 
-inline void Brood::BroodUI::UIElement::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
-{
-	Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
-}
-
-/// 
-/// @public
-/// @brief Setter function to set the element's Size
-/// 
-/// @param a_size size of the element
-/// 
-inline void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
-{
-	m_body.setSize( a_size );
-	m_bodyOverLay.setSize( a_size ); // overlay rectangle
-}
-
-/// 
-/// @public
-/// @overload
-/// @brief Setter function to set the element's Size
-/// 
-/// @param a_sizeX length of the element
-/// @param a_sizeY width of the element
-/// 
-inline void Brood::BroodUI::UIElement::SetBodySize( float a_sizeX, float a_sizeY )
-{
-	m_body.setSize( sf::Vector2f( a_sizeX, a_sizeY ) );
-	m_bodyOverLay.setSize( sf::Vector2f( a_sizeX, a_sizeY ) );
-}
-
-/// 
-/// @public
-/// @brief Setter function to set the element body color
-/// 
-/// @param a_bodyColor color of the body; sf::color
-///
-inline void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
-{
-	m_body.setFillColor( a_bodyColor );
-}
-
-/// 
-/// @public
-/// @brief Setter function to set the element's active color
-/// 
-/// @param a_color color of the body when it is active; sf::color
-///
-inline void Brood::BroodUI::UIElement::SetActiveOverlayColor( sf::Color a_color )
-{
-	m_activeOverlayColor = a_color;
-}
-
-/// 
-/// @public
-/// @brief Setter function to set the element's hot color
-/// 
-/// @param a_color color of the body when it is hot; sf::color
-///
-inline void Brood::BroodUI::UIElement::SetHotOverlayColor( sf::Color a_color )
-{
-	m_hotOverlayColor = a_color;
-}
-
-/// 
-/// @public
-/// @brief Setter function to set if the overlay is to be drawn or not
-/// 
-/// @param a_drawOverlay true if the overlay is to be drawn
-//
-inline void Brood::BroodUI::UIElement::SetDrawOverlay( bool a_drawOverlay )
-{
-	m_drawOverlay = a_drawOverlay;
-}
-
-
-///
-/// @public
-/// @brief Checks if the element is the active element or not
-/// 
-/// @return true if it is the active element; else false
-/// 
-inline bool Brood::BroodUI::UIElement::IsActiveElement()
-{
-	if( ( Brood::BroodUI::ElementSelection::GetActiveElement() )->GetElementID() == m_elementId.GetElementID() )
-	{
-		return true;
-	}
-	return false;
-}
-
-///
-/// @public
-/// @brief Checks if the element is the hot element or not
-/// 
-/// @return true if it is the hot element; else false
-/// 
-inline bool Brood::BroodUI::UIElement::IsHotElement()
-{
-	if( ElementSelection::GetHotElement()->GetElementID() == m_elementId.GetElementID() )
-	{
-		return true;
-	}
-	return false;
-}
-
-///
-/// @virtual
-/// @public
-/// @brief Draws the body to the render window
-/// 
-/// @param a_window reference to the render window
-/// 
-inline void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
-{
-	a_window.draw( m_body );
-
-	// draw the over lay only if the overlay is turned on
-	if( m_drawOverlay )
-	{
-		a_window.draw( m_bodyOverLay );
-	}
-}
-
-/**************************************************************************************/
-/**************************************************************************************/
-/**************************************************************************************/
-/**					ST_MapIdToElement's member function declarations				  */
-/**************************************************************************************/
-/**************************************************************************************/
-/**************************************************************************************/
-/**************************************************************************************/
-
-/// 
-/// @static
-/// @public
-/// @brief Getter Funciton
-/// 
-/// gets the map
-/// 
-/// @return reference to the map
-/// 
-inline std::map<const int, Brood::BroodUI::UIElement*>& Brood::BroodUI::ST_MapIdToElement::GetMap()
-{
-	return stm_mapper;
-}

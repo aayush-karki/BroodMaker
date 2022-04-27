@@ -43,6 +43,9 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr, a_index ),
 	m_elementType( a_elementType )
 {
+	// adding the elementID to map
+	Brood::BroodUI::ST_MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
+
 	m_hotOverlayColor = sf::Color( 10, 71, 100, 50 ); // light white overlay
 	m_activeOverlayColor = sf::Color( 10, 71, 100, 150 ); // darker white overlay
 	m_drawOverlay = false;
@@ -54,13 +57,124 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 /// @brief virtual destructor 
 Brood::BroodUI::UIElement::~UIElement()
 {
-	// delete the this element from its parents child index array
+	Brood::BroodUI::UIElement* elementParentPtr = nullptr;
+
 	// check if parent exist
-	if( m_elementId.GetParentID() != -1 )
+	if( m_elementId.HasParent() )
 	{
-		auto elementParentPtr = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
-		elementParentPtr->GetElementIdPtr()->DeleteChildIdAtIdx( m_elementId.GetIdIndex() );
+		// delete the this element from its parents child index array
+		elementParentPtr = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
+	    elementParentPtr->GetElementIdPtr()->DeleteChildIdAtIdx( m_elementId.GetIdIndex() );
 	}
+
+	if( m_elementId.HasChild() )
+	{
+		// assigning the child to parent
+		for( unsigned i = 0; i < m_elementId.GetTotalChildNum(); ++i )
+		{
+			auto childId = m_elementId.GetChildIdAtIdx( i );
+			int childNewIndex = elementParentPtr->GetElementIdPtr()->AddChild( childId );
+			childId->SetParent( elementParentPtr->GetElementIdPtr(), childNewIndex );
+		}
+	}
+}
+
+/// 
+/// @public
+/// @brief Getter function to reference to the element
+/// 
+/// @return constant reference to the element
+/// 
+const sf::RectangleShape& Brood::BroodUI::UIElement::GetBody() const
+{
+	return m_body;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the positon
+/// 
+/// @return postion of the element
+///
+const sf::Vector2f Brood::BroodUI::UIElement::GetBodyPosition() const
+{
+	return m_body.getPosition();
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the size of element
+/// 
+/// @return size of the body
+///
+const sf::Vector2f Brood::BroodUI::UIElement::GetBodySize() const
+{
+	return m_body.getSize();
+}
+
+/// @brief 
+/// @return 
+Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
+{
+	return &m_elementId;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the element's active color
+/// 
+/// @reutrn color of the body when it is active; sf::color
+///
+const sf::Color Brood::BroodUI::UIElement::GetActiveOverlayColor()
+{
+	return m_activeOverlayColor;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the element's hot color
+/// 
+/// @reutrn color of the body when it is hot; sf::color
+///
+const sf::Color Brood::BroodUI::UIElement::GetHotOverlayColor()
+{
+	return m_hotOverlayColor;
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element body color
+/// 
+/// @param a_bodyColor color of the body; sf::color
+///
+void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
+{
+	m_body.setFillColor( a_bodyColor );
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's Size
+/// 
+/// @param a_size size of the element
+/// 
+void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
+{
+	m_body.setSize( a_size );
+	m_bodyOverLay.setSize( a_size ); // overlay rectangle
+}
+
+/// 
+/// @public
+/// @overload
+/// @brief Setter function to set the element's Size
+/// 
+/// @param a_sizeX length of the element
+/// @param a_sizeY width of the element
+/// 
+void Brood::BroodUI::UIElement::SetBodySize( float a_sizeX, float a_sizeY )
+{
+	Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ));
 }
 
 /// 
@@ -88,6 +202,55 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 }
 
 /// 
+/// @virtual
+/// @public
+/// @overload
+/// @brief Setter function to set the element's Position
+/// 
+/// @param a_posX x-position of the element
+/// @param a_posY y-position of the element
+/// @param a_relativeToParent is true if the passed position is relative to its parent;
+///			default -> false.
+/// 
+void Brood::BroodUI::UIElement::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
+{
+	Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's active color
+/// 
+/// @param a_color color of the body when it is active; sf::color
+///
+void Brood::BroodUI::UIElement::SetActiveOverlayColor( sf::Color a_color )
+{
+	m_activeOverlayColor = a_color;
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's hot color
+/// 
+/// @param a_color color of the body when it is hot; sf::color
+///
+void Brood::BroodUI::UIElement::SetHotOverlayColor( sf::Color a_color )
+{
+	m_hotOverlayColor = a_color;
+}
+
+/// 
+/// @public
+/// @brief Setter function to set if the overlay is to be drawn or not
+/// 
+/// @param a_drawOverlay true if the overlay is to be drawn
+//
+void Brood::BroodUI::UIElement::SetDrawOverlay( bool a_drawOverlay )
+{
+	m_drawOverlay = a_drawOverlay;
+}
+
+/// 
 /// @public
 /// @brief Check if the mouse is hovering over the element
 /// 
@@ -107,6 +270,36 @@ bool Brood::BroodUI::UIElement::IsMouseOverElement()
 		return true; // the mouse pointer is inside the element
 	}
 
+	return false;
+}
+
+///
+/// @public
+/// @brief Checks if the element is the active element or not
+/// 
+/// @return true if it is the active element; else false
+/// 
+bool Brood::BroodUI::UIElement::IsActiveElement()
+{
+	if( ( Brood::BroodUI::ElementSelection::GetActiveElement() )->GetElementID() == m_elementId.GetElementID() )
+	{
+		return true;
+	}
+	return false;
+}
+
+///
+/// @public
+/// @brief Checks if the element is the hot element or not
+/// 
+/// @return true if it is the hot element; else false
+/// 
+bool Brood::BroodUI::UIElement::IsHotElement()
+{
+	if( ElementSelection::GetHotElement()->GetElementID() == m_elementId.GetElementID() )
+	{
+		return true;
+	}
 	return false;
 }
 
@@ -187,6 +380,24 @@ bool Brood::BroodUI::UIElement::DoElement()
 	return result;
 }
 
+///
+/// @virtual
+/// @public
+/// @brief Draws the body to the render window
+/// 
+/// @param a_window reference to the render window
+/// 
+void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
+{
+	std::cout << GetElementIdPtr()->GetElementID() << ": " << m_drawOverlay << std::endl;
+	a_window.draw( m_body );
+
+	// draw the over lay only if the overlay is turned on
+	if( m_drawOverlay )
+	{
+		a_window.draw( m_bodyOverLay );
+	}
+}
 
 /**************************************************************************************/
 /**************************************************************************************/
@@ -263,4 +474,18 @@ bool Brood::BroodUI::ST_MapIdToElement::ReomveFromMap( int a_id )
 	}
 
 	return true;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Getter Funciton
+/// 
+/// gets the map
+/// 
+/// @return reference to the map
+/// 
+std::map<const int, Brood::BroodUI::UIElement*>& Brood::BroodUI::ST_MapIdToElement::GetMap()
+{
+	return stm_mapper;
 }

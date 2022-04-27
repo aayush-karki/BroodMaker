@@ -5,7 +5,6 @@
 #include "Player.h"
 #include "Card.h"
 #include "MouseHandler.h"
-#include "Button.h"
 #include "TextBox.h"
 
 #include "struct_path.h"
@@ -59,10 +58,9 @@ int main()
 	Brood::BroodUI::Button myButton;
 	myButton.SetBodySize( 100, 50 );
 	myButton.SetBodyPosition( 200, 0 );
-	myButton.SetFont( font );
-	myButton.SetBodyColor( sf::Color::Red );
-
-	myButton.SetText( "-----" );
+	myButton.GetTextBoxPtr()->SetFont( font );
+	myButton.GetTextBoxPtr()->SetBodyColor( sf::Color::Red );
+	myButton.GetTextBoxPtr()->SetText( "-----" );
 
 	Brood::BroodUI::TextBox myTextBox;
 	myTextBox.SetBodySize( 100, 50 );
@@ -124,7 +122,6 @@ int main()
 		if( myTextBox.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
 		{
 			myTextBox.SetSelected( true );
-
 		}
 		else
 		{

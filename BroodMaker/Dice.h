@@ -6,14 +6,11 @@
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of Dice class.
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of Dice class
 ///
 /************************************************************************/
 #pragma once
 #include "stdafx.h"
 
-#include "Struct_CtorParam.h"
 #include "Button.h"
 #include "UtilityFunctions.h"
 
@@ -78,7 +75,7 @@ public:
 	// constructor when diceParam is passed
 	Dice( Brood::St_DiceParam& a_diceParam );
 
-	~Dice();
+	virtual ~Dice();
 
 	bool SetTextureFromFilePath( std::string a_texturePath );
 	bool SetTextureFromSavedFilePath();

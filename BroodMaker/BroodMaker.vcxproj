@@ -23,6 +23,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Dice.cpp" />
+    <ClCompile Include="DropDownMenu.cpp" />
     <ClCompile Include="ElementSelection.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MouseHandler.cpp" />
@@ -43,6 +44,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Dice.h" />
+    <ClInclude Include="DropDownMenu.h" />
     <ClInclude Include="ElementSelection.h" />
     <ClInclude Include="MouseHandler.h" />
     <ClInclude Include="PathManager.h" />

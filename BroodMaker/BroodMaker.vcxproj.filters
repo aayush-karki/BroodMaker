@@ -77,6 +77,9 @@
     <ClCompile Include="ElementSelection.cpp">
       <Filter>UI\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DropDownMenu.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -126,6 +129,9 @@
       <Filter>UI\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ElementSelection.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownMenu.h">
       <Filter>UI\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

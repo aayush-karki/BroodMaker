@@ -6,8 +6,6 @@
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of TextBox class.
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of TextBox class
 ///
 /************************************************************************/
 #pragma once
@@ -47,11 +45,17 @@ private:
 public:
 	// default constructor
 	TextBox( Brood::BroodUI::UIElement* a_parentPtr = nullptr, int a_index = -1 );
-	//TextBox( int a_size = 15, sf::Color a_color = sf::Color::White, bool a_selected = false);
+	// default destructor
+	virtual ~TextBox();
 
-	// setter fucnitons 
+	std::string GetText(); // getter function to get the text
+
+	// setter fucnitons
+	virtual  void SetBodySize( sf::Vector2f  a_size ) override;
+	virtual void SetBodySize( float a_sizeX, float a_sizeY ) override;
 	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
 	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
+
 	void SetFont( sf::Font& a_font );
 	void SetFontColor( sf::Color a_color = sf::Color::White );
 	void SetFontSize( int a_charSize = 12 );
@@ -61,7 +65,6 @@ public:
 	void SetEditable( bool a_isEditable ); // sets active
 
 
-	std::string GetText(); // getter function to get the text
 	void TypeOn( sf::Event a_input ); // called every time user enters a char
 
 	// overrided funciton 
@@ -88,120 +91,3 @@ private:
 	bool m_hasLimit;
 	int m_limit;
 };
-
-/// 
-/// @public
-/// @brief Default Constructor
-///	
-/// Initializes the textBox object
-/// 
-/// It alse sets the default value of isEditable, isSelected, 
-///		and hasLimit to false.
-/// It sets the limit to -1.
-/// 
-/// @param m_parentPtr pointer to the parent element;
-///		if parent does not exist then nullptr -> default value nullptr
-/// @param a_index the nth child of the parent; 
-///		if parent does not exist then -1 -> default value -1
-/// 
-inline Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr, int a_index ) :
-	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_textBox,
-							   a_parentPtr, a_index ), 
-	m_isEditable( false ), m_isSelected( false ), m_hasLimit( false ), 
-	m_limit( -1 )
-{}
-
-/// 
-/// @virtual
-/// @public
-/// @brief Setter function to set the textbox's Position.
-/// 
-/// @param a_pos position of the element 
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-///  
-inline void Brood::BroodUI::TextBox::SetBodyPosition( sf::Vector2f a_pos, bool a_relativeToParent )
-{
-	Brood::BroodUI::UIElement::SetBodyPosition( a_pos, a_relativeToParent );
-	SetTextPosition();
-}
-
-/// 
-/// @virtual
-/// @public
-/// @overload
-/// @brief Setter function to set the textbox's Position
-/// 
-/// @param a_posX x-position of the element
-/// @param a_posY y-position of the element
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-/// 
-inline void Brood::BroodUI::TextBox::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
-{
-	Brood::BroodUI::TextBox::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
-}
-
-/// 
-/// @public
-/// @brief Draw function 
-/// @param a_window reference to render window
-/// 
-inline void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
-{
-	Brood::BroodUI::UIElement::Draw( a_window );
-	a_window.draw( m_text );
-}
-
-/// 
-/// @public
-/// @brief getter funciton to get the typed text
-/// 
-/// @return text that user typed
-/// 
-inline std::string Brood::BroodUI::TextBox::TextBox::GetText()
-{
-	return m_ossText.str();
-}
-
-/// 
-/// @public
-/// @brief setter funciton to set the font size
-/// 
-inline void Brood::BroodUI::TextBox::SetFont( sf::Font& a_font )
-{
-	m_text.setFont( a_font );
-}
-
-/// 
-/// @public
-/// @brief setter funciton to set the Font color
-/// 
-/// param a_color font color -> default sf::Color::White
-/// 
-inline void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
-{
-	m_text.setFillColor( a_color );
-}
-
-/// 
-/// @public
-/// @brief setter funciton to set the Font Color
-/// 
-/// @param a_charSize -> size of indivisual character in the text -> deafult 12
-/// 
-inline void Brood::BroodUI::TextBox::SetFontSize( int a_charSize )
-{
-	m_text.setCharacterSize( a_charSize );
-}
-
-/// 
-/// @public
-/// @brief setter function
-/// 
-/// @param a_isEditable true if text box is editable
-/// 
-inline void Brood::BroodUI::TextBox::SetEditable( bool a_isEditable )
-{
-	m_isEditable = a_isEditable;
-}
