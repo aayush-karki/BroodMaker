@@ -46,8 +46,8 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 }
 
 /// 
-/// @virtual
 /// @public
+/// @virtual
 /// @brief virtual destructor 
 Brood::BroodUI::UIElement::~UIElement()
 {
@@ -200,8 +200,8 @@ void Brood::BroodUI::UIElement::SetBodySize( float a_sizeX, float a_sizeY )
 }
 
 /// 
-/// @virtual
 /// @public
+/// @virtual
 /// @brief Setter function to set the element's Position
 /// 
 /// @param a_pos position of the element 
@@ -224,8 +224,8 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 }
 
 /// 
-/// @virtual
 /// @public
+/// @virtual
 /// @overload
 /// @brief Setter function to set the element's Position
 /// 
@@ -427,8 +427,8 @@ bool Brood::BroodUI::UIElement::DoElement()
 }
 
 ///
-/// @virtual
 /// @public
+/// @virtual
 /// @brief Draws the body to the render window
 /// 
 /// @param a_window reference to the render window

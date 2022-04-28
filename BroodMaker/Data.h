@@ -20,6 +20,13 @@
 /// @TODO add a image to  ST_TilePrefabaData, ST_DeckPrefabData,
 ///		ST_PlayerPrefabData, ST_DicePrefabData, and ST_CardPrefabData
 
+/// @TODO create a system data that 
+///		adds fonts, colors, size, screen height/length
+///		and, current game status other things that the applicaiton might use
+///		here
+///		Basically have all the static system variables here...
+///
+
 // =============================== defining namespace =======================
 namespace Brood
 {
@@ -72,6 +79,8 @@ enum class Brood::Application::ENUM_IncorrectPenalty
 ///  
 struct Brood::Application::ST_ApplicationData
 {
+	
+
 	int stm_totalTileTypes; ///> total number of tile prefabs
 	int stm_totalDeckTypes; ///> total number of deck prefabs
 	int stm_totalDiceTypes; ///> total number of dice prefabs
@@ -141,7 +150,8 @@ struct  Brood::Application::ST_TilePrefabData
 	int stm_numberCardDraw; ///> nubmer of card to draw
 	int stm_uniqueTileId; ///> unique tile prefab id
 	bool stm_forceDiceRoll; ///> if true rolls dice instead of drawing a card
-
+	Brood::Application::ENUM_MovementType stm_movementType; /// type of the movement that the player will use on this tile
+	Brood::Application::ENUM_IncorrectPenalty stm_incorectPenaltyType; /// type of the penalty that the player will get on incorrect ansert
 };
 
 /// 

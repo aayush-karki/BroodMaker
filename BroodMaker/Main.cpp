@@ -7,6 +7,7 @@
 #include "MouseHandler.h"
 
 #include "MenuBar.h"
+#include "InitialWorkSpace.h"
 
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
@@ -102,6 +103,8 @@ int main()
 	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bc" );
 	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bd" );
 
+	Brood::Application::InitialWorkSpace myInitailWorkSpace;
+
 	//app loop
 	while( !exit )
 	{
@@ -148,6 +151,8 @@ int main()
 		// updateing the mouse
 		Brood::MouseHandler::UpdateMousePos( window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
+
+		myInitailWorkSpace.Update();
 
 		myBoard.Update();
 
@@ -230,7 +235,7 @@ int main()
 		myMenu.Draw( window );
 		myDropDown.Draw( window );
 		myTextBox.Draw( window );
-
+		myInitailWorkSpace.Draw( window );
 		//window.draw(text);
 		window.display();
 	}

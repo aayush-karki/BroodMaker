@@ -104,6 +104,12 @@
     <ClCompile Include="Data.cpp">
       <Filter>src\Application\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InitialWorkSpace.cpp">
+      <Filter>src\Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkSpace.cpp">
+      <Filter>src\Application\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -148,7 +154,6 @@
     <ClInclude Include="MouseHandler.h">
       <Filter>src\Unorganized\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UtilityFunctions.h" />
     <ClInclude Include="UI_ID.h">
       <Filter>src\UI\Header Files</Filter>
     </ClInclude>
@@ -169,6 +174,15 @@
     </ClInclude>
     <ClInclude Include="Data.h">
       <Filter>src\Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitialWorkSpace.h">
+      <Filter>src\Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkSpace.h">
+      <Filter>src\Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityFunctions.h">
+      <Filter>src\Unorganized\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

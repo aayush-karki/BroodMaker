@@ -11,6 +11,7 @@
 /************************************************************************/
 #pragma once
 #include "MenuBar.h" // includes all the other uiElements
+#include "WorkSpace.h"
 
 // =============================== defining namespace =======================
 namespace Brood
@@ -29,7 +30,7 @@ namespace Brood
 /// @brief It is a container that bundels elements that is present in
 ///		BoardEditor workspace
 /// 
-class Brood::Application::BoardEditor
+class Brood::Application::BoardEditor : public Brood::Application::WorkSpace
 {
 public:
 	// default constructor

@@ -40,7 +40,6 @@ Brood::BroodUI::DropDownMenu::~DropDownMenu()
 			delete m_items.at( i );
 		}
 	}
-	
 }
 
 ///
