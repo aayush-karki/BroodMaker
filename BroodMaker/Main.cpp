@@ -57,24 +57,25 @@ int main()
 
 	Brood::BroodUI::Button myButton;
 	myButton.SetBodySize( 100, 50 );
-	myButton.SetBodyPosition( 200, 0 );
+	myButton.SetBodyPosition( 55, 0 );
 	myButton.SetFont( font );
 	myButton.SetBodyColor( sf::Color::Red );
 	myButton.SetText( "-----" );
 
 	Brood::BroodUI::TextBox myTextBox;
 	myTextBox.SetBodySize( 100, 50 );
-	myTextBox.SetBodyPosition( 350, 0 );
+	myTextBox.SetBodyPosition( 160, 0 );
 	myTextBox.SetBodyColor( sf::Color::White );
 	myTextBox.SetFont( font );
 	myTextBox.SetFontColor( sf::Color::Black );
 	myTextBox.SetText( "hello" );
 	myTextBox.SetEditable( true );
+	myTextBox.SetLimit( true, 4 );
 
 	// making a dropdownmenu
 	Brood::BroodUI::DropDownMenu myDropDown;
 	myDropDown.SetBodySize( 150, 50 );
-	myDropDown.SetBodyPosition( 500, 0 );
+	myDropDown.SetBodyPosition( 265, 0 );
 	myDropDown.SetFont( &font );
 	myDropDown.SetBodyColor( sf::Color::Green );
 	myDropDown.SetText( "MyDDM" );
@@ -85,7 +86,7 @@ int main()
 	// making a dropdownmenu
 	Brood::BroodUI::MenuBar myMenu;
 	myMenu.SetBodySize( 150, 50 );
-	myMenu.SetBodyPosition( 500, 75 );
+	myMenu.SetBodyPosition( 430, 0 );
 	myMenu.SetFont( &font );
 	myMenu.SetBodyColor( sf::Color::Magenta );
 		  
@@ -118,17 +119,13 @@ int main()
 					exit = true;
 					break;
 				}
-				case sf::Event::KeyPressed:
-				{
-					///@todo: delete me
-					if( sf::Keyboard::isKeyPressed( sf::Keyboard::Enter ) )
-					{
-						myBoard.PlayerRollAndMove();
-					}
-					break;
-				}
 				case sf::Event::TextEntered:
 				{
+					if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+					{
+						break;
+					}
+
 					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
 					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
@@ -152,7 +149,7 @@ int main()
 		Brood::MouseHandler::UpdateMousePos( window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
 
-		myInitailWorkSpace.Update();
+		//myInitailWorkSpace.Update();
 
 		myBoard.Update();
 
@@ -160,14 +157,6 @@ int main()
 		myButton.DoElement();
 
 		myTextBox.DoElement();
-		/*if( myTextBox.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
-		{
-			myTextBox.SetSelected( true );
-		}
-		else
-		{
-			myTextBox.SetSelected( false );
-		}*/
 
 		myDropDown.DoElement();
 		if( myDropDown.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
@@ -197,9 +186,6 @@ int main()
 		{
 			auto menus = myMenu.GetMenuList();
 
-			// draw its menus
-			// positining the itemes
-			// postion all items according to the new menu position
 			for( int i = 0; i < menus.size(); ++i )
 			{
 				menus.at( i )->DoElement();
@@ -214,14 +200,14 @@ int main()
 				if( menus.at( i )->IsSelected() )
 				{
 					auto itemList = menus.at( i )->GetItemList();
-					// draw its items
-					// positining the itemes
 					if( !itemList.empty() )
 					{
-						// postion all items according to the new menu position
 						for( int i = 0; i < itemList.size(); ++i )
 						{
-							itemList.at( i )->DoElement();
+							if( itemList.at( i )->DoElement() )
+							{
+								myBoard.PlayerRollAndMove();
+							}
 						}
 					}
 				}
@@ -230,12 +216,12 @@ int main()
 		// rendering 
 		window.clear();
 		myBoard.Draw( window );
-		myCard.Draw( window );
+		//myCard.Draw( window );
 		myButton.Draw( window );
 		myMenu.Draw( window );
 		myDropDown.Draw( window );
 		myTextBox.Draw( window );
-		myInitailWorkSpace.Draw( window );
+		//myInitailWorkSpace.Draw( window );
 		//window.draw(text);
 		window.display();
 	}

@@ -33,8 +33,8 @@ std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::ST_MapIdToElemen
 ///		if parent does not exist then nullptr -> default value nullptr
 /// 
 Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
-									  Brood::BroodUI::UIElement* a_parentPtr) :
-	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr),
+									  Brood::BroodUI::UIElement* a_parentPtr ) :
+	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr ),
 	m_elementType( a_elementType )
 {
 	// adding the elementID to map
@@ -69,7 +69,7 @@ Brood::BroodUI::UIElement::~UIElement()
 		{
 			auto childId = m_elementId.GetChildIdAtIdx( i );
 			elementParentPtr->GetElementIdPtr()->AddChild( childId );
-			childId->SetParent( elementParentPtr->GetElementIdPtr());
+			childId->SetParent( elementParentPtr->GetElementIdPtr() );
 		}
 	}
 
@@ -344,20 +344,24 @@ bool Brood::BroodUI::UIElement::DoElement()
 	{
 		Brood::BroodUI::ElementSelection::SetHotElement( &m_elementId );
 
+		// this if code block makes it so that the if a menu of a memubar is open
+		// then hover over its sibiling menus should expand/open the sibling menu.
+		// 
 		// if current active element's parent and hot element parent are the 
 		// same then set the hot element as the current active element
 		if( m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
 			Brood::BroodUI::ElementSelection::GetCurrActiveElement() != nullptr )
 		{
+			// getting the curr active element's elemetnId
 			const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement();
+			const int currActiveElementId = currActiveId->GetElementID();
 
-			Brood::BroodUI::ENUM_UIType currActiveElementType = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveId->GetElementID() )->m_elementType;
-			if( currActiveElementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
+			// getting the pointer to curr active element
+			Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+
+			if( currActiveElement->m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
 				GetElementIdPtr()->GetParentID() == currActiveId->GetParentID() )
 			{
-				auto parentId = GetElementIdPtr()->GetParentID();
-				auto currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetParentID();
-
 				Brood::BroodUI::ElementSelection::SetCurrActiveElement( &m_elementId );
 			}
 		}
@@ -397,7 +401,39 @@ bool Brood::BroodUI::UIElement::DoElement()
 		if( Brood::MouseHandler::IsLeftButtonPressed() )
 		{
 			Brood::BroodUI::ElementSelection::SetActiveElement( &m_elementId );
-			Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
+
+			// if the parent element of the element where a left click was made
+			// is a dropdown menu  and the parent element is the CurrActiveElement  then
+			// it should not be changed on left click as the left click was done inside the 
+			// dropdown menus area.
+			// if this is not true than different element was click so set currActiveElement to 
+			// nullptr
+
+			// getting the curr active element's elemetnId
+			const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement();
+			if( currActiveId != nullptr )
+			{
+				const int currActiveElementId = currActiveId->GetElementID();
+
+				// getting the pointer to this element's parent's elementId
+				Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+				const int parentElementID = GetElementIdPtr()->GetParentID();
+
+				if( parentElementID != -1 )
+				{
+					Brood::BroodUI::UIElement* parentElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( parentElementID );
+					if( parentElement->m_elementType != Brood::BroodUI::ENUM_UIType::UI_dropDownMenu ||
+						parentElementID != currActiveId->GetElementID() )
+					{
+						Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
+					}
+				}
+				else
+				{
+					Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
+				}
+
+			}
 		}
 	}
 

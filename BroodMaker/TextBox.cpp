@@ -9,6 +9,8 @@
 ///
 /************************************************************************/
 
+///@TODO fix the limit bug
+
 #include "stdafx.h"
 #include "TextBox.h"
 
