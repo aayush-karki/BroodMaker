@@ -82,6 +82,15 @@ Brood::BroodUI::UIElement::~UIElement()
 
 /// 
 /// @public
+/// @brief getter function to get the element type
+/// @return 
+const Brood::BroodUI::ENUM_UIType Brood::BroodUI::UIElement::GetElementType() const
+{
+	return m_elementType;
+}
+
+/// 
+/// @public
 /// @brief Getter function to reference to the element
 /// 
 /// @return constant reference to the element
@@ -126,17 +135,6 @@ const sf::Color Brood::BroodUI::UIElement::GetBodyColor()
 
 /// 
 /// @public
-/// @brief Getter function to get the pointer to the element Id
-/// 
-/// @return  pointer to the element Id
-/// 
-Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
-{
-	return &m_elementId;
-}
-
-/// 
-/// @public
 /// @brief Getter function to get the element's active color
 /// 
 /// @reutrn color of the body when it is active; sf::color
@@ -155,6 +153,17 @@ const sf::Color Brood::BroodUI::UIElement::GetActiveOverlayColor()
 const sf::Color Brood::BroodUI::UIElement::GetHotOverlayColor()
 {
 	return m_hotOverlayColor;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the pointer to the element Id
+/// 
+/// @return  pointer to the element Id
+/// 
+Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
+{
+	return &m_elementId;
 }
 
 /// 
@@ -326,7 +335,7 @@ bool Brood::BroodUI::UIElement::IsHotElement()
 /// In the process updates the element selector --that is current active and hot 
 ///		element. It also set the overlay
 /// 
-/// @return true if the elements funciton's is to be executed
+/// @return true if the element's funciton is to be executed
 /// 
 bool Brood::BroodUI::UIElement::DoElement()
 {

@@ -65,6 +65,7 @@ enum class Brood::BroodUI::ENUM_UIType
 	UI_button, ///< a button -> derived from UI_TextBox
 	UI_dropDownMenu, ///< drop down menu; has items inside it -> derived from UI_Button
 	UI_menuBar,
+	UI_panel,
 	UI_scrollBar /// @TODO add latter
 };
 
@@ -93,13 +94,14 @@ public:
 	virtual ~UIElement(); // virtual default destructor
 
 	// getter functions
+	const Brood::BroodUI::ENUM_UIType GetElementType() const;
 	const sf::RectangleShape& GetBody() const;
 	const sf::Vector2f GetBodyPosition() const;
 	const sf::Vector2f GetBodySize() const;
 	const sf::Color GetBodyColor();
-	Brood::BroodUI::Id* GetElementIdPtr();
 	const sf::Color GetActiveOverlayColor();
 	const sf::Color GetHotOverlayColor();
+	Brood::BroodUI::Id* GetElementIdPtr();
 
 	// setter functions
 	void SetBodyColor( sf::Color a_bodyColor );
@@ -121,14 +123,7 @@ public:
 	// @todo: maybe make this a virtual function as button element is one press thing
 	//		but a text editor is not 
 
-	bool DoElement();
-
-	// process mouse event
-	virtual bool ProcessMouseDown( sf::Mouse::Button a_button ) = 0; // when mouse button is pressed
-	virtual bool ProcessMouseUp( sf::Mouse::Button a_button ) = 0; // when mouse button is released
-	virtual bool OnMouseMove() = 0; // what happens to the element on mouse move
-
-	virtual bool Update() = 0; // update the element
+	virtual bool DoElement();
 	virtual void Draw( sf::RenderWindow& a_window ) = 0; // draw funciton
 
 	// ================= protected member variables =================  

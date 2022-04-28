@@ -74,10 +74,6 @@ public:
 	virtual ~Dice();
 
 	// overrided funciton 
-	virtual bool ProcessMouseDown( sf::Mouse::Button a_button ) { return false; } // when mouse button is pressed
-	virtual bool ProcessMouseUp( sf::Mouse::Button a_button ) { return false; } // when mouse button is released
-	virtual bool OnMouseMove() { return false; } // what happens to the element on mouse move
-	virtual bool Update() { return false; } // update the element
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw to screen
 	
 	unsigned RollDice(); // get a random num between 0 and m_numSides

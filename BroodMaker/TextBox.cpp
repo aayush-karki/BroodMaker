@@ -41,12 +41,29 @@ Brood::BroodUI::TextBox::~TextBox()
 /// 
 /// @return text that user typed
 /// 
-std::string Brood::BroodUI::TextBox::TextBox::GetText()
+std::string Brood::BroodUI::TextBox::GetText() const
 {
 	return m_ossText.str();
 }
 
-bool Brood::BroodUI::TextBox::IsSelected( )
+/// 
+/// @public
+/// @brief getter funciton to get its editibility
+/// 
+/// @return true if the textbox is editable
+/// 
+const bool Brood::BroodUI::TextBox::IsEditable() const
+{
+	return m_isEditable;
+}
+
+/// 
+/// @public
+/// @brief getter funciton to get if it is selected or not
+/// 
+/// @return true if it is selected; else false
+/// 
+const bool Brood::BroodUI::TextBox::IsSelected( ) const
 {
 	return m_isSelected;
 }
@@ -245,6 +262,31 @@ void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 			SetTextPosition();
 		}
 	}
+}
+
+/// 
+/// @public
+/// @brief checks if the logics of the element is to be executed or not
+/// 
+/// In the process updates the element selector --that is current active and hot 
+///		element. It also set the overlay
+/// 
+/// @return true if the element's funciton is to be executed
+/// 
+bool Brood::BroodUI::TextBox::DoElement()
+{
+	bool doElement = Brood::BroodUI::UIElement::DoElement();
+
+	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
+	{
+		SetSelected( true );
+	}
+	else
+	{
+		SetSelected( false );
+	}
+
+	return doElement;
 }
 
 /// 

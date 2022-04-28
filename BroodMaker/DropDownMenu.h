@@ -54,12 +54,7 @@ public:
 	void AddItemToMenu( std::string a_menuName, sf::Color a_color = sf::Color::White );
 
 	// overrided funciton 
-	///@todo redefine these functions 
-	virtual bool ProcessMouseDown( sf::Mouse::Button a_button ) { return false; } // when mouse button is pressed
-	virtual bool ProcessMouseUp( sf::Mouse::Button a_button ) { return false; } // when mouse button is released
-	virtual bool OnMouseMove() { return false; } // what happens to the element on mouse move
-	virtual bool Update() { return false; } // update the element
-
+	//virtual bool DoElement() override;
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
 	// ============ private member function ===============

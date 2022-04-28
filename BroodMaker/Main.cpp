@@ -5,10 +5,12 @@
 #include "Player.h"
 #include "Card.h"
 #include "MouseHandler.h"
+
 #include "MenuBar.h"
 
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
+
 
 
 int main()
@@ -27,12 +29,12 @@ int main()
 
 	// event object 
 	sf::Event events;
-	
+
 	// initializing the mouse cursor
 	Brood::MouseHandler::InitializeCursor( window );
 
 	// create a board
-	
+
 	std::string fileName = cwd;
 	fileName += "\\Assets\\DiceTexture\\dice_";
 	fileName += std::to_string( 0 + 1 );
@@ -54,7 +56,6 @@ int main()
 	}
 	Card myCard( font, 300, 300, "5+3", "8", 3, 2, 1 );
 
-
 	Brood::BroodUI::Button myButton;
 	myButton.SetBodySize( 100, 50 );
 	myButton.SetBodyPosition( 200, 0 );
@@ -67,7 +68,7 @@ int main()
 	myTextBox.SetBodyPosition( 350, 0 );
 	myTextBox.SetBodyColor( sf::Color::White );
 	myTextBox.SetFont( font );
-	myTextBox.SetFontColor ( sf::Color::Black );
+	myTextBox.SetFontColor( sf::Color::Black );
 	myTextBox.SetText( "hello" );
 	myTextBox.SetEditable( true );
 
@@ -81,23 +82,23 @@ int main()
 
 	myDropDown.AddItemToMenu( "1st item" );
 	myDropDown.AddItemToMenu( "2st item" );
-
+	
 	// making a dropdownmenu
 	Brood::BroodUI::MenuBar myMenu;
 	myMenu.SetBodySize( 150, 50 );
 	myMenu.SetBodyPosition( 500, 75 );
 	myMenu.SetFont( &font );
 	myMenu.SetBodyColor( sf::Color::Magenta );
-
+		  
 	myMenu.AddMenuToMenuBar( "a" );
 	myMenu.AddMenuToMenuBar( "b" );
 	myMenu.AddMenuToMenuBar( "c" );
-
+		  
 	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "aa" );
 	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ab" );
 	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ac" );
 	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ad" );
-
+		  
 	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "ba" );
 	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bb" );
 	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bc" );
@@ -127,36 +128,43 @@ int main()
 				}
 				case sf::Event::TextEntered:
 				{
-					///@todo: delete me
-					myTextBox.TypeOn( events );
+					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
+					{
+						// checking if it is editable or not
+						Brood::BroodUI::TextBox* currActiveTextBox = ( Brood::BroodUI::TextBox* )currActiveElement;
+						if(  currActiveTextBox->IsEditable() )
+						{
+							// if yes then sent the textEntered event to the element
+							currActiveTextBox->TypeOn(events);
+						}
+					}
 					break;
 				}
-				/*case sf::Event::MouseMoved:
-				{
-					Brood::MouseHandler::UpdateMousePos( window );
-					break;
-				}*/
 			}
 		}
 
 		// ========================== logics ================================
-		
+
 		// updateing the mouse
 		Brood::MouseHandler::UpdateMousePos( window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
 
 		myBoard.Update();
+
+
 		myButton.DoElement();
-		
+
 		myTextBox.DoElement();
-		if( myTextBox.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
+		/*if( myTextBox.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
 		{
 			myTextBox.SetSelected( true );
 		}
 		else
 		{
 			myTextBox.SetSelected( false );
-		}
+		}*/
 
 		myDropDown.DoElement();
 		if( myDropDown.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
@@ -191,7 +199,7 @@ int main()
 			// postion all items according to the new menu position
 			for( int i = 0; i < menus.size(); ++i )
 			{
-				menus.at(i)->DoElement();
+				menus.at( i )->DoElement();
 				if( menus.at( i )->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
 				{
 					menus.at( i )->SetSelected( true );
@@ -221,9 +229,10 @@ int main()
 		myBoard.Draw( window );
 		myCard.Draw( window );
 		myButton.Draw( window );
-		myTextBox.Draw( window );
+		myMenu.Draw( window );
 		myDropDown.Draw( window );
-		myMenu.Draw(window);
+		myTextBox.Draw( window );
+
 		//window.draw(text);
 		window.display();
 	}

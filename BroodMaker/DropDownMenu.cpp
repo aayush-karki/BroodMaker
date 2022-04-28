@@ -207,6 +207,20 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	// adding the dropdown as parent of the item
 	item->GetElementIdPtr()->SetParent( GetElementIdPtr());
 }
+//
+///// 
+///// @public
+///// @brief checks if the logics of the element is to be executed or not
+///// 
+///// In the process updates the element selector --that is current active and hot 
+/////		element. It also set the overlay
+///// 
+///// @return true if the element's funciton is to be executed
+///// 
+//bool Brood::BroodUI::DropDownMenu::DoElement()
+//{
+//	return false;
+//}
 
 /// 
 /// @public

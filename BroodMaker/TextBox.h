@@ -50,8 +50,9 @@ public:
 	virtual ~TextBox();
 
 	// getter funcitons
-	std::string GetText(); 
-	bool IsSelected();
+	std::string GetText() const; 
+	const bool IsEditable() const;
+	const bool IsSelected() const;
 
 	// setter fucnitons
 	virtual  void SetBodySize( sf::Vector2f  a_size ) override;
@@ -70,13 +71,7 @@ public:
 
 	void TypeOn( sf::Event a_input ); // called every time user enters a char
 
-	// overrided funciton 
-	///@todo redefine these functions 
-	virtual bool ProcessMouseDown( sf::Mouse::Button a_button ) { return false; } // when mouse button is pressed
-	virtual bool ProcessMouseUp( sf::Mouse::Button a_button ) { return false; } // when mouse button is released
-	virtual bool OnMouseMove() { return false; } // what happens to the element on mouse move
-	virtual bool Update() { return false; } // update the element
-
+	virtual bool DoElement() override;
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
 	// ============ private member function =============== 

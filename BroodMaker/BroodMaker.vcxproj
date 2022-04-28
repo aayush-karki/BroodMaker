@@ -28,7 +28,6 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuBar.cpp" />
     <ClCompile Include="MouseHandler.cpp" />
-    <ClCompile Include="Panel.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerManager.cpp" />
@@ -50,7 +49,6 @@
     <ClInclude Include="ElementSelection.h" />
     <ClInclude Include="MenuBar.h" />
     <ClInclude Include="MouseHandler.h" />
-    <ClInclude Include="Panel.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="Struct_CtorParam.h" />
