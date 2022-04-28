@@ -11,7 +11,6 @@
 /************************************************************************/
 
 #pragma once
-
 #include "UIElement.h"
 #include "TextBox.h"
 #include "MouseHandler.h"

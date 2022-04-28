@@ -21,7 +21,6 @@
 /// 
 unsigned Brood::BroodUI::Id::GLOBAL_ID_NUM = 0; // staring id
 
-
 /// 
 /// @public
 /// @brief default constructor

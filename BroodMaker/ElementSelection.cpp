@@ -18,8 +18,6 @@ Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_activeElementPtr = nullp
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementPtr = nullptr;
 
-
-
 /// 
 /// @static
 /// @public

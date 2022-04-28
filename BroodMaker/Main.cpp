@@ -11,8 +11,6 @@
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
 
-
-
 int main()
 {
 	// initializing the randon seed

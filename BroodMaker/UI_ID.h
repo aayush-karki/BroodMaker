@@ -7,8 +7,6 @@
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of Id class.
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of Id class
 ///
 /************************************************************************/
 

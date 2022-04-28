@@ -8,9 +8,10 @@
 ///		funciton of DropDownMenu class.
 ///
 /************************************************************************/
-#pragma once
 
+#pragma once
 #include "Button.h"
+
 // =============================== defining namespace =======================
 namespace Brood
 {

@@ -19,9 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="BoardEditor.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Card.cpp" />
+    <ClCompile Include="Data.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DropDownMenu.cpp" />
     <ClCompile Include="ElementSelection.cpp" />
@@ -41,9 +44,12 @@
     <ClCompile Include="UtilityFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BoardEditor.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="Data.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="DropDownMenu.h" />
     <ClInclude Include="ElementSelection.h" />

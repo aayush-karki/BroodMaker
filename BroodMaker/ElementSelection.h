@@ -8,13 +8,10 @@
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of ElementSelection class.
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of ElementSelection class
 ///
 /************************************************************************/
 
 #pragma once
-
 #include "UI_ID.h"
 
 // =============================== defining namespace =======================
@@ -28,11 +25,11 @@ namespace Brood
 }
 // =============================== end of namespace  defination =======================
 
-		///
-		/// @ingroup BroodUI 
-		/// @ static
-		/// @brief stores what element the is selected and what could be selected
-		///
+///
+/// @ingroup BroodUI 
+/// @ static
+/// @brief stores what element the is selected and what could be selected
+///
 class Brood::BroodUI::ElementSelection
 {
 	// ================= public member function =================  
@@ -53,5 +50,4 @@ private:
 	static Brood::BroodUI::Id* m_activeElementPtr; ///> stores the ptr element id when the mouse is pressing on it
 	static Brood::BroodUI::Id* m_currActiveElementPtr; ///> stores the ptr to element id which should be selected even 
 													   ///> after the the LMB is released and utill new element is selected
-													   
 };

@@ -9,9 +9,10 @@
 ///		funciton of MenuBar class.
 ///
 /************************************************************************/
-#pragma once
 
+#pragma once
 #include "DropDownMenu.h"
+
 // =============================== defining namespace =======================
 namespace Brood
 {

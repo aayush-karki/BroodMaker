@@ -2,14 +2,14 @@
 /// 
 /// @file TextBox.h 
 /// 
-/// @brief  This file is a header file for TextBox class.
+/// @brief This file is a header file for TextBox class.
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of TextBox class.
 ///
 /************************************************************************/
-#pragma once
 
+#pragma once
 #include "UIElement.h"
 
 // =============================== defining namespace =======================
