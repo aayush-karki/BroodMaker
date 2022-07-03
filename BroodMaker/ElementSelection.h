@@ -38,11 +38,13 @@ public:
 	static void SetActiveElement( Brood::BroodUI::Id* a_idPtr );
 	static void SetHotElement( Brood::BroodUI::Id* a_idPtr );
 	static void SetCurrActiveElement( Brood::BroodUI::Id* a_idPtr );
+	static void SetHotElementFlag(bool a_found );
 
 	// getter function 
 	static const Brood::BroodUI::Id* GetHotElement();
 	static const Brood::BroodUI::Id* GetActiveElement();
 	static const Brood::BroodUI::Id* GetCurrActiveElement();
+	static const bool GetHotElementFlag();
 
 	// ================= private member variables =================  
 private:
@@ -50,4 +52,5 @@ private:
 	static Brood::BroodUI::Id* m_activeElementPtr; ///> stores the ptr element id when the mouse is pressing on it
 	static Brood::BroodUI::Id* m_currActiveElementPtr; ///> stores the ptr to element id which should be selected even 
 													   ///> after the the LMB is released and utill new element is selected
+	static bool m_hotElementFlag; ///> is set to true as soon as hot element is found for a given frame
 };

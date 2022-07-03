@@ -342,7 +342,19 @@ bool Brood::BroodUI::UIElement::DoElement()
 	// update the element selector
 	if( IsMouseOverElement() )
 	{
-		Brood::BroodUI::ElementSelection::SetHotElement( &m_elementId );
+		// checking if for this frame the hot element is already found.
+		// we need to check this so that if 2 elements overlap with eachother 
+		// then we need to prevent the element below from being hot element.
+		// we can do this safely as we know that the do element is called form
+		// top to bottom, and only moves to next element once its child element 
+		// are dealt with. This is specifically the case for the drop downs
+		if( !Brood::BroodUI::ElementSelection::GetHotElementFlag() )
+		{
+			// setting the hot element as no other element was set as one before
+			Brood::BroodUI::ElementSelection::SetHotElement( &m_elementId );
+			// setting the hot element flag as true
+			Brood::BroodUI::ElementSelection::SetHotElementFlag( true );
+		}
 
 		// this if code block makes it so that the if a menu of a memubar is open
 		// then hover over its sibiling menus should expand/open the sibling menu.

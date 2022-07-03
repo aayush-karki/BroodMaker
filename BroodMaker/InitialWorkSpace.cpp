@@ -34,7 +34,6 @@ Brood::Application::InitialWorkSpace::InitialWorkSpace():
 	
 	/// @TODO Delete Me 
 	m_gameInfoFilePathList.push_back( "Add Game" );
-	m_gameInfoFilePathList.push_back( "Create Game" );
 	m_gameInfoFilePathList.push_back( "Exit" );
 
 	InitializeWorkSpace();
@@ -228,6 +227,7 @@ void Brood::Application::InitialWorkSpace::Update()
 		else if( m_cancle->DoElement() )
 		{
 			m_showEnterFilenameDialogBox = false;
+			// also clean the text box
 		}
 	}
 	else if( m_toggleGameInfoLeft->DoElement() )
@@ -258,6 +258,10 @@ void Brood::Application::InitialWorkSpace::Update()
 		if( m_currGameInfoIdx == 0 )
 		{
 			m_showImportDialogBox = true;
+		}
+		else if( m_currGameInfoIdx == m_gameInfoFilePathList.size() - 1 )
+		{
+			// exit out 
 		}
 	}
 	

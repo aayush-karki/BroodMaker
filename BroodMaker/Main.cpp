@@ -145,16 +145,20 @@ int main()
 
 		// ========================== logics ================================
 
+		// at the start of a frame
+		// clearing the hotelement flag
+		Brood::BroodUI::ElementSelection::SetHotElementFlag( false );
 		// updateing the mouse
 		Brood::MouseHandler::UpdateMousePos( window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
 
-		//myInitailWorkSpace.Update();
+		// myBoard.Update();
 
-		myBoard.Update();
+		 if( myButton.DoElement() )
+		 {
+			 myBoard.PlayerRollAndMove();
+		 }
 
-
-		myButton.DoElement();
 
 		myTextBox.DoElement();
 
@@ -213,15 +217,21 @@ int main()
 				}
 			}
 		}
+		
+		myInitailWorkSpace.Update();
+		
 		// rendering 
 		window.clear();
-		myBoard.Draw( window );
+		myInitailWorkSpace.Draw( window );
+		
+		//myBoard.Draw( window );
 		//myCard.Draw( window );
+		
+		// menus
 		myButton.Draw( window );
 		myMenu.Draw( window );
 		myDropDown.Draw( window );
 		myTextBox.Draw( window );
-		//myInitailWorkSpace.Draw( window );
 		//window.draw(text);
 		window.display();
 	}

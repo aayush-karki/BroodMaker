@@ -17,6 +17,7 @@
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_activeElementPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementPtr = nullptr;
+bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
 
 /// 
 /// @static
@@ -61,6 +62,21 @@ void Brood::BroodUI::ElementSelection::SetCurrActiveElement( Brood::BroodUI::Id*
 }
 
 /// 
+/// @static
+/// @public
+/// @brief Setter function.
+/// 
+/// Flags if the hot element is found for a given frame. It is set only once
+///		for a given frame.
+/// 
+/// @param a_found true if a hot element is set in a given 
+/// 
+void Brood::BroodUI::ElementSelection::SetHotElementFlag( bool a_found )
+{
+	m_hotElementFlag = a_found;
+}
+
+/// 
 /// @static 
 /// @public
 /// @brief Getter function;
@@ -100,4 +116,19 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetActiveElement()
 const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetCurrActiveElement()
 {
 	return m_currActiveElementPtr;
+}
+
+
+/// 
+/// @static 
+/// @public
+/// @brief Getter function;
+/// 
+/// Gets the state of the m_hotElementFlag
+/// 
+/// @return state of the m_hotElementFlag
+/// 
+const bool Brood::BroodUI::ElementSelection::GetHotElementFlag()
+{
+	return m_hotElementFlag;
 }
