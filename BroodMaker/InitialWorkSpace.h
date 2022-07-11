@@ -38,6 +38,7 @@ namespace Brood
 /// 
 class Brood::Application::InitialWorkSpace : public Brood::Application::WorkSpace
 {
+	// ================= public member variables =================  
 public:
 	// default constructor
 	InitialWorkSpace();
