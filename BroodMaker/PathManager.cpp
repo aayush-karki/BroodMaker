@@ -32,7 +32,7 @@ PathManager::PathManager( unsigned a_numRows, unsigned a_numCols )
 	int currRow = 0;
 	int currCol = 0;
 	bool dirRight = true;
-	std::cout << a_numCols << std::endl;
+	std::cerr << a_numCols << std::endl;
 
 	for( ; currRow < a_numRows; ++currRow )
 	{
@@ -55,7 +55,7 @@ PathManager::PathManager( unsigned a_numRows, unsigned a_numCols )
 				m_paths.push_back( tempPath );
 				/// @todo delete me
 				st_path* temp = m_paths.back();
-				std::cout << temp->stm_rowNum << " " << temp->stm_colNum << std::endl;
+				std::cerr << temp->stm_rowNum << " " << temp->stm_colNum << std::endl;
 			}
 		}
 		else
@@ -65,7 +65,7 @@ PathManager::PathManager( unsigned a_numRows, unsigned a_numCols )
 				st_path* tempPath = new st_path( currRow, currCol );
 				m_paths.push_back( tempPath );
 				/// @todo delete me
-				std::cout << m_paths.back()->stm_rowNum << " " << m_paths.back()->stm_colNum << std::endl;
+				std::cerr << m_paths.back()->stm_rowNum << " " << m_paths.back()->stm_colNum << std::endl;
 
 			}
 		}

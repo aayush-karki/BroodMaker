@@ -1,12 +1,12 @@
 var class_brood_1_1_mouse_handler =
 [
     [ "ENUM_MouseCursorType", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14ac", [
-      [ "m_arrow", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca0743c677bf68cf900018af3a0ab7fbcd", null ],
-      [ "m_wait", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca7cce3de3fbad2bccf9a6d74ba3ee17de", null ],
-      [ "m_text", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca9298a416a2f11bf37d2baa740aeec2ac", null ],
-      [ "m_hand", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca869c8c6cc86d03690b4025f3278e018f", null ],
-      [ "m_sizeHorizontal", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14acaaa9e283668c3bacb991e1a8cc86c669e", null ],
-      [ "m_help", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14acafd34bc64aeada9abee3d5987038db5b0", null ],
-      [ "m_notAllowed", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca1b42b28dd86a6176d3c20eaf8b10c9f6", null ]
+      [ "CURSOR_arrow", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca787a08bbf7eef142aa44df018f402ce1", null ],
+      [ "CURSOR_wait", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca2d3994c8f39a05730a4980ed8078f66a", null ],
+      [ "CURSOR_text", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca8ddfc544551ada11bd0bcc63118ae8b1", null ],
+      [ "CURSOR_hand", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca78a166611b09594b33cec58782bbfc06", null ],
+      [ "CURSOR_sizeHorizontal", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca007c89b46dd4828ca2d31809ea62e944", null ],
+      [ "CURSOR_help", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14acaae93337b535f173294fec37b6045e7ed", null ],
+      [ "CURSOR_notAllowed", "class_brood_1_1_mouse_handler.html#a4d67d26476d7da71b5fac2ea08fc14aca3ecd63db796cb3ba0b73c661c45b3276", null ]
     ] ]
 ];

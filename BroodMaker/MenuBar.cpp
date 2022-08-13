@@ -22,8 +22,8 @@
 ///		if parent does not exist then nullptr -> default value nullptr
 /// 
 Brood::BroodUI::MenuBar::MenuBar( Brood::BroodUI::UIElement* a_parentPtr ) :
-	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_menuBar, a_parentPtr),
-	m_font( nullptr )
+	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_menuBar, a_parentPtr ),
+	m_font( nullptr ), m_fontSize (0)
 {}
 
 ///
@@ -40,6 +40,9 @@ Brood::BroodUI::MenuBar::~MenuBar()
 			delete m_menus.at( i );
 		}
 	}
+
+	// deleting the font
+	delete m_font;
 }
 
 ///
@@ -55,68 +58,60 @@ std::vector<Brood::BroodUI::DropDownMenu*>& Brood::BroodUI::MenuBar::GetMenuList
 
 /// 
 /// @public
-/// @brief Setter function to set the size of each menu in the menubar
+/// @overload
+/// @brief Setter function to set the size MenuBar
 /// 
-/// @param a_eachMenuSize length and height of menu item in the menubar -> sf::vector2f
+/// @warning The menu height cannot be smaller than font size + 2 px.
 /// 
-void Brood::BroodUI::MenuBar::SetEachMenuSize( sf::Vector2f a_eachMenuSize )
+/// @param a_size length and height the menubar -> sf::vector2f
+/// 
+void Brood::BroodUI::MenuBar::SetBodySize( sf::Vector2f a_size )
 {
-	m_eachMenuSize = a_eachMenuSize;
+	//checking if the new height for the bar body is smaller than the charsize
+	if( a_size.y < m_fontSize + 2 )
+	{
+		std::cerr << "Menu bar height needs to be 2 pixel bigger than charSize" << std::endl;
+		return;
+	}
+	else if( a_size.y < m_fontSize )
+	{
+		std::cerr << "Menu bar height cannot be smaller than Character Size cannot" << std::endl;
+		return;
+	}
 
-	Brood::BroodUI::UIElement::SetBodySize( a_eachMenuSize );
+	// setting the bar body size
+	Brood::BroodUI::UIElement::SetBodySize( a_size );
 
-	// resizing the itemes
+	// setting the height of the each of the menu item if present
 	if( !m_menus.empty() )
 	{
-		// resizing and postioning all items according 
-		// to the new menu size
 		for( int i = 0; i < m_menus.size(); ++i )
 		{
-			m_menus.at( i )->SetBodySize( a_eachMenuSize );
-			SetMenuPos( i );
+			float itemSizeX = m_menus.at( i )->GetBodySize().x;
+			float itemSizeY = GetBodySize().y;
+
+			m_menus.at( i )->SetBodySize( itemSizeX, itemSizeY );
 		}
 	}
 }
 
 /// 
 /// @public
-/// @brief Setter function to set the size of each menu in the menubar
-/// 
-/// @param a_menuSizeX length of each menu in the menubar
-/// @param a_menuSizeY height of each menu in the menubar
-/// 
-void Brood::BroodUI::MenuBar::SetEachMenuSize( float a_menuSizeX, float a_menuSizeY )
-{
-	Brood::BroodUI::MenuBar::SetEachMenuSize( sf::Vector2f( a_menuSizeX, a_menuSizeY ) );
-}
-
-/// 
-/// @public
-/// @brief Setter function to set the size of each menu in the MenuBar
-/// 
-/// @param a_size length and height of menu item in the menubar -> sf::vector2f
-/// 
-void Brood::BroodUI::MenuBar::SetBodySize( sf::Vector2f a_size )
-{
-	Brood::BroodUI::MenuBar::SetEachMenuSize( a_size );
-}
-
-/// 
-/// @public
 /// @overload
-/// @brief Setter function to set the size of each menu in the MenuBar
+/// @brief Setter function to set the size the MenuBar
 /// 
-/// @param a_itemSizeX length of each menu in the menubar
-/// @param a_itemSizeY height of each menu in the menubar
+/// @param a_itemSizeX length of the menubar
+/// @param a_itemSizeY height of the menubar
 /// 
 void Brood::BroodUI::MenuBar::SetBodySize( float a_sizeX, float a_sizeY )
 {
-	Brood::BroodUI::MenuBar::SetEachMenuSize( sf::Vector2f( a_sizeX, a_sizeY ) );
+	Brood::BroodUI::MenuBar::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ) );
 }
 
 /// 
 /// @virtual
 /// @public
+/// @overload
 /// @brief Setter function to set the Button's Position.
 /// 
 /// @param a_pos position of the element 
@@ -133,6 +128,7 @@ void Brood::BroodUI::MenuBar::SetBodyPosition( sf::Vector2f a_pos, bool a_relati
 		// postion all items according to the new menu position
 		for( int i = 0; i < m_menus.size(); ++i )
 		{
+			// setting the position of the menu in the menubar itself
 			SetMenuPos( i );
 		}
 	}
@@ -162,8 +158,10 @@ void Brood::BroodUI::MenuBar::SetBodyPosition( float a_posX, float a_posY, bool 
 /// 
 void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 {
-	m_font = a_font;
-	// positining the itemes
+	// making a new copy of the font and storing it as a pointer
+	m_font = new sf::Font(*a_font);
+
+	// setting the fonts of menus itemes
 	if( !m_menus.empty() )
 	{
 		// postion all items according to the new menu position
@@ -174,32 +172,115 @@ void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 	}
 }
 
+///
+/// @public
+/// @brief Setter funtion to set the size of the font
+/// 
+///	This does not affect the menubar height at all.
+/// 
+/// @warning Before setting the font size set the menubar height
+/// 
+///	@warning Font size cannot be bigger than menu height - 2. If a 
+///		a_fontSize is bigger than the menu height by menu height - 2.
+///		then sets  the font size to menu height - 2
+/// 
+/// @param a_fontSize size of the font in pixel
+/// 
+void Brood::BroodUI::MenuBar::SetCharacterSize( unsigned a_fontSize )
+{
+	float menuBarHeight = GetBodySize().y;
+
+	// checking menu bar height
+	if( menuBarHeight == 0 )
+	{
+		std::cerr << "The menu bar height is zero." << std::endl
+			<< "Set the menubar height before setting the font size" << std::endl;
+	}
+	// chekcing if fontsize is greater than menu height - 2
+	else if( a_fontSize > menuBarHeight - 2 )
+	{
+		std::cerr << "Font size is more than the menu bar height - 2." << std::endl
+			<< "Setting the font size to current menubar height - 2" << std::endl
+			<< "Setting the font size to " << menuBarHeight - 2 << std::endl;
+		m_fontSize = menuBarHeight - 2;
+	}
+	else
+	{
+		m_fontSize = a_fontSize;
+	}
+
+	// updating the charsize, bodySize, and position of all the item in the menu bar
+	if( !m_menus.empty() )
+	{
+		for( int i = 0; i < m_menus.size(); ++i )
+		{
+			m_menus.at( i )->SetFontSize( m_fontSize );
+			m_menus.at( i )->SetFontSize( m_fontSize );
+			m_menus.at( i )->SetFontSize(m_fontSize);
+
+		}
+	}
+}
+
 /// 
 /// @public
-/// @brief Function to add menu menu to the menubar
+/// @brief Function to add menu to the menubar
 ///
 /// It dynamically allocates memory for the item
+/// 
+/// @note assumes that menu bar is already set. @see SetMenuBarBodySize
+/// @note assumes font is set. @see SetFont
+/// @note assumes font size is set. @see SetCharacterSize
 /// 
 /// @param a_menuName name of the item
 /// 
 void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName)
 {
-	// create a DropDownMenu and add it to the itemList
+	// create a DropDownMenu 
 	Brood::BroodUI::DropDownMenu* menu = new Brood::BroodUI::DropDownMenu;
+
+	//adding menu to the itemList
 	m_menus.push_back( menu );
 
 	// setting up the menubar
-	menu->SetBodySize( m_eachMenuSize );
-	SetMenuPos( m_menus.size() - 1 );
 	menu->SetFont( m_font );
-	menu->SetBodyColor( GetBodyColor() );
+	menu->SetFontSize( m_fontSize );
 	menu->SetText( a_menuName );
+	menu->SetBodyColor( GetBodyColor() );
+
+	SetMenuBodySize( m_menus.size() - 1 ); // setting the menu size
+	SetMenuPos( m_menus.size() - 1 ); // setting the menu pos
 
 	// setting up the id
 	// adding the item as child of the dropDown
 	GetElementIdPtr()->AddChild( menu->GetElementIdPtr() );
 	// adding the dropdown as parent of the item
 	menu->GetElementIdPtr()->SetParent( GetElementIdPtr());
+}
+
+/// 
+/// @public
+/// @brief Function to add menu item to menu in menubar
+///
+/// @param a_menuItemName name of the item
+/// 
+void Brood::BroodUI::MenuBar::AddItemToMenu( unsigned a_index, std::string a_menuItemName )
+{
+	// checking if the index is valid
+	if( a_index >= m_menus.size() )
+	{
+		std::cerr << "Invalid index!!!" << std::endl;
+		return;
+	}
+
+	// checking if the a_menuItemName is longer than the curr longest name
+	if( a_menuItemName.length() > menuItemNameLength.at( a_index ) )
+	{
+		// saving the length as the longest
+		menuItemNameLength.at( a_index ) = a_menuItemName.length();
+
+		// updating the body size of all the dropdownmenu
+	}
 }
 
 /// 
@@ -216,8 +297,6 @@ void Brood::BroodUI::MenuBar::Draw( sf::RenderWindow& a_window )
 	if( !m_menus.empty() )
 	{
 		// draw its menus
-		// positining the itemes
-		// postion all items according to the new menu position
 		for( int i = 0; i < m_menus.size(); ++i )
 		{
 			m_menus.at( i )->Draw( a_window );
@@ -227,17 +306,59 @@ void Brood::BroodUI::MenuBar::Draw( sf::RenderWindow& a_window )
 
 /// 
 /// @private
-/// @brief helper funciton to position the menus correctly in the drop down list
+/// @brief helper funciton to set the body size of the menus correctly in the menubar
+///
+/// @param a_itemIndex index of the menu in the menu list
+/// 
+void Brood::BroodUI::MenuBar::SetMenuBodySize( int a_itemIndex )
+{
+	DropDownMenu* menuToChange = m_menus.at( a_itemIndex );
+	unsigned textLen = menuToChange->GetText().length();
+	float bodySizeX = 0.f;
+	
+	// checking the length of text in the menu
+	if( textLen < 3 )
+	{
+		bodySizeX = m_fontSize * ( float)textLen * 2;
+	}
+	else if( textLen < 8 )
+	{
+		bodySizeX = m_fontSize * ( float )textLen / 1.5f;
+	}
+	else
+	{
+		bodySizeX = m_fontSize * ( float )textLen / 2.f;
+	}
+
+	// setting the body Size
+	menuToChange->SetBodySize( bodySizeX, GetBodySize().y );
+}
+
+/// 
+/// @private
+/// @brief helper funciton to position the menus correctly in the menubar
 ///
 /// @param a_itemIndex index of the menu in the menu list
 /// 
 void Brood::BroodUI::MenuBar::SetMenuPos( int a_itemIndex )
 {
-	// calculating the items positon, 
-	// it is index + 1 as the menu's title itself occupies the first slot
-	float itemPosX = GetBodyPosition().x + ( ( a_itemIndex ) * m_eachMenuSize.x );
-	float itemPosY = GetBodyPosition().y;
+	// when itemIndex is 0 set the pos to same as the menubar 
+	// as it is the first menu in the menubar
+	if( a_itemIndex == 0 )
+	{
+		m_menus.at( a_itemIndex )->SetBodyPosition( GetBodyPosition() );
+		return;
+	}
 
-	m_menus.at( a_itemIndex )->SetBodyPosition( itemPosX, itemPosY );
+	// else calculating the menu's positon in the menubar, 
+	// the menu position depends on the end of the menu before it
+
+	// getting the position of menu before this 
+	sf::Vector2f secondLastMenuPos = m_menus.at( a_itemIndex - 1 )->GetBodyPosition();
+	float lastMenuPosX = secondLastMenuPos.x + m_menus.at( a_itemIndex - 1 )->GetBodySize().x;
+
+	// setting the Menu at givien index position
+	// this also sets the postion of any item that the dropdown menu might have
+	m_menus.at( a_itemIndex )->SetBodyPosition( lastMenuPosX, GetBodyPosition().y );
+
 }
-

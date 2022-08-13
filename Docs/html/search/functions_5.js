@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../_main-_aau_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;Main-Aau.cpp'],['../_main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;Main.cpp']]]
+  ['haschild_0',['HasChild',['../class_brood_1_1_brood_u_i_1_1_id.html#af9967f94b9677fc6f3ea87bb4a9d1d89',1,'Brood::BroodUI::Id']]],
+  ['hasparent_1',['HasParent',['../class_brood_1_1_brood_u_i_1_1_id.html#aee02dc9ca18a8af266707f3b71edbcf3',1,'Brood::BroodUI::Id']]]
 ];

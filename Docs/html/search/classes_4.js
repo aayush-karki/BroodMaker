@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['st_5fboardparam_0',['St_BoardParam',['../struct_st___board_param.html',1,'']]],
-  ['st_5fdiceparam_1',['St_DiceParam',['../struct_st___dice_param.html',1,'']]],
-  ['st_5fpath_2',['st_path',['../structst__path.html',1,'']]]
+  ['elementselection_0',['ElementSelection',['../class_brood_1_1_brood_u_i_1_1_element_selection.html',1,'Brood::BroodUI']]]
 ];

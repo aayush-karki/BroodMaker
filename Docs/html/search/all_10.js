@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_7eboard_0',['~Board',['../class_board.html#af73f45730119a1fd8f6670f53f959e68',1,'Board']]],
-  ['_7epathmanager_1',['~PathManager',['../class_path_manager.html#ac666917e7caaa1e4a56e5eab764b3ec7',1,'PathManager']]],
-  ['_7eplayermanager_2',['~PlayerManager',['../class_player_manager.html#ab53de6b16914b7591fc2bd3038069ac7',1,'PlayerManager']]],
-  ['_7est_5fpath_3',['~st_path',['../structst__path.html#a6ace8fe01242b6c6479ef14cf76f2f60',1,'st_path']]]
+  ['win32_5flean_5fand_5fmean_0',['WIN32_LEAN_AND_MEAN',['../stdafx_8h.html#ac7bef5d85e3dcd73eef56ad39ffc84a9',1,'stdafx.h']]],
+  ['workspace_1',['WorkSpace',['../class_brood_1_1_application_1_1_work_space.html',1,'Brood::Application::WorkSpace'],['../class_work_space.html',1,'WorkSpace'],['../class_brood_1_1_application_1_1_work_space.html#a2006b83469ebe20060971ffc54e65c6e',1,'Brood::Application::WorkSpace::WorkSpace()']]],
+  ['workspace_2ecpp_2',['WorkSpace.cpp',['../_work_space_8cpp.html',1,'']]],
+  ['workspace_2eh_3',['WorkSpace.h',['../_work_space_8h.html',1,'']]]
 ];

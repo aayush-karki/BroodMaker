@@ -44,27 +44,34 @@ namespace Brood
 /// @brief Applicaiton class provides the interface for the applicaiton
 ///
 class Brood::Application::Application
+
 {
-	// ================= public member variables =================  
+	// ================= public member function =================  
 public:
 	Application(); // default contructor
 	~Application(); // default destructor
 
 	void RunApplicaiton(); // main loop of the program
 
+	// ================= private member function =================  
+private:
+	void InitializeMenuBar();
+	
 	// ================= private member variables =================  
 private:
 	// =========== const variables=============
 	const uint32_t m_WINDOW_HEIGHT = 900;
 	const uint32_t m_WINDOW_WIDTH = 900;
-	// current working directory of the applicaiton
-	const std::string cwd = std::filesystem::current_path().string();
-	sf::Font m_font;
+	const std::string m_cwd = std::filesystem::current_path().string(); // current working directory of the applicaiton
+
+	sf::Font m_font; // font obj 
 	sf::RenderWindow m_window; // window obj
 	sf::Event m_events; // event object 
-	Brood::Application::InitialWorkSpace m_initailWorkSpace; // work spsdaces
-	
-	bool m_exit;
+
+	Brood::Application::InitialWorkSpace m_initailWorkSpace; // workspaces
+	bool m_exit; // stores the state of the application
+	Brood::BroodUI::MenuBar m_menuBar; // menu UI
+	sf::RectangleShape m_menuBarBg; // backgroud for the menu bar
 
 	/// todo: delete me
 	Brood::St_DiceParam* diceParam;

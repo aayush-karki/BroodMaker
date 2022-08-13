@@ -43,7 +43,7 @@ void PlayerManager::AddNewPlayer( float a_playerSizeX, float a_playerSizeY,
 	///@todo proper error handeling
 	if( playerPathIte == m_PathManagerIte->GetPathEnd() )
 	{
-		std::cout << "Error! Invalid row or column number" << std::endl;
+		std::cerr << "Error! Invalid row or column number" << std::endl;
 		return;
 	}
 

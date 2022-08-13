@@ -19,7 +19,7 @@
 /// 
 Brood::Application::Application::Application():
 	m_window( sf::VideoMode( m_WINDOW_WIDTH, m_WINDOW_HEIGHT ), "BroodMaker" ),
-	m_initailWorkSpace()
+	m_initailWorkSpace(), m_events()
 {
 	// initializing the randon seed
 	std::srand( ( unsigned int )std::time( nullptr ) );
@@ -32,7 +32,7 @@ Brood::Application::Application::Application():
 	/// todo: delete me
 	// create a board
 
-	std::string fileName = cwd;
+	std::string fileName = m_cwd;
 	fileName += "\\Assets\\DiceTexture\\dice_";
 	fileName += std::to_string( 0 + 1 );
 	fileName += "_50_50.png";
@@ -46,10 +46,10 @@ Brood::Application::Application::Application():
 	myBoard->AddPlayer( 25.f, 25.f );
 
 	// loading font
-	std::string fontFileLoc = cwd + "\\Assets\\Fonts\\arial.ttf";
+	std::string fontFileLoc = m_cwd + "\\Assets\\Fonts\\arial.ttf";
 	if( !( m_font.loadFromFile( fontFileLoc ) ) )
 	{
-		std::cout << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
+		std::cerr << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
 	}
 	myCard = new Card( m_font, 300, 300, "5+3", "8", 3, 2, 1 );
 
@@ -138,6 +138,7 @@ void Brood::Application::Application::RunApplicaiton()
 						break;
 					}
 
+					// checking if the current active element is a editable textbox
 					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
 					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
@@ -174,6 +175,7 @@ void Brood::Application::Application::RunApplicaiton()
 		myTextBox.DoElement();
 
 		myDropDown.DoElement();
+		// this code block is always needed in it after doElement
 		if( myDropDown.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
 		{
 			myDropDown.SetSelected( true );
@@ -247,5 +249,30 @@ void Brood::Application::Application::RunApplicaiton()
 		m_window.display();
 	}
 
+}
+
+/// 
+/// @brief Initializes the drop down menu bar
+/// 
+void Brood::Application::Application::InitializeMenuBar()
+{
+	//myMenu.SetBodySize( 150, 50 );
+	//myMenu.SetBodyPosition( 430, 0 );
+	//myMenu.SetFont( &m_font );
+	//myMenu.SetBodyColor( sf::Color::Magenta );
+
+	//myMenu.AddMenuToMenuBar( "a" );
+	//myMenu.AddMenuToMenuBar( "b" );
+	//myMenu.AddMenuToMenuBar( "c" );
+
+	//myMenu.GetMenuList().at( 0 )->AddItemToMenu( "aa" );
+	//myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ab" );
+	//myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ac" );
+	//myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ad" );
+
+	//myMenu.GetMenuList().at( 1 )->AddItemToMenu( "ba" );
+	//myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bb" );
+	//myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bc" );
+	//myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bd" );
 }
 

@@ -26,13 +26,24 @@ var NAVTREE =
 [
   [ "BroodMaker", "index.html", [
     [ "Todo List", "todo.html", null ],
+    [ "Modules", "modules.html", "modules" ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -48,7 +59,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_board_8cpp.html"
+"_application_8cpp.html",
+"class_brood_1_1_brood_u_i_1_1_drop_down_menu.html",
+"class_brood_1_1_dice.html#abb0a6c316ef4cf9b5776dd03610c7b9b",
+"struct_s_t___path_data.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

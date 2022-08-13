@@ -23,7 +23,7 @@
 /// 
 Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr) :
 	Brood::BroodUI::Button( a_parentPtr, Brood::BroodUI::ENUM_UIType::UI_dropDownMenu),
-	m_font( nullptr )
+	m_font( nullptr ) , m_maxItemLength(0)
 {}
 
 ///
@@ -53,52 +53,42 @@ std::vector<Brood::BroodUI::TextBox*>& Brood::BroodUI::DropDownMenu::GetItemList
 	return m_items;
 }
 
-/// 
-/// @public
-/// @brief Setter function to set the size of each item in the drop down menus
-/// 
-/// @param a_eachItemSize length and height of each item in the menu -> sf::vector2f
-/// 
-void Brood::BroodUI::DropDownMenu::SetEachItemSize( sf::Vector2f a_eachItemSize )
+void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
 {
-	m_eachItemSize = a_eachItemSize;
+	Brood::BroodUI::TextBox::SetText( a_text );
 
-	Brood::BroodUI::Button::SetBodySize( a_eachItemSize );
-
-	// resizing the itemes
-	if( !m_items.empty() )
+	// setting the max length
+	if( m_maxItemLength < a_text.length() )
 	{
-		// resizing and postioning all items according 
-		// to the new menu size
-		for( int i = 0; i < m_items.size(); ++i )
-		{
-			m_items.at( i )->SetBodySize( a_eachItemSize );
-			SetItemPos( i );
-		}
+		m_maxItemLength = a_text.length();
 	}
 }
 
 /// 
 /// @public
-/// @brief Setter function to set the size of each item in the drop down menus
-/// 
-/// @param a_itemSizeX length of each item
-/// @param a_itemSizeY height of each item
-/// 
-void Brood::BroodUI::DropDownMenu::SetEachItemSize( float a_itemSizeX, float a_itemSizeY )
-{
-	Brood::BroodUI::DropDownMenu::SetEachItemSize( sf::Vector2f( a_itemSizeX, a_itemSizeY ) );
-}
-
-/// 
-/// @public
-/// @brief Setter function to set the DropDownMenu's item Size
+/// @brief Setter function to set the DropDownMenu's main item Size
 /// 
 /// @param a_size size of the DropDownMenu's item 
 /// 
 void Brood::BroodUI::DropDownMenu::SetBodySize( sf::Vector2f a_size )
 {
-	Brood::BroodUI::DropDownMenu::SetEachItemSize( a_size );
+	//checking if the new height for the bar body is smaller than the charsize
+	if( a_size.y < GetFontSize() + 2 )
+	{
+		std::cerr << "Menu height needs to be 2 pixel bigger than charSize" << std::endl;
+		return;
+	}
+	else if( a_size.y < GetFontSize() )
+	{
+		std::cerr << "Menu height cannot be smaller than Character Size cannot" << std::endl;
+		return;
+	}
+
+	// setting the bar body size
+	Brood::BroodUI::Button::SetBodySize( a_size );
+
+	// setting the size of the each of the menu item if present
+	SetEachItemSize();
 }
 
 /// 
@@ -111,7 +101,7 @@ void Brood::BroodUI::DropDownMenu::SetBodySize( sf::Vector2f a_size )
 /// 
 void Brood::BroodUI::DropDownMenu::SetBodySize( float a_sizeX, float a_sizeY )
 {
-	Brood::BroodUI::DropDownMenu::SetEachItemSize( sf::Vector2f( a_sizeX, a_sizeY ) );
+	Brood::BroodUI::DropDownMenu::SetBodySize( { a_sizeX, a_sizeY } );
 }
 
 /// 
@@ -192,8 +182,16 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	Brood::BroodUI::TextBox* item = new Brood::BroodUI::TextBox;
 	m_items.push_back( item );
 
-	// setting up the item
-	item->SetBodySize( m_eachItemSize );
+	// checking if the length is bigger than max length
+	if( a_menuName.length() > m_maxItemLength )
+	{
+		// saving the max item length and changing length of each of itemBody
+		m_maxItemLength = a_menuName.length();
+		SetEachItemSize();
+	}
+
+	// setting up the item which is at the end of the list
+	SetItemSize( m_items.size() - 1 );
 	SetItemPos( m_items.size() - 1 );
 	item->SetBodyColor( GetBodyColor() );
 	item->SetFont( *m_font );
@@ -206,20 +204,6 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	// adding the dropdown as parent of the item
 	item->GetElementIdPtr()->SetParent( GetElementIdPtr());
 }
-//
-///// 
-///// @public
-///// @brief checks if the logics of the element is to be executed or not
-///// 
-///// In the process updates the element selector --that is current active and hot 
-/////		element. It also set the overlay
-///// 
-///// @return true if the element's funciton is to be executed
-///// 
-//bool Brood::BroodUI::DropDownMenu::DoElement()
-//{
-//	return false;
-//}
 
 /// 
 /// @public
@@ -247,8 +231,8 @@ void Brood::BroodUI::DropDownMenu::Draw( sf::RenderWindow& a_window )
 
 /// 
 /// @private
-/// @brief helper funciton to position the items correctly in the drop down list
-///
+/// @brief helper funciton to position the item at given index correctly in the drop down list.
+/// 
 /// @param a_itemIndex index of the item in the drop down list
 /// 
 void Brood::BroodUI::DropDownMenu::SetItemPos( int a_itemIndex )
@@ -256,8 +240,86 @@ void Brood::BroodUI::DropDownMenu::SetItemPos( int a_itemIndex )
 	// calculating the items positon, 
 	// it is index + 1 as the menu's title itself occupies the first slot
 	float itemPosX = GetBodyPosition().x;
-	float itemPosY = GetBodyPosition().y + ( (a_itemIndex + 1) * m_eachItemSize.y );
+	float itemPosY = GetBodyPosition().y + GetBodySize().y * ( a_itemIndex + 1 ) ;
 
 	m_items.at( a_itemIndex )->SetBodyPosition( itemPosX, itemPosY );
 }
 
+/// 
+/// @private
+/// @brief helper funciton to size the items correctly in the drop down list
+///
+/// @param a_itemIndex index of the item in the drop down list
+///
+void Brood::BroodUI::DropDownMenu::SetItemSize( int a_itemIndex )
+{
+	// checking that index is not out of bound
+	if( a_itemIndex > m_items.size() - 1 )
+	{
+		std::cerr << "Index out of range of menu with title" << GetText() << std::endl;
+		return;
+	}
+
+	float menuLength = 0.f;
+	// checking the length of max length in the menu
+	if( m_maxItemLength < 3 )
+	{
+		menuLength = GetFontSize() * ( float )m_maxItemLength * 2;
+	}
+	else if( m_maxItemLength < 8 )
+	{
+		menuLength = GetFontSize() * ( float )m_maxItemLength / 1.5f;
+	}
+	else
+	{
+		menuLength = GetFontSize() * ( float )m_maxItemLength / 2.f;
+	}
+
+	// checking if the menuLength is less than menu main's body length
+	if( menuLength < GetBodySize().x )
+	{
+		menuLength = GetBodySize().x;
+	}
+
+	m_items.at( a_itemIndex )->SetBodySize( menuLength, GetBodySize().y );
+}
+
+/// 
+/// @private
+/// @brief Setter function to set the size of each item in the drop down menus
+/// 
+/// 
+void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
+{
+	if( !m_items.empty() )
+	{
+		float menuLength = 0.f;
+		// checking the length of max length in the menu
+		if( m_maxItemLength < 3 )
+		{
+			menuLength = GetFontSize() * ( float )m_maxItemLength * 2;
+		}
+		else if( m_maxItemLength < 8 )
+		{
+			menuLength = GetFontSize() * ( float )m_maxItemLength / 1.5f;
+		}
+		else
+		{
+			menuLength = GetFontSize() * ( float )m_maxItemLength / 2.f;
+		}
+
+		// checking if the menuLength is less than menu main's body length
+		if( menuLength < GetBodySize().x )
+		{
+			menuLength = GetBodySize().x;
+		}
+
+		// resizing the items
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			float itemSizeY = GetBodySize().y;
+
+			m_items.at( i )->SetBodySize( menuLength, itemSizeY );
+		}
+	}
+}

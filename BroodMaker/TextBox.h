@@ -28,9 +28,85 @@ namespace Brood
 /// @class TextBox  "TextBox.h"
 /// @brief a uielemnt that represent the text in the UI
 /// 
-/// It can be set as mutable or immutable text.
+/// @details A class derived from UI elements class.
+///		It can be set as mutable or immutable text.
+/// @warning The following code needs to be present in the event switch 
+///		for the textbox to be editable:
+///		@code
+///		
+///		case sf::Event::TextEntered:
+///		{
+///			if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+///			{
+///				break;
+///			}
+///		
+///			// checking if the current active element is a editable textbox
+///			int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+///			Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+///			if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
+///			{
+///				// checking if it is editable or not
+///				Brood::BroodUI::TextBox* currActiveTextBox = ( Brood::BroodUI::TextBox* )currActiveElement;
+///				if( currActiveTextBox->IsEditable() )
+///				{
+///					// if yes then sent the textEntered event to the element
+///					currActiveTextBox->TypeOn( events );
+///				}
+///			}
+///			break;
+///		}
+///		
+///		@endcode
 /// 
-/// A class derived from UI elements class.
+/// ### Example Case
+/// @code {.cpp}
+/// 
+/// // creating a textbox object
+/// myTextBox.SetBodySize( 100, 50 );
+/// myTextBox.SetBodyPosition( 160, 350 );
+/// myTextBox.SetBodyColor( sf::Color::White );
+/// myTextBox.SetFont( font );
+/// myTextBox.SetFontSize( 25 );
+/// myTextBox.SetFontColor( sf::Color::Black );
+/// myTextBox.SetText( "hello is this god" );
+/// myTextBox.SetEditable( true );
+/// myTextBox.SetLimit( true, 4 );
+/// 
+/// 
+/// // ============ in the main loop ===============
+/// 
+/// // == in the even polling loop ==
+///	case sf::Event::TextEntered:
+///	{
+///		if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+///		{
+///			break;
+///		}
+///	
+///		// checking if the current active element is a editable textbox
+///		int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+///		Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+///		if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
+///		{
+///			// checking if it is editable or not
+///			Brood::BroodUI::TextBox* currActiveTextBox = ( Brood::BroodUI::TextBox* )currActiveElement;
+///			if( currActiveTextBox->IsEditable() )
+///			{
+///				// if yes then sent the textEntered event to the element
+///				currActiveTextBox->TypeOn( events );
+///			}
+///		}
+///		break;
+///	}
+///
+/// // == below the even polling loop ==
+/// myTextBox.DoElement();
+/// 
+/// // drawing the element
+/// myTextBox.Draw( window );
+/// 
+/// @endcode
 /// 
 class Brood::BroodUI::TextBox : public Brood::BroodUI::UIElement
 {
@@ -51,6 +127,7 @@ public:
 
 	// getter funcitons
 	std::string GetText() const; 
+	unsigned int GetFontSize() const;
 	const bool IsEditable() const;
 	const bool IsSelected() const;
 
@@ -62,7 +139,7 @@ public:
 
 	void SetFont( sf::Font& a_font );
 	void SetFontColor( sf::Color a_color = sf::Color::White );
-	void SetFontSize( int a_charSize = 12 );
+	void SetFontSize( int a_fontSize = 12 );
 	void SetText( std::string a_text = ""); // sets text
 	void SetLimit( bool a_hasLimit = false, int a_limit = 0 ); // to set the limit to number of character 
 	void SetSelected( bool a_selected ); // sets active
@@ -88,4 +165,5 @@ private:
 	bool m_isSelected;
 	bool m_hasLimit;
 	int m_limit;
+	unsigned m_fontSize;
 };

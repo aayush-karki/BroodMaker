@@ -14,7 +14,7 @@ bool Brood::UtilityFuncs::LoadTextureFromFile( sf::Texture& a_texture, std::stri
 {
 	if( !( a_texture.loadFromFile( a_filePath ) ) )
 	{
-		std::cout << "Error! Could not load " << a_filePath << "!!!!!!!" << std::endl;
+		std::cerr << "Error! Could not load " << a_filePath << "!!!!!!!" << std::endl;
 		return false;
 	}
 	return true;

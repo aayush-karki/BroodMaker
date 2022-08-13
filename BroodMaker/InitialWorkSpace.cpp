@@ -69,7 +69,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	std::string fontFileLoc = cwd + "\\Assets\\Fonts\\arial.ttf";
 	if( !( m_font.loadFromFile( fontFileLoc ) ) )
 	{
-		std::cout << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
+		std::cerr << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
 	}
 
 	// creating the left toggle button

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dice_0',['Dice',['../class_dice.html#a21e2e54222c56ea63bfda6fd17ef32af',1,'Dice::Dice(float a_diceSizeX=0.f, float a_diceSizeY=0.f, float a_dicePosX=0.f, float a_dicePosY=0.f, int a_numSides=6)'],['../class_dice.html#ae3cea22f56374a1db1b67eebffdb3872',1,'Dice::Dice(const std::vector&lt; sf::Texture &gt; *a_texturesVecPtr, float a_diceSizeX=0.f, float a_diceSizeY=0.f, float a_dicePosX=0.f, float a_dicePosY=0.f, int a_numSides=6)'],['../class_dice.html#abe2c5f45190c1245071b7280675ad0b9',1,'Dice::Dice(St_DiceParam a_StBoardInializer)']]],
-  ['draw_1',['Draw',['../class_board.html#ad200b074312b0ffb21a94fcbf782a685',1,'Board::Draw()'],['../class_dice.html#ab655ca1cb4fb7c5a7700acfc52853c34',1,'Dice::Draw()'],['../class_player.html#a47ec1d618efadb76b2ac1a3acb810155',1,'Player::Draw()'],['../class_tiles.html#a374b2fb424bc9b1ee00023c5ae2fa7f9',1,'Tiles::Draw()']]]
+  ['card_0',['Card',['../class_card.html#a66bff0f36aa550483a630b6016994e2f',1,'Card']]],
+  ['changecursorto_1',['ChangeCursorTo',['../class_brood_1_1_mouse_handler.html#ae262bcde794b2e23172080b1510a6480',1,'Brood::MouseHandler']]]
 ];

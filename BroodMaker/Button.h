@@ -34,6 +34,27 @@ namespace Brood
 /// 
 /// A class derived from TextBox class.
 /// 
+/// ### Example Case
+/// @code {.cpp}
+/// 
+/// // creating a textbox object
+/// Brood::BroodUI::Button myButton;
+/// myButton.SetBodySize( 100, 50 );
+/// myButton.SetBodyPosition( 55, 0 );
+/// myButton.SetFont( font );
+/// myButton.SetBodyColor( sf::Color::Red );
+/// myButton.SetText( "-----" );
+/// 
+/// 
+/// // ============ in the main loop ===============
+/// 
+/// myButton.DoElement();
+/// 
+/// // drawing the element
+/// myButton.Draw( window );
+/// 
+/// @endcode
+///
 class Brood::BroodUI::Button : public Brood::BroodUI::TextBox
 {
 	// ============ public member function =============== 

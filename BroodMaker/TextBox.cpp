@@ -31,7 +31,7 @@ Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
 								  Brood::BroodUI::ENUM_UIType a_enumType) :
 	Brood::BroodUI::UIElement( a_enumType, a_parentPtr ),
 	m_isEditable( false ), m_isSelected( false ), m_hasLimit( false ),
-	m_limit( -1 )
+	m_limit( -1 ), m_fontSize( 0 )
 {}
 
 Brood::BroodUI::TextBox::~TextBox()
@@ -46,6 +46,17 @@ Brood::BroodUI::TextBox::~TextBox()
 std::string Brood::BroodUI::TextBox::GetText() const
 {
 	return m_ossText.str();
+}
+
+/// 
+/// @public
+/// @brief getter funciton to get the character size
+/// 
+/// @return size of the curr charactersize
+/// 
+unsigned int Brood::BroodUI::TextBox::GetFontSize() const
+{
+	return m_text.getCharacterSize();
 }
 
 /// 
@@ -74,10 +85,24 @@ const bool Brood::BroodUI::TextBox::IsSelected( ) const
 /// @public
 /// @brief Setter function to set the TextBox's Size
 /// 
+/// @warning The menu height cannot be smaller than font size + 2 px.
 /// @param a_size size of the element
 /// 
 void Brood::BroodUI::TextBox::SetBodySize( sf::Vector2f a_size )
 {
+	//checking if the new height for the body is smaller than the charsize
+	if( a_size.y < m_fontSize + 2 )
+	{
+		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
+		return;
+	}
+	else if( a_size.y < m_fontSize )
+	{
+		std::cerr << "body height cannot be smaller than font Size cannot" << std::endl;
+		return;
+	}
+
+	// setting the bar body size
 	Brood::BroodUI::UIElement::SetBodySize( a_size );
 }
 
@@ -151,9 +176,31 @@ void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
 /// 
 /// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
 /// 
-void Brood::BroodUI::TextBox::SetFontSize( int a_charSize )
+void Brood::BroodUI::TextBox::SetFontSize( int a_fontSize )
 {
-	m_text.setCharacterSize( a_charSize );
+	float bodyHeight = GetBodySize().y;
+
+	// checking menu bar height
+	if( bodyHeight <= 2 )
+	{
+		std::cerr << "The body height is less than or equal to 2." << std::endl
+			<< "Set the body height to more than 2 before setting the font size" << std::endl;
+		return;
+	}
+	// checking if fontsize is greater than menu height - 2
+	else if( a_fontSize > bodyHeight - 2 )
+	{
+		std::cerr << "Font size is more than the body height - 2." << std::endl
+			<< "Setting the font size to current body height - 2" << std::endl
+			<< "Setting the font size to " << bodyHeight - 2 << std::endl;
+		m_fontSize = ( unsigned ) bodyHeight - 2;
+	}
+	else
+	{
+		m_fontSize = (unsigned) a_fontSize;
+	}
+
+	m_text.setCharacterSize( m_fontSize );
 }
 
 /// 
@@ -185,14 +232,15 @@ void Brood::BroodUI::TextBox::SetText( std::string a_text )
 /// 
 void Brood::BroodUI::TextBox::SetLimit( bool a_hasLimit, int a_limit )
 {
-	if( a_hasLimit && a_limit > 0 )
+	if( a_limit <= 0 )
+	{
+		std::cerr << "limit cannot be less than 1" << std::endl;
+		return;
+	}
+	else if( a_hasLimit && a_limit > 0 )
 	{
 		m_hasLimit = a_hasLimit;
 		m_limit = a_limit;
-	}
-	else if( a_limit <= 0 )
-	{
-		std::cerr << "limit cannot be less than 1" << std::endl;
 	}
 }
 
@@ -300,7 +348,7 @@ bool Brood::BroodUI::TextBox::DoElement()
 void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
 {
 	Brood::BroodUI::UIElement::Draw( a_window );
-	
+
 	// draw the text only when the text is present
 	if( m_text.getString() != "" )
 	{

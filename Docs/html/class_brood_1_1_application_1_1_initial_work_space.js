@@ -1,0 +1,25 @@
+var class_brood_1_1_application_1_1_initial_work_space =
+[
+    [ "InitialWorkSpace", "class_brood_1_1_application_1_1_initial_work_space.html#af315ac54deb0bda391b6b17706761ce2", null ],
+    [ "~InitialWorkSpace", "class_brood_1_1_application_1_1_initial_work_space.html#a45c52552da530254333193f24d8904dc", null ],
+    [ "Draw", "class_brood_1_1_application_1_1_initial_work_space.html#aef06c7e0a7281b31a35be9ecd34e6f26", null ],
+    [ "InitializeWorkSpace", "class_brood_1_1_application_1_1_initial_work_space.html#a6b66cc7731b08ff82b3138c402ac6c39", null ],
+    [ "Update", "class_brood_1_1_application_1_1_initial_work_space.html#a48cbb385f06a60f40b006bf38b76e8d0", null ],
+    [ "m_cancle", "class_brood_1_1_application_1_1_initial_work_space.html#ac12cb02f37c25f282d384c3b223bdc5e", null ],
+    [ "m_cancleSmall", "class_brood_1_1_application_1_1_initial_work_space.html#a843c1cfcfe2f99622be48d2309409061", null ],
+    [ "m_createNewEdit", "class_brood_1_1_application_1_1_initial_work_space.html#abb38dfff5374d160b97b5fae52f14e23", null ],
+    [ "m_currGameInfoIdx", "class_brood_1_1_application_1_1_initial_work_space.html#ab75d40d740092bf2e01465137d0e26f8", null ],
+    [ "m_enterFileNameFeild", "class_brood_1_1_application_1_1_initial_work_space.html#a765c9e24b3a95797b6a18b035542f80d", null ],
+    [ "m_fileName", "class_brood_1_1_application_1_1_initial_work_space.html#a6d7918aeb75525099bda79528b16878e", null ],
+    [ "m_font", "class_brood_1_1_application_1_1_initial_work_space.html#aae813d0dd1e04ee39cb3564e0a47640c", null ],
+    [ "m_gameInfoFilePathList", "class_brood_1_1_application_1_1_initial_work_space.html#a0426d8222b050e7caeccbab67612383a", null ],
+    [ "m_gameListTexture", "class_brood_1_1_application_1_1_initial_work_space.html#af70fd836c8b7917a75b905a608e9a755", null ],
+    [ "m_gameOrEditor", "class_brood_1_1_application_1_1_initial_work_space.html#afdb8f0802087fcf3a6d2dad3e283f53f", null ],
+    [ "m_importGame", "class_brood_1_1_application_1_1_initial_work_space.html#af804995367b8bec342db692980c55dce", null ],
+    [ "m_loadPreviousEdits", "class_brood_1_1_application_1_1_initial_work_space.html#a80e819afe0b961c45cdc7bf52f5433cb", null ],
+    [ "m_openFile", "class_brood_1_1_application_1_1_initial_work_space.html#a7f10b506beced4d50065569f178fc41b", null ],
+    [ "m_showEnterFilenameDialogBox", "class_brood_1_1_application_1_1_initial_work_space.html#a47f75aa4e7541089e4264e07bc7da48d", null ],
+    [ "m_showImportDialogBox", "class_brood_1_1_application_1_1_initial_work_space.html#a21c81d4c6e6110798dc481bb6ad57de5", null ],
+    [ "m_toggleGameInfoLeft", "class_brood_1_1_application_1_1_initial_work_space.html#a2c65bb12ff9e762942d2a8373d1d90cd", null ],
+    [ "m_toggleGameInfoRight", "class_brood_1_1_application_1_1_initial_work_space.html#a3be57d34e96a1132a2ff99e292d2733e", null ]
+];

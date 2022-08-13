@@ -115,7 +115,7 @@ void Board::InitializeBoard( int a_numRows, int a_numCols,
 			++currCol;
 
 			/// todo: deleteme
-			//std::cout << ( *colTile )->GetPos().x << " " << ( *colTile )->GetPos().y << std::endl;
+			//std::cerr << ( *colTile )->GetPos().x << " " << ( *colTile )->GetPos().y << std::endl;
 		}
 		currCol = 0; // resetting the col value
 		++currRow;
@@ -137,7 +137,7 @@ void Board::PlayerRollAndMove()
 
 	if( currPlayer == nullptr )
 	{
-		std::cout << "no player in the board" << std::endl;
+		std::cerr << "no player in the board" << std::endl;
 	}
 
 	// rolling the dice
