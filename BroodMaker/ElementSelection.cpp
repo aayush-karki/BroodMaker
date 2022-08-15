@@ -22,7 +22,7 @@ bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
 /// 
 /// @static
 /// @public
-/// @brief Setter function;
+/// @brief Setter function
 /// 
 /// Set the passed element id as hot
 /// 
@@ -36,9 +36,15 @@ void Brood::BroodUI::ElementSelection::SetHotElement( Brood::BroodUI::Id* a_idPt
 /// 
 /// @static
 /// @public
-/// @brief Setter function.
+/// @brief Setter function
 /// 
 /// Set the passed element id as active
+/// 
+/// @note  activeElement differs from currActiveElement as the prior stores 
+///		element id when the mouse is pressing on it while the latter stores 
+///		element id of even when the mouse is not over it  untill other elements 
+///		are pressed.
+///		
 /// 
 /// @param a_idPtr pointer to UI_ID of the selected element
 /// 
@@ -53,6 +59,11 @@ void Brood::BroodUI::ElementSelection::SetActiveElement( Brood::BroodUI::Id* a_i
 /// @brief Setter function.
 /// 
 /// Set the passed element id as current active
+/// 
+/// @note  activeElement differs from currActiveElement as the prior stores 
+///		element id when the mouse is pressing on it while the latter stores 
+///		element id of even when the mouse is not over it  untill other elements 
+///		are pressed.
 /// 
 /// @param a_idPtr pointer to UI_ID of the selected element
 /// 

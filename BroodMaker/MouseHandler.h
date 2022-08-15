@@ -78,8 +78,8 @@ private:
 	static sf::Vector2i m_lastFrameMousePos;
 	static sf::Vector2i m_currFrameMousePos;
 
-	static bool m_lastFrameLeftMouseButtonStatus; // true == was pressed
-	static bool m_lastFrameRightMouseButtonStatus; // true == was pressed
-	static bool m_currFrameLeftMouseButtonStatus; // true == was pressed
-	static bool m_currFrameRightMouseButtonStatus; // true == was pressed
+	static bool m_lastFrameLeftMouseButtonPressed; // true == was pressed
+	static bool m_lastFrameRightMouseButtonPressed; // true == was pressed
+	static bool m_currFrameLeftMouseButtonPressed; // true == was pressed
+	static bool m_currFrameRightMouseButtonPressed; // true == was pressed
 };

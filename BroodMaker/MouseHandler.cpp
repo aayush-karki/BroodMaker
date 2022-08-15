@@ -18,10 +18,10 @@
 sf::Cursor Brood::MouseHandler::m_cursor;
 sf::Vector2i Brood::MouseHandler::m_currFrameMousePos;
 sf::Vector2i Brood::MouseHandler::m_lastFrameMousePos;
-bool Brood::MouseHandler::m_lastFrameLeftMouseButtonStatus;
-bool Brood::MouseHandler::m_lastFrameRightMouseButtonStatus;
-bool Brood::MouseHandler::m_currFrameLeftMouseButtonStatus;
-bool Brood::MouseHandler::m_currFrameRightMouseButtonStatus;
+bool Brood::MouseHandler::m_lastFrameLeftMouseButtonPressed;
+bool Brood::MouseHandler::m_lastFrameRightMouseButtonPressed;
+bool Brood::MouseHandler::m_currFrameLeftMouseButtonPressed;
+bool Brood::MouseHandler::m_currFrameRightMouseButtonPressed;
 
 /// 
 /// @static
@@ -140,7 +140,7 @@ sf::Vector2i Brood::MouseHandler::GetCurrFrameMousePos()
 /// 
 bool Brood::MouseHandler::GetlastFrameLMSStatus()
 {
-	return m_lastFrameLeftMouseButtonStatus;
+	return m_lastFrameLeftMouseButtonPressed;
 }
 
 /// 
@@ -153,7 +153,7 @@ bool Brood::MouseHandler::GetlastFrameLMSStatus()
 /// 
 bool Brood::MouseHandler::GetCurrFrameLMSStatus()
 {
-	return m_currFrameLeftMouseButtonStatus;
+	return m_currFrameLeftMouseButtonPressed;
 }
 
 /// 
@@ -166,7 +166,7 @@ bool Brood::MouseHandler::GetCurrFrameLMSStatus()
 /// 
 bool Brood::MouseHandler::GetCurrFrameRMSStatus()
 {
-	return m_currFrameRightMouseButtonStatus;
+	return m_currFrameRightMouseButtonPressed;
 }
 
 /// 
@@ -179,7 +179,7 @@ bool Brood::MouseHandler::GetCurrFrameRMSStatus()
 /// 
 bool Brood::MouseHandler::GetlastFrameRMSStatus()
 {
-	return m_lastFrameRightMouseButtonStatus;
+	return m_lastFrameRightMouseButtonPressed;
 }
 
 /// 
@@ -193,27 +193,27 @@ bool Brood::MouseHandler::GetlastFrameRMSStatus()
 void Brood::MouseHandler::UpdateMouseButtonStatus()
 {
 	// save the current state
-	m_lastFrameLeftMouseButtonStatus = m_currFrameLeftMouseButtonStatus;
-	m_lastFrameRightMouseButtonStatus = m_currFrameRightMouseButtonStatus;
+	m_lastFrameLeftMouseButtonPressed = m_currFrameLeftMouseButtonPressed;
+	m_lastFrameRightMouseButtonPressed = m_currFrameRightMouseButtonPressed;
 
 	// checking if it was press or release event
 	if( sf::Mouse::isButtonPressed( sf::Mouse::Left ) )
 	{
-		m_currFrameLeftMouseButtonStatus = true;
+		m_currFrameLeftMouseButtonPressed = true;
 	}
 	else
 	{
-		m_currFrameLeftMouseButtonStatus = false;
+		m_currFrameLeftMouseButtonPressed = false;
 	}
 
 	// checking if it was press or release event
 	if( sf::Mouse::isButtonPressed( sf::Mouse::Right ) )
 	{
-		m_currFrameRightMouseButtonStatus = true;
+		m_currFrameRightMouseButtonPressed = true;
 	}
 	else
 	{
-		m_currFrameRightMouseButtonStatus = false;
+		m_currFrameRightMouseButtonPressed = false;
 	}
 }
 
@@ -226,7 +226,7 @@ void Brood::MouseHandler::UpdateMouseButtonStatus()
 /// 
 bool Brood::MouseHandler::IsLeftButtonHold()
 {
-	return m_lastFrameLeftMouseButtonStatus && m_currFrameLeftMouseButtonStatus;
+	return m_lastFrameLeftMouseButtonPressed && m_currFrameLeftMouseButtonPressed;
 }
 
 /// 
@@ -238,7 +238,7 @@ bool Brood::MouseHandler::IsLeftButtonHold()
 /// 
 bool Brood::MouseHandler::IsLeftButtonPressed()
 {
-	return !m_lastFrameLeftMouseButtonStatus && m_currFrameLeftMouseButtonStatus;
+	return !m_lastFrameLeftMouseButtonPressed && m_currFrameLeftMouseButtonPressed;
 }
 
 /// 
@@ -250,7 +250,7 @@ bool Brood::MouseHandler::IsLeftButtonPressed()
 /// 
 bool Brood::MouseHandler::IsLeftButtonReleased()
 {
-	return m_lastFrameLeftMouseButtonStatus && !m_currFrameLeftMouseButtonStatus;
+	return m_lastFrameLeftMouseButtonPressed && !m_currFrameLeftMouseButtonPressed;
 }
 
 /// 
@@ -262,7 +262,7 @@ bool Brood::MouseHandler::IsLeftButtonReleased()
 /// 
 bool Brood::MouseHandler::IsRightButtonHold()
 {
-	return m_lastFrameRightMouseButtonStatus && m_currFrameRightMouseButtonStatus;
+	return m_lastFrameRightMouseButtonPressed && m_currFrameRightMouseButtonPressed;
 }
 
 /// 
@@ -274,7 +274,7 @@ bool Brood::MouseHandler::IsRightButtonHold()
 /// 
 bool Brood::MouseHandler::IsRightButtonPressed()
 {
-	return !m_lastFrameRightMouseButtonStatus && m_currFrameRightMouseButtonStatus;
+	return !m_lastFrameRightMouseButtonPressed && m_currFrameRightMouseButtonPressed;
 }
 
 /// 
@@ -286,5 +286,5 @@ bool Brood::MouseHandler::IsRightButtonPressed()
 /// 
 bool Brood::MouseHandler::IsRightButtonReleased()
 {
-	return m_lastFrameRightMouseButtonStatus && !m_currFrameRightMouseButtonStatus;
+	return m_lastFrameRightMouseButtonPressed && !m_currFrameRightMouseButtonPressed;
 }

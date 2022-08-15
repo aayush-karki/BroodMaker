@@ -172,7 +172,7 @@ void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
 
 /// 
 /// @public
-/// @brief setter funciton to set the Font Color
+/// @brief setter funciton to set the Font size
 /// 
 /// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
 /// 
@@ -327,9 +327,19 @@ bool Brood::BroodUI::TextBox::DoElement()
 {
 	bool doElement = Brood::BroodUI::UIElement::DoElement();
 
+	// checking if the current active element is this element
+	// if yes set the isSelected property to true 
 	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
 	{
 		SetSelected( true );
+
+		//// checking if the mouse is outside of the element and the left mouse button was released
+		//if( !IsMouseOverElement() && Brood::MouseHandler::IsLeftButtonPressed() )
+		//{
+		//	// then the setSelected should be false
+		//	Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
+		//	SetSelected( false );
+		//}
 	}
 	else
 	{

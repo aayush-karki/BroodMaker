@@ -23,7 +23,7 @@
 /// 
 Brood::BroodUI::MenuBar::MenuBar( Brood::BroodUI::UIElement* a_parentPtr ) :
 	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_menuBar, a_parentPtr ),
-	m_font( nullptr ), m_fontSize (0)
+	m_font( nullptr ), m_fontSize ( 0 )
 {}
 
 ///
@@ -161,7 +161,7 @@ void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 	// making a new copy of the font and storing it as a pointer
 	m_font = new sf::Font(*a_font);
 
-	// setting the fonts of menus itemes
+	// setting the fonts of menus items
 	if( !m_menus.empty() )
 	{
 		// postion all items according to the new menu position
@@ -186,7 +186,7 @@ void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 /// 
 /// @param a_fontSize size of the font in pixel
 /// 
-void Brood::BroodUI::MenuBar::SetCharacterSize( unsigned a_fontSize )
+void Brood::BroodUI::MenuBar::SetFontSize( int a_fontSize )
 {
 	float menuBarHeight = GetBodySize().y;
 
@@ -209,15 +209,12 @@ void Brood::BroodUI::MenuBar::SetCharacterSize( unsigned a_fontSize )
 		m_fontSize = a_fontSize;
 	}
 
-	// updating the charsize, bodySize, and position of all the item in the menu bar
+	// updating the charsize of all the item in the menu bar
 	if( !m_menus.empty() )
 	{
 		for( int i = 0; i < m_menus.size(); ++i )
 		{
 			m_menus.at( i )->SetFontSize( m_fontSize );
-			m_menus.at( i )->SetFontSize( m_fontSize );
-			m_menus.at( i )->SetFontSize(m_fontSize);
-
 		}
 	}
 }
@@ -243,13 +240,13 @@ void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName)
 	m_menus.push_back( menu );
 
 	// setting up the menubar
+	menu->SetText( a_menuName );
+	SetMenuBodySize( m_menus.size() - 1 ); // setting the menu size
+	SetMenuPos( m_menus.size() - 1 ); // setting the menu pos
 	menu->SetFont( m_font );
 	menu->SetFontSize( m_fontSize );
 	menu->SetText( a_menuName );
 	menu->SetBodyColor( GetBodyColor() );
-
-	SetMenuBodySize( m_menus.size() - 1 ); // setting the menu size
-	SetMenuPos( m_menus.size() - 1 ); // setting the menu pos
 
 	// setting up the id
 	// adding the item as child of the dropDown
@@ -273,14 +270,7 @@ void Brood::BroodUI::MenuBar::AddItemToMenu( unsigned a_index, std::string a_men
 		return;
 	}
 
-	// checking if the a_menuItemName is longer than the curr longest name
-	if( a_menuItemName.length() > menuItemNameLength.at( a_index ) )
-	{
-		// saving the length as the longest
-		menuItemNameLength.at( a_index ) = a_menuItemName.length();
-
-		// updating the body size of all the dropdownmenu
-	}
+	m_menus.at( a_index )->AddItemToMenu( a_menuItemName );
 }
 
 /// 
@@ -360,5 +350,4 @@ void Brood::BroodUI::MenuBar::SetMenuPos( int a_itemIndex )
 	// setting the Menu at givien index position
 	// this also sets the postion of any item that the dropdown menu might have
 	m_menus.at( a_itemIndex )->SetBodyPosition( lastMenuPosX, GetBodyPosition().y );
-
 }

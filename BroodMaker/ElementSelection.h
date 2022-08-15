@@ -51,6 +51,7 @@ private:
 	static Brood::BroodUI::Id* m_hotElementPtr; ///> stores the ptr to element id when the mouse is hovering over it
 	static Brood::BroodUI::Id* m_activeElementPtr; ///> stores the ptr element id when the mouse is pressing on it
 	static Brood::BroodUI::Id* m_currActiveElementPtr; ///> stores the ptr to element id which should be selected even 
+														///> when the mouse is not over it untill other elements are pressed
 													   ///> after the the LMB is released and utill new element is selected
 	static bool m_hotElementFlag; ///> is set to true as soon as hot element is found for a given frame
 };

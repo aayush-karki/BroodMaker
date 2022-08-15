@@ -64,16 +64,6 @@ namespace Brood
 /// // checking if the logics of the element is to be executed or not
 /// myDropDown.DoElement();
 /// 
-/// // checking if the my DropDown was selected
-/// if( myDropDown.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
-/// {
-/// 	myDropDown.SetSelected( true );
-/// }
-/// else
-/// {
-/// 	myDropDown.SetSelected( false );
-/// }
-/// 
 /// // checking its item if the dropdown menu was selcted
 /// if( myDropDown.IsSelected() )
 /// {
@@ -113,6 +103,7 @@ public:
 	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
 	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
 	void SetFont( sf::Font* a_font );
+	void SetFontSize( int a_fontSize = 12 );
 
 	void AddItemToMenu( std::string a_menuName, sf::Color a_color = sf::Color::White );
 
@@ -124,7 +115,8 @@ public:
 private:
 	void SetItemPos( int a_itemIndex );
 	void SetItemSize( int a_itemIndex );
-	void SetEachItemSize( );
+	void SetEachItemSize();
+	void SetEachItemPos();
 
 	// ============ private member variables ===============
 private:

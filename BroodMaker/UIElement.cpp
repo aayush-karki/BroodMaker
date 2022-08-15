@@ -356,7 +356,7 @@ bool Brood::BroodUI::UIElement::DoElement()
 			Brood::BroodUI::ElementSelection::SetHotElementFlag( true );
 		}
 
-		// this if code block makes it so that the if a menu of a memubar is open
+		// this if-code-block makes it so that the if a menu of a memubar is open
 		// then hover over its sibiling menus should expand/open the sibling menu.
 		// 
 		// if current active element's parent and hot element parent are the 
@@ -364,7 +364,7 @@ bool Brood::BroodUI::UIElement::DoElement()
 		if( m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
 			Brood::BroodUI::ElementSelection::GetCurrActiveElement() != nullptr )
 		{
-			// getting the curr active element's elemetnId
+			// getting the curr active element's elementId
 			const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement();
 			const int currActiveElementId = currActiveId->GetElementID();
 
@@ -394,17 +394,19 @@ bool Brood::BroodUI::UIElement::DoElement()
 	{
 		if( Brood::MouseHandler::IsLeftButtonReleased() )
 		{
-			// pointer is over the element at the time of the button release
+			// checking if the pointer is over the element at the time of the button release
 			if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElement() )
 			{
 				result = true;
 				Brood::BroodUI::ElementSelection::SetCurrActiveElement( &m_elementId );
 			}
-
-			// reset the active element
-			// as the left mouse button was released the current element should 
-			// not be active element
-			Brood::BroodUI::ElementSelection::SetActiveElement( nullptr );
+			else
+			{
+				// resetting the active element
+				// as the left mouse button was released the current element should 
+				// not be active element
+				Brood::BroodUI::ElementSelection::SetActiveElement( nullptr );
+			}
 		}
 	}
 	// check if the element is hot and should we make it active and remove currActiveElement

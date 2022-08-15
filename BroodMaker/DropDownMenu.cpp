@@ -169,6 +169,26 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 
 /// 
 /// @public
+/// @brief setter funciton to set the Font size of the menu title and its items
+/// 
+/// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
+/// 
+void Brood::BroodUI::DropDownMenu::SetFontSize( int a_fontSize )
+{
+	// setting the menu title font size
+	Brood::BroodUI::TextBox::SetFontSize( a_fontSize );
+
+	// setting the font size for its item
+	for( int i = 0; i < m_items.size(); ++i )
+	{
+		float itemSizeY = GetBodySize().y;
+
+		m_items.at( i )->SetFontSize( a_fontSize );
+	}
+}
+
+/// 
+/// @public
 /// @brief Function to add menu item to the dropdown menu
 ///
 /// It dynamically allocates memory for the item
@@ -188,6 +208,7 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 		// saving the max item length and changing length of each of itemBody
 		m_maxItemLength = a_menuName.length();
 		SetEachItemSize();
+		SetEachItemPos();
 	}
 
 	// setting up the item which is at the end of the list
@@ -195,6 +216,7 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	SetItemPos( m_items.size() - 1 );
 	item->SetBodyColor( GetBodyColor() );
 	item->SetFont( *m_font );
+	item->SetFontSize( GetFontSize() );
 	item->SetFontColor( a_color );
 	item->SetText( a_menuName );
 
@@ -288,7 +310,6 @@ void Brood::BroodUI::DropDownMenu::SetItemSize( int a_itemIndex )
 /// @private
 /// @brief Setter function to set the size of each item in the drop down menus
 /// 
-/// 
 void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
 {
 	if( !m_items.empty() )
@@ -321,5 +342,17 @@ void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
 
 			m_items.at( i )->SetBodySize( menuLength, itemSizeY );
 		}
+	}
+}
+
+/// 
+/// @private
+/// @brief Setter function to set the postiong of each item in the drop down menus
+/// 
+void Brood::BroodUI::DropDownMenu::SetEachItemPos()
+{
+	for( int i = 0; i < m_items.size(); ++i )
+	{
+		SetItemPos( i );
 	}
 }

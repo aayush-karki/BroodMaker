@@ -114,7 +114,7 @@ public:
 	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
 	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
 	void SetFont( sf::Font* a_font );
-	void SetCharacterSize( unsigned a_fontSize );
+	void SetFontSize( int a_fontSize );
 
 	void AddMenuToMenuBar( std::string a_menuName );
 	void AddItemToMenu( unsigned a_index, std::string a_menuName);
@@ -139,5 +139,4 @@ private:
 	std::vector<Brood::BroodUI::DropDownMenu*> m_menus; // stores the list of drop down menus
 	sf::Font* m_font; // pointer to the font
 	unsigned m_fontSize; // also determines the height of the menu
-	std::vector<size_t> menuItemNameLength; // holds the length of the longest menu item for each menus group.
 };
