@@ -3,29 +3,39 @@
 /// @file Button.h 
 /// 
 /// @brief  This file is a header file for Button class 
-///		which is in Button namespace
+///		which is in BroodUI namespace
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of Button class.
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
-#include "UIElement.h"
 #include "TextBox.h"
 #include "MouseHandler.h"
 #include "UtilityFunctions.h"
+#include "SpriteHandler.h"
 
-// =============================== defining namespace =======================
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
 namespace Brood
 {
 	namespace BroodUI
 	{
-		// defining what component of this file will be inside namespace BroodUI
 		class Button;
 	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of button class ==============================
+// ======================================================================
 
 /// 
 /// @ingroup BroodUI
@@ -37,7 +47,13 @@ namespace Brood
 /// ### Example Case
 /// @code {.cpp}
 /// 
-/// // creating a textbox object
+/// // window object
+/// sf::RenderWindow window( sf::VideoMode( 500, 500 ), "BroodMaker" );
+///
+/// // event object 
+/// sf::Event events;
+/// 
+/// // creating a Button object
 /// Brood::BroodUI::Button myButton;
 /// myButton.SetBodySize( 100, 50 );
 /// myButton.SetBodyPosition( 55, 0 );
@@ -45,18 +61,24 @@ namespace Brood
 /// myButton.SetBodyColor( sf::Color::Red );
 /// myButton.SetText( "-----" );
 /// 
-/// 
-/// // ============ in the main loop ===============
-/// 
-/// myButton.DoElement();
-/// 
-/// // drawing the element
-/// myButton.Draw( window );
+/// //app loop
+/// while( !exit )
+/// {
+///		// event loop
+///		
+///		// logic 
+///		myButton.DoElement();
+///		
+///		// render
+///		myButton.Draw( window );
+/// }
 /// 
 /// @endcode
 ///
 class Brood::BroodUI::Button : public Brood::BroodUI::TextBox
 {
+	/// @todo see if it is better to make button derived from button or from text box
+
 	// ============ public member function =============== 
 public:
 
@@ -66,28 +88,19 @@ public:
 	// default destructor
 	virtual ~Button(); 
 
-	// setter function
-	void SetSpriteLength( float a_spriteLength );
-	void SetSpriteHeight( float a_spriteHwight );
-
-	bool SetTextureFromFilePath( std::string a_texturePath );
-	bool SetTextureFromSavedFilePath();
+	// Getter funciton 
+	Brood::SpriteHandler& GetSpriteBody(); // gets the sprite body
 	
 	// overrided funciton 
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
-
-	// ================ private member function ==============
-private:
-
-	void SetSpriteFromTexture( unsigned a_num ); // setter
-
 	// ============ private member variables =============== 
 private:
-	bool m_drawText; // is true if text is set
+	bool m_drawText; ///> is true if text is set and hence draw to screen
 
-	std::string m_texturePath;
-	sf::Texture m_texture; // reference to the a the texture opened from the path
-	float m_spriteLength; 
-	float m_spriteHeight;
+	Brood::SpriteHandler m_bodySprite; ///> object to set texture
 };
+
+// ======================================================================
+// ================= end of button class ================================
+// ======================================================================

@@ -57,11 +57,11 @@ Brood::Dice::Dice( std::string a_texturePath, float a_spriteLength,
 	Brood::BroodUI::Button( a_parentPtr), m_numSides( a_numSides )
 {
 	// settomg sprite height and length 
-	SetSpriteLength( a_spriteLength );
-	SetSpriteHeight( a_spriteLength );
+	GetSpriteBody().SetSpriteLength( a_spriteLength );
+	GetSpriteBody().SetSpriteHeight( a_spriteLength );
 
 	// loading the texture
-	SetTextureFromFilePath( a_texturePath );
+	GetSpriteBody().SetTextureFromFilePath( a_texturePath );
 
 };
 

@@ -2,26 +2,37 @@
 /// 
 /// @file TextBox.h 
 /// 
-/// @brief This file is a header file for TextBox class.
+/// @brief This file is a header file for TextBox class whicih is
+///		in BroodUI namespace
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of TextBox class.
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 #include "UIElement.h"
 
-// =============================== defining namespace =======================
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
 namespace Brood
 {
 	namespace BroodUI
 	{
-		// defining what component of this file will be inside namespace BroodUI
 		class TextBox;
 	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of TextBox class =============================
+// ======================================================================
 
 /// 
 /// @ingroup BroodUI
@@ -62,6 +73,12 @@ namespace Brood
 /// ### Example Case
 /// @code {.cpp}
 /// 
+/// // window object
+/// sf::RenderWindow window( sf::VideoMode( 500, 500 ), "BroodMaker" );
+///
+/// // event object 
+/// sf::Event events;
+/// 
 /// // creating a textbox object
 /// myTextBox.SetBodySize( 100, 50 );
 /// myTextBox.SetBodyPosition( 160, 350 );
@@ -73,38 +90,47 @@ namespace Brood
 /// myTextBox.SetEditable( true );
 /// myTextBox.SetLimit( true, 4 );
 /// 
-/// 
-/// // ============ in the main loop ===============
-/// 
-/// // == in the even polling loop ==
-///	case sf::Event::TextEntered:
-///	{
-///		if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
-///		{
-///			break;
-///		}
-///	
-///		// checking if the current active element is a editable textbox
-///		int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
-///		Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
-///		if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
-///		{
-///			// checking if it is editable or not
-///			Brood::BroodUI::TextBox* currActiveTextBox = ( Brood::BroodUI::TextBox* )currActiveElement;
-///			if( currActiveTextBox->IsEditable() )
+/// //app loop
+/// while( !exit )
+/// {
+/// 	// events
+/// 	while( window.pollEvent( events ) )
+/// 	{
+/// 		switch( events.type )
 ///			{
-///				// if yes then sent the textEntered event to the element
-///				currActiveTextBox->TypeOn( events );
+///				// other events
+///				// == in the even polling loop ==
+///				case sf::Event::TextEntered:
+///				{
+///					if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+///					{
+///						break;
+///					}
+///				
+///					// checking if the current active element is a editable textbox
+///					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+///					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+///					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
+///					{
+///						// checking if it is editable or not
+///						Brood::BroodUI::TextBox* currActiveTextBox = ( Brood::BroodUI::TextBox* )currActiveElement;
+///						if( currActiveTextBox->IsEditable() )
+///						{
+///							// if yes then sent the textEntered event to the element
+///							currActiveTextBox->TypeOn( events );
+///						}
+///					}
+///					break;
+///				}
 ///			}
 ///		}
-///		break;
-///	}
 ///
-/// // == below the even polling loop ==
-/// myTextBox.DoElement();
-/// 
-/// // drawing the element
-/// myTextBox.Draw( window );
+///		// logics
+///		myTextBox.DoElement();
+///		
+///		// render
+///		myTextBox.Draw( window );
+/// }
 /// 
 /// @endcode
 /// 
@@ -132,23 +158,22 @@ public:
 	const bool IsSelected() const;
 
 	// setter fucnitons
-	virtual  void SetBodySize( sf::Vector2f  a_size ) override;
-	virtual void SetBodySize( float a_sizeX, float a_sizeY ) override;
-	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
-	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
+	virtual  void SetBodySize( sf::Vector2f  a_size ) override; // sets body size
+	virtual void SetBodySize( float a_sizeX, float a_sizeY ) override; // sets body size
+	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override; // sets body position
+	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override; // sets body position
 
-	void SetFont( sf::Font& a_font );
-	void SetFontColor( sf::Color a_color = sf::Color::White );
-	void SetFontSize( int a_fontSize = 12 );
+	void SetFont( sf::Font& a_font ); // sets font
+	void SetFontColor( sf::Color a_color = sf::Color::White ); // sets font color
+	void SetFontSize( int a_fontSize = 12 ); // sets font size
 	void SetText( std::string a_text = ""); // sets text
 	void SetLimit( bool a_hasLimit = false, int a_limit = 0 ); // to set the limit to number of character 
-	void SetSelected( bool a_selected ); // sets active
-	void SetEditable( bool a_isEditable ); // sets active
-
+	void SetSelected( bool a_selected ); // sets the state of the element.
+	void SetEditable( bool a_isEditable ); // sets if the textbox is editable or not
 
 	void TypeOn( sf::Event a_input ); // called every time user enters a char
 
-	virtual bool DoElement() override;
+	virtual bool DoElement() override; // checks to see if the logic for the element is to be excecuted or not 
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
 	// ============ private member function =============== 
@@ -159,11 +184,15 @@ private:
 
 	// ============ private member variables ===============
 private:
-	sf::Text m_text;
-	std::ostringstream m_ossText;
-	bool m_isEditable;
-	bool m_isSelected;
-	bool m_hasLimit;
-	int m_limit;
-	unsigned m_fontSize;
+	sf::Text m_text; ///> text content
+	std::ostringstream m_ossText; ///> text buffer
+	bool m_isEditable; ///> is true if the element's text is editable
+	bool m_isSelected; ///> is true if the element is selected
+	bool m_hasLimit; ///> is true if the element has number of character limit
+	int m_limit; ///> max number of character
+	unsigned m_fontSize; ///> font size
 };
+
+// ======================================================================
+// ================= end of TextBox class ===============================
+// ======================================================================

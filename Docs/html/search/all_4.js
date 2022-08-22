@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['elementselection_0',['ElementSelection',['../class_brood_1_1_brood_u_i_1_1_element_selection.html',1,'Brood::BroodUI']]],
+  ['elementselection_0',['ElementSelection',['../class_brood_1_1_brood_u_i_1_1_element_selection.html',1,'Brood::BroodUI::ElementSelection'],['../class_element_selection.html',1,'ElementSelection']]],
   ['elementselection_2ecpp_1',['ElementSelection.cpp',['../_element_selection_8cpp.html',1,'']]],
   ['elementselection_2eh_2',['ElementSelection.h',['../_element_selection_8h.html',1,'']]],
   ['enter_5fkey_3',['ENTER_KEY',['../_text_box_8h.html#afba17fd121bcd7abc852f1ae1f3abb58',1,'TextBox.h']]],

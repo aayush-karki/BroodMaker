@@ -13,13 +13,12 @@ var class_brood_1_1_brood_u_i_1_1_menu_bar =
     [ "SetBodyPosition", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#aec4d1f774197f4645d0a0b4cacd93d24", null ],
     [ "SetBodySize", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a362aedc3a8bebff33dbc07b9ce5b1760", null ],
     [ "SetBodySize", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#aef094f4b37ecea46ad9ca9926ed767dd", null ],
-    [ "SetCharacterSize", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a70d114ca80a05989c515c1a064f83034", null ],
     [ "SetFont", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a4b7d9913f8f3186aace13fa28680ef04", null ],
+    [ "SetFontSize", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a133fe64a6604d6ff3dc6d23533393907", null ],
     [ "SetMenuBodySize", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a5eb1ba7453c4c29d11c12d002cd0b35d", null ],
     [ "SetMenuPos", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a3372e05987ce2f314e8a3433eb58c96e", null ],
     [ "Update", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a0376d34da7cfc765ae1e5fbde798974f", null ],
     [ "m_font", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a46eadd505091befcbe2a1462c9fe3197", null ],
     [ "m_fontSize", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a77f930740bd005fc9a3904af18a6e547", null ],
-    [ "m_menus", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a991e55c21bc2656d486725131084ed68", null ],
-    [ "menuItemNameLength", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#af1d239f4e70da44986072efe897504df", null ]
+    [ "m_menus", "class_brood_1_1_brood_u_i_1_1_menu_bar.html#a991e55c21bc2656d486725131084ed68", null ]
 ];

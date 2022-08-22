@@ -33,7 +33,9 @@ var dir_911c939aa3af6aadf4162eda3b655cf2 =
       [ "Brood::BroodUI::DropDownMenu", "class_brood_1_1_brood_u_i_1_1_drop_down_menu.html", "class_brood_1_1_brood_u_i_1_1_drop_down_menu" ]
     ] ],
     [ "ElementSelection.cpp", "_element_selection_8cpp.html", null ],
-    [ "ElementSelection.h", "_element_selection_8h.html", null ],
+    [ "ElementSelection.h", "_element_selection_8h.html", [
+      [ "Brood::BroodUI::ElementSelection", "class_brood_1_1_brood_u_i_1_1_element_selection.html", null ]
+    ] ],
     [ "InitialWorkSpace.cpp", "_initial_work_space_8cpp.html", null ],
     [ "InitialWorkSpace.h", "_initial_work_space_8h.html", [
       [ "Brood::Application::InitialWorkSpace", "class_brood_1_1_application_1_1_initial_work_space.html", "class_brood_1_1_application_1_1_initial_work_space" ]

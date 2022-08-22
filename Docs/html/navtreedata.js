@@ -61,8 +61,8 @@ var NAVTREEINDEX =
 [
 "_application_8cpp.html",
 "class_brood_1_1_brood_u_i_1_1_drop_down_menu.html",
-"class_brood_1_1_dice.html#abb0a6c316ef4cf9b5776dd03610c7b9b",
-"struct_s_t___path_data.html"
+"class_brood_1_1_dice.html#a5bf3ae0fbf552f6be5f5257d8f2c7019",
+"struct_s_t___dice_prefab_data.html#a0cbc32094b172a5d96825cae98387926"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

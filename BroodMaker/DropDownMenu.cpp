@@ -1,6 +1,6 @@
 /*************************************************************************/
 /// 
-/// @file DropDownMenu.h 
+/// @file DropDownMenu.cpp 
 /// 
 /// @brief  This file is a source file for DropDownMenu class.
 /// 
@@ -9,8 +9,15 @@
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "DropDownMenu.h"
+
+// ======================================================================
+// ================= start of DropDownMenu class ========================
+// ======================================================================
 
 /// 
 /// @public
@@ -48,11 +55,17 @@ Brood::BroodUI::DropDownMenu::~DropDownMenu()
 /// 
 /// @return reference to the item list
 /// 
-std::vector<Brood::BroodUI::TextBox*>& Brood::BroodUI::DropDownMenu::GetItemList()
+std::vector<Brood::BroodUI::Button*>& Brood::BroodUI::DropDownMenu::GetItemList()
 {
 	return m_items;
 }
 
+/// 
+/// @public
+/// @brief Setter function to set the text for DropDownMenu 
+///
+/// @param a_text text to set the text for DropDownMenu
+/// 
 void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
 {
 	Brood::BroodUI::TextBox::SetText( a_text );
@@ -66,9 +79,9 @@ void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
 
 /// 
 /// @public
-/// @brief Setter function to set the DropDownMenu's main item Size
+/// @brief Setter function to set the DropDownMenu's Size
 /// 
-/// @param a_size size of the DropDownMenu's item 
+/// @param a_size size of the DropDownMenu 
 /// 
 void Brood::BroodUI::DropDownMenu::SetBodySize( sf::Vector2f a_size )
 {
@@ -94,10 +107,10 @@ void Brood::BroodUI::DropDownMenu::SetBodySize( sf::Vector2f a_size )
 /// 
 /// @public
 /// @overload
-/// @brief Setter function to set the DropDownMenu's item Size
+/// @brief Setter function to set the DropDownMenu's size
 /// 
-/// @param a_sizeX length of the DropDownMenu's item 
-/// @param a_sizeY width of the DropDownMenu's item 
+/// @param a_sizeX length of the DropDownMenu 
+/// @param a_sizeY width of the DropDownMenu
 /// 
 void Brood::BroodUI::DropDownMenu::SetBodySize( float a_sizeX, float a_sizeY )
 {
@@ -107,7 +120,7 @@ void Brood::BroodUI::DropDownMenu::SetBodySize( float a_sizeX, float a_sizeY )
 /// 
 /// @virtual
 /// @public
-/// @brief Setter function to set the Button's Position.
+/// @brief Setter function to set the DropDownMenu's Position.
 /// 
 /// @param a_pos position of the element 
 /// @param a_relativeToParent is true if the passed position is relative to its parent;
@@ -132,7 +145,7 @@ void Brood::BroodUI::DropDownMenu::SetBodyPosition( sf::Vector2f a_pos, bool a_r
 /// @virtual
 /// @public
 /// @overload
-/// @brief Setter function to set the Button's Position
+/// @brief Setter function to set the DropDownMenu's Position
 /// 
 /// @param a_posX x-position of the element
 /// @param a_posY y-position of the element
@@ -199,7 +212,7 @@ void Brood::BroodUI::DropDownMenu::SetFontSize( int a_fontSize )
 void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Color a_color )
 {
 	// create a textbox and add it to the itemList
-	Brood::BroodUI::TextBox* item = new Brood::BroodUI::TextBox;
+	Brood::BroodUI::Button* item = new Brood::BroodUI::Button;
 	m_items.push_back( item );
 
 	// checking if the length is bigger than max length
@@ -253,7 +266,8 @@ void Brood::BroodUI::DropDownMenu::Draw( sf::RenderWindow& a_window )
 
 /// 
 /// @private
-/// @brief helper funciton to position the item at given index correctly in the drop down list.
+/// @brief helper funciton to position the item at given index correctly 
+///		in the drop down list.
 /// 
 /// @param a_itemIndex index of the item in the drop down list
 /// 
@@ -356,3 +370,7 @@ void Brood::BroodUI::DropDownMenu::SetEachItemPos()
 		SetItemPos( i );
 	}
 }
+
+// ======================================================================
+// ================= end of DropDownMenu class ==========================
+// ======================================================================

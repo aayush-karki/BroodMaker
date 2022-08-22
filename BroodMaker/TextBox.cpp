@@ -1,6 +1,6 @@
 /*************************************************************************/
 /// 
-/// @file TextBox.h 
+/// @file TextBox.cpp
 /// 
 /// @brief  This file is a source file for TextBox class.
 /// 
@@ -9,10 +9,17 @@
 ///
 /************************************************************************/
 
-///@TODO fix the limit bug
+/// @TODO fix the limit bug
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "TextBox.h"
+
+// ======================================================================
+// ================= start of TextBox class =============================
+// ======================================================================
 
 /// 
 /// @public
@@ -34,14 +41,18 @@ Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
 	m_limit( -1 ), m_fontSize( 0 )
 {}
 
+///
+/// @public
+/// @brief default destructor
+/// 
 Brood::BroodUI::TextBox::~TextBox()
 {}
 
 /// 
 /// @public
-/// @brief getter funciton to get the typed text
+/// @brief getter funciton to get the user typed text that is stored in the element
 /// 
-/// @return text that user typed
+/// @return all the user typed text that is stored in the element
 /// 
 std::string Brood::BroodUI::TextBox::GetText() const
 {
@@ -50,9 +61,9 @@ std::string Brood::BroodUI::TextBox::GetText() const
 
 /// 
 /// @public
-/// @brief getter funciton to get the character size
+/// @brief getter funciton to get the font size
 /// 
-/// @return size of the curr charactersize
+/// @return size of the font
 /// 
 unsigned int Brood::BroodUI::TextBox::GetFontSize() const
 {
@@ -63,7 +74,7 @@ unsigned int Brood::BroodUI::TextBox::GetFontSize() const
 /// @public
 /// @brief getter funciton to get its editibility
 /// 
-/// @return true if the textbox is editable
+/// @return true if the textbox is editable; else false
 /// 
 const bool Brood::BroodUI::TextBox::IsEditable() const
 {
@@ -72,9 +83,10 @@ const bool Brood::BroodUI::TextBox::IsEditable() const
 
 /// 
 /// @public
-/// @brief getter funciton to get if it is selected or not
+/// @overload
+/// @brief getter funciton to get if the element is curretly selected or not
 /// 
-/// @return true if it is selected; else false
+/// @return true if it is currently selected; else false
 /// 
 const bool Brood::BroodUI::TextBox::IsSelected( ) const
 {
@@ -85,25 +97,27 @@ const bool Brood::BroodUI::TextBox::IsSelected( ) const
 /// @public
 /// @brief Setter function to set the TextBox's Size
 /// 
-/// @warning The menu height cannot be smaller than font size + 2 px.
+/// @warning The menu height should always be greater than font size by 2 px.
 /// @param a_size size of the element
 /// 
 void Brood::BroodUI::TextBox::SetBodySize( sf::Vector2f a_size )
 {
-	//checking if the new height for the body is smaller than the charsize
-	if( a_size.y < m_fontSize + 2 )
+	//checking if the new height for the body is greater than the charsize by 2
+	if( a_size.y >= m_fontSize + 2 )
 	{
-		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
-		return;
+		// setting the bar body size
+		Brood::BroodUI::UIElement::SetBodySize( a_size );
 	}
 	else if( a_size.y < m_fontSize )
 	{
 		std::cerr << "body height cannot be smaller than font Size cannot" << std::endl;
 		return;
 	}
-
-	// setting the bar body size
-	Brood::BroodUI::UIElement::SetBodySize( a_size );
+	else
+	{
+		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
+		return;
+	}
 }
 
 /// 
@@ -152,7 +166,7 @@ void Brood::BroodUI::TextBox::SetBodyPosition( float a_posX, float a_posY, bool 
 
 /// 
 /// @public
-/// @brief setter funciton to set the font size
+/// @brief setter function to set the font size
 /// 
 void Brood::BroodUI::TextBox::SetFont( sf::Font& a_font )
 {
@@ -161,7 +175,7 @@ void Brood::BroodUI::TextBox::SetFont( sf::Font& a_font )
 
 /// 
 /// @public
-/// @brief setter funciton to set the Font color
+/// @brief setter function to set the Font color
 /// 
 /// param a_color font color -> default sf::Color::White
 /// 
@@ -172,7 +186,9 @@ void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
 
 /// 
 /// @public
-/// @brief setter funciton to set the Font size
+/// @brief setter function to set the Font size
+/// 
+/// @note If the font size is more than body height by
 /// 
 /// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
 /// 
@@ -204,7 +220,7 @@ void Brood::BroodUI::TextBox::SetFontSize( int a_fontSize )
 }
 
 /// 
-/// @brief setter funciton to set the text that is displayed in the button
+/// @brief setter function to set the text that is displayed in the button
 /// 
 /// @warning It assumes that the font for the text is already set
 /// 
@@ -246,13 +262,23 @@ void Brood::BroodUI::TextBox::SetLimit( bool a_hasLimit, int a_limit )
 
 /// 
 /// @public
-/// @brief setter function
+/// @brief setter function to set the state of the element i.e. if it is 
+///		seleected or not
 /// 
 /// @param a_selected true if current text box is selected or not
 /// 
 void Brood::BroodUI::TextBox::SetSelected( bool a_selected )
 {
+	// if the element is not editable then do nothing
+	if( m_elementType == Brood::BroodUI::ENUM_UIType::UI_textBox && !m_isEditable )
+	{
+		return;
+	}
+
+	// setting the state
 	m_isSelected = a_selected;
+
+	// if not selected then remove the text cursor i.e. "_"
 	if( !a_selected )
 	{
 		std::string tempStr = m_ossText.str();
@@ -269,7 +295,7 @@ void Brood::BroodUI::TextBox::SetSelected( bool a_selected )
 
 /// 
 /// @public
-/// @brief setter function
+/// @brief setter function to set if the element is edutable or not
 /// 
 /// @param a_isEditable true if text box is editable
 /// 
@@ -280,13 +306,13 @@ void Brood::BroodUI::TextBox::SetEditable( bool a_isEditable )
 
 /// 
 /// @public
-/// @brief Called when a character is typed 
+/// @brief Called when a character is typed a
 /// 
 /// @param a_input a copy of sf::Event::TextEntered
 /// 
 void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 {
-	if( m_isSelected )
+	if( m_isEditable && m_isSelected )
 	{
 		// we only process ascii codes
 		unsigned charTyped = a_input.text.unicode;
@@ -329,22 +355,7 @@ bool Brood::BroodUI::TextBox::DoElement()
 
 	// checking if the current active element is this element
 	// if yes set the isSelected property to true 
-	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
-	{
-		SetSelected( true );
-
-		//// checking if the mouse is outside of the element and the left mouse button was released
-		//if( !IsMouseOverElement() && Brood::MouseHandler::IsLeftButtonPressed() )
-		//{
-		//	// then the setSelected should be false
-		//	Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
-		//	SetSelected( false );
-		//}
-	}
-	else
-	{
-		SetSelected( false );
-	}
+	SetSelected( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() );
 
 	return doElement;
 }
@@ -431,3 +442,7 @@ void Brood::BroodUI::TextBox::DeleteLastChar()
 
 	m_text.setString( m_ossText.str() );
 }
+
+// ======================================================================
+// ================= end of TextBox class ===============================
+// ======================================================================

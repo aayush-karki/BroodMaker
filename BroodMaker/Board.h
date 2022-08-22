@@ -128,7 +128,7 @@ inline Board::Board( St_BoardParam* a_StBoardInializer, Brood::St_DiceParam* a_S
 
 	// setting the dice
 	m_dice.SetBodySize( 50, 50 );
-	m_dice.SetTextureFromSavedFilePath();
+	m_dice.GetSpriteBody().SetTextureFromSavedFilePath();
 }
 
 /// 

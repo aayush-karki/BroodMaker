@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getactiveelement_0',['GetActiveElement',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#aff57a49506ed58c2071cb6540fc83cea',1,'Brood::BroodUI::ElementSelection']]],
+  ['getactiveelement_0',['GetActiveElement',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#afbc118fec1766af35e8036fe633cf2dd',1,'Brood::BroodUI::ElementSelection']]],
   ['getactiveoverlaycolor_1',['GetActiveOverlayColor',['../class_brood_1_1_brood_u_i_1_1_u_i_element.html#af21f66fdab68cb8099acf584fdf6c6e4',1,'Brood::BroodUI::UIElement']]],
   ['getallplayerbegin_2',['GetAllPlayerBegin',['../class_player_manager.html#af66279aeac78a85299fb66535aebc6c2',1,'PlayerManager']]],
   ['getallplayerend_3',['GetAllPlayerEnd',['../class_player_manager.html#aebb6b4dc4291f152cdfc9e715e2747e5',1,'PlayerManager']]],
@@ -10,7 +10,7 @@ var searchData=
   ['getbodysize_7',['GetBodySize',['../class_brood_1_1_brood_u_i_1_1_u_i_element.html#a191a6ec0417ae53a12deeb93174ade5f',1,'Brood::BroodUI::UIElement']]],
   ['getchildidatidx_8',['GetChildIdAtIdx',['../class_brood_1_1_brood_u_i_1_1_id.html#ad204df66edd8518ea6b3d30dc5426028',1,'Brood::BroodUI::Id']]],
   ['getchildidx_9',['GetChildIdx',['../class_brood_1_1_brood_u_i_1_1_id.html#a0dd9d1a50f583d533aa78466055c5551',1,'Brood::BroodUI::Id']]],
-  ['getcurractiveelement_10',['GetCurrActiveElement',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#a5a40d8d4040978615dc2ee5ece3b908a',1,'Brood::BroodUI::ElementSelection']]],
+  ['getcurractiveelement_10',['GetCurrActiveElement',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#a744931b21c1daa0b914872867ff0ba40',1,'Brood::BroodUI::ElementSelection']]],
   ['getcurrframelmsstatus_11',['GetCurrFrameLMSStatus',['../class_brood_1_1_mouse_handler.html#ac65ca6963e5301804895316db9344182',1,'Brood::MouseHandler']]],
   ['getcurrframemousepos_12',['GetCurrFrameMousePos',['../class_brood_1_1_mouse_handler.html#a1a82f13395a96c993ed1e08d02782e18',1,'Brood::MouseHandler']]],
   ['getcurrframermsstatus_13',['GetCurrFrameRMSStatus',['../class_brood_1_1_mouse_handler.html#a8e12c47b2ac71d2a79ccd50d70c8f6e8',1,'Brood::MouseHandler']]],
@@ -21,8 +21,8 @@ var searchData=
   ['getelementptrfrommap_18',['GetElementPtrFromMap',['../struct_brood_1_1_brood_u_i_1_1_s_t___map_id_to_element.html#ac069d6978e7c3b0ec96da99283ed0258',1,'Brood::BroodUI::ST_MapIdToElement']]],
   ['getelementtype_19',['GetElementType',['../class_brood_1_1_brood_u_i_1_1_u_i_element.html#ac6a877e9b684cca9a373639be58c69d3',1,'Brood::BroodUI::UIElement']]],
   ['getfontsize_20',['GetFontSize',['../class_brood_1_1_brood_u_i_1_1_text_box.html#a4629a74beac0956c7c14483c56051d16',1,'Brood::BroodUI::TextBox']]],
-  ['gethotelement_21',['GetHotElement',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#a0dd84e3f1f600fa815ec4c920b843b9d',1,'Brood::BroodUI::ElementSelection']]],
-  ['gethotelementflag_22',['GetHotElementFlag',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#ae3cca403a07118ae71b24ac50dfa128a',1,'Brood::BroodUI::ElementSelection']]],
+  ['gethotelement_21',['GetHotElement',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#ac3ef19b51ffbae74063317480e0cb2d6',1,'Brood::BroodUI::ElementSelection']]],
+  ['gethotelementflag_22',['GetHotElementFlag',['../class_brood_1_1_brood_u_i_1_1_element_selection.html#a88c6609cdec514b385a836e6684363c0',1,'Brood::BroodUI::ElementSelection']]],
   ['gethotoverlaycolor_23',['GetHotOverlayColor',['../class_brood_1_1_brood_u_i_1_1_u_i_element.html#ad4102abb5b257803ef3cbd7541b99a84',1,'Brood::BroodUI::UIElement']]],
   ['getitemlist_24',['GetItemList',['../class_brood_1_1_brood_u_i_1_1_drop_down_menu.html#a7237d591b43e67d73d44e06da3f05323',1,'Brood::BroodUI::DropDownMenu']]],
   ['getlastframelmsstatus_25',['GetlastFrameLMSStatus',['../class_brood_1_1_mouse_handler.html#a89bad9e122cd3649a2448dd4cbc7ca0d',1,'Brood::MouseHandler']]],

@@ -10,10 +10,17 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "ElementSelection.h"
 
-// allocating loaction of the static data member
+// ======================================================================
+// ============== start of ElemnetSelection class =======================
+// ======================================================================
+
+// allocating loaction for the static data member
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_activeElementPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementPtr = nullptr;
@@ -22,11 +29,9 @@ bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
 /// 
 /// @static
 /// @public
-/// @brief Setter function
+/// @brief Setter function to set passed UI id as the hot element
 /// 
-/// Set the passed element id as hot
-/// 
-/// @param a_idPtr pointer to UI_ID of the element the mouse is hover over
+/// @param a_idPtr pointer to UI_ID of the element the mouse is hovering over
 /// 
 void Brood::BroodUI::ElementSelection::SetHotElement( Brood::BroodUI::Id* a_idPtr )
 {
@@ -36,16 +41,8 @@ void Brood::BroodUI::ElementSelection::SetHotElement( Brood::BroodUI::Id* a_idPt
 /// 
 /// @static
 /// @public
-/// @brief Setter function
-/// 
-/// Set the passed element id as active
-/// 
-/// @note  activeElement differs from currActiveElement as the prior stores 
-///		element id when the mouse is pressing on it while the latter stores 
-///		element id of even when the mouse is not over it  untill other elements 
-///		are pressed.
-///		
-/// 
+/// @brief Setter function to set the passed element id as active element
+///
 /// @param a_idPtr pointer to UI_ID of the selected element
 /// 
 void Brood::BroodUI::ElementSelection::SetActiveElement( Brood::BroodUI::Id* a_idPtr )
@@ -56,14 +53,7 @@ void Brood::BroodUI::ElementSelection::SetActiveElement( Brood::BroodUI::Id* a_i
 /// 
 /// @static
 /// @public
-/// @brief Setter function.
-/// 
-/// Set the passed element id as current active
-/// 
-/// @note  activeElement differs from currActiveElement as the prior stores 
-///		element id when the mouse is pressing on it while the latter stores 
-///		element id of even when the mouse is not over it  untill other elements 
-///		are pressed.
+/// @brief Setter function sets the passed element id as current active element
 /// 
 /// @param a_idPtr pointer to UI_ID of the selected element
 /// 
@@ -75,12 +65,12 @@ void Brood::BroodUI::ElementSelection::SetCurrActiveElement( Brood::BroodUI::Id*
 /// 
 /// @static
 /// @public
-/// @brief Setter function.
-/// 
-/// Flags if the hot element is found for a given frame. It is set only once
+/// @brief Setter function to hot element flag if a hot element is found
 ///		for a given frame.
 /// 
-/// @param a_found true if a hot element is set in a given 
+/// It is set only once for any given frame.
+/// 
+/// @param a_found true if a hot element found for a given frame
 /// 
 void Brood::BroodUI::ElementSelection::SetHotElementFlag( bool a_found )
 {
@@ -90,9 +80,7 @@ void Brood::BroodUI::ElementSelection::SetHotElementFlag( bool a_found )
 /// 
 /// @static 
 /// @public
-/// @brief Getter function;
-/// 
-/// Gets the pointer to hot element
+/// @brief Getter function to get the pointer to hot element
 /// 
 /// @return the pointer to hot element
 /// 
@@ -104,9 +92,7 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetHotElement()
 /// 
 /// @static 
 /// @public
-/// @brief Getter function;
-/// 
-/// Gets the pointer to active element
+/// @brief Getter function to gets the pointer to active element
 /// 
 /// @return the pointer to active element
 /// 
@@ -118,9 +104,7 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetActiveElement()
 /// 
 /// @static 
 /// @public
-/// @brief Getter function;
-/// 
-/// Gets the pointer to current active element
+/// @brief Getter function to gets the pointer to current active element
 /// 
 /// @return the pointer to current active element
 /// 
@@ -133,9 +117,7 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetCurrActiveElement
 /// 
 /// @static 
 /// @public
-/// @brief Getter function;
-/// 
-/// Gets the state of the m_hotElementFlag
+/// @brief Getter function gets the state of the m_hotElementFlag
 /// 
 /// @return state of the m_hotElementFlag
 /// 
@@ -143,3 +125,7 @@ const bool Brood::BroodUI::ElementSelection::GetHotElementFlag()
 {
 	return m_hotElementFlag;
 }
+
+// ======================================================================
+// ================ end of ElemnetSelection class =======================
+// ======================================================================

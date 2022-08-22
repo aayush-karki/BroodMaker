@@ -12,9 +12,6 @@
 /// ENUM_UIType contains the types of UI elemente that are derived 
 ///		from UIElement class
 /// 
-/// ST_UIELementCtorParam provides a cleaner way to pass the arguments 
-///		to inialize a sub-object of UIElemnt class
-/// 
 /// ST_MapIdToElement is a struct that maps the unique ui element id to 
 ///		its element. 
 /// 
@@ -24,33 +21,33 @@
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 #include "UI_ID.h"
 #include "ElementSelection.h"
 #include "MouseHandler.h"
 
-// =============================== defining namespace =======================
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
 namespace Brood
-{
-	///
-	/// @ingroup Brood
-	/// @addtogroup BroodUI
-	/// 
+{ 
 	namespace BroodUI
 	{
-		// defining what component of this file will be inside namespace BroodUI
 		enum class ENUM_UIType;
 		struct ST_MapIdToElement;
 		class UIElement;
 	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
 
-
-/**************************************************************************************/
-/******************* ENUM_UIType Enum class  defination	*******************************/
-/**************************************************************************************/
-
+// ======================================================================
+// ================= start of ENUM_UIType Enum class defination =========
+// ======================================================================
 
 /// 
 /// @ingroup BroodUI
@@ -66,11 +63,13 @@ enum class Brood::BroodUI::ENUM_UIType
 	UI_panel,
 	UI_scrollBar /// @TODO add latter
 };
+// ======================================================================
+// ================= end of ENUM_UIType Enum class defination ===========
+// ======================================================================
 
-/**************************************************************************************/
-/************************ UIElement class  defination *********************************/
-/**************************************************************************************/
-
+// ======================================================================
+// ================= start of UIElement class ===========================
+// ======================================================================
 
 /// 
 /// @ingroup BroodUI
@@ -111,51 +110,58 @@ public:
 	// funciton to check if the
 	bool IsMouseOverElement();
 	bool IsActiveElement();
+	bool IsCurrActiveElement();
 	bool IsHotElement();
 
-	// checks to see if the element is active and the funciton is to be carreied out or not
-	// @todo: maybe make this a virtual function as button element is one press thing
-	//		but a text editor is not 
-
-	virtual bool DoElement();
+	virtual bool DoElement(); // checks to see if the logic for the element is to be excecuted or not 
 	virtual void Draw( sf::RenderWindow& a_window ) = 0; // draw funciton
 
 	// ================= protected member variables =================  
 protected:
-	Brood::BroodUI::ENUM_UIType m_elementType; // stores the type of element stored
-	Brood::BroodUI::Id m_elementId; // uniqie id of the element
+	Brood::BroodUI::ENUM_UIType m_elementType; ///> stores the type of element stored
+	Brood::BroodUI::Id m_elementId; ///> uniqie id of the element
 
-	sf::RectangleShape m_body; // element body
-	sf::RectangleShape m_bodyOverLay; // element body
+	sf::RectangleShape m_body; ///> element body
+	sf::RectangleShape m_bodyOverLay; ///> element body
 
-	sf::Color m_hotOverlayColor; // color when mouse is over it
-	sf::Color m_activeOverlayColor; // color when it is active element
+	sf::Color m_hotOverlayColor; ///> color when mouse is over it
+	sf::Color m_activeOverlayColor; ///> color when it is active element
 
-	bool m_drawOverlay; // true if overlay is to be drawn
+	bool m_drawOverlay; ///> true if overlay is to be drawn
 };
 
+// ======================================================================
+// ================= end of UIElement class =============================
+// ======================================================================
 
-/**************************************************************************************/
-/*********************** ST_MapIdToElement struct  defination *************************/
-/**************************************************************************************/
+// ======================================================================
+// ================= start of ST_MapIdToElement struct ==================
+// ======================================================================
 
 ///
 /// @ingroup BroodUI
-/// @static 
 /// @struct MapIdToElement  "MapIdToElement.h"
-/// @brief A struct to handel the mapping of unique UI_ID to its element
+/// @brief A static struct to handel the mapping of unique UI_ID to its element
 ///		for quick acceess 
 /// 
 struct Brood::BroodUI::ST_MapIdToElement
 {
 
+	// ================= public member function ===================  
 public:
+	// Getter functions
 	static std::map<const int, Brood::BroodUI::UIElement*>& GetMap();
 	static Brood::BroodUI::UIElement* GetElementPtrFromMap( int a_id );
+
 	static bool AddToMap( int a_id, Brood::BroodUI::UIElement* a_elementPtr );
 	static bool ReomveFromMap( int a_id );
 
-
+	// ================= private member variables =================  
 private:
+	///> maps the unique UI ID to the element
 	static std::map<const int, Brood::BroodUI::UIElement*> stm_mapper;
 };
+
+// ======================================================================
+// ================= end of ST_MapIdToElement struct ====================
+// ======================================================================

@@ -53,11 +53,23 @@ Brood::Application::Application::Application():
 	}
 	myCard = new Card( m_font, 300, 300, "5+3", "8", 3, 2, 1 );
 
+	// button with text
 	myButton.SetBodySize( 100, 50 );
 	myButton.SetBodyPosition( 55, 0 );
 	myButton.SetFont( m_font );
 	myButton.SetBodyColor( sf::Color::Red );
 	myButton.SetText( "-----" );
+
+	// button with sprite
+	mySpriteButton.SetBodySize( 50, 50 );
+	mySpriteButton.SetBodyPosition( 55, 100 );
+	mySpriteButton.SetFont( m_font );
+	// setting sprite height and length 
+	/*mySpriteButton.GetSpriteBody().SetSpriteLength( 50 );
+	mySpriteButton.GetSpriteBody().SetSpriteHeight( 50 );*/
+	// loading the texture
+	mySpriteButton.GetSpriteBody().SetTextureFromFilePath( fileName );
+	mySpriteButton.GetSpriteBody().SetSpriteFromTexture( 0 );
 
 	myTextBox.SetBodySize( 100, 50 );
 	myTextBox.SetBodyPosition( 160, 0 );
@@ -78,25 +90,26 @@ Brood::Application::Application::Application():
 	myDropDown.AddItemToMenu( "1st item" );
 	myDropDown.AddItemToMenu( "2st item" );
 
-	// making a dropdownmenu
+	// making a menubar
 	myMenu.SetBodySize( 150, 50 );
 	myMenu.SetBodyPosition( 430, 0 );
 	myMenu.SetFont( &m_font );
+	myMenu.SetFontSize( 20 );
 	myMenu.SetBodyColor( sf::Color::Magenta );
 
 	myMenu.AddMenuToMenuBar( "a" );
 	myMenu.AddMenuToMenuBar( "b" );
 	myMenu.AddMenuToMenuBar( "c" );
 
-	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "aa" );
-	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ab" );
-	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ac" );
-	myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ad" );
+	myMenu.AddItemToMenu( 0, "aa" );
+	myMenu.AddItemToMenu( 0, "ab" );
+	myMenu.AddItemToMenu( 0, "ac" );
+	myMenu.AddItemToMenu( 0, "ad" );
 
-	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "ba" );
-	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bb" );
-	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bc" );
-	myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bd" );
+	myMenu.AddItemToMenu( 1, "ba" );
+	myMenu.AddItemToMenu( 1, "bb" );
+	myMenu.AddItemToMenu( 1, "bc" );
+	myMenu.AddItemToMenu( 1, "bd" );
 
 }
 
@@ -158,7 +171,7 @@ void Brood::Application::Application::RunApplicaiton()
 
 		// ========================== logics ================================
 
-		// at the start of a frame
+		// ==== at the start of a frame ====
 		// clearing the hotelement flag
 		Brood::BroodUI::ElementSelection::SetHotElementFlag( false );
 		// updateing the mouse
@@ -175,15 +188,6 @@ void Brood::Application::Application::RunApplicaiton()
 		myTextBox.DoElement();
 
 		myDropDown.DoElement();
-		// this code block is always needed in it after doElement
-		if( myDropDown.GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
-		{
-			myDropDown.SetSelected( true );
-		}
-		else
-		{
-			myDropDown.SetSelected( false );
-		}
 		if( myDropDown.IsSelected() )
 		{
 			auto itemList = myDropDown.GetItemList();
@@ -191,7 +195,7 @@ void Brood::Application::Application::RunApplicaiton()
 			// positining the itemes
 			if( !itemList.empty() )
 			{
-				// postion all items according to the new menu position
+				// checking if the logics of the items is to be executed or not
 				for( int i = 0; i < itemList.size(); ++i )
 				{
 					itemList.at( i )->DoElement();
@@ -206,14 +210,7 @@ void Brood::Application::Application::RunApplicaiton()
 			for( int i = 0; i < menus.size(); ++i )
 			{
 				menus.at( i )->DoElement();
-				if( menus.at( i )->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
-				{
-					menus.at( i )->SetSelected( true );
-				}
-				else
-				{
-					menus.at( i )->SetSelected( false );
-				}
+				// checking if the logics of the element is to be executed or not
 				if( menus.at( i )->IsSelected() )
 				{
 					auto itemList = menus.at( i )->GetItemList();
@@ -242,13 +239,13 @@ void Brood::Application::Application::RunApplicaiton()
 
 		// menus
 		myButton.Draw( m_window );
+		mySpriteButton.Draw( m_window );
 		myMenu.Draw( m_window );
 		myDropDown.Draw( m_window );
 		myTextBox.Draw( m_window );
 		//window.draw(text);
 		m_window.display();
 	}
-
 }
 
 /// 

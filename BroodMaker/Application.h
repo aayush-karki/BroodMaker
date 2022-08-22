@@ -80,6 +80,7 @@ private:
 	Card* myCard;
 
 	Brood::BroodUI::Button myButton;
+	Brood::BroodUI::Button mySpriteButton;
 	Brood::BroodUI::TextBox myTextBox;
 	Brood::BroodUI::DropDownMenu myDropDown;
 	Brood::BroodUI::MenuBar myMenu;

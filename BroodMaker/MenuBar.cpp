@@ -1,6 +1,6 @@
 /*************************************************************************/
 /// 
-/// @file MenuBar.h 
+/// @file MenuBar.cpp 
 /// 
 /// @brief  This file is a source file for MenuBar class.
 /// 
@@ -9,8 +9,15 @@
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "MenuBar.h"
+
+// ======================================================================
+// ================= start of MenuBar class =============================
+// ======================================================================
 
 /// 
 /// @public
@@ -57,9 +64,12 @@ std::vector<Brood::BroodUI::DropDownMenu*>& Brood::BroodUI::MenuBar::GetMenuList
 }
 
 /// 
+/// @virtual
 /// @public
 /// @overload
-/// @brief Setter function to set the size MenuBar
+/// @brief Setter function to set the MenuBar's size
+/// 
+/// @note this is the menu bar size and not the menu itself
 /// 
 /// @warning The menu height cannot be smaller than font size + 2 px.
 /// 
@@ -96,9 +106,13 @@ void Brood::BroodUI::MenuBar::SetBodySize( sf::Vector2f a_size )
 }
 
 /// 
+/// @virtual
 /// @public
 /// @overload
-/// @brief Setter function to set the size the MenuBar
+/// @brief Setter function to set the MenuBar's size
+/// 
+/// @note this is the menu bar size and not the menus size.
+///		Menu size is determined by its content.
 /// 
 /// @param a_itemSizeX length of the menubar
 /// @param a_itemSizeY height of the menubar
@@ -112,7 +126,7 @@ void Brood::BroodUI::MenuBar::SetBodySize( float a_sizeX, float a_sizeY )
 /// @virtual
 /// @public
 /// @overload
-/// @brief Setter function to set the Button's Position.
+/// @brief Setter function to set the menubar's Position.
 /// 
 /// @param a_pos position of the element 
 /// @param a_relativeToParent is true if the passed position is relative to its parent;
@@ -138,7 +152,7 @@ void Brood::BroodUI::MenuBar::SetBodyPosition( sf::Vector2f a_pos, bool a_relati
 /// @virtual
 /// @public
 /// @overload
-/// @brief Setter function to set the Button's Position
+/// @brief Setter function to set the menubar's Position
 /// 
 /// @param a_posX x-position of the element
 /// @param a_posY y-position of the element
@@ -223,7 +237,7 @@ void Brood::BroodUI::MenuBar::SetFontSize( int a_fontSize )
 /// @public
 /// @brief Function to add menu to the menubar
 ///
-/// It dynamically allocates memory for the item
+/// It dynamically allocates memory for the menu and adds it to the list.
 /// 
 /// @note assumes that menu bar is already set. @see SetMenuBarBodySize
 /// @note assumes font is set. @see SetFont
@@ -351,3 +365,7 @@ void Brood::BroodUI::MenuBar::SetMenuPos( int a_itemIndex )
 	// this also sets the postion of any item that the dropdown menu might have
 	m_menus.at( a_itemIndex )->SetBodyPosition( lastMenuPosX, GetBodyPosition().y );
 }
+
+// ======================================================================
+// ================= end of MenuBar class ===============================
+// ======================================================================

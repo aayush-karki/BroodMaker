@@ -10,27 +10,34 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "UI_ID.h"
 
+// ======================================================================
+// ============== start of ID class =====================================
+// ======================================================================
+
+/// 
 /// @static
 /// @public
 /// @brief assigning a location for global id. 
 /// 
 /// It starts with 0 and only goes up.
 /// 
-unsigned Brood::BroodUI::Id::GLOBAL_ID_NUM = 0; // staring id
+unsigned Brood::BroodUI::Id::GLOBAL_ID_NUM = 0; // starting id
 
 /// 
 /// @public
 /// @brief default constructor
 /// 
-/// Initializes the data member of the function. 
+/// Initializes the data member of the class. 
 /// 
-/// @note If no parent is supplied, it initializes both 
-///		m_parentId and m_index to -1.
+/// @note If no parent is supplied, it initializes m_parentId to -1.
 /// 
-/// @param a_parentID pointer to the Id of the parent if any; default to nullPtr
+/// @param a_parentID pointer to the Id of the parent if any; default -> nullPtr
 ///
 Brood::BroodUI::Id::Id( Id* a_parentID ) :
 	m_elementID( GLOBAL_ID_NUM++ ), m_hasChilds( false )
@@ -38,14 +45,11 @@ Brood::BroodUI::Id::Id( Id* a_parentID ) :
 	Brood::BroodUI::Id::SetParent( a_parentID);
 }
 
-
 ///
 /// @public
 /// @brief Getter function to get the parent's ID
 /// 
-/// @note if the element has no parent then the parent Id returned is -1
-///
-/// @return parent's unique UI ID
+/// @return parent's unique UI ID if presents, else returns -1
 /// 
 const int Brood::BroodUI::Id::GetParentID() const
 {
@@ -74,8 +78,9 @@ const int Brood::BroodUI::Id::GetElementID() const
 const int Brood::BroodUI::Id::GetChildIdx( const Brood::BroodUI::Id* a_childIDPtr ) const
 {
 	int idx = 0;
-	std::vector<Brood::BroodUI::Id*>::const_iterator currChildId = m_allChildPtrs.begin();
+	
 	// loop through the the child list
+	std::vector<Brood::BroodUI::Id*>::const_iterator currChildId = m_allChildPtrs.begin();
 	while( currChildId != m_allChildPtrs.end())
 	{
 		if( a_childIDPtr->GetElementID() == ( *currChildId )->GetElementID() )
@@ -87,6 +92,9 @@ const int Brood::BroodUI::Id::GetChildIdx( const Brood::BroodUI::Id* a_childIDPt
 		++currChildId;
 		++idx;
 	}
+
+	std::cerr << "Error!! No such child exist for the element with ID:" <<
+		m_elementID << std::endl;
 	return -1;
 }
 
@@ -103,19 +111,18 @@ const int Brood::BroodUI::Id::GetTotalChildNum() const
 
 ///
 /// @public
-/// @brief Getter function to get pointer to its child at the provided 
-///		index
+/// @brief Getter function to get pointer of the passed child's index
 /// 
 /// @note if there index suppied is out of bound then, it logs the error and
 ///		returns nullptr
 /// 
-/// @param a_index index at which the child's pointer to retrive form
+/// @param a_index index of the child in the elements's child list
 /// 
-/// @return pointer to child at the given index
+/// @return pointer to child at the given index if present; else returns nullptr
 /// 
 Brood::BroodUI::Id* Brood::BroodUI::Id::GetChildIdAtIdx( const int a_index ) const
 {
-	if( a_index > ( m_allChildPtrs.size() - 1 ) )
+	if( a_index < 0 || a_index > ( m_allChildPtrs.size() - 1 ) )
 	{
 		std::cerr << "Error!! the index " << a_index << "does not exit for element with ID: "
 			<< m_elementID << std::endl;
@@ -149,9 +156,14 @@ bool Brood::BroodUI::Id::HasParent() const
 	return m_parentID != -1;
 }
 
+///
+/// @public
+/// @brief Setter function to set the element's parent
+/// 
+/// @param a_parentID pointer to the parent element id object
+/// 
 void Brood::BroodUI::Id::SetParent( Brood::BroodUI::Id* a_parentID )
 {
-	//setting parent id
 	m_parentID = a_parentID != nullptr ? a_parentID->GetElementID() : -1;
 }
 
@@ -159,7 +171,7 @@ void Brood::BroodUI::Id::SetParent( Brood::BroodUI::Id* a_parentID )
 /// @public
 /// @brief adds the child to its child list
 /// 
-/// @param a_childIdPtr const pointer to the child id
+/// @param a_childIdPtr pointer to the child id
 /// 
 void Brood::BroodUI::Id::AddChild( Brood::BroodUI::Id* a_childIdPtr )
 {
@@ -167,14 +179,11 @@ void Brood::BroodUI::Id::AddChild( Brood::BroodUI::Id* a_childIdPtr )
 	m_hasChilds = true;
 }
 
-
 ///
 /// @public
-/// @brief deletes the child at a_index from the child list
+/// @brief deletes the child at passed a_index from the child list
 /// 
-/// It erases the element at the given index
-/// 
-/// @param a_index index at which the child's pointer is to be deleted
+/// @param a_index index child's pointer in the child list to be deleted
 /// 
 void Brood::BroodUI::Id::DeleteChildIdAtIdx( const int a_index )
 {
@@ -184,7 +193,7 @@ void Brood::BroodUI::Id::DeleteChildIdAtIdx( const int a_index )
 		std::cerr << "Error! Cannot erase as the child list is empty." << std::endl;
 		return;
 	}
-	else if( a_index > ( int )m_allChildPtrs.size() - 1 )
+	else if( a_index < 0 || a_index > ( int )m_allChildPtrs.size() - 1 )
 	{
 		// trying to delete invalid index
 		std::cerr << "Error! Tying to erase invalid index" << std::endl;
@@ -198,3 +207,7 @@ void Brood::BroodUI::Id::DeleteChildIdAtIdx( const int a_index )
 	// if the child list is empty then setting has child as false
 	m_hasChilds = !m_allChildPtrs.empty();
 }
+
+// ======================================================================
+// ====================== end of ID class ===============================
+// ======================================================================

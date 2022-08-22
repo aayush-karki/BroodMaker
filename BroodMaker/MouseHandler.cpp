@@ -2,17 +2,23 @@
 /// 
 /// @file MouseHandler.cpp 
 /// 
-/// @brief  This file is a source file for MouseHandler class.
+/// @brief This file is a source file for MouseHandler class.
 /// 
 /// It contains all of the defination of the member 
 ///		funciton of MouseHandler class.
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "MouseHandler.h"
 #include "UtilityFunctions.h"
 
+// ======================================================================
+// ================= start of MouseHandler class ========================
+// ======================================================================
 
 // declaring the staic data member
 sf::Cursor Brood::MouseHandler::m_cursor;
@@ -288,3 +294,7 @@ bool Brood::MouseHandler::IsRightButtonReleased()
 {
 	return m_lastFrameRightMouseButtonPressed && !m_currFrameRightMouseButtonPressed;
 }
+
+// ======================================================================
+// ================= end of MouseHandler class ==========================
+// ======================================================================

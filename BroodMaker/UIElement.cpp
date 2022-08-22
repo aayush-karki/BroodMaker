@@ -12,21 +12,27 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "UIElement.h"
 
 // declaring the static data member of the MapIdToElement struct
 std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::ST_MapIdToElement::stm_mapper;
 
-/**************************************************************************************/
-/********************** UIElement's member function declarations **********************/
-/**************************************************************************************/
+// ======================================================================
+// ================= start of UIElement class ===========================
+// ======================================================================
 
 /// 
 /// @public
 /// @brief default Constructor
 /// 
-/// Inializes the member variables
+/// Inializes the member variables and adds it to the id to element map.
+/// 
+///	Sets hotelement overlay color to lighter overlay and 
+///		sets activeOvelay to a darker overlay.
 /// 
 /// @param a_elementType Type of UI element 
 /// @param m_parentPtr pointer to the parent element;
@@ -40,6 +46,7 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 	// adding the elementID to map
 	Brood::BroodUI::ST_MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
 
+	// setting the overlay
 	m_hotOverlayColor = sf::Color( 10, 71, 100, 50 ); // light white overlay
 	m_activeOverlayColor = sf::Color( 10, 71, 100, 150 ); // darker white overlay
 	m_drawOverlay = false;
@@ -49,6 +56,11 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 /// @public
 /// @virtual
 /// @brief virtual destructor 
+/// 
+/// Deletes element form the parent's child list if parent exist and
+///		assigns the its child element to the parent element if parent exist.
+///		And finally deletes its id from the id to element map.
+/// 
 Brood::BroodUI::UIElement::~UIElement()
 {
 	Brood::BroodUI::UIElement* elementParentPtr = nullptr;
@@ -80,7 +92,9 @@ Brood::BroodUI::UIElement::~UIElement()
 /// 
 /// @public
 /// @brief getter function to get the element type
-/// @return 
+/// 
+/// @return the element type
+/// 
 const Brood::BroodUI::ENUM_UIType Brood::BroodUI::UIElement::GetElementType() const
 {
 	return m_elementType;
@@ -88,7 +102,7 @@ const Brood::BroodUI::ENUM_UIType Brood::BroodUI::UIElement::GetElementType() co
 
 /// 
 /// @public
-/// @brief Getter function to reference to the element
+/// @brief Getter function to get a reference to the element
 /// 
 /// @return constant reference to the element
 /// 
@@ -99,7 +113,7 @@ const sf::RectangleShape& Brood::BroodUI::UIElement::GetBody() const
 
 /// 
 /// @public
-/// @brief Getter function to get the positon
+/// @brief Getter function to get the positon of the element
 /// 
 /// @return postion of the element
 ///
@@ -123,7 +137,7 @@ const sf::Vector2f Brood::BroodUI::UIElement::GetBodySize() const
 /// @public
 /// @brief Getter function to get the element's body color
 /// 
-/// @reutrn color of the body; sf::color
+/// @reutrn color of the body
 ///
 const sf::Color Brood::BroodUI::UIElement::GetBodyColor()
 {
@@ -132,9 +146,9 @@ const sf::Color Brood::BroodUI::UIElement::GetBodyColor()
 
 /// 
 /// @public
-/// @brief Getter function to get the element's active color
+/// @brief Getter function to get the element's active overlay color
 /// 
-/// @reutrn color of the body when it is active; sf::color
+/// @reutrn color of the body when it is active
 ///
 const sf::Color Brood::BroodUI::UIElement::GetActiveOverlayColor()
 {
@@ -143,9 +157,9 @@ const sf::Color Brood::BroodUI::UIElement::GetActiveOverlayColor()
 
 /// 
 /// @public
-/// @brief Getter function to get the element's hot color
+/// @brief Getter function to get the element's hot overlay color
 /// 
-/// @reutrn color of the body when it is hot; sf::color
+/// @reutrn color of the body when it is hot
 ///
 const sf::Color Brood::BroodUI::UIElement::GetHotOverlayColor()
 {
@@ -154,7 +168,7 @@ const sf::Color Brood::BroodUI::UIElement::GetHotOverlayColor()
 
 /// 
 /// @public
-/// @brief Getter function to get the pointer to the element Id
+/// @brief Getter function to get the pointer to the element Id object
 /// 
 /// @return  pointer to the element Id
 /// 
@@ -167,7 +181,7 @@ Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
 /// @public
 /// @brief Setter function to set the element body color
 /// 
-/// @param a_bodyColor color of the body; sf::color
+/// @param a_bodyColor color of the body
 ///
 void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
 {
@@ -176,6 +190,7 @@ void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
 
 /// 
 /// @public
+/// @virtual
 /// @brief Setter function to set the element's Size
 /// 
 /// @param a_size size of the element
@@ -188,6 +203,7 @@ void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
 
 /// 
 /// @public
+/// @virtual
 /// @overload
 /// @brief Setter function to set the element's Size
 /// 
@@ -203,6 +219,10 @@ void Brood::BroodUI::UIElement::SetBodySize( float a_sizeX, float a_sizeY )
 /// @public
 /// @virtual
 /// @brief Setter function to set the element's Position
+/// 
+/// It can also set the position relative to its parent if exist by passing a second 
+///		parameter to true. If second parameter is pass as true and na parent does not
+///		exist then it sets the position as it is 
 /// 
 /// @param a_pos position of the element 
 /// @param a_relativeToParent is true if the passed position is relative to its parent;
@@ -220,7 +240,7 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 	}
 
 	m_body.setPosition( a_pos );
-	m_bodyOverLay.setPosition( a_pos ); // overlay rectangle
+	m_bodyOverLay.setPosition( a_pos ); 
 }
 
 /// 
@@ -243,7 +263,7 @@ void Brood::BroodUI::UIElement::SetBodyPosition( float a_posX, float a_posY, boo
 /// @public
 /// @brief Setter function to set the element's active color
 /// 
-/// @param a_color color of the body when it is active; sf::color
+/// @param a_color color of the body when it is active
 ///
 void Brood::BroodUI::UIElement::SetActiveOverlayColor( sf::Color a_color )
 {
@@ -254,7 +274,7 @@ void Brood::BroodUI::UIElement::SetActiveOverlayColor( sf::Color a_color )
 /// @public
 /// @brief Setter function to set the element's hot color
 /// 
-/// @param a_color color of the body when it is hot; sf::color
+/// @param a_color color of the body when it is hot
 ///
 void Brood::BroodUI::UIElement::SetHotOverlayColor( sf::Color a_color )
 {
@@ -303,11 +323,18 @@ bool Brood::BroodUI::UIElement::IsMouseOverElement()
 /// 
 bool Brood::BroodUI::UIElement::IsActiveElement()
 {
-	if( ( Brood::BroodUI::ElementSelection::GetActiveElement() )->GetElementID() == m_elementId.GetElementID() )
-	{
-		return true;
-	}
-	return false;
+	return Brood::BroodUI::ElementSelection::GetActiveElement()->GetElementID() == m_elementId.GetElementID();
+}
+
+///
+/// @public
+/// @brief Checks if the element is the current active element or not
+/// 
+/// @return true if it is the curr active element; else false
+/// 
+bool Brood::BroodUI::UIElement::IsCurrActiveElement()
+{
+	return Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID() == m_elementId.GetElementID();
 }
 
 ///
@@ -318,21 +345,18 @@ bool Brood::BroodUI::UIElement::IsActiveElement()
 /// 
 bool Brood::BroodUI::UIElement::IsHotElement()
 {
-	if( ElementSelection::GetHotElement()->GetElementID() == m_elementId.GetElementID() )
-	{
-		return true;
-	}
-	return false;
+	return ElementSelection::GetHotElement()->GetElementID() == m_elementId.GetElementID();
 }
 
 /// 
 /// @public
 /// @brief checks if the logics of the element is to be executed or not
 /// 
-/// In the process updates the element selector --that is current active and hot 
-///		element. It also set the overlay
+/// It checks the mouse position and button state to determine if to execute the 
+///		elements logic or not. It does this by manupulating the element selection class.
+///		It also set the overlay
 /// 
-/// @return true if the element's funciton is to be executed
+/// @return true if the element's funciton is to be executed; else false
 /// 
 bool Brood::BroodUI::UIElement::DoElement()
 {
@@ -405,6 +429,7 @@ bool Brood::BroodUI::UIElement::DoElement()
 				// resetting the active element
 				// as the left mouse button was released the current element should 
 				// not be active element
+				Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
 				Brood::BroodUI::ElementSelection::SetActiveElement( nullptr );
 			}
 		}
@@ -494,28 +519,48 @@ void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
 	}
 }
 
-/**************************************************************************************/
-/****************** ST_MapIdToElement's member function declarations*******************/
-/**************************************************************************************/
+// ======================================================================
+// ================= end of UIElement class =============================
+// ======================================================================
+
+
+// ======================================================================
+// ================= start of ST_MapIdToElement struct ==================
+// ======================================================================
 
 /// 
 /// @static
 /// @public
-/// @brief Getter Function
+/// @brief Getter Funciton to get a reference to the map
 /// 
-/// Gets the element that is mapped to from id. if the element was 
-///		not found returns nullptr
+/// @return reference to the map
 /// 
-/// @param a_id unique id of the element that is mapped to the 
+std::map<const int, Brood::BroodUI::UIElement*>& Brood::BroodUI::ST_MapIdToElement::GetMap()
+{
+	return stm_mapper;
+}
+
 /// 
-/// @return pointer to the element whose unique id is the parameter;
+/// @static
+/// @public
+/// @brief Getter Function to get the element that is mapped to from ui id. 
+/// 
+/// @param a_id unique id of the element that maps to its element pointer
+/// 
+/// @return pointer to the element whose unique id was mapped to; 
+///		else returns nullptr if not matched
 /// 
 Brood::BroodUI::UIElement* Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( int a_id )
 {
 	std::map<const int, Brood::BroodUI::UIElement*>::iterator findResult = stm_mapper.find( a_id );
 
-	// return pointer to the element if true else reutrn nullptr
-	return findResult != stm_mapper.end() ? findResult->second : nullptr;
+	// return pointer to the element if true else reutrn nullptr and log it
+	if( findResult == stm_mapper.end() )
+	{
+		std::cerr << "Error! Could not find a UIELmenet with id " << a_id << "." << std::endl;
+		return nullptr;
+	}
+	return findResult->second;
 }
 
 /// 
@@ -523,7 +568,7 @@ Brood::BroodUI::UIElement* Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromM
 /// @public
 /// @brief adds the id and element to the map
 /// 
-/// @param a_id unique id of the element that is mapped to the 
+/// @param a_id unique id of the element that is mapped to its element pointer
 /// @param a_elementPtr pointer to the element that has the passed uniquie UI_ID
 /// 
 /// @return true if adding was successfull; else false
@@ -547,13 +592,12 @@ bool Brood::BroodUI::ST_MapIdToElement::AddToMap( int a_id, Brood::BroodUI::UIEl
 /// @public
 /// @brief removes a entry with the id as a key from the map
 /// 
-/// @param a_id unique id of the element that is mapped to the 
+/// @param a_id unique id of the element that is mapped to its element pointer
 /// 
 /// @return true if removal was successfull; else false
 /// 
 bool Brood::BroodUI::ST_MapIdToElement::ReomveFromMap( int a_id )
 {
-
 	auto eraseResult = stm_mapper.erase( a_id );
 
 	if( !eraseResult )
@@ -566,16 +610,6 @@ bool Brood::BroodUI::ST_MapIdToElement::ReomveFromMap( int a_id )
 	return true;
 }
 
-/// 
-/// @static
-/// @public
-/// @brief Getter Funciton
-/// 
-/// gets the map
-/// 
-/// @return reference to the map
-/// 
-std::map<const int, Brood::BroodUI::UIElement*>& Brood::BroodUI::ST_MapIdToElement::GetMap()
-{
-	return stm_mapper;
-}
+// ======================================================================
+// ================= end of ST_MapIdToElement struct ====================
+// ======================================================================
