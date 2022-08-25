@@ -37,8 +37,7 @@
 Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
 								  Brood::BroodUI::ENUM_UIType a_enumType) :
 	Brood::BroodUI::UIElement( a_enumType, a_parentPtr ),
-	m_isEditable( false ), m_isSelected( false ), m_hasLimit( false ),
-	m_limit( -1 ), m_fontSize( 0 )
+	m_isEditable( false ), m_hasLimit( false ), m_limit( -1 )
 {}
 
 ///
@@ -47,28 +46,6 @@ Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
 /// 
 Brood::BroodUI::TextBox::~TextBox()
 {}
-
-/// 
-/// @public
-/// @brief getter funciton to get the user typed text that is stored in the element
-/// 
-/// @return all the user typed text that is stored in the element
-/// 
-std::string Brood::BroodUI::TextBox::GetText() const
-{
-	return m_ossText.str();
-}
-
-/// 
-/// @public
-/// @brief getter funciton to get the font size
-/// 
-/// @return size of the font
-/// 
-unsigned int Brood::BroodUI::TextBox::GetFontSize() const
-{
-	return m_text.getCharacterSize();
-}
 
 /// 
 /// @public
@@ -83,7 +60,6 @@ const bool Brood::BroodUI::TextBox::IsEditable() const
 
 /// 
 /// @public
-/// @overload
 /// @brief getter funciton to get if the element is curretly selected or not
 /// 
 /// @return true if it is currently selected; else false
@@ -95,131 +71,6 @@ const bool Brood::BroodUI::TextBox::IsSelected( ) const
 
 /// 
 /// @public
-/// @brief Setter function to set the TextBox's Size
-/// 
-/// @warning The menu height should always be greater than font size by 2 px.
-/// @param a_size size of the element
-/// 
-void Brood::BroodUI::TextBox::SetBodySize( sf::Vector2f a_size )
-{
-	//checking if the new height for the body is greater than the charsize by 2
-	if( a_size.y >= m_fontSize + 2 )
-	{
-		// setting the bar body size
-		Brood::BroodUI::UIElement::SetBodySize( a_size );
-	}
-	else if( a_size.y < m_fontSize )
-	{
-		std::cerr << "body height cannot be smaller than font Size cannot" << std::endl;
-		return;
-	}
-	else
-	{
-		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
-		return;
-	}
-}
-
-/// 
-/// @public
-/// @overload
-/// @brief Setter function to set the TextBox's Size
-/// 
-/// @param a_sizeX length of the element
-/// @param a_sizeY width of the element
-/// 
-void Brood::BroodUI::TextBox::SetBodySize( float a_sizeX, float a_sizeY )
-{
-	Brood::BroodUI::TextBox::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ) );
-}
-
-/// 
-/// @virtual
-/// @public
-/// @brief Setter function to set the textbox's Position.
-/// 
-/// @param a_pos position of the element 
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-///  
-void Brood::BroodUI::TextBox::SetBodyPosition( sf::Vector2f a_pos, bool a_relativeToParent )
-{
-	Brood::BroodUI::UIElement::SetBodyPosition( a_pos, a_relativeToParent );
-	SetTextPosition();
-}
-
-/// 
-/// @virtual
-/// @public
-/// @overload
-/// @brief Setter function to set the textbox's Position
-/// 
-/// @param a_posX x-position of the element
-/// @param a_posY y-position of the element
-/// @param a_relativeToParent is true if the passed position is relative to its parent;
-///			default -> false.
-/// 
-void Brood::BroodUI::TextBox::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
-{
-	Brood::BroodUI::TextBox::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
-}
-
-/// 
-/// @public
-/// @brief setter function to set the font size
-/// 
-void Brood::BroodUI::TextBox::SetFont( sf::Font& a_font )
-{
-	m_text.setFont( a_font );
-}
-
-/// 
-/// @public
-/// @brief setter function to set the Font color
-/// 
-/// param a_color font color -> default sf::Color::White
-/// 
-void Brood::BroodUI::TextBox::SetFontColor( sf::Color a_color )
-{
-	m_text.setFillColor( a_color );
-}
-
-/// 
-/// @public
-/// @brief setter function to set the Font size
-/// 
-/// @note If the font size is more than body height by
-/// 
-/// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
-/// 
-void Brood::BroodUI::TextBox::SetFontSize( int a_fontSize )
-{
-	float bodyHeight = GetBodySize().y;
-
-	// checking menu bar height
-	if( bodyHeight <= 2 )
-	{
-		std::cerr << "The body height is less than or equal to 2." << std::endl
-			<< "Set the body height to more than 2 before setting the font size" << std::endl;
-		return;
-	}
-	// checking if fontsize is greater than menu height - 2
-	else if( a_fontSize > bodyHeight - 2 )
-	{
-		std::cerr << "Font size is more than the body height - 2." << std::endl
-			<< "Setting the font size to current body height - 2" << std::endl
-			<< "Setting the font size to " << bodyHeight - 2 << std::endl;
-		m_fontSize = ( unsigned ) bodyHeight - 2;
-	}
-	else
-	{
-		m_fontSize = (unsigned) a_fontSize;
-	}
-
-	m_text.setCharacterSize( m_fontSize );
-}
-
-/// 
 /// @brief setter function to set the text that is displayed in the button
 /// 
 /// @warning It assumes that the font for the text is already set
@@ -228,7 +79,7 @@ void Brood::BroodUI::TextBox::SetFontSize( int a_fontSize )
 /// 
 void Brood::BroodUI::TextBox::SetText( std::string a_text )
 {
-	m_text.setString( a_text );
+	Brood::BroodUI::UIElement::SetText( a_text );
 
 	// clearing the stringstream and copying the data
 	m_ossText.str( "" );
@@ -355,53 +206,16 @@ bool Brood::BroodUI::TextBox::DoElement()
 
 	// checking if the current active element is this element
 	// if yes set the isSelected property to true 
-	SetSelected( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() );
+	SetSelected( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() );
 
 	return doElement;
-}
-
-/// 
-/// @public
-/// @brief Draw function 
-/// 
-/// @param a_window reference to render window
-/// 
-void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
-{
-	Brood::BroodUI::UIElement::Draw( a_window );
-
-	// draw the text only when the text is present
-	if( m_text.getString() != "" )
-	{
-		a_window.draw( m_text );
-	}
-}
-
-/// 
-/// @private
-/// @brief setter funciton to set the position of the text.
-/// 
-/// Sets the position of the text such that it is always centered
-/// 
-void Brood::BroodUI::TextBox::SetTextPosition()
-{
-	// getting m_text's center
-	float textCenterX = m_text.getLocalBounds().width / ( float )2;
-	float textCenterY = m_text.getCharacterSize() / float(1.5);
-
-	// getting te postion of the text; origin is at the top left of the text
-
-	float xPosText = ( GetBodyPosition().x + GetBodySize().x / 2 ) - textCenterX;
-	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
-
-	m_text.setPosition( xPosText, yPosText );
 }
 
 /// 
 /// @private
 /// @brief logic of what happens when different keys are pressed
 ///
-/// @param charTyped ascii number that represent the char
+/// @reparam charTyped ascii number that represent the char
 /// 
 void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 {
@@ -418,7 +232,8 @@ void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 			DeleteLastChar();
 		}
 	}
-	m_text.setString( m_ossText.str() + "_" );
+	
+	SetText (m_ossText.str() + "_" );
 }
 
 /// 

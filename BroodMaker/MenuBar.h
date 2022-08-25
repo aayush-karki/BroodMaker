@@ -96,7 +96,8 @@ namespace Brood
 ///						{
 ///							if( itemList.at( i )->DoElement() )
 ///							{
-///								//myBoard.PlayerRollAndMove();
+///								std::cout << "menu at " << i << " Pressed" << std::endl;
+///								std::cout << "item at " << j << " Pressed" << std::endl;
 ///							}
 ///						}
 ///					}

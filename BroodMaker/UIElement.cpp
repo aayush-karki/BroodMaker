@@ -41,7 +41,7 @@ std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::ST_MapIdToElemen
 Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 									  Brood::BroodUI::UIElement* a_parentPtr ) :
 	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr ),
-	m_elementType( a_elementType )
+	m_elementType( a_elementType ), m_fontSize( 0 ), m_isSelected( false )
 {
 	// adding the elementID to map
 	Brood::BroodUI::ST_MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
@@ -179,6 +179,41 @@ Brood::BroodUI::Id* Brood::BroodUI::UIElement::GetElementIdPtr()
 
 /// 
 /// @public
+/// @overload
+/// @brief getter funciton to get if the element is curretly selected or not
+/// 
+/// @return true if it is currently selected; else false
+/// 
+const bool Brood::BroodUI::UIElement::IsSelected() const
+{
+	return m_isSelected;
+}
+
+/// 
+/// @public
+/// @brief getter funciton to get the user typed text that is stored in the element
+/// 
+/// @return all the user typed text that is stored in the element
+/// 
+std::string Brood::BroodUI::UIElement::GetText() const
+{
+	return m_text.getString();
+}
+
+/// 
+/// @public
+/// @brief getter funciton to get the font size
+/// 
+/// @return size of the font
+/// 
+unsigned int Brood::BroodUI::UIElement::GetFontSize() const
+{
+	return m_fontSize;
+}
+
+
+/// 
+/// @public
 /// @brief Setter function to set the element body color
 /// 
 /// @param a_bodyColor color of the body
@@ -197,8 +232,23 @@ void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
 /// 
 void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
 {
-	m_body.setSize( a_size );
-	m_bodyOverLay.setSize( a_size ); // overlay rectangle
+	// checking if the new height for the body is greater than the charsize by 2
+	// font size has not been inialized
+	if( a_size.y >= m_fontSize + 2  || m_fontSize == 0 )
+	{
+		m_body.setSize( a_size ); // setting the body size
+		m_bodyOverLay.setSize( a_size ); // overlay rectangle
+	}
+	else if( a_size.y < m_fontSize )
+	{
+		std::cerr << "body height cannot be smaller than font Size cannot" << std::endl;
+		return;
+	}
+	else
+	{
+		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
+		return;
+	}
 }
 
 /// 
@@ -241,6 +291,12 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 
 	m_body.setPosition( a_pos );
 	m_bodyOverLay.setPosition( a_pos ); 
+
+	// setting the text position
+	if( m_text.getString() != "" )
+	{
+		Brood::BroodUI::UIElement::SetTextPosition();
+	}
 }
 
 /// 
@@ -257,6 +313,91 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 void Brood::BroodUI::UIElement::SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent )
 {
 	Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f( a_posX, a_posY ), a_relativeToParent );
+}
+
+/// 
+/// @public
+/// @brief setter function to set the font size
+/// 
+void Brood::BroodUI::UIElement::SetFont( sf::Font& a_font )
+{
+	m_font = &a_font;
+	m_text.setFont( a_font );
+}
+
+/// 
+/// @public
+/// @brief setter function to set the Font color
+/// 
+/// param a_color font color -> default sf::Color::White
+/// 
+void Brood::BroodUI::UIElement::SetFontColor( sf::Color a_color )
+{
+	m_text.setFillColor( a_color );
+}
+
+/// 
+/// @public
+/// @brief setter function to set the Font size
+/// 
+/// @note If the font size is more than body height by
+/// 
+/// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
+/// 
+void Brood::BroodUI::UIElement::SetFontSize( int a_fontSize )
+{
+	float bodyHeight = GetBodySize().y;
+
+	// checking menu bar height
+	if( bodyHeight <= 2 )
+	{
+		std::cerr << "The body height is less than or equal to 2." << std::endl
+			<< "Set the body height to more than 2 before setting the font size" << std::endl;
+		return;
+	}
+	// checking if fontsize is greater than menu height - 2
+	else if( a_fontSize > bodyHeight - 2 )
+	{
+		std::cerr << "Font size is more than the body height - 2." << std::endl
+			<< "Setting the font size to current body height - 2" << std::endl
+			<< "Setting the font size to " << bodyHeight - 2 << std::endl;
+		m_fontSize = ( unsigned )bodyHeight - 2;
+	}
+	else
+	{
+		m_fontSize = ( unsigned )a_fontSize;
+	}
+
+	m_text.setCharacterSize( m_fontSize );
+}
+
+/// 
+/// @public
+/// @brief setter function to set the text that is displayed in the button
+/// 
+/// @warning It assumes that the font for the text is already set
+/// 
+/// @param a_text text to show on the buttom -> default empty string
+/// 
+void Brood::BroodUI::UIElement::SetText( std::string a_text )
+{
+	m_text.setString( a_text );
+
+	m_drawText = ( a_text != "" );
+
+	Brood::BroodUI::UIElement::SetTextPosition();
+}
+
+/// 
+/// @public
+/// @brief setter function to set the state of the element i.e. if it is 
+///		seleected or not
+/// 
+/// @param a_selected true if current text box is selected or not
+/// 
+void Brood::BroodUI::UIElement::SetSelected( bool a_selected )
+{
+	m_isSelected = a_selected;
 }
 
 /// 
@@ -285,11 +426,24 @@ void Brood::BroodUI::UIElement::SetHotOverlayColor( sf::Color a_color )
 /// @public
 /// @brief Setter function to set if the overlay is to be drawn or not
 /// 
-/// @param a_drawOverlay true if the overlay is to be drawn
-//
-void Brood::BroodUI::UIElement::SetDrawOverlay( bool a_drawOverlay )
+void Brood::BroodUI::UIElement::SetDrawOverlay(  )
 {
-	m_drawOverlay = a_drawOverlay;
+	// setting up the over lay
+	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr() ||
+		GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() )
+	{
+		m_bodyOverLay.setFillColor( m_activeOverlayColor );
+		m_drawOverlay = true;
+	}
+	else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
+	{
+		m_bodyOverLay.setFillColor( m_hotOverlayColor );
+		m_drawOverlay = true;
+	}
+	else
+	{
+		m_drawOverlay = false;
+	}
 }
 
 /// 
@@ -323,7 +477,7 @@ bool Brood::BroodUI::UIElement::IsMouseOverElement()
 /// 
 bool Brood::BroodUI::UIElement::IsActiveElement()
 {
-	return Brood::BroodUI::ElementSelection::GetActiveElement()->GetElementID() == m_elementId.GetElementID();
+	return Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr()->GetElementID() == m_elementId.GetElementID();
 }
 
 ///
@@ -334,7 +488,7 @@ bool Brood::BroodUI::UIElement::IsActiveElement()
 /// 
 bool Brood::BroodUI::UIElement::IsCurrActiveElement()
 {
-	return Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID() == m_elementId.GetElementID();
+	return Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID() == m_elementId.GetElementID();
 }
 
 ///
@@ -345,7 +499,7 @@ bool Brood::BroodUI::UIElement::IsCurrActiveElement()
 /// 
 bool Brood::BroodUI::UIElement::IsHotElement()
 {
-	return ElementSelection::GetHotElement()->GetElementID() == m_elementId.GetElementID();
+	return ElementSelection::GetHotElementIdPtr()->GetElementID() == m_elementId.GetElementID();
 }
 
 /// 
@@ -357,148 +511,83 @@ bool Brood::BroodUI::UIElement::IsHotElement()
 ///		It also set the overlay
 /// 
 /// @return true if the element's funciton is to be executed; else false
-/// 
+///
 bool Brood::BroodUI::UIElement::DoElement()
 {
-	bool result = false;
+	bool doElement = false;
 
-	// check if the mouse is over the element and 
-	// update the element selector
-	if( IsMouseOverElement() )
+	// if the mouse is over this the element and a hot element is not already found
+	// then set this element as the hot element 
+	//
+	// we need to check to see if hot element was already found or not
+	// so that if 2 elements overlap with eachother then we need to prevent 
+	// the element below from being hot element.
+	// we can do this safely as we know that the do element is called form
+	// top to bottom, and only moves to next element once its child element 
+	// are dealt with. This is specifically the case when drop downs is open.
+	//
+	if( IsMouseOverElement() && !Brood::BroodUI::ElementSelection::GetHotElementIdFlag() )
 	{
-		// checking if for this frame the hot element is already found.
-		// we need to check this so that if 2 elements overlap with eachother 
-		// then we need to prevent the element below from being hot element.
-		// we can do this safely as we know that the do element is called form
-		// top to bottom, and only moves to next element once its child element 
-		// are dealt with. This is specifically the case for the drop downs
-		if( !Brood::BroodUI::ElementSelection::GetHotElementFlag() )
-		{
-			// setting the hot element as no other element was set as one before
-			Brood::BroodUI::ElementSelection::SetHotElement( &m_elementId );
-			// setting the hot element flag as true
-			Brood::BroodUI::ElementSelection::SetHotElementFlag( true );
-		}
-
-		// this if-code-block makes it so that the if a menu of a memubar is open
-		// then hover over its sibiling menus should expand/open the sibling menu.
-		// 
-		// if current active element's parent and hot element parent are the 
-		// same then set the hot element as the current active element
-		if( m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
-			Brood::BroodUI::ElementSelection::GetCurrActiveElement() != nullptr )
-		{
-			// getting the curr active element's elementId
-			const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement();
-			const int currActiveElementId = currActiveId->GetElementID();
-
-			// getting the pointer to curr active element
-			Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
-
-			if( currActiveElement->m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
-				GetElementIdPtr()->GetParentID() == currActiveId->GetParentID() )
-			{
-				Brood::BroodUI::ElementSelection::SetCurrActiveElement( &m_elementId );
-			}
-		}
+		Brood::BroodUI::ElementSelection::SetHotElementIdPtr( GetElementIdPtr() );
+		Brood::BroodUI::ElementSelection::SetHotElementIdPtrFlag( true );
 	}
-	else
+	// mouse is not over this element
+	// checking if the this element was previously hot element
+	else if ( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 	{
-		// mouse is not over this element.
-		// if the hot element is still this element then 
-		// removing the element as the hot element
-		if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElement() )
-		{
-			Brood::BroodUI::ElementSelection::SetHotElement( nullptr );
-		}
+		Brood::BroodUI::ElementSelection::SetHotElementIdPtr( nullptr );
 	}
-
-	// checking if the element is active and should we change its active status
-	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetActiveElement() )
+	// for left button press
+	// check if the element is hot and if the left mouse button was pressed 
+	// then set it as almostActive Element
+	if( Brood::MouseHandler::IsLeftButtonPressed() && 
+		GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 	{
-		if( Brood::MouseHandler::IsLeftButtonReleased() )
+		Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( &m_elementId );		
+	}
+	// for almost active element
+	// checking if the element is almost active and should we change its almost active status
+	else if( Brood::MouseHandler::IsLeftButtonReleased() )
+	{
+		if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr() )
 		{
-			// checking if the pointer is over the element at the time of the button release
-			if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElement() )
+			// checking if the mouse is over the element at the time of the button release
+			if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 			{
-				result = true;
-				Brood::BroodUI::ElementSelection::SetCurrActiveElement( &m_elementId );
+				doElement = true;
+				Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() );
+				Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( &m_elementId );
 			}
 			else
 			{
-				// resetting the active element
+				// resetting the currActiveElement 
 				// as the left mouse button was released the current element should 
 				// not be active element
-				Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
-				Brood::BroodUI::ElementSelection::SetActiveElement( nullptr );
+				Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
+
+				// saving the lastActiveElement
+				Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr() );
 			}
+			// resetting the almostActiveElement cause left mouse button was released
+			Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( nullptr );
 		}
-	}
-	// check if the element is hot and should we make it active and remove currActiveElement
-	else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElement() )
-	{
-		if( Brood::MouseHandler::IsLeftButtonPressed() )
+		// checking if the left mouse butoon was released outside of the elment when the element
+		// is also currActive element then setting the curr active to null
+		else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() &&
+				 GetElementIdPtr() != Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 		{
-			Brood::BroodUI::ElementSelection::SetActiveElement( &m_elementId );
+			Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr() );
+			Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
 
-			// if the parent element of the element where a left click was made
-			// is a dropdown menu  and the parent element is the CurrActiveElement  then
-			// it should not be changed on left click as the left click was done inside the 
-			// dropdown menus area.
-			// if this is not true than different element was click so set currActiveElement to 
-			// nullptr
-
-			// getting the curr active element's elemetnId
-			const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElement();
-			if( currActiveId != nullptr )
-			{
-				const int currActiveElementId = currActiveId->GetElementID();
-
-				// getting the pointer to this element's parent's elementId
-				Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
-				const int parentElementID = GetElementIdPtr()->GetParentID();
-
-				if( parentElementID != -1 )
-				{
-					Brood::BroodUI::UIElement* parentElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( parentElementID );
-					if( parentElement->m_elementType != Brood::BroodUI::ENUM_UIType::UI_dropDownMenu ||
-						parentElementID != currActiveId->GetElementID() )
-					{
-						Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
-					}
-				}
-				else
-				{
-					Brood::BroodUI::ElementSelection::SetCurrActiveElement( nullptr );
-				}
-
-			}
+			// resetting the almostActiveElement cause left mouse button was released
+			Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( nullptr );
 		}
 	}
 
-	// setting up the over lay
-	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetActiveElement() )
-	{
-		m_bodyOverLay.setFillColor( m_activeOverlayColor );
-		m_drawOverlay = true;
-	}
-	else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElement() )
-	{
-		m_bodyOverLay.setFillColor( m_hotOverlayColor );
-		m_drawOverlay = true;
-	}
-	else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() &&
-			 m_elementType == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu )
-	{
-		m_bodyOverLay.setFillColor( m_activeOverlayColor );
-		m_drawOverlay = true;
-	}
-	else
-	{
-		m_drawOverlay = false;
-	}
-
-	return result;
+	// setting up overlay
+	SetDrawOverlay();
+	
+	return doElement;
 }
 
 ///
@@ -512,11 +601,37 @@ void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
 {
 	a_window.draw( m_body );
 
+	// draw the text only when the text is present
+	if( m_drawText )
+	{
+		a_window.draw( m_text );
+	}
+	
 	// draw the over lay only if the overlay is turned on
 	if( m_drawOverlay )
 	{
 		a_window.draw( m_bodyOverLay );
 	}
+}
+
+/// 
+/// @protected
+/// @brief setter funciton to set the position of the text.
+/// 
+/// Sets the position of the text such that it is always centered
+/// 
+void Brood::BroodUI::UIElement::SetTextPosition()
+{
+	// getting m_text's center
+	float textCenterX = m_text.getLocalBounds().width / ( float )2;
+	float textCenterY = m_text.getCharacterSize() / float( 1.5 );
+
+	// getting te postion of the text; origin is at the top left of the text
+
+	float xPosText = ( GetBodyPosition().x + GetBodySize().x / 2 ) - textCenterX;
+	float yPosText = ( GetBodyPosition().y + GetBodySize().y / 2 ) - textCenterY;
+
+	m_text.setPosition( xPosText, yPosText );
 }
 
 // ======================================================================

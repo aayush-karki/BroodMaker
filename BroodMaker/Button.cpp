@@ -32,11 +32,8 @@
 /// 
 Brood::BroodUI::Button::Button( Brood::BroodUI::UIElement* a_parentPtr,
 								Brood::BroodUI::ENUM_UIType a_enumType ) :
-	Brood::BroodUI::TextBox( a_parentPtr, a_enumType ),
-	m_drawText( false ), m_bodySprite( &m_body )
-{
-	SetEditable( false );
-}
+	Brood::BroodUI::UIElement( a_enumType, a_parentPtr ), m_bodySprite( &m_body )
+{}
 
 /// 
 /// @public
@@ -59,12 +56,27 @@ Brood::SpriteHandler& Brood::BroodUI::Button::GetSpriteBody()
 
 /// 
 /// @public
-/// @brief Draw function 
-/// @param a_window reference to render window
+/// @brief checks if the logics of the element is to be executed or not
 /// 
-void Brood::BroodUI::Button::Draw( sf::RenderWindow& a_window )
+/// It checks the mouse position and button state to determine if to execute the 
+///		elements logic or not. It does this by manupulating the element selection class.
+///		It also set the overlay
+/// 
+/// @return true if the element's funciton is to be executed; else false
+///
+bool Brood::BroodUI::Button::DoElement()
 {
-	Brood::BroodUI::TextBox::Draw( a_window );
+	bool doElement = Brood::BroodUI::UIElement::DoElement();
+
+	// for button it should not be currActiveELmenet 
+	if( doElement )
+	{
+		Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
+		Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr () );
+		this->m_drawOverlay = false;
+	}
+
+	return doElement;
 }
 
 // ======================================================================

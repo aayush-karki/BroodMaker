@@ -100,7 +100,7 @@ namespace Brood
 ///				{
 ///					if (itemList.at( i )->DoElement() ) 
 ///					{
-///						// roll a dice
+///						std::cout << "item at " << i << " Pressed" << std::endl;
 ///					}
 ///				}
 ///			}
@@ -136,7 +136,7 @@ public:
 	void AddItemToMenu( std::string a_menuName, sf::Color a_color = sf::Color::White ); // adds item to menu
 
 	// overrided funciton 
-	//virtual bool DoElement() override;
+	virtual bool DoElement() override;
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
 	// ============ private member function ===============

@@ -67,7 +67,9 @@ namespace Brood
 ///		// event loop
 ///		
 ///		// logic 
-///		myButton.DoElement();
+///		if (myButton.DoElement()) {
+///			std::cout << "myButton Pressed" << std::endl;
+///		}
 ///		
 ///		// render
 ///		myButton.Draw( window );
@@ -75,7 +77,7 @@ namespace Brood
 /// 
 /// @endcode
 ///
-class Brood::BroodUI::Button : public Brood::BroodUI::TextBox
+class Brood::BroodUI::Button : public Brood::BroodUI::UIElement
 {
 	/// @todo see if it is better to make button derived from button or from text box
 
@@ -91,13 +93,10 @@ public:
 	// Getter funciton 
 	Brood::SpriteHandler& GetSpriteBody(); // gets the sprite body
 	
-	// overrided funciton 
-	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
-
+	virtual bool DoElement() override; // checks to see if the logic for the element is to be excecuted or not 
+	
 	// ============ private member variables =============== 
 private:
-	bool m_drawText; ///> is true if text is set and hence draw to screen
-
 	Brood::SpriteHandler m_bodySprite; ///> object to set texture
 };
 

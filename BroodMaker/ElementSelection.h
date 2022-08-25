@@ -47,9 +47,9 @@ namespace Brood
 ///		which element is in the verge of being active--m_activeElement,
 ///		and which element is the mouse cursor over--m_hotElement.
 /// 
-/// The main difference between currActiveElement and active element is that
+/// The main difference between currActiveElement and almostActiveElement is that
 ///		a element can be set as currActiveElement only when the left mouse button is 
-///		released on top the element, a activeElement is set when the left mouse 
+///		released on top the element, an almostActiveElement is set when the left mouse 
 ///		button is pressed but has not be released yet.
 /// 
 /// To prevent multiple element slection--which can happen when more than one element 
@@ -63,32 +63,37 @@ class Brood::BroodUI::ElementSelection
 	// ================= public member function =================  
 public:
 	// setter function 
-	static void SetActiveElement( Brood::BroodUI::Id* a_idPtr );
-	static void SetHotElement( Brood::BroodUI::Id* a_idPtr );
-	static void SetCurrActiveElement( Brood::BroodUI::Id* a_idPtr );
-	static void SetHotElementFlag(bool a_found );
+	static void SetAlmostActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+	static void SetHotElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+	static void SetCurrActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+	static void SetLastActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+	static void SetHotElementIdPtrFlag(bool a_found );
 
 	// getter function 
-	static const Brood::BroodUI::Id* GetHotElement();
-	static const Brood::BroodUI::Id* GetActiveElement();
-	static const Brood::BroodUI::Id* GetCurrActiveElement();
-	static const bool GetHotElementFlag();
+	static Brood::BroodUI::Id* GetHotElementIdPtr();
+	static Brood::BroodUI::Id* GetAlmostActiveElementIdPtr();
+	static Brood::BroodUI::Id* GetCurrActiveElementIdPtr();
+	static Brood::BroodUI::Id* GetLastActiveElementIdPtr();
+	static bool GetHotElementIdFlag();
 
 	// ================= private member variables =================  
 private:
 	///> stores the ptr to element id when the mouse is hovering over it
-	static Brood::BroodUI::Id* m_hotElementPtr; 
+	static Brood::BroodUI::Id* m_hotElementIdPtr; 
 	
 	///> is set to true as soon as hot element is found for a given frame
 	static bool m_hotElementFlag; 
 	
 	///> stores the ptr element id when the mouse is pressing on it
-	static Brood::BroodUI::Id* m_activeElementPtr; 
+	static Brood::BroodUI::Id* m_almostActiveElementIdPtr; 
 
 	///> stores the ptr to element id which should be selected even 
 	///> when the mouse is not over it. untill other elements are pressed
 	///> after the the LMB is released and utill new element is selected
-	static Brood::BroodUI::Id* m_currActiveElementPtr; 
+	static Brood::BroodUI::Id* m_currActiveElementIdPtr;
+
+	///> stores the pointer to the last active element
+	static Brood::BroodUI::Id* m_lastActiveElementPtr;
 };
 
 // ======================================================================

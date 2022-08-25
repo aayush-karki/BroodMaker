@@ -21,9 +21,10 @@
 // ======================================================================
 
 // allocating loaction for the static data member
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_activeElementPtr = nullptr;
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementPtr = nullptr;
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_almostActiveElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_lastActiveElementPtr = nullptr;
 bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
 
 /// 
@@ -33,9 +34,9 @@ bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
 /// 
 /// @param a_idPtr pointer to UI_ID of the element the mouse is hovering over
 /// 
-void Brood::BroodUI::ElementSelection::SetHotElement( Brood::BroodUI::Id* a_idPtr )
+void Brood::BroodUI::ElementSelection::SetHotElementIdPtr( Brood::BroodUI::Id* a_idPtr )
 {
-	m_hotElementPtr = a_idPtr;
+	m_hotElementIdPtr = a_idPtr;
 }
 
 /// 
@@ -45,9 +46,9 @@ void Brood::BroodUI::ElementSelection::SetHotElement( Brood::BroodUI::Id* a_idPt
 ///
 /// @param a_idPtr pointer to UI_ID of the selected element
 /// 
-void Brood::BroodUI::ElementSelection::SetActiveElement( Brood::BroodUI::Id* a_idPtr )
+void Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr )
 {
-	m_activeElementPtr = a_idPtr;
+	m_almostActiveElementIdPtr = a_idPtr;
 }
 
 /// 
@@ -57,9 +58,21 @@ void Brood::BroodUI::ElementSelection::SetActiveElement( Brood::BroodUI::Id* a_i
 /// 
 /// @param a_idPtr pointer to UI_ID of the selected element
 /// 
-void Brood::BroodUI::ElementSelection::SetCurrActiveElement( Brood::BroodUI::Id* a_idPtr )
+void Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr )
 {
-	m_currActiveElementPtr = a_idPtr;
+	m_currActiveElementIdPtr = a_idPtr;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Setter function sets the passed element id as last active element
+/// 
+/// @param a_idPtr pointer to UI_ID of the selected element
+/// 
+void Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr )
+{
+	m_lastActiveElementPtr = a_idPtr;
 }
 
 /// 
@@ -72,7 +85,7 @@ void Brood::BroodUI::ElementSelection::SetCurrActiveElement( Brood::BroodUI::Id*
 /// 
 /// @param a_found true if a hot element found for a given frame
 /// 
-void Brood::BroodUI::ElementSelection::SetHotElementFlag( bool a_found )
+void Brood::BroodUI::ElementSelection::SetHotElementIdPtrFlag( bool a_found )
 {
 	m_hotElementFlag = a_found;
 }
@@ -84,9 +97,9 @@ void Brood::BroodUI::ElementSelection::SetHotElementFlag( bool a_found )
 /// 
 /// @return the pointer to hot element
 /// 
-const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetHotElement()
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetHotElementIdPtr()
 {
-	return m_hotElementPtr;
+	return m_hotElementIdPtr;
 }
 
 /// 
@@ -96,9 +109,9 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetHotElement()
 /// 
 /// @return the pointer to active element
 /// 
-const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetActiveElement()
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr()
 {
-	return m_activeElementPtr;
+	return m_almostActiveElementIdPtr;
 }
 
 /// 
@@ -108,9 +121,21 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetActiveElement()
 /// 
 /// @return the pointer to current active element
 /// 
-const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetCurrActiveElement()
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()
 {
-	return m_currActiveElementPtr;
+	return m_currActiveElementIdPtr;
+}
+
+/// 
+/// @static 
+/// @public
+/// @brief Getter function to gets the pointer to current active element
+/// 
+/// @return the pointer to current active element
+/// 
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr()
+{
+	return m_lastActiveElementPtr;
 }
 
 
@@ -121,7 +146,7 @@ const Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetCurrActiveElement
 /// 
 /// @return state of the m_hotElementFlag
 /// 
-const bool Brood::BroodUI::ElementSelection::GetHotElementFlag()
+bool Brood::BroodUI::ElementSelection::GetHotElementIdFlag()
 {
 	return m_hotElementFlag;
 }

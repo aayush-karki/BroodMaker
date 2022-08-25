@@ -68,7 +68,7 @@ std::vector<Brood::BroodUI::Button*>& Brood::BroodUI::DropDownMenu::GetItemList(
 /// 
 void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
 {
-	Brood::BroodUI::TextBox::SetText( a_text );
+	Brood::BroodUI::UIElement::SetText( a_text );
 
 	// setting the max length
 	if( m_maxItemLength < a_text.length() )
@@ -189,7 +189,7 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 void Brood::BroodUI::DropDownMenu::SetFontSize( int a_fontSize )
 {
 	// setting the menu title font size
-	Brood::BroodUI::TextBox::SetFontSize( a_fontSize );
+	Brood::BroodUI::UIElement::SetFontSize( a_fontSize );
 
 	// setting the font size for its item
 	for( int i = 0; i < m_items.size(); ++i )
@@ -238,6 +238,51 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	GetElementIdPtr()->AddChild( item->GetElementIdPtr() );
 	// adding the dropdown as parent of the item
 	item->GetElementIdPtr()->SetParent( GetElementIdPtr());
+}
+
+/// 
+/// @public
+/// @brief checks if the logics of the element is to be executed or not
+/// 
+/// It checks the mouse position and button state to determine if to execute the 
+///		elements logic or not. It does this by manupulating the element selection class.
+///		It also set the overlay
+/// 
+/// @return true if the element's funciton is to be executed; else false
+///
+bool Brood::BroodUI::DropDownMenu::DoElement()
+{
+	bool doElement = Brood::BroodUI::UIElement::DoElement();
+
+	// this if-code-block makes it so that the if a menu of a memubar is open
+	// then hover over its sibiling menus should expand/open the sibling menu.
+	// 
+	// if current active element's parent and hot element parent are the 
+	// same then set the hot element as the current active element
+	if( Brood::BroodUI::ElementSelection::GetHotElementIdPtr() == &m_elementId &&
+		Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr )
+	{
+		// getting the curr active element's elementId
+		const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr();
+		const int currActiveElementId = currActiveId->GetElementID();
+
+		// getting the pointer to curr active element
+		Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+
+		if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
+			GetElementIdPtr()->GetParentID() == currActiveId->GetParentID() )
+		{
+			Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( currActiveElement->GetElementIdPtr() );
+			Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( &m_elementId );
+		}
+	}
+
+	SetSelected( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == &m_elementId );
+
+	// setting up overlay
+	SetDrawOverlay();
+
+	return doElement;
 }
 
 /// 

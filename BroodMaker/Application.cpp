@@ -57,6 +57,7 @@ Brood::Application::Application::Application():
 	myButton.SetBodySize( 100, 50 );
 	myButton.SetBodyPosition( 55, 0 );
 	myButton.SetFont( m_font );
+	myButton.SetFontColor( sf::Color::Black );
 	myButton.SetBodyColor( sf::Color::Red );
 	myButton.SetText( "-----" );
 
@@ -76,6 +77,7 @@ Brood::Application::Application::Application():
 	myTextBox.SetBodyColor( sf::Color::White );
 	myTextBox.SetFont( m_font );
 	myTextBox.SetFontColor( sf::Color::Black );
+	myTextBox.SetFontSize( 20 );
 	myTextBox.SetText( "hello" );
 	myTextBox.SetEditable( true );
 	myTextBox.SetLimit( true, 4 );
@@ -84,6 +86,7 @@ Brood::Application::Application::Application():
 	myDropDown.SetBodySize( 150, 50 );
 	myDropDown.SetBodyPosition( 265, 0 );
 	myDropDown.SetFont( &m_font );
+	myDropDown.SetFontSize( 20 );
 	myDropDown.SetBodyColor( sf::Color::Green );
 	myDropDown.SetText( "MyDDM" );
 
@@ -146,13 +149,13 @@ void Brood::Application::Application::RunApplicaiton()
 				}
 				case sf::Event::TextEntered:
 				{
-					if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+					if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == nullptr )
 					{
 						break;
 					}
 
 					// checking if the current active element is a editable textbox
-					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID();
 					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
 					{
@@ -173,16 +176,34 @@ void Brood::Application::Application::RunApplicaiton()
 
 		// ==== at the start of a frame ====
 		// clearing the hotelement flag
-		Brood::BroodUI::ElementSelection::SetHotElementFlag( false );
+		Brood::BroodUI::ElementSelection::SetHotElementIdPtrFlag( false );
 		// updateing the mouse
 		Brood::MouseHandler::UpdateMousePos( m_window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
+
+		if( Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
+		{
+			std::cout << "HotElement" << Brood::BroodUI::ElementSelection::GetHotElementIdPtr()->GetElementID() << std::endl;
+		}
+		if( Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr() )
+		{
+			std::cout << "AlmostActiveElement" << Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr()->GetElementID() << std::endl;
+		}
+		if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() )
+		{
+			std::cout << "CurrActiveElement" << Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID() << std::endl;
+		}
+		if( Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
+		{
+			std::cout << "LasrActiveElement" << Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr()->GetElementID() << std::endl;
+		}
+
 
 		// myBoard->Update();
 
 		if( myButton.DoElement() )
 		{
-			myBoard->PlayerRollAndMove();
+			std::cout << "button Pressed" << std::endl;
 		}
 
 		myTextBox.DoElement();
@@ -198,7 +219,12 @@ void Brood::Application::Application::RunApplicaiton()
 				// checking if the logics of the items is to be executed or not
 				for( int i = 0; i < itemList.size(); ++i )
 				{
-					itemList.at( i )->DoElement();
+					if( itemList.at( i )->DoElement() )
+					{
+						std::cerr << "item at " << i << " Pressed "<< 
+							itemList.at( i )->GetText() <<	std::endl;
+
+					}
 				}
 			}
 		}
@@ -209,18 +235,22 @@ void Brood::Application::Application::RunApplicaiton()
 
 			for( int i = 0; i < menus.size(); ++i )
 			{
-				menus.at( i )->DoElement();
+				if( menus.at( i )->DoElement() )
+				{
+					std::cout << "menu at " << i << " Pressed" << std::endl;
+				}
 				// checking if the logics of the element is to be executed or not
 				if( menus.at( i )->IsSelected() )
 				{
 					auto itemList = menus.at( i )->GetItemList();
 					if( !itemList.empty() )
 					{
-						for( int i = 0; i < itemList.size(); ++i )
+						for( int j = 0; j < itemList.size(); ++j )
 						{
-							if( itemList.at( i )->DoElement() )
+							if( itemList.at( j )->DoElement() )
 							{
-								myBoard->PlayerRollAndMove();
+								std::cout << "menu at " << i << " Pressed" << std::endl;
+								std::cout << "item at " << j << " Pressed" << std::endl;
 							}
 						}
 					}

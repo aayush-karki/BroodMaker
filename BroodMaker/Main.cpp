@@ -131,13 +131,13 @@ int main()
 //				}
 //				case sf::Event::TextEntered:
 //				{
-//					if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+//					if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == nullptr )
 //					{
 //						break;
 //					}
 //
 //					// checking if the current active element is a editable textbox
-//					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+//					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID();
 //					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 //					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
 //					{
@@ -158,7 +158,7 @@ int main()
 //
 //		// at the start of a frame
 //		// clearing the hotElement flag
-//		Brood::BroodUI::ElementSelection::SetHotElementFlag( false );
+//		Brood::BroodUI::ElementSelection::SetHotElementIdPtrFlag( false );
 //		// updating the mouse
 //		Brood::MouseHandler::UpdateMousePos( window );
 //		Brood::MouseHandler::UpdateMouseButtonStatus();
@@ -187,7 +187,7 @@ int main()
 //			for( int i = 0; i < menus.size(); ++i )
 //			{
 //				menus.at( i )->DoElement();
-//				if( menus.at( i )->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElement() )
+//				if( menus.at( i )->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() )
 //				{
 //					menus.at( i )->SetSelected( true );
 //				}
@@ -368,12 +368,12 @@ int main()
 //				}
 //				case sf::Event::TextEntered:
 //				{
-//					if( Brood::BroodUI::ElementSelection::GetCurrActiveElement() == nullptr )
+//					if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == nullptr )
 //					{
 //						break;
 //					}
 //
-//					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElement()->GetElementID();
+//					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID();
 //					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 //					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
 //					{
@@ -394,7 +394,7 @@ int main()
 //
 //		// at the start of a frame
 //		// clearing the hotelement flag
-//		Brood::BroodUI::ElementSelection::SetHotElementFlag( false );
+//		Brood::BroodUI::ElementSelection::SetHotElementIdPtrFlag( false );
 //		// updateing the mouse
 //		Brood::MouseHandler::UpdateMousePos( window );
 //		Brood::MouseHandler::UpdateMouseButtonStatus();

@@ -92,9 +92,14 @@ public:
 	const sf::Vector2f GetBodyPosition() const;
 	const sf::Vector2f GetBodySize() const;
 	const sf::Color GetBodyColor();
+
 	const sf::Color GetActiveOverlayColor();
 	const sf::Color GetHotOverlayColor();
 	Brood::BroodUI::Id* GetElementIdPtr();
+	const bool IsSelected() const;
+
+	std::string GetText() const;
+	unsigned int GetFontSize() const;
 
 	// setter functions
 	void SetBodyColor( sf::Color a_bodyColor );
@@ -103,9 +108,14 @@ public:
 	virtual void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false );
 	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
 	
-	void SetActiveOverlayColor( sf::Color a_color );
-	void SetHotOverlayColor( sf::Color a_color );
-	void SetDrawOverlay( bool a_drawOverlay = false );
+	void SetFont( sf::Font& a_font ); // sets font
+	void SetFontColor( sf::Color a_color = sf::Color::White ); // sets font color
+	void SetFontSize( int a_fontSize = 12 ); // sets font size
+	virtual void SetText( std::string a_text = "" ); // sets text
+
+	virtual void SetSelected( bool a_selected ); // sets the state of the element.
+	void SetActiveOverlayColor( sf::Color a_color ); // sets active overlay color
+	void SetHotOverlayColor( sf::Color a_color ); // sets hot overlay color
 
 	// funciton to check if the
 	bool IsMouseOverElement();
@@ -114,7 +124,12 @@ public:
 	bool IsHotElement();
 
 	virtual bool DoElement(); // checks to see if the logic for the element is to be excecuted or not 
-	virtual void Draw( sf::RenderWindow& a_window ) = 0; // draw funciton
+	virtual void Draw( sf::RenderWindow& a_window ); // draw funciton
+
+	// ================= protected member function =================  
+protected:
+	void SetTextPosition(); // to set the position of the text
+	void SetDrawOverlay(); // logic for if overlay is to be drawn or not
 
 	// ================= protected member variables =================  
 protected:
@@ -128,6 +143,12 @@ protected:
 	sf::Color m_activeOverlayColor; ///> color when it is active element
 
 	bool m_drawOverlay; ///> true if overlay is to be drawn
+	bool m_isSelected; ///> is true if the element is selected
+
+	sf::Text m_text; ///> text content
+	sf::Font* m_font; ///> element's font
+	unsigned m_fontSize; ///> font size
+	bool m_drawText; ///> is true if text is set and hence draw to screen
 };
 
 // ======================================================================
