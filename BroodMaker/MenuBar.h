@@ -135,6 +135,8 @@ public:
 	void AddItemToMenu( unsigned a_index, std::string a_menuName); // adds item to a menu at given index
 
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
+	
+	virtual void Debugger(); // adds the element ID to the text
 
 	// ============ private member function ===============
 private:

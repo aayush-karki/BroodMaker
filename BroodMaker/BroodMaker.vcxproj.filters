@@ -113,6 +113,9 @@
     <ClCompile Include="SpriteHandler.cpp">
       <Filter>src\Unorganized\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DropDownInput.cpp">
+      <Filter>src\UI\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -189,6 +192,9 @@
     </ClInclude>
     <ClInclude Include="SpriteHandler.h">
       <Filter>src\Unorganized\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownInput.h">
+      <Filter>src\UI\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

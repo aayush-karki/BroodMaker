@@ -10,6 +10,7 @@
 /// 
 /************************************************************************/
 #pragma once
+#include "TextBox.h"
 #include "MenuBar.h" // includes all the other uiElements
 #include "WorkSpace.h"
 

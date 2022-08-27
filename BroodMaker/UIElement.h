@@ -56,11 +56,11 @@ namespace Brood
 ///
 enum class Brood::BroodUI::ENUM_UIType
 {
-	UI_textBox, ///< container for text -> derived from UI_Element
-	UI_button, ///< a button -> derived from UI_TextBox
-	UI_dropDownMenu, ///< drop down menu; has items inside it -> derived from UI_Button
-	UI_menuBar,
-	UI_panel,
+	UI_textBox, ///> container for text  -> derived from UI_Element
+	UI_button, ///> a button -> derived from UI_Element
+	UI_dropDownMenu, ///> drop down menu; has items inside it -> derived from UI_Button
+	UI_dropDownInput, ///> drop down input; has items inside it -> derived from UI_Button
+	UI_menuBar, ///> menubar is a list of drop down menu stacked horizontally
 	UI_scrollBar /// @TODO add latter
 };
 // ======================================================================
@@ -76,6 +76,19 @@ enum class Brood::BroodUI::ENUM_UIType
 /// @class UIElement  "UIElement.h"
 /// @brief a abstract base class that is parent to all the different 
 ///		UI elements 
+/// 
+/// For the UI element the order of update logic and rending matters.
+/// 
+/// Update Logic: We first check if we should execute the funciton for 
+///		the element with DoElement() function which returns a boolean value.
+///		Another method for some but not all of the UI Element is to check 
+///		if the m_isSelected value is true or false. On the same note the 
+///		order for checking update logic is from top left to bottom right--
+///		like reading a english book.
+/// 
+/// Render Logic: The order for render logic is to go from bottom to top 
+///		starting form bottom-right to left. This is because of how 
+///		rendering works where things drawn last is always on top.
 /// 
 class Brood::BroodUI::UIElement
 {
@@ -126,10 +139,13 @@ public:
 	virtual bool DoElement(); // checks to see if the logic for the element is to be excecuted or not 
 	virtual void Draw( sf::RenderWindow& a_window ); // draw funciton
 
+	virtual void Debugger(); // adds the element ID to the text
+
 	// ================= protected member function =================  
 protected:
 	void SetTextPosition(); // to set the position of the text
 	void SetDrawOverlay(); // logic for if overlay is to be drawn or not
+
 
 	// ================= protected member variables =================  
 protected:

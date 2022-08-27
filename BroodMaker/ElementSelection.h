@@ -76,6 +76,10 @@ public:
 	static Brood::BroodUI::Id* GetLastActiveElementIdPtr();
 	static bool GetHotElementIdFlag();
 
+	// debugging
+	static void Debugger();
+	static void DebugPrintSelectedElementID();
+
 	// ================= private member variables =================  
 private:
 	///> stores the ptr to element id when the mouse is hovering over it
@@ -93,7 +97,15 @@ private:
 	static Brood::BroodUI::Id* m_currActiveElementIdPtr;
 
 	///> stores the pointer to the last active element
-	static Brood::BroodUI::Id* m_lastActiveElementPtr;
+	static Brood::BroodUI::Id* m_lastActiveElementIdPtr;
+
+	///> stores the element selection pointer for debugging
+	static Brood::BroodUI::Id* m_debugSaveHotElementIdPtr;
+	static Brood::BroodUI::Id* m_debugSaveAlmostActiveElementIdPtr;
+	static Brood::BroodUI::Id* m_debugSaveCurrActiveElementIdPtr;
+	static Brood::BroodUI::Id* m_debugSaveLastActiveElementPtr;
+
+
 };
 
 // ======================================================================

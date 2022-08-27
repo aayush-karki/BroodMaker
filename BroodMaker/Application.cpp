@@ -57,14 +57,18 @@ Brood::Application::Application::Application():
 	myButton.SetBodySize( 100, 50 );
 	myButton.SetBodyPosition( 55, 0 );
 	myButton.SetFont( m_font );
+	myButton.SetFontSize( 20 );
 	myButton.SetFontColor( sf::Color::Black );
 	myButton.SetBodyColor( sf::Color::Red );
-	myButton.SetText( "-----" );
+	myButton.SetText( std::to_string(myButton.GetElementIdPtr()->GetElementID()) );
 
 	// button with sprite
 	mySpriteButton.SetBodySize( 50, 50 );
 	mySpriteButton.SetBodyPosition( 55, 100 );
 	mySpriteButton.SetFont( m_font );
+	mySpriteButton.SetFontSize( 20 );
+	mySpriteButton.SetFontColor( sf::Color::Black );
+	mySpriteButton.SetBodyColor( sf::Color::Red );
 	// setting sprite height and length 
 	/*mySpriteButton.GetSpriteBody().SetSpriteLength( 50 );
 	mySpriteButton.GetSpriteBody().SetSpriteHeight( 50 );*/
@@ -78,7 +82,7 @@ Brood::Application::Application::Application():
 	myTextBox.SetFont( m_font );
 	myTextBox.SetFontColor( sf::Color::Black );
 	myTextBox.SetFontSize( 20 );
-	myTextBox.SetText( "hello" );
+	myTextBox.SetText( std::to_string( myTextBox.GetElementIdPtr()->GetElementID() ) );
 	myTextBox.SetEditable( true );
 	myTextBox.SetLimit( true, 4 );
 
@@ -88,10 +92,22 @@ Brood::Application::Application::Application():
 	myDropDown.SetFont( &m_font );
 	myDropDown.SetFontSize( 20 );
 	myDropDown.SetBodyColor( sf::Color::Green );
-	myDropDown.SetText( "MyDDM" );
+	myDropDown.SetText( std::to_string( myDropDown.GetElementIdPtr()->GetElementID() ));
 
 	myDropDown.AddItemToMenu( "1st item" );
 	myDropDown.AddItemToMenu( "2st item" );
+
+	// making a dropdownItem
+	myDropDownInput.SetBodySize( 150, 50 );
+	myDropDownInput.SetBodyPosition( 265, 120 );
+	myDropDownInput.SetFont( &m_font );
+	myDropDownInput.SetFontSize( 20 );
+	myDropDownInput.SetBodyColor( sf::Color::Green );
+	myDropDownInput.SetText( "MyDDM" );
+
+	myDropDownInput.AddItemToMenu( "1st item" );
+	myDropDownInput.AddItemToMenu( "2st item" );
+	myDropDownInput.AddItemToMenu( "longest of all item" );
 
 	// making a menubar
 	myMenu.SetBodySize( 150, 50 );
@@ -114,6 +130,7 @@ Brood::Application::Application::Application():
 	myMenu.AddItemToMenu( 1, "bc" );
 	myMenu.AddItemToMenu( 1, "bd" );
 
+	Debugger();
 }
 
 /// 
@@ -181,24 +198,6 @@ void Brood::Application::Application::RunApplicaiton()
 		Brood::MouseHandler::UpdateMousePos( m_window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
 
-		if( Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
-		{
-			std::cout << "HotElement" << Brood::BroodUI::ElementSelection::GetHotElementIdPtr()->GetElementID() << std::endl;
-		}
-		if( Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr() )
-		{
-			std::cout << "AlmostActiveElement" << Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr()->GetElementID() << std::endl;
-		}
-		if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() )
-		{
-			std::cout << "CurrActiveElement" << Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID() << std::endl;
-		}
-		if( Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
-		{
-			std::cout << "LasrActiveElement" << Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr()->GetElementID() << std::endl;
-		}
-
-
 		// myBoard->Update();
 
 		if( myButton.DoElement() )
@@ -208,7 +207,10 @@ void Brood::Application::Application::RunApplicaiton()
 
 		myTextBox.DoElement();
 
-		myDropDown.DoElement();
+		if( myDropDown.DoElement() )
+		{
+			std::cout << "myDropDown Pressed" << std::endl;
+		}
 		if( myDropDown.IsSelected() )
 		{
 			auto itemList = myDropDown.GetItemList();
@@ -221,8 +223,35 @@ void Brood::Application::Application::RunApplicaiton()
 				{
 					if( itemList.at( i )->DoElement() )
 					{
-						std::cerr << "item at " << i << " Pressed "<< 
+						std::cerr << "item at " << i << " Pressed with ID"<< 
 							itemList.at( i )->GetText() <<	std::endl;
+
+					}
+				}
+			}
+		}
+
+		if(myDropDownInput.DoElement())
+		{
+			std::cout << "myDropDownInput Pressed" << std::endl;
+		}
+		if( myDropDownInput.IsSelected() )
+		{
+			auto itemList = myDropDownInput.GetItemList();
+			if( !itemList.empty() )
+			{
+				// checking if the logics of the items is to be executed or not
+				for( int i = 0; i < itemList.size(); ++i )
+				{
+					if( itemList.at( i )->DoElement() )
+					{
+						// setting the elements name as the item's name
+						myDropDownInput.SetText( itemList.at( i )->GetText() );
+						
+						// executing the function
+						std::cerr << "item at " << i << "  Pressed with ID " <<
+							itemList.at( i )->GetText() << std::endl;
+
 
 					}
 				}
@@ -272,10 +301,25 @@ void Brood::Application::Application::RunApplicaiton()
 		mySpriteButton.Draw( m_window );
 		myMenu.Draw( m_window );
 		myDropDown.Draw( m_window );
+		myDropDownInput.Draw( m_window );
 		myTextBox.Draw( m_window );
 		//window.draw(text);
 		m_window.display();
 	}
+}
+
+/// 
+/// @public
+/// @brief changes the text of the element to its the element ID
+/// 
+void Brood::Application::Application::Debugger()
+{
+	myButton.Debugger();
+	mySpriteButton.Debugger();
+	myTextBox.Debugger();
+	myDropDown.Debugger();
+	myDropDownInput.Debugger();
+	myMenu.Debugger();
 }
 
 /// 

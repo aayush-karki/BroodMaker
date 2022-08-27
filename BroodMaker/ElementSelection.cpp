@@ -24,8 +24,13 @@
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_almostActiveElementIdPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementIdPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementIdPtr = nullptr;
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_lastActiveElementPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_lastActiveElementIdPtr = nullptr;
 bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
+
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveAlmostActiveElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveHotElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveCurrActiveElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveLastActiveElementPtr = nullptr;
 
 /// 
 /// @static
@@ -72,7 +77,7 @@ void Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( Brood::BroodUI
 /// 
 void Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr )
 {
-	m_lastActiveElementPtr = a_idPtr;
+	m_lastActiveElementIdPtr = a_idPtr;
 }
 
 /// 
@@ -135,7 +140,7 @@ Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr(
 /// 
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr()
 {
-	return m_lastActiveElementPtr;
+	return m_lastActiveElementIdPtr;
 }
 
 
@@ -149,6 +154,61 @@ Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr(
 bool Brood::BroodUI::ElementSelection::GetHotElementIdFlag()
 {
 	return m_hotElementFlag;
+}
+
+/// 
+/// @static
+/// @public
+/// @brief Function to print the id of all the element selection pointer, namely:
+///		HotElement, AlmostActiveElement, CurrActiveElement, and LastActiveElement
+///  
+void Brood::BroodUI::ElementSelection::Debugger()
+{
+	if( m_debugSaveHotElementIdPtr != m_hotElementIdPtr && m_hotElementIdPtr != nullptr )
+	{
+		m_debugSaveHotElementIdPtr = m_hotElementIdPtr;
+		std::cout << "HotElement " << m_hotElementIdPtr->GetElementID() << std::endl;
+	}
+	if( m_debugSaveAlmostActiveElementIdPtr != m_almostActiveElementIdPtr && m_almostActiveElementIdPtr != nullptr )
+	{
+		m_debugSaveAlmostActiveElementIdPtr = m_almostActiveElementIdPtr;
+		std::cout << "AlmostActiveElement " << m_almostActiveElementIdPtr->GetElementID() << std::endl;
+	}
+	if( m_debugSaveCurrActiveElementIdPtr != m_currActiveElementIdPtr && m_currActiveElementIdPtr != nullptr )
+	{
+		m_debugSaveCurrActiveElementIdPtr = m_currActiveElementIdPtr;
+		std::cout << "CurrActiveElement " << m_currActiveElementIdPtr->GetElementID() << std::endl;
+	}
+	if( m_debugSaveLastActiveElementPtr != m_lastActiveElementIdPtr && m_lastActiveElementIdPtr != nullptr )
+	{
+		m_debugSaveLastActiveElementPtr = m_lastActiveElementIdPtr;
+		std::cout << "LasrActiveElement " << m_lastActiveElementIdPtr->GetElementID() << std::endl;
+	}
+
+}
+
+/// 
+/// @public
+/// @brief Print the selected Element ID if any
+///
+void Brood::BroodUI::ElementSelection::DebugPrintSelectedElementID()
+{
+	if( m_hotElementIdPtr != nullptr )
+	{
+		std::cout << "HotElement " << m_hotElementIdPtr->GetElementID() << std::endl;
+	}
+	if( m_almostActiveElementIdPtr != nullptr )
+	{
+		std::cout << "AlmostActiveElement " << m_almostActiveElementIdPtr->GetElementID() << std::endl;
+	}
+	if( m_currActiveElementIdPtr != nullptr )
+	{
+		std::cout << "CurrActiveElement " << m_currActiveElementIdPtr->GetElementID() << std::endl;
+	}
+	if( m_lastActiveElementIdPtr != nullptr )
+	{
+		std::cout << "LasrActiveElement " << m_lastActiveElementIdPtr->GetElementID() << std::endl;
+	}
 }
 
 // ======================================================================

@@ -23,7 +23,7 @@ namespace Brood
 	///
 	/// @ingroup Brood
 	/// @addtogroup BroodUI
-	///
+	/// 
 	namespace BroodUI
 	{
 		class Id;

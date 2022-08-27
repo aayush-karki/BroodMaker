@@ -17,7 +17,9 @@
 #include "Card.h"
 #include "MouseHandler.h"
 
+#include "TextBox.h"
 #include "MenuBar.h"
+#include "DropDownInput.h"
 #include "InitialWorkSpace.h"
 
 #include "struct_path.h"
@@ -53,6 +55,7 @@ public:
 
 	void RunApplicaiton(); // main loop of the program
 
+	void Debugger(); // calls the UI ELement Debugger
 	// ================= private member function =================  
 private:
 	void InitializeMenuBar();
@@ -83,6 +86,7 @@ private:
 	Brood::BroodUI::Button mySpriteButton;
 	Brood::BroodUI::TextBox myTextBox;
 	Brood::BroodUI::DropDownMenu myDropDown;
+	Brood::BroodUI::DropDownInput myDropDownInput;
 	Brood::BroodUI::MenuBar myMenu;
 };
 

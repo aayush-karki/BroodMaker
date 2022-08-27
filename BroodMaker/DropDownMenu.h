@@ -117,7 +117,8 @@ class Brood::BroodUI::DropDownMenu: public Brood::BroodUI::Button
 	// ============ public member function =============== 
 public:
 	// default constructor
-	DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr = nullptr);
+	DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr = nullptr,
+				  Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_dropDownMenu );
 	// default destructor
 	virtual ~DropDownMenu();
 
@@ -139,15 +140,18 @@ public:
 	virtual bool DoElement() override;
 	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
-	// ============ private member function ===============
-private:
+	virtual void Debugger(); // adds the element ID to the text
+
+	// ============ protected member function ===============
+protected:
 	void SetItemPos( int a_itemIndex ); // helper function position menu item at given index correctly
 	void SetItemSize( int a_itemIndex ); // helper function size the menu item at given index correctly
 	void SetEachItemSize(); // helper function size all the menu item correctly
 	void SetEachItemPos(); // helper function position all the menu item correctly
 
-	// ============ private member variables ===============
-private:
+
+	// ============ protected member variables ===============
+protected:
 	sf::Font* m_font; ///> pointer to the font
 
 	std::vector<Brood::BroodUI::Button*> m_items; ///> stores the list of menus

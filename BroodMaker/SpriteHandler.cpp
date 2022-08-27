@@ -131,6 +131,18 @@ void Brood::SpriteHandler::SetSpriteFromTexture( unsigned a_num )
 	m_body->setTextureRect( tempRect );
 }
 
+/// 
+/// @public
+/// @brief Removes the texture
+/// 
+void Brood::SpriteHandler::RemoveTexture()
+{
+	m_body->setTexture( nullptr );
+
+	sf::IntRect tempRect( 0, 0, 0, 0);
+	m_body->setTextureRect(tempRect);
+}
+
 // ======================================================================
 // ================= end of button class ================================
 // ======================================================================

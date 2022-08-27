@@ -28,8 +28,9 @@
 /// @param m_parentPtr pointer to the parent element;
 ///		if parent does not exist then nullptr -> default value nullptr
 /// 
-Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr) :
-	Brood::BroodUI::Button( a_parentPtr, Brood::BroodUI::ENUM_UIType::UI_dropDownMenu),
+Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr,
+											Brood::BroodUI::ENUM_UIType a_enumType ) :
+	Brood::BroodUI::Button( a_parentPtr, a_enumType ),
 	m_font( nullptr ) , m_maxItemLength(0)
 {}
 
@@ -260,7 +261,8 @@ bool Brood::BroodUI::DropDownMenu::DoElement()
 	// if current active element's parent and hot element parent are the 
 	// same then set the hot element as the current active element
 	if( Brood::BroodUI::ElementSelection::GetHotElementIdPtr() == &m_elementId &&
-		Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr )
+		Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr &&
+		m_elementId.HasParent() )
 	{
 		// getting the curr active element's elementId
 		const Brood::BroodUI::Id* currActiveId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr();
@@ -269,7 +271,12 @@ bool Brood::BroodUI::DropDownMenu::DoElement()
 		// getting the pointer to curr active element
 		Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 
+		// getting the this element's parentptr
+		Brood::BroodUI::UIElement* thisElementparentElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
+
+		// checking if the currActive is dropdown and its parent is menu bar and this element and curr
 		if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&
+			thisElementparentElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_menuBar &&
 			GetElementIdPtr()->GetParentID() == currActiveId->GetParentID() )
 		{
 			Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( currActiveElement->GetElementIdPtr() );
@@ -310,7 +317,24 @@ void Brood::BroodUI::DropDownMenu::Draw( sf::RenderWindow& a_window )
 }
 
 /// 
-/// @private
+/// @public
+/// @brief changes the text of the element to its the element ID
+/// 
+void Brood::BroodUI::DropDownMenu::Debugger()
+{
+	Brood::BroodUI::Button::Debugger();
+
+	if( !m_items.empty() )
+	{
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			m_items.at( i )->Debugger();
+		}
+	}
+}
+
+/// 
+/// @protected
 /// @brief helper funciton to position the item at given index correctly 
 ///		in the drop down list.
 /// 
@@ -327,7 +351,7 @@ void Brood::BroodUI::DropDownMenu::SetItemPos( int a_itemIndex )
 }
 
 /// 
-/// @private
+/// @protected
 /// @brief helper funciton to size the items correctly in the drop down list
 ///
 /// @param a_itemIndex index of the item in the drop down list
@@ -366,7 +390,7 @@ void Brood::BroodUI::DropDownMenu::SetItemSize( int a_itemIndex )
 }
 
 /// 
-/// @private
+/// @protected
 /// @brief Setter function to set the size of each item in the drop down menus
 /// 
 void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
@@ -405,7 +429,7 @@ void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
 }
 
 /// 
-/// @private
+/// @protected
 /// @brief Setter function to set the postiong of each item in the drop down menus
 /// 
 void Brood::BroodUI::DropDownMenu::SetEachItemPos()

@@ -75,6 +75,8 @@ public:
 	bool SetTextureFromSavedFilePath(); // loads and sets the texture from saved path
 	void SetSpriteFromTexture( unsigned a_num ); // sets sprite from texture
 
+	void RemoveTexture( ); // removes texture from the body
+
 	// ============ private member variables =============== 
 private:
 	sf::RectangleShape* m_body; ///> pointer to the body

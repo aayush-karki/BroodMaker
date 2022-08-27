@@ -448,6 +448,15 @@ void Brood::BroodUI::UIElement::SetDrawOverlay(  )
 
 /// 
 /// @public
+/// @brief changes the text of the element to its the element ID
+/// 
+void Brood::BroodUI::UIElement::Debugger()
+{
+	SetText( std::to_string( GetElementIdPtr()->GetElementID() ) );
+}
+
+/// 
+/// @public
 /// @brief Check if the mouse is hovering over the element
 /// 
 /// @return true if the mouse is over the element; else false
@@ -555,18 +564,24 @@ bool Brood::BroodUI::UIElement::DoElement()
 			if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 			{
 				doElement = true;
-				Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() );
+				if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr )
+				{
+					Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() );
+				}
 				Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( &m_elementId );
 			}
 			else
 			{
 				// resetting the currActiveElement 
+				// saving the lastActiveElement
+				if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr )
+				{
+					Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() );
+				}
 				// as the left mouse button was released the current element should 
 				// not be active element
 				Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
 
-				// saving the lastActiveElement
-				Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr() );
 			}
 			// resetting the almostActiveElement cause left mouse button was released
 			Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( nullptr );
@@ -574,9 +589,13 @@ bool Brood::BroodUI::UIElement::DoElement()
 		// checking if the left mouse butoon was released outside of the elment when the element
 		// is also currActive element then setting the curr active to null
 		else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() &&
-				 GetElementIdPtr() != Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
+				 GetElementIdPtr() != Brood::BroodUI::ElementSelection::GetHotElementIdPtr() &&
+				 !IsSelected())
 		{
-			Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr() );
+			if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr )
+			{
+				Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() );
+			}
 			Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
 
 			// resetting the almostActiveElement cause left mouse button was released
@@ -586,7 +605,7 @@ bool Brood::BroodUI::UIElement::DoElement()
 
 	// setting up overlay
 	SetDrawOverlay();
-	
+
 	return doElement;
 }
 

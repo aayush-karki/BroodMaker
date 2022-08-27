@@ -309,6 +309,22 @@ void Brood::BroodUI::MenuBar::Draw( sf::RenderWindow& a_window )
 }
 
 /// 
+/// @public
+/// @brief changes the text of the element to its the element ID
+/// 
+void Brood::BroodUI::MenuBar::Debugger()
+{
+	Brood::BroodUI::UIElement::Debugger();
+
+	if( !m_menus.empty() )
+	{
+		for( int i = 0; i < m_menus.size(); ++i )
+		{
+			m_menus.at( i )->Debugger();
+		}
+	}
+}
+/// 
 /// @private
 /// @brief helper funciton to set the body size of the menus correctly in the menubar
 ///

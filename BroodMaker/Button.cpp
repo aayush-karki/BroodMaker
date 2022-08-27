@@ -68,15 +68,33 @@ bool Brood::BroodUI::Button::DoElement()
 {
 	bool doElement = Brood::BroodUI::UIElement::DoElement();
 
+	/// @delete me
+	if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == GetElementIdPtr() )
+	{
+		std::cout << GetElementIdPtr()->GetElementID() << std::endl;
+	}
+
 	// for button it should not be currActiveELmenet 
 	if( doElement )
 	{
 		Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
-		Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr () );
+		Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( GetElementIdPtr() );
 		this->m_drawOverlay = false;
 	}
 
 	return doElement;
+}
+
+/// 
+/// @public
+/// @brief changes the text of the element to its the element ID
+/// 
+void Brood::BroodUI::Button::Debugger()
+{
+	m_bodySprite.RemoveTexture();
+
+	Brood::BroodUI::UIElement::Debugger();
+
 }
 
 // ======================================================================
