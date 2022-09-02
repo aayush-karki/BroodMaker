@@ -60,7 +60,7 @@ Brood::Application::Application::Application():
 	myButton.SetFontSize( 20 );
 	myButton.SetFontColor( sf::Color::Black );
 	myButton.SetBodyColor( sf::Color::Red );
-	myButton.SetText( std::to_string(myButton.GetElementIdPtr()->GetElementID()) );
+	myButton.SetText( "My button" );
 
 	// button with sprite
 	mySpriteButton.SetBodySize( 50, 50 );
@@ -82,7 +82,7 @@ Brood::Application::Application::Application():
 	myTextBox.SetFont( m_font );
 	myTextBox.SetFontColor( sf::Color::Black );
 	myTextBox.SetFontSize( 20 );
-	myTextBox.SetText( std::to_string( myTextBox.GetElementIdPtr()->GetElementID() ) );
+	myTextBox.SetText( "hell" );
 	myTextBox.SetEditable( true );
 	myTextBox.SetLimit( true, 4 );
 
@@ -92,7 +92,7 @@ Brood::Application::Application::Application():
 	myDropDown.SetFont( &m_font );
 	myDropDown.SetFontSize( 20 );
 	myDropDown.SetBodyColor( sf::Color::Green );
-	myDropDown.SetText( std::to_string( myDropDown.GetElementIdPtr()->GetElementID() ));
+	myDropDown.SetText( "MY DDM");
 
 	myDropDown.AddItemToMenu( "1st item" );
 	myDropDown.AddItemToMenu( "2st item" );
@@ -197,6 +197,7 @@ void Brood::Application::Application::RunApplicaiton()
 		// updateing the mouse
 		Brood::MouseHandler::UpdateMousePos( m_window );
 		Brood::MouseHandler::UpdateMouseButtonStatus();
+		Brood::BroodUI::ElementSelection::Debugger();
 
 		// myBoard->Update();
 

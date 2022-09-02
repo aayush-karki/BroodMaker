@@ -142,6 +142,11 @@ void Brood::BroodUI::TextBox::SetSelected( bool a_selected )
 		}
 		m_text.setString( newStr );
 	}
+	else
+	{
+		SetText( m_ossText.str() ); // we need to use Text as it also sets m_drawText
+		m_text.setString( m_ossText.str() + "_" ); // we do not want _ to save as input
+	}
 }
 
 /// 
@@ -162,7 +167,7 @@ void Brood::BroodUI::TextBox::SetEditable( bool a_isEditable )
 /// @param a_input a copy of sf::Event::TextEntered
 /// 
 void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
-{
+{	
 	if( m_isEditable && m_isSelected )
 	{
 		// we only process ascii codes
@@ -171,14 +176,16 @@ void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 		{
 			if( m_hasLimit )
 			{
-				if( m_ossText.str().length() <= m_limit )
-				{
-					InputLogic( charTyped );
-				}
-				else if( m_ossText.str().length() > m_limit && charTyped == DELETE_KEY )
+				std::cout << m_ossText.str().length() << std::endl;
+				if( m_ossText.str().length() >= m_limit && charTyped == DELETE_KEY )
 				{
 					DeleteLastChar();
 				}
+				else if( m_ossText.str().length() < m_limit)
+				{
+					InputLogic( charTyped );
+				}
+				std::cout << m_ossText.str().length() << std::endl << std::endl;
 			}
 			else
 			{
@@ -203,6 +210,17 @@ void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 bool Brood::BroodUI::TextBox::DoElement()
 {
 	bool doElement = Brood::BroodUI::UIElement::DoElement();
+
+	// chekcing if this element is currActive and is not hot when 
+	// left mouse button is not pressed
+	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() && 
+		Brood::MouseHandler::IsLeftButtonPressed() && 
+		GetElementIdPtr() != Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
+	{
+		// then this element should not be currActive
+		Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( &m_elementId );
+		Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
+	}
 
 	// checking if the current active element is this element
 	// if yes set the isSelected property to true 
@@ -233,7 +251,8 @@ void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 		}
 	}
 	
-	SetText (m_ossText.str() + "_" );
+	SetText( m_ossText.str() ); // we need to use Text as it also sets m_drawText
+	m_text.setString( m_ossText.str() + "_" ); // we do not want _ to save as input
 }
 
 /// 
@@ -255,7 +274,7 @@ void Brood::BroodUI::TextBox::DeleteLastChar()
 	m_ossText.str( "" );
 	m_ossText << newStr;
 
-	m_text.setString( m_ossText.str() );
+	SetText( m_ossText.str() );
 }
 
 // ======================================================================

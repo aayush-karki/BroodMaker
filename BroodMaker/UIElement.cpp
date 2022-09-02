@@ -549,10 +549,10 @@ bool Brood::BroodUI::UIElement::DoElement()
 	// for left button press
 	// check if the element is hot and if the left mouse button was pressed 
 	// then set it as almostActive Element
-	if( Brood::MouseHandler::IsLeftButtonPressed() && 
+	if( Brood::MouseHandler::IsLeftButtonPressed() &&
 		GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 	{
-		Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( &m_elementId );		
+		Brood::BroodUI::ElementSelection::SetAlmostActiveElementIdPtr( &m_elementId );
 	}
 	// for almost active element
 	// checking if the element is almost active and should we change its almost active status

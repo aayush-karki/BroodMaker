@@ -284,6 +284,41 @@ bool Brood::BroodUI::DropDownMenu::DoElement()
 		}
 	}
 
+
+	// chekcing if this element is currActive and is not hot when 
+	// left mouse button is not pressed
+	Brood::BroodUI::Id* hotElementLocalCopy = Brood::BroodUI::ElementSelection::GetHotElementIdPtr();
+	
+	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() &&
+		Brood::MouseHandler::IsLeftButtonPressed() &&
+		GetElementIdPtr() != hotElementLocalCopy )
+	{
+		// chekcing if the hot element is its child 
+		bool isHotElementValidChild = false;
+		std::vector<Brood::BroodUI::Button*>::iterator childElementsIte = m_items.begin();
+
+		while( childElementsIte != m_items.end() )
+		{
+			if( ( *childElementsIte )->GetElementIdPtr() == hotElementLocalCopy )
+			{
+				isHotElementValidChild = true;
+				break;
+			}
+			else
+			{
+				++childElementsIte;
+			}
+		}
+
+		// if the hot element is not a valid child of this dropdown menu
+		// then this element should not be currActive
+		if( !isHotElementValidChild )
+		{
+			Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( &m_elementId );
+			Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
+		}
+	}
+
 	SetSelected( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == &m_elementId );
 
 	// setting up overlay

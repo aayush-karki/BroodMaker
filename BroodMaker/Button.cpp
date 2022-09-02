@@ -68,11 +68,6 @@ bool Brood::BroodUI::Button::DoElement()
 {
 	bool doElement = Brood::BroodUI::UIElement::DoElement();
 
-	/// @delete me
-	if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() == GetElementIdPtr() )
-	{
-		std::cout << GetElementIdPtr()->GetElementID() << std::endl;
-	}
 
 	// for button it should not be currActiveELmenet 
 	if( doElement )
