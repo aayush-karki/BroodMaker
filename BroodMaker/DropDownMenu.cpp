@@ -353,7 +353,9 @@ void Brood::BroodUI::DropDownMenu::Draw( sf::RenderWindow& a_window )
 
 /// 
 /// @public
-/// @brief changes the text of the element to its the element ID
+/// @brief changes the text/texture of the element to its the element ID when debug is on
+///		and changes it back to the text/texture it had before debugging when debug is off.
+
 /// 
 void Brood::BroodUI::DropDownMenu::Debugger()
 {
@@ -412,7 +414,7 @@ void Brood::BroodUI::DropDownMenu::SetItemSize( int a_itemIndex )
 	}
 	else
 	{
-		menuLength = GetFontSize() * ( float )m_maxItemLength / 2.f;
+		menuLength = GetFontSize() * ( float )m_maxItemLength / 1.7f;
 	}
 
 	// checking if the menuLength is less than menu main's body length
@@ -444,7 +446,7 @@ void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
 		}
 		else
 		{
-			menuLength = GetFontSize() * ( float )m_maxItemLength / 2.f;
+			menuLength = GetFontSize() * ( float )m_maxItemLength / 1.7f;
 		}
 
 		// checking if the menuLength is less than menu main's body length

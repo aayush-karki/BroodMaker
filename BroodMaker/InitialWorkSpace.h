@@ -10,8 +10,6 @@
 /// 
 /************************************************************************/
 #pragma once
-#include "TextBox.h"
-#include "MenuBar.h" // includes all the other uiElements
 #include "WorkSpace.h"
 
 // =============================== defining namespace =======================
@@ -50,35 +48,33 @@ public:
 	virtual void InitializeWorkSpace() override;
 	virtual void Update(); // all the logic for the workspace is here
 	virtual void Draw( sf::RenderWindow& a_window ); // draw to the screen
+	virtual void Debugger(); // debugger
 
 	// ================= private member variables =================  
 private:
 	// main uielement which shows the list of stored game files and editor files
-	Brood::BroodUI::Button* m_gameOrEditor; 
-	Brood::BroodUI::Button* m_toggleGameInfoLeft;
-	Brood::BroodUI::Button* m_toggleGameInfoRight;
+	Brood::BroodUI::Button* m_gameOrEditor;  ///> main card that is in the middle of the screen that shows the current game/edit list
+	Brood::BroodUI::Button* m_toggleGameInfoLeft; ///> button to toggle left through the games/edits list
+	Brood::BroodUI::Button* m_toggleGameInfoRight; ///> button to toggle right through the games/edits list
 
-	/// @TODO create this as a verticalmenus and delete them from
-	/// all the function
-	bool m_showImportDialogBox;
-	Brood::BroodUI::Button* m_importGame;
-	Brood::BroodUI::Button* m_loadPreviousEdits;
-	Brood::BroodUI::Button* m_createNewEdit;
-	Brood::BroodUI::Button* m_cancle;
+	/// @TODO make this into vertical menus once it is created
 
-	bool m_showEnterFilenameDialogBox;
-	Brood::BroodUI::TextBox* m_fileName;
-	Brood::BroodUI::TextBox* m_enterFileNameFeild;
-	Brood::BroodUI::Button* m_openFile;
-	Brood::BroodUI::Button* m_cancleSmall;
-	
+	int m_currGameInfoIdx; // index of the file that is loaded by the main button
+
+	bool m_showImportDialogBox; ///> true to show the import dialog box
+	Brood::BroodUI::Button* m_importGame; ///> button to import games
+	Brood::BroodUI::Button* m_loadPreviousEdits;  ///> button to load previous edits
+	Brood::BroodUI::Button* m_createNewEdit; ///> button to create new edit
+	Brood::BroodUI::Button* m_cancle; ///> button to close the dialog box
+
+	bool m_showEnterFilenameDialogBox; ///> true to show the filename dialog box
+	Brood::BroodUI::TextBox* m_fileName; ///> stores the filename prompt
+	Brood::BroodUI::TextBox* m_enterFileNameFeild;  ///> place to enter the filename
+	Brood::BroodUI::Button* m_openFile; ///> button to open the entered file name
+
 	// store the list of file path that corresponds to the game or editor file
 	std::vector<std::string> m_gameInfoFilePathList;
 
 	// list of texture to show in the gamOrEditor button 
 	std::vector<sf::Texture> m_gameListTexture; 
-
-	int m_currGameInfoIdx; // index of the file that is loaded by the main button
-	sf::Font m_font;
 };
-

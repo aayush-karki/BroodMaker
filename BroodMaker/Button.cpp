@@ -82,11 +82,12 @@ bool Brood::BroodUI::Button::DoElement()
 
 /// 
 /// @public
-/// @brief changes the text of the element to its the element ID
+/// @brief changes the text/texture of the element to its the element ID when debug is on
+///		and changes it back to the text/texture it had before debugging when debug is off.
 /// 
 void Brood::BroodUI::Button::Debugger()
 {
-	m_bodySprite.RemoveTexture();
+	m_bodySprite.Debugger();
 
 	Brood::BroodUI::UIElement::Debugger();
 

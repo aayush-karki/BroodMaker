@@ -17,6 +17,7 @@
 // ======================================================================
 #pragma once
 #include "UtilityFunctions.h"
+#include "GlobalVariables.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -75,7 +76,8 @@ public:
 	bool SetTextureFromSavedFilePath(); // loads and sets the texture from saved path
 	void SetSpriteFromTexture( unsigned a_num ); // sets sprite from texture
 
-	void RemoveTexture( ); // removes texture from the body
+	void RemoveTexture(); // removes texture from the body
+	void Debugger( ); // removes texture from the body for debuging purposes
 
 	// ============ private member variables =============== 
 private:
@@ -85,6 +87,7 @@ private:
 	sf::Texture m_texture; ///> reference to the  the texture opened from the path
 	float m_spriteLength; ///> sprite length in the texture file
 	float m_spriteHeight; ///> sprite height in the texture file
+	unsigned m_currSpriteIndex; ///> saves the current index of sprite in the texture
 };
 
 // ======================================================================

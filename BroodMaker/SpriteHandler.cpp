@@ -29,8 +29,8 @@
 /// @param a_body pointer the body of the element
 /// 
 Brood::SpriteHandler::SpriteHandler( sf::RectangleShape* a_body ) :
-	m_body( a_body ), m_texturePath( "" ),
-	m_spriteLength( 0.f ), m_spriteHeight( 0.f )
+	m_body( a_body ), m_texturePath( "" ),	m_spriteLength( 0.f ),
+	m_spriteHeight( 0.f ), m_currSpriteIndex(0)
 {}
 
 /// 
@@ -115,7 +115,7 @@ bool Brood::SpriteHandler::SetTextureFromSavedFilePath()
 /// 
 /// @todo make the adaptable for number of rows and column
 /// 
-/// @param a_num index of the texture
+/// @param a_num index of sprite in the texture
 /// 
 void Brood::SpriteHandler::SetSpriteFromTexture( unsigned a_num )
 {
@@ -129,6 +129,9 @@ void Brood::SpriteHandler::SetSpriteFromTexture( unsigned a_num )
 
 	sf::IntRect tempRect( m_spriteLength * a_num, 0, m_spriteLength, m_spriteHeight );
 	m_body->setTextureRect( tempRect );
+
+	// saving the index
+	m_currSpriteIndex = a_num;
 }
 
 /// 
@@ -141,6 +144,23 @@ void Brood::SpriteHandler::RemoveTexture()
 
 	sf::IntRect tempRect( 0, 0, 0, 0);
 	m_body->setTextureRect(tempRect);
+}
+
+/// 
+/// @public
+/// @brief changes the texture of the element to its the element ID when debug is on
+///		and changes it back to the texture it had before debugging when debug is off.
+/// 
+void Brood::SpriteHandler::Debugger()
+{
+	if( Brood::ST_GlobalCoreVariables::stm_is_debug_mode )
+	{
+		RemoveTexture();
+	}
+	else
+	{
+		SetSpriteFromTexture( m_currSpriteIndex );
+	}
 }
 
 // ======================================================================

@@ -116,6 +116,9 @@
     <ClCompile Include="DropDownInput.cpp">
       <Filter>src\UI\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GlobalVariables.cpp">
+      <Filter>src\Application\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -140,9 +143,6 @@
       <Filter>src\Unorganized\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerManager.h">
-      <Filter>src\Unorganized\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Struct_CtorParam.h">
       <Filter>src\Unorganized\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Struct_path.h">
@@ -195,6 +195,12 @@
     </ClInclude>
     <ClInclude Include="DropDownInput.h">
       <Filter>src\UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalVariables.h">
+      <Filter>src\Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct_CtorParam.h">
+      <Filter>src\Unorganized\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

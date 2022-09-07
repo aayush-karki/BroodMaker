@@ -41,14 +41,15 @@ std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::ST_MapIdToElemen
 Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 									  Brood::BroodUI::UIElement* a_parentPtr ) :
 	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr ),
-	m_elementType( a_elementType ), m_fontSize( 0 ), m_isSelected( false )
+	m_elementType( a_elementType ), m_fontSize( 0 ), m_isSelected( false ), 
+	m_textContent(""), m_debugTextSave ("")
 {
 	// adding the elementID to map
 	Brood::BroodUI::ST_MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
 
 	// setting the overlay
-	m_hotOverlayColor = sf::Color( 10, 71, 100, 50 ); // light white overlay
-	m_activeOverlayColor = sf::Color( 10, 71, 100, 150 ); // darker white overlay
+	m_hotOverlayColor = Brood::ST_ColorVariables::stm_HotOverlay; 
+	m_activeOverlayColor = Brood::ST_ColorVariables::stm_CurrActiveOverlay;
 	m_drawOverlay = false;
 }
 
@@ -382,6 +383,7 @@ void Brood::BroodUI::UIElement::SetFontSize( int a_fontSize )
 void Brood::BroodUI::UIElement::SetText( std::string a_text )
 {
 	m_text.setString( a_text );
+	m_textContent = a_text;
 
 	m_drawText = ( a_text != "" );
 
@@ -448,11 +450,23 @@ void Brood::BroodUI::UIElement::SetDrawOverlay(  )
 
 /// 
 /// @public
-/// @brief changes the text of the element to its the element ID
+/// @brief changes the text of the element to its the element ID when debug is on
+///		and changes it back to the text it had before debugging when debug is off.
 /// 
 void Brood::BroodUI::UIElement::Debugger()
 {
-	SetText( std::to_string( GetElementIdPtr()->GetElementID() ) );
+	if( Brood::ST_GlobalCoreVariables::stm_is_debug_mode )
+	{
+		// saving the text
+		m_debugTextSave = m_textContent;
+
+		// chaning the text to UI ID
+		SetText( std::to_string( GetElementIdPtr()->GetElementID() ) );
+	}
+	else
+	{
+		SetText( m_debugTextSave );
+	}
 }
 
 /// 
@@ -619,17 +633,17 @@ bool Brood::BroodUI::UIElement::DoElement()
 void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
 {
 	a_window.draw( m_body );
-
-	// draw the text only when the text is present
-	if( m_drawText )
-	{
-		a_window.draw( m_text );
-	}
 	
 	// draw the over lay only if the overlay is turned on
 	if( m_drawOverlay )
 	{
 		a_window.draw( m_bodyOverLay );
+	}
+	
+	// draw the text only when the text is present
+	if( m_drawText )
+	{
+		a_window.draw( m_text );
 	}
 }
 

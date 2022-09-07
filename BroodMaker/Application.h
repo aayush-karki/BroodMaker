@@ -24,6 +24,7 @@
 
 #include "struct_path.h"
 #include "Struct_CtorParam.h"
+#include "GlobalVariables.h"
 
 // =============================== defining namespace =======================
 namespace Brood
@@ -40,8 +41,6 @@ namespace Brood
 }
 // ====================== end of namespace  defination =======================
 
-#pragma once
-
 /// 
 /// @brief Applicaiton class provides the interface for the applicaiton
 ///
@@ -55,39 +54,25 @@ public:
 
 	void RunApplicaiton(); // main loop of the program
 
-	void Debugger(); // calls the UI ELement Debugger
+protected:
+	void PollEvents();
+	void Draw();
 	// ================= private member function =================  
 private:
 	void InitializeMenuBar();
+	void Debugger(); // calls the UI ELement Debugger
+
+	void ExecuteMenuItem(unsigned a_iIdx, unsigned a_jIdx);
 	
 	// ================= private member variables =================  
 private:
 	// =========== const variables=============
-	const uint32_t m_WINDOW_HEIGHT = 900;
-	const uint32_t m_WINDOW_WIDTH = 900;
-	const std::string m_cwd = std::filesystem::current_path().string(); // current working directory of the applicaiton
-
 	sf::Font m_font; // font obj 
 	sf::RenderWindow m_window; // window obj
 	sf::Event m_events; // event object 
 
-	Brood::Application::InitialWorkSpace m_initailWorkSpace; // workspaces
-	bool m_exit; // stores the state of the application
 	Brood::BroodUI::MenuBar m_menuBar; // menu UI
-	sf::RectangleShape m_menuBarBg; // backgroud for the menu bar
-
-	/// todo: delete me
-	Brood::St_DiceParam* diceParam;
-	St_BoardParam* boardParam;
-	Board* myBoard;
-	Card* myCard;
-
-	Brood::BroodUI::Button myButton;
-	Brood::BroodUI::Button mySpriteButton;
-	Brood::BroodUI::TextBox myTextBox;
-	Brood::BroodUI::DropDownMenu myDropDown;
-	Brood::BroodUI::DropDownInput myDropDownInput;
-	Brood::BroodUI::MenuBar myMenu;
+	Brood::Application::InitialWorkSpace m_initailWorkSpace; // workspaces
 };
 
 

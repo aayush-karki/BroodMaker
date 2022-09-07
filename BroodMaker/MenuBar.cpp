@@ -310,7 +310,9 @@ void Brood::BroodUI::MenuBar::Draw( sf::RenderWindow& a_window )
 
 /// 
 /// @public
-/// @brief changes the text of the element to its the element ID
+/// @brief changes the text of the element to its the element ID when debug is on
+///		and changes it back to the text it had before debugging when debug is off.
+
 /// 
 void Brood::BroodUI::MenuBar::Debugger()
 {

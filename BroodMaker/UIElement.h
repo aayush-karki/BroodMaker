@@ -28,6 +28,7 @@
 #include "UI_ID.h"
 #include "ElementSelection.h"
 #include "MouseHandler.h"
+#include "GlobalVariables.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -90,6 +91,9 @@ enum class Brood::BroodUI::ENUM_UIType
 ///		starting form bottom-right to left. This is because of how 
 ///		rendering works where things drawn last is always on top.
 /// 
+/// @TODO create a verticalmenus for ma UIElement. This could be used to
+///		for Drop down menus. 
+/// 
 class Brood::BroodUI::UIElement
 {
 	// ================= public member function =================  
@@ -122,7 +126,7 @@ public:
 	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
 	
 	void SetFont( sf::Font& a_font ); // sets font
-	void SetFontColor( sf::Color a_color = sf::Color::White ); // sets font color
+	void SetFontColor( sf::Color a_color = Brood::ST_ColorVariables::stm_White ); // sets font color
 	void SetFontSize( int a_fontSize = 12 ); // sets font size
 	virtual void SetText( std::string a_text = "" ); // sets text
 
@@ -162,6 +166,8 @@ protected:
 	bool m_isSelected; ///> is true if the element is selected
 
 	sf::Text m_text; ///> text content
+	std::string m_textContent; ///> saves the text content
+	std::string m_debugTextSave; ///> saves the text content before replacing by uiid
 	sf::Font* m_font; ///> element's font
 	unsigned m_fontSize; ///> font size
 	bool m_drawText; ///> is true if text is set and hence draw to screen
