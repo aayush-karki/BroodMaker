@@ -1,4 +1,4 @@
-/*************************************************************************/
+/**************************************************************************/
 /// 
 /// @file GlobalVariables.h 
 /// 
@@ -7,23 +7,39 @@
 /// It contains all of the variables and defines for the 
 ///		color variables
 /// 
-/************************************************************************/
+/*************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
+
 #pragma once
 
-// =============================== defining namespace =======================
-namespace Brood
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
+namespace Brood::Application
 {
-	///
-	/// @addtogroup Brood
-	struct ST_ColorVariables;
-	struct ST_GlobalCoreVariables;
+	namespace StaticVariables
+	{
+		struct ST_ColorVariables;
+		struct ST_GlobalCoreVariables;
+	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of ST_ColorVariables struct ==================
+// ======================================================================
 
 /// 
-/// @brief all the colors used in the applicaiton
+/// @ingroup Application
+/// @struct ST_ColorVariables "GlobalVariables.h"
+/// @brief static struct for all the colors used in the applicaiton
 ///
-struct Brood::ST_ColorVariables
+struct Brood::Application::StaticVariables::ST_ColorVariables
 {
 	// black and white color
 	static sf::Color stm_Black; ///> sf::Color::Black
@@ -40,18 +56,30 @@ struct Brood::ST_ColorVariables
 
 	// sf::Color( 57, 229, 220, 255 ) ); 
 };
+// ======================================================================
+// ================= end of ST_ColorVariables struct ====================
+// ======================================================================
+
+// ======================================================================
+// ================= start of ST_GlobalCoreVariables struct =============
+// ======================================================================
 
 /// 
-/// @brief all the global Core Variables
+/// @ingroup Brood
+/// @struct ST_ColorVariables "GlobalVariables.h"
+/// @brief static struct for all the global Core Variables
 ///
-struct Brood::ST_GlobalCoreVariables
+struct Brood::Application::StaticVariables::ST_GlobalCoreVariables
 {
 	static uint32_t stm_window_height;
 	static uint32_t stm_window_width;
 	static std::string stm_cwd; // current working directory of the applicaiton
 	static bool stm_is_debug_mode; // true if debug mode is on
 	static bool stm_exit; // stores the state of the application
-
 };
+
+// ======================================================================
+// ================= end of ST_GlobalCoreVariables struct ===============
+// ======================================================================
 
 

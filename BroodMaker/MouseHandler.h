@@ -81,6 +81,8 @@ public:
 	static bool IsRightButtonPressed();
 	static bool IsRightButtonReleased();
 
+	static void Debugger();
+
 	// ================= private member variables =================  
 private:
 	static sf::Cursor m_cursor;

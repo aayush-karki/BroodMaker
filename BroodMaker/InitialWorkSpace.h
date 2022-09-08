@@ -9,10 +9,16 @@
 /// 
 /// 
 /************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 #include "WorkSpace.h"
 
-// =============================== defining namespace =======================
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
 namespace Brood
 {
 	namespace Application
@@ -21,17 +27,24 @@ namespace Brood
 		class InitialWorkSpace;
 	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of InitialWorkSpace class ====================
+// ======================================================================
 
 /// 
 /// @ingroup Application
-/// @class BoardEditor  "InitialWorkSpace.h"
+/// @class InitialWorkSpace  "InitialWorkSpace.h"
 /// @brief It is a container that bundels elements that is present in
 ///		InitialWorkSpace workspace
 /// 
-/// Initial WorkSpace where the user can chose weather to load a game file and 
-///		go into game mode or alternatively to go into editor mode and work on 
-///		previous game edits or start a new game project
+/// Initial WorkSpace is where the user can chose weather to load a game file 
+///		and go into game mode to play previously made games or alternatively 
+///		to go into editor mode and work on previous game edits or start a new 
+///		game project.
 /// 
 /// Derived from the WorkSpace class 
 /// 
@@ -78,3 +91,7 @@ private:
 	// list of texture to show in the gamOrEditor button 
 	std::vector<sf::Texture> m_gameListTexture; 
 };
+
+// ======================================================================
+// ================= end of InitialWorkSpace class ======================
+// ======================================================================

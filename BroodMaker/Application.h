@@ -7,8 +7,11 @@
 /// It contains all of the declaration of the member 
 ///		funciton of Application class.
 /// 
-/// 
 /************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 #include <filesystem>
 
@@ -26,7 +29,9 @@
 #include "Struct_CtorParam.h"
 #include "GlobalVariables.h"
 
-// =============================== defining namespace =======================
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
 namespace Brood
 {
 	///
@@ -35,13 +40,19 @@ namespace Brood
 	/// 
 	namespace Application
 	{
-		// defining what component of this file will be inside namespace BroodUI
 		class Application;
 	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of Application class =========================
+// ======================================================================
 
 /// 
+/// @ingroup Application
 /// @brief Applicaiton class provides the interface for the applicaiton
 ///
 class Brood::Application::Application
@@ -71,9 +82,10 @@ private:
 	sf::RenderWindow m_window; // window obj
 	sf::Event m_events; // event object 
 
-	Brood::BroodUI::MenuBar m_menuBar; // menu UI
-	Brood::Application::InitialWorkSpace m_initailWorkSpace; // workspaces
+	Brood::BroodUI::MenuBar m_ribbionTabs; ///> Ui for ribbon tabs
+	Brood::Application::InitialWorkSpace m_initailWorkSpace; ///> workspaces that gets loaded as soon as app opens
 };
 
-
-
+// ======================================================================
+// ================= end of button class ================================
+// ======================================================================

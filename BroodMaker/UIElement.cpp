@@ -48,8 +48,8 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 	Brood::BroodUI::ST_MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
 
 	// setting the overlay
-	m_hotOverlayColor = Brood::ST_ColorVariables::stm_HotOverlay; 
-	m_activeOverlayColor = Brood::ST_ColorVariables::stm_CurrActiveOverlay;
+	m_hotOverlayColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_HotOverlay; 
+	m_activeOverlayColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActiveOverlay;
 	m_drawOverlay = false;
 }
 
@@ -455,7 +455,7 @@ void Brood::BroodUI::UIElement::SetDrawOverlay(  )
 /// 
 void Brood::BroodUI::UIElement::Debugger()
 {
-	if( Brood::ST_GlobalCoreVariables::stm_is_debug_mode )
+	if( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode )
 	{
 		// saving the text
 		m_debugTextSave = m_textContent;

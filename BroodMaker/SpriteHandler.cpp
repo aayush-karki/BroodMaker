@@ -153,7 +153,7 @@ void Brood::SpriteHandler::RemoveTexture()
 /// 
 void Brood::SpriteHandler::Debugger()
 {
-	if( Brood::ST_GlobalCoreVariables::stm_is_debug_mode )
+	if( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode )
 	{
 		RemoveTexture();
 	}

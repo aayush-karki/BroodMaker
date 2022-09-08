@@ -14,6 +14,10 @@
 ///		and dice data
 /// 
 /************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 
 /// @TODO make a better image handler
@@ -27,10 +31,17 @@
 ///		Basically have all the static system variables here...
 ///
 
-// =============================== defining namespace =======================
-namespace Brood
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
+namespace Brood::Application
 {
-	namespace Application
+	///
+	///
+	/// @ingroup Application
+	/// @addtogroup Data 
+	///
+	namespace Data
 	{
 		enum class ENUM_MovementType;
 		enum class ENUM_IncorrectPenalty;
@@ -46,26 +57,32 @@ namespace Brood
 		struct ST_DicePrefabData; ///> dice data for one dice
 	}
 }
-// ====================== end of namespace  defination =======================
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of button class ==============================
+// ======================================================================
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @enum ENUM_MovementType
 /// @brief movement type specified for a tile 
 /// 
-enum class Brood::Application::ENUM_MovementType
+enum class Brood::Application::Data::ENUM_MovementType
 {
 	MOVETYPE_dice, ///> when the dice is used to move
 	MOVETYPE_card, ///> when the card is used to move
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @enum ENUM_IncorrectPenalty
 /// @brief IncorrectPenalty specified for a tile when player
 ///		lands on that tile and gets the answer incorrect. 
 /// 
-enum class Brood::Application::ENUM_IncorrectPenalty
+enum class Brood::Application::Data::ENUM_IncorrectPenalty
 {
 	INPENALTY_noPenalty, ///> when no penalty is given
 	INPENALTY_cardPenalty, ///> when player moves back the number 
@@ -73,11 +90,11 @@ enum class Brood::Application::ENUM_IncorrectPenalty
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_ApplicationData
 /// @brief contains all the general data about the game
 ///  
-struct Brood::Application::ST_ApplicationData
+struct Brood::Application::Data::ST_ApplicationData
 {
 	
 
@@ -102,11 +119,11 @@ struct Brood::Application::ST_ApplicationData
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_BoardData
 /// @brief contains data about the board
 ///  
-struct Brood::Application::ST_BoardData
+struct Brood::Application::Data::ST_BoardData
 {
 	float stm_boardPosX; ///> x-cordinate of board's upper left corner
 	float stm_boardPosY; ///> y-cordinate of board's upper left corner
@@ -117,7 +134,7 @@ struct Brood::Application::ST_BoardData
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_PathData
 /// @brief contains path data
 /// 
@@ -133,36 +150,36 @@ struct Brood::Application::ST_BoardData
 /// @note For a 3 by 3 board, the tile numbers is like row1(1-2-3-), 
 ///		row2(4-5-6-), and row3(7-8-9)
 ///  
-struct Brood::Application::ST_PathData
+struct Brood::Application::Data::ST_PathData
 {
 	std::vector<int> stm_pathData;
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_TilePrefabData
 /// @brief contains tile data for one tile prefab
 /// 
-struct  Brood::Application::ST_TilePrefabData
+struct  Brood::Application::Data::ST_TilePrefabData
 {
 	/// @TODO add image 
 	int stm_assignedDeckId; ///> unique id of the deck that tile uses to draw card from
 	int stm_numberCardDraw; ///> nubmer of card to draw
 	int stm_uniqueTileId; ///> unique tile prefab id
 	bool stm_forceDiceRoll; ///> if true rolls dice instead of drawing a card
-	Brood::Application::ENUM_MovementType stm_movementType; /// type of the movement that the player will use on this tile
-	Brood::Application::ENUM_IncorrectPenalty stm_incorectPenaltyType; /// type of the penalty that the player will get on incorrect ansert
+	Brood::Application::Data::ENUM_MovementType stm_movementType; /// type of the movement that the player will use on this tile
+	Brood::Application::Data::ENUM_IncorrectPenalty stm_incorectPenaltyType; /// type of the penalty that the player will get on incorrect ansert
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_DeckPrefabData
 /// @brief contains deck data for one deck prefab
 /// 
 /// Decks are unique in the released game. As the position of where they are in 
 ///		in the screen will be different
 /// 
-struct ST_DeckPrefabData
+struct Brood::Application::Data::ST_DeckPrefabData
 {
 	/// @TODO add image , and filename to the card question
 	int stm_uniqueDeckId; ///> unique deck prefab id
@@ -174,13 +191,13 @@ struct ST_DeckPrefabData
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_CardPrefabData
 /// @brief data in a card and other use full data
 /// 
 /// card data is loaded into this from a file / stored into a file
 ///
-struct ST_CardPrefabData
+struct Brood::Application::Data::ST_CardPrefabData
 {
 	/// @TODO add image for bg(front and back) , and filename to the card question
 	// data in the front of the card
@@ -196,11 +213,11 @@ struct ST_CardPrefabData
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_PlayerPrefabData
 /// @brief contains player prefab data
 /// 
-struct ST_PlayerPrefabData
+struct Brood::Application::Data::ST_PlayerPrefabData
 {
 	/// @TODO add image
 	int stm_currColumn; ///> tile column where the player is 
@@ -212,11 +229,11 @@ struct ST_PlayerPrefabData
 };
 
 /// 
-/// @ingroup Application
+/// @ingroup Data
 /// @struct ST_DicePrefabData
 /// @brief contains dice prefab data
 /// 
-struct ST_DicePrefabData
+struct Brood::Application::Data::ST_DicePrefabData
 {
 	/// @TODO add image
 	int stm_numSides; ///> number of side in the dice

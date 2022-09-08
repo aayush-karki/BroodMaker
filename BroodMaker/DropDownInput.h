@@ -59,6 +59,6 @@ public:
 	// default destructor
 	virtual ~DropDownInput();
 
-	void AddItemToMenu( std::string a_menuName, sf::Color a_color = Brood::ST_ColorVariables::stm_White ); // adds item to menu
+	void AddItemToMenu( std::string a_menuName, sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // adds item to menu
 };
 

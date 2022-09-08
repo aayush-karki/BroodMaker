@@ -295,6 +295,35 @@ bool Brood::MouseHandler::IsRightButtonReleased()
 	return m_lastFrameRightMouseButtonPressed && !m_currFrameRightMouseButtonPressed;
 }
 
+/// 
+/// @static
+/// @public
+/// @brief Prints the mouse states like button press and current position
+/// 
+///
+void Brood::MouseHandler::Debugger()
+{
+	// printing the mouse pos
+	std::cout << "Current Frame Mouse X position: " << m_currFrameMousePos.x << std::endl;
+	std::cout << "Current Frame Mouse Y position: " << m_currFrameMousePos.y << std::endl;
+	std::cout << std::endl;
+	std::cout << "Last Frame Mouse X position: " << m_lastFrameMousePos.x << std::endl;
+	std::cout << "Last Frame Mouse Y position: " << m_lastFrameMousePos.y << std::endl;
+	std::cout << std::endl;
+
+	// printing the left mouse state
+	std::cout << "LMB hold " << std::boolalpha << IsLeftButtonHold() << std::endl;
+	std::cout << "LMB pressed " << std::boolalpha << IsLeftButtonPressed() << std::endl;
+	std::cout << "LMB released " << std::boolalpha << IsLeftButtonReleased() << std::endl;
+	std::cout << std::endl;
+
+	// printing the right mouse state
+	std::cout << "RMB hold " << std::boolalpha << IsRightButtonHold() << std::endl;
+	std::cout << "RMB pressed " << std::boolalpha << IsRightButtonPressed() << std::endl;
+	std::cout << "RMB released " << std::boolalpha << IsRightButtonReleased() << std::endl;
+	std::cout << std::endl;
+}
+
 // ======================================================================
 // ================= end of MouseHandler class ==========================
 // ======================================================================

@@ -126,7 +126,7 @@ public:
 	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
 	
 	void SetFont( sf::Font& a_font ); // sets font
-	void SetFontColor( sf::Color a_color = Brood::ST_ColorVariables::stm_White ); // sets font color
+	void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // sets font color
 	void SetFontSize( int a_fontSize = 12 ); // sets font size
 	virtual void SetText( std::string a_text = "" ); // sets text
 

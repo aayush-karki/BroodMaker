@@ -9,8 +9,15 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "WorkSpace.h"
+
+// ======================================================================
+// ================= start of WorkSpace class ===========================
+// ======================================================================
 
 /// 
 /// @public
@@ -37,7 +44,7 @@ Brood::Application::WorkSpace::~WorkSpace()
 /// @param a_size size of the button element
 /// @param a_pos  postion of the button element
 /// @param a_text text to display in the button element ; default ""
-/// @param a_color color of the button element ; default Brood::ST_ColorVariables::stm_AppPrimaryColor
+/// @param a_color color of the button element ; default Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
 /// 
 /// @return pointer to dynamically created Button element
 /// 
@@ -69,7 +76,7 @@ Brood::BroodUI::Button* Brood::Application::WorkSpace::DyCreateButton( sf::Vecto
 /// @param a_posX x-postion of the button element
 /// @param a_posY y-postion of the button element
 /// @param a_text text to display in the button element ; default ""
-/// @param a_color color of the button element ; default Brood::ST_ColorVariables::stm_AppPrimaryColor
+/// @param a_color color of the button element ; default Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
 /// 
 /// @return pointer to dynamically created Button element
 ///
@@ -92,7 +99,7 @@ Brood::BroodUI::Button* Brood::Application::WorkSpace::DyCreateButton( float a_s
 /// @param a_pos  postion of the textbox element
 /// @param a_text text to display in the textbox element ; default ""
 /// @param a_isEditable true if the text box is editable; default false
-/// @param a_color color of the textbox element ; default Brood::ST_ColorVariables::stm_AppPrimaryColor
+/// @param a_color color of the textbox element ; default Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
 /// 
 /// @return pointer to dynamically created textbox element
 ///  
@@ -129,7 +136,7 @@ Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( sf::Vec
 /// @param a_posY y-postion of the textbox element
 /// @param a_text text to display in the textbox element ; default ""
 /// @param a_isEditable true if the text box is editable; default false
-/// @param a_color color of the textbox element ; default Brood::ST_ColorVariables::stm_AppPrimaryColor
+/// @param a_color color of the textbox element ; default Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
 /// 
 /// @return pointer to dynamically created textbox element
 ///
@@ -141,3 +148,7 @@ Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( float a
 	return Brood::Application::WorkSpace::DyCreateTextBox( { a_sizeX, a_sizeY }, { a_posX, a_posY },
 														   a_text, a_isEditable, a_color );
 }
+
+// ======================================================================
+// ================= end of WorkSpace class =============================
+// ======================================================================

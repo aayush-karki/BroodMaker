@@ -22,6 +22,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoardEditor.cpp" />
+    <ClCompile Include="EditorWorkspace.cpp" />
     <ClCompile Include="GlobalVariables.cpp" />
     <ClCompile Include="DropDownInput.cpp" />
     <ClCompile Include="SpriteHandler.cpp" />
@@ -52,6 +53,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="BoardEditor.h" />
+    <ClInclude Include="EditorWorkspace.h" />
     <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="DropDownInput.h" />
     <ClInclude Include="SpriteHandler.h" />

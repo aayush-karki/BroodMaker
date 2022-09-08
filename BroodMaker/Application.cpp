@@ -9,8 +9,15 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "Application.h"
+
+// ======================================================================
+// ================= start of Application class =========================
+// ======================================================================
 
 /// 
 /// @brief default constructor
@@ -18,8 +25,8 @@
 /// Inializes the application and sets it up
 /// 
 Brood::Application::Application::Application():
-	m_window( sf::VideoMode( Brood::ST_GlobalCoreVariables::stm_window_height, 
-							 Brood::ST_GlobalCoreVariables::stm_window_width ),
+	m_window( sf::VideoMode( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height, 
+							 Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width ),
 			  "BroodMaker" ), m_initailWorkSpace(), m_events()
 {
 	// initializing the randon seed
@@ -28,8 +35,10 @@ Brood::Application::Application::Application():
 	// initializing the mouse cursor
 	Brood::MouseHandler::InitializeCursor( m_window );
 
+	m_window.setFramerateLimit( 60 );
+
 	// loading font
-	std::string fontFileLoc = Brood::ST_GlobalCoreVariables::stm_cwd + "\\Assets\\Fonts\\arial.ttf";
+	std::string fontFileLoc = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd + "\\Assets\\Fonts\\arial.ttf";
 	if( !( m_font.loadFromFile( fontFileLoc ) ) )
 	{
 		std::cerr << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
@@ -41,7 +50,7 @@ Brood::Application::Application::Application():
 	/// todo: delete me
 	// create a board
 
-	std::string fileName = Brood::ST_GlobalCoreVariables::stm_cwd;
+	std::string fileName = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd;
 	fileName += "\\Assets\\DiceTexture\\dice_";
 	fileName += std::to_string( 0 + 1 );
 	fileName += "_50_50.png";
@@ -61,7 +70,7 @@ Brood::Application::Application::Application():
 	//myButton.SetBodyPosition( 55, 0 );
 	//myButton.SetFont( m_font );
 	//myButton.SetFontSize( 20 );
-	//myButton.SetFontColor( Brood::ST_ColorVariables::stm_Black );
+	//myButton.SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_Black );
 	//myButton.SetBodyColor( sf::Color::Red );
 	//myButton.SetText( "My button" );
 
@@ -161,7 +170,7 @@ void Brood::Application::Application::RunApplicaiton()
 	//Debugger();
 
 	//app loop
-	while( !Brood::ST_GlobalCoreVariables::stm_exit )
+	while( !Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit )
 	{
 		// polling for any events
 		Brood::Application::Application::PollEvents();
@@ -176,8 +185,10 @@ void Brood::Application::Application::RunApplicaiton()
 		Brood::MouseHandler::UpdateMouseButtonStatus();
 
 		// checking if debugger is turned on
-		if( Brood::ST_GlobalCoreVariables::stm_is_debug_mode )
+		if( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode )
 		{
+			std::cout << "\x1B[2J\x1B[H";
+			Brood::MouseHandler::Debugger();
 			Brood::BroodUI::ElementSelection::Debugger();
 		}
 
@@ -270,9 +281,9 @@ void Brood::Application::Application::RunApplicaiton()
 		//	}
 		//}
 
-		if( !m_menuBar.GetMenuList().empty() )
+		if( !m_ribbionTabs.GetMenuList().empty() )
 		{
-			auto menus = m_menuBar.GetMenuList();
+			auto menus = m_ribbionTabs.GetMenuList();
 
 			bool executeMenuItem = false;
 			unsigned iIdxExecute = 0;
@@ -339,7 +350,7 @@ void Brood::Application::Application::PollEvents()
 		{
 			case sf::Event::Closed:
 			{
-				Brood::ST_GlobalCoreVariables::stm_exit = true;
+				Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = true;
 				break;
 			}
 			case sf::Event::TextEntered:
@@ -393,7 +404,7 @@ void Brood::Application::Application::Draw()
 	m_initailWorkSpace.Draw( m_window );
 
 	// menu bar
-	m_menuBar.Draw( m_window );
+	m_ribbionTabs.Draw( m_window );
 	//myMenu.Draw( m_window );
 
 	// displaying te window
@@ -415,27 +426,27 @@ void Brood::Application::Application::Draw()
 /// 
 void Brood::Application::Application::InitializeMenuBar()
 {
-	m_menuBar.SetBodySize( Brood::ST_GlobalCoreVariables::stm_window_width, 50 );
-	m_menuBar.SetBodyPosition( 0, 0 );
-	m_menuBar.SetFont( &m_font );
-	m_menuBar.SetFontSize( 20 );
-	//m_menuBar.SetBodyColor(sf::Color( 118, 134, 144, 255 ));
-	m_menuBar.SetBodyColor(Brood::ST_ColorVariables::stm_MainMenu);
+	m_ribbionTabs.SetBodySize( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width, 50 );
+	m_ribbionTabs.SetBodyPosition( 0, 0 );
+	m_ribbionTabs.SetFont( &m_font );
+	m_ribbionTabs.SetFontSize( 20 );
+	//m_ribbionTabs.SetBodyColor(sf::Color( 118, 134, 144, 255 ));
+	m_ribbionTabs.SetBodyColor(Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu);
 
-	m_menuBar.AddMenuToMenuBar( "File" );
-	m_menuBar.AddItemToMenu( 0, "Create New" );
-	m_menuBar.AddItemToMenu( 0, "Import Game" );
-	m_menuBar.AddItemToMenu( 0, "Load Previous Edit" );
-	m_menuBar.AddItemToMenu( 0, "Save" );
-	m_menuBar.AddItemToMenu( 0, "Quit" );
+	m_ribbionTabs.AddMenuToMenuBar( "File" );
+	m_ribbionTabs.AddItemToMenu( 0, "Create New" );
+	m_ribbionTabs.AddItemToMenu( 0, "Import Game" );
+	m_ribbionTabs.AddItemToMenu( 0, "Load Previous Edit" );
+	m_ribbionTabs.AddItemToMenu( 0, "Save" );
+	m_ribbionTabs.AddItemToMenu( 0, "Quit" );
 
-	m_menuBar.AddMenuToMenuBar( "Debug" );
-	m_menuBar.AddItemToMenu( 1, "Toggle Debugger: OFF" );
+	m_ribbionTabs.AddMenuToMenuBar( "Debug" );
+	m_ribbionTabs.AddItemToMenu( 1, "Toggle Debugger: OFF" );
 
-	m_menuBar.AddMenuToMenuBar( "Help" );
-	m_menuBar.AddItemToMenu( 2, "How To Use" );
-	m_menuBar.AddItemToMenu( 2, "Documentation" );
-	m_menuBar.AddItemToMenu( 2, "About BroodMaker" );
+	m_ribbionTabs.AddMenuToMenuBar( "Help" );
+	m_ribbionTabs.AddItemToMenu( 2, "How To Use" );
+	m_ribbionTabs.AddItemToMenu( 2, "Documentation" );
+	m_ribbionTabs.AddItemToMenu( 2, "About BroodMaker" );
 
 }
 
@@ -449,7 +460,7 @@ void Brood::Application::Application::InitializeMenuBar()
 /// 
 void Brood::Application::Application::Debugger()
 {
-	m_menuBar.Debugger();
+	m_ribbionTabs.Debugger();
 	m_initailWorkSpace.Debugger();
 }
 
@@ -494,7 +505,7 @@ void Brood::Application::Application::ExecuteMenuItem( unsigned a_iIdx, unsigned
 				case 4:
 				{
 					// Quit menu item
-					Brood::ST_GlobalCoreVariables::stm_exit = true;
+					Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = true;
 					break;
 				} // j = 4 case when i = 0
 				default:
@@ -514,7 +525,7 @@ void Brood::Application::Application::ExecuteMenuItem( unsigned a_iIdx, unsigned
 				case 0:
 				{
 					// Toggle Debugger menu item
-					Brood::ST_GlobalCoreVariables::stm_is_debug_mode = !Brood::ST_GlobalCoreVariables::stm_is_debug_mode;
+					Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode = !Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode;
 					this->Debugger();
 					break;
 				}
@@ -560,5 +571,8 @@ void Brood::Application::Application::ExecuteMenuItem( unsigned a_iIdx, unsigned
 			break;
 		}
 	} // i Index switch
-
 }
+
+// ======================================================================
+// ================= end of button class ================================
+// ======================================================================

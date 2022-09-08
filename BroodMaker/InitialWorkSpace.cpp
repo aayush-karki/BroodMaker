@@ -9,10 +9,17 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "InitialWorkSpace.h"
 
 #include <filesystem> /// @TODO delete me
+
+// ======================================================================
+// ================= start of InitialWorkSpace class ====================
+// ======================================================================
 
 /// 
 /// @public
@@ -78,7 +85,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 
 	// creating the left toggle button
 	m_toggleGameInfoLeft = DyCreateButton( { 150, 850 }, { 0, 50 }, "<-",
-										   Brood::ST_ColorVariables::stm_AppSecondaryColor );
+										   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 
 	// creating the center button which will act as game / file selector
 	m_gameOrEditor = DyCreateButton( { 600, 850 }, { 150, 50 }, m_gameInfoFilePathList.at( 0 ) );
@@ -87,18 +94,18 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_gameOrEditor->SetBodySize( 600, 850 );
 	//m_gameOrEditor->SetBodyPosition( 150, 50 );
 	//m_gameOrEditor->SetFont( m_font );
-	//m_gameOrEditor->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_gameOrEditor->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_gameOrEditor->SetText( m_gameInfoFilePathList.at(0) );
 	//m_allUIList.push_back( m_toggleGameInfoLeft );
 
 	// creating the right toggle button
 	m_toggleGameInfoRight = DyCreateButton( { 150, 850 }, { 750, 50 }, "->",
-											Brood::ST_ColorVariables::stm_AppSecondaryColor );
+											Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 	//m_toggleGameInfoRight = new Brood::BroodUI::Button;
 	//m_toggleGameInfoRight->SetBodySize( 150, 850 );
 	//m_toggleGameInfoRight->SetBodyPosition( 750, 50 );
 	//m_toggleGameInfoRight->SetFont( m_font );
-	//m_toggleGameInfoRight->SetBodyColor( Brood::ST_ColorVariables::stm_AppSecondaryColor );
+	//m_toggleGameInfoRight->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 	//m_toggleGameInfoRight->SetText( "->" );
 
 	/// @TODO create this as a verticalmenus
@@ -107,7 +114,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_importGame->SetBodySize( 500, 125 );
 	//m_importGame->SetBodyPosition( 200, 250 );
 	//m_importGame->SetFont( m_font );
-	//m_importGame->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_importGame->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_importGame->SetText( "Import Games" );
 
 	m_loadPreviousEdits = DyCreateButton( { 500, 125 }, { 200, 375 }, "Load Previous Edits" );
@@ -115,7 +122,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_loadPreviousEdits->SetBodySize( 500, 125 );
 	//m_loadPreviousEdits->SetBodyPosition( 200, 375 );
 	//m_loadPreviousEdits->SetFont( m_font );
-	//m_loadPreviousEdits->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_loadPreviousEdits->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_loadPreviousEdits->SetText( "Load Previous Edits" );
 
 	m_createNewEdit = DyCreateButton( { 500, 125 }, { 200, 500 }, "Create New Edit" );
@@ -123,7 +130,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_createNewEdit->SetBodySize( 500, 125 );
 	//m_createNewEdit->SetBodyPosition( 200, 500 );
 	//m_createNewEdit->SetFont( m_font );
-	//m_createNewEdit->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_createNewEdit->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_createNewEdit->SetText( "Create New Edit" );
 
 	m_cancle = DyCreateButton( { 500, 125 }, { 200, 625 }, "Cancle" );
@@ -131,7 +138,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_cancle->SetBodySize( 500, 125 );
 	//m_cancle->SetBodyPosition( 200, 625 );
 	//m_cancle->SetFont( m_font );
-	//m_cancle->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_cancle->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_cancle->SetText( "Cancle" );
 
 	m_fileName = DyCreateTextBox( { 500, 100 }, { 200, 250 }, "Enter File Name" );
@@ -139,7 +146,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_fileName->SetBodySize( 500, 100 );
 	//m_fileName->SetBodyPosition( 200, 250 );
 	//m_fileName->SetFont( m_font );
-	//m_fileName->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_fileName->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_fileName->SetText( "Enter File Name" );
 
 	m_enterFileNameFeild = DyCreateTextBox( { 500, 125 }, { 200, 350 }, "", true );
@@ -147,7 +154,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_enterFileNameFeild->SetBodySize( 500, 125 );
 	//m_enterFileNameFeild->SetBodyPosition( 200, 350 );
 	//m_enterFileNameFeild->SetFont( m_font );
-	//m_enterFileNameFeild->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_enterFileNameFeild->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_enterFileNameFeild->SetText( "" );
 	//m_enterFileNameFeild->SetEditable( true );
 
@@ -156,7 +163,7 @@ void Brood::Application::InitialWorkSpace::InitializeWorkSpace()
 	//m_openFile->SetBodySize( 500, 125 );
 	//m_openFile->SetBodyPosition( 200, 475 );
 	//m_openFile->SetFont( m_font );
-	//m_openFile->SetBodyColor( Brood::ST_ColorVariables::stm_AppPrimaryColor );
+	//m_openFile->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_openFile->SetText( "Create New" );
 }
 
@@ -244,12 +251,12 @@ void Brood::Application::InitialWorkSpace::Update()
 		}
 		else if( m_currGameInfoIdx == 0 )
 		{
-			Brood::ST_GlobalCoreVariables::stm_exit = true;
+			Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = true;
 		}
 	}
 	
 	/// @TODO delete me this should be texture
-	if( !Brood::ST_GlobalCoreVariables::stm_is_debug_mode )
+	if( !Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode )
 	{
 		m_gameOrEditor->SetText( m_gameInfoFilePathList.at( m_currGameInfoIdx ));
 	}
@@ -306,3 +313,7 @@ void Brood::Application::InitialWorkSpace::Debugger()
 
 	m_isDebugger = true;
 }
+
+// ======================================================================
+// ================= end of InitialWorkSpace class ======================
+// ======================================================================
