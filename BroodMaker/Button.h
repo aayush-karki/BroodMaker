@@ -57,9 +57,19 @@ namespace Brood
 /// Brood::BroodUI::Button myButton;
 /// myButton.SetBodySize( 100, 50 );
 /// myButton.SetBodyPosition( 55, 0 );
-/// myButton.SetFont( font );
 /// myButton.SetBodyColor( sf::Color::Red );
+/// 
+/// myButton.SetFont( font );
+/// 
+/// // if you want to set a text
 /// myButton.SetText( "-----" );
+/// 
+/// // if you want to set a texture
+/// myButton.GetSpriteBody().SetSpriteLength( 50 );
+/// myButton.GetSpriteBody().SetSpriteHeight( 50 );
+/// // loading the texture
+/// myButton.GetSpriteBody().SetTextureFromFilePath( fileName );
+/// myButton.GetSpriteBody().SetSpriteFromTexture( 0 );
 /// 
 /// //app loop
 /// while( !exit )

@@ -47,9 +47,14 @@ Brood::Application::Application::Application():
 	// initializing menubar
 	InitializeMenuBar();
 
-	/// todo: delete me
-	// create a board
+	/// @todo: delete me
+	// initializing the board
+	myBoard.InitializeBoard( 5, 5, 520.f, 600.f, 100.f, 100.f );
+	myBoard.SetBoardSize( { 200,200 } );
+	myBoard.SetBoardPos( {300,200} );
 
+	/// @todo delete me
+	/*
 	std::string fileName = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd;
 	fileName += "\\Assets\\DiceTexture\\dice_";
 	fileName += std::to_string( 0 + 1 );
@@ -82,8 +87,8 @@ Brood::Application::Application::Application():
 	//mySpriteButton.SetFontColor( sf::Color::Black );
 	//mySpriteButton.SetBodyColor( sf::Color::Red );
 	//// setting sprite height and length 
-	///*mySpriteButton.GetSpriteBody().SetSpriteLength( 50 );
-	//mySpriteButton.GetSpriteBody().SetSpriteHeight( 50 );*/
+	////mySpriteButton.GetSpriteBody().SetSpriteLength( 50 );
+	////mySpriteButton.GetSpriteBody().SetSpriteHeight( 50 );
 	//// loading the texture
 	//mySpriteButton.GetSpriteBody().SetTextureFromFilePath( fileName );
 	//mySpriteButton.GetSpriteBody().SetSpriteFromTexture( 0 );
@@ -122,11 +127,11 @@ Brood::Application::Application::Application():
 	//myDropDownInput.AddItemToMenu( "longest of all item" );
 
 	//// making a menubar
-	///*myMenu.SetBodySize( 150, 50 );
-	//myMenu.SetBodyPosition( 430, 0 );
-	//myMenu.SetFont( &m_font );
-	//myMenu.SetFontSize( 20 );
-	//myMenu.SetBodyColor( sf::Color::Magenta );*/
+	////myMenu.SetBodySize( 150, 50 );
+	////myMenu.SetBodyPosition( 430, 0 );
+	////myMenu.SetFont( &m_font );
+	////myMenu.SetFontSize( 20 );
+	////myMenu.SetBodyColor( sf::Color::Magenta );
 	//myMenu.SetBodySize( m_WINDOW_WIDTH, 50 );
 	//myMenu.SetBodyPosition( 0, 0 );
 	//myMenu.SetFont( &m_font );
@@ -145,7 +150,9 @@ Brood::Application::Application::Application():
 	//myMenu.AddItemToMenu( 1, "Documentation" );
 	//myMenu.AddItemToMenu( 1, "About BroodMaker" );
 
-	//Debugger();
+	Debugger();
+	*/
+
 }
 
 /// 
@@ -166,16 +173,14 @@ Brood::Application::Application::~Application()
 /// 
 void Brood::Application::Application::RunApplicaiton()
 {
-	/// @todo deleteme
-	//Debugger();
-
-	//app loop
+	// ========= main app loop ==============================================
 	while( !Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit )
 	{
+		// ========= polling for any events =================================
 		// polling for any events
 		Brood::Application::Application::PollEvents();
 
-		// ========================== logics ================================
+		// ========= logics =================================================
 
 		// ==== at the start of a frame ====
 		// clearing the hotelement flag
@@ -192,6 +197,8 @@ void Brood::Application::Application::RunApplicaiton()
 			Brood::BroodUI::ElementSelection::Debugger();
 		}
 
+		/// @todo delete me
+		/*
 		// myBoard->Update();
 
 		//if( myButton.DoElement() )
@@ -280,6 +287,7 @@ void Brood::Application::Application::RunApplicaiton()
 		//		}
 		//	}
 		//}
+		*/
 
 		if( !m_ribbionTabs.GetMenuList().empty() )
 		{
@@ -326,13 +334,11 @@ void Brood::Application::Application::RunApplicaiton()
 			{
 				ExecuteMenuItem(iIdxExecute, jIdxExecute);
 			}
-
 		}
 
 		m_initailWorkSpace.Update();
 
-
-		// rendering 
+		// ========= rendering ==============================================
 		Brood::Application::Application::Draw();
 	}
 }
@@ -384,12 +390,16 @@ void Brood::Application::Application::PollEvents()
 /// @brief Draws object to screen. 
 /// 
 /// @note the elements should be drawn form bottom to top, 
-///		right to left. @see UIElement class for more explation.
+///		right to left. @see Brood::BroodUI::UIElement class 
+///		for more explation.
 ///
 void Brood::Application::Application::Draw()
 {
 	m_window.clear();
 
+	
+	/// @todo delete me
+	/*
 	//myBoard->Draw( m_window );
 	//myCard->Draw( m_window );
 
@@ -399,13 +409,17 @@ void Brood::Application::Application::Draw()
 	//myDropDown.Draw( m_window );
 	//myDropDownInput.Draw( m_window );
 	//myTextBox.Draw( m_window );
+	//myMenu.Draw( m_window );
+	*/
 
-	// workspace
+	//// workspace
 	m_initailWorkSpace.Draw( m_window );
 
-	// menu bar
+	//// menu bar
 	m_ribbionTabs.Draw( m_window );
-	//myMenu.Draw( m_window );
+	
+	/// @todo delete me
+	myBoard.Draw(m_window);
 
 	// displaying te window
 	m_window.display();
@@ -574,5 +588,5 @@ void Brood::Application::Application::ExecuteMenuItem( unsigned a_iIdx, unsigned
 }
 
 // ======================================================================
-// ================= end of button class ================================
+// ================= end of Applicaiton class ===========================
 // ======================================================================

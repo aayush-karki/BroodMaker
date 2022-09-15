@@ -230,9 +230,9 @@ int main()
 //	// closing the window
 //	window.close();
 //}
-
-
-
+//
+//
+//
 //#include "stdafx.h"
 //#include <filesystem>
 //
@@ -240,12 +240,6 @@ int main()
 //#include "Player.h"
 //#include "Card.h"
 //#include "MouseHandler.h"
-//
-//#include "MenuBar.h"
-//#include "InitialWorkSpace.h"
-//
-//#include "struct_path.h"
-//#include "Struct_CtorParam.h"
 //
 //int main()
 //{
@@ -268,14 +262,13 @@ int main()
 //	Brood::MouseHandler::InitializeCursor( window );
 //
 //	// create a board
+//	Board myBoard( );
 //
 //	std::string fileName = cwd;
 //	fileName += "\\Assets\\DiceTexture\\dice_";
 //	fileName += std::to_string( 0 + 1 );
 //	fileName += "_50_50.png";
-//	Brood::St_DiceParam diceParam( fileName, 50.f, 1 );
-//	St_BoardParam boardParam( 10, 10, 520.f, 520.f, 100.f, 100.f );
-//	//Board myBoard( &boardParam, &diceParam );
+//
 //
 //	// create a player
 //	//Player player1( 0, 0, 25.f, 25.f, 100.f, 100.f );

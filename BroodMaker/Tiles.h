@@ -10,94 +10,90 @@
 ///		the member funciton of Tiles class
 ///
 /************************************************************************/
-#pragma once
-#include "stdafx.h"
 
-///
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
+#pragma once
+#include "Button.h"
+
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
+namespace Brood::Application
+{
+	///
+	/// @ingroup Application
+	/// @addtogroup Components
+	/// 
+	namespace Components
+	{
+		class Tiles;
+	}
+}
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of Tiles class ===============================
+// ======================================================================
+
+/// 
+/// @ingroup Components
 /// @class Tiles  "Tiles.h"
 /// 
-/// @brief Class to make a tiles that make a board.  
+/// @brief building block of a borad.
 /// 
-/// Board Tiles are the basic building block of the board.
+/// Tiles are the basic building block of the board.
 ///		This class  provides the functionality to alter and customize 
-///		the tiles. Thus give the ability to coustomizing the whole board
+///		each tiles. Thus give the ability to coustomizing the whole board.
 /// 
-/// @todo: see if you want to make board a part of a tile or a board
+/// Derived from Button Class
 /// 
-class Tiles
+/// Setting up a tile is similar to seting up a button. But as the tile
+///		is used as a building bock for a board it has tile row and 
+///		tile nubmer. For more informantion @see Brood::BroodUI::Button class.
+///  
+class Brood::Application::Components::Tiles : public Brood::BroodUI::Button
 {
 	// =============== public member functions =================
 public:
 	
-	// default constructor
-	Tiles( int  a_tileRowNum = 0, int a_tileColNum = 0,
-		   float a_tileSizeX = 0.f, float a_tileSizeY = 0.f,
-		   float a_boardPosX = 0.f, float a_boardPosY = 0.f );
-	
-	/// @todo add destructor, copy constructor and assignment
-	
-	void Draw( sf::RenderWindow& a_window );
-	const sf::Vector2i GetRowAndCol() const;
+	// default constructor and destructors
+	Tiles();
+	~Tiles();
 
-	// ===== private member functions =====
-private:
-	void InitializeTile( int  a_tileRowNum = 0, int a_tileColNum = 0,
+	// copy constructor
+	Tiles( const Tiles& a_other );
+
+	// assignmnet operator
+	Tiles& operator=(const Tiles& a_other);
+	
+	/// @todo add copy constructor and assignment
+
+	// getter function
+	const sf::Vector2u GetRowAndCol() const; 
+	const unsigned GetRow() const;
+	const unsigned GetCol() const;
+
+	// setter funciton 
+	void SetRowAndCol(sf::Vector2u a_rowCol );
+	void SetRow(unsigned a_row);
+	void SetCol( unsigned a_col ); 
+	
+	// Populates the member variable and sets the position and size of the
+	// tile
+	void UpdateTile( unsigned  a_tileRowNum = 0, unsigned a_tileColNum = 0,
 						 float a_tileSizeX = 0.f, float a_tileSizeY = 0.f,
 						 float a_boardPosX = 0.f, float a_boardPosY = 0.f );
 
 	// ===== private member variables =====
 private:
-
-	sf::RectangleShape m_TileBody; // body
-	int m_tileRowNum;      // row position in a board
-	int m_tileColNum;      // column position in a board
+	unsigned m_tileRowNum;      // row position in a board
+	unsigned m_tileColNum;      // column position in a board
 };
 
-// ==================== definations =========================
-
-/// 
-/// @public
-/// @brief Default Constructor
-/// 
-/// @param a_tileRowNum represents row number of the board -> default 0
-/// @param a_tileColNum represents column of the board  -> default 0
-/// @param a_tileSizeX size of each tile in x-asix -> default 0.f
-/// @param a_tileSizeY size of each tile in y-asix -> default 0.f
-/// @param a_boardPosX board's x-position on screen -> default 0.f
-///			relative to the render window -> default 0.f
-/// @param a_boardPosY board's y-position on screen; 
-///			realtive to the render window -> default 0.f
-/// 
-inline Tiles::Tiles( int  a_tileRowNum, int a_tileColNum,
-	   float a_tileSizeX, float a_tileSizeY ,
-	   float a_boardPosX, float a_boardPosY)
-{
-	InitializeTile( a_tileRowNum, a_tileColNum,
-					a_tileSizeX, a_tileSizeY,
-					a_boardPosX, a_boardPosY );
-}
-
-/// 
-/// @public
-/// @brief Draw funciton draws tiles to the screen.
-///			
-/// @param a_window reference to the render window
-/// 
-inline void Tiles::Draw( sf::RenderWindow& a_window )
-{
-	a_window.draw( m_TileBody );
-}
-
-/// 
-/// @public
-/// @brief  Getter Function to get the postion of the tile 
-///			relative to the board's column and row
-/// 
-/// @return a vector2i containing the position of the tile;
-///			.x-> is the tile's column number;
-///			.y-> is the tile's row number.
-///  
-inline const sf::Vector2i Tiles::GetRowAndCol() const
-{
-	return sf::Vector2i( m_tileColNum, m_tileRowNum ); 
-}
+// ======================================================================
+// ================= end of Tiles class =================================
+// ======================================================================

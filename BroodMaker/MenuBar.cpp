@@ -239,9 +239,12 @@ void Brood::BroodUI::MenuBar::SetFontSize( int a_fontSize )
 ///
 /// It dynamically allocates memory for the menu and adds it to the list.
 /// 
-/// @note assumes that menu bar is already set. @see SetMenuBarBodySize
-/// @note assumes font is set. @see SetFont
-/// @note assumes font size is set. @see SetCharacterSize
+/// @note assumes that menu bar is already set. For more 
+///		informantion @see Brood::BroodUI::MenuBar::SetMenuBodySize()
+/// @note assumes font is set. For more 
+///		informantion @see Brood::BroodUI::UIElement::SetFont()
+/// @note assumes font size is set. For more 
+///		informantion @see Brood::BroodUI::UIElement::SetCharacterSize()
 /// 
 /// @param a_menuName name of the item
 /// 

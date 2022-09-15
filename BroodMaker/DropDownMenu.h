@@ -64,7 +64,7 @@ namespace Brood
 /// myDropDown.SetFont( &font );
 /// 
 /// // setting the font size. It should be less than the body height by 2 units.
-/// // @see Textbox::SetFontSize() for more information
+/// // @see Brood::BroodUI::Textbox::SetFontSize() for more information
 /// myDropDown.SetFontSize( 20 );
 /// 
 /// // setting the menu title to "a"

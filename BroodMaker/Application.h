@@ -77,13 +77,16 @@ private:
 	
 	// ================= private member variables =================  
 private:
-	// =========== const variables=============
 	sf::Font m_font; // font obj 
 	sf::RenderWindow m_window; // window obj
 	sf::Event m_events; // event object 
 
 	Brood::BroodUI::MenuBar m_ribbionTabs; ///> Ui for ribbon tabs
 	Brood::Application::InitialWorkSpace m_initailWorkSpace; ///> workspaces that gets loaded as soon as app opens
+
+	/// @todo delete me
+	Brood::Application::Components::Board myBoard;
+
 };
 
 // ======================================================================

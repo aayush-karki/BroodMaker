@@ -10,144 +10,116 @@
 ///		the member funciton of Board class
 ///
 /************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 
 #include "Tiles.h"
-#include "Player.h"
-#include "Dice.h"
-#include "PathManager.h"
-#include "PlayerManager.h"
+//#include "Player.h"
+//#include "Dice.h"
+//#include "PathManager.h"
+//#include "PlayerManager.h"
 
-#include "ElementSelection.h"
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
+namespace Brood::Application
+{
+	namespace Components
+	{
+		class Board;
+	}
+}
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
 
+// ======================================================================
+// ================= start of Board class ===============================
+// ======================================================================
 
-#include "Struct_path.h"
-#include "Struct_CtorParam.h"
-
-///
-/// @class Board  "Board.h"
-/// @brief A container Class that holds the component that make the 
-///		Board.  
 /// 
-/// The uses is mainly interacting with this class to access the funcitons
+/// @ingroup Components
+/// @class Board  "Board.h"
+/// @brief A container Class to create a board
 /// 
 /// @note that board orgin is set in the upper left corner;
 ///		 which will be consistent through out the applicaiton
 /// 
-class Board
+class Brood::Application::Components::Board
 {
 	// ================== public member fuction =======================
-public: 
+public:
 
 	// default constructor
-	Board( int a_numRows = 0, int a_numCols = 0,
-		   float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
-		   float a_boardPosX = 0.f, float a_boardPosY = 0.f );
-	Board( St_BoardParam* a_StBoardInializer, Brood::St_DiceParam* a_StDiceInializer );
-	~Board(); //Destructor
-	/// @todo add copy constuctor and copy assignment
-	void Draw( sf::RenderWindow& a_window );
-	Brood::Dice& GetDice(); // getter funciton 
-	void PlayerRollAndMove( );
-	void AddPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
-					int a_playerStartRow = 0, int a_playerStartCol = 0 );
-	
-	void Update();
+	Board();
 
-	// ===== private member functions =====
+	//Destructor
+	~Board();
+	/// @todo add copy constuctor and copy assignment
+
+	void Draw( sf::RenderWindow& a_window );
+
+	void InitializeBoard( unsigned  a_numRows = 0, unsigned a_numCols = 0,
+						  float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
+						  float a_boardPosX = 0.f, float a_boardPosY = 0.f );
+
+	// setter funcitons
+	void SetNumRow( unsigned a_numRows );
+	void SetNumCol( unsigned a_numCols );
+	void SetBoardSize( sf::Vector2f a_boardSize );
+	void SetBoardSize( float a_boardSizeX, float a_boardSizeY );
+	void SetBoardPos( sf::Vector2f a_boardPos );
+	void SetBoardPos( float a_boardPosX, float a_boardPosY );
+	void Debugger(); // debugger
+
+	//Brood::Dice& GetDice(); // getter funciton 
+	//void Update();
+	//void PlayerRollAndMove( );
+	//void AddPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f, int a_playerStartRow = 0, int a_playerStartCol = 0 );
+
+
+	// ========== private member functions ===============
 private:
-	void InitializeBoard( int  a_numRows = 0, int a_numCols = 0,
-						 float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
-						 float a_boardPosX = 0.f, float a_boardPosY = 0.f );
-	
+
+	// increases the number of row and populates it
+	void IncreaseNumRow( unsigned a_numRows );
+
+	// decrease the number of row
+	void DecreaseNumRow( unsigned a_numRows );
+
+	// increases the number of col and populates it
+	void IncreaseNumCol( unsigned a_numCols );
+
+	// decrease the number of col
+	void DecreaseNumCol( unsigned a_numCols );
+
+	// updates the tile in board by using the member variables
+	void UpdateBoardTiles( unsigned a_rowBegin, unsigned a_rowEnd,
+						   unsigned a_colBegin, unsigned a_colEnd,
+						   bool a_createNew = false );
+
 	// ========== private member varibles ===============
 private:
 
-	sf::RectangleShape m_boardBody;  // main board
+	///> main board
+	sf::RectangleShape m_boardBody;
 
-	int m_numRows; // number of cell rows in the board
-	int m_numCols; // number of cell columns in the board
-	
-	float m_boardPosX; // board's x-postion relative to the screen
-	float m_boardPosY; // board's y-postion relative to the screen
-	
-	
-	std::vector<std::vector<Tiles*>> m_boardTiles; // contains the board tiles
+	///> number of cell rows in the board
+	unsigned m_numRows;
 
-	PathManager m_pathsList; // contains the path of the game
-	PlayerManager m_playerManger; // contains all the player in the game
+	///> number of cell columns in the board
+	unsigned m_numCols;
 
-	Brood::Dice m_dice; // dice obj
+	///> contains the board tiles
+	std::vector<std::vector<Tiles*>> m_boardTiles;
+
+	//PathManager m_pathsList; // contains the path of the game
+	//PlayerManager m_playerManger; // contains all the player in the game
+
+	//Brood::Dice m_dice; // dice obj
 };
 
-
-// ================== definations  =================
-
-/// 
-/// @public
-/// @brief default Constructor
-/// 
-/// Inializes the board
-/// 
-/// @param a_numRows number of tile rows in a board -> default 0
-/// @param a_numCols number of tile columns in a board-> default 0
-/// @param a_boardSizeX  board's width -> default 0.f
-/// @param a_boardSizeY board's length -> default 0.f
-/// @param a_boardPosX board's x-position on screen; 
-///			relative to the render window -> default 0.f
-/// @param a_boardPosY board's y-position on screen; 
-///			realtive to the render window -> default 0.f
-///  
-inline Board::Board( int a_numRows, int a_numCols,
-					 float a_boardSizeX, float a_boardSizeY,
-					 float a_boardPosX, float a_boardPosY ):
-	m_pathsList(a_numRows, a_numCols), m_playerManger(nullptr, &m_pathsList )
-{
-	InitializeBoard( a_numRows, a_numCols, 
-					 a_boardSizeX, a_boardSizeY,
-					 a_boardPosX, a_boardPosY );
-
-	
-}
-
-/// 
-/// @public
-/// @brief Constructor
-/// @param a_StBoardInializer pointer to structure that contains parameter that board 
-///		constructor needs
-/// @param a_StDiceInializer pointer to structure that contains parameter that board 
-///		constructor needs
-/// 
-inline Board::Board( St_BoardParam* a_StBoardInializer, Brood::St_DiceParam* a_StDiceInializer ) : 
-	m_pathsList( a_StBoardInializer->stm_numRows, a_StBoardInializer->stm_numCols ),
-	m_dice( *a_StDiceInializer ), m_playerManger(a_StBoardInializer, &m_pathsList)
-{
-	InitializeBoard( a_StBoardInializer->stm_numRows, a_StBoardInializer->stm_numCols,
-					 a_StBoardInializer->stm_boardSizeX, a_StBoardInializer->stm_boardSizeY,
-					 a_StBoardInializer->stm_boardPosX, a_StBoardInializer->stm_boardPosY );
-
-	// setting the dice
-	m_dice.SetBodySize( 50, 50 );
-	m_dice.GetSpriteBody().SetTextureFromSavedFilePath();
-}
-
-/// 
-/// @public
-/// @brief Getter function 
-/// @return a const reference to the dice member variable
-inline Brood::Dice& Board::GetDice()
-{
-	return m_dice;
-}
-
-/// 
-/// @public
-/// @brief incapsulate the player Manager addNewPlayer
-/// 
-inline void Board::AddPlayer( float a_playerSizeX, float a_playerSizeY,
-							  int a_playerStartRow, int a_playerStartCol )
-{
-	m_playerManger.AddNewPlayer( a_playerSizeX, a_playerSizeY,
-								 a_playerStartRow, a_playerStartCol );
-}
 

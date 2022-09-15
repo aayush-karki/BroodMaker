@@ -13,15 +13,6 @@
     <Filter Include="src\Application\Source Files">
       <UniqueIdentifier>{f6d3f1d8-acee-403a-981d-a0d596daa233}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\UI">
-      <UniqueIdentifier>{039c07b0-95d7-4ef0-9362-24f8ccf9e581}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\UI\Header Files">
-      <UniqueIdentifier>{6ee6010f-e8d2-4a57-9e2a-636965c22610}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\UI\Source Files">
-      <UniqueIdentifier>{271b785d-bb99-4455-b439-2de0c41cd6fc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Editors">
       <UniqueIdentifier>{d7106b46-e160-4d73-a505-e73ac7966967}</UniqueIdentifier>
     </Filter>
@@ -33,11 +24,20 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="src\main">
+      <UniqueIdentifier>{473e5c6e-9d93-4769-a525-94e83f4592a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\BroodUI">
+      <UniqueIdentifier>{4793e693-9ce6-41b0-83d3-a64217ae70cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\BroodUI\Header Files">
+      <UniqueIdentifier>{89877aec-ef65-4da4-b24e-c32f32105212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\BroodUI\Source Files">
+      <UniqueIdentifier>{2c5023a8-b5ac-48f1-90d2-c35a999b4e1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Button.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Board.cpp">
       <Filter>src\Editors\Source Files</Filter>
     </ClCompile>
@@ -45,9 +45,6 @@
       <Filter>src\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dice.cpp">
-      <Filter>src\Editors\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
       <Filter>src\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PathManager.cpp">
@@ -59,9 +56,6 @@
     <ClCompile Include="PlayerManager.cpp">
       <Filter>src\Editors\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>src\Editors\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Struct_CtorParam.cpp">
       <Filter>src\Editors\Source Files</Filter>
     </ClCompile>
@@ -70,24 +64,6 @@
     </ClCompile>
     <ClCompile Include="Tiles.cpp">
       <Filter>src\Editors\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextBox.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UIElement.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UI_ID.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ElementSelection.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DropDownMenu.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuBar.cpp">
-      <Filter>src\UI\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>src\Application\Source Files</Filter>
@@ -101,16 +77,7 @@
     <ClCompile Include="WorkSpace.cpp">
       <Filter>src\Application\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteHandler.cpp">
-      <Filter>src\Editors\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DropDownInput.cpp">
-      <Filter>src\UI\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GlobalVariables.cpp">
-      <Filter>src\Application\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MouseHandler.cpp">
       <Filter>src\Application\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EditorWorkspace.cpp">
@@ -119,17 +86,47 @@
     <ClCompile Include="BoardEditor.cpp">
       <Filter>src\Editors\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>src\main</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DropDownInput.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DropDownMenu.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementSelection.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuBar.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI_ID.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIElement.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseHandler.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteHandler.cpp">
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="UtilityFunctions.cpp">
-      <Filter>src\Application\Source Files</Filter>
+      <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Button.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>src\Editors\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Board.h">
       <Filter>src\Editors\Header Files</Filter>
     </ClInclude>
@@ -154,24 +151,6 @@
     <ClInclude Include="Tiles.h">
       <Filter>src\Editors\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextBox.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UIElement.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UI_ID.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ElementSelection.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DropDownMenu.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuBar.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>src\Application\Header Files</Filter>
     </ClInclude>
@@ -184,20 +163,11 @@
     <ClInclude Include="WorkSpace.h">
       <Filter>src\Application\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteHandler.h">
-      <Filter>src\Editors\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DropDownInput.h">
-      <Filter>src\UI\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GlobalVariables.h">
       <Filter>src\Application\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Struct_CtorParam.h">
       <Filter>src\Editors\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseHandler.h">
-      <Filter>src\Application\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EditorWorkspace.h">
       <Filter>src\Application\Header Files</Filter>
@@ -205,8 +175,41 @@
     <ClInclude Include="BoardEditor.h">
       <Filter>src\Editors\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownInput.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownMenu.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementSelection.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuBar.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI_ID.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElement.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="UtilityFunctions.h">
-      <Filter>src\Application\Header Files</Filter>
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteHandler.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseHandler.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>src\main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

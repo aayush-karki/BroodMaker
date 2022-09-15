@@ -165,8 +165,6 @@ public:
 
 	virtual bool DoElement() override; // checks to see if the logic for the element is to be excecuted or not 
 
-
-
 	// ============ private member function =============== 
 private:
 	void InputLogic( int charTyped ); // all of the logic; called on every key press
