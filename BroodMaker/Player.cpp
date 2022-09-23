@@ -9,63 +9,204 @@
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "Player.h"
 
+// ======================================================================
+// ================= start of Player class ==============================
+// ======================================================================
+
 /// 
 /// @public
-/// @brief initializes the 
+/// @brief  Default Constructor
+///
+/// @param a_pathIte a iterator that holds to Brood::Application::Components::st_path node which 
+///		contains the start row and column number inside it
+/// @param a_positionOffsetX position offset of the path relative 
+///		to tile's x position
+/// @param a_positionOffsetY position offset of the path relative 
+///		to tile's Y position
 /// 
-/// @param a_playerStartRow represents on which row number 
-///			the player starts -> default 0
-/// @param a_PlayerStartCol represents on which column number 
-///			the player starts-> default 0
-/// @param a_playerSizeX size of the player in x-asix -> default 0.f
-/// @param a_playerSizeY size of the player in y-asix -> default 0.f
-/// @param a_boardPosX board's x-position on screen -> default 0.f
-///			relative to the render window -> default 0.f
-/// @param a_boardPosY board's y-position on screen; 
-///			realtive to the render window -> default 0.f
-/// @param a_tileSizeX tile size in x-axis
-/// @param a_tileSizeY tile size in y-axis
-void Player::InitializePlayer( int a_playerStartRow, int a_PlayerStartCol, 
-							   float a_playerSizeX, float a_playerSizeY, 
-							   float a_boardPosX, float a_boardPosY,
-							   float a_tileSizeX, float a_tileSizeY)
+Brood::Application::Components::Player::Player( Brood::Application::Components::Path* a_pathPtr,
+												unsigned a_positionOffsetX,
+												unsigned a_positionOffsetY ) :
+	m_playerCurrPathPtr( a_pathPtr ), m_positionOffsetX( a_positionOffsetX ),
+	m_positionOffsetY( a_positionOffsetY )
 {
-	// setting the boardPos 
-	this->m_boardPosX = a_boardPosX;
-	this->m_boardPosY = a_boardPosY;
-
-	// setting the tile width and length
-	this->m_tileSizeX = a_tileSizeX;
-	this->m_tileSizeY = a_tileSizeY;
-
-	this->m_playerBody.setSize( sf::Vector2f( a_playerSizeX, a_playerSizeY ) );
+	// initializing the player body
 	this->m_playerBody.setFillColor( sf::Color::White );
 
-	// setting theposition 
-	float xPos = m_currCol * m_tileSizeY + m_boardPosX;
-	float yPos = m_currRow * m_tileSizeX + m_boardPosY;
+	if( a_pathPtr == nullptr )
+	{
+		this->m_playerBody.setSize( { 10.f, 10.f } );
+		this->m_playerBody.setPosition( { 200, 200 } );
+	}
+	else
+	{
+		sf::Vector2f tileSize = m_playerCurrPathPtr->GetTile()->GetBodySize();
 
-	SetPosition( xPos, yPos ); // calling member funcition
+		this->m_playerBody.setSize( { ( tileSize.x * 50 ) / 100, ( tileSize.y * 50 ) / 100 } );
+		UpdatePosition();
+	}
 }
 
 /// 
-/// @brief setter function if st_path is passed
-/// @param a_playerCurrPathPos  iterator that points to the current path node
+/// @public
+/// @brief  Default Desturctor
+///
+Brood::Application::Components::Player::~Player()
+{}
+
+
 /// 
-void Player::SetPosition( std::list<st_path*>::iterator a_playerCurrPathPos )
+/// @public
+/// @brief  Copy constructor
+/// 
+/// @param a_otherPlayer reference to the the other player object that
+///		is being copied from 
+///
+Brood::Application::Components::Player::Player( const Player& a_otherPlayer )
 {
-	m_playerCurrPathPos = a_playerCurrPathPos;
-	// updating row and col
-	m_currRow = ( *a_playerCurrPathPos )->stm_rowNum;
-	m_currCol = ( *a_playerCurrPathPos )->stm_colNum;
-
-	// calculating the position
-	float xPos = m_currCol * m_tileSizeY + m_boardPosX;
-	float yPos = m_currRow * m_tileSizeX + m_boardPosY;
-
-	SetPosition( xPos, yPos ); // calling member funcition
+	this->m_playerBody = a_otherPlayer.m_playerBody;
+	this->m_positionOffsetX = a_otherPlayer.m_positionOffsetX;
+	this->m_positionOffsetY = a_otherPlayer.m_positionOffsetY;
+	this->m_playerCurrPathPtr = a_otherPlayer.m_playerCurrPathPtr;
 }
 
+
+/// 
+/// @public
+/// @brief  assignment operator
+/// 
+/// @param a_otherPlayer reference to the the other player object that
+///		is being copied from 
+///
+Brood::Application::Components::Player& Brood::Application::Components::Player::operator=( const Player& a_otherPlayer )
+{
+	this->m_playerBody = a_otherPlayer.m_playerBody;
+	this->m_positionOffsetX = a_otherPlayer.m_positionOffsetX;
+	this->m_positionOffsetY = a_otherPlayer.m_positionOffsetY;
+	this->m_playerCurrPathPtr = a_otherPlayer.m_playerCurrPathPtr;
+
+	return *this;
+}
+
+/// 
+/// @public
+/// @brief Funciton to update the pointer to the path. 
+/// 
+/// It also updates the position of the player body
+///			
+/// @param a_playerNewPathPtr pointer to the new path
+/// 
+void Brood::Application::Components::Player::UpdatePathptr( Brood::Application::Components::Path* a_playerNewPathPtr )
+{
+	if( m_playerCurrPathPtr != nullptr )
+	{
+		// deleting it self form the previous tile list
+		m_playerCurrPathPtr->DeletePlayerFromList( this );
+	}
+
+	// saving the path pointer
+	m_playerCurrPathPtr = a_playerNewPathPtr;
+
+	// checking if the passed path is not null ptr then update the path's position
+	if( a_playerNewPathPtr != nullptr )
+	if( a_playerNewPathPtr != nullptr )
+	{
+		// updating the position
+		UpdatePosition();
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter funciton to set the x-offset for player positon 
+/// 
+/// The offset is relative to the tile the player is currently on.
+///		It also updates the players position
+/// 
+/// @param a_positionOffsetX position offset of the path relative 
+///		to tile's x position
+void Brood::Application::Components::Player::SetPositionOffsetX( float a_positionOffsetX )
+{
+	m_positionOffsetX = a_positionOffsetX;
+
+	UpdatePosition();
+}
+
+/// 
+/// @public
+/// @brief Setter funciton to set the y-offset for player positon 
+/// 
+/// The offset is relative to the tile the player is currently on.
+///		It also updates the players position
+/// 
+/// @param a_positionOffsetY position offset of the path relative 
+///		to tile's Y position
+void Brood::Application::Components::Player::SetPositionOffsetY( float a_positionOffsetY )
+{
+	m_positionOffsetY = a_positionOffsetY;
+
+	UpdatePosition();
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the pointer to the tile
+///		that the player is currently on
+/// 
+/// It also updates the position of the player body
+///			
+/// @return pointer to the tile that the player is currently on
+/// 
+const Brood::Application::Components::Path* Brood::Application::Components::Player::GetCurrPathPtr() const
+{
+	return m_playerCurrPathPtr;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get a reference to player body
+/// 
+/// It also updates the position of the player body
+///			
+/// @return  a reference to player body
+/// 
+const sf::RectangleShape& Brood::Application::Components::Player::GetPlayerBody() const
+{
+	return m_playerBody;
+}
+
+
+/// 
+/// @public
+/// @brief Draw funciton draws tiles to the screen.
+///			
+/// @param a_window reference to the render window
+/// 
+void Brood::Application::Components::Player::Draw( sf::RenderWindow& a_window )
+{
+	a_window.draw( m_playerBody );
+}
+
+/// 
+/// @private
+/// @brief updates the player position with respect to tile
+///			
+void Brood::Application::Components::Player::UpdatePosition()
+{
+	sf::Vector2f tilePos = m_playerCurrPathPtr->GetTile()->GetBodyPosition();
+
+	float playerPosX = ( tilePos.x * m_positionOffsetX ) / 100;
+	float playerPosY = ( tilePos.y * m_positionOffsetY ) / 100;
+
+	this->m_playerBody.setPosition( { playerPosX , playerPosY } );
+}
+
+// ======================================================================
+// ================= end of Player class ================================
+// ======================================================================

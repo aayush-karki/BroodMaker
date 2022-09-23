@@ -56,6 +56,23 @@ Brood::SpriteHandler& Brood::BroodUI::Button::GetSpriteBody()
 
 /// 
 /// @public
+/// @brief setter function to set the state of the element i.e. if it is 
+///		seleected or not
+/// 
+/// @note this is used to display the active overlay or not
+/// 
+/// @param a_selected true if current button is selected or not
+/// 
+void Brood::BroodUI::Button::SetSelected( bool a_selected )
+{
+	m_isSelected = a_selected;
+
+	SetDrawOverlay( );
+
+}
+
+/// 
+/// @public
 /// @brief checks if the logics of the element is to be executed or not
 /// 
 /// It checks the mouse position and button state to determine if to execute the 

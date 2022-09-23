@@ -47,9 +47,6 @@ Brood::BroodUI::MenuBar::~MenuBar()
 			delete m_menus.at( i );
 		}
 	}
-
-	// deleting the font
-	delete m_font;
 }
 
 ///
@@ -172,8 +169,7 @@ void Brood::BroodUI::MenuBar::SetBodyPosition( float a_posX, float a_posY, bool 
 /// 
 void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 {
-	// making a new copy of the font and storing it as a pointer
-	m_font = new sf::Font(*a_font);
+	m_font = a_font;
 
 	// setting the fonts of menus items
 	if( !m_menus.empty() )
@@ -346,7 +342,7 @@ void Brood::BroodUI::MenuBar::SetMenuBodySize( int a_itemIndex )
 	{
 		bodySizeX = m_fontSize * ( float)textLen * 2;
 	}
-	else if( textLen < 8 )
+	else if( textLen < 15 )
 	{
 		bodySizeX = m_fontSize * ( float )textLen / 1.5f;
 	}

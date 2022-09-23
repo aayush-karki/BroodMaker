@@ -75,6 +75,8 @@ void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
 	if( m_maxItemLength < a_text.length() )
 	{
 		m_maxItemLength = a_text.length();
+
+		SetEachItemSize();
 	}
 }
 

@@ -42,9 +42,12 @@ uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window
 uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width = 900;
 
 std::string Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd = std::filesystem::current_path().string(); // current working directory of the applicaiton
+sf::Font Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font; // font
 
 bool Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode = false;
 bool Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = false;
+
+uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage = 35;
 
 // ======================================================================
 // ================= end of ST_GlobalCoreVariables struct ===============

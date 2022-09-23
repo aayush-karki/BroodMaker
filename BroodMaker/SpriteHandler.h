@@ -76,6 +76,12 @@ public:
 	bool SetTextureFromSavedFilePath(); // loads and sets the texture from saved path
 	void SetSpriteFromTexture( unsigned a_num ); // sets sprite from texture
 
+	// getter function 
+	const std::string GetTexturePath();
+	const float GetSpritLenght();
+	const float GetSpritHeight();
+	const unsigned GetcurrSpriteIndex();
+	
 	void RemoveTexture(); // removes texture from the body
 	void Debugger( ); // removes texture from the body for debuging purposes
 

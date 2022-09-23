@@ -3,6 +3,13 @@
 
 int main()
 {
+	// loading font
+	std::string fontFileLoc = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd + "\\Assets\\Fonts\\arial.ttf";
+	if( !( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font.loadFromFile( fontFileLoc ) ) )
+	{
+		std::cerr << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
+	}
+
 	Brood::Application::Application broodMaker;
 	broodMaker.RunApplicaiton();
 }

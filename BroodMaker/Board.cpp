@@ -27,9 +27,9 @@ Brood::Application::Components::Board::Board() :
 Brood::Application::Components::Board::~Board()
 {
 	// destryoing the dynamically created tiles
-	std::vector< std::vector<Tiles*> >::iterator rowTile;
-	std::vector<Tiles*>::iterator colTile;
-	for( rowTile = m_boardTiles.begin(); rowTile != m_boardTiles.end(); rowTile++ )
+	std::vector< std::vector<Path*> >::iterator rowTile;
+	std::vector<Path*>::iterator colTile;
+	for( rowTile = m_boardPaths.begin(); rowTile != m_boardPaths.end(); rowTile++ )
 	{
 		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
 		{
@@ -52,9 +52,9 @@ void Brood::Application::Components::Board::Draw( sf::RenderWindow& a_window )
 	a_window.draw( this->m_boardBody );
 
 	// drawing the tiles
-	std::vector< std::vector<Tiles*> >::iterator rowTile;
-	std::vector<Tiles*>::iterator colTile;
-	for( rowTile = m_boardTiles.begin(); rowTile != m_boardTiles.end(); rowTile++ )
+	std::vector< std::vector<Path*> >::iterator rowTile;
+	std::vector<Path*>::iterator colTile;
+	for( rowTile = m_boardPaths.begin(); rowTile != m_boardPaths.end(); rowTile++ )
 	{
 		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
 		{
@@ -103,7 +103,7 @@ void Brood::Application::Components::Board::InitializeBoard( unsigned a_numRows,
 	{
 		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
 		{
-			m_boardTiles.at( currRowNum ).at( currColNum )->SetBodyColor( sf::Color( std::rand() % 256, std::rand() % 256, std::rand() % 256 ) );
+			m_boardPaths.at( currRowNum ).at( currColNum )->GetTile()->SetBodyColor( sf::Color( std::rand() % 256, std::rand() % 256, std::rand() % 256 ) );
 		}
 	}
 }
@@ -165,7 +165,7 @@ void Brood::Application::Components::Board::SetBoardSize( sf::Vector2f a_boardSi
 	}
 
 	// updating the tiles
-	UpdateBoardTiles( 0, m_numRows, 0, m_numCols );
+	UpdateBoardPath( 0, m_numRows, 0, m_numCols );
 }
 
 /// 
@@ -198,7 +198,7 @@ void Brood::Application::Components::Board::SetBoardPos( sf::Vector2f a_boardPos
 
 
 
-	UpdateBoardTiles( 0, m_numRows, 0, m_numCols );
+	UpdateBoardPath( 0, m_numRows, 0, m_numCols );
 }
 
 /// 
@@ -215,6 +215,52 @@ void Brood::Application::Components::Board::SetBoardPos( float a_boardPosX, floa
 	Brood::Application::Components::Board::SetBoardPos( { a_boardPosX, a_boardPosY } );
 }
 
+
+/// 
+/// @public
+/// @brief Getter funciton to get the number of rows in the board
+/// 
+/// @returns number of rows in the board
+///
+const unsigned Brood::Application::Components::Board::GetNumRow()  const
+{
+	return m_numRows;
+}
+
+/// 
+/// @public
+/// @brief Getter funciton to get the number of columns in the board
+/// 
+/// @returns number of columns in the board
+///
+const unsigned Brood::Application::Components::Board::GetNumCol() const
+{
+	return m_numCols;
+}
+
+/// 
+/// @public
+/// @brief Getter funciton to get the board size
+/// 
+/// @returns board size
+///
+const sf::Vector2f Brood::Application::Components::Board::GetBoardSize() const
+{
+	return m_boardBody.getSize();
+}
+
+
+/// 
+/// @public
+/// @brief Getter funciton to get the board position
+/// 
+/// @returns board position
+///
+const sf::Vector2f Brood::Application::Components::Board::GetBoardPos() const
+{
+	return m_boardBody.getPosition();
+}
+
 /// 
 /// @public
 /// @virtual
@@ -225,16 +271,16 @@ void Brood::Application::Components::Board::SetBoardPos( float a_boardPosX, floa
 ///
 void Brood::Application::Components::Board::Debugger()
 {
-	std::vector< std::vector<Tiles*> >::iterator rowTile;
-	std::vector<Tiles*>::iterator colTile;
+	std::vector< std::vector<Path*> >::iterator rowTile;
+	std::vector<Path*>::iterator colTile;
 
 	// iterating over the rows
-	for( rowTile = m_boardTiles.begin(); rowTile != m_boardTiles.end(); rowTile++ )
+	for( rowTile = m_boardPaths.begin(); rowTile != m_boardPaths.end(); rowTile++ )
 	{
 		// iterating over the columns
 		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
 		{
-			( *colTile )->Debugger();
+			( *colTile )->GetTile()->Debugger();
 		}
 	}
 }
@@ -253,7 +299,7 @@ void Brood::Application::Components::Board::IncreaseNumRow( unsigned a_numRows )
 	m_numRows = a_numRows;
 
 	// resizing the board tiles
-	m_boardTiles.resize( m_numRows, std::vector<Tiles*>( m_numCols ) );
+	m_boardPaths.resize( m_numRows, std::vector<Path*>( m_numCols ) );
 
 	// only change the tile sets it the lastRowNum and colNUm is not zero
 	if( m_numRows == 0 || m_numCols == 0 )
@@ -268,11 +314,11 @@ void Brood::Application::Components::Board::IncreaseNumRow( unsigned a_numRows )
 	// ignore if the lastRow num == 0 as there are no tiles to be updated
 	if( lastRowNum != 0 )
 	{
-		UpdateBoardTiles( 0, lastRowNum, 0, m_numCols );
+		UpdateBoardPath( 0, lastRowNum, 0, m_numCols );
 	}
 
 	// creating new tiles for newly added rows
-	UpdateBoardTiles( lastRowNum, m_numRows, 0, m_numCols, true );
+	UpdateBoardPath( lastRowNum, m_numRows, 0, m_numCols, true );
 }
 
 /// 
@@ -295,12 +341,12 @@ void Brood::Application::Components::Board::DecreaseNumRow( unsigned a_numRows )
 	{
 		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
 		{
-			delete ( m_boardTiles.at( currRowNum ).at( currColNum ) );
+			delete ( m_boardPaths.at( currRowNum ).at( currColNum ) );
 		}
 	}
 
 	// resizing the board tiles
-	m_boardTiles.resize( m_numRows, std::vector<Tiles*>( m_numCols ) );
+	m_boardPaths.resize( m_numRows, std::vector<Path*>( m_numCols ) );
 
 	// only change the tile sets it the lastRowNum and colNUm is not zero
 	if( m_numRows == 0 || m_numCols == 0 )
@@ -312,7 +358,7 @@ void Brood::Application::Components::Board::DecreaseNumRow( unsigned a_numRows )
 	float tileSizeY = m_boardBody.getSize().y / m_numRows;
 
 	// updating the old tiles's size and position in the board
-	UpdateBoardTiles( 0, m_numRows, 0, m_numCols );
+	UpdateBoardPath( 0, m_numRows, 0, m_numCols );
 }
 
 /// 
@@ -331,7 +377,7 @@ void Brood::Application::Components::Board::IncreaseNumCol( unsigned a_numCols )
 	// resizing the board tiles
 	for( unsigned currRowNum = 0; currRowNum < m_numRows; ++currRowNum )
 	{
-		m_boardTiles.at( currRowNum ).resize( m_numCols );
+		m_boardPaths.at( currRowNum ).resize( m_numCols );
 	}
 
 	// only change the tile sets it the lastRowNum and colNUm is not zero
@@ -347,11 +393,11 @@ void Brood::Application::Components::Board::IncreaseNumCol( unsigned a_numCols )
 	// ignore if the lastColnum == 0 as there are no tiles to be updated
 	if( lastColNum != 0 )
 	{
-		UpdateBoardTiles( 0, m_numRows, 0, lastColNum );
+		UpdateBoardPath( 0, m_numRows, 0, lastColNum );
 	}
 
 	// creating new tiles for newly added col
-	UpdateBoardTiles( 0, m_numRows, lastColNum, m_numCols, true );
+	UpdateBoardPath( 0, m_numRows, lastColNum, m_numCols, true );
 }
 
 /// 
@@ -374,7 +420,7 @@ void Brood::Application::Components::Board::DecreaseNumCol( unsigned a_numCols )
 	{
 		for( unsigned currColNum = m_numCols; currColNum < lastColNum; ++currColNum )
 		{
-			delete ( m_boardTiles.at( currRowNum ).at( currColNum ) );
+			delete ( m_boardPaths.at( currRowNum ).at( currColNum ) );
 		}
 	}
 
@@ -382,7 +428,7 @@ void Brood::Application::Components::Board::DecreaseNumCol( unsigned a_numCols )
 	// resizing the board tiles
 	for( unsigned currRowNum = 0; currRowNum < m_numRows; ++currRowNum )
 	{
-		m_boardTiles.at( currRowNum ).resize( m_numCols );
+		m_boardPaths.at( currRowNum ).resize( m_numCols );
 	}
 
 	// only change the tile sets it the lastRowNum and colNUm is not zero
@@ -395,11 +441,11 @@ void Brood::Application::Components::Board::DecreaseNumCol( unsigned a_numCols )
 	float tileSizeY = m_boardBody.getSize().y / m_numRows;
 
 	// updating the old tiles's size and position in the board
-	UpdateBoardTiles( 0, m_numRows, 0, m_numCols );
+	UpdateBoardPath( 0, m_numRows, 0, m_numCols );
 }
 
 /// @private 
-/// @brief updates the tile specified by passed param in board by using the member variables.
+/// @brief updates the path specified by passed param in board by using the member variables.
 /// 
 ///	It updates the tile starting form a_rowBegin to including a_rowEnd  for the rows and 
 ///		for the column starting from a_colBegin to including a_colEnd. It calls 
@@ -411,7 +457,7 @@ void Brood::Application::Components::Board::DecreaseNumCol( unsigned a_numCols )
 /// @param a_colEnd index of column from where the tiles update should end
 /// @param a_createNew true if new tiles should be created before updating the tiles -> default false
 ///  
-void Brood::Application::Components::Board::UpdateBoardTiles( unsigned a_rowBegin, unsigned a_rowEnd,
+void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin, unsigned a_rowEnd,
 															  unsigned a_colBegin, unsigned a_colEnd,
 															  bool a_createNew )
 {
@@ -424,12 +470,12 @@ void Brood::Application::Components::Board::UpdateBoardTiles( unsigned a_rowBegi
 		{
 			if( a_createNew )
 			{
-				m_boardTiles.at( currRowNum ).at( currColNum ) = new Tiles();
+				m_boardPaths.at( currRowNum ).at( currColNum ) = new Path();
 			}
 
-			m_boardTiles.at( currRowNum ).at( currColNum )->UpdateTile( currRowNum, currColNum,
+			m_boardPaths.at( currRowNum ).at( currColNum )->GetTile()->UpdateTile( currRowNum, currColNum,
 																		tileSizex, tileSizeY,
-																		m_boardBody.getPosition().x, 
+																		m_boardBody.getPosition().x,
 																		m_boardBody.getPosition().y );
 		}
 	}

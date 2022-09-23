@@ -25,8 +25,8 @@
 /// @param a_numSides number of a side that the dice has;
 ///			-> default 6
 /// 
-Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr) :
-	Brood::Dice::Dice( "", 0.0, a_numSides, a_parentPtr ) 
+Brood::Application::Components::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr ) :
+	Brood::Application::Components::Dice::Dice( "", 0.0, a_numSides, a_parentPtr )
 {}
 
 /// 
@@ -51,38 +51,79 @@ Brood::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr) :
 /// @param a_numSides number of a side that the dice has;
 ///			-> default 6
 /// 
-Brood::Dice::Dice( std::string a_texturePath, float a_spriteLength,
-				   int a_numSides,
-				   Brood::BroodUI::UIElement* a_parentPtr ) :
-	Brood::BroodUI::Button( a_parentPtr), m_numSides( a_numSides )
+Brood::Application::Components::Dice::Dice( std::string a_texturePath, float a_spriteLength,
+							   int a_numSides,
+							   Brood::BroodUI::UIElement* a_parentPtr ) :
+	Brood::BroodUI::Button( a_parentPtr ), m_numSides( a_numSides )
+{}
+
+
+/// 
+/// @brief destructor
+/// 
+Brood::Application::Components::Dice::~Dice()
+{}
+
+/// /// 
+/// @public
+/// @virtual
+/// @brief Setter function to set the dice's Size
+/// 
+/// @param a_size size of the element
+/// 
+void Brood::Application::Components::Dice::SetBodySize( sf::Vector2f a_size )
 {
-	// settomg sprite height and length 
-	GetSpriteBody().SetSpriteLength( a_spriteLength );
-	GetSpriteBody().SetSpriteHeight( a_spriteLength );
+	Brood::BroodUI::UIElement::SetBodySize( a_size );
 
-	// loading the texture
-	GetSpriteBody().SetTextureFromFilePath( a_texturePath );
-
-};
-
-Brood::Dice::Dice( Brood::St_DiceParam& a_diceParam ) :
-	Dice( a_diceParam.stm_texturePath, a_diceParam.stm_spriteLength,
-		  a_diceParam.stm_numSides, a_diceParam.stm_parentPtr)
-{}
-
-Brood::Dice::~Dice()
-{}
-
+	GetSpriteBody().SetSpriteHeight( a_size.x );
+	GetSpriteBody().SetSpriteLength( a_size.x );
+}
 
 /// 
 /// @public
-/// @brief Draw funciton draws dice to the screen.
-///			
-/// @param a_window reference to the render window
+/// @virtual
+/// @overload
+/// @brief Setter function to set the dice's Size
 /// 
-void Brood::Dice::Draw( sf::RenderWindow& a_window )
+/// @param a_sizeX length of the element
+/// @param a_sizeY width of the element
+/// 
+void Brood::Application::Components::Dice::SetBodySize( float a_sizeX, float a_sizeY )
 {
-	Brood::BroodUI::Button::Draw( a_window );
+	Brood::Application::Components::Dice::SetBodySize( sf::Vector2f( a_sizeX, a_sizeY ) );
+}
+
+/// 
+/// @brief Sets number of side the dice has
+///
+/// @param a_numSides number of sides the dice has
+/// 
+void Brood::Application::Components::Dice::SetNumSides( unsigned a_numSides )
+{
+	m_numSides = a_numSides;
+}
+
+/// 
+/// @brief Sets texture for the dice
+///
+/// @param a_texturePathfile path to to the texture containing face of the dice;
+///		it is a single texture that has texture for num faces of the dice
+/// 
+void Brood::Application::Components::Dice::SetTexture( std::string a_texturePath )
+{
+	// loading the texture
+	GetSpriteBody().SetTextureFromFilePath( a_texturePath );
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the dice's number of sides
+/// 
+/// @return dice's saved number of side
+///
+const unsigned Brood::Application::Components::Dice::GetNumSides()
+{
+	return m_numSides;
 }
 
 /// 
@@ -91,7 +132,7 @@ void Brood::Dice::Draw( sf::RenderWindow& a_window )
 /// 
 /// @return random number between 0 and m_numSides
 /// 
- unsigned Brood::Dice::RollDice()
+unsigned Brood::Application::Components::Dice::RollDice()
 {
 
 	unsigned currRoll = std::rand() % m_numSides;

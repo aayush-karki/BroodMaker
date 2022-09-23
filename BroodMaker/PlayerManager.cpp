@@ -1,98 +1,275 @@
+/*************************************************************************/
+/// 
+/// @file Player.cpp 
+/// 
+/// @brief  This file is a source file for PlayerManager class.
+/// 
+/// It contains all of the defination of the member 
+///		funciton of PlayerManager class.
+///
+/************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "PlayerManager.h"
 
-PlayerManager::~PlayerManager()
+// ======================================================================
+// ================= start of PlayerManager class =======================
+// ======================================================================
+
+/// 
+/// @public
+/// @brief Default Constructor
+/// 
+/// @param a_pathIte a iterator that holds to 
+///		Brood::Application::Components::st_path node which 
+///		contains the start row and column number inside it
+/// 
+Brood::Application::Components::PlayerManager::PlayerManager() :
+	m_currActivePlayerIdx( -1 ), m_maxPlayer( 0 ), m_minPlayer( 0 )
+{}
+
+/// 
+/// @public
+/// @brief Default destructor
+/// 
+Brood::Application::Components::PlayerManager::~PlayerManager()
 {
 	// destroying the players
-	std::vector<Player*>::iterator currPlayer = m_allPlayers.begin();
+	std::vector<Brood::Application::Components::Player*>::iterator currPlayer = m_allPlayers.begin();
 	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
 	{
 		delete( *currPlayer );
 	}
 }
 
+/// 
+/// @public
+/// @brief  Copy constructor
+/// 
+/// @param a_otherPlayerManager reference to the the other playermanager object that
+///		is being copied from 
+///
+Brood::Application::Components::PlayerManager::PlayerManager( const Brood::Application::Components::PlayerManager& a_otherPlayerManager )
+{
+	this->m_allPlayers = a_otherPlayerManager.m_allPlayers;
+	this->m_maxPlayer = a_otherPlayerManager.m_maxPlayer;
+	this->m_minPlayer = a_otherPlayerManager.m_minPlayer;
+	this->m_currActivePlayerIdx = a_otherPlayerManager.m_currActivePlayerIdx;
+}
 
 /// 
 /// @public
-/// @brief adds a player
+/// @brief  assignment operator
 /// 
-/// @param a_pathManager const reference to path manager
-/// @param a_playerSizeX size of the player in x-asix -> default 0.f
-/// @param a_playerSizeY size of the player in y-asix -> default 0.f
-/// @param a_playerStartRow represents on which row number 
-///			the player starts -> default 0
-/// @param a_PlayerStartCol represents on which column number 
-///			the player starts-> default 0
-///  
-void PlayerManager::AddNewPlayer( float a_playerSizeX, float a_playerSizeY,
-								  int a_playerStartRow, int a_playerStartCol)
+/// @param a_otherPlayerManager reference to the the other playermanager object that
+///		is being copied from 
+///
+Brood::Application::Components::PlayerManager& Brood::Application::Components::PlayerManager::operator=( const Brood::Application::Components::PlayerManager& a_otherPlayerManager )
 {
-	// getting the path 
-	st_path tempPath( a_playerStartRow, a_playerStartCol );
-	std::list<st_path*>::iterator playerPathIte = m_PathManagerIte->GetPathBegin();
-	for( ; playerPathIte != m_PathManagerIte->GetPathEnd(); ++playerPathIte )
+	// checking for self assignment
+	if( this == &a_otherPlayerManager )
 	{
-		if( tempPath == *( *playerPathIte ) )
-		{
-			break;
-		}
+		return *this;
 	}
 
-	// checking the path was found
-	// this should not be a concernt for now as this is hard coded
-	///@todo proper error handeling
-	if( playerPathIte == m_PathManagerIte->GetPathEnd() )
+	this->m_allPlayers = a_otherPlayerManager.m_allPlayers;
+	this->m_maxPlayer = a_otherPlayerManager.m_maxPlayer;
+	this->m_minPlayer = a_otherPlayerManager.m_minPlayer;
+	this->m_currActivePlayerIdx = a_otherPlayerManager.m_currActivePlayerIdx;
+
+	return *this;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the maximum number of player
+/// 
+/// @return maximum number of player
+///
+unsigned Brood::Application::Components::PlayerManager::GetMaxPlayer()
+{
+	return m_maxPlayer;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the minimum number of player
+/// 
+/// @return minimum number of player
+///
+unsigned Brood::Application::Components::PlayerManager::GetMinPlayer()
+{
+	return m_minPlayer;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the current Player index
+/// 
+/// @return maximum number of player
+///
+unsigned Brood::Application::Components::PlayerManager::GetCurrActivePlayerIdx()
+{
+	return m_currActivePlayerIdx;
+}
+
+///  
+/// @public
+/// 
+/// @brief Getter function; for begin of player list
+/// @return a iterator that points to the begining of the player list
+/// 
+std::vector<Brood::Application::Components::Player*>::iterator Brood::Application::Components::PlayerManager::GetAllPlayerBegin()
+{
+	return m_allPlayers.begin();
+}
+
+/// 
+/// @public
+/// 
+/// @brief Getter function; for end of path list
+/// @return a iterator that points to the end of the path list
+/// 
+std::vector<Brood::Application::Components::Player*>::iterator Brood::Application::Components::PlayerManager::GetAllPlayerEnd()
+{
+	return m_allPlayers.end();
+}
+
+/// 
+/// @public
+/// 
+/// @brief Setter function to set the maximum number of player
+/// 
+/// @param maximum number of player
+/// 
+void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_maxPlayer )
+{
+	m_maxPlayer = a_maxPlayer;
+
+	m_allPlayers.resize( a_maxPlayer, new Player() );
+}
+
+/// 
+/// @public
+/// 
+/// @brief Setter function to set the minimum number of player
+/// 
+/// @param minimum number of player
+/// 
+void Brood::Application::Components::PlayerManager::SetMinPlayer( unsigned a_minPlayer )
+{
+	m_minPlayer = a_minPlayer;
+}
+
+/// 
+/// @public
+/// 
+/// @brief Setter function to set the current player Index
+/// 
+/// @param a_currActivePlayerIdx minimum number of player
+/// 
+void Brood::Application::Components::PlayerManager::SetCurrActivePlayerIdx( unsigned a_currActivePlayerIdx )
+{
+	m_currActivePlayerIdx = m_currActivePlayerIdx;
+}
+
+/// 
+/// @public
+/// 
+/// @brief Setter function to set the path for current active player
+/// 
+/// @param a_pathPtr pointer
+/// 
+void Brood::Application::Components::PlayerManager::SetPathForPlayerAtCurrIdx( Brood::Application::Components::Path* a_pathPtr )
+{
+	if( m_currActivePlayerIdx == -1 )
 	{
-		std::cerr << "Error! Invalid row or column number" << std::endl;
 		return;
 	}
 
-	// getting the tile size
-	float tileSizeX = m_BoardParmIte->stm_boardSizeX / m_BoardParmIte->stm_numCols;
-	float tileSizeY = m_BoardParmIte->stm_boardSizeY / m_BoardParmIte->stm_numRows;
+	m_allPlayers.at(m_currActivePlayerIdx)->UpdatePathptr(a_pathPtr);
+}
 
-	Player* tempPlayer = new Player( playerPathIte, a_playerSizeX, a_playerSizeY,
-									 m_BoardParmIte->stm_boardPosX, m_BoardParmIte->stm_boardPosY,
-									 tileSizeX, tileSizeY );
-	// adding tempPlayer to the m_allPlayers
-	m_allPlayers.push_back( tempPlayer );
-
-	// checking if this is the first player created
-	if( m_allPlayers.size() == 1 )
+/// 
+/// @public
+/// @brief Getter function to get the current active player from the list
+/// 
+/// @return currentActive player who is supposed to be players if list is
+///		 not empty ; nullptr if the list is empty
+Brood::Application::Components::Player* Brood::Application::Components::PlayerManager::GetPlayerAtCurrIdx()
+{
+	// no player in the list
+	if( m_currActivePlayerIdx == -1 )
 	{
-		m_currPlayerIdx = 0;
+		return nullptr;
 	}
+
+	return m_allPlayers.at( m_currActivePlayerIdx );
 }
 
 /// 
 /// @public
 /// @brief Getter function to get next player in the list
-/// @return next player who is supposed to be players if list is not empty
-///	@return nullptr if the list is empty
-Player* PlayerManager::GetNextPlayer()
+/// 
+/// @return next player who is supposed to be players if list is
+///		 not empty ; nullptr if the list is empty
+Brood::Application::Components::Player* Brood::Application::Components::PlayerManager::GetNextPlayer()
 {
 	// no player in the list
-	if( m_currPlayerIdx == -1 )
+	if( m_currActivePlayerIdx == -1 )
 	{
 		return nullptr;
 	}
 
-	++m_currPlayerIdx;
-	if( m_currPlayerIdx == m_allPlayers.size() )
+	++m_currActivePlayerIdx;
+	if( m_currActivePlayerIdx == m_allPlayers.size() )
 	{
 		// looping to the first player
-		m_currPlayerIdx = 0;
+		m_currActivePlayerIdx = 0;
 	}
 
-	return m_allPlayers.at( m_currPlayerIdx );
+	return m_allPlayers.at( m_currActivePlayerIdx );
 }
 
-
-void PlayerManager::Draw( sf::RenderWindow& a_window )
+/// 
+/// @public
+/// @brief replaces the a new player at passed index
+///		 with a copy of passed index
+/// 
+/// @note if the passed index does not exist then it does nothing
+///		to increase the index, increase the maximum number of player 
+///		by 
+/// 
+/// @param a_index index at which he player is to be replaced
+/// @param a_playerPtr Pointer to the player whose data is used 
+///		to make a copy
+///  
+void Brood::Application::Components::PlayerManager::ReplacaePlayerAt( unsigned a_index,
+																	  Brood::Application::Components::Player* a_playerPtr )
 {
-	std::vector<Player*>::iterator currPlayer = m_allPlayers.begin();
+	// checking if the index exist
+	if( a_index >= m_allPlayers.size() )
+	{
+		// do nothing
+		return;
+	}
+
+	// else replace the player at passed index
+	( m_allPlayers.at( a_index ) ) = new Player( *( a_playerPtr ) );
+}
+
+void Brood::Application::Components::PlayerManager::Draw( sf::RenderWindow& a_window )
+{
+	std::vector<Brood::Application::Components::Player*>::iterator currPlayer = m_allPlayers.begin();
 	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
 	{
 		( *currPlayer )->Draw( a_window );
 	}
 }
+
+// ======================================================================
+// ================= end of PlayerManager class =========================
+// ======================================================================

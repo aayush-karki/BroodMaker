@@ -10,77 +10,119 @@
 ///		the member funciton of PlayerManager class
 ///
 /************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #pragma once
 #include "stdafx.h"
 #include "Player.h"
 #include "PathManager.h"
-#include "Struct_path.h"
+#include "Path.h"
 #include "Struct_CtorParam.h"
 
+// ======================================================================
+// ================= defining namespace =================================
+// ======================================================================
+namespace Brood::Application
+{
+	namespace Components
+	{
+		class PlayerManager;
+	}
+}
+// ======================================================================
+// ================= end of namespace defination ========================
+// ======================================================================
+
+// ======================================================================
+// ================= start of PlayerManager class =======================
+// ======================================================================
+
 ///
+/// @ingroup Components
 /// @class PlayerManager  "PlayerManager.h"
-/// 
+/// m_minPlayer
 /// @brief A PlayerManager Class manages all player realted things
 /// 
-class PlayerManager
+class Brood::Application::Components::PlayerManager
 {
 	// ===================== private member function ===================
 public:
-	
-	// default constructor
-	PlayerManager( St_BoardParam* a_BoardParm = nullptr, 
-				   PathManager* a_PathManagerIte = nullptr ); 
-	~PlayerManager(); // destructor
 
-	void AddNewPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f,
-					   int a_playerStartRow = 0, int a_playerStartCol = 0);
-	Player* GetNextPlayer(); // returns next player in the list
-	const std::vector<Player*>::iterator GetAllPlayerBegin();
-	const std::vector<Player*>::iterator GetAllPlayerEnd();
+	// default constructor
+	PlayerManager();
+
+	// destructor
+	~PlayerManager();
+
+	// copy constructor
+	PlayerManager( const Brood::Application::Components::PlayerManager& a_otherPlayerManager );
+
+	// assignment operator
+	PlayerManager& operator=( const Brood::Application::Components::PlayerManager& a_otherPlayerManager );
+
+	// =========== getter function ===========
+
+	// getter funciton to get the maximum player 
+	unsigned GetMaxPlayer();
+
+	// getter funciton to get the minimum player 
+	unsigned GetMinPlayer();
+
+	unsigned GetCurrActivePlayerIdx();
+
+	// getter funciton to get the Iterator to the start of allplayer vector
+	std::vector<Brood::Application::Components::Player*>::iterator GetAllPlayerBegin();
+
+	// getter funciton to get the Iterator to the end of allplayer vector
+	std::vector<Brood::Application::Components::Player*>::iterator GetAllPlayerEnd();
+
+	// =========== setter functions ==========
+
+	// setter funciton to set the maximum player 
+	void SetMaxPlayer( unsigned a_maxPlayer );
+
+	// setter funciton to set the minimum player 
+	void SetMinPlayer( unsigned a_minPlayer );
+
+	// setter function to set the curr Active Player
+	void SetCurrActivePlayerIdx( unsigned a_currActivePlayerIdx );
+
+	// sets the path for the current active player
+	void SetPathForPlayerAtCurrIdx(Brood::Application::Components::Path* a_pathPtr);
+
+	// Get the current active player
+	Brood::Application::Components::Player* GetPlayerAtCurrIdx();
+
+	// Increases the currentPlayer index by 1 andreturns the player 
+	//	at that index
+	//	if currentPlayer index points to the last player, then it loops
+	// back to the first element
+	Brood::Application::Components::Player* GetNextPlayer(); // returns next player in the list
+
+	// replaces the a new player at passed index with a copy of passed index
+	void ReplacaePlayerAt( unsigned a_index,
+						   Brood::Application::Components::Player* a_playerPtr = nullptr );
+
 	void Draw( sf::RenderWindow& a_window );
 
 	// ===================== private member variables ===================
 private:
-	
-	// contains all the player currently playing the game
-	std::vector<Player*> m_allPlayers; 
-	int m_currPlayerIdx; // index of current playing player
 
-	PathManager* m_PathManagerIte; // pointer to path manager
-	St_BoardParam* m_BoardParmIte; // pointer to initial board parameters
-	
+	// contains all the player currently playing the game
+	std::vector<Brood::Application::Components::Player*> m_allPlayers;
+
+	// index of current playing player
+	int m_currActivePlayerIdx;
+
+	// maximum number of player
+	unsigned m_maxPlayer;
+
+	// minimum number of player
+	unsigned m_minPlayer;
 };
 
-/// @public
-/// @brief Default Constructor
-/// 
-/// it sets m_currPlayerIndx to -1
-/// 
-inline PlayerManager::PlayerManager( St_BoardParam* a_BoardParm, PathManager* a_PathManagerIte ):
-	m_PathManagerIte (a_PathManagerIte), m_BoardParmIte (a_BoardParm)
-
-{
-	m_currPlayerIdx = -1;
-}
-
-/// 
-/// @public
-/// 
-/// @brief Getter function; for begin of player list
-/// @return a iterator that points to the begining of the player list
-/// 
-inline const std::vector<Player*>::iterator PlayerManager::GetAllPlayerBegin()
-{
-	return m_allPlayers.begin();
-}
-
-/// 
-/// @public
-/// 
-/// @brief Getter function; for end of path list
-/// @return a iterator that points to the end of the path list
-/// 
-inline const std::vector<Player*>::iterator PlayerManager::GetAllPlayerEnd()
-{
-	return m_allPlayers.end();
-}
+// ======================================================================
+// ================= end of PlayerManager class =========================
+// ======================================================================

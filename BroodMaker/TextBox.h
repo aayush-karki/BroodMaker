@@ -134,6 +134,12 @@ namespace Brood
 /// 
 /// @endcode
 /// 
+/// @todo add a way to add place holder text
+/// @todo add view to the textbox feild that gets scrolled 
+///		when the type text go of window
+/// @todo adda actual cursor instead of _
+/// @todo add a way to retrive the text when pressed enter
+/// 
 class Brood::BroodUI::TextBox : public Brood::BroodUI::UIElement
 {
 	// ============== private defines ================= 

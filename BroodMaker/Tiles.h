@@ -90,8 +90,11 @@ public:
 
 	// ===== private member variables =====
 private:
-	unsigned m_tileRowNum;      // row position in a board
-	unsigned m_tileColNum;      // column position in a board
+	// row position in a board
+	unsigned m_tileRowNum;      
+	
+	// column position in a board
+	unsigned m_tileColNum;      
 };
 
 // ======================================================================

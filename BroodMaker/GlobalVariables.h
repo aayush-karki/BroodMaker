@@ -71,11 +71,29 @@ struct Brood::Application::StaticVariables::ST_ColorVariables
 ///
 struct Brood::Application::StaticVariables::ST_GlobalCoreVariables
 {
+	///> holds the application height
 	static uint32_t stm_window_height;
+
+	///> holds the application width
 	static uint32_t stm_window_width;
-	static std::string stm_cwd; // current working directory of the applicaiton
-	static bool stm_is_debug_mode; // true if debug mode is on
-	static bool stm_exit; // stores the state of the application
+	
+	///> current working directory of the applicaiton
+	static std::string stm_cwd; 
+
+	///> stores the font that is used through out the applicaiton
+	static sf::Font stm_font;
+
+	///> holds the state of debugger; true if debug mode is on
+	static bool stm_is_debug_mode; 
+
+
+	///> stores the state of the application; false if the application 
+	///>	is running
+	static bool stm_exit; 
+
+	///> holds the percentage of size of the application side pannel
+	///>	compare to the applicaiton window
+	static uint32_t stm_panelPercentage;
 };
 
 // ======================================================================

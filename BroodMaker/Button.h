@@ -103,6 +103,12 @@ public:
 	// Getter funciton 
 	Brood::SpriteHandler& GetSpriteBody(); // gets the sprite body
 	
+	// setter funcitfunctionon 
+	
+	// sets the state of the element.
+	void SetSelected( bool a_selected ); 
+
+
 	virtual bool DoElement() override; // checks to see if the logic for the element is to be excecuted or not 
 	
 	virtual void Debugger(); // adds the element ID to the text

@@ -243,13 +243,12 @@ void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
 	else if( a_size.y < m_fontSize )
 	{
 		std::cerr << "body height cannot be smaller than font Size cannot" << std::endl;
-		return;
 	}
 	else
 	{
 		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
-		return;
 	}
+		return;
 }
 
 /// 
@@ -370,6 +369,7 @@ void Brood::BroodUI::UIElement::SetFontSize( int a_fontSize )
 	}
 
 	m_text.setCharacterSize( m_fontSize );
+	Brood::BroodUI::UIElement::SetTextPosition();
 }
 
 /// 
@@ -432,7 +432,8 @@ void Brood::BroodUI::UIElement::SetDrawOverlay(  )
 {
 	// setting up the over lay
 	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr() ||
-		GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() )
+		GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() ||
+		m_isSelected )
 	{
 		m_bodyOverLay.setFillColor( m_activeOverlayColor );
 		m_drawOverlay = true;

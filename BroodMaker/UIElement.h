@@ -93,6 +93,8 @@ enum class Brood::BroodUI::ENUM_UIType
 /// 
 /// @TODO create a verticalmenus for ma UIElement. This could be used to
 ///		for Drop down menus. 
+/// @todo create a font class whose job is to load and save font and replace 
+///		all the m_font to object of that file
 /// 
 class Brood::BroodUI::UIElement
 {

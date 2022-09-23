@@ -24,10 +24,10 @@
 ///	
 /// Inializes the application and sets it up
 /// 
-Brood::Application::Application::Application():
-	m_window( sf::VideoMode( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height, 
+Brood::Application::Application::Application() :
+	m_window( sf::VideoMode( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height,
 							 Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width ),
-			  "BroodMaker" ), m_initailWorkSpace(), m_events()
+			  "BroodMaker" ), m_events(), m_mainWorkspace()
 {
 	// initializing the randon seed
 	std::srand( ( unsigned int )std::time( nullptr ) );
@@ -37,21 +37,16 @@ Brood::Application::Application::Application():
 
 	m_window.setFramerateLimit( 60 );
 
-	// loading font
-	std::string fontFileLoc = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd + "\\Assets\\Fonts\\arial.ttf";
-	if( !( m_font.loadFromFile( fontFileLoc ) ) )
-	{
-		std::cerr << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
-	}
-
-	// initializing menubar
-	InitializeMenuBar();
-
 	/// @todo: delete me
 	// initializing the board
 	myBoard.InitializeBoard( 5, 5, 520.f, 600.f, 100.f, 100.f );
 	myBoard.SetBoardSize( { 200,200 } );
-	myBoard.SetBoardPos( {300,200} );
+	myBoard.SetBoardPos( { 300,200 } );
+
+	// initializing the dice
+	myDice.SetBodySize( 50, 50 );
+	myDice.SetBodyPosition( 50, 50 );
+
 
 	/// @todo delete me
 	/*
@@ -86,7 +81,7 @@ Brood::Application::Application::Application():
 	//mySpriteButton.SetFontSize( 20 );
 	//mySpriteButton.SetFontColor( sf::Color::Black );
 	//mySpriteButton.SetBodyColor( sf::Color::Red );
-	//// setting sprite height and length 
+	//// setting sprite height and length
 	////mySpriteButton.GetSpriteBody().SetSpriteLength( 50 );
 	////mySpriteButton.GetSpriteBody().SetSpriteHeight( 50 );
 	//// loading the texture
@@ -160,7 +155,7 @@ Brood::Application::Application::Application():
 ///	
 /// cleans up after the applicaiton
 /// 
-Brood::Application::Application::~Application() 
+Brood::Application::Application::~Application()
 {
 	// cleaning the application
 
@@ -224,7 +219,7 @@ void Brood::Application::Application::RunApplicaiton()
 		//		{
 		//			if( itemList.at( i )->DoElement() )
 		//			{
-		//				std::cerr << "item at " << i << " Pressed with ID"<< 
+		//				std::cerr << "item at " << i << " Pressed with ID"<<
 		//					itemList.at( i )->GetText() <<	std::endl;
 
 		//			}
@@ -248,7 +243,7 @@ void Brood::Application::Application::RunApplicaiton()
 		//			{
 		//				// setting the elements name as the item's name
 		//				myDropDownInput.SetText( itemList.at( i )->GetText() );
-		//				
+		//
 		//				// executing the function
 		//				std::cerr << "item at " << i << "  Pressed with ID " <<
 		//					itemList.at( i )->GetText() << std::endl;
@@ -289,54 +284,8 @@ void Brood::Application::Application::RunApplicaiton()
 		//}
 		*/
 
-		if( !m_ribbionTabs.GetMenuList().empty() )
-		{
-			auto menus = m_ribbionTabs.GetMenuList();
-
-			bool executeMenuItem = false;
-			unsigned iIdxExecute = 0;
-			unsigned jIdxExecute = 0;
-			// checking if the logics of the element is to be executed or not
-			for( unsigned i = 0 ; i < menus.size(); ++i )
-			{
-				if( menus.at( i )->DoElement() )
-				{
-					/// @todo deleteME
-					std::cout << "menu at " << i << " " << menus.at(i)->GetText() << " Pressed" << std::endl;
-				}
-
-				// checking if the logics of the element is to be executed or not
-				if( menus.at( i )->IsSelected() )
-				{
-					auto itemList = menus.at( i )->GetItemList();
-					if( !itemList.empty() )
-					{
-						for( unsigned j = 0; j < itemList.size(); ++j )
-						{
-							if( itemList.at( j )->DoElement() )
-							{
-								/// @todo deleteme
-								std::cout << "menu at " << i << " Pressed" << std::endl;
-								std::cout << "item at " << j << " Pressed" << std::endl;
-
-								executeMenuItem = true;
-								iIdxExecute = i;
-								jIdxExecute = j;
-								break;
-							}
-						}
-					}
-				}
-			}
-
-			/// @brief list of function to execute for each menu item
-			if( executeMenuItem )
-			{
-				ExecuteMenuItem(iIdxExecute, jIdxExecute);
-			}
-		}
-
-		m_initailWorkSpace.Update();
+		// updating the initialworkspace
+		m_mainWorkspace.Update();
 
 		// ========= rendering ==============================================
 		Brood::Application::Application::Draw();
@@ -395,9 +344,10 @@ void Brood::Application::Application::PollEvents()
 ///
 void Brood::Application::Application::Draw()
 {
-	m_window.clear();
+	// setting the window background color after clearing the screen
+	m_window.clear( sf::Color( 49, 49, 49 ) );
 
-	
+
 	/// @todo delete me
 	/*
 	//myBoard->Draw( m_window );
@@ -412,58 +362,16 @@ void Brood::Application::Application::Draw()
 	//myMenu.Draw( m_window );
 	*/
 
-	//// workspace
-	m_initailWorkSpace.Draw( m_window );
+	// workspace
+	m_mainWorkspace.Draw( m_window );
 
-	//// menu bar
-	m_ribbionTabs.Draw( m_window );
-	
 	/// @todo delete me
-	myBoard.Draw(m_window);
+	//myBoard.Draw( m_window );
+	//myDice.Draw( m_window );
 
 	// displaying te window
 	m_window.display();
 }
-
-
-/// 
-/// @private
-/// @brief Initializes the main menu bar which is at the top of the applicaiton
-/// 
-/// It has the file and help menus in it. 
-/// 
-/// File menu has Create new, Import games,
-///		Load previous edits, and Save option under it.
-/// 
-/// Help menu has How to Use, Documentation, and About BroodMaker option under it.
-/// 
-/// 
-void Brood::Application::Application::InitializeMenuBar()
-{
-	m_ribbionTabs.SetBodySize( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width, 50 );
-	m_ribbionTabs.SetBodyPosition( 0, 0 );
-	m_ribbionTabs.SetFont( &m_font );
-	m_ribbionTabs.SetFontSize( 20 );
-	//m_ribbionTabs.SetBodyColor(sf::Color( 118, 134, 144, 255 ));
-	m_ribbionTabs.SetBodyColor(Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu);
-
-	m_ribbionTabs.AddMenuToMenuBar( "File" );
-	m_ribbionTabs.AddItemToMenu( 0, "Create New" );
-	m_ribbionTabs.AddItemToMenu( 0, "Import Game" );
-	m_ribbionTabs.AddItemToMenu( 0, "Load Previous Edit" );
-	m_ribbionTabs.AddItemToMenu( 0, "Save" );
-	m_ribbionTabs.AddItemToMenu( 0, "Quit" );
-
-	m_ribbionTabs.AddMenuToMenuBar( "Debug" );
-	m_ribbionTabs.AddItemToMenu( 1, "Toggle Debugger: OFF" );
-
-	m_ribbionTabs.AddMenuToMenuBar( "Help" );
-	m_ribbionTabs.AddItemToMenu( 2, "How To Use" );
-	m_ribbionTabs.AddItemToMenu( 2, "Documentation" );
-	m_ribbionTabs.AddItemToMenu( 2, "About BroodMaker" );
-
-}
-
 
 /// 
 /// @private
@@ -474,117 +382,7 @@ void Brood::Application::Application::InitializeMenuBar()
 /// 
 void Brood::Application::Application::Debugger()
 {
-	m_ribbionTabs.Debugger();
-	m_initailWorkSpace.Debugger();
-}
-
-/// 
-/// @private
-/// @brief executes the funciton related to the menu item.
-/// 
-/// It contains all the funciton to execute for each menu item.
-/// 
-/// @param a_iIdx index of menu to execute
-/// @param a_jIdx index of menu item to execute for given menu index i
-/// 
-void Brood::Application::Application::ExecuteMenuItem( unsigned a_iIdx, unsigned a_jIdx )
-{
-	switch( a_iIdx )
-	{
-		case 0:
-		{
-			// file menu
-			switch( a_jIdx )
-			{
-				case 0:
-				{
-					// Create New menu item
-					break;
-				} // j = 0 case when i = 0
-				case 1:
-				{
-					// Import Game menu item
-					break;
-				} // j = 1 case when i = 0
-				case 2:
-				{
-					// Load Previous Edit menu item
-					break;
-				} // j = 2 case when i = 0
-				case 3:
-				{
-					// Save menu item
-					break;
-				} // j = 3 case when i = 0
-				case 4:
-				{
-					// Quit menu item
-					Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = true;
-					break;
-				} // j = 4 case when i = 0
-				default:
-				{
-					std::cerr << "menu item at index: " << a_jIdx << "not found for File menu" << std::endl;
-					break;
-				}
-			}
-
-			break;
-		} // i = 0 case
-		case 1:
-		{
-			// debug menu
-			switch( a_jIdx )
-			{
-				case 0:
-				{
-					// Toggle Debugger menu item
-					Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode = !Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode;
-					this->Debugger();
-					break;
-				}
-				default:
-				{
-					std::cerr << "menu item at index: " << a_jIdx << "not found for debug menu" << std::endl;
-					break;
-				}
-			}
-			break;
-		} // i = 1 case
-		case 2:
-		{
-			// help menu
-			switch( a_jIdx )
-			{
-				case 0:
-				{
-					// How To Use menu item
-					break;
-				}
-				case 1:
-				{
-					// Documentation menu item
-					break;
-				}
-				case 2:
-				{
-					// About BroodMaker menu item
-					break;
-				}
-				default:
-				{
-					std::cerr << "menu item at index: " << a_jIdx << "not found for help menu" << std::endl;
-					break;
-				}
-			}
-			break;
-		} // i = 2 case
-
-		default:
-		{
-			break;
-		}
-	} // i Index switch
+	m_mainWorkspace.Debugger();
 }
 
 // ======================================================================

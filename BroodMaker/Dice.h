@@ -13,41 +13,24 @@
 
 #include "Button.h"
 
-namespace Brood
+namespace Brood::Application
 {
-	// defining what component of this file will be inside namespace BroodUI
-	class Dice;
-	struct St_DiceSerialization;
-	struct St_DiceParam;
+	namespace Components
+	{
+		class Dice;
+		struct St_DiceSerialization;
+	}
 }
 
 /// 
 /// @ingroup Brood
 /// @brief serialization for dice
-struct Brood::St_DiceSerialization
+struct Brood::Application::Components::St_DiceSerialization
 {
 	std::string m_texturePath; ///> file path to to the texture containing face of the dice
 	float m_spriteLength; ///> sprite length and width
 	unsigned m_numSides; // number of side in a die
 
-};
-
-struct Brood::St_DiceParam
-{
-	std::string  stm_texturePath;
-	float stm_spriteLength;
-	Brood::BroodUI::UIElement* stm_parentPtr;
-	int  stm_numSides;
-
-	///
-	/// @public
-	/// @brief  Default constructor of the struct
-	/// 
-	St_DiceParam( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
-				  Brood::BroodUI::UIElement* a_parentPtr = nullptr) :
-		stm_texturePath( a_texturePath ), stm_spriteLength( a_spriteLength ),
-		stm_numSides( a_numSides ), stm_parentPtr( a_parentPtr )
-	{};
 };
 
 ///
@@ -58,24 +41,31 @@ struct Brood::St_DiceParam
 /// This class is derived form the Button class.
 /// This Dice is a unbiased Dice. 
 /// 
-class Brood::Dice : public Brood::BroodUI::Button
+class Brood::Application::Components::Dice : public Brood::BroodUI::Button
 {
 	// ============= public member funciton =====================
 public:
 	// default constructor
-	Dice( int a_numSides = 6, Brood::BroodUI::UIElement* a_parentPtr = nullptr);
+	Dice( int a_numSides = 6, Brood::BroodUI::UIElement* a_parentPtr = nullptr );
 	// constructor when a texture is passed
 	Dice( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
 		  Brood::BroodUI::UIElement* a_parentPtr = nullptr );
-	// constructor when diceParam is passed
-	Dice( Brood::St_DiceParam& a_diceParam );
+
 
 	// default destructor
 	virtual ~Dice();
 
-	// overrided funciton 
-	virtual void Draw( sf::RenderWindow& a_window ) override; // draw to screen
-	
+	// setter function
+	void SetBodySize( sf::Vector2f  a_size ) override;
+	void SetBodySize( float a_sizeX, float a_sizeY )override;
+	void SetNumSides( unsigned a_numSides );
+
+	// sets texture
+	void SetTexture( std::string a_texturePath );
+
+	// getter function
+	const unsigned GetNumSides();
+
 	unsigned RollDice(); // get a random num between 0 and m_numSides
 
 	// ================ private member variables ==============

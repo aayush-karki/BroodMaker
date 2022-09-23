@@ -135,6 +135,42 @@ void Brood::SpriteHandler::SetSpriteFromTexture( unsigned a_num )
 }
 
 /// 
+/// @brief Getter function to get the saved texture path
+/// @return string containing the texture path
+/// 
+const std::string Brood::SpriteHandler::GetTexturePath()
+{
+	return m_texturePath;
+}
+
+/// 
+/// @brief Getter function to get the saved sprite length
+/// @return float value containing the sprite length
+/// 
+const float Brood::SpriteHandler::GetSpritLenght()
+{
+	return m_spriteLength;
+}
+
+/// 
+/// @brief Getter function to get the saved sprite height
+/// @return float value containing the sprite length
+/// 
+const float Brood::SpriteHandler::GetSpritHeight()
+{
+	return m_spriteHeight;
+}
+
+/// 
+/// @brief Getter function to get the index of current Sprite
+/// @return float value containing the sprite length
+/// 
+const unsigned Brood::SpriteHandler::GetcurrSpriteIndex()
+{
+	return m_currSpriteIndex;
+}
+
+/// 
 /// @public
 /// @brief Removes the texture
 /// 

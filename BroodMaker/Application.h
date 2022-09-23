@@ -16,6 +16,7 @@
 #include <filesystem>
 
 #include "Board.h"
+#include "Dice.h"
 #include "Player.h"
 #include "Card.h"
 #include "MouseHandler.h"
@@ -23,9 +24,10 @@
 #include "TextBox.h"
 #include "MenuBar.h"
 #include "DropDownInput.h"
-#include "InitialWorkSpace.h"
 
-#include "struct_path.h"
+#include "HomeWorkSpace.h"
+
+#include "Path.h"
 #include "Struct_CtorParam.h"
 #include "GlobalVariables.h"
 
@@ -66,26 +68,35 @@ public:
 	void RunApplicaiton(); // main loop of the program
 
 protected:
-	void PollEvents();
-	void Draw();
 	// ================= private member function =================  
 private:
-	void InitializeMenuBar();
-	void Debugger(); // calls the UI ELement Debugger
 
-	void ExecuteMenuItem(unsigned a_iIdx, unsigned a_jIdx);
+	///> polls for any event
+	void PollEvents();
 	
+	///> draws to screen
+	void Draw();
+	
+	void CreateWorkSpace();
+
+	///> calls the UI ELement Debugger
+	void Debugger(); 
+
 	// ================= private member variables =================  
 private:
-	sf::Font m_font; // font obj 
-	sf::RenderWindow m_window; // window obj
-	sf::Event m_events; // event object 
+	
+	///> window obj
+	sf::RenderWindow m_window; 
+	
+	///> event object 
+	sf::Event m_events; 
 
-	Brood::BroodUI::MenuBar m_ribbionTabs; ///> Ui for ribbon tabs
-	Brood::Application::InitialWorkSpace m_initailWorkSpace; ///> workspaces that gets loaded as soon as app opens
+	///> initial workspace object
+	Brood::Application::HomeWorkSpace m_mainWorkspace;
 
 	/// @todo delete me
 	Brood::Application::Components::Board myBoard;
+	Brood::Application::Components::Dice myDice;
 
 };
 

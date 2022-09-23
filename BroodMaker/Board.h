@@ -16,7 +16,7 @@
 // ======================================================================
 #pragma once
 
-#include "Tiles.h"
+#include "Path.h"
 //#include "Player.h"
 //#include "Dice.h"
 //#include "PathManager.h"
@@ -66,16 +66,43 @@ public:
 						  float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
 						  float a_boardPosX = 0.f, float a_boardPosY = 0.f );
 
-	// setter funcitons
+	// ===== setter funcitons ==== 
+
+	// setter function to set the nubmer of rows in the board
 	void SetNumRow( unsigned a_numRows );
+
+	// setter function to set the nubmer of coulumns in the board
 	void SetNumCol( unsigned a_numCols );
+
+	// setter function to set the board size
 	void SetBoardSize( sf::Vector2f a_boardSize );
+
+	// setter function to set the board size
 	void SetBoardSize( float a_boardSizeX, float a_boardSizeY );
+
+	// setter function to set the board position
 	void SetBoardPos( sf::Vector2f a_boardPos );
+
+	// setter function to set the board position
 	void SetBoardPos( float a_boardPosX, float a_boardPosY );
+
+	// ===== getter funcitons ==== 
+
+	// getter function to get the nubmer of rows in the board
+	const unsigned GetNumRow() const;
+
+	// getter function to get the nubmer of coulumns in the board
+	const unsigned GetNumCol() const;
+
+	// getter function to get the board size
+	const sf::Vector2f GetBoardSize() const;
+
+	// getter function to get the board position
+	const sf::Vector2f GetBoardPos() const;
+
 	void Debugger(); // debugger
 
-	//Brood::Dice& GetDice(); // getter funciton 
+	//Brood::Dice& GetDice(); 
 	//void Update();
 	//void PlayerRollAndMove( );
 	//void AddPlayer( float a_playerSizeX = 0.f, float a_playerSizeY = 0.f, int a_playerStartRow = 0, int a_playerStartCol = 0 );
@@ -97,7 +124,7 @@ private:
 	void DecreaseNumCol( unsigned a_numCols );
 
 	// updates the tile in board by using the member variables
-	void UpdateBoardTiles( unsigned a_rowBegin, unsigned a_rowEnd,
+	void UpdateBoardPath( unsigned a_rowBegin, unsigned a_rowEnd,
 						   unsigned a_colBegin, unsigned a_colEnd,
 						   bool a_createNew = false );
 
@@ -113,13 +140,11 @@ private:
 	///> number of cell columns in the board
 	unsigned m_numCols;
 
-	///> contains the board tiles
-	std::vector<std::vector<Tiles*>> m_boardTiles;
+	///> contains the board Path whic in turn contains tile
+	std::vector<std::vector<Path*>> m_boardPaths;
 
 	//PathManager m_pathsList; // contains the path of the game
 	//PlayerManager m_playerManger; // contains all the player in the game
 
 	//Brood::Dice m_dice; // dice obj
 };
-
-
