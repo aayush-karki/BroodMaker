@@ -44,11 +44,28 @@ Brood::Application::EditorWorkspace::~EditorWorkspace()
 //
 void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 {
+	// initializing the board 
+	m_board.InitializeBoard( 1, 1, 500, 500, 50, 200 );
+	
+	// initialzing the side panel
+	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
+
+	float panelSizeX = ( windowWidth * Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage ) / 100;
+	float panelSizeY = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height;
+	m_sidePanel.setSize( { panelSizeX ,panelSizeY } );
+
+	float panelPoxX = windowWidth - panelSizeX;
+	float panelPoxY = 50.f;
+	m_sidePanel.setPosition( { panelPoxX ,panelPoxY } );
+
+	m_sidePanel.setFillColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu );
+
 	// initializing the edit mode
 	InitializeEditModeTabs();
 
 	// initializing the workspaces
-	m_editorWorkspaceList.push_back( new BoardEditor( &m_board ) );
+	m_editorWorkspaceList.push_back( new BoardEditor( &m_board, &m_sidePanel ) );
+
 }
 
 /// 
@@ -76,6 +93,9 @@ void Brood::Application::EditorWorkspace::Draw( sf::RenderWindow& a_window )
 	// drawing the board
 	m_board.Draw( a_window );
 
+	// drawing the side panel
+	a_window.draw( m_sidePanel );
+
 	// drawing the editor workspace
 	m_editorWorkspaceList.at( m_activeEditorIdx )->Draw( a_window );
 
@@ -96,6 +116,8 @@ void Brood::Application::EditorWorkspace::Draw( sf::RenderWindow& a_window )
 void Brood::Application::EditorWorkspace::Debugger()
 {
 	Brood::Application::WorkSpace::Debugger();
+
+	m_board.Debugger();
 }
 
 /// 

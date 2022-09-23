@@ -72,6 +72,12 @@ public:
 	// function to update the path iterator
 	void UpdatePathptr( Brood::Application::Components::Path* a_playerNewPathPtr );
 
+	// setter funciton to set the player's x-size
+	void SetPlayerSizeX(float a_sizeX);
+
+	// setter funciton to set the player's y-size
+	void SetPlayerSizeY( float a_sizeY );
+
 	// setter funciton to set the player's x-offset
 	void SetPositionOffsetX( float a_positionOffsetX );
 
@@ -82,7 +88,10 @@ public:
 	const Brood::Application::Components::Path* GetCurrPathPtr() const;
 
 	// getter funciton to get a reference to the player body
-	const sf::RectangleShape& GetPlayerBody() const;
+	sf::RectangleShape& GetPlayerBody();
+
+	// getter funciton to get a reference to the player sprite body
+	Brood::SpriteHandler& GetPlayerSpriteBody();
 
 	// draw to screen
 	void Draw( sf::RenderWindow& a_window );
@@ -97,6 +106,8 @@ private:
 	
 	// player body
 	sf::RectangleShape m_playerBody; 
+
+	Brood::SpriteHandler m_spriteBody;
 
 	// holds the x-offset relative to the tile's x position
 	unsigned m_positionOffsetX;

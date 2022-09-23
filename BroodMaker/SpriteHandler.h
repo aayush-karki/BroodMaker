@@ -65,8 +65,15 @@ public:
 
 	// default constructor
 	SpriteHandler(sf::RectangleShape* a_body );
+
 	// default destructor
 	virtual ~SpriteHandler();
+
+	// copy constructor
+	SpriteHandler(const SpriteHandler& a_otherSpriteHandler);
+
+	// assignment operator
+	SpriteHandler& operator=( const SpriteHandler& a_otherSpriteHandler );
 
 	// setter function
 	void SetSpriteLength( float a_spriteLength ); // sets sprite length

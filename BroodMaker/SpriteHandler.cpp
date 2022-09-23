@@ -40,6 +40,47 @@ Brood::SpriteHandler::SpriteHandler( sf::RectangleShape* a_body ) :
 Brood::SpriteHandler::~SpriteHandler()
 {}
 
+/// 
+/// @public
+/// @brief Copy Constructor
+///	
+/// 
+/// @param a_otherSpriteHandler reference to the the other sprite handler
+///		object that is being copied from 
+///
+Brood::SpriteHandler::SpriteHandler( const SpriteHandler & a_otherSpriteHandler )
+{
+	this->m_body = a_otherSpriteHandler.m_body;
+	this->m_texture = a_otherSpriteHandler.m_texture;
+	this->m_spriteLength = a_otherSpriteHandler.m_spriteLength;
+	this->m_spriteHeight = a_otherSpriteHandler.m_spriteHeight;
+	this->m_currSpriteIndex = a_otherSpriteHandler.m_currSpriteIndex;
+}
+
+/// 
+/// @public
+/// @brief  assignment operator
+/// 
+/// @param a_otherSpriteHandler reference to the the other sprite handler
+///		object that is being copied from 
+///
+Brood::SpriteHandler& Brood::SpriteHandler::operator=( const Brood::SpriteHandler& a_otherSpriteHandler )
+{
+	// checking for self assignment
+	if( this == &a_otherSpriteHandler )
+	{
+		return *this;
+	}
+
+	this->m_body = a_otherSpriteHandler.m_body;
+	this->m_texture = a_otherSpriteHandler.m_texture;
+	this->m_spriteLength = a_otherSpriteHandler.m_spriteLength;
+	this->m_spriteHeight = a_otherSpriteHandler.m_spriteHeight;
+	this->m_currSpriteIndex = a_otherSpriteHandler.m_currSpriteIndex;
+
+	return *this;
+}
+
 
 /// 
 /// @public

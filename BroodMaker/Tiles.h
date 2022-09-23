@@ -65,10 +65,7 @@ public:
 	~Tiles();
 
 	// copy constructor
-	Tiles( const Tiles& a_other );
-
-	// assignmnet operator
-	Tiles& operator=(const Tiles& a_other);
+	Tiles( const Tiles& a_otherTile);
 	
 	/// @todo add copy constructor and assignment
 

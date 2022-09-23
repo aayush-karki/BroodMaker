@@ -34,7 +34,7 @@ Brood::Application::Components::Player::Player( Brood::Application::Components::
 												unsigned a_positionOffsetX,
 												unsigned a_positionOffsetY ) :
 	m_playerCurrPathPtr( a_pathPtr ), m_positionOffsetX( a_positionOffsetX ),
-	m_positionOffsetY( a_positionOffsetY )
+	m_positionOffsetY( a_positionOffsetY ), m_spriteBody( &m_playerBody )
 {
 	// initializing the player body
 	this->m_playerBody.setFillColor( sf::Color::White );
@@ -68,14 +68,15 @@ Brood::Application::Components::Player::~Player()
 /// @param a_otherPlayer reference to the the other player object that
 ///		is being copied from 
 ///
-Brood::Application::Components::Player::Player( const Player& a_otherPlayer )
+Brood::Application::Components::Player::Player( const Player& a_otherPlayer ) :
+	Player()
 {
 	this->m_playerBody = a_otherPlayer.m_playerBody;
 	this->m_positionOffsetX = a_otherPlayer.m_positionOffsetX;
 	this->m_positionOffsetY = a_otherPlayer.m_positionOffsetY;
 	this->m_playerCurrPathPtr = a_otherPlayer.m_playerCurrPathPtr;
+	this->m_spriteBody = a_otherPlayer.m_spriteBody;
 }
-
 
 /// 
 /// @public
@@ -86,10 +87,18 @@ Brood::Application::Components::Player::Player( const Player& a_otherPlayer )
 ///
 Brood::Application::Components::Player& Brood::Application::Components::Player::operator=( const Player& a_otherPlayer )
 {
+	// chekecking for self assignment 
+		// checking for self assignment
+	if( this == &a_otherPlayer )
+	{
+		return *this;
+	}
+
 	this->m_playerBody = a_otherPlayer.m_playerBody;
 	this->m_positionOffsetX = a_otherPlayer.m_positionOffsetX;
 	this->m_positionOffsetY = a_otherPlayer.m_positionOffsetY;
 	this->m_playerCurrPathPtr = a_otherPlayer.m_playerCurrPathPtr;
+	this->m_spriteBody = a_otherPlayer.m_spriteBody;
 
 	return *this;
 }
@@ -115,12 +124,38 @@ void Brood::Application::Components::Player::UpdatePathptr( Brood::Application::
 
 	// checking if the passed path is not null ptr then update the path's position
 	if( a_playerNewPathPtr != nullptr )
-	if( a_playerNewPathPtr != nullptr )
-	{
-		// updating the position
-		UpdatePosition();
-	}
+		if( a_playerNewPathPtr != nullptr )
+		{
+			// updating the position
+			UpdatePosition();
+		}
 }
+
+/// 
+/// @public
+/// @brief Setter funciton to set the x-size 
+/// 
+/// The offset is relative to the tile the player is currently on.
+///		It also updates the players position
+/// 
+/// @param a_sizeX player's x size 
+/// 
+void Brood::Application::Components::Player::SetPlayerSizeX( float a_sizeX )
+{
+	m_playerBody.setSize( { a_sizeX, m_playerBody.getSize().y } );
+}
+
+/// 
+/// @public
+/// @brief Setter funciton to set the x-size 
+/// 
+/// The offset is relative to the tile the player is currently on.
+///		It also updates the players position
+/// 
+/// @param a_sizeX player's x size 
+/// 
+void Brood::Application::Components::Player::SetPlayerSizeY( float a_sizeY )
+{}
 
 /// 
 /// @public
@@ -159,8 +194,6 @@ void Brood::Application::Components::Player::SetPositionOffsetY( float a_positio
 /// @brief Getter function to get the pointer to the tile
 ///		that the player is currently on
 /// 
-/// It also updates the position of the player body
-///			
 /// @return pointer to the tile that the player is currently on
 /// 
 const Brood::Application::Components::Path* Brood::Application::Components::Player::GetCurrPathPtr() const
@@ -168,19 +201,30 @@ const Brood::Application::Components::Path* Brood::Application::Components::Play
 	return m_playerCurrPathPtr;
 }
 
+
 /// 
 /// @public
 /// @brief Getter function to get a reference to player body
 /// 
-/// It also updates the position of the player body
 ///			
 /// @return  a reference to player body
 /// 
-const sf::RectangleShape& Brood::Application::Components::Player::GetPlayerBody() const
+sf::RectangleShape& Brood::Application::Components::Player::GetPlayerBody()
 {
 	return m_playerBody;
 }
 
+/// 
+/// @public
+/// @brief Getter function to get a reference to the player sprite body
+/// 
+///			
+/// @return  a reference to player body
+/// 
+Brood::SpriteHandler& Brood::Application::Components::Player::GetPlayerSpriteBody()
+{
+	return m_spriteBody;
+}
 
 /// 
 /// @public

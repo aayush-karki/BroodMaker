@@ -100,6 +100,9 @@ public:
 	// getter function to get the board position
 	const sf::Vector2f GetBoardPos() const;
 
+	// getter function to get the board path list
+	const std::vector<std::vector<Path*>>& GetBoardPathList() const;
+
 	void Debugger(); // debugger
 
 	//Brood::Dice& GetDice(); 

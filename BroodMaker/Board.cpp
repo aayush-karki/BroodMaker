@@ -263,6 +263,17 @@ const sf::Vector2f Brood::Application::Components::Board::GetBoardPos() const
 
 /// 
 /// @public
+/// @brief Getter funciton to get the board path list by reference
+/// 
+/// @returns  board path list by reference
+///
+const std::vector<std::vector<Brood::Application::Components::Path*>>& Brood::Application::Components::Board::GetBoardPathList() const
+{
+	return m_boardPaths;
+}
+
+/// 
+/// @public
 /// @virtual
 /// @brief Draw funciton
 /// 

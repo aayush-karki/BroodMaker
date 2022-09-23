@@ -102,7 +102,8 @@ public:
 	// Dynamically createss a dropdown input Panel Element. 
 	//		It has 2 UI element and its layout is 
 	//		<textBox prompt> <dropdown input> 
-	void DyCreateDropdownInputPannelElement( Brood::BroodUI::TextBox** a_txtPromptPtr,
+	void DyCreateDropdownInputPannelElement( sf::RectangleShape* a_panelBodyPtr,
+											 Brood::BroodUI::TextBox** a_txtPromptPtr,
 											 Brood::BroodUI::DropDownInput** a_ddiPtr,
 											 std::string a_promptToDisplay,
 											 std::vector<std::string> a_itemsToAdd,
@@ -112,7 +113,8 @@ public:
 	// Dynamically createss a Panel Element. 
 	//		It has 4 UI element and its layout is 
 	//		<textBox prompt> <button '<'> <textbox value> <button '>'> 
-	void DyCreateDecIncPannelElement( Brood::BroodUI::TextBox** a_txtPromptPtr,
+	void DyCreateDecIncPannelElement( sf::RectangleShape* a_panelBodyPtr,
+									  Brood::BroodUI::TextBox** a_txtPromptPtr,
 									  Brood::BroodUI::Button** a_btnDecPtr,
 									  Brood::BroodUI::TextBox** a_txtValuePtr,
 									  Brood::BroodUI::Button** a_btnIncPtr,

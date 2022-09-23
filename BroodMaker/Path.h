@@ -70,7 +70,10 @@ public:
 	// Getter funciton to get the pointer to the tile
 	Brood::Application::Components::Tiles* GetTile();
 
-	bool DeletePlayerFromList( Brood::Application::Components::Player* a_playerPtr);
+	// setter funciton to set the pointer to the tile
+	void SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr );
+
+	bool DeletePlayerFromList( Brood::Application::Components::Player* a_playerPtr );
 
 	// draws the tile
 	void Draw( sf::RenderWindow& a_window );

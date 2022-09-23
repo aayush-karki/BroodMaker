@@ -28,7 +28,8 @@
 ///		contains the start row and column number inside it
 /// 
 Brood::Application::Components::PlayerManager::PlayerManager() :
-	m_currActivePlayerIdx( -1 ), m_maxPlayer( 0 ), m_minPlayer( 0 )
+	m_currActivePlayerIdx( -1 ), m_maxPlayer( 0 ), m_minPlayer( 0 ),
+	m_startPathPtr(nullptr)
 {}
 
 /// 
@@ -89,7 +90,7 @@ Brood::Application::Components::PlayerManager& Brood::Application::Components::P
 /// 
 /// @return maximum number of player
 ///
-unsigned Brood::Application::Components::PlayerManager::GetMaxPlayer()
+const unsigned Brood::Application::Components::PlayerManager::GetMaxPlayer() const
 {
 	return m_maxPlayer;
 }
@@ -100,7 +101,7 @@ unsigned Brood::Application::Components::PlayerManager::GetMaxPlayer()
 /// 
 /// @return minimum number of player
 ///
-unsigned Brood::Application::Components::PlayerManager::GetMinPlayer()
+const unsigned Brood::Application::Components::PlayerManager::GetMinPlayer() const
 {
 	return m_minPlayer;
 }
@@ -111,9 +112,21 @@ unsigned Brood::Application::Components::PlayerManager::GetMinPlayer()
 /// 
 /// @return maximum number of player
 ///
-unsigned Brood::Application::Components::PlayerManager::GetCurrActivePlayerIdx()
+const unsigned Brood::Application::Components::PlayerManager::GetCurrActivePlayerIdx()const 
 {
 	return m_currActivePlayerIdx;
+}
+
+///  
+/// @public
+/// 
+/// @brief Getter function to get the start row of player 
+/// 
+/// @return start row for the players
+/// 
+const Brood::Application::Components::Path* Brood::Application::Components::PlayerManager::GetPlayerStartPath() const
+{
+	return m_startPathPtr;
 }
 
 ///  
@@ -143,7 +156,7 @@ std::vector<Brood::Application::Components::Player*>::iterator Brood::Applicatio
 /// 
 /// @brief Setter function to set the maximum number of player
 /// 
-/// @param maximum number of player
+/// @param a_maxPlayer  maximum number of player
 /// 
 void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_maxPlayer )
 {
@@ -157,7 +170,7 @@ void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_max
 /// 
 /// @brief Setter function to set the minimum number of player
 /// 
-/// @param minimum number of player
+/// @param a_minPlayer minimum number of player
 /// 
 void Brood::Application::Components::PlayerManager::SetMinPlayer( unsigned a_minPlayer )
 {
@@ -176,12 +189,24 @@ void Brood::Application::Components::PlayerManager::SetCurrActivePlayerIdx( unsi
 	m_currActivePlayerIdx = m_currActivePlayerIdx;
 }
 
+///  
+/// @public
+/// 
+/// @brief Setter function to set the start path for new additional player
+/// 
+/// @param a_startPathPtr pointer to the start path for the player
+/// 
+void Brood::Application::Components::PlayerManager::SetPlayerStartPath( Brood::Application::Components::Path* a_startPathPtr )
+{
+	m_startPathPtr = a_startPathPtr;
+}
+
 /// 
 /// @public
 /// 
 /// @brief Setter function to set the path for current active player
 /// 
-/// @param a_pathPtr pointer
+/// @param a_pathPtr pointer to the path the current active player is currently on
 /// 
 void Brood::Application::Components::PlayerManager::SetPathForPlayerAtCurrIdx( Brood::Application::Components::Path* a_pathPtr )
 {

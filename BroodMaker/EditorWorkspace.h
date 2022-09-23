@@ -99,6 +99,9 @@ private:
 	///> list of editor workspace
 	std::vector<Brood::Application::WorkSpace*> m_editorWorkspaceList;
 
+	///> panel body
+	sf::RectangleShape m_sidePanel;
+
 };
 
 // ======================================================================

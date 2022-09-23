@@ -259,6 +259,7 @@ Brood::BroodUI::DropDownInput* Brood::Application::WorkSpace::DyCreateDropDownIn
 ///		Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
 /// 
 /// 
+/// @param a_panelBodyPtr pointer to panel body.
 /// @param a_txtPromptPtr pointer to textbox pointer where the dynamically
 ///		 created textbox to display the prompt is stored
 /// @param a_ddiPtr pointer to drop down input pointer where the dynamically
@@ -270,7 +271,8 @@ Brood::BroodUI::DropDownInput* Brood::Application::WorkSpace::DyCreateDropDownIn
 /// @param a_createFromTop is true if the created element should be positioned 
 ///		second element form the top -> default false
 /// 
-void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( Brood::BroodUI::TextBox** a_txtPromptPtr,
+void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( sf::RectangleShape* a_panelBodyPtr, 
+																		Brood::BroodUI::TextBox** a_txtPromptPtr,
 																		Brood::BroodUI::DropDownInput** a_ddiPtr,
 																		std::string a_promptToDisplay,
 																		std::vector<std::string> a_itemsToAdd,
@@ -279,9 +281,10 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( Brood::B
 {
 	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
 
-	float lastPanelElementSizeX = ( windowWidth * Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage ) / 100;
+	float panelSizeX = a_panelBodyPtr->getSize().x;
 	float lastPanelElementSizeY = m_unNamedUIList.back()->GetBodySize().y;
-	float lastPanelElementPosX = windowWidth - lastPanelElementSizeX;
+	
+	float panelPosX = a_panelBodyPtr->getPosition().x;
 	float lastPanelElementPosY = m_unNamedUIList.back()->GetBodyPosition().y;
 	// getting the color
 	sf::Color panelColor;
@@ -305,15 +308,15 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( Brood::B
 	}
 
 	// creating a text box for displaying the promt
-	*a_txtPromptPtr = DyCreateTextBox( lastPanelElementSizeX / 2.f, 25,
-									   lastPanelElementPosX, lastPanelElementPosY + lastPanelElementSizeY,
+	*a_txtPromptPtr = DyCreateTextBox( panelSizeX / 2.f, 25,
+									   panelPosX, lastPanelElementPosY + lastPanelElementSizeY,
 									   a_promptToDisplay, false, panelColor );
 	// setitng the font
 	( *a_txtPromptPtr )->SetFontSize( 15 );
 
 	// creating a dropdown input
-	*a_ddiPtr = DyCreateDropDownInput( { lastPanelElementSizeX / 2.f, 25 },
-									   { lastPanelElementPosX + ( lastPanelElementSizeX / 2.f ), lastPanelElementPosY + lastPanelElementSizeY },
+	*a_ddiPtr = DyCreateDropDownInput( { panelSizeX / 2.f, 25 },
+									   { panelPosX + ( panelSizeX / 2.f ), lastPanelElementPosY + lastPanelElementSizeY },
 									   panelColor );
 
 	// setitng the font
@@ -356,6 +359,7 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( Brood::B
 ///		and 
 ///		Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
 /// 
+/// @param a_panelBodyPtr pointer to panel body.
 /// @param a_txtPromptPtr pointer to textbox pointer where the dynamically
 ///		 created textbox to display the prompt is stored
 /// @param a_btnDecPtr pointer to button pointer where the dynamically
@@ -369,7 +373,8 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( Brood::B
 /// @param a_createFromTop is true if the created element should be positioned 
 ///		second element form the top
 /// 
-void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( Brood::BroodUI::TextBox** a_txtPromptPtr,
+void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( sf::RectangleShape* a_panelBodyPtr,
+																 Brood::BroodUI::TextBox** a_txtPromptPtr,
 																 Brood::BroodUI::Button** a_btnDecPtr,
 																 Brood::BroodUI::TextBox** a_txtValuePtr,
 																 Brood::BroodUI::Button** a_btnIncPtr,
@@ -377,11 +382,9 @@ void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( Brood::BroodUI:
 																 std::string a_valueToDisplay,
 																 bool a_createFromTop )
 {
-	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
-
-	float lastPanelElementSizeX = ( windowWidth * Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage ) / 100;
+	float panelSizeX = a_panelBodyPtr->getSize().x;
 	float lastPanelElementSizeY = m_unNamedUIList.back()->GetBodySize().y;
-	float lastPanelElementPosX = windowWidth - lastPanelElementSizeX;
+	float panelPosX = a_panelBodyPtr->getPosition().x;
 	float lastPanelElementPosY = m_unNamedUIList.back()->GetBodyPosition().y;
 	// getting the color
 	sf::Color panelColor;
@@ -402,35 +405,37 @@ void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( Brood::BroodUI:
 	if( a_createFromTop )
 	{
 		lastPanelElementPosY = m_unNamedUIList.front()->GetBodyPosition().y;
+		lastPanelElementSizeY = m_unNamedUIList.front()->GetBodySize().y;
+
 		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
 	}
 
 	// creating a text box for displaying the promt
-	*a_txtPromptPtr = DyCreateTextBox( lastPanelElementSizeX / 2.f, 25,
-									   lastPanelElementPosX, lastPanelElementPosY + lastPanelElementSizeY,
+	*a_txtPromptPtr = DyCreateTextBox( panelSizeX / 2.f, 25,
+									   panelPosX, lastPanelElementPosY + lastPanelElementSizeY,
 									   a_promptToDisplay, false, panelColor );
 	// setitng the font
 	( *a_txtPromptPtr )->SetFontSize( 15 );
 
 
 	// creating a butotn for decreasing the value
-	*a_btnDecPtr = DyCreateButton( { lastPanelElementSizeX / 10.f, 25 },
-								   { lastPanelElementPosX + lastPanelElementSizeX / 2.f, lastPanelElementPosY + lastPanelElementSizeY },
+	*a_btnDecPtr = DyCreateButton( { panelSizeX / 10.f, 25 },
+								   { panelPosX + panelSizeX / 2.f, lastPanelElementPosY + lastPanelElementSizeY },
 								   "<", panelColor );
 	// setitng the font
 	( *a_btnDecPtr )->SetFontSize( 15 );
 
 
 	// creating a text box for displaying the current value
-	*a_txtValuePtr = DyCreateTextBox( { ( lastPanelElementSizeX * 3 ) / 10, 25 },
-									  { lastPanelElementPosX + ( ( lastPanelElementSizeX * 3 ) / 5 ), lastPanelElementPosY + lastPanelElementSizeY },
+	*a_txtValuePtr = DyCreateTextBox( { ( panelSizeX * 3 ) / 10, 25 },
+									  { panelPosX + ( ( panelSizeX * 3 ) / 5 ), lastPanelElementPosY + lastPanelElementSizeY },
 									  a_valueToDisplay, false, panelColor );
 	// setitng the font
 	( *a_txtValuePtr )->SetFontSize( 15 );
 
 	// creating a butotn for increasing the value
-	*a_btnIncPtr = DyCreateButton( { lastPanelElementSizeX / 10.f, 25 },
-								   { lastPanelElementPosX + ( ( lastPanelElementSizeX * 9 ) / 10 ), lastPanelElementPosY + lastPanelElementSizeY },
+	*a_btnIncPtr = DyCreateButton( { panelSizeX / 10.f, 25 },
+								   { panelPosX + ( ( panelSizeX * 9 ) / 10 ), lastPanelElementPosY + lastPanelElementSizeY },
 								   ">", panelColor );
 	// setitng the font
 	( *a_btnIncPtr )->SetFontSize( 15 );

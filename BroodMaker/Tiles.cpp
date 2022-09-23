@@ -35,33 +35,6 @@ Brood::Application::Components::Tiles::~Tiles()
 
 /// 
 /// @public
-/// @brief Copy Constructor
-/// 
-/// @param a_other other tile object to copy from
-/// 
-Brood::Application::Components::Tiles::Tiles( const Brood::Application::Components::Tiles& a_other )
-{
-	UpdateTile( a_other.m_tileRowNum, m_tileColNum,
-					a_other.GetBodySize().x, a_other.GetBodySize().y,
-					a_other.GetBodyPosition().x, a_other.GetBodyPosition().y );
-}
-
-/// 
-/// @public
-/// @brief assignment operator
-/// 
-/// @param a_other other tile object to assign from
-/// 
-Brood::Application::Components::Tiles& Brood::Application::Components::Tiles::operator=( const Brood::Application::Components::Tiles& a_other )
-{
-	UpdateTile( a_other.m_tileRowNum, m_tileColNum,
-					a_other.GetBodySize().x, a_other.GetBodySize().y,
-					a_other.GetBodyPosition().x, a_other.GetBodyPosition().y );
-	return *this;
-}
-
-/// 
-/// @public
 /// @brief  Getter Function to get the postion of the tile 
 ///			relative to the board's column and row
 /// 

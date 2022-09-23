@@ -34,7 +34,9 @@ Brood::Application::Components::Path::Path( Brood::Application::Components::Tile
 /// @brief destuctor
 /// 
 Brood::Application::Components::Path::~Path()
-{}
+{
+	delete m_tilePtr;
+}
 
 ///
 /// @public 
@@ -45,7 +47,8 @@ Brood::Application::Components::Path::~Path()
 /// 
 Brood::Application::Components::Path::Path( const Path& otherPath )
 {
-	this->m_tilePtr = otherPath.m_tilePtr;
+	delete m_tilePtr;
+	this->m_tilePtr = new  Brood::Application::Components::Tiles();
 }
 
 ///
@@ -77,6 +80,17 @@ Brood::Application::Components::Path& Brood::Application::Components::Path::oper
 Brood::Application::Components::Tiles* Brood::Application::Components::Path::GetTile()
 {
 	return m_tilePtr;
+}
+
+/// 
+/// @public
+/// @brief Setter funciton to set the pointer to the tile
+/// 
+/// @param a_tilePtr pointer to the tile
+/// 
+void Brood::Application::Components::Path::SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr )
+{
+	m_tilePtr = a_tilePtr;
 }
 
 /// 

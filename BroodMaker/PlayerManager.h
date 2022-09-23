@@ -65,12 +65,16 @@ public:
 	// =========== getter function ===========
 
 	// getter funciton to get the maximum player 
-	unsigned GetMaxPlayer();
+	const unsigned GetMaxPlayer() const;
 
 	// getter funciton to get the minimum player 
-	unsigned GetMinPlayer();
+	const unsigned GetMinPlayer() const;
 
-	unsigned GetCurrActivePlayerIdx();
+	// Getter function to Get the curr Active Player
+	const unsigned GetCurrActivePlayerIdx() const;
+
+	// Getter funciton to Get the start path for new additional player
+	const Brood::Application::Components::Path* GetPlayerStartPath() const;
 
 	// getter funciton to get the Iterator to the start of allplayer vector
 	std::vector<Brood::Application::Components::Player*>::iterator GetAllPlayerBegin();
@@ -89,8 +93,11 @@ public:
 	// setter function to set the curr Active Player
 	void SetCurrActivePlayerIdx( unsigned a_currActivePlayerIdx );
 
+	// setter funciton to set the start path for new additional player
+	void SetPlayerStartPath( Brood::Application::Components::Path* a_startPathPtr );
+
 	// sets the path for the current active player
-	void SetPathForPlayerAtCurrIdx(Brood::Application::Components::Path* a_pathPtr);
+	void SetPathForPlayerAtCurrIdx( Brood::Application::Components::Path* a_pathPtr );
 
 	// Get the current active player
 	Brood::Application::Components::Player* GetPlayerAtCurrIdx();
@@ -121,6 +128,11 @@ private:
 
 	// minimum number of player
 	unsigned m_minPlayer;
+
+	// stores the pointer to the path at which the players
+	// are going to start
+	// this is going to be used to create any new player
+	Brood::Application::Components::Path* m_startPathPtr;
 };
 
 // ======================================================================

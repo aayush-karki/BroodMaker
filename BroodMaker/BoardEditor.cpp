@@ -23,8 +23,10 @@
 /// @public
 /// @brief default constructor
 /// 
-Brood::Application::BoardEditor::BoardEditor( Brood::Application::Components::Board* a_boardPtr ) :
-	m_boardPtr( a_boardPtr ), m_playerManager()
+Brood::Application::BoardEditor::BoardEditor( Brood::Application::Components::Board* a_boardPtr,
+											  sf::RectangleShape* a_panelPtr ) :
+	m_boardPtr( a_boardPtr ), m_playerManager(), m_drawCurretntActivePlayer( false ),
+	m_panelBodyPtr( a_panelPtr ), m_selectedSettingIdx( 1 )
 {
 	InitializeWorkSpace();
 }
@@ -47,8 +49,8 @@ Brood::Application::BoardEditor::~BoardEditor()
 //
 void Brood::Application::BoardEditor::InitializeWorkSpace()
 {
-	// initializing the board 
-	m_boardPtr->InitializeBoard( 1, 1, 500, 500, 50, 200 );
+	// setting up the player manager
+	m_playerManager.SetPlayerStartPath( m_boardPtr->GetBoardPathList().at( 0 ).at( 0 ) );
 
 	// Initializing the setting Section dropdown input
 	InitailizeSettingSelectionDDI();
@@ -61,9 +63,29 @@ void Brood::Application::BoardEditor::InitializeWorkSpace()
 	// ======= Initializing the elements in the  General board setting =======
 	// =======================================================================
 
-	DyCreateDecIncPannelElement( &m_txtPlayerMinNumPrompt, &m_btnPlayerDecMinNum,
-								 &m_txtPlayerMinNuml, &m_btnPlayerIncMinNum,
-								 "Minimum number of Players", std::to_string( ( int )m_boardPtr->GetNumCol() ) );
+	// initializing the UI to control Start row for new player
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerStartRowPrompt, &m_btnPlayerDecStartRowNum,
+								 &m_txtPlayerStartRowNum, &m_btnPlayerIncStartRowNum,
+								 "Start Row",
+								 std::to_string( 0 ), true );
+
+	// initializing the UI to control Start column for new player
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerStartColPrompt, &m_btnPlayerDecStartColNum,
+								 &m_txtPlayerStartColNum, &m_btnPlayerIncStartColNum,
+								 "Start Column",
+								 std::to_string( 0 ) );
+
+	// initializing the UI to control minimum number of player
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerMinNumPrompt, &m_btnPlayerDecMinNum,
+								 &m_txtPlayerMinNum, &m_btnPlayerIncMinNum,
+								 "Minimum Players",
+								 std::to_string( ( int )m_playerManager.GetMinPlayer() ) );
+
+	// initializing the UI to control maximum number of player
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerMaxNumPrompt, &m_btnPlayerDecMaxnNum,
+								 &m_txtPlayerMaxNum, &m_btnPlayerIncMaxNum,
+								 "Maximum Players",
+								 std::to_string( ( int )m_playerManager.GetMaxPlayer() ) );
 
 }
 
@@ -80,6 +102,7 @@ void Brood::Application::BoardEditor::Update()
 	//	Drop down input was pressed
 	UpdateSettingSelectionDDI();
 
+	// if the General board setting is selected
 	if( m_selectedSettingIdx == 0 )
 	{
 		// checking to see if the Xpos panel Element was pressed
@@ -106,6 +129,15 @@ void Brood::Application::BoardEditor::Update()
 		// checking to see if the incorrect penalty panel Element was pressed
 		UpdateIncorrectPenaltyPanelElement();
 	}
+	// if the player setting is selected
+	else if( m_selectedSettingIdx == 1 )
+	{
+		// checking to see if the minimum Player number panel Element was pressed
+		UpdateMinimumPlayerNumber();
+
+		// checking to see if the maximum Player number panel Element was pressed
+		UpdateMaximumPlayerNumber();
+	}
 }
 
 /// 
@@ -129,6 +161,12 @@ void Brood::Application::BoardEditor::Draw( sf::RenderWindow& a_window )
 	//	++currrevIte;
 	//}
 
+	if( m_drawCurretntActivePlayer )
+	{
+		m_playerManager.GetPlayerAtCurrIdx()->Draw( a_window );
+	}
+
+	// if the General Board setting is selected
 	if( m_selectedSettingIdx == 0 )
 	{
 		// Drawing the incorrect penalty panel Elements
@@ -174,8 +212,35 @@ void Brood::Application::BoardEditor::Draw( sf::RenderWindow& a_window )
 		m_txtBoardPosX->Draw( a_window );
 		m_btnBoardPosDecX->Draw( a_window );
 		m_txtBoardPosPromtX->Draw( a_window );
-
 	}
+	// if the player setting is selected
+	else if( m_selectedSettingIdx == 1 )
+	{
+		// Drawing the maximum Player number panel Elements
+		m_btnPlayerIncMaxNum->Draw( a_window );
+		m_txtPlayerMaxNum->Draw( a_window );
+		m_btnPlayerDecMaxnNum->Draw( a_window );
+		m_txtPlayerMaxNumPrompt->Draw( a_window );
+
+		// Drawing the minimum Player number panel Elements
+		m_btnPlayerIncMinNum->Draw( a_window );
+		m_txtPlayerMinNum->Draw( a_window );
+		m_btnPlayerDecMinNum->Draw( a_window );
+		m_txtPlayerMinNumPrompt->Draw( a_window );
+
+		// Drawing the Start column number panel Elements
+		m_btnPlayerIncStartColNum->Draw( a_window );
+		m_txtPlayerStartColNum->Draw( a_window );
+		m_btnPlayerDecStartColNum->Draw( a_window );
+		m_txtPlayerStartColPrompt->Draw( a_window );
+
+		// Drawing the Start row number panel Elements
+		m_btnPlayerIncStartRowNum->Draw( a_window );
+		m_txtPlayerStartRowNum->Draw( a_window );
+		m_btnPlayerDecStartRowNum->Draw( a_window );
+		m_txtPlayerStartRowPrompt->Draw( a_window );
+	}
+
 	// Drawing the setting selection drop down input
 	m_ddiSettingSelection->Draw( a_window );
 }
@@ -191,8 +256,41 @@ void Brood::Application::BoardEditor::Debugger()
 {
 	// base class calls the unnamedUIList 
 	Brood::Application::WorkSpace::Debugger();
+}
 
-	m_boardPtr->Debugger();
+/// 
+/// @private
+/// @brief Initializes the  setting Section dropdown input which is
+///		at the top of the setting pannel
+/// 
+/// It has the 3 settings : Board Settings, Player Settings, and Dice Settings
+/// 
+void Brood::Application::BoardEditor::InitailizeSettingSelectionDDI()
+{
+	// initializing the setting selection DDI
+	float panelSizeX = m_panelBodyPtr->getSize().x;
+	float panelPosX = m_panelBodyPtr->getPosition().x;
+
+	m_ddiSettingSelection = DyCreateDropDownInput( { panelSizeX , 40 },
+												   { panelPosX, 50 },
+												   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
+
+	m_ddiSettingSelection->AddItemToMenu( "General Board Setting" );
+	m_ddiSettingSelection->AddItemToMenu( "Player Setting" );
+	m_ddiSettingSelection->AddItemToMenu( "Dice Setting" );
+
+	// setting the font size to 18
+	m_ddiSettingSelection->SetFontSize( 18 );
+
+	// setting the first item as the first 
+	std::string itemName = m_ddiSettingSelection->GetItemList().at( m_selectedSettingIdx )->GetText();
+
+	while( itemName.size() < 39 )
+	{
+		itemName = " " + itemName + " ";
+	}
+
+	m_ddiSettingSelection->SetText( itemName + " v" );
 }
 
 /// 
@@ -206,84 +304,48 @@ void Brood::Application::BoardEditor::Debugger()
 void Brood::Application::BoardEditor::InitailizeGeneralBoardSettingPanel()
 {
 	// =======================================================================
-		// ======= Initializing the elements in the  General board setting =======
-		// =======================================================================
+	// ======= Initializing the elements in the  General board setting =======
+	// =======================================================================
 
-		// initializing the UI to control board's X position 
-	DyCreateDecIncPannelElement( &m_txtBoardPosPromtX, &m_btnBoardPosDecX,
+	// initializing the UI to control board's X position 
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardPosPromtX, &m_btnBoardPosDecX,
 								 &m_txtBoardPosX, &m_btnBoardPosIncX,
 								 "X-Position", std::to_string( ( int )m_boardPtr->GetBoardPos().x ),
 								 true );
 
 	// initializing the UI to control board's Y position 
-	DyCreateDecIncPannelElement( &m_txtBoardPosPromtY, &m_btnBoardPosDecY,
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardPosPromtY, &m_btnBoardPosDecY,
 								 &m_txtBoardPosY, &m_btnBoardPosIncY,
 								 "Y-Position", std::to_string( ( int )m_boardPtr->GetBoardPos().y ) );
 
 	// initializing the UI to control board's X size 
-	DyCreateDecIncPannelElement( &m_txtBoardSizePromtX, &m_btnBoardSizeDecX,
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardSizePromtX, &m_btnBoardSizeDecX,
 								 &m_txtBoardSizeX, &m_btnBoardSizeIncX,
 								 "X-Size", std::to_string( ( int )m_boardPtr->GetBoardSize().x ) );
 
 	// initializing the UI to control board's Y size 
-	DyCreateDecIncPannelElement( &m_txtBoardSizePromtY, &m_btnBoardSizeDecY,
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardSizePromtY, &m_btnBoardSizeDecY,
 								 &m_txtBoardSizeY, &m_btnBoardSizeIncY,
 								 "Y-Size", std::to_string( ( int )m_boardPtr->GetBoardSize().y ) );
 
 	// initializing the UI to control board's row
-	DyCreateDecIncPannelElement( &m_txtBoardRowPromt, &m_btnBoardDecRow,
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardRowPromt, &m_btnBoardDecRow,
 								 &m_txtBoardRow, &m_btnBoardIncRow,
 								 "Row Number", std::to_string( ( int )m_boardPtr->GetNumRow() ) );
 
 	// initializing the UI to control board's column
-	DyCreateDecIncPannelElement( &m_txtBoardColPromt, &m_btnBoardDecCol,
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardColPromt, &m_btnBoardDecCol,
 								 &m_txtBoardCol, &m_btnBoardIncCol,
 								 "Column Number", std::to_string( ( int )m_boardPtr->GetNumCol() ) );
 
 	// initializing the UI to set the movement type
-	DyCreateDropdownInputPannelElement( &m_txtMovementTypePromt, &m_ddiMovementType,
+	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtMovementTypePromt, &m_ddiMovementType,
 										"Movement Type: ",
 										{ "Star Dice then Card", "Dice Only", "Card Only" }, 19 );
 
 	// initializing the UI to set the incorrect penalty
-	DyCreateDropdownInputPannelElement( &m_txtIncorectPenaltyPromt, &m_ddiIncorectPenalty,
+	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtIncorectPenaltyPromt, &m_ddiIncorectPenalty,
 										"Incorrect Penalty: ", { "Yes", "No" }, 27 );
-}
-
-/// 
-/// @private
-/// @brief Initializes the  setting Section dropdown input which is
-///		at the top of the setting pannel
-/// 
-/// It has the 3 settings : Board Settings, Player Settings, and Dice Settings
-/// 
-void Brood::Application::BoardEditor::InitailizeSettingSelectionDDI()
-{
-	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
-
-
-	// initializing the setting selection DDI
-	float settingSelectionDDIWidth = ( windowWidth * Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage ) / 100;
-	m_ddiSettingSelection = DyCreateDropDownInput( { settingSelectionDDIWidth , 40 },
-												   { windowWidth - settingSelectionDDIWidth, 50 },
-												   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
-
-	m_ddiSettingSelection->AddItemToMenu( "General Board Setting" );
-	m_ddiSettingSelection->AddItemToMenu( "Player Setting" );
-	m_ddiSettingSelection->AddItemToMenu( "Dice Setting" );
-
-	// setting the font size to 18
-	m_ddiSettingSelection->SetFontSize( 18 );
-
-	// setting the first item as the first 
-	std::string itemName = m_ddiSettingSelection->GetItemList().at( 0 )->GetText();
-
-	while( itemName.size() < 39 )
-	{
-		itemName = " " + itemName + " ";
-	}
-
-	m_ddiSettingSelection->SetText( itemName + " v" );
 }
 
 /// 
@@ -352,7 +414,7 @@ void Brood::Application::BoardEditor::UpdateBoardXPosPanelElement()
 	// chekcing if the decrease the Board X postion was pressed
 	if( m_btnBoardPosDecX->DoElement() )
 	{
-		// getting position information
+		// getting x-position information
 		sf::Vector2f currentPos = m_boardPtr->GetBoardPos();
 		int currentPosX = currentPos.x;
 
@@ -371,7 +433,7 @@ void Brood::Application::BoardEditor::UpdateBoardXPosPanelElement()
 	// chekcing if the Increase the Board X postion was pressed
 	else if( m_btnBoardPosIncX->DoElement() )
 	{
-		// getting position information
+		// getting x-position information
 		sf::Vector2f currentPos = m_boardPtr->GetBoardPos();
 		int currentPosX = currentPos.x;
 
@@ -415,7 +477,7 @@ void Brood::Application::BoardEditor::UpdateBoardYPosPanelElement()
 	// chekcing if the decrease the Board Y postion was pressed
 	if( m_btnBoardPosDecY->DoElement() )
 	{
-		// getting position information
+		// getting y-position information
 		sf::Vector2f currentpos = m_boardPtr->GetBoardPos();
 		int currentPosY = currentpos.y;
 
@@ -434,7 +496,7 @@ void Brood::Application::BoardEditor::UpdateBoardYPosPanelElement()
 	// chekcing if the increase the Board Y postion was pressed
 	else if( m_btnBoardPosIncY->DoElement() )
 	{
-		// getting position information
+		// getting y-position information
 		sf::Vector2f currentpos = m_boardPtr->GetBoardPos();
 		int currentPosY = currentpos.y;
 
@@ -477,7 +539,7 @@ void Brood::Application::BoardEditor::UpdateBoardXSizePanelElement()
 	// chekcing if the decrease the Board X size was pressed
 	if( m_btnBoardSizeDecX->DoElement() )
 	{
-		// getting position information
+		// getting x-size information
 		sf::Vector2f currentSize = m_boardPtr->GetBoardSize();
 		int currentSizeX = currentSize.x;
 
@@ -496,7 +558,7 @@ void Brood::Application::BoardEditor::UpdateBoardXSizePanelElement()
 	// chekcing if the incresase the Board X size was pressed
 	else if( m_btnBoardSizeIncX->DoElement() )
 	{
-		// getting position information
+		// getting x-size information
 		sf::Vector2f currentSize = m_boardPtr->GetBoardSize();
 		int currentSizeX = currentSize.x;
 
@@ -540,7 +602,7 @@ void Brood::Application::BoardEditor::UpdateBoardYSizePanelElement()
 	// chekcing if the decrease the Board Y size was pressed
 	if( m_btnBoardSizeDecY->DoElement() )
 	{
-		// getting position information
+		// getting y-size information
 		sf::Vector2f currentSize = m_boardPtr->GetBoardSize();
 		int currentSizeY = currentSize.y;
 
@@ -559,7 +621,7 @@ void Brood::Application::BoardEditor::UpdateBoardYSizePanelElement()
 	// chekcing if the Increase the Board Y size was pressed
 	else if( m_btnBoardSizeIncY->DoElement() )
 	{
-		// getting position information
+		// getting y-size information
 		sf::Vector2f currentSize = m_boardPtr->GetBoardSize();
 		int currentSizeY = currentSize.y;
 
@@ -601,7 +663,7 @@ void Brood::Application::BoardEditor::UpdateBoardRowPanelElement()
 	// chekcing if the decrease the Board row was pressed
 	if( m_btnBoardDecRow->DoElement() )
 	{
-		// getting position information
+		// getting row information
 		unsigned currentRow = m_boardPtr->GetNumRow();
 
 		// chekcing if the current row num is 0 then do nothing
@@ -619,10 +681,10 @@ void Brood::Application::BoardEditor::UpdateBoardRowPanelElement()
 	// chekcing if the increase the Board row was pressed
 	else if( m_btnBoardIncRow->DoElement() )
 	{
-		// getting position information
+		// getting row information
 		unsigned currentRow = m_boardPtr->GetNumRow();
 
-		// chekcing if the current size.Y is 100 then do notthing
+		// chekcing if the current row is 100 then do notthing
 		if( currentRow > 100 )
 		{
 			return;
@@ -653,10 +715,10 @@ void Brood::Application::BoardEditor::UpdateBoardRowPanelElement()
 /// 
 void Brood::Application::BoardEditor::UpdateBoardColPanelElement()
 {
-	// chekcing if the decrease the Board row was pressed
+	// chekcing if the decrease the Board column was pressed
 	if( m_btnBoardDecCol->DoElement() )
 	{
-		// getting position information
+		// getting column informantion
 		unsigned currentCol = m_boardPtr->GetNumCol();
 
 		// chekcing if the current row num is 0 then do nothing
@@ -674,10 +736,10 @@ void Brood::Application::BoardEditor::UpdateBoardColPanelElement()
 	// chekcing if the increase the Board column was pressed
 	else if( m_btnBoardIncCol->DoElement() )
 	{
-		// getting position information
+		// getting column information
 		unsigned currentCol = m_boardPtr->GetNumCol();
 
-		// chekcing if the current size.Y is 100 then do notthing
+		// chekcing if the current column is 100 then do notthing
 		if( currentCol > 100 )
 		{
 			return;
@@ -806,6 +868,182 @@ void Brood::Application::BoardEditor::UpdateIncorrectPenaltyPanelElement()
 	}
 }
 
+/// 
+/// @private
+/// @brief checks if the user interacted with the start row panel
+///	
+/// Start row panel contains the start row number promt textbox, 
+///		start row number value text box, button to increase the
+///		start row number, and button to decrease the start row
+///		 number
+/// 
+/// Only the button to increase the start row number, and button 
+///		to decrease the start row number are interactable
+/// 
+/// If the interactable button was pressed then the start row
+///		is increased or decresed by 1. Start row number
+///		should be more than or equal to 0 but less than board 
+///		row number
+///
+void Brood::Application::BoardEditor::UpdateStartRowNumber()
+{
+
+	/// @todo  fix this 
+		//// chekcing if the decrease the start row number was pressed
+		//if( m_btnPlayerDecStartRowNum->DoElement() )
+		//{
+		//	// getting current minimum Player number
+		//	unsigned currentStartRowrNum = m_playerManager.GetPlayerStartPath()
+
+		//	// chekcing if the current currentMinPlayerNum is 0 then do nothing
+		//	if( currentMinPlayerNum == 0 )
+		//	{
+		//		return;
+		//	}
+
+		//	// decrease the minimum player number by 1 units
+		//	m_playerManager.SetMinPlayer( currentMinPlayerNum - 1 );
+
+		//	// updating the textbox showing the minimum player value
+		//	m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum - 1 ) );
+		//}
+		//// chekcing if the increase the minimum player number was pressed
+		//else if( m_btnPlayerIncStartRowNum->DoElement() )
+		//{
+		//	// getting position information
+		//	unsigned currentMinPlayerNum = m_playerManager.GetMinPlayer();
+
+		//	// chekcing if the current minimum player number is 
+		//	// equal to current maximum player number the do nothing
+		//	if( currentMinPlayerNum == m_playerManager.GetMaxPlayer() )
+		//	{
+		//		return;
+		//	}
+
+		//	// decrease the minimum player number by 1 units
+		//	m_playerManager.SetMinPlayer( currentMinPlayerNum + 1 );
+
+		//	// updating the textbox showing the minimum player value
+		//	m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum + 1 ) );
+		//}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the minumum player panel
+///	
+/// Minumum player panel contains minimum player number promt textbox, 
+///		minimum player number value text box, button to increase the
+///		minimum player number, and button to decrease the minimum 
+///		player number
+/// 
+/// Only the button to increase the minimum player number, and button 
+///		to decrease the minimum player number are interactable
+/// 
+/// If the interactable button was pressed then the minimum player
+///		number is increased or decresed by 1. Minimum player number
+///		 should be more than or equal to 0 but less than Maximum player
+///		 number
+///
+void Brood::Application::BoardEditor::UpdateMinimumPlayerNumber()
+{
+	// chekcing if the decrease the minimum player number was pressed
+	if( m_btnPlayerDecMinNum->DoElement() )
+	{
+		// getting current minimum Player number
+		unsigned currentMinPlayerNum = m_playerManager.GetMinPlayer();
+
+		// chekcing if the current currentMinPlayerNum is 0 then do nothing
+		if( currentMinPlayerNum == 0 )
+		{
+			return;
+		}
+
+		// decrease the minimum player number by 1 units
+		m_playerManager.SetMinPlayer( currentMinPlayerNum - 1 );
+
+		// updating the textbox showing the minimum player value
+		m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum - 1 ) );
+	}
+	// chekcing if the increase the minimum player number was pressed
+	else if( m_btnPlayerIncMinNum->DoElement() )
+	{
+		// getting position information
+		unsigned currentMinPlayerNum = m_playerManager.GetMinPlayer();
+
+		// chekcing if the current minimum player number is 
+		// equal to current maximum player number the do nothing
+		if( currentMinPlayerNum == m_playerManager.GetMaxPlayer() )
+		{
+			return;
+		}
+
+		// decrease the minimum player number by 1 units
+		m_playerManager.SetMinPlayer( currentMinPlayerNum + 1 );
+
+		// updating the textbox showing the minimum player value
+		m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum + 1 ) );
+	}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the maximum player panel
+///	
+/// Minumum player panel contains maximum player number promt textbox, 
+///		maximum player number value text box, button to increase the
+///		maximum player number, and button to decrease the maximum 
+///		player number
+/// 
+/// Only the button to increase the maximum player number, and button 
+///		to decrease the maximum player number are interactable
+/// 
+/// If the interactable button was pressed then the maximum player
+///		number is increased or decresed by 1. Maximum player number
+///		 should be more than or equal to minimum player number
+///		but less than 10
+///
+void Brood::Application::BoardEditor::UpdateMaximumPlayerNumber()
+{
+	// chekcing if the decrease the maximum player number was pressed
+	if( m_btnPlayerDecMaxnNum->DoElement() )
+	{
+		// getting current maximum Player number
+		unsigned currentMaxPlayerNum = m_playerManager.GetMaxPlayer();
+
+		// chekcing if the current currentMaxPlayerNum id 
+		// equal to currentMinPlayerNum then do nothing
+		if( currentMaxPlayerNum == m_playerManager.GetMinPlayer() )
+		{
+			return;
+		}
+
+		// decrease the maximum player number by 1 units
+		m_playerManager.SetMaxPlayer( currentMaxPlayerNum - 1 );
+
+		// updating the textbox showing the maximum player value
+		m_txtPlayerMaxNum->SetText( std::to_string( currentMaxPlayerNum - 1 ) );
+	}
+	// chekcing if the increase the maximum player number was pressed
+	else if( m_btnPlayerIncMaxNum->DoElement() )
+	{
+		// getting position information
+		unsigned currentMaxPlayerNum = m_playerManager.GetMaxPlayer();
+
+		// chekcing if the current currentMaxPlayerNum id 
+		// equal to 10 then do nothing
+		if( currentMaxPlayerNum == 10 )
+		{
+			return;
+		}
+
+		// decrease the maximum player number by 1 units
+		m_playerManager.SetMaxPlayer( currentMaxPlayerNum + 1 );
+
+		// updating the textbox showing the maximum player value
+		m_txtPlayerMaxNum->SetText( std::to_string( currentMaxPlayerNum + 1 ) );
+	}
+}
 
 // ======================================================================
 // ================= end of BoardEditor class ===========================
