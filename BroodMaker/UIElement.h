@@ -92,10 +92,11 @@ enum class Brood::BroodUI::ENUM_UIType
 ///		starting form bottom-right to left. This is because of how 
 ///		rendering works where things drawn last is always on top.
 /// 
-/// @TODO create a verticalmenus for ma UIElement. This could be used to
+/// @todo create a verticalmenus for ma UIElement. This could be used to
 ///		for Drop down menus. 
 /// @todo create a font class whose job is to load and save font and replace 
 ///		all the m_font to object of that file
+/// @todo Encapsulate the BroodUI better. 
 /// 
 class Brood::BroodUI::UIElement
 {
@@ -109,10 +110,10 @@ public:
 	virtual ~UIElement();
 
 	// copy constructor
-	UIElement( UIElement& a_otherElement );
+	UIElement( const UIElement& a_otherElement );
 
 	// assignment operator
-	Brood::BroodUI::UIElement& operator=( UIElement& a_otherElement );
+	Brood::BroodUI::UIElement& operator=( const UIElement& a_otherElement );
 
 	// ======= getter functions ========
 

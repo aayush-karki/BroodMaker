@@ -89,33 +89,44 @@ namespace Brood
 ///
 class Brood::BroodUI::Button : public Brood::BroodUI::UIElement
 {
-	/// @todo see if it is better to make button derived from button or from text box
-
 	// ============ public member function =============== 
 public:
 
 	// default constructor
 	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr,
 			Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_button);
+	
 	// default destructor
 	virtual ~Button(); 
 
-	// Getter funciton 
-	Brood::SpriteHandler& GetSpriteBody(); // gets the sprite body
+	//// copy constructor
+	//Button( Button& a_otherElement );
+
+	//// assignment operator
+	//Brood::BroodUI::Button& operator=( Button& a_otherButton );
+
+	// ========= Getter funciton ==============
+
+	// gets the sprite body
+	Brood::SpriteHandler& GetSpriteBody();
 	
-	// setter funcitfunctionon 
-	
+	// ========= Setter funciton ==============
+
 	// sets the state of the element.
 	void SetSelected( bool a_selected ); 
 
 
-	virtual bool DoElement() override; // checks to see if the logic for the element is to be excecuted or not 
+	// checks to see if the logic for the element is to be excecuted or not 
+	virtual bool DoElement() override; 
 	
-	virtual void Debugger(); // adds the element ID to the text
+	// adds the element ID to the text
+	virtual void Debugger(); 
 
 	// ============ private member variables =============== 
 private:
-	Brood::SpriteHandler m_bodySprite; ///> object to set texture
+
+	/// object to set texture
+	Brood::SpriteHandler m_bodySprite; 
 };
 
 // ======================================================================

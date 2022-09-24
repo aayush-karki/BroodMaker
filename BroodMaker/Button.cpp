@@ -43,6 +43,15 @@ Brood::BroodUI::Button::~Button()
 {}
 
 ///
+/// @brief Copy constructor
+/// 
+/// @param a_otherElement reference to the uiElement which is used to 
+///		copy the data form 
+/// 
+//Brood::BroodUI::Button::Button( Button & a_otherElement )
+//{}
+
+///
 /// @public
 /// @brief Getter function to get the sprite body
 /// 

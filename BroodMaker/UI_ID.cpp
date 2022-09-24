@@ -119,7 +119,7 @@ const  Brood::BroodUI::Id* Brood::BroodUI::Id::GetParentIDPtr() const
 /// 
 /// @brief Getter function to get the pointer to its parent
 /// 
-/// @return 
+/// @return  
 Brood::BroodUI::Id* Brood::BroodUI::Id::GetParentIDPtr()
 {
 	return m_parentIDPtr;

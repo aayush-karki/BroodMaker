@@ -96,10 +96,11 @@ Brood::BroodUI::UIElement::~UIElement()
 /// @param a_otherElement reference to the uiElement which is used to 
 ///		copy the data form 
 /// 
-Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::UIElement& a_otherElement ) :
-	Brood::BroodUI::UIElement( a_otherElement.m_elementType, a_otherElement.m_elementId.GetParentIDPtr() != nullptr?
-	Brood::BroodUI::MapIdToElement::GetElementPtrFromMap(a_otherElement.m_elementId.GetParentIDPtr()->GetElementID()): nullptr )
+Brood::BroodUI::UIElement::UIElement( const Brood::BroodUI::UIElement& a_otherElement ) :
+	Brood::BroodUI::UIElement( a_otherElement.m_elementType )
 {
+	m_elementId = a_otherElement.m_elementId;
+
 	this->m_body = a_otherElement.m_body;
 	this->m_bodyOverLay = a_otherElement.m_bodyOverLay;
 	this->m_hotOverlayColor = a_otherElement.m_hotOverlayColor;
@@ -122,7 +123,7 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::UIElement& a_otherElement 
 /// 
 /// @return pointer to this element
 /// 
-Brood::BroodUI::UIElement& Brood::BroodUI::UIElement::operator=( UIElement& a_otherElement )
+Brood::BroodUI::UIElement& Brood::BroodUI::UIElement::operator=( const UIElement& a_otherElement )
 {
 	// chekcing for self assignment
 	if( this == &a_otherElement )
@@ -131,6 +132,7 @@ Brood::BroodUI::UIElement& Brood::BroodUI::UIElement::operator=( UIElement& a_ot
 	}
 
 	this->m_elementType = a_otherElement.m_elementType;
+	m_elementId = a_otherElement.m_elementId;
 	this->m_body = a_otherElement.m_body;
 	this->m_bodyOverLay = a_otherElement.m_bodyOverLay;
 	this->m_hotOverlayColor = a_otherElement.m_hotOverlayColor;

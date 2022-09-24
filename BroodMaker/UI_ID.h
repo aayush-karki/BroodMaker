@@ -75,7 +75,7 @@ public:
 
 	// returns Parent Id Ptr
 	Brood::BroodUI::Id* GetParentIDPtr();
-	
+
 	// returns its id
 	const int GetElementID() const;
 	
