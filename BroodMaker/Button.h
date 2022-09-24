@@ -99,11 +99,11 @@ public:
 	// default destructor
 	virtual ~Button(); 
 
-	//// copy constructor
-	//Button( Button& a_otherElement );
+	// copy constructor
+	Button( Button& a_otherElement );
 
-	//// assignment operator
-	//Brood::BroodUI::Button& operator=( Button& a_otherButton );
+	// assignment operator
+	Brood::BroodUI::Button& operator=( Button& a_otherButton );
 
 	// ========= Getter funciton ==============
 

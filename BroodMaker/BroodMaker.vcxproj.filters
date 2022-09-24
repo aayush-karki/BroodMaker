@@ -138,7 +138,7 @@
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MapIdToElement.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\BroodUI\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +229,8 @@
     <ClInclude Include="PathLinkedList.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MapIdToElement.h" />
+    <ClInclude Include="MapIdToElement.h">
+      <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

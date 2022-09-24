@@ -48,8 +48,25 @@ Brood::BroodUI::Button::~Button()
 /// @param a_otherElement reference to the uiElement which is used to 
 ///		copy the data form 
 /// 
-//Brood::BroodUI::Button::Button( Button & a_otherElement )
-//{}
+Brood::BroodUI::Button::Button( Button& a_otherElement ) :
+	UIElement( a_otherElement ), m_bodySprite( a_otherElement.m_bodySprite )
+{}
+
+Brood::BroodUI::Button& Brood::BroodUI::Button::operator=( Button & a_otherButton )
+{
+	// chekcing for self assignment
+	if( this == &a_otherButton )
+	{
+		return *this;
+	}
+
+	// calling the assignment operator of the UIElement
+	Brood::BroodUI::UIElement::operator=(a_otherButton);
+
+	this->m_bodySprite = a_otherButton.m_bodySprite;
+
+	return *this;
+}
 
 ///
 /// @public
@@ -76,7 +93,7 @@ void Brood::BroodUI::Button::SetSelected( bool a_selected )
 {
 	m_isSelected = a_selected;
 
-	SetDrawOverlay( );
+	SetDrawOverlay();
 
 }
 

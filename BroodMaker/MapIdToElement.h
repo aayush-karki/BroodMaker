@@ -50,11 +50,21 @@ class Brood::BroodUI::MapIdToElement
 {
 	// ================= public member function ===================  
 public:
-	// Getter functions
+	// ====== Getter functions ======
+
+	// Gets a reference to the map
 	static std::map<const int, Brood::BroodUI::UIElement*>& GetMap();
+
+	// Gets a pointer to the UIELement from the map 
+	// using the passed UI Id
 	static Brood::BroodUI::UIElement* GetElementPtrFromMap( int a_id );
 
+	// Adds a pointer to the UIELement to the map using 
+	// the passed UI Id as the key
 	static bool AddToMap( int a_id, Brood::BroodUI::UIElement* a_elementPtr );
+
+	// Removes the a pointer to the UIELement from the map using
+	// the passed UI Id as the key
 	static bool ReomveFromMap( int a_id );
 
 	// ================= private member variables =================  
