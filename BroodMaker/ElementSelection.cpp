@@ -21,16 +21,12 @@
 // ======================================================================
 
 // allocating loaction for the static data member
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_almostActiveElementIdPtr = nullptr;
+
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_hotElementIdPtr = nullptr;
+Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_almostActiveElementIdPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_currActiveElementIdPtr = nullptr;
 Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_lastActiveElementIdPtr = nullptr;
 bool Brood::BroodUI::ElementSelection::m_hotElementFlag = false;
-
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveAlmostActiveElementIdPtr = nullptr;
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveHotElementIdPtr = nullptr;
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveCurrActiveElementIdPtr = nullptr;
-Brood::BroodUI::Id* Brood::BroodUI::ElementSelection::m_debugSaveLastActiveElementPtr = nullptr;
 
 /// 
 /// @static
@@ -164,30 +160,6 @@ bool Brood::BroodUI::ElementSelection::GetHotElementIdFlag()
 ///  
 void Brood::BroodUI::ElementSelection::Debugger()
 {
-	//// Printing the elements if there are changes to the element selectors
-	//if( m_debugSaveHotElementIdPtr != m_hotElementIdPtr && m_hotElementIdPtr != nullptr )
-	//{
-	//	m_debugSaveHotElementIdPtr = m_hotElementIdPtr;
-	//	std::cout << "HotElement " << m_hotElementIdPtr->GetElementID() << std::endl;
-	//}
-	//if( m_debugSaveAlmostActiveElementIdPtr != m_almostActiveElementIdPtr && m_almostActiveElementIdPtr != nullptr )
-	//{
-	//	m_debugSaveAlmostActiveElementIdPtr = m_almostActiveElementIdPtr;
-	//	std::cout << "AlmostActiveElement " << m_almostActiveElementIdPtr->GetElementID() << std::endl;
-	//}
-	//if( m_debugSaveCurrActiveElementIdPtr != m_currActiveElementIdPtr && m_currActiveElementIdPtr != nullptr )
-	//{
-	//	m_debugSaveCurrActiveElementIdPtr = m_currActiveElementIdPtr;
-	//	std::cout << "CurrActiveElement " << m_currActiveElementIdPtr->GetElementID() << std::endl;
-	//}
-	//if( m_debugSaveLastActiveElementPtr != m_lastActiveElementIdPtr && m_lastActiveElementIdPtr != nullptr )
-	//{
-	//	m_debugSaveLastActiveElementPtr = m_lastActiveElementIdPtr;
-	//	std::cout << "LasrActiveElement " << m_lastActiveElementIdPtr->GetElementID() << std::endl;
-	//}
-	
-
-
 	// Printing the elements if there are changes to the element selectors
 	if( m_hotElementIdPtr != nullptr )
 	{

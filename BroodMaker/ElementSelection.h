@@ -27,6 +27,7 @@ namespace Brood
 	namespace BroodUI
 	{
 		class ElementSelection;
+		class Id;
 	}
 }
 // ======================================================================
@@ -62,18 +63,38 @@ class Brood::BroodUI::ElementSelection
 {
 	// ================= public member function =================  
 public:
-	// setter function 
-	static void SetAlmostActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
-	static void SetHotElementIdPtr( Brood::BroodUI::Id* a_idPtr );
-	static void SetCurrActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
-	static void SetLastActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
-	static void SetHotElementIdPtrFlag(bool a_found );
+	// ========= setter functions ========
 
-	// getter function 
+	// setter function to set the hot element Id pointer
+	static void SetHotElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+
+	// setter function to set the almost active element Id pointer
+	static void SetAlmostActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+
+	// setter function to set the current active element Id pointer
+	static void SetCurrActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+
+	// setter function to set the last active element Id pointer
+	static void SetLastActiveElementIdPtr( Brood::BroodUI::Id* a_idPtr );
+
+	// setter function to set the hot element Id pointer Flag
+	static void SetHotElementIdPtrFlag( bool a_found );
+
+	// ========= setter functions ========
+
+	// getter function to get the hot element Id pointer
 	static Brood::BroodUI::Id* GetHotElementIdPtr();
+
+	// getter function to get the almost active element Id pointer
 	static Brood::BroodUI::Id* GetAlmostActiveElementIdPtr();
+
+	// getter function to get  the current active element Id pointer
 	static Brood::BroodUI::Id* GetCurrActiveElementIdPtr();
+
+	// getter function to get the last active element Id pointer
 	static Brood::BroodUI::Id* GetLastActiveElementIdPtr();
+
+	// getter function to getthe hot element Id pointer Flag
 	static bool GetHotElementIdFlag();
 
 	// debugging
@@ -82,30 +103,23 @@ public:
 
 	// ================= private member variables =================  
 private:
-	///> stores the ptr to element id when the mouse is hovering over it
-	static Brood::BroodUI::Id* m_hotElementIdPtr; 
-	
-	///> is set to true as soon as hot element is found for a given frame
-	static bool m_hotElementFlag; 
-	
-	///> stores the ptr element id when the mouse is pressing on it
-	static Brood::BroodUI::Id* m_almostActiveElementIdPtr; 
 
-	///> stores the ptr to element id which should be selected even 
-	///> when the mouse is not over it. untill other elements are pressed
-	///> after the the LMB is released and utill new element is selected
+	/// stores the ptr to element id when the mouse is hovering over it
+	static Brood::BroodUI::Id* m_hotElementIdPtr;
+
+	/// is set to true as soon as hot element is found for a given frame
+	static bool m_hotElementFlag;
+
+	/// stores the ptr element id when the mouse is pressing on it
+	static Brood::BroodUI::Id* m_almostActiveElementIdPtr;
+
+	/// stores the ptr to element id which should be selected even 
+	/// when the mouse is not over it. untill other elements are pressed
+	/// after the the LMB is released and utill new element is selected
 	static Brood::BroodUI::Id* m_currActiveElementIdPtr;
 
-	///> stores the pointer to the last active element
+	/// stores the pointer to the last active element
 	static Brood::BroodUI::Id* m_lastActiveElementIdPtr;
-
-	///> stores the element selection pointer for debugging
-	static Brood::BroodUI::Id* m_debugSaveHotElementIdPtr;
-	static Brood::BroodUI::Id* m_debugSaveAlmostActiveElementIdPtr;
-	static Brood::BroodUI::Id* m_debugSaveCurrActiveElementIdPtr;
-	static Brood::BroodUI::Id* m_debugSaveLastActiveElementPtr;
-
-
 };
 
 // ======================================================================

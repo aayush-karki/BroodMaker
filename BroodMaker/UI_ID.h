@@ -52,7 +52,17 @@ class Brood::BroodUI::Id
 {
 	// ================= public member function =================  
 public:
-	Id( Id* a_parentID = nullptr ); // default constructor;
+	// default constructor
+	Id( Id* a_parentID = nullptr );
+	
+	// default destrutor
+	~Id( );
+
+	// copy constructor
+	Id(const Id& a_otherId);
+
+	// assignment operator
+	Id& operator=(const Id& a_otherId);
 
 	// getter functions
 	const int GetParentID() const; // returns its parent id;
@@ -63,10 +73,10 @@ public:
 
 	bool HasChild() const; // returns true if it has a child 
 	bool HasParent() const; // returns true if it has a parent
-	
+
 	// setter functions
 	void SetParent( Id* a_parentID = nullptr ); // sets parent
-	
+
 	void AddChild( Brood::BroodUI::Id* a_childIdPtr ); // adds child to its child list
 	void DeleteChildIdAtIdx( const int a_index ); // removes the child at passed index
 

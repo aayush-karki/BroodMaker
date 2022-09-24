@@ -21,6 +21,7 @@
 // ======================================================================
 
 // declaring the staic data member
+
 sf::Cursor Brood::MouseHandler::m_cursor;
 sf::Vector2i Brood::MouseHandler::m_currFrameMousePos;
 sf::Vector2i Brood::MouseHandler::m_lastFrameMousePos;
@@ -162,6 +163,19 @@ bool Brood::MouseHandler::GetCurrFrameLMSStatus()
 	return m_currFrameLeftMouseButtonPressed;
 }
 
+/// /// 
+/// @static
+/// @public
+/// @brief Getter function to get the last frame right mouse 
+///		button press status
+///
+/// @return  currrent last frame right mouse button press status
+/// 
+bool Brood::MouseHandler::GetlastFrameRMSStatus()
+{
+	return m_lastFrameRightMouseButtonPressed;
+}
+
 /// 
 /// @static
 /// @public
@@ -178,21 +192,8 @@ bool Brood::MouseHandler::GetCurrFrameRMSStatus()
 /// 
 /// @static
 /// @public
-/// @brief Getter function to get the last frame right mouse 
-///		button press status
-///
-/// @return  currrent last frame right mouse button press status
-/// 
-bool Brood::MouseHandler::GetlastFrameRMSStatus()
-{
-	return m_lastFrameRightMouseButtonPressed;
-}
-
-/// 
-/// @static
-/// @public
-/// @brief  Updates mouse button status based and saves the mouse button status 
-///		this frame and last frame
+/// @brief  Updates mouse button status and saves the mouse button status 
+///		for this frame and last frame
 /// 
 /// @note only consideres left and right mouse button
 /// 
@@ -299,7 +300,6 @@ bool Brood::MouseHandler::IsRightButtonReleased()
 /// @static
 /// @public
 /// @brief Prints the mouse states like button press and current position
-/// 
 ///
 void Brood::MouseHandler::Debugger()
 {

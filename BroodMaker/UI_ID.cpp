@@ -45,6 +45,44 @@ Brood::BroodUI::Id::Id( Id* a_parentID ) :
 	Brood::BroodUI::Id::SetParent( a_parentID);
 }
 
+/// 
+/// @breif default destructor
+/// 
+Brood::BroodUI::Id::~Id()
+{}
+
+/// 
+/// @brief Copy constructor
+/// 
+/// @param a_otherId reference to the Id from which Id is to be 
+///		copied from
+/// 
+Brood::BroodUI::Id::Id( const Id & a_otherId ):
+	Id()
+{
+	this->m_parentID = a_otherId.m_parentID;
+	this->m_hasChilds = false;
+}
+
+///
+/// @brief assignment operator
+/// 
+/// @param a_otherId reference to the Id from which Id is to be 
+///		copied from
+///
+/// @return pointer to itself
+///
+Brood::BroodUI::Id& Brood::BroodUI::Id::operator=( const Id& a_otherId )
+{
+	// chekcing for self assignment
+	if( this == &a_otherId )
+	{
+		return *this;
+	}
+
+	// removing itself as form all of its childs
+}
+
 ///
 /// @public
 /// @brief Getter function to get the parent's ID

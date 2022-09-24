@@ -21,7 +21,6 @@
 // ======================================================================
 namespace Brood
 {
-	// defining what component of this file will be inside namespace BroodUI
 	class MouseHandler;
 }
 // ======================================================================
@@ -41,6 +40,7 @@ class Brood::MouseHandler
 {
 	// ================= public member function =================  
 public:
+
 	/// 
 	/// @enum
 	/// @brief lists all the valid cursor type used
@@ -56,44 +56,87 @@ public:
 		CURSOR_notAllowed ///> action not allowed cursor
 	};
 
+	// initializes the cursor
 	static void InitializeCursor( sf::RenderWindow& a_window );
-	static void UpdateMousePos( sf::RenderWindow& a_window ); // updates the mouse pos
 
+	// updates the mouse pos
+	static void UpdateMousePos( sf::RenderWindow& a_window );
+
+	// changes the cursor to the specified cursor
 	static void ChangeCursorTo( sf::RenderWindow& a_window,
 								const Brood::MouseHandler::ENUM_MouseCursorType a_cursorType );
 
-	// getter function
+	// ====== getter function ======
+
+	// gets the mosuse position on last frame
 	static sf::Vector2i GetLastFrameMousePos();
+
+	// gets the mosuse position on current frame
 	static sf::Vector2i GetCurrFrameMousePos();
+
+	// gets the left mouse button status on last frame
+	// i.e. is if it was pressed or not
 	static bool GetlastFrameLMSStatus();
+
+	// gets the left mouse button status on current frame
+	// i.e. is if it is pressed or not
 	static bool GetCurrFrameLMSStatus();
-	static bool GetCurrFrameRMSStatus();
+
+	// gets the right mouse button status on last frame
+	// i.e. is if it was pressed or not
 	static bool GetlastFrameRMSStatus();
 
-	// setter function
-	static void UpdateMouseButtonStatus( );
-	
+	// gets the right mouse button status on current frame
+	// i.e. is if it is pressed or not
+	static bool GetCurrFrameRMSStatus();
+
+	//Updates mouse button status and saves the mouse 
+	// button status for this frame and last frame
+	static void UpdateMouseButtonStatus();
+
+	// checkes to see if the left mouse button is held or not
 	static bool IsLeftButtonHold();
+
+	// checkes to see if the left mouse button is pressed or not
 	static bool IsLeftButtonPressed();
+
+	// checkes to see if the left mouse button is released or not
 	static bool IsLeftButtonReleased();
 
+	// checkes to see if the right mouse button is held or not
 	static bool IsRightButtonHold();
+
+	// checkes to see if the right mouse button is pressed or not
 	static bool IsRightButtonPressed();
+
+	// checkes to see if the right mouse button is released or not
 	static bool IsRightButtonReleased();
 
+	// debugger
 	static void Debugger();
 
 	// ================= private member variables =================  
 private:
+	// holds the cursor to display
 	static sf::Cursor m_cursor;
 
+	// stores the last frame mouse position
 	static sf::Vector2i m_lastFrameMousePos;
+
+	// stores the current frame mouse position
 	static sf::Vector2i m_currFrameMousePos;
 
-	static bool m_lastFrameLeftMouseButtonPressed; // true == was pressed
-	static bool m_lastFrameRightMouseButtonPressed; // true == was pressed
-	static bool m_currFrameLeftMouseButtonPressed; // true == was pressed
-	static bool m_currFrameRightMouseButtonPressed; // true == was pressed
+	// holds left mouse button state for last frame, true == was pressed
+	static bool m_lastFrameLeftMouseButtonPressed;
+
+	// holds right mouse button state for last frame, true == was pressed
+	static bool m_lastFrameRightMouseButtonPressed;
+
+	// holds left mouse button state for current frame, true == was pressed
+	static bool m_currFrameLeftMouseButtonPressed; 
+	
+	// holds right mouse button state for current frame, true == was pressed
+	static bool m_currFrameRightMouseButtonPressed;
 };
 
 // ======================================================================
