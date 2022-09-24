@@ -106,7 +106,7 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 	m_fileNameTxt = DyCreateTextBox( { 500, 100 }, { 200, 250 }, "Enter File Name" );
 
 	// Enter file name feild textbox
-	m_enterFileNameFeildTxt = DyCreateTextBox( { 500, 125 }, { 200, 350 }, "", true );
+	m_enterFileNameFeildTxt = DyCreateTextBox( { 500, 125 }, { 200, 350 }, "", true, "<Enter a File Name>");
 	//m_enterFileNameFeild = new Brood::BroodUI::TextBox;
 	//m_enterFileNameFeild->SetBodySize( 500, 125 );
 	//m_enterFileNameFeild->SetBodyPosition( 200, 350 );
@@ -205,7 +205,7 @@ void Brood::Application::HomeWorkSpace::Draw( sf::RenderWindow& a_window )
 void Brood::Application::HomeWorkSpace::Debugger()
 {
 	Brood::Application::WorkSpace::Debugger();
-	
+
 	m_ribbionTabs.Debugger();
 
 	for( unsigned idx = 0; idx < m_workSpacesList.size(); ++idx )
@@ -521,6 +521,18 @@ void Brood::Application::HomeWorkSpace::UpdateHomeWorkspace()
 	else if( m_showEnterFilenameDialogBox )
 	{
 		m_enterFileNameFeildTxt->DoElement();
+
+		if( m_enterFileNameFeildTxt->IsEnterPressed() &&
+			m_enterFileNameFeildTxt->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
+		{
+			/// @todo deleteme
+			std::cerr << "yup" << std::endl;
+			std::cerr << m_enterFileNameFeildTxt->GetText() << std::endl;
+
+			// resetting the m_eterPressed
+			m_enterFileNameFeildTxt->SetEnterPressedFalse();
+
+		}
 
 		if( m_openFileBtn->DoElement() )
 		{

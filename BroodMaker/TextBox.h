@@ -41,6 +41,8 @@ namespace Brood
 /// 
 /// @details A class derived from UI elements class.
 ///		It can be set as mutable or immutable text.
+/// 
+/// 
 /// @warning The following code needs to be present in the event switch 
 ///		for the textbox to be editable:
 ///		@code
@@ -127,6 +129,17 @@ namespace Brood
 ///
 ///		// logics
 ///		myTextBox.DoElement();
+/// 
+///		// code to detect enter press then get the string user entered and process it
+///		if( myTextBox->IsEnterPressed() &&
+///			myTextBox->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
+///		{
+///			std::cerr << myTextBox->GetText() << std::endl;
+///			
+///			// resetting the m_enterPressed
+///			myTextBox->SetEnterPressedFalse();
+///		
+///		}
 ///		
 ///		// render
 ///		myTextBox.Draw( window );
@@ -137,8 +150,7 @@ namespace Brood
 /// @todo add a way to add place holder text
 /// @todo add view to the textbox feild that gets scrolled 
 ///		when the type text go of window
-/// @todo adda actual cursor instead of _
-/// @todo add a way to retrive the text when pressed enter
+/// @todo add a actual cursor instead of _
 /// 
 class Brood::BroodUI::TextBox : public Brood::BroodUI::UIElement
 {
@@ -172,6 +184,9 @@ public:
 	// check to see if the text box is selected or not
 	const bool IsSelected() const;
 
+	// check to see enter was pressed or not
+	const bool IsEnterPressed() const;
+
 	// ====== setter funcitons ======
 
 	// sets text
@@ -186,12 +201,22 @@ public:
 	// sets if the textbox is editable or not
 	void SetEditable( bool a_isEditable ); 
 
+	// sets enterPressed to false
+	void SetEnterPressedFalse();
+
+	// sets a placeholder Text
+	void SetPlaceHolderText(std::string a_placeHolderText);
+
 	// called every time user enters a char
 	void TypeOn( sf::Event a_input );
 
 	// checks to see if the logic for the element is to 
 	// be excecuted or not 
 	virtual bool DoElement() override; 
+
+	// draw funciton
+	virtual void Draw( sf::RenderWindow& a_window ) override;
+
 
 	// ============ private member function =============== 
 private:
@@ -207,7 +232,11 @@ private:
 	
 	/// text buffer
 	std::ostringstream m_ossText; 
-	
+
+	/// placeholder Text that gets displaced if the textbox is
+	///		editable and has no text in the text buffer
+	std::string m_placeHolderText;
+
 	/// is true if the element's text is editable
 	bool m_isEditable; 
 	
@@ -216,6 +245,9 @@ private:
 	
 	/// max number of character
 	int m_limit; 
+
+	/// saves if enter was pressed or not
+	static bool m_enterPressed;
 };
 
 // ======================================================================

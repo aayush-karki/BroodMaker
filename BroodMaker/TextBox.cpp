@@ -21,6 +21,9 @@
 // ================= start of TextBox class =============================
 // ======================================================================
 
+/// allocating space and initializing the m_enterPressed
+bool Brood::BroodUI::TextBox::m_enterPressed = false;
+
 /// 
 /// @public
 /// @brief Default Constructor
@@ -82,6 +85,7 @@ Brood::BroodUI::TextBox& Brood::BroodUI::TextBox::operator=( const Brood::BroodU
 	this->m_isEditable = a_otherTextBox.m_isEditable;
 	this->m_hasLimit = a_otherTextBox.m_hasLimit;
 	this->m_limit = a_otherTextBox.m_limit;
+	this->m_enterPressed = a_otherTextBox.m_enterPressed;
 	this->m_ossText.str( a_otherTextBox.m_ossText.str() );
 
 	return *this;
@@ -107,6 +111,17 @@ const bool Brood::BroodUI::TextBox::IsEditable() const
 const bool Brood::BroodUI::TextBox::IsSelected() const
 {
 	return m_isSelected;
+}
+
+/// 
+/// @public
+/// @brief getter funciton to get value stored in of enter button
+/// 
+/// @return value stored in of enter button
+/// 
+const bool Brood::BroodUI::TextBox::IsEnterPressed() const
+{
+	return m_enterPressed;
 }
 
 /// 
@@ -202,6 +217,24 @@ void Brood::BroodUI::TextBox::SetEditable( bool a_isEditable )
 
 /// 
 /// @public
+/// @brief setter function to set enterPressed to false
+/// 
+void Brood::BroodUI::TextBox::SetEnterPressedFalse()
+{
+	m_enterPressed = false;
+}
+
+/// 
+/// @public
+/// @brief setter function to set enterPressed to false
+/// 
+void Brood::BroodUI::TextBox::SetPlaceHolderText( std::string a_placeHolderText )
+{
+	m_placeHolderText = a_placeHolderText;
+}
+
+/// 
+/// @public
 /// @brief Called when a character is typed a
 /// 
 /// @param a_input a copy of sf::Event::TextEntered
@@ -269,6 +302,38 @@ bool Brood::BroodUI::TextBox::DoElement()
 	return doElement;
 }
 
+///
+/// @public
+/// @virtual
+/// @brief Draws the body to the render window
+/// 
+/// @param a_window reference to the render window
+/// 
+void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
+{
+	// drawing the textbox
+	Brood::BroodUI::UIElement::Draw( a_window );
+
+	// draw place holder text if the textbox is editable 
+	// and textbox has no text 
+	if( m_isEditable && m_textContent.empty() && !m_placeHolderText.empty() )
+	{
+		// saving it to restore the font color
+		sf::Color currentFontColor = m_text.getFillColor();
+		
+		sf::Color placeHolderFontColor = currentFontColor;
+		placeHolderFontColor.a = placeHolderFontColor.a / 2;
+		SetFontColor( placeHolderFontColor );
+
+		SetText(m_placeHolderText);
+		a_window.draw( m_text );
+
+		// restoring it back to how it used to be
+		SetText( "" );
+		SetFontColor( currentFontColor );
+	}
+}
+
 /// 
 /// @private
 /// @brief logic of what happens when different keys are pressed
@@ -289,6 +354,21 @@ void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 		{
 			DeleteLastChar();
 		}
+	}
+	else if( charTyped == ENTER_KEY )
+	{
+		m_enterPressed = true;
+
+		// then this element should not be currActive
+		Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( &m_elementId );
+		Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
+	}
+	else if( charTyped == ESCAPE_KEY )
+	{
+		// then this element should not be currActive
+		Brood::BroodUI::ElementSelection::SetLastActiveElementIdPtr( &m_elementId );
+		Brood::BroodUI::ElementSelection::SetCurrActiveElementIdPtr( nullptr );
+
 	}
 
 	SetText( m_ossText.str() ); // we need to use Text as it also sets m_drawText

@@ -83,11 +83,13 @@ public:
 											  sf::Vector2f a_pos,
 											  std::string a_text = "",
 											  bool a_isEditable = false,
-											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
+											  std::string a_placeholderText = "",
+											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor);
 	Brood::BroodUI::TextBox* DyCreateTextBox( float a_sizeX, float a_sizeY,
 											  float a_posX, float a_posY,
 											  std::string a_text = "",
 											  bool a_isEditable = false,
+											  std::string a_placeholderText = "",
 											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 
 	// Dynamically create a Drop down Input, initializes it, 

@@ -142,6 +142,7 @@ Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( sf::Vec
 																		 sf::Vector2f a_pos,
 																		 std::string a_text,
 																		 bool a_isEditable,
+																		 std::string a_placeholderText,
 																		 sf::Color a_color )
 {
 	Brood::BroodUI::TextBox* textBoxElement = new Brood::BroodUI::TextBox;
@@ -151,6 +152,7 @@ Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( sf::Vec
 	textBoxElement->SetBodyColor( a_color );
 	textBoxElement->SetText( a_text );
 	textBoxElement->SetEditable( a_isEditable );
+	textBoxElement->SetPlaceHolderText( a_placeholderText );
 
 	// adding the newly created textbox to the UI elmente list
 	m_unNamedUIList.push_back( textBoxElement );
@@ -180,10 +182,11 @@ Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( sf::Vec
 Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( float a_sizeX, float a_sizeY,
 																		 float a_posX, float a_posY,
 																		 std::string a_text, bool a_isEditable,
+																		 std::string a_placeholderText,
 																		 sf::Color a_color )
 {
 	return Brood::Application::WorkSpace::DyCreateTextBox( { a_sizeX, a_sizeY }, { a_posX, a_posY },
-														   a_text, a_isEditable, a_color );
+														   a_text, a_isEditable,a_placeholderText, a_color );
 }
 
 /// 
@@ -271,7 +274,7 @@ Brood::BroodUI::DropDownInput* Brood::Application::WorkSpace::DyCreateDropDownIn
 /// @param a_createFromTop is true if the created element should be positioned 
 ///		second element form the top -> default false
 /// 
-void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( sf::RectangleShape* a_panelBodyPtr, 
+void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( sf::RectangleShape* a_panelBodyPtr,
 																		Brood::BroodUI::TextBox** a_txtPromptPtr,
 																		Brood::BroodUI::DropDownInput** a_ddiPtr,
 																		std::string a_promptToDisplay,
@@ -283,7 +286,7 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( sf::Rect
 
 	float panelSizeX = a_panelBodyPtr->getSize().x;
 	float lastPanelElementSizeY = m_unNamedUIList.back()->GetBodySize().y;
-	
+
 	float panelPosX = a_panelBodyPtr->getPosition().x;
 	float lastPanelElementPosY = m_unNamedUIList.back()->GetBodyPosition().y;
 	// getting the color
@@ -310,7 +313,7 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( sf::Rect
 	// creating a text box for displaying the promt
 	*a_txtPromptPtr = DyCreateTextBox( panelSizeX / 2.f, 25,
 									   panelPosX, lastPanelElementPosY + lastPanelElementSizeY,
-									   a_promptToDisplay, false, panelColor );
+									   a_promptToDisplay, false,"", panelColor);
 	// setitng the font
 	( *a_txtPromptPtr )->SetFontSize( 15 );
 
@@ -413,7 +416,7 @@ void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( sf::RectangleSh
 	// creating a text box for displaying the promt
 	*a_txtPromptPtr = DyCreateTextBox( panelSizeX / 2.f, 25,
 									   panelPosX, lastPanelElementPosY + lastPanelElementSizeY,
-									   a_promptToDisplay, false, panelColor );
+									   a_promptToDisplay, false, "", panelColor );
 	// setitng the font
 	( *a_txtPromptPtr )->SetFontSize( 15 );
 
@@ -429,7 +432,7 @@ void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( sf::RectangleSh
 	// creating a text box for displaying the current value
 	*a_txtValuePtr = DyCreateTextBox( { ( panelSizeX * 3 ) / 10, 25 },
 									  { panelPosX + ( ( panelSizeX * 3 ) / 5 ), lastPanelElementPosY + lastPanelElementSizeY },
-									  a_valueToDisplay, false, panelColor );
+									  a_valueToDisplay, false, "", panelColor );
 	// setitng the font
 	( *a_txtValuePtr )->SetFontSize( 15 );
 
