@@ -39,10 +39,10 @@ unsigned Brood::BroodUI::Id::GLOBAL_ID_NUM = 0; // starting id
 /// 
 /// @param a_parentID pointer to the Id of the parent if any; default -> nullPtr
 ///
-Brood::BroodUI::Id::Id( Id* a_parentID ) :
+Brood::BroodUI::Id::Id( Id* a_parentIDPtr ) :
 	m_elementID( GLOBAL_ID_NUM++ ), m_hasChilds( false )
 {
-	Brood::BroodUI::Id::SetParent( a_parentID);
+	Brood::BroodUI::Id::SetParent( a_parentIDPtr );
 }
 
 /// 
@@ -57,12 +57,9 @@ Brood::BroodUI::Id::~Id()
 /// @param a_otherId reference to the Id from which Id is to be 
 ///		copied from
 /// 
-Brood::BroodUI::Id::Id( const Id & a_otherId ):
-	Id()
-{
-	this->m_parentID = a_otherId.m_parentID;
-	this->m_hasChilds = false;
-}
+Brood::BroodUI::Id::Id( const Id& a_otherId ) :
+	Id( a_otherId.m_parentIDPtr )
+{}
 
 ///
 /// @brief assignment operator
@@ -80,7 +77,23 @@ Brood::BroodUI::Id& Brood::BroodUI::Id::operator=( const Id& a_otherId )
 		return *this;
 	}
 
-	// removing itself as form all of its childs
+	// deleting the itself form its child list
+	while( m_hasChilds )
+	{
+		// remove the first child from the list
+		// this function updates the m_hasChilds
+		DeleteChildIdAtIdx( 0 );
+	}
+
+	// deleteing itself form its parent
+	if( m_parentIDPtr != nullptr )
+	{
+		m_parentIDPtr->DeleteChildIdAtIdx( m_parentIDPtr->GetChildIdx( this ) );
+	}
+
+	// copying the data over
+	Brood::BroodUI::Id::SetParent( a_otherId.m_parentIDPtr );
+	this->m_hasChilds = false;
 }
 
 ///
@@ -92,6 +105,24 @@ Brood::BroodUI::Id& Brood::BroodUI::Id::operator=( const Id& a_otherId )
 const int Brood::BroodUI::Id::GetParentID() const
 {
 	return m_parentID;
+}
+
+/// 
+/// @brief Getter function to get the pointer to its parent
+/// 
+/// @return  
+const  Brood::BroodUI::Id* Brood::BroodUI::Id::GetParentIDPtr() const
+{
+	return m_parentIDPtr;
+}
+
+/// 
+/// @brief Getter function to get the pointer to its parent
+/// 
+/// @return 
+Brood::BroodUI::Id* Brood::BroodUI::Id::GetParentIDPtr()
+{
+	return m_parentIDPtr;
 }
 
 ///
@@ -116,10 +147,10 @@ const int Brood::BroodUI::Id::GetElementID() const
 const int Brood::BroodUI::Id::GetChildIdx( const Brood::BroodUI::Id* a_childIDPtr ) const
 {
 	int idx = 0;
-	
+
 	// loop through the the child list
 	std::vector<Brood::BroodUI::Id*>::const_iterator currChildId = m_allChildPtrs.begin();
-	while( currChildId != m_allChildPtrs.end())
+	while( currChildId != m_allChildPtrs.end() )
 	{
 		if( a_childIDPtr->GetElementID() == ( *currChildId )->GetElementID() )
 		{
@@ -160,7 +191,7 @@ const int Brood::BroodUI::Id::GetTotalChildNum() const
 /// 
 Brood::BroodUI::Id* Brood::BroodUI::Id::GetChildIdAtIdx( const int a_index ) const
 {
-	if( a_index < 0 || a_index > ( m_allChildPtrs.size() - 1 ) )
+	if( a_index < 0 || a_index >( m_allChildPtrs.size() - 1 ) )
 	{
 		std::cerr << "Error!! the index " << a_index << "does not exit for element with ID: "
 			<< m_elementID << std::endl;
@@ -202,6 +233,7 @@ bool Brood::BroodUI::Id::HasParent() const
 /// 
 void Brood::BroodUI::Id::SetParent( Brood::BroodUI::Id* a_parentID )
 {
+	m_parentIDPtr = a_parentID;
 	m_parentID = a_parentID != nullptr ? a_parentID->GetElementID() : -1;
 }
 
@@ -231,7 +263,7 @@ void Brood::BroodUI::Id::DeleteChildIdAtIdx( const int a_index )
 		std::cerr << "Error! Cannot erase as the child list is empty." << std::endl;
 		return;
 	}
-	else if( a_index < 0 || a_index > ( int )m_allChildPtrs.size() - 1 )
+	else if( a_index < 0 || a_index >( int )m_allChildPtrs.size() - 1 )
 	{
 		// trying to delete invalid index
 		std::cerr << "Error! Tying to erase invalid index" << std::endl;

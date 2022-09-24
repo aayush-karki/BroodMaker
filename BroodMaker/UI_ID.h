@@ -30,11 +30,11 @@ namespace Brood
 	}
 }
 // ======================================================================
-// ====================== end of namespace defination ========================
+// ====================== end of namespace defination ===================
 // ======================================================================
 
 // ======================================================================
-// ====================== start of ID class =======================// ======================================================================
+// ====================== start of ID class =============================
 // ======================================================================
 
 /// 
@@ -53,7 +53,8 @@ class Brood::BroodUI::Id
 	// ================= public member function =================  
 public:
 	// default constructor
-	Id( Id* a_parentID = nullptr );
+	Id( Id* a_parentIDPtr = nullptr );
+
 	
 	// default destrutor
 	~Id( );
@@ -65,28 +66,64 @@ public:
 	Id& operator=(const Id& a_otherId);
 
 	// getter functions
-	const int GetParentID() const; // returns its parent id;
-	const int GetElementID() const; // returns its id
-	const int GetChildIdx( const Brood::BroodUI::Id* a_childIDPtr ) const; // returns the child index in the list
-	const int GetTotalChildNum() const; // returns total number of its child
-	Id* GetChildIdAtIdx( const int a_index ) const; // returns child at the passed index
+	
+	// returns its parent id;
+	const int GetParentID() const;
 
-	bool HasChild() const; // returns true if it has a child 
-	bool HasParent() const; // returns true if it has a parent
+	// returns Parent Id Ptr
+	const Brood::BroodUI::Id* GetParentIDPtr() const;
+
+	// returns Parent Id Ptr
+	Brood::BroodUI::Id* GetParentIDPtr();
+	
+	// returns its id
+	const int GetElementID() const;
+	
+	// returns the child index in the list
+	const int GetChildIdx( const Brood::BroodUI::Id* a_childIDPtr ) const;
+
+	// returns total number of its child
+	const int GetTotalChildNum() const;
+
+	// returns child at the passed index
+	Id* GetChildIdAtIdx( const int a_index ) const;
+
+	// returns true if it has a child 
+	bool HasChild() const;
+
+	// returns true if it has a parent
+	bool HasParent() const;
 
 	// setter functions
-	void SetParent( Id* a_parentID = nullptr ); // sets parent
+	
+	// sets parent
+	void SetParent( Id* a_parentID = nullptr ); 
 
-	void AddChild( Brood::BroodUI::Id* a_childIdPtr ); // adds child to its child list
-	void DeleteChildIdAtIdx( const int a_index ); // removes the child at passed index
+	// adds child to its child list
+	void AddChild( Brood::BroodUI::Id* a_childIdPtr ); 
+
+	// removes the child at passed index
+	void DeleteChildIdAtIdx( const int a_index ); 
 
 	// ================= private member variables =================  
 private:
-	static unsigned GLOBAL_ID_NUM; ///> unique id is assigned based on this
-	int m_parentID; ///> stores the parents UI ID
-	int m_elementID; ///> stores its UI ID
-	bool m_hasChilds; ///> stores if it has childs or not
-	std::vector<Brood::BroodUI::Id*> m_allChildPtrs; ///> stores all the pointer to its childs 
+	/// unique id is assigned based on this
+	static unsigned GLOBAL_ID_NUM; 
+	
+	/// stores the parents UI ID pointer
+	Brood::BroodUI::Id* m_parentIDPtr; 
+
+	/// stores the parents UI ID
+	int m_parentID; 
+	
+	/// stores its UI ID
+	int m_elementID; 
+
+	/// stores if it has childs or not
+	bool m_hasChilds; 
+
+	/// stores all the pointer to its childs 
+	std::vector<Brood::BroodUI::Id*> m_allChildPtrs;
 };
 
 // ======================================================================

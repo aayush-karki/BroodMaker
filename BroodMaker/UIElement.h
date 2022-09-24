@@ -35,7 +35,7 @@
 // ================= defining namespace =================================
 // ======================================================================
 namespace Brood
-{ 
+{
 	namespace BroodUI
 	{
 		enum class ENUM_UIType;
@@ -101,79 +101,166 @@ class Brood::BroodUI::UIElement
 {
 	// ================= public member function =================  
 public:
+	// default constructor
 	UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
-			   Brood::BroodUI::UIElement* a_parentPtr = nullptr); // default constructor
+			   Brood::BroodUI::UIElement* a_parentPtr = nullptr );
 
-	virtual ~UIElement(); // virtual default destructor
+	// virtual default destructor
+	virtual ~UIElement();
 
-	// getter functions
+	// copy constructor
+	UIElement( UIElement& a_otherElement );
+
+	// assignment operator
+	Brood::BroodUI::UIElement& operator=( UIElement& a_otherElement );
+
+	// ======= getter functions ========
+
+	// gets element type
 	const Brood::BroodUI::ENUM_UIType GetElementType() const;
+
+	// Get a reference to element body
 	const sf::RectangleShape& GetBody() const;
+
+	// get element body position
 	const sf::Vector2f GetBodyPosition() const;
+
+	// get element body size
 	const sf::Vector2f GetBodySize() const;
+
+	// get element body color
 	const sf::Color GetBodyColor();
 
+	// get element body active overlay color
 	const sf::Color GetActiveOverlayColor();
+
+	// get element body hot overlay color
 	const sf::Color GetHotOverlayColor();
+
+	// get element's Id pointer
 	Brood::BroodUI::Id* GetElementIdPtr();
+
+	// return the value of m_isSelected
 	const bool IsSelected() const;
 
+	// returns the text that is stored
 	std::string GetText() const;
+
+	// gets font size
 	unsigned int GetFontSize() const;
 
-	// setter functions
+	// ====== setter functions =======
+
+	// sets element body color
 	void SetBodyColor( sf::Color a_bodyColor );
+
+	// sets element body size 
 	virtual  void SetBodySize( sf::Vector2f  a_size );
+
+	// sets element body size
 	virtual void SetBodySize( float a_sizeX, float a_sizeY );
+
+	// sets element body position
 	virtual void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false );
+
+	// sets element body position
 	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
-	
+
+	// sets font
 	void SetFont( sf::Font& a_font ); // sets font
+
+	// sets font color
 	void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // sets font color
-	void SetFontSize( int a_fontSize = 12 ); // sets font size
-	virtual void SetText( std::string a_text = "" ); // sets text
 
-	virtual void SetSelected( bool a_selected ); // sets the state of the element.
-	void SetActiveOverlayColor( sf::Color a_color ); // sets active overlay color
-	void SetHotOverlayColor( sf::Color a_color ); // sets hot overlay color
+	// sets font size
+	void SetFontSize( int a_fontSize = 12 );
 
-	// funciton to check if the
+	// sets text
+	virtual void SetText( std::string a_text = "" );
+
+	// sets the state of the element.
+	virtual void SetSelected( bool a_selected );
+
+	// sets active overlay color
+	void SetActiveOverlayColor( sf::Color a_color );
+
+	// sets hot overlay color
+	void SetHotOverlayColor( sf::Color a_color );
+
+	// funciton to check if the mouse is over element
 	bool IsMouseOverElement();
-	bool IsActiveElement();
+
+	// funciton to check if element set as almost active element
+	bool IsAlmostActiveElement();
+
+	// funciton to check if element set as active element
 	bool IsCurrActiveElement();
+
+	// funciton to check if element is hot active element
 	bool IsHotElement();
 
-	virtual bool DoElement(); // checks to see if the logic for the element is to be excecuted or not 
-	virtual void Draw( sf::RenderWindow& a_window ); // draw funciton
+	// checks to see if the logic for the element is to be excecuted or not 
+	virtual bool DoElement();
+
+	// draw funciton
+	virtual void Draw( sf::RenderWindow& a_window );
 
 	virtual void Debugger(); // adds the element ID to the text
 
 	// ================= protected member function =================  
 protected:
-	void SetTextPosition(); // to set the position of the text
-	void SetDrawOverlay(); // logic for if overlay is to be drawn or not
+
+	// to set the position of the text
+	void SetTextPosition();
+
+	// logic for if overlay is to be drawn or not
+	void SetDrawOverlay();
 
 
 	// ================= protected member variables =================  
 protected:
-	Brood::BroodUI::ENUM_UIType m_elementType; ///> stores the type of element stored
-	Brood::BroodUI::Id m_elementId; ///> uniqie id of the element
 
-	sf::RectangleShape m_body; ///> element body
-	sf::RectangleShape m_bodyOverLay; ///> element body
+	/// stores the type of element stored
+	Brood::BroodUI::ENUM_UIType m_elementType;
 
-	sf::Color m_hotOverlayColor; ///> color when mouse is over it
-	sf::Color m_activeOverlayColor; ///> color when it is active element
+	/// uniqie id of the element
+	Brood::BroodUI::Id m_elementId;
 
-	bool m_drawOverlay; ///> true if overlay is to be drawn
-	bool m_isSelected; ///> is true if the element is selected
+	/// element body
+	sf::RectangleShape m_body;
 
-	sf::Text m_text; ///> text content
-	std::string m_textContent; ///> saves the text content
-	std::string m_debugTextSave; ///> saves the text content before replacing by uiid
-	sf::Font* m_font; ///> element's font
-	unsigned m_fontSize; ///> font size
-	bool m_drawText; ///> is true if text is set and hence draw to screen
+	///  element body
+	sf::RectangleShape m_bodyOverLay;
+
+	/// color when mouse is over it
+	sf::Color m_hotOverlayColor;
+
+	/// color when it is active element
+	sf::Color m_activeOverlayColor;
+
+	/// true if overlay is to be drawn
+	bool m_drawOverlay;
+
+	/// is true if the element is selected
+	bool m_isSelected;
+
+	/// text content
+	sf::Text m_text;
+
+	/// saves the text content
+	std::string m_textContent;
+
+	/// saves the text content before replacing by uiid
+	std::string m_debugTextSave;
+
+	/// element's font
+	sf::Font* m_font;
+
+	/// font size
+	unsigned m_fontSize;
+
+	/// is true if text is set and hence draw to screen
+	bool m_drawText;
 };
 
 // ======================================================================

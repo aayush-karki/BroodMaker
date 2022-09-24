@@ -41,14 +41,14 @@ std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::MapIdToElement::
 Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 									  Brood::BroodUI::UIElement* a_parentPtr ) :
 	m_elementId( a_parentPtr != nullptr ? a_parentPtr->GetElementIdPtr() : nullptr ),
-	m_elementType( a_elementType ), m_fontSize( 0 ), m_isSelected( false ), 
-	m_textContent(""), m_debugTextSave ("")
+	m_elementType( a_elementType ), m_fontSize( 0 ), m_isSelected( false ),
+	m_textContent( "" ), m_debugTextSave( "" )
 {
 	// adding the elementID to map
 	Brood::BroodUI::MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
 
 	// setting the overlay
-	m_hotOverlayColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_HotOverlay; 
+	m_hotOverlayColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_HotOverlay;
 	m_activeOverlayColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActiveOverlay;
 	m_drawOverlay = false;
 }
@@ -88,6 +88,63 @@ Brood::BroodUI::UIElement::~UIElement()
 
 	// delete the id form the map
 	Brood::BroodUI::MapIdToElement::ReomveFromMap( m_elementId.GetElementID() );
+}
+
+///
+/// @brief Copy constructor
+/// 
+/// @param a_otherElement reference to the uiElement which is used to 
+///		copy the data form 
+/// 
+Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::UIElement& a_otherElement ) :
+	Brood::BroodUI::UIElement( a_otherElement.m_elementType, a_otherElement.m_elementId.GetParentIDPtr() != nullptr?
+	Brood::BroodUI::MapIdToElement::GetElementPtrFromMap(a_otherElement.m_elementId.GetParentIDPtr()->GetElementID()): nullptr )
+{
+	this->m_body = a_otherElement.m_body;
+	this->m_bodyOverLay = a_otherElement.m_bodyOverLay;
+	this->m_hotOverlayColor = a_otherElement.m_hotOverlayColor;
+	this->m_activeOverlayColor = a_otherElement.m_activeOverlayColor;
+	this->m_drawOverlay = a_otherElement.m_drawOverlay;
+	this->m_isSelected = a_otherElement.m_isSelected;
+	this->m_text = a_otherElement.m_text;
+	this->m_textContent = a_otherElement.m_textContent;
+	this->m_debugTextSave = a_otherElement.m_debugTextSave;
+	this->m_font = a_otherElement.m_font;
+	this->m_fontSize = a_otherElement.m_fontSize;
+	this->m_drawText = a_otherElement.m_drawText;
+}
+
+/// 
+/// @brief assignment operator
+/// 
+/// @param a_otherElement reference to the uiElement which is used to 
+///		copy the data form 
+/// 
+/// @return pointer to this element
+/// 
+Brood::BroodUI::UIElement& Brood::BroodUI::UIElement::operator=( UIElement& a_otherElement )
+{
+	// chekcing for self assignment
+	if( this == &a_otherElement )
+	{
+		return *this;
+	}
+
+	this->m_elementType = a_otherElement.m_elementType;
+	this->m_body = a_otherElement.m_body;
+	this->m_bodyOverLay = a_otherElement.m_bodyOverLay;
+	this->m_hotOverlayColor = a_otherElement.m_hotOverlayColor;
+	this->m_activeOverlayColor = a_otherElement.m_activeOverlayColor;
+	this->m_drawOverlay = a_otherElement.m_drawOverlay;
+	this->m_isSelected = a_otherElement.m_isSelected;
+	this->m_text = a_otherElement.m_text;
+	this->m_textContent = a_otherElement.m_textContent;
+	this->m_debugTextSave = a_otherElement.m_debugTextSave;
+	this->m_font = a_otherElement.m_font;
+	this->m_fontSize = a_otherElement.m_fontSize;
+	this->m_drawText = a_otherElement.m_drawText;
+
+	return *this;
 }
 
 /// 
@@ -235,7 +292,7 @@ void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
 {
 	// checking if the new height for the body is greater than the charsize by 2
 	// font size has not been inialized
-	if( a_size.y >= m_fontSize + 2  || m_fontSize == 0 )
+	if( a_size.y >= m_fontSize + 2 || m_fontSize == 0 )
 	{
 		m_body.setSize( a_size ); // setting the body size
 		m_bodyOverLay.setSize( a_size ); // overlay rectangle
@@ -248,7 +305,7 @@ void Brood::BroodUI::UIElement::SetBodySize( sf::Vector2f a_size )
 	{
 		std::cerr << "body height needs to be 2 pixel bigger than font size" << std::endl;
 	}
-		return;
+	return;
 }
 
 /// 
@@ -290,7 +347,7 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 	}
 
 	m_body.setPosition( a_pos );
-	m_bodyOverLay.setPosition( a_pos ); 
+	m_bodyOverLay.setPosition( a_pos );
 
 	// setting the text position
 	if( m_text.getString() != "" )
@@ -428,7 +485,7 @@ void Brood::BroodUI::UIElement::SetHotOverlayColor( sf::Color a_color )
 /// @public
 /// @brief Setter function to set if the overlay is to be drawn or not
 /// 
-void Brood::BroodUI::UIElement::SetDrawOverlay(  )
+void Brood::BroodUI::UIElement::SetDrawOverlay()
 {
 	// setting up the over lay
 	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr() ||
@@ -499,7 +556,7 @@ bool Brood::BroodUI::UIElement::IsMouseOverElement()
 /// 
 /// @return true if it is the active element; else false
 /// 
-bool Brood::BroodUI::UIElement::IsActiveElement()
+bool Brood::BroodUI::UIElement::IsAlmostActiveElement()
 {
 	return Brood::BroodUI::ElementSelection::GetAlmostActiveElementIdPtr()->GetElementID() == m_elementId.GetElementID();
 }
@@ -557,7 +614,7 @@ bool Brood::BroodUI::UIElement::DoElement()
 	}
 	// mouse is not over this element
 	// checking if the this element was previously hot element
-	else if ( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
+	else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 	{
 		Brood::BroodUI::ElementSelection::SetHotElementIdPtr( nullptr );
 	}
@@ -605,7 +662,7 @@ bool Brood::BroodUI::UIElement::DoElement()
 		// is also currActive element then setting the curr active to null
 		else if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() &&
 				 GetElementIdPtr() != Brood::BroodUI::ElementSelection::GetHotElementIdPtr() &&
-				 !IsSelected())
+				 !IsSelected() )
 		{
 			if( Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() != nullptr )
 			{
@@ -634,13 +691,13 @@ bool Brood::BroodUI::UIElement::DoElement()
 void Brood::BroodUI::UIElement::Draw( sf::RenderWindow& a_window )
 {
 	a_window.draw( m_body );
-	
+
 	// draw the over lay only if the overlay is turned on
 	if( m_drawOverlay )
 	{
 		a_window.draw( m_bodyOverLay );
 	}
-	
+
 	// draw the text only when the text is present
 	if( m_drawText )
 	{
