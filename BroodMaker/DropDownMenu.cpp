@@ -31,7 +31,7 @@
 Brood::BroodUI::DropDownMenu::DropDownMenu( Brood::BroodUI::UIElement* a_parentPtr,
 											Brood::BroodUI::ENUM_UIType a_enumType ) :
 	Brood::BroodUI::Button( a_parentPtr, a_enumType ),
-	m_font( nullptr ) , m_maxItemLength(0)
+	m_maxItemLength( 0 )
 {}
 
 ///
@@ -48,6 +48,61 @@ Brood::BroodUI::DropDownMenu::~DropDownMenu()
 			delete m_items.at( i );
 		}
 	}
+}
+
+///
+/// @brief Copy constructor
+/// 
+/// @param a_otherElement reference to the dropdownMenu which is used to 
+///		copy the data form 
+/// 
+Brood::BroodUI::DropDownMenu::DropDownMenu( const Brood::BroodUI::DropDownMenu& a_otherElement ) :
+	Brood::BroodUI::Button( a_otherElement ),
+	m_maxItemLength( a_otherElement.m_maxItemLength )
+{
+	this->m_maxItemLength = a_otherElement.m_maxItemLength;
+
+	// copying the the menu items by maling a deep copy
+	std::vector<Brood::BroodUI::Button*> otherItems = a_otherElement.m_items;
+	std::vector<Brood::BroodUI::Button*>::iterator otherItemsIte = otherItems.begin();
+	while( otherItemsIte != otherItems.end() )
+	{
+		AddItemToMenu( *otherItemsIte );
+		++otherItemsIte;
+	}
+}
+
+/// 
+/// @brief assignment operator
+/// 
+/// @param a_otherElement reference to the dropdown menu which is used to 
+///		copy the data form 
+/// 
+/// @return pointer to this element
+/// 
+Brood::BroodUI::DropDownMenu& Brood::BroodUI::DropDownMenu::operator=( const Brood::BroodUI::DropDownMenu& a_otherElement )
+{
+	// chekcing for self assignment
+	if( this == &a_otherElement )
+	{
+		return *this;
+	}
+
+	// calling the assignment operator of the UIElement
+	Brood::BroodUI::Button::operator=( a_otherElement );
+
+	this->m_maxItemLength = a_otherElement.m_maxItemLength;
+
+	// copying the the menu items by maling a deep copy
+	std::vector<Brood::BroodUI::Button*> otherItems = a_otherElement.m_items;
+	std::vector<Brood::BroodUI::Button*>::iterator otherItemsIte = otherItems.begin();
+	while( otherItemsIte != otherItems.end() )
+	{
+		AddItemToMenu( *otherItemsIte );
+		++otherItemsIte;
+	}
+
+	return *this;
 }
 
 ///
@@ -168,7 +223,6 @@ void Brood::BroodUI::DropDownMenu::SetBodyPosition( float a_posX, float a_posY, 
 /// 
 void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 {
-	m_font = a_font;
 	Brood::BroodUI::Button::SetFont( *a_font );
 
 	// setting fonts of all the menu in the dropdown
@@ -178,7 +232,7 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 		// postion all items according to the new menu position
 		for( int i = 0; i < m_items.size(); ++i )
 		{
-			m_items.at( i )->SetFont(*m_font);
+			m_items.at( i )->SetFont( *m_font );
 		}
 	}
 }
@@ -189,7 +243,7 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 /// 
 /// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
 /// 
-void Brood::BroodUI::DropDownMenu::SetFontSize( int a_fontSize )
+void Brood::BroodUI::DropDownMenu::SetFontSize( unsigned a_fontSize )
 {
 	// setting the menu title font size
 	Brood::BroodUI::UIElement::SetFontSize( a_fontSize );
@@ -240,7 +294,45 @@ void Brood::BroodUI::DropDownMenu::AddItemToMenu( std::string a_menuName, sf::Co
 	// adding the item as child of the dropDown
 	GetElementIdPtr()->AddChild( item->GetElementIdPtr() );
 	// adding the dropdown as parent of the item
-	item->GetElementIdPtr()->SetParent( GetElementIdPtr());
+	item->GetElementIdPtr()->SetParent( GetElementIdPtr() );
+}
+
+/// 
+/// @public
+/// @brief Function to add menu item to the dropdown menu
+///
+/// if a_createNew is true then create a new button using the 
+///  passed item then adds the new button 
+/// 
+/// It dynamically allocates memory for the newly created item
+/// 
+/// @param a_buttonPtrToAdd pointer to the button element which 
+///		is used to add
+/// @param a_createNew if a_createNew is true then create a new  
+///		button using the passed item then adds the new button 
+/// 
+void Brood::BroodUI::DropDownMenu::AddItemToMenu( Brood::BroodUI::Button* a_buttonPtrToAdd,
+												  bool a_createNew )
+{
+	Brood::BroodUI::Button* item;
+	if( a_createNew )
+	{
+		item = new Brood::BroodUI::Button( ( *a_buttonPtrToAdd ) );
+	}
+	else
+	{
+		item = a_buttonPtrToAdd;
+	}
+
+	// setting up the item which is at the end of the list
+	SetItemSize( m_items.size() - 1 );
+	SetItemPos( m_items.size() - 1 );
+
+	// setting up the id
+	// adding the item as child of the dropDown
+	GetElementIdPtr()->AddChild( item->GetElementIdPtr() );
+	// adding the dropdown as parent of the item
+	item->GetElementIdPtr()->SetParent( GetElementIdPtr() );
 }
 
 /// 
@@ -290,7 +382,7 @@ bool Brood::BroodUI::DropDownMenu::DoElement()
 	// chekcing if this element is currActive and is not hot when 
 	// left mouse button is not pressed
 	Brood::BroodUI::Id* hotElementLocalCopy = Brood::BroodUI::ElementSelection::GetHotElementIdPtr();
-	
+
 	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() &&
 		Brood::MouseHandler::IsLeftButtonPressed() &&
 		GetElementIdPtr() != hotElementLocalCopy )
@@ -384,7 +476,7 @@ void Brood::BroodUI::DropDownMenu::SetItemPos( int a_itemIndex )
 	// calculating the items positon, 
 	// it is index + 1 as the menu's title itself occupies the first slot
 	float itemPosX = GetBodyPosition().x;
-	float itemPosY = GetBodyPosition().y + GetBodySize().y * ( a_itemIndex + 1 ) ;
+	float itemPosY = GetBodyPosition().y + GetBodySize().y * ( a_itemIndex + 1 );
 
 	m_items.at( a_itemIndex )->SetBodyPosition( itemPosX, itemPosY );
 }
@@ -432,7 +524,7 @@ void Brood::BroodUI::DropDownMenu::SetItemSize( int a_itemIndex )
 /// @protected
 /// @brief Setter function to set the size of each item in the drop down menus
 /// 
-void Brood::BroodUI::DropDownMenu::SetEachItemSize( )
+void Brood::BroodUI::DropDownMenu::SetEachItemSize()
 {
 	if( !m_items.empty() )
 	{

@@ -154,34 +154,68 @@ public:
 	// default constructor
 	TextBox( Brood::BroodUI::UIElement* a_parentPtr = nullptr,
 			 Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_textBox);
+	
 	// default destructor
 	virtual ~TextBox();
 
-	// getter funcitons
+	// copy constructor
+	TextBox( const TextBox& a_otherTextBox );
+
+	// assignment operator
+	Brood::BroodUI::TextBox& operator=( const TextBox& a_otherTextBox );
+
+	// ====== getter funcitons ======
+
+	// checks to see if the text box is editable or not 
 	const bool IsEditable() const;
+
+	// check to see if the text box is selected or not
 	const bool IsSelected() const;
 
-	// setter fucnitons
-	void SetText( std::string a_text = "" ) override; // sets text
-	void SetLimit( bool a_hasLimit = false, int a_limit = 0 ); // to set the limit to number of character 
-	void SetSelected( bool a_selected ); // sets the state of the element.
-	void SetEditable( bool a_isEditable ); // sets if the textbox is editable or not
+	// ====== setter funcitons ======
 
-	void TypeOn( sf::Event a_input ); // called every time user enters a char
+	// sets text
+	void SetText( std::string a_text = "" ) override; 
+	
+	// sets the limit to number of character 
+	void SetLimit( bool a_hasLimit = false, int a_limit = 0 ); 
+	
+	// sets the state of the element.
+	void SetSelected( bool a_selected ); 
+	
+	// sets if the textbox is editable or not
+	void SetEditable( bool a_isEditable ); 
 
-	virtual bool DoElement() override; // checks to see if the logic for the element is to be excecuted or not 
+	// called every time user enters a char
+	void TypeOn( sf::Event a_input );
+
+	// checks to see if the logic for the element is to 
+	// be excecuted or not 
+	virtual bool DoElement() override; 
 
 	// ============ private member function =============== 
 private:
-	void InputLogic( int charTyped ); // all of the logic; called on every key press
-	void DeleteLastChar(); // delete last char
+
+	// all of the logic; called on every key press
+	void InputLogic( int charTyped ); 
+
+	// delete last char
+	void DeleteLastChar(); 
 
 	// ============ private member variables ===============
 private:
-	std::ostringstream m_ossText; ///> text buffer
-	bool m_isEditable; ///> is true if the element's text is editable
-	bool m_hasLimit; ///> is true if the element has number of character limit
-	int m_limit; ///> max number of character
+	
+	/// text buffer
+	std::ostringstream m_ossText; 
+	
+	/// is true if the element's text is editable
+	bool m_isEditable; 
+	
+	/// is true if the element has number of character limit
+	bool m_hasLimit; 
+	
+	/// max number of character
+	int m_limit; 
 };
 
 // ======================================================================

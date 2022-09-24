@@ -134,8 +134,20 @@ public:
 	// default destructor
 	virtual ~DropDownInput();
 
+	// copy constructor
+	DropDownInput( const DropDownInput& a_otherElement );
+
+	// assignment operator
+	Brood::BroodUI::DropDownInput& operator=( const DropDownInput& a_otherButton );
+
 	// adds item to menu
-	void AddItemToMenu( std::string a_menuName,
-						sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+	virtual void AddItemToMenu( std::string a_menuName,
+								sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+
+	// adds the passed button to dropdown menu if a_createNew is true
+	// then create a new button using the passed item then adds 
+	// the new button 
+	virtual void AddItemToMenu( Brood::BroodUI::Button* a_buttonPtrToAdd,
+								bool a_createNew = true );
 };
 

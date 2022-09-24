@@ -51,23 +51,36 @@ namespace Brood
 /// // event object 
 /// sf::Event events;
 /// 
-/// // making a MenuBar
+/// // creating a MenuBar object
 /// Brood::BroodUI::MenuBar myMenu;
+/// 
+/// // setting size and position
 /// myMenu.SetBodySize( WINDOW_WIDTH, 30 );
 /// myMenu.SetBodyPosition( 0, 0 );
+/// 
+/// // setting the font which is required to display the text
 /// myMenu.SetFont( &font );
+/// 
+/// // setting the font size. It should be less than the body height by 2 units.
+/// // @see Brood::BroodUI::UIElement::SetFontSize() for more information
 /// myMenu.SetCharacterSize( 20 );
+/// 
+/// // setting body color
 /// myMenu.SetBodyColor( sf::Color::Magenta );
 /// 
+/// // Adding 3 menu to the menubar 
+/// // and setting the menu title to "hello w", "b", and "c 
 /// myMenu.AddMenuToMenuBar( "hello w" );
 /// myMenu.AddMenuToMenuBar( "b" );
 /// myMenu.AddMenuToMenuBar( "c" );
 /// 
+/// // adding 4 items to the first menu of the menu bar
 /// myMenu.GetMenuList().at( 0 )->AddItemToMenu( "aa" );
 /// myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ab" );
 /// myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ac" );
 /// myMenu.GetMenuList().at( 0 )->AddItemToMenu( "ad" );
 /// 
+/// // adding 4 items to the second menu of the menu bar
 /// myMenu.GetMenuList().at( 1 )->AddItemToMenu( "ba" );
 /// myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bb" );
 /// myMenu.GetMenuList().at( 1 )->AddItemToMenu( "bc" );
@@ -116,38 +129,82 @@ class Brood::BroodUI::MenuBar : public Brood::BroodUI::UIElement
 	// ============ public member function =============== 
 public:
 	// default constructor
-	MenuBar( Brood::BroodUI::UIElement* a_parentPtr = nullptr);
+	MenuBar( Brood::BroodUI::UIElement* a_parentPtr = nullptr );
+
 	// default destructor
 	virtual ~MenuBar();
 
-	// getter funciton
-	std::vector<Brood::BroodUI::DropDownMenu*>& GetMenuList(); // gets the menu list
+	// copy constructor
+	MenuBar( const MenuBar& a_otherElement );
 
-	// setter function
-	void SetBodySize( sf::Vector2f a_eachItemSize ) override; // sets the menu's body sizse
-	void SetBodySize( float a_itemSizeX, float a_itemSizeY ) override; // sets the menu's body sizse
-	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override; // sets the menu's body position
-	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override; // // sets the menu's body position
-	void SetFont( sf::Font* a_font ); // sets the menu's font
-	void SetFontSize( int a_fontSize ); // sets the font size
+	// assignment operator
+	Brood::BroodUI::MenuBar& operator=( const MenuBar& a_otherElement );
 
-	void AddMenuToMenuBar( std::string a_menuName ); // adds menus to the menu bar
-	void AddItemToMenu( unsigned a_index, std::string a_menuName); // adds item to a menu at given index
+	// ======= getter funciton =======
 
-	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
-	
-	virtual void Debugger(); // adds the element ID to the text
+	// gets the menu list
+	std::vector<Brood::BroodUI::DropDownMenu*>& GetMenuList();
+
+	// ======= setter funciton =======
+
+	// sets the menu's body sizse
+	void SetBodySize( sf::Vector2f a_eachItemSize ) override;
+
+	// sets the menu's body sizse
+	void SetBodySize( float a_itemSizeX, float a_itemSizeY ) override;
+
+	// sets the menu's body position
+	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
+
+	// // sets the menu's body position
+	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
+
+	// sets the menu's font
+	void SetFont( sf::Font* a_font );
+
+	// sets the font size
+	void SetFontSize( unsigned a_fontSize );
+
+	// adds menus to the menu bar
+	void AddMenuToMenuBar( std::string a_menuName );
+
+	// adds the passed DropDownMenu at back of menubar 
+	// if a_createNew is true then create a new DropDownMenu 
+	// using the passed item then adds the new DropDownMenu 
+	// to the menubar
+	void AddMenuToMenuBar( Brood::BroodUI::DropDownMenu* a_dropdownMenuPtrToAdd,
+						   bool a_createNew = true );
+
+	// adds item to a menu at given index
+	void AddItemToMenu( unsigned a_index, std::string a_menuName );
+
+	// adds the passed button to dropdown menu at passed index
+	// if a_createNew is true then create a new button using 
+	// the passed item then adds the new button to the DropDownMenu
+	void AddItemToMenu( unsigned a_index,
+						Brood::BroodUI::Button* a_buttonPtrToAdd,
+						bool a_createNew = true );
+
+	// draw funciton
+	virtual void Draw( sf::RenderWindow& a_window ) override;
+
+	// adds the element ID to the text
+	virtual void Debugger();
 
 	// ============ private member function ===============
 private:
-	void SetMenuBodySize( int a_itemIndex ); // sets the menu's item size correctly
-	void SetMenuPos( int a_itemIndex ); // sets the menu's item position correctly
+
+	// sets the menu's item size correctly
+	void SetMenuBodySize( int a_itemIndex );
+
+	// sets the menu's item position correctly
+	void SetMenuPos( int a_itemIndex );
 
 private:
 	// ============ private member variables ===============
-	std::vector<Brood::BroodUI::DropDownMenu*> m_menus; ///> stores the list of drop down menus
-	sf::Font* m_font; ///> pointer to the font
-	unsigned m_fontSize; ///> font size
+
+	/// stores the list of drop down menus
+	std::vector<Brood::BroodUI::DropDownMenu*> m_menus;
 };
 
 // ======================================================================

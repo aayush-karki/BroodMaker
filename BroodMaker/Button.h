@@ -100,10 +100,10 @@ public:
 	virtual ~Button(); 
 
 	// copy constructor
-	Button( Button& a_otherElement );
+	Button( const Button& a_otherElement );
 
 	// assignment operator
-	Brood::BroodUI::Button& operator=( Button& a_otherButton );
+	Brood::BroodUI::Button& operator=( const Button& a_otherButton );
 
 	// ========= Getter funciton ==============
 
@@ -116,7 +116,8 @@ public:
 	void SetSelected( bool a_selected ); 
 
 
-	// checks to see if the logic for the element is to be excecuted or not 
+	// checks to see if the logic for the element is to 
+	// be excecuted or not 
 	virtual bool DoElement() override; 
 	
 	// adds the element ID to the text

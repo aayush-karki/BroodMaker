@@ -97,6 +97,8 @@ enum class Brood::BroodUI::ENUM_UIType
 /// @todo create a font class whose job is to load and save font and replace 
 ///		all the m_font to object of that file
 /// @todo Encapsulate the BroodUI better. 
+/// @todo create a log class that logs all the errors
+/// @todo change the setter funciton to return bool, errorMessage
 /// 
 class Brood::BroodUI::UIElement
 {
@@ -153,7 +155,7 @@ public:
 	// ====== setter functions =======
 
 	// sets element body color
-	void SetBodyColor( sf::Color a_bodyColor );
+	virtual void SetBodyColor( sf::Color a_bodyColor );
 
 	// sets element body size 
 	virtual  void SetBodySize( sf::Vector2f  a_size );
@@ -168,25 +170,25 @@ public:
 	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
 
 	// sets font
-	void SetFont( sf::Font& a_font ); // sets font
+	virtual void SetFont( sf::Font& a_font ); // sets font
 
 	// sets font color
-	void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // sets font color
+	virtual void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // sets font color
 
 	// sets font size
-	void SetFontSize( int a_fontSize = 12 );
+	virtual void SetFontSize( int a_fontSize = 12 );
 
 	// sets text
-	virtual void SetText( std::string a_text = "" );
+	virtual virtual void SetText( std::string a_text = "" );
 
 	// sets the state of the element.
-	virtual void SetSelected( bool a_selected );
+	virtual virtual void SetSelected( bool a_selected );
 
 	// sets active overlay color
-	void SetActiveOverlayColor( sf::Color a_color );
+	virtual void SetActiveOverlayColor( sf::Color a_color );
 
 	// sets hot overlay color
-	void SetHotOverlayColor( sf::Color a_color );
+	virtual void SetHotOverlayColor( sf::Color a_color );
 
 	// funciton to check if the mouse is over element
 	bool IsMouseOverElement();

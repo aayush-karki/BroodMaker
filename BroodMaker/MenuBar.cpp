@@ -29,8 +29,7 @@
 ///		if parent does not exist then nullptr -> default value nullptr
 /// 
 Brood::BroodUI::MenuBar::MenuBar( Brood::BroodUI::UIElement* a_parentPtr ) :
-	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_menuBar, a_parentPtr ),
-	m_font( nullptr ), m_fontSize ( 0 )
+	Brood::BroodUI::UIElement( Brood::BroodUI::ENUM_UIType::UI_menuBar, a_parentPtr )
 {}
 
 ///
@@ -47,6 +46,56 @@ Brood::BroodUI::MenuBar::~MenuBar()
 			delete m_menus.at( i );
 		}
 	}
+}
+
+///
+/// @brief Copy constructor
+/// 
+/// @param a_otherElement reference to the MenuBar which is used to 
+///		copy the data form 
+/// 
+Brood::BroodUI::MenuBar::MenuBar( const MenuBar& a_otherElement ) :
+	Brood::BroodUI::UIElement( a_otherElement )
+{
+	// copying the the menu items by maling a deep copy
+	std::vector<Brood::BroodUI::DropDownMenu*> otherMenus = a_otherElement.m_menus;
+	std::vector<Brood::BroodUI::DropDownMenu*>::iterator otherMenusIte = otherMenus.begin();
+	while( otherMenusIte != otherMenus.end() )
+	{
+		AddMenuToMenuBar( *otherMenusIte );
+		++otherMenusIte;
+	}
+}
+
+
+/// 
+/// @brief assignment operator
+/// 
+/// @param a_otherElement reference to the dropdown menu which is used to 
+///		copy the data form 
+/// 
+/// @return pointer to this element
+/// 
+Brood::BroodUI::MenuBar& Brood::BroodUI::MenuBar::operator=( const MenuBar& a_otherElement )
+{
+	// chekcing for self assignment
+	if( this == &a_otherElement )
+	{
+		return *this;
+	}
+
+	// calling the assignment operator of the UIElement
+	Brood::BroodUI::UIElement::operator=( a_otherElement );
+
+	// copying the the menu items by maling a deep copy
+	std::vector<Brood::BroodUI::DropDownMenu*> otherMenus = a_otherElement.m_menus;
+	std::vector<Brood::BroodUI::DropDownMenu*>::iterator otherMenusIte = otherMenus.begin();
+	while( otherMenusIte != otherMenus.end() )
+	{
+		AddMenuToMenuBar( *otherMenusIte );
+		++otherMenusIte;
+	}
+	return *this;
 }
 
 ///
@@ -169,7 +218,7 @@ void Brood::BroodUI::MenuBar::SetBodyPosition( float a_posX, float a_posY, bool 
 /// 
 void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 {
-	m_font = a_font;
+	Brood::BroodUI::UIElement::SetFont( *a_font );
 
 	// setting the fonts of menus items
 	if( !m_menus.empty() )
@@ -196,28 +245,9 @@ void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 /// 
 /// @param a_fontSize size of the font in pixel
 /// 
-void Brood::BroodUI::MenuBar::SetFontSize( int a_fontSize )
+void Brood::BroodUI::MenuBar::SetFontSize( unsigned a_fontSize )
 {
-	float menuBarHeight = GetBodySize().y;
-
-	// checking menu bar height
-	if( menuBarHeight == 0 )
-	{
-		std::cerr << "The menu bar height is zero." << std::endl
-			<< "Set the menubar height before setting the font size" << std::endl;
-	}
-	// chekcing if fontsize is greater than menu height - 2
-	else if( a_fontSize > menuBarHeight - 2 )
-	{
-		std::cerr << "Font size is more than the menu bar height - 2." << std::endl
-			<< "Setting the font size to current menubar height - 2" << std::endl
-			<< "Setting the font size to " << menuBarHeight - 2 << std::endl;
-		m_fontSize = menuBarHeight - 2;
-	}
-	else
-	{
-		m_fontSize = a_fontSize;
-	}
+	Brood::BroodUI::UIElement::SetFontSize( a_fontSize );
 
 	// updating the charsize of all the item in the menu bar
 	if( !m_menus.empty() )
@@ -244,7 +274,7 @@ void Brood::BroodUI::MenuBar::SetFontSize( int a_fontSize )
 /// 
 /// @param a_menuName name of the item
 /// 
-void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName)
+void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName )
 {
 	// create a DropDownMenu 
 	Brood::BroodUI::DropDownMenu* menu = new Brood::BroodUI::DropDownMenu;
@@ -253,7 +283,6 @@ void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName)
 	m_menus.push_back( menu );
 
 	// setting up the menubar
-	menu->SetText( a_menuName );
 	SetMenuBodySize( m_menus.size() - 1 ); // setting the menu size
 	SetMenuPos( m_menus.size() - 1 ); // setting the menu pos
 	menu->SetFont( m_font );
@@ -265,16 +294,60 @@ void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName)
 	// adding the item as child of the dropDown
 	GetElementIdPtr()->AddChild( menu->GetElementIdPtr() );
 	// adding the dropdown as parent of the item
-	menu->GetElementIdPtr()->SetParent( GetElementIdPtr());
+	menu->GetElementIdPtr()->SetParent( GetElementIdPtr() );
+}
+
+/// 
+/// @public
+/// @brief Function to adds the passed DropDownMenu at back of 
+///		menubar 
+///
+/// if a_createNew is true then create a new DropDownMenu 
+///		using the passed item then adds the new DropDownMenu 
+///		to the menubar
+/// It dynamically allocates memory for the newly created item
+///
+/// @param a_dropdownMenuPtrToAdd pointer to the dropdownMenu
+///		element which is used to add at the back
+/// @param a_createNew if a_createNew is true then create a new  
+///		dropdownMenu using the passed item then adds the new button 
+/// 
+void Brood::BroodUI::MenuBar::AddMenuToMenuBar( Brood::BroodUI::DropDownMenu* a_dropdownMenuPtrToAdd,
+												bool a_createNew )
+{
+	Brood::BroodUI::DropDownMenu* menu;
+	if( a_createNew )
+	{
+		menu = new Brood::BroodUI::DropDownMenu( ( *a_dropdownMenuPtrToAdd ) );
+	}
+	else
+	{
+		menu = a_dropdownMenuPtrToAdd;
+	}
+
+	//adding menu to the itemList
+	m_menus.push_back( menu );
+
+	SetMenuBodySize( m_menus.size() - 1 ); // setting the menu size
+	SetMenuPos( m_menus.size() - 1 ); // setting the menu pos
+
+	// setting up the id
+	// adding the item as child of the dropDown
+	GetElementIdPtr()->AddChild( menu->GetElementIdPtr() );
+	// adding the dropdown as parent of the item
+	menu->GetElementIdPtr()->SetParent( GetElementIdPtr() );
 }
 
 /// 
 /// @public
 /// @brief Function to add menu item to menu in menubar
 ///
+/// @param a_index menu bar which dropdown the item is to 
+///		be added to
 /// @param a_menuItemName name of the item
 /// 
-void Brood::BroodUI::MenuBar::AddItemToMenu( unsigned a_index, std::string a_menuItemName )
+void Brood::BroodUI::MenuBar::AddItemToMenu( unsigned a_index,
+											 std::string a_menuItemName )
 {
 	// checking if the index is valid
 	if( a_index >= m_menus.size() )
@@ -284,6 +357,37 @@ void Brood::BroodUI::MenuBar::AddItemToMenu( unsigned a_index, std::string a_men
 	}
 
 	m_menus.at( a_index )->AddItemToMenu( a_menuItemName );
+}
+
+/// 
+/// @public
+/// @brief Function to adds the passed button to dropdown menu
+///		at passed index
+///
+/// if a_createNew is true then create a new button using 
+///		the passed item then adds the new button to the DropDownMenu
+/// 
+/// It dynamically allocates memory for the newly created item
+///
+/// @param a_index menu bar which dropdown the item is to 
+///		be added to
+/// @param a_buttonPtrToAdd pointer to the button element which 
+///		is used to add
+/// @param a_createNew if a_createNew is true then create a new  
+///		button using the passed item then adds the new button 
+/// 
+void Brood::BroodUI::MenuBar::AddItemToMenu( unsigned a_index,
+											 Brood::BroodUI::Button* a_buttonPtrToAdd,
+											 bool a_createNew )
+{
+	// checking if the index is valid
+	if( a_index >= m_menus.size() )
+	{
+		std::cerr << "Invalid index!!!" << std::endl;
+		return;
+	}
+
+	m_menus.at( a_index )->AddItemToMenu( a_buttonPtrToAdd, a_createNew );
 }
 
 /// 
@@ -336,11 +440,11 @@ void Brood::BroodUI::MenuBar::SetMenuBodySize( int a_itemIndex )
 	DropDownMenu* menuToChange = m_menus.at( a_itemIndex );
 	unsigned textLen = menuToChange->GetText().length();
 	float bodySizeX = 0.f;
-	
+
 	// checking the length of text in the menu
 	if( textLen < 3 )
 	{
-		bodySizeX = m_fontSize * ( float)textLen * 2;
+		bodySizeX = m_fontSize * ( float )textLen * 2;
 	}
 	else if( textLen < 15 )
 	{

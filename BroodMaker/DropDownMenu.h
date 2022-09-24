@@ -112,7 +112,7 @@ namespace Brood
 /// 
 /// @endcode
 /// 
-class Brood::BroodUI::DropDownMenu: public Brood::BroodUI::Button
+class Brood::BroodUI::DropDownMenu : public Brood::BroodUI::Button
 {
 	// ============ public member function =============== 
 public:
@@ -122,40 +122,85 @@ public:
 	// default destructor
 	virtual ~DropDownMenu();
 
+	// copy constructor
+	DropDownMenu( const DropDownMenu& a_otherElement );
+
+	// assignment operator
+	Brood::BroodUI::DropDownMenu& operator=( const DropDownMenu& a_otherElement );
+
 	// getter funciton
 	std::vector<Brood::BroodUI::Button*>& GetItemList();
 
-	// setter function
-	void SetText( std::string a_text = "") ; // sets text of the title menu
-	void SetBodySize( sf::Vector2f a_eachItemSize ) override; // sets body size
-	void SetBodySize( float a_itemSizeX, float a_itemSizeY ) override; // sets body size
-	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override; // sets body position
-	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override; // sets body position
-	void SetFont( sf::Font* a_font ); // sets font for the menus
-	void SetFontSize( int a_fontSize = 12 ); // sets fonts size
+	// ======== setter function =======
 
-	void AddItemToMenu( std::string a_menuName, sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // adds item to menu
+	// sets text of the title menu
+	void SetText( std::string a_text = "" );
+
+	// sets body size
+	void SetBodySize( sf::Vector2f a_eachItemSize ) override;
+
+	// sets body size
+	void SetBodySize( float a_itemSizeX, float a_itemSizeY ) override;
+
+	// sets body position
+	void SetBodyPosition( sf::Vector2f  a_pos, bool a_relativeToParent = false ) override;
+
+	// sets body position
+	void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false ) override;
+
+	// sets font for the menus
+	void SetFont( sf::Font* a_font );
+
+	// sets fonts size
+	void SetFontSize( unsigned a_fontSize = 12 );
+
+	// adds item to menu
+	virtual void AddItemToMenu( std::string a_menuName,
+						sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+
+	// adds the passed button to dropdown menu if a_createNew is true
+	// then create a new button using the passed item then adds 
+	// the new button 
+	virtual void AddItemToMenu( Brood::BroodUI::Button* a_buttonPtrToAdd,
+						bool a_createNew = true );
 
 	// overrided funciton 
-	virtual bool DoElement() override;
-	virtual void Draw( sf::RenderWindow& a_window ) override; // draw funciton
 
-	virtual void Debugger(); // adds the element ID to the text
+	// checks to see if the logic for the element is to 
+	// be excecuted or not 
+	virtual bool DoElement() override;
+
+	// draw funciton
+	virtual void Draw( sf::RenderWindow& a_window ) override;
+
+	// adds the element ID to the text
+	virtual void Debugger();
 
 	// ============ protected member function ===============
 protected:
-	void SetItemPos( int a_itemIndex ); // helper function position menu item at given index correctly
-	void SetItemSize( int a_itemIndex ); // helper function size the menu item at given index correctly
-	void SetEachItemSize(); // helper function size all the menu item correctly
-	void SetEachItemPos(); // helper function position all the menu item correctly
 
+	// ====== helper funcitons ========
+
+	// position menu item at given index correctly
+	void SetItemPos( int a_itemIndex );
+
+	// size the menu item at given index correctly
+	void SetItemSize( int a_itemIndex );
+
+	// size all the menu item correctly
+	void SetEachItemSize();
+
+	// position all the menu item correctly
+	void SetEachItemPos();
 
 	// ============ protected member variables ===============
 protected:
-	sf::Font* m_font; ///> pointer to the font
 
-	std::vector<Brood::BroodUI::Button*> m_items; ///> stores the list of menus
-	size_t m_maxItemLength; ///> holds the length of the longest menu item
+	/// stores the list of menus
+	std::vector<Brood::BroodUI::Button*> m_items;
+
+	/// holds the length of the longest menu item
+	size_t m_maxItemLength;
 };
 
 // ======================================================================

@@ -35,7 +35,7 @@
 ///		if parent does not exist then nullptr -> default value nullptr
 /// 
 Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
-								  Brood::BroodUI::ENUM_UIType a_enumType) :
+								  Brood::BroodUI::ENUM_UIType a_enumType ) :
 	Brood::BroodUI::UIElement( a_enumType, a_parentPtr ),
 	m_isEditable( false ), m_hasLimit( false ), m_limit( -1 )
 {}
@@ -46,6 +46,46 @@ Brood::BroodUI::TextBox::TextBox( Brood::BroodUI::UIElement* a_parentPtr,
 /// 
 Brood::BroodUI::TextBox::~TextBox()
 {}
+
+///
+/// @brief Copy constructor
+/// 
+/// @param a_otherTextBox reference to the uiElement which is used to 
+///		copy the data form 
+/// 
+Brood::BroodUI::TextBox::TextBox( const Brood::BroodUI::TextBox& a_otherTextBox ) :
+	UIElement( a_otherTextBox ), m_isEditable( a_otherTextBox.m_isEditable ),
+	m_hasLimit( a_otherTextBox.m_hasLimit ), m_limit( a_otherTextBox.m_limit )
+{
+	this->m_ossText.str( a_otherTextBox.m_ossText.str() );
+}
+
+/// 
+/// @brief assignment operator
+/// 
+/// @param a_otherTextBox reference to the text box which is used to 
+///		copy the data form 
+/// 
+/// @return pointer to this element
+///
+Brood::BroodUI::TextBox& Brood::BroodUI::TextBox::operator=( const Brood::BroodUI::TextBox& a_otherTextBox )
+{
+	// chekcing for self assignment
+	if( this == &a_otherTextBox )
+	{
+		return *this;
+	}
+
+	// calling the assignment operator of the UIElement
+	Brood::BroodUI::UIElement::operator=( a_otherTextBox );
+
+	this->m_isEditable = a_otherTextBox.m_isEditable;
+	this->m_hasLimit = a_otherTextBox.m_hasLimit;
+	this->m_limit = a_otherTextBox.m_limit;
+	this->m_ossText.str( a_otherTextBox.m_ossText.str() );
+
+	return *this;
+}
 
 /// 
 /// @public
@@ -64,7 +104,7 @@ const bool Brood::BroodUI::TextBox::IsEditable() const
 /// 
 /// @return true if it is currently selected; else false
 /// 
-const bool Brood::BroodUI::TextBox::IsSelected( ) const
+const bool Brood::BroodUI::TextBox::IsSelected() const
 {
 	return m_isSelected;
 }
@@ -167,7 +207,7 @@ void Brood::BroodUI::TextBox::SetEditable( bool a_isEditable )
 /// @param a_input a copy of sf::Event::TextEntered
 /// 
 void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
-{	
+{
 	if( m_isEditable && m_isSelected )
 	{
 		// we only process ascii codes
@@ -181,7 +221,7 @@ void Brood::BroodUI::TextBox::TypeOn( sf::Event a_input )
 				{
 					DeleteLastChar();
 				}
-				else if( m_ossText.str().length() < m_limit)
+				else if( m_ossText.str().length() < m_limit )
 				{
 					InputLogic( charTyped );
 				}
@@ -213,8 +253,8 @@ bool Brood::BroodUI::TextBox::DoElement()
 
 	// chekcing if this element is currActive and is not hot when 
 	// left mouse button is not pressed
-	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() && 
-		Brood::MouseHandler::IsLeftButtonPressed() && 
+	if( GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr() &&
+		Brood::MouseHandler::IsLeftButtonPressed() &&
 		GetElementIdPtr() != Brood::BroodUI::ElementSelection::GetHotElementIdPtr() )
 	{
 		// then this element should not be currActive
@@ -250,7 +290,7 @@ void Brood::BroodUI::TextBox::InputLogic( int charTyped )
 			DeleteLastChar();
 		}
 	}
-	
+
 	SetText( m_ossText.str() ); // we need to use Text as it also sets m_drawText
 	m_text.setString( m_ossText.str() + "_" ); // we do not want _ to save as input
 }
