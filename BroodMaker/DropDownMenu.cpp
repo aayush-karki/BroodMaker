@@ -271,10 +271,10 @@ bool Brood::BroodUI::DropDownMenu::DoElement()
 		const int currActiveElementId = currActiveId->GetElementID();
 
 		// getting the pointer to curr active element
-		Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+		Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 
 		// getting the this element's parentptr
-		Brood::BroodUI::UIElement* thisElementparentElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
+		Brood::BroodUI::UIElement* thisElementparentElement = Brood::BroodUI::MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
 
 		// checking if the currActive is dropdown and its parent is menu bar and this element and curr
 		if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_dropDownMenu &&

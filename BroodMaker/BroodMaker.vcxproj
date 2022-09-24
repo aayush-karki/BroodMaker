@@ -33,6 +33,7 @@
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="HomeWorkSpace.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MapIdToElement.cpp" />
     <ClCompile Include="MenuBar.cpp" />
     <ClCompile Include="MouseHandler.cpp" />
     <ClCompile Include="PathLinkedList.cpp" />
@@ -64,6 +65,7 @@
     <ClInclude Include="Data.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="HomeWorkSpace.h" />
+    <ClInclude Include="MapIdToElement.h" />
     <ClInclude Include="MenuBar.h" />
     <ClInclude Include="MouseHandler.h" />
     <ClInclude Include="PathLinkedList.h" />

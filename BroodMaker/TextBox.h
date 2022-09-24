@@ -54,7 +54,7 @@ namespace Brood
 ///		
 ///			// checking if the current active element is a editable textbox
 ///			int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID();
-///			Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+///			Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 ///			if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
 ///			{
 ///				// checking if it is editable or not
@@ -109,7 +109,7 @@ namespace Brood
 ///				
 ///					// checking if the current active element is a editable textbox
 ///					int currActiveElementId = Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr()->GetElementID();
-///					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( currActiveElementId );
+///					Brood::BroodUI::UIElement* currActiveElement = Brood::BroodUI::MapIdToElement::GetElementPtrFromMap( currActiveElementId );
 ///					if( currActiveElement->GetElementType() == Brood::BroodUI::ENUM_UIType::UI_textBox )
 ///					{
 ///						// checking if it is editable or not

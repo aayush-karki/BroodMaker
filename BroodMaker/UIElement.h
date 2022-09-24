@@ -12,12 +12,12 @@
 /// ENUM_UIType contains the types of UI elemente that are derived 
 ///		from UIElement class
 /// 
-/// ST_MapIdToElement is a struct that maps the unique ui element id to 
+/// MapIdToElement is a struct that maps the unique ui element id to 
 ///		its element. 
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of UIElement class, ST_UIELementCtorParam struct, and 
-///		ST_MapIdToElement struct.
+///		MapIdToElement struct.
 ///
 /************************************************************************/
 
@@ -26,6 +26,7 @@
 // ======================================================================
 #pragma once
 #include "UI_ID.h"
+#include "MapIdToElement.h"
 #include "ElementSelection.h"
 #include "MouseHandler.h"
 #include "GlobalVariables.h"
@@ -38,8 +39,8 @@ namespace Brood
 	namespace BroodUI
 	{
 		enum class ENUM_UIType;
-		struct ST_MapIdToElement;
 		class UIElement;
+		class MapIdToElement;
 	}
 }
 // ======================================================================
@@ -177,36 +178,4 @@ protected:
 
 // ======================================================================
 // ================= end of UIElement class =============================
-// ======================================================================
-
-// ======================================================================
-// ================= start of ST_MapIdToElement struct ==================
-// ======================================================================
-
-///
-/// @ingroup BroodUI
-/// @struct MapIdToElement  "MapIdToElement.h"
-/// @brief A static struct to handel the mapping of unique UI_ID to its element
-///		for quick acceess 
-/// 
-struct Brood::BroodUI::ST_MapIdToElement
-{
-
-	// ================= public member function ===================  
-public:
-	// Getter functions
-	static std::map<const int, Brood::BroodUI::UIElement*>& GetMap();
-	static Brood::BroodUI::UIElement* GetElementPtrFromMap( int a_id );
-
-	static bool AddToMap( int a_id, Brood::BroodUI::UIElement* a_elementPtr );
-	static bool ReomveFromMap( int a_id );
-
-	// ================= private member variables =================  
-private:
-	///> maps the unique UI ID to the element
-	static std::map<const int, Brood::BroodUI::UIElement*> stm_mapper;
-};
-
-// ======================================================================
-// ================= end of ST_MapIdToElement struct ====================
 // ======================================================================

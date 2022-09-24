@@ -137,6 +137,9 @@
     <ClCompile Include="PathLinkedList.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MapIdToElement.cpp">
+      <Filter>src\Components\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
@@ -226,5 +229,6 @@
     <ClInclude Include="PathLinkedList.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MapIdToElement.h" />
   </ItemGroup>
 </Project>

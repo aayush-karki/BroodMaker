@@ -19,7 +19,7 @@
 #include "UIElement.h"
 
 // declaring the static data member of the MapIdToElement struct
-std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::ST_MapIdToElement::stm_mapper;
+std::map<const int, Brood::BroodUI::UIElement*> Brood::BroodUI::MapIdToElement::stm_mapper;
 
 // ======================================================================
 // ================= start of UIElement class ===========================
@@ -45,7 +45,7 @@ Brood::BroodUI::UIElement::UIElement( Brood::BroodUI::ENUM_UIType a_elementType,
 	m_textContent(""), m_debugTextSave ("")
 {
 	// adding the elementID to map
-	Brood::BroodUI::ST_MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
+	Brood::BroodUI::MapIdToElement::AddToMap( GetElementIdPtr()->GetElementID(), this );
 
 	// setting the overlay
 	m_hotOverlayColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_HotOverlay; 
@@ -70,7 +70,7 @@ Brood::BroodUI::UIElement::~UIElement()
 	if( m_elementId.HasParent() )
 	{
 		// delete the this element from its parents child index array
-		elementParentPtr = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
+		elementParentPtr = Brood::BroodUI::MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
 		int childIdx = elementParentPtr->GetElementIdPtr()->GetChildIdx( &m_elementId );
 		elementParentPtr->GetElementIdPtr()->DeleteChildIdAtIdx( childIdx );
 	}
@@ -87,7 +87,7 @@ Brood::BroodUI::UIElement::~UIElement()
 	}
 
 	// delete the id form the map
-	Brood::BroodUI::ST_MapIdToElement::ReomveFromMap( m_elementId.GetElementID() );
+	Brood::BroodUI::MapIdToElement::ReomveFromMap( m_elementId.GetElementID() );
 }
 
 /// 
@@ -283,7 +283,7 @@ void Brood::BroodUI::UIElement::SetBodyPosition( sf::Vector2f a_pos, bool a_rela
 	// setting up the body position
 	if( a_relativeToParent && m_elementId.HasParent() )
 	{
-		Brood::BroodUI::UIElement* parentPtr = Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
+		Brood::BroodUI::UIElement* parentPtr = Brood::BroodUI::MapIdToElement::GetElementPtrFromMap( m_elementId.GetParentID() );
 		sf::Vector2f parentPos = parentPtr->GetBodyPosition();
 		a_pos.x += parentPos.x;
 		a_pos.y += parentPos.y;
@@ -670,95 +670,4 @@ void Brood::BroodUI::UIElement::SetTextPosition()
 
 // ======================================================================
 // ================= end of UIElement class =============================
-// ======================================================================
-
-
-// ======================================================================
-// ================= start of ST_MapIdToElement struct ==================
-// ======================================================================
-
-/// 
-/// @static
-/// @public
-/// @brief Getter Funciton to get a reference to the map
-/// 
-/// @return reference to the map
-/// 
-std::map<const int, Brood::BroodUI::UIElement*>& Brood::BroodUI::ST_MapIdToElement::GetMap()
-{
-	return stm_mapper;
-}
-
-/// 
-/// @static
-/// @public
-/// @brief Getter Function to get the element that is mapped to from ui id. 
-/// 
-/// @param a_id unique id of the element that maps to its element pointer
-/// 
-/// @return pointer to the element whose unique id was mapped to; 
-///		else returns nullptr if not matched
-/// 
-Brood::BroodUI::UIElement* Brood::BroodUI::ST_MapIdToElement::GetElementPtrFromMap( int a_id )
-{
-	std::map<const int, Brood::BroodUI::UIElement*>::iterator findResult = stm_mapper.find( a_id );
-
-	// return pointer to the element if true else reutrn nullptr and log it
-	if( findResult == stm_mapper.end() )
-	{
-		std::cerr << "Error! Could not find a UIELmenet with id " << a_id << "." << std::endl;
-		return nullptr;
-	}
-	return findResult->second;
-}
-
-/// 
-/// @static
-/// @public
-/// @brief adds the id and element to the map
-/// 
-/// @param a_id unique id of the element that is mapped to its element pointer
-/// @param a_elementPtr pointer to the element that has the passed uniquie UI_ID
-/// 
-/// @return true if adding was successfull; else false
-/// 
-bool Brood::BroodUI::ST_MapIdToElement::AddToMap( int a_id, Brood::BroodUI::UIElement* a_elementPtr )
-{
-	auto addResult = stm_mapper.insert( std::pair<int, Brood::BroodUI::UIElement* > {a_id, a_elementPtr} );
-
-	if( !addResult.second )
-	{
-		// inresertion was not successfull
-		std::cerr << "Error! Insertion of UIELmenet with id " << a_id << " failed" << std::endl;
-		return false;
-	}
-
-	return true;
-}
-
-/// 
-/// @static
-/// @public
-/// @brief removes a entry with the id as a key from the map
-/// 
-/// @param a_id unique id of the element that is mapped to its element pointer
-/// 
-/// @return true if removal was successfull; else false
-/// 
-bool Brood::BroodUI::ST_MapIdToElement::ReomveFromMap( int a_id )
-{
-	auto eraseResult = stm_mapper.erase( a_id );
-
-	if( !eraseResult )
-	{
-		// removal was not successfull
-		std::cerr << "Error! Removal of UIELmenet with id " << a_id << " failed" << std::endl;
-		return false;
-	}
-
-	return true;
-}
-
-// ======================================================================
-// ================= end of ST_MapIdToElement struct ====================
 // ======================================================================
