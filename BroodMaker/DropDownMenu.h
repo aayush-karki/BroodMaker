@@ -133,9 +133,6 @@ public:
 
 	// ======== setter function =======
 
-	// sets text of the title menu
-	void SetText( std::string a_text = "" );
-
 	// sets body size
 	void SetBodySize( sf::Vector2f a_eachItemSize ) override;
 
@@ -151,18 +148,33 @@ public:
 	// sets font for the menus
 	void SetFont( sf::Font* a_font );
 
+	// sets font color
+	virtual void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+
 	// sets fonts size
 	void SetFontSize( unsigned a_fontSize = 12 );
 
+	// sets text of the title menu
+	void SetText( std::string a_text = "" );
+
+	// sets element body color
+	virtual void SetBodyColor( sf::Color a_bodyColor );
+
+	// sets active overlay color
+	virtual void SetActiveOverlayColor( sf::Color a_color );
+
+	// sets hot overlay color
+	virtual void SetHotOverlayColor( sf::Color a_color );
+
 	// adds item to menu
 	virtual void AddItemToMenu( std::string a_menuName,
-						sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+								sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
 
 	// adds the passed button to dropdown menu if a_createNew is true
 	// then create a new button using the passed item then adds 
 	// the new button 
 	virtual void AddItemToMenu( Brood::BroodUI::Button* a_buttonPtrToAdd,
-						bool a_createNew = true );
+								bool a_createNew = true );
 
 	// overrided funciton 
 

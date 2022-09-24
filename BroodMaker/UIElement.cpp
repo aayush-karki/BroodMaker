@@ -271,18 +271,6 @@ unsigned int Brood::BroodUI::UIElement::GetFontSize() const
 	return m_fontSize;
 }
 
-
-/// 
-/// @public
-/// @brief Setter function to set the element body color
-/// 
-/// @param a_bodyColor color of the body
-///
-void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
-{
-	m_body.setFillColor( a_bodyColor );
-}
-
 /// 
 /// @public
 /// @virtual
@@ -460,6 +448,19 @@ void Brood::BroodUI::UIElement::SetSelected( bool a_selected )
 {
 	m_isSelected = a_selected;
 }
+
+
+/// 
+/// @public
+/// @brief Setter function to set the element body color
+/// 
+/// @param a_bodyColor color of the body
+///
+void Brood::BroodUI::UIElement::SetBodyColor( sf::Color a_bodyColor )
+{
+	m_body.setFillColor( a_bodyColor );
+}
+
 
 /// 
 /// @public

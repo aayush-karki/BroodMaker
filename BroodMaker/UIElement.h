@@ -154,9 +154,6 @@ public:
 
 	// ====== setter functions =======
 
-	// sets element body color
-	virtual void SetBodyColor( sf::Color a_bodyColor );
-
 	// sets element body size 
 	virtual  void SetBodySize( sf::Vector2f  a_size );
 
@@ -170,10 +167,10 @@ public:
 	virtual void SetBodyPosition( float a_posX, float a_posY, bool a_relativeToParent = false );
 
 	// sets font
-	virtual void SetFont( sf::Font& a_font ); // sets font
+	virtual void SetFont( sf::Font& a_font );
 
 	// sets font color
-	virtual void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); // sets font color
+	virtual void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White ); 
 
 	// sets font size
 	virtual void SetFontSize( int a_fontSize = 12 );
@@ -183,6 +180,9 @@ public:
 
 	// sets the state of the element.
 	virtual virtual void SetSelected( bool a_selected );
+
+	// sets element body color
+	virtual void SetBodyColor( sf::Color a_bodyColor );
 
 	// sets active overlay color
 	virtual void SetActiveOverlayColor( sf::Color a_color );

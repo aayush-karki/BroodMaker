@@ -231,6 +231,27 @@ void Brood::BroodUI::MenuBar::SetFont( sf::Font* a_font )
 	}
 }
 
+/// 
+/// @public
+/// @brief setter function to set the Font color
+/// 
+/// param a_color font color -> default sf::Color::White
+/// 
+void Brood::BroodUI::MenuBar::SetFontColor( sf::Color a_color )
+{
+	Brood::BroodUI::UIElement::SetFontColor( a_color );
+
+	// setting the font color for all its items
+	if( !m_menus.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_menus.size(); ++i )
+		{
+			m_menus.at( i )->SetFontColor( a_color );
+		}
+	}
+}
+
 ///
 /// @public
 /// @brief Setter funtion to set the size of the font
@@ -261,6 +282,69 @@ void Brood::BroodUI::MenuBar::SetFontSize( unsigned a_fontSize )
 
 /// 
 /// @public
+/// @brief Setter function to set the element body color
+/// 
+/// @param a_bodyColor color of the body
+///
+void Brood::BroodUI::MenuBar::SetBodyColor( sf::Color a_bodyColor )
+{
+	Brood::BroodUI::UIElement::SetBodyColor( a_bodyColor );
+
+	// setting the font color for all its items
+	if( !m_menus.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_menus.size(); ++i )
+		{
+			m_menus.at( i )->SetBodyColor( a_bodyColor );
+		}
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's active color
+/// 
+/// @param a_color color of the body when it is active
+///
+void Brood::BroodUI::MenuBar::SetActiveOverlayColor( sf::Color a_color )
+{
+	Brood::BroodUI::UIElement::SetBodyColor( a_color );
+
+	// setting the font color for all its items
+	if( !m_menus.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_menus.size(); ++i )
+		{
+			m_menus.at( i )->SetBodyColor( a_color );
+		}
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's hot color
+/// 
+/// @param a_color color of the body when it is hot
+///
+void Brood::BroodUI::MenuBar::SetHotOverlayColor( sf::Color a_color )
+{
+	Brood::BroodUI::UIElement::SetHotOverlayColor( a_color );
+
+	// setting the font color for all its items
+	if( !m_menus.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_menus.size(); ++i )
+		{
+			m_menus.at( i )->SetHotOverlayColor( a_color );
+		}
+	}
+}
+
+/// 
+/// @public
 /// @brief Function to add menu to the menubar
 ///
 /// It dynamically allocates memory for the menu and adds it to the list.
@@ -283,11 +367,11 @@ void Brood::BroodUI::MenuBar::AddMenuToMenuBar( std::string a_menuName )
 	m_menus.push_back( menu );
 
 	// setting up the menubar
+	menu->SetText( a_menuName );
 	SetMenuBodySize( m_menus.size() - 1 ); // setting the menu size
 	SetMenuPos( m_menus.size() - 1 ); // setting the menu pos
 	menu->SetFont( m_font );
 	menu->SetFontSize( m_fontSize );
-	menu->SetText( a_menuName );
 	menu->SetBodyColor( GetBodyColor() );
 
 	// setting up the id

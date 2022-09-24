@@ -118,25 +118,6 @@ std::vector<Brood::BroodUI::Button*>& Brood::BroodUI::DropDownMenu::GetItemList(
 
 /// 
 /// @public
-/// @brief Setter function to set the text for DropDownMenu 
-///
-/// @param a_text text to set the text for DropDownMenu
-/// 
-void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
-{
-	Brood::BroodUI::UIElement::SetText( a_text );
-
-	// setting the max length
-	if( m_maxItemLength < a_text.length() )
-	{
-		m_maxItemLength = a_text.length();
-
-		SetEachItemSize();
-	}
-}
-
-/// 
-/// @public
 /// @brief Setter function to set the DropDownMenu's Size
 /// 
 /// @param a_size size of the DropDownMenu 
@@ -239,6 +220,27 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 
 /// 
 /// @public
+/// @brief setter function to set the Font color
+/// 
+/// param a_color font color -> default sf::Color::White
+/// 
+void Brood::BroodUI::DropDownMenu::SetFontColor( sf::Color a_color )
+{
+	Brood::BroodUI::Button::SetFontColor(a_color);
+
+	// setting the font color for all its items
+	if( !m_items.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			m_items.at( i )->SetFontColor(a_color);
+		}
+	}
+}
+
+/// 
+/// @public
 /// @brief setter funciton to set the Font size of the menu title and its items
 /// 
 /// @param a_charSize -> size of indivisual character in the SetEditabletext -> deafult 12
@@ -254,6 +256,88 @@ void Brood::BroodUI::DropDownMenu::SetFontSize( unsigned a_fontSize )
 		float itemSizeY = GetBodySize().y;
 
 		m_items.at( i )->SetFontSize( a_fontSize );
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the text for DropDownMenu 
+///
+/// @param a_text text to set the text for DropDownMenu
+/// 
+void Brood::BroodUI::DropDownMenu::SetText( std::string a_text )
+{
+	Brood::BroodUI::Button::SetText( a_text );
+
+	// setting the max length
+	if( m_maxItemLength < a_text.length() )
+	{
+		m_maxItemLength = a_text.length();
+
+		SetEachItemSize();
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element body color
+/// 
+/// @param a_bodyColor color of the body
+///
+void Brood::BroodUI::DropDownMenu::SetBodyColor( sf::Color a_bodyColor )
+{
+	Brood::BroodUI::Button::SetBodyColor( a_bodyColor );
+
+	// setting the active over lay color for all its items
+	if( !m_items.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			m_items.at( i )->SetBodyColor( a_bodyColor );
+		}
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's active color
+/// 
+/// @param a_color color of the body when it is active
+///
+void Brood::BroodUI::DropDownMenu::SetActiveOverlayColor( sf::Color a_color )
+{
+	Brood::BroodUI::Button::SetActiveOverlayColor( a_color );
+
+	// setting the active over lay color for all its items
+	if( !m_items.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			m_items.at( i )->SetActiveOverlayColor( a_color );
+		}
+	}
+}
+
+/// 
+/// @public
+/// @brief Setter function to set the element's hot color
+/// 
+/// @param a_color color of the body when it is hot
+///
+void Brood::BroodUI::DropDownMenu::SetHotOverlayColor( sf::Color a_color )
+{
+	Brood::BroodUI::Button::SetHotOverlayColor( a_color );
+
+	// setting the active over lay color for all its items
+	if( !m_items.empty() )
+	{
+		// postion all items according to the new menu position
+		for( int i = 0; i < m_items.size(); ++i )
+		{
+			m_items.at( i )->SetHotOverlayColor( a_color );
+		}
 	}
 }
 

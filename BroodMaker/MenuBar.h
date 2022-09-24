@@ -162,8 +162,20 @@ public:
 	// sets the menu's font
 	void SetFont( sf::Font* a_font );
 
+	// sets font color
+	virtual void SetFontColor( sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+
 	// sets the font size
 	void SetFontSize( unsigned a_fontSize );
+
+	// sets element body color
+	virtual void SetBodyColor( sf::Color a_bodyColor );
+
+	// sets active overlay color
+	virtual void SetActiveOverlayColor( sf::Color a_color );
+
+	// sets hot overlay color
+	virtual void SetHotOverlayColor( sf::Color a_color );
 
 	// adds menus to the menu bar
 	void AddMenuToMenuBar( std::string a_menuName );
