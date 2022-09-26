@@ -24,7 +24,9 @@
 /// @brief Default Constructor
 /// 
 Brood::Application::Components::Tiles::Tiles() : m_tileRowNum( 0 ), m_tileColNum( 0 )
-{}
+{
+	m_body.setFillColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
+}
 
 /// 
 /// @public

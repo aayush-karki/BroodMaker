@@ -68,7 +68,10 @@ public:
 	Path& operator=( const Path& a_otherPath );
 
 	// Getter funciton to get the pointer to the tile
-	Brood::Application::Components::Tiles* GetTile();
+	Brood::Application::Components::Tiles* GetTilePtr();
+
+	// Getter funciton to get the pointer to the tile
+	const Brood::Application::Components::Tiles* GetTilePtr() const;
 
 	// setter funciton to set the pointer to the tile
 	void SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr );

@@ -87,19 +87,22 @@ private:
 	// ================= private member variables =================  
 private:
 
-	///> holds the index of current active editor workspace
+	/// holds the index of current active editor workspace
 	unsigned m_activeEditorIdx;
 
-	///> board for the game
+	/// board for the game
 	Brood::Application::Components::Board m_board;
+
+	/// dice for the game
+	Brood::Application::Components::Dice m_dice;
 	
-	///> Ui for edit modes tabs
+	/// Ui for edit modes tabs
 	std::vector<Brood::BroodUI::Button*> m_editModesTabs;
 
-	///> list of editor workspace
+	/// list of editor workspace
 	std::vector<Brood::Application::WorkSpace*> m_editorWorkspaceList;
 
-	///> panel body
+	/// panel body
 	sf::RectangleShape m_sidePanel;
 
 };

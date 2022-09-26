@@ -76,8 +76,19 @@ Brood::Application::Components::Path& Brood::Application::Components::Path::oper
 /// @brief Getter funciton to get the pointer to the tile
 /// 
 /// @return pointer to the tile
+///
+Brood::Application::Components::Tiles* Brood::Application::Components::Path::GetTilePtr()
+{
+	return m_tilePtr;
+}
+
 /// 
-Brood::Application::Components::Tiles* Brood::Application::Components::Path::GetTile()
+/// @public
+/// @brief Getter funciton to get the pointer to the tile
+/// 
+/// @return pointer to the tile
+/// 
+const Brood::Application::Components::Tiles* Brood::Application::Components::Path::GetTilePtr() const
 {
 	return m_tilePtr;
 }

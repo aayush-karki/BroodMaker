@@ -23,7 +23,7 @@
 /// @brief default constructor
 /// 
 Brood::Application::EditorWorkspace::EditorWorkspace() :
-	m_activeEditorIdx( 0 ), m_board()
+	m_activeEditorIdx( 0 ), m_board(), m_dice()
 {
 	InitializeWorkSpace();
 }
@@ -46,7 +46,7 @@ void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 {
 	// initializing the board 
 	m_board.InitializeBoard( 1, 1, 500, 500, 50, 200 );
-	
+
 	// initialzing the side panel
 	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
 
@@ -64,7 +64,7 @@ void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 	InitializeEditModeTabs();
 
 	// initializing the workspaces
-	m_editorWorkspaceList.push_back( new BoardEditor( &m_board, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new BoardEditor( &m_board, &m_dice, &m_sidePanel ) );
 
 }
 
@@ -93,6 +93,9 @@ void Brood::Application::EditorWorkspace::Draw( sf::RenderWindow& a_window )
 	// drawing the board
 	m_board.Draw( a_window );
 
+	// drawing the dice
+	m_dice.Draw(a_window);
+
 	// drawing the side panel
 	a_window.draw( m_sidePanel );
 
@@ -118,6 +121,7 @@ void Brood::Application::EditorWorkspace::Debugger()
 	Brood::Application::WorkSpace::Debugger();
 
 	m_board.Debugger();
+	m_dice.Debugger();
 }
 
 /// 

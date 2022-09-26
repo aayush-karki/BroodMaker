@@ -103,7 +103,7 @@ void Brood::Application::Components::Board::InitializeBoard( unsigned a_numRows,
 	{
 		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
 		{
-			m_boardPaths.at( currRowNum ).at( currColNum )->GetTile()->SetBodyColor( sf::Color( std::rand() % 256, std::rand() % 256, std::rand() % 256 ) );
+			m_boardPaths.at( currRowNum ).at( currColNum )->GetTilePtr()->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
 		}
 	}
 }
@@ -291,7 +291,7 @@ void Brood::Application::Components::Board::Debugger()
 		// iterating over the columns
 		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
 		{
-			( *colTile )->GetTile()->Debugger();
+			( *colTile )->GetTilePtr()->Debugger();
 		}
 	}
 }
@@ -484,7 +484,7 @@ void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin
 				m_boardPaths.at( currRowNum ).at( currColNum ) = new Path();
 			}
 
-			m_boardPaths.at( currRowNum ).at( currColNum )->GetTile()->UpdateTile( currRowNum, currColNum,
+			m_boardPaths.at( currRowNum ).at( currColNum )->GetTilePtr()->UpdateTile( currRowNum, currColNum,
 																		tileSizex, tileSizeY,
 																		m_boardBody.getPosition().x,
 																		m_boardBody.getPosition().y );

@@ -26,7 +26,7 @@
 ///			-> default 6
 /// 
 Brood::Application::Components::Dice::Dice( int a_numSides, Brood::BroodUI::UIElement* a_parentPtr ) :
-	Brood::Application::Components::Dice::Dice( "", 0.0, a_numSides, a_parentPtr )
+	Brood::Application::Components::Dice::Dice( "", a_numSides, a_parentPtr )
 {}
 
 /// 
@@ -43,7 +43,6 @@ Brood::Application::Components::Dice::Dice( int a_numSides, Brood::BroodUI::UIEl
 /// 
 /// @param a_texturePath file path to to the texture containing face of the dice;
 ///		it is a single texture that has texture for num faces of the dice
-/// @parem a_spriteLength width of the single sprite
 /// @param m_parentPtr pointer to the parent element;
 ///		if parent does not exist then nullptr -> default value nullptr
 /// @param a_index the nth child of the parent; 
@@ -51,11 +50,16 @@ Brood::Application::Components::Dice::Dice( int a_numSides, Brood::BroodUI::UIEl
 /// @param a_numSides number of a side that the dice has;
 ///			-> default 6
 /// 
-Brood::Application::Components::Dice::Dice( std::string a_texturePath, float a_spriteLength,
-							   int a_numSides,
-							   Brood::BroodUI::UIElement* a_parentPtr ) :
+Brood::Application::Components::Dice::Dice( std::string a_texturePath,
+											int a_numSides,
+											Brood::BroodUI::UIElement* a_parentPtr ) :
 	Brood::BroodUI::Button( a_parentPtr ), m_numSides( a_numSides )
-{}
+{
+	SetBodySize( 50, 50 );
+	SetBodyPosition( 10,100);
+	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
+	Brood::BroodUI::Button::GetSpriteBody().SetTextureFromFilePath( a_texturePath );
+}
 
 
 /// 
@@ -109,10 +113,10 @@ void Brood::Application::Components::Dice::SetNumSides( unsigned a_numSides )
 /// @param a_texturePathfile path to to the texture containing face of the dice;
 ///		it is a single texture that has texture for num faces of the dice
 /// 
-void Brood::Application::Components::Dice::SetTexture( std::string a_texturePath )
+bool Brood::Application::Components::Dice::SetTexture( std::string a_texturePath )
 {
 	// loading the texture
-	GetSpriteBody().SetTextureFromFilePath( a_texturePath );
+	return GetSpriteBody().SetTextureFromFilePath( a_texturePath );
 }
 
 /// 
@@ -130,11 +134,16 @@ const unsigned Brood::Application::Components::Dice::GetNumSides()
 /// @public
 /// @brief Rolls the dice to get a number between 0 and m_numSides
 /// 
+/// This also sets the sprite from the loaded texture
+/// 
 /// @return random number between 0 and m_numSides
 /// 
 unsigned Brood::Application::Components::Dice::RollDice()
 {
 
 	unsigned currRoll = std::rand() % m_numSides;
+
+	GetSpriteBody().SetSpriteFromTexture(currRoll);
+
 	return currRoll + 1;
 }

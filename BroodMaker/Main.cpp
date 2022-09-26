@@ -3,11 +3,17 @@
 
 int main()
 {
+	//creating a folders if not present
+	
+	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_fonts );
+	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_diceTextures );
+	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_playerTextures );
+
 	// loading font
-	std::string fontFileLoc = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd + "\\Assets\\Fonts\\arial.ttf";
-	if( !( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font.loadFromFile( fontFileLoc ) ) )
+	std::filesystem::path arialFont = Brood::Application::StaticVariables::ST_Folders::stm_fonts / std::filesystem::path{ "arial.ttf" };
+	if( !( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font.loadFromFile( arialFont.string() ) ) )
 	{
-		std::cerr << "Error! Could not load " << fontFileLoc << "!!!!!!!" << std::endl;
+		std::cerr << "Error! Could not load " << arialFont.string() << "!!!!!!!" << std::endl;
 	}
 
 	Brood::Application::Application broodMaker;

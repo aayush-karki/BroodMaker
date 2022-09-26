@@ -27,10 +27,14 @@
 ///		Brood::Application::Components::st_path node which 
 ///		contains the start row and column number inside it
 /// 
-Brood::Application::Components::PlayerManager::PlayerManager() :
-	m_currActivePlayerIdx( -1 ), m_maxPlayer( 0 ), m_minPlayer( 0 ),
-	m_startPathPtr(nullptr)
-{}
+Brood::Application::Components::PlayerManager::PlayerManager( Brood::Application::Components::Path* a_pathPtr ) :
+	m_currActivePlayerIdx( 0 ), m_maxPlayer( 1 ), m_minPlayer( 1 ),
+	m_startPathPtr( a_pathPtr )
+{
+	SetMaxPlayer(1);
+	SetMinPlayer(1);
+	SetCurrActivePlayerIdx(0);
+}
 
 /// 
 /// @public
@@ -162,7 +166,7 @@ void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_max
 {
 	m_maxPlayer = a_maxPlayer;
 
-	m_allPlayers.resize( a_maxPlayer, new Player() );
+	m_allPlayers.resize( a_maxPlayer, new Player(m_startPathPtr) );
 }
 
 /// 
@@ -186,7 +190,7 @@ void Brood::Application::Components::PlayerManager::SetMinPlayer( unsigned a_min
 /// 
 void Brood::Application::Components::PlayerManager::SetCurrActivePlayerIdx( unsigned a_currActivePlayerIdx )
 {
-	m_currActivePlayerIdx = m_currActivePlayerIdx;
+	m_currActivePlayerIdx = a_currActivePlayerIdx;
 }
 
 ///  

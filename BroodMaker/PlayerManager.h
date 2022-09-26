@@ -51,7 +51,7 @@ class Brood::Application::Components::PlayerManager
 public:
 
 	// default constructor
-	PlayerManager();
+	PlayerManager( Brood::Application::Components::Path* a_pathPtr = nullptr);
 
 	// destructor
 	~PlayerManager();
@@ -121,7 +121,7 @@ private:
 	std::vector<Brood::Application::Components::Player*> m_allPlayers;
 
 	// index of current playing player
-	int m_currActivePlayerIdx;
+	unsigned m_currActivePlayerIdx;
 
 	// maximum number of player
 	unsigned m_maxPlayer;

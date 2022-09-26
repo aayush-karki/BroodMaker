@@ -84,7 +84,7 @@ public:
 											  std::string a_text = "",
 											  bool a_isEditable = false,
 											  std::string a_placeholderText = "",
-											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor);
+											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	Brood::BroodUI::TextBox* DyCreateTextBox( float a_sizeX, float a_sizeY,
 											  float a_posX, float a_posY,
 											  std::string a_text = "",
@@ -123,6 +123,19 @@ public:
 									  std::string a_promptToDisplay,
 									  std::string a_valueToDisplay,
 									  bool a_createFromTop = false );
+
+	// Dynamically createss a file input Panel Element. 
+	//		It has 3 UI element and its layout is 
+	//		<textBox prompt> 
+	//		<textbox>  
+	//		<open butotn>
+	void DyCreateFileInputPannelElement( sf::RectangleShape* a_panelBodyPtr,
+										 Brood::BroodUI::TextBox** a_txtPromptPtr,
+										 Brood::BroodUI::TextBox** a_txtFileInputPtr,
+										 Brood::BroodUI::Button** a_btnOpenFilePtr,
+										 std::string a_promptToDisplay,
+										 std::string a_valueToDisplay,
+										 bool a_createFromTop = false );
 
 
 	// ================= protected data member ==================  

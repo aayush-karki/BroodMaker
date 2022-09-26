@@ -48,7 +48,7 @@ public:
 	// default constructor
 	Dice( int a_numSides = 6, Brood::BroodUI::UIElement* a_parentPtr = nullptr );
 	// constructor when a texture is passed
-	Dice( std::string a_texturePath, float a_spriteLength, int a_numSides = 6,
+	Dice( std::string a_texturePath, int a_numSides = 6,
 		  Brood::BroodUI::UIElement* a_parentPtr = nullptr );
 
 
@@ -61,7 +61,7 @@ public:
 	void SetNumSides( unsigned a_numSides );
 
 	// sets texture
-	void SetTexture( std::string a_texturePath );
+	bool SetTexture( std::string a_texturePath );
 
 	// getter function
 	const unsigned GetNumSides();

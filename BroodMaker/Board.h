@@ -17,6 +17,7 @@
 #pragma once
 
 #include "Path.h"
+#include "GlobalVariables.h"
 //#include "Player.h"
 //#include "Dice.h"
 //#include "PathManager.h"

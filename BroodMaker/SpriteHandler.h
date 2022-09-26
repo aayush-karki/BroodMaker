@@ -57,6 +57,9 @@ namespace Brood
 ///		mySpriteButton.GetSpriteBody().SetSpriteFromTexture( 1 );
 ///
 /// @endcode
+/// 
+/// @todo make this animatable. next Sprit() which get the next sprite and
+///		loops back to idx 0
 ///
 class Brood::SpriteHandler
 {

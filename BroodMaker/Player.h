@@ -64,7 +64,7 @@ public:
 	~Player();
 
 	// copy constructor
-	Player(const Player& a_otherPlayer);
+	Player( const Player& a_otherPlayer );
 
 	// assignment operator
 	Player& operator=( const Player& a_otherPlayer );
@@ -73,16 +73,16 @@ public:
 	void UpdatePathptr( Brood::Application::Components::Path* a_playerNewPathPtr );
 
 	// setter funciton to set the player's x-size
-	void SetPlayerSizeX(float a_sizeX);
+	void SetPlayerSizeX( float a_sizeX );
 
 	// setter funciton to set the player's y-size
 	void SetPlayerSizeY( float a_sizeY );
 
 	// setter funciton to set the player's x-offset
-	void SetPositionOffsetX( float a_positionOffsetX );
+	void SetPositionOffsetX( int a_positionOffsetX );
 
 	// setter funciton to set the player's y-offset
-	void SetPositionOffsetY( float a_positionOffsetY );
+	void SetPositionOffsetY( int a_positionOffsetY );
 
 	// getter funciton to get the pointer to the tile
 	const Brood::Application::Components::Path* GetCurrPathPtr() const;
@@ -92,6 +92,12 @@ public:
 
 	// getter funciton to get a reference to the player sprite body
 	Brood::SpriteHandler& GetPlayerSpriteBody();
+
+	// setter funciton to set the player's x-offset
+	int GetPositionOffsetX();
+
+	// setter funciton to set the player's y-offset
+	int GetPositionOffsetY();
 
 	// draw to screen
 	void Draw( sf::RenderWindow& a_window );
@@ -103,17 +109,17 @@ private:
 
 	// ===== private member variable =====
 private:
-	
+
 	// player body
-	sf::RectangleShape m_playerBody; 
+	sf::RectangleShape m_playerBody;
 
 	Brood::SpriteHandler m_spriteBody;
 
 	// holds the x-offset relative to the tile's x position
-	unsigned m_positionOffsetX;
+	int m_positionOffsetX;
 
 	// holds the x-offset relative to the tile's y position
-	unsigned m_positionOffsetY;
+	int m_positionOffsetY;
 
 	// pointer that points to the current path node;
 	// it hoolds all tile that the player is on

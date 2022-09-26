@@ -29,11 +29,24 @@ sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActive
 sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu = sf::Color( 64, 73, 79, 255 );
 sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor = sf::Color( 73, 85, 123, 255 );
 sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor = sf::Color( 99, 123, 168, 255 );
+sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor = sf::Color( 191, 33, 30, 255 );
+
+
+
+/// 
+/// @static
+/// @public
+/// @brief Generates a random color
+/// 
+sf::Color Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor()
+{
+	return sf::Color( std::rand() % 256, std::rand() % 256, std::rand() % 256 );
+}
 
 // ======================================================================
 // ================= end of ST_ColorVariables struct ====================
 // ======================================================================
-// 
+
 // ======================================================================
 // ================= start of ST_GlobalCoreVariables struct =============
 // ======================================================================
@@ -41,7 +54,13 @@ sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSeconda
 uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height = 900;
 uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width = 900;
 
-std::string Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_cwd = std::filesystem::current_path().string(); // current working directory of the applicaiton
+// current working directory of the applicaiton
+std::filesystem::path cwd = std::filesystem::current_path();
+std::filesystem::path assets = cwd / std::filesystem::path{ "Assets" };
+std::filesystem::path fonts = assets / std::filesystem::path{ "Fonts" };
+std::filesystem::path diceTextures = assets / std::filesystem::path{ "Textures" } / std::filesystem::path{ "DiceTexture" };
+std::filesystem::path playerTextures = assets / std::filesystem::path{ "Textures" } / std::filesystem::path{ "PlayerTexture" };
+
 sf::Font Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font; // font
 
 bool Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode = false;
@@ -51,4 +70,24 @@ uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelP
 
 // ======================================================================
 // ================= end of ST_GlobalCoreVariables struct ===============
+// ======================================================================
+
+// ======================================================================
+// ================= start of ST_Folders struct =========================
+// ======================================================================
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_cwd = std::filesystem::current_path();
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_assets = Brood::Application::StaticVariables::ST_Folders::stm_cwd / std::filesystem::path{ "Assets" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_fonts = Brood::Application::StaticVariables::ST_Folders::stm_assets / std::filesystem::path{ "Fonts" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_Textures = Brood::Application::StaticVariables::ST_Folders::stm_assets / std::filesystem::path{ "Textures" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_diceTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "DiceTexture" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_playerTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "PlayerTexture" };
+
+// ======================================================================
+// ================= end of ST_Folders struct ===========================
 // ======================================================================

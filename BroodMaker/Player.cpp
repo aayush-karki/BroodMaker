@@ -37,7 +37,7 @@ Brood::Application::Components::Player::Player( Brood::Application::Components::
 	m_positionOffsetY( a_positionOffsetY ), m_spriteBody( &m_playerBody )
 {
 	// initializing the player body
-	this->m_playerBody.setFillColor( sf::Color::White );
+	this->m_playerBody.setFillColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
 
 	if( a_pathPtr == nullptr )
 	{
@@ -46,7 +46,7 @@ Brood::Application::Components::Player::Player( Brood::Application::Components::
 	}
 	else
 	{
-		sf::Vector2f tileSize = m_playerCurrPathPtr->GetTile()->GetBodySize();
+		sf::Vector2f tileSize = m_playerCurrPathPtr->GetTilePtr()->GetBodySize();
 
 		this->m_playerBody.setSize( { ( tileSize.x * 50 ) / 100, ( tileSize.y * 50 ) / 100 } );
 		UpdatePosition();
@@ -166,7 +166,7 @@ void Brood::Application::Components::Player::SetPlayerSizeY( float a_sizeY )
 /// 
 /// @param a_positionOffsetX position offset of the path relative 
 ///		to tile's x position
-void Brood::Application::Components::Player::SetPositionOffsetX( float a_positionOffsetX )
+void Brood::Application::Components::Player::SetPositionOffsetX( int a_positionOffsetX )
 {
 	m_positionOffsetX = a_positionOffsetX;
 
@@ -182,7 +182,7 @@ void Brood::Application::Components::Player::SetPositionOffsetX( float a_positio
 /// 
 /// @param a_positionOffsetY position offset of the path relative 
 ///		to tile's Y position
-void Brood::Application::Components::Player::SetPositionOffsetY( float a_positionOffsetY )
+void Brood::Application::Components::Player::SetPositionOffsetY( int a_positionOffsetY )
 {
 	m_positionOffsetY = a_positionOffsetY;
 
@@ -228,6 +228,30 @@ Brood::SpriteHandler& Brood::Application::Components::Player::GetPlayerSpriteBod
 
 /// 
 /// @public
+/// @brief Getter function to get the x-offset
+///
+///		
+/// @return a reference to player body
+///
+int Brood::Application::Components::Player::GetPositionOffsetX()
+{
+	return m_positionOffsetX;
+}
+
+/// 
+/// @public
+/// @brief Getter function to get the y-offset
+/// 
+///		
+/// @return a reference to player body
+///
+int Brood::Application::Components::Player::GetPositionOffsetY()
+{
+	return m_positionOffsetY;
+}
+
+/// 
+/// @public
 /// @brief Draw funciton draws tiles to the screen.
 ///			
 /// @param a_window reference to the render window
@@ -243,10 +267,10 @@ void Brood::Application::Components::Player::Draw( sf::RenderWindow& a_window )
 ///			
 void Brood::Application::Components::Player::UpdatePosition()
 {
-	sf::Vector2f tilePos = m_playerCurrPathPtr->GetTile()->GetBodyPosition();
+	sf::Vector2f tilePos = m_playerCurrPathPtr->GetTilePtr()->GetBodyPosition();
 
-	float playerPosX = ( tilePos.x * m_positionOffsetX ) / 100;
-	float playerPosY = ( tilePos.y * m_positionOffsetY ) / 100;
+	float playerPosX = tilePos.x + m_positionOffsetX;
+	float playerPosY = tilePos.y + m_positionOffsetY;
 
 	this->m_playerBody.setPosition( { playerPosX , playerPosY } );
 }
