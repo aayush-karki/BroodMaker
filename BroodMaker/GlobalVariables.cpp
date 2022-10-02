@@ -31,8 +31,6 @@ sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimary
 sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor = sf::Color( 99, 123, 168, 255 );
 sf::Color Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor = sf::Color( 191, 33, 30, 255 );
 
-
-
 /// 
 /// @static
 /// @public
@@ -52,21 +50,19 @@ sf::Color Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor
 // ======================================================================
 
 uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height = 900;
+
 uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width = 900;
 
-// current working directory of the applicaiton
-std::filesystem::path cwd = std::filesystem::current_path();
-std::filesystem::path assets = cwd / std::filesystem::path{ "Assets" };
-std::filesystem::path fonts = assets / std::filesystem::path{ "Fonts" };
-std::filesystem::path diceTextures = assets / std::filesystem::path{ "Textures" } / std::filesystem::path{ "DiceTexture" };
-std::filesystem::path playerTextures = assets / std::filesystem::path{ "Textures" } / std::filesystem::path{ "PlayerTexture" };
 
 sf::Font Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font; // font
 
 bool Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_is_debug_mode = false;
+
 bool Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = false;
 
 uint32_t Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage = 35;
+
+unsigned Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_seed = std::chrono::system_clock::now().time_since_epoch().count();
 
 // ======================================================================
 // ================= end of ST_GlobalCoreVariables struct ===============
@@ -87,6 +83,13 @@ std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_Textu
 std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_diceTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "DiceTexture" };
 
 std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_playerTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "PlayerTexture" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_tileTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "TileTexture" };
+
+// ======================================================================
+// ================= start of ST_Folders struct =========================
+// ======================================================================
+
 
 // ======================================================================
 // ================= end of ST_Folders struct ===========================

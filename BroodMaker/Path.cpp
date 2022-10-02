@@ -43,7 +43,7 @@ Brood::Application::Components::Path::~Path()
 /// @brief copy constructor
 /// 
 /// @param otherPath reference to the the path 
-///			structue that is being copied from 
+///			object that is being copied from 
 /// 
 Brood::Application::Components::Path::Path( const Path& otherPath )
 {
@@ -53,7 +53,7 @@ Brood::Application::Components::Path::Path( const Path& otherPath )
 
 ///
 /// @public 
-/// @brief copy operator
+/// @brief assignmnet operator
 /// 
 /// @param otherPath reference to the the path 
 ///			structue that is being copied from 

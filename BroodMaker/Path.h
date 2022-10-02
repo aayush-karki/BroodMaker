@@ -11,7 +11,6 @@
 ///
 /************************************************************************/
 
-
 // ======================================================================
 // ===================== included files =================================
 // ======================================================================
@@ -76,6 +75,7 @@ public:
 	// setter funciton to set the pointer to the tile
 	void SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr );
 
+	// deletes the player from its player list
 	bool DeletePlayerFromList( Brood::Application::Components::Player* a_playerPtr );
 
 	// draws the tile
@@ -83,7 +83,9 @@ public:
 
 	// =============== public member variable ===================
 private:
+	// 
 	Brood::Application::Components::Tiles* m_tilePtr;
+
 	std::vector<Brood::Application::Components::Player*> m_playerPtrList;
 };
 

@@ -6,8 +6,6 @@
 /// 
 /// It contains all of the declaration of the member 
 ///		funciton of PlayerManager class.
-/// It contains all of the inline funcitons defination of 
-///		the member funciton of PlayerManager class
 ///
 /************************************************************************/
 
@@ -17,9 +15,7 @@
 #pragma once
 #include "stdafx.h"
 #include "Player.h"
-#include "PathManager.h"
 #include "Path.h"
-#include "Struct_CtorParam.h"
 
 // ======================================================================
 // ================= defining namespace =================================

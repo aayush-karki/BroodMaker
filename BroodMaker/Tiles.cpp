@@ -37,6 +37,36 @@ Brood::Application::Components::Tiles::~Tiles()
 
 /// 
 /// @public
+/// @brief Copy contrutor
+/// 
+Brood::Application::Components::Tiles::Tiles( const Brood::Application::Components::Tiles& a_otherTile ) :
+	Brood::BroodUI::Button( a_otherTile ),
+	m_tileRowNum( a_otherTile.m_tileRowNum ), m_tileColNum( a_otherTile.m_tileColNum )
+{}
+
+/// 
+/// @public
+/// @brief assignment operator
+/// 
+Brood::Application::Components::Tiles& Brood::Application::Components::Tiles::operator=( const Brood::Application::Components::Tiles& a_other )
+{
+	// checking for self assignment
+	if( this == &a_other )
+	{
+		return *this;
+	}
+
+	// creating a temporary deck object
+	Brood::BroodUI::Button::operator=( a_other );
+
+	m_tileRowNum = a_other.m_tileRowNum;
+	m_tileColNum = a_other.m_tileColNum;
+
+	return *this;
+}
+
+/// 
+/// @public
 /// @brief  Getter Function to get the postion of the tile 
 ///			relative to the board's column and row
 /// 
@@ -125,8 +155,8 @@ void Brood::Application::Components::Tiles::SetCol( unsigned a_col )
 ///			realtive to the render window -> default 0.f
 /// 
 void Brood::Application::Components::Tiles::UpdateTile( unsigned a_tileRowNum, unsigned a_tileColNum,
-															float a_tileSizeX, float a_tileSizeY,
-															float a_boardPosX, float a_boardPosY )
+														float a_tileSizeX, float a_tileSizeY,
+														float a_boardPosX, float a_boardPosY )
 {
 	// setting up the column and row number
 	this->m_tileRowNum = a_tileRowNum;

@@ -55,43 +55,59 @@ namespace Brood::Application
 ///		is used as a building bock for a board it has tile row and 
 ///		tile nubmer. For more informantion @see Brood::BroodUI::Button class.
 ///  
-class Brood::Application::Components::Tiles : public Brood::BroodUI::Button
+class Brood::Application::Components::Tiles :
+	public Brood::BroodUI::Button
 {
 	// =============== public member functions =================
 public:
-	
-	// default constructor and destructors
+
+	// default constructor
 	Tiles();
+
+	// default  destructors
 	~Tiles();
 
 	// copy constructor
-	Tiles( const Tiles& a_otherTile);
-	
+	Tiles( const Tiles& a_otherTile );
+
+	// assignment constructor
+	Tiles& operator = ( const Tiles& a_other );
+
+
 	/// @todo add copy constructor and assignment
 
-	// getter function
-	const sf::Vector2u GetRowAndCol() const; 
+	// getter funciton  to set the row and column
+	const sf::Vector2u GetRowAndCol() const;
+
+	// getter funciton  to set the row
 	const unsigned GetRow() const;
+
+	// getter funciton  to set the column
 	const unsigned GetCol() const;
 
-	// setter funciton 
-	void SetRowAndCol(sf::Vector2u a_rowCol );
-	void SetRow(unsigned a_row);
-	void SetCol( unsigned a_col ); 
-	
+	// setter funciton  to set the row and column
+	void SetRowAndCol( sf::Vector2u a_rowCol );
+
+	// setter funciton  to set the row
+	void SetRow( unsigned a_row );
+
+	// setter funciton  to set the column
+	void SetCol( unsigned a_col );
+
 	// Populates the member variable and sets the position and size of the
 	// tile
 	void UpdateTile( unsigned  a_tileRowNum = 0, unsigned a_tileColNum = 0,
-						 float a_tileSizeX = 0.f, float a_tileSizeY = 0.f,
-						 float a_boardPosX = 0.f, float a_boardPosY = 0.f );
+					 float a_tileSizeX = 0.f, float a_tileSizeY = 0.f,
+					 float a_boardPosX = 0.f, float a_boardPosY = 0.f );
 
 	// ===== private member variables =====
 private:
-	// row position in a board
-	unsigned m_tileRowNum;      
-	
-	// column position in a board
-	unsigned m_tileColNum;      
+
+	/// row position in a board
+	unsigned m_tileRowNum;
+
+	/// column position in a board
+	unsigned m_tileColNum;
 };
 
 // ======================================================================

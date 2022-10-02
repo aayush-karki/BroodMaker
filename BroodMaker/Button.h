@@ -87,17 +87,18 @@ namespace Brood
 /// 
 /// @endcode
 ///
-class Brood::BroodUI::Button : public Brood::BroodUI::UIElement
+class Brood::BroodUI::Button :
+	public Brood::BroodUI::UIElement
 {
 	// ============ public member function =============== 
 public:
 
 	// default constructor
 	Button( Brood::BroodUI::UIElement* a_parentPtr = nullptr,
-			Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_button);
-	
+			Brood::BroodUI::ENUM_UIType a_enumType = Brood::BroodUI::ENUM_UIType::UI_button );
+
 	// default destructor
-	virtual ~Button(); 
+	virtual ~Button();
 
 	// copy constructor
 	Button( const Button& a_otherElement );
@@ -109,25 +110,25 @@ public:
 
 	// gets the sprite body
 	Brood::SpriteHandler& GetSpriteBody();
-	
+
 	// ========= Setter funciton ==============
 
 	// sets the state of the element.
-	void SetSelected( bool a_selected ); 
+	void SetSelected( bool a_selected );
 
 
 	// checks to see if the logic for the element is to 
 	// be excecuted or not 
-	virtual bool DoElement() override; 
-	
+	virtual bool DoElement() override;
+
 	// adds the element ID to the text
-	virtual void Debugger(); 
+	virtual void Debugger();
 
 	// ============ private member variables =============== 
 private:
 
 	/// object to set texture
-	Brood::SpriteHandler m_bodySprite; 
+	Brood::SpriteHandler m_bodySprite;
 };
 
 // ======================================================================

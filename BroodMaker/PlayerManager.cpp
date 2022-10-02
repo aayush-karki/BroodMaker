@@ -1,6 +1,6 @@
 /*************************************************************************/
 /// 
-/// @file Player.cpp 
+/// @file PlayerManager.cpp 
 /// 
 /// @brief  This file is a source file for PlayerManager class.
 /// 

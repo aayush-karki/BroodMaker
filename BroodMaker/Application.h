@@ -18,7 +18,7 @@
 #include "Board.h"
 #include "Dice.h"
 #include "Player.h"
-#include "Card.h"
+#include "CardInfo.h"
 #include "MouseHandler.h"
 
 #include "TextBox.h"

@@ -113,6 +113,9 @@ struct Brood::Application::StaticVariables::ST_GlobalCoreVariables
 	/// holds the percentage of size of the application side pannel
 	///	compare to the applicaiton window
 	static uint32_t stm_panelPercentage;
+
+	/// holds the seed for random value 
+	static unsigned stm_seed;
 };
 
 // ======================================================================
@@ -149,6 +152,9 @@ struct Brood::Application::StaticVariables::ST_Folders
 
 	/// path to playerTextures folder. It is a sub folder of Textures folder
 	static std::filesystem::path stm_playerTextures;
+
+	/// path to tileTextures folder. It is a sub folder of Textures folder
+	static std::filesystem::path stm_tileTextures;
 };
 
 // ======================================================================

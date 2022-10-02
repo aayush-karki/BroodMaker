@@ -7,7 +7,6 @@
 /// It contains all of the declaration of the member 
 ///		funciton of BoardEditor class.
 /// 
-/// 
 /************************************************************************/
 
 // ======================================================================
@@ -99,6 +98,15 @@ public:
 
 	// Draws the General Board Setting panel elements
 	void DrawPlayerSettingPanel( sf::RenderWindow& a_window );
+
+	// Initializes the Dice Setting panel elements
+	void InitailizeDiceSettingPanel();
+
+	// Updates the Dice Setting panel elements
+	void UpdateDiceSettingPanel();
+
+	// Draws the Dice Setting panel elements
+	void DrawDiceSettingPanel( sf::RenderWindow& a_window );
 
 	// changes the displayed data on the panel 
 	// of player current activeindex
@@ -231,7 +239,8 @@ public:
 private:
 
 	/// @todo now start tile row and column
-	/// @todo now add a current active player selector that ranges from 0 to max player num
+	/// @todo now add a current active player selector that
+	///		 ranges from 0 to max player num
 // changing it updates the player feilds like size, offset
 
 

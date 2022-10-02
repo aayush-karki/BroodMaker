@@ -9,8 +9,15 @@
 ///
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
 #include "stdafx.h"
 #include "Dice.h"
+
+// ======================================================================
+// ================= start of Dice class ================================
+// ======================================================================
 
 /// 
 /// @public
@@ -56,7 +63,7 @@ Brood::Application::Components::Dice::Dice( std::string a_texturePath,
 	Brood::BroodUI::Button( a_parentPtr ), m_numSides( a_numSides )
 {
 	SetBodySize( 50, 50 );
-	SetBodyPosition( 10,100);
+	SetBodyPosition( 10, 100 );
 	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
 	Brood::BroodUI::Button::GetSpriteBody().SetTextureFromFilePath( a_texturePath );
 }
@@ -68,7 +75,42 @@ Brood::Application::Components::Dice::Dice( std::string a_texturePath,
 Brood::Application::Components::Dice::~Dice()
 {}
 
-/// /// 
+///
+/// @public 
+/// @brief copy constructor
+/// 
+/// @param a_otherDice reference to the the dice 
+///			structue that is being copied from 
+/// 
+Brood::Application::Components::Dice::Dice( const Brood::Application::Components::Dice& a_otherDice ) :
+	Button( a_otherDice ), m_numSides( a_otherDice.m_numSides )
+{}
+
+///
+/// @public 
+/// @brief assignmnet operator
+/// 
+/// @param a_otherDice reference to the the path 
+///			structue that is being copied from 
+/// 
+/// 
+Brood::Application::Components::Dice& Brood::Application::Components::Dice::operator=( const Brood::Application::Components::Dice& a_otherDice )
+{
+	// checking for self assignment
+	if( this == &a_otherDice )
+	{
+		return *this;
+	}
+
+	// calling the assignment operator of the UIElement
+	Brood::BroodUI::Button::operator=( a_otherDice );
+
+	this->m_numSides = a_otherDice.m_numSides;
+
+	return *this;
+}
+
+/// 
 /// @public
 /// @virtual
 /// @brief Setter function to set the dice's Size
@@ -143,7 +185,11 @@ unsigned Brood::Application::Components::Dice::RollDice()
 
 	unsigned currRoll = std::rand() % m_numSides;
 
-	GetSpriteBody().SetSpriteFromTexture(currRoll);
+	GetSpriteBody().SetSpriteFromTexture( currRoll );
 
 	return currRoll + 1;
 }
+
+// ======================================================================
+// ================= end of Dice class ==================================
+// ======================================================================

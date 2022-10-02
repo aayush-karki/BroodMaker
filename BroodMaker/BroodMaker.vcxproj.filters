@@ -50,7 +50,7 @@
     <ClCompile Include="Board.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Card.cpp">
+    <ClCompile Include="CardInfo.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dice.cpp">
@@ -134,18 +134,27 @@
     <ClCompile Include="BoardEditor.cpp">
       <Filter>src\Application\Workspace\Source Siles</Filter>
     </ClCompile>
-    <ClCompile Include="PathLinkedList.cpp">
-      <Filter>src\Components\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MapIdToElement.cpp">
       <Filter>src\BroodUI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TileEditor.cpp">
+      <Filter>src\Application\Workspace\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEditor.cpp">
+      <Filter>src\Application\Workspace\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="Deck.cpp">
+      <Filter>src\Components\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckManager.cpp">
+      <Filter>src\Components\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Card.h">
+    <ClInclude Include="CardInfo.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dice.h">
@@ -226,11 +235,20 @@
     <ClInclude Include="BoardEditor.h">
       <Filter>src\Application\Workspace\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PathLinkedList.h">
-      <Filter>src\Components\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MapIdToElement.h">
       <Filter>src\BroodUI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileEditor.h">
+      <Filter>src\Application\Workspace\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEditor.h">
+      <Filter>src\Application\Workspace\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Deck.h">
+      <Filter>src\Components\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeckManager.h">
+      <Filter>src\Components\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

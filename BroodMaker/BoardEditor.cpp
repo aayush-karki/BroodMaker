@@ -63,59 +63,8 @@ void Brood::Application::BoardEditor::InitializeWorkSpace()
 	// Initializing the player setting panel element
 	InitailizePlayerSettingPanel();
 
-	// =======================================================================
-	// ======= Initializing the elements in the  dice setting =======
-	// =======================================================================
-
-	// initializing the UI to control number of sides for new Dice
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSidePrompt, &m_btnDiceDecSide,
-								 &m_txtDiceSide, &m_btnDiceIncSide,
-								 "Dice Side Number",
-								 std::to_string( m_dicePtr->GetNumSides() ), true );
-
-	// initializing the UI to control x-size of Dice
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSizeXPrompt, &m_btnDiceDecSizeX,
-								 &m_txtDiceSizeX, &m_btnDiceIncSizeX,
-								 "Dice X-Size",
-								 std::to_string( ( int )m_dicePtr->GetBodySize().x ) );
-
-	// initializing the UI to control y-size of Dice
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSizeYPrompt, &m_btnDiceDecSizeY,
-								 &m_txtDiceSizeY, &m_btnDiceIncSizeY,
-								 "Dice Y-Size",
-								 std::to_string( ( int )m_dicePtr->GetBodySize().y ) );
-
-	// initializing the UI to control x-position of Dice
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDicePosXPrompt, &m_btnDiceDecPosX,
-								 &m_txtDicePosX, &m_btnDiceIncPosX,
-								 "Dice X-Position",
-								 std::to_string( ( int )m_dicePtr->GetBodyPosition().x ) );
-
-	// initializing the UI to control y-position of Dice
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDicePosYPrompt, &m_btnDiceDecPosY,
-								 &m_txtDicePosY, &m_btnDiceIncPosY,
-								 "Dice Y-Position",
-								 std::to_string( ( int )m_dicePtr->GetBodyPosition().y ) );
-
-	// initializing the UI to control dice file name 
-	// texture panel Elements
-	DyCreateFileInputPannelElement( m_panelBodyPtr, &m_txtDiceFileNamePrompt, &m_txtDiceFileInput,
-									&m_btnDiceOpenFile, "Dice Texture Filename",
-									m_dicePtr->GetSpriteBody().GetTexturePath() );
-
-	// initializing a UI to roll a dice
-	m_btnRollDice = DyCreateButton( { m_panelBodyPtr->getSize().x, 25 },
-									{ m_panelBodyPtr->getPosition().x,
-									m_unNamedUIList.back()->GetBodyPosition().y + m_unNamedUIList.back()->GetBodySize().y },
-									"Roll Dice",
-									m_unNamedUIList.back()->GetBodyColor() == Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor ?
-									Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor :
-									Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
-
-	// setitng the font for roll dice
-	m_btnRollDice->SetFontSize( 15 );
-
-
+	// Initializing the dice setting panel element
+	InitailizeDiceSettingPanel();
 }
 
 /// 
@@ -141,39 +90,11 @@ void Brood::Application::BoardEditor::Update()
 	{
 		UpdatePlayerSettingPanel();
 	}
+	// if the dice setting is selected
 	else if( m_selectedSettingIdx == 2 )
 	{
-		// checks if the user interacted with the Dice 
-		// side number panel Element
-		UpdateDiceSideNum();
-
-		// checks if the user interacted with the Dice 
-		// x size panel Element
-		UpdateDiceSizeX();
-
-		// checks if the user interacted with the Dice 
-		// y size panel Element
-		UpdateDiceSizeY();
-
-		// checks if the user interacted with the Dice 
-		// x size panel Element
-		UpdateDicePosX();
-
-		// checks if the user interacted with the Dice 
-		// y Pos panel Element
-		UpdateDicePosY();
-
-		// checks if the user interacted with the load 
-		// Dice texture panel Element
-		UpdateDiceFileTexture();
-
-		// checks if roll dice was pressed
-		UpdateRollDice();
-
+		UpdateDiceSettingPanel();
 	}
-
-
-
 }
 
 /// 
@@ -187,18 +108,6 @@ void Brood::Application::BoardEditor::Update()
 ///
 void Brood::Application::BoardEditor::Draw( sf::RenderWindow& a_window )
 {
-	//// drawing the dynamically created UI elements 
-	//// as we are creating the panels element form top to bottom
-	//// we can just loop from the buttom to top to draw the elements 
-	//// in correct order
-	//std::vector<Brood::BroodUI::UIElement*>::reverse_iterator currrevIte = m_unNamedUIList.rbegin();
-
-	//while( currrevIte != m_unNamedUIList.rend() )
-	//{
-	//	( *currrevIte )->Draw( a_window );
-	//	++currrevIte;
-	//}
-
 	if( m_drawCurretntActivePlayer )
 	{
 		m_playerManager.GetPlayerAtCurrIdx()->Draw( a_window );
@@ -217,50 +126,7 @@ void Brood::Application::BoardEditor::Draw( sf::RenderWindow& a_window )
 	// if the dice setting is selected
 	else if( m_selectedSettingIdx == 2 )
 	{
-		// Drawing the roll Dice panel Elements
-		m_btnRollDice->Draw( a_window );
-
-		// Drawing the Dice file name texture panel 
-		// Elements
-		m_btnDiceOpenFile->Draw( a_window );
-		m_txtDiceFileInput->Draw( a_window );
-		m_txtDiceFileNamePrompt->Draw( a_window );
-
-		// Drawing the y-Pos current Selected Dice 
-		// index panel Elements
-		m_btnDiceIncPosY->Draw( a_window );
-		m_txtDicePosY->Draw( a_window );
-		m_btnDiceDecPosY->Draw( a_window );
-		m_txtDicePosYPrompt->Draw( a_window );
-
-		// Drawing the X-Pos current Selected Dice 
-		// index panel Elements
-		m_btnDiceIncPosX->Draw( a_window );
-		m_txtDicePosX->Draw( a_window );
-		m_btnDiceDecPosX->Draw( a_window );
-		m_txtDicePosXPrompt->Draw( a_window );
-
-		// Drawing the y-size current Selected Dice 
-		// index panel Elements
-		m_btnDiceIncSizeY->Draw( a_window );
-		m_txtDiceSizeY->Draw( a_window );
-		m_btnDiceDecSizeY->Draw( a_window );
-		m_txtDiceSizeYPrompt->Draw( a_window );
-
-		// Drawing the x-size current Selected Dice 
-		// index panel Elements
-		m_btnDiceIncSizeX->Draw( a_window );
-		m_txtDiceSizeX->Draw( a_window );
-		m_btnDiceDecSizeX->Draw( a_window );
-		m_txtDiceSizeXPrompt->Draw( a_window );
-
-		// Drawing the x-size current Selected Dice 
-		// index panel Elements
-		m_btnDiceIncSide->Draw( a_window );
-		m_txtDiceSide->Draw( a_window );
-		m_btnDiceDecSide->Draw( a_window );
-		m_txtDiceSidePrompt->Draw( a_window );
-
+		DrawDiceSettingPanel(a_window);
 	}
 
 	// Drawing the setting selection drop down input
@@ -552,7 +418,7 @@ void Brood::Application::BoardEditor::DrawGeneralBoardSettingPanel( sf::RenderWi
 
 /// 
 /// @private
-/// @brief Updates the panel element of the general board setting 
+/// @brief Updates the panel element of the player setting 
 /// 
 /// It Updates the folloing panel element: 
 ///		Player start row, Player start column, Minimum Player number,
@@ -691,6 +557,165 @@ void Brood::Application::BoardEditor::DrawPlayerSettingPanel( sf::RenderWindow& 
 	m_txtPlayerStartRowNum->Draw( a_window );
 	m_btnPlayerDecStartRowNum->Draw( a_window );
 	m_txtPlayerStartRowPrompt->Draw( a_window );
+}
+
+/// 
+/// @private
+/// @brief Initializes the panel element of the dice setting 
+/// 
+/// It initializes the folloing panel element: 
+///		dice side number, dice x-size, dice y-size, 
+///		dice x-pos, dice-ypos, dice texture filename input,
+///		and roll a dice to check if the texture works 
+/// 
+void Brood::Application::BoardEditor::InitailizeDiceSettingPanel()
+{
+	// =======================================================================
+		// ======= Initializing the elements in the  dice setting =======
+		// =======================================================================
+
+		// initializing the UI to control number of sides for new Dice
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSidePrompt, &m_btnDiceDecSide,
+								 &m_txtDiceSide, &m_btnDiceIncSide,
+								 "Dice Side Number",
+								 std::to_string( m_dicePtr->GetNumSides() ), true );
+
+	// initializing the UI to control x-size of Dice
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSizeXPrompt, &m_btnDiceDecSizeX,
+								 &m_txtDiceSizeX, &m_btnDiceIncSizeX,
+								 "Dice X-Size",
+								 std::to_string( ( int )m_dicePtr->GetBodySize().x ) );
+
+	// initializing the UI to control y-size of Dice
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSizeYPrompt, &m_btnDiceDecSizeY,
+								 &m_txtDiceSizeY, &m_btnDiceIncSizeY,
+								 "Dice Y-Size",
+								 std::to_string( ( int )m_dicePtr->GetBodySize().y ) );
+
+	// initializing the UI to control x-position of Dice
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDicePosXPrompt, &m_btnDiceDecPosX,
+								 &m_txtDicePosX, &m_btnDiceIncPosX,
+								 "Dice X-Position",
+								 std::to_string( ( int )m_dicePtr->GetBodyPosition().x ) );
+
+	// initializing the UI to control y-position of Dice
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDicePosYPrompt, &m_btnDiceDecPosY,
+								 &m_txtDicePosY, &m_btnDiceIncPosY,
+								 "Dice Y-Position",
+								 std::to_string( ( int )m_dicePtr->GetBodyPosition().y ) );
+
+	// initializing the UI to control dice file name 
+	// texture panel Elements
+	DyCreateFileInputPannelElement( m_panelBodyPtr, &m_txtDiceFileNamePrompt, &m_txtDiceFileInput,
+									&m_btnDiceOpenFile, "Dice Texture Filename",
+									m_dicePtr->GetSpriteBody().GetTexturePath() );
+
+	// initializing a UI to roll a dice
+	m_btnRollDice = DyCreateButton( { m_panelBodyPtr->getSize().x, 25 },
+									{ m_panelBodyPtr->getPosition().x,
+									m_unNamedUIList.back()->GetBodyPosition().y + m_unNamedUIList.back()->GetBodySize().y },
+									"Roll Dice",
+									m_unNamedUIList.back()->GetBodyColor() == Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor ?
+									Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor :
+									Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
+
+	// setitng the font for roll dice
+	m_btnRollDice->SetFontSize( 15 );
+}
+
+/// 
+/// @private
+/// @brief Updates the panel element of the dice setting 
+/// 
+/// It Updates the following panel element: 
+///		dice side number, dice x-size, dice y-size, 
+///		dice x-pos, dice-ypos, dice texture filename input,
+///		and roll a dice to check if the texture works 
+/// 
+void Brood::Application::BoardEditor::UpdateDiceSettingPanel()
+{
+	// checks if the user interacted with the Dice 
+			// side number panel Element
+	UpdateDiceSideNum();
+
+	// checks if the user interacted with the Dice 
+	// x size panel Element
+	UpdateDiceSizeX();
+
+	// checks if the user interacted with the Dice 
+	// y size panel Element
+	UpdateDiceSizeY();
+
+	// checks if the user interacted with the Dice 
+	// x size panel Element
+	UpdateDicePosX();
+
+	// checks if the user interacted with the Dice 
+	// y Pos panel Element
+	UpdateDicePosY();
+
+	// checks if the user interacted with the load 
+	// Dice texture panel Element
+	UpdateDiceFileTexture();
+
+	// checks if roll dice was pressed
+	UpdateRollDice();
+}
+
+/// 
+/// @private
+/// @brief Draws the panel element of the dice setting 
+/// 
+/// It Draws the following panel element: 
+///		dice side number, dice x-size, dice y-size, 
+///		dice x-pos, dice-ypos, dice texture filename input,
+///		and roll a dice to check if the texture works 
+/// 
+void Brood::Application::BoardEditor::DrawDiceSettingPanel( sf::RenderWindow& a_window )
+{
+	// Drawing the roll Dice panel Elements
+	m_btnRollDice->Draw( a_window );
+
+	// Drawing the Dice file name texture panel 
+	// Elements
+	m_btnDiceOpenFile->Draw( a_window );
+	m_txtDiceFileInput->Draw( a_window );
+	m_txtDiceFileNamePrompt->Draw( a_window );
+
+	// Drawing the y-Pos current Selected Dice 
+	// index panel Elements
+	m_btnDiceIncPosY->Draw( a_window );
+	m_txtDicePosY->Draw( a_window );
+	m_btnDiceDecPosY->Draw( a_window );
+	m_txtDicePosYPrompt->Draw( a_window );
+
+	// Drawing the X-Pos current Selected Dice 
+	// index panel Elements
+	m_btnDiceIncPosX->Draw( a_window );
+	m_txtDicePosX->Draw( a_window );
+	m_btnDiceDecPosX->Draw( a_window );
+	m_txtDicePosXPrompt->Draw( a_window );
+
+	// Drawing the y-size current Selected Dice 
+	// index panel Elements
+	m_btnDiceIncSizeY->Draw( a_window );
+	m_txtDiceSizeY->Draw( a_window );
+	m_btnDiceDecSizeY->Draw( a_window );
+	m_txtDiceSizeYPrompt->Draw( a_window );
+
+	// Drawing the x-size current Selected Dice 
+	// index panel Elements
+	m_btnDiceIncSizeX->Draw( a_window );
+	m_txtDiceSizeX->Draw( a_window );
+	m_btnDiceDecSizeX->Draw( a_window );
+	m_txtDiceSizeXPrompt->Draw( a_window );
+
+	// Drawing the x-size current Selected Dice 
+	// index panel Elements
+	m_btnDiceIncSide->Draw( a_window );
+	m_txtDiceSide->Draw( a_window );
+	m_btnDiceDecSide->Draw( a_window );
+	m_txtDiceSidePrompt->Draw( a_window );
 }
 
 
@@ -1937,7 +1962,7 @@ void Brood::Application::BoardEditor::UpdateCurrPlayerFileTexture()
 		if( !m_playerManager.GetPlayerAtCurrIdx()->GetPlayerSpriteBody().SetTextureFromFilePath( playerTextureFilePath ) )
 		{
 			m_txtPlayerFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor );
-			std::cerr <<"Could not find: " << playerTextureFilePath << std::endl;
+			std::cerr << "Could not find: " << playerTextureFilePath << std::endl;
 		}
 
 		// resetting the m_eterPressed
@@ -2322,7 +2347,7 @@ void Brood::Application::BoardEditor::UpdateRollDice()
 {
 	if( m_btnRollDice->DoElement() )
 	{
-		std::cerr<< "Current Roll: " << m_dicePtr->RollDice() << std::endl;
+		std::cerr << "Current Roll: " << m_dicePtr->RollDice() << std::endl;
 	}
 }
 

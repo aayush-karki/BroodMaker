@@ -1,5 +1,24 @@
+/*************************************************************************/
+/// 
+/// @file Application.cpp 
+/// 
+/// @brief  This file is a source file for Application class.
+/// 
+/// It contains all of the defination of the member 
+///		funciton of Application class.
+/// 
+/************************************************************************/
+
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
+
 #include "stdafx.h"
 #include "PathManager.h"
+
+// ======================================================================
+// ================= start of PathManager class =========================
+// ======================================================================
 
 /// 
 /// @public
@@ -128,3 +147,29 @@ PathManager::~PathManager()
 	//	delete( *currPath );
 	//}
 }
+
+/// 
+/// @public
+/// 
+/// @brief Getter function; for begin of path list
+/// @return a iterator that points to the begining of the path list
+/// 
+ const std::list<Brood::Application::Components::Path*>::iterator PathManager::GetPathBegin()
+{
+	return m_paths.begin();
+}
+
+/// 
+/// @public
+/// 
+/// @brief Getter function; for end of path list
+/// @return a iterator that points to the end of the path list
+/// 
+ const std::list<Brood::Application::Components::Path*>::iterator PathManager::GetPathEnd()
+{
+	return m_paths.end();
+}
+
+ // ======================================================================
+ // ================= end of PathManager class ===========================
+ // ======================================================================

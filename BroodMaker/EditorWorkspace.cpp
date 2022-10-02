@@ -142,12 +142,19 @@ void Brood::Application::EditorWorkspace::Debugger()
 void Brood::Application::EditorWorkspace::InitializeEditModeTabs()
 {
 	unsigned editModeTabWidthPercentage = 100 - Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage;
-	float editModeTabWidth = ( ( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width * editModeTabWidthPercentage ) / 100 ) / 4;
+	float editModeTabWidth = ( ( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width * editModeTabWidthPercentage ) / 100 ) / float(7);
 	unsigned currEdit = 0;
-	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Board Edit" ) );
-	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Tiles Edit" ) );
-	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Path Edit" ) );
-	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Deck Edit" ) );
+	//m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Game Edit" ) );
+	//m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Board Edit" ) );
+	//m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Tiles Edit" ) );
+	//m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Deck Edit" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Game" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Board" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Tiles" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Player" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Dice" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Deck" ) );
+	m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Card" ) );
 
 	// setting up the font size of the tabs
 	for( unsigned idx = 0; idx < m_editModesTabs.size(); ++idx )
