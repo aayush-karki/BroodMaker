@@ -22,19 +22,9 @@
 /// 
 /// @public
 /// @brief Default Constructor
-/// 
-/// @param a_pathIte a iterator that holds to 
-///		Brood::Application::Components::st_path node which 
-///		contains the start row and column number inside it
-/// 
-Brood::Application::Components::PlayerManager::PlayerManager( Brood::Application::Components::Path* a_pathPtr ) :
-	m_currActivePlayerIdx( 0 ), m_maxPlayer( 1 ), m_minPlayer( 1 ),
-	m_startPathPtr( a_pathPtr )
-{
-	SetMaxPlayer(1);
-	SetMinPlayer(1);
-	SetCurrActivePlayerIdx(0);
-}
+///  
+Brood::Application::Components::PlayerManager::PlayerManager()
+{}
 
 /// 
 /// @public
@@ -88,6 +78,21 @@ Brood::Application::Components::PlayerManager& Brood::Application::Components::P
 	return *this;
 }
 
+///
+/// @brief Initializes the player manager
+/// 
+/// @param a_pathPtr  a iterator that holds to 
+///		Brood::Application::Components::st_path node which 
+///		contains the start row and column number inside it
+/// 
+void Brood::Application::Components::PlayerManager::InitializePlayerManger( Brood::Application::Components::Path* a_pathPtr )
+{
+	m_startPathPtr = a_pathPtr;
+	SetMaxPlayer( 1 );
+	SetMinPlayer( 1 );
+	SetCurrActivePlayerIdx( 0 );
+}
+
 /// 
 /// @public
 /// @brief Getter function to get the maximum number of player
@@ -116,7 +121,7 @@ const unsigned Brood::Application::Components::PlayerManager::GetMinPlayer() con
 /// 
 /// @return maximum number of player
 ///
-const unsigned Brood::Application::Components::PlayerManager::GetCurrActivePlayerIdx()const 
+const unsigned Brood::Application::Components::PlayerManager::GetCurrActivePlayerIdx()const
 {
 	return m_currActivePlayerIdx;
 }
@@ -166,7 +171,7 @@ void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_max
 {
 	m_maxPlayer = a_maxPlayer;
 
-	m_allPlayers.resize( a_maxPlayer, new Player(m_startPathPtr) );
+	m_allPlayers.resize( a_maxPlayer, new Player( m_startPathPtr ) );
 }
 
 /// 
@@ -219,7 +224,7 @@ void Brood::Application::Components::PlayerManager::SetPathForPlayerAtCurrIdx( B
 		return;
 	}
 
-	m_allPlayers.at(m_currActivePlayerIdx)->UpdatePathptr(a_pathPtr);
+	m_allPlayers.at( m_currActivePlayerIdx )->UpdatePathptr( a_pathPtr );
 }
 
 /// 
@@ -290,6 +295,11 @@ void Brood::Application::Components::PlayerManager::ReplacaePlayerAt( unsigned a
 	( m_allPlayers.at( a_index ) ) = new Player( *( a_playerPtr ) );
 }
 
+///
+/// @brief Draws the player to the screen
+/// 
+/// @param a_window reference to the render screen
+/// 
 void Brood::Application::Components::PlayerManager::Draw( sf::RenderWindow& a_window )
 {
 	std::vector<Brood::Application::Components::Player*>::iterator currPlayer = m_allPlayers.begin();

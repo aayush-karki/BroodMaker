@@ -14,8 +14,8 @@
 // ======================================================================
 // ===================== included files =================================
 // ======================================================================
-#pragma once
 
+#pragma once
 #include "Path.h"
 #include "GlobalVariables.h"
 //#include "Player.h"
@@ -55,7 +55,9 @@ class Brood::Application::Components::Board
 public:
 
 	// default constructor
-	Board();
+	Board( unsigned  a_numRows = 1, unsigned a_numCols = 1,
+		   float a_boardSizeX = 50.f, float a_boardSizeY = 50.f,
+		   float a_boardPosX = 50.f, float a_boardPosY = 50.f );
 
 	//Destructor
 	~Board();
@@ -63,6 +65,7 @@ public:
 
 	void Draw( sf::RenderWindow& a_window );
 
+	// initialize the board
 	void InitializeBoard( unsigned  a_numRows = 0, unsigned a_numCols = 0,
 						  float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
 						  float a_boardPosX = 0.f, float a_boardPosY = 0.f );

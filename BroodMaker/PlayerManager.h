@@ -43,11 +43,11 @@ namespace Brood::Application
 /// 
 class Brood::Application::Components::PlayerManager
 {
-	// ===================== private member function ===================
+	// ===================== public member function ===================
 public:
 
 	// default constructor
-	PlayerManager( Brood::Application::Components::Path* a_pathPtr = nullptr);
+	PlayerManager();
 
 	// destructor
 	~PlayerManager();
@@ -57,6 +57,9 @@ public:
 
 	// assignment operator
 	PlayerManager& operator=( const Brood::Application::Components::PlayerManager& a_otherPlayerManager );
+
+	// initializes the player Manger
+	void InitializePlayerManger( Brood::Application::Components::Path* a_pathPtr );
 
 	// =========== getter function ===========
 
@@ -108,6 +111,7 @@ public:
 	void ReplacaePlayerAt( unsigned a_index,
 						   Brood::Application::Components::Player* a_playerPtr = nullptr );
 
+	// draws the players
 	void Draw( sf::RenderWindow& a_window );
 
 	// ===================== private member variables ===================

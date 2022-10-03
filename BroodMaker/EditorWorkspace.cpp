@@ -23,7 +23,7 @@
 /// @brief default constructor
 /// 
 Brood::Application::EditorWorkspace::EditorWorkspace() :
-	m_activeEditorIdx( 0 ), m_board(), m_dice()
+	m_activeEditorIdx( 0 ), m_gameData()
 {
 	InitializeWorkSpace();
 }
@@ -44,8 +44,8 @@ Brood::Application::EditorWorkspace::~EditorWorkspace()
 //
 void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 {
-	// initializing the board 
-	m_board.InitializeBoard( 1, 1, 500, 500, 50, 200 );
+	// initialzing the game data
+	m_gameData.InitializeGameDataManger();
 
 	// initialzing the side panel
 	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
@@ -66,19 +66,25 @@ void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 	// ====== initializing the workspaces =======
 
 	// initializing game editor
-	m_editorWorkspaceList.push_back( new GameEditor( &m_deckManager, &m_playerManager, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new GameEditor( &m_gameData, &m_sidePanel ) );
 
 	// initializing boad editor
-	m_editorWorkspaceList.push_back( new BoardEditor( &m_board, &m_dice, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new BoardEditor( &m_gameData, &m_sidePanel ) );
 
 	// initializing tile editor
-	m_editorWorkspaceList.push_back( new TileEditor( &m_board, &m_deckManager, &m_sidePanel ) );
-
+	m_editorWorkspaceList.push_back( new TileEditor( &m_gameData, &m_sidePanel ) );
 
 	// initializing player editor
+	m_editorWorkspaceList.push_back( new PlayerEditor( &m_gameData, &m_sidePanel ) );
+
 	// initializing dice editor
+	m_editorWorkspaceList.push_back( new DiceEditor( &m_gameData, &m_sidePanel ) );
+
 	// initializing deck editor
+	m_editorWorkspaceList.push_back( new DeckEditor( &m_gameData, &m_sidePanel ) );
+
 	// initializing card editor
+	m_editorWorkspaceList.push_back( new CardEditor( &m_gameData, &m_sidePanel ) );
 
 }
 
@@ -134,8 +140,7 @@ void Brood::Application::EditorWorkspace::Debugger()
 {
 	Brood::Application::WorkSpace::Debugger();
 
-	m_board.Debugger();
-	m_dice.Debugger();
+	m_gameData.Debugger();
 }
 
 /// 
@@ -167,7 +172,7 @@ void Brood::Application::EditorWorkspace::UpdateAllDispayElement()
 void Brood::Application::EditorWorkspace::InitializeEditModeTabs()
 {
 	unsigned editModeTabWidthPercentage = 100 - Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage;
-	float editModeTabWidth = ( ( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width * editModeTabWidthPercentage ) / 100 ) / float(7);
+	float editModeTabWidth = ( ( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width * editModeTabWidthPercentage ) / 100 ) / float( 7 );
 	unsigned currEdit = 0;
 	//m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Game Edit" ) );
 	//m_editModesTabs.push_back( DyCreateButton( { editModeTabWidth, 40 }, { editModeTabWidth * currEdit++, 50 }, "Board Edit" ) );

@@ -48,6 +48,23 @@ Brood::Application::WorkSpace::~WorkSpace()
 /// 
 /// @public
 /// @virtual
+/// @brief Draw funciton
+/// 
+/// Draws all the component to the screen
+//
+void Brood::Application::WorkSpace::Draw( sf::RenderWindow& a_window )
+{
+	std::vector<Brood::BroodUI::UIElement*>::reverse_iterator dyUIListIte = m_unNamedUIList.rbegin();
+	while( dyUIListIte != m_unNamedUIList.rend() )
+	{
+		( *dyUIListIte )->Draw( a_window );
+		++dyUIListIte;
+	}
+}
+
+/// 
+/// @public
+/// @virtual
 /// @brief debugger funciton
 /// 
 /// This function helps in debugging the UI elements.

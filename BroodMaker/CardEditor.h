@@ -1,11 +1,11 @@
 /*************************************************************************/
 /// 
-/// @file TileEditor.h 
+/// @file CardEditor.h 
 /// 
-/// @brief  This file is a header file for TileEditor class.
+/// @brief  This file is a header file for CardEditor class.
 /// 
 /// It contains all of the declaration of the member 
-///		funciton of TileEditor class.
+///		funciton of CardEditor class.
 /// 
 /************************************************************************/
 
@@ -23,7 +23,7 @@ namespace Brood
 {
 	namespace Application
 	{
-		class TileEditor;
+		class CardEditor;
 	}
 }
 // ======================================================================
@@ -36,27 +36,25 @@ namespace Brood
 
 /// 
 /// @ingroup Application
-/// @class TileEditor  "TileEditor.h"
-/// @brief It alows the users to tweek the tile setting
+/// @class CardEditor  "CardEditor.h"
+/// @brief It alows the users to tweek the card setting
 ///
 /// It is a container that bundels elements that is present 
-///		in TileEditor workspace
+///		in CardEditor workspace
 /// 
 /// Derived form Workspace class
 /// 
-/// @todo allowd to enter number in the txt feild
-/// 
-class Brood::Application::TileEditor :
+class Brood::Application::CardEditor :
 	public Brood::Application::WorkSpace
 {
 	// ================= public member function ===================  
 public:
 	// default constructor
-	TileEditor( Brood::Application::Components::GameDataManager* a_gameData,
+	CardEditor( Brood::Application::Components::GameDataManager* a_gameData,
 				sf::RectangleShape* a_panelPtr );
 
 	// default destructor
-	~TileEditor();
+	~CardEditor();
 	// ===== virtual funcitons ====
 
 	// initializes the component of a workspace
@@ -68,7 +66,7 @@ public:
 	// updates all the display elment
 	void UpdateAllDispayElement();
 
-	// renders to the screen
+	// reners to the screen
 	void Draw( sf::RenderWindow& a_window );
 
 	// Calls Debugger for all UI elements in this class
@@ -91,7 +89,6 @@ private:
 
 	/// pointer to the deck manager
 	Brood::Application::Components::DeckManager* m_deckManagerPtr;
-
 };
 
 // ======================================================================

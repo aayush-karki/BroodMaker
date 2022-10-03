@@ -124,7 +124,7 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 	//m_openFile->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_openFile->SetText( "Create New" );
 
-	// createing 3 workspace, namely, initialWorkSpace, editorWorSpace,
+	// createing 2 workspace, namely, initialWorkSpace, editorWorSpace,
 	m_workSpacesList.push_back( new Brood::Application::EditorWorkspace() );
 }
 

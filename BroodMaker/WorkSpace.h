@@ -16,6 +16,7 @@
 #include "MenuBar.h"
 #include "DropDownInput.h"
 #include "TextBox.h"
+#include "GameDataManager.h"
 
 // ======================================================================
 // ================= defining namespace =================================

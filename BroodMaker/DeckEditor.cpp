@@ -1,22 +1,23 @@
 /*************************************************************************/
 /// 
-/// @file TileEditor.cpp 
+/// @file DeckEditor.cpp 
 /// 
-/// @brief  This file is a source file for TileEditor class.
+/// @brief  This file is a source file for DeckEditor class.
 /// 
 /// It contains all of the defination of the member 
-///		funciton of TileEditor class.
+///		funciton of DeckEditor class.
 /// 
 /************************************************************************/
 
 // ======================================================================
 // ===================== included files =================================
 // ======================================================================
+
 #include "stdafx.h"
-#include "TileEditor.h"
+#include "DeckEditor.h"
 
 // ======================================================================
-// ================= start of TileEditor class ==========================
+// ================= start of DeckEditor class =========================
 // ======================================================================
 
 /// 
@@ -26,7 +27,7 @@
 /// @param a_gameData pointer to the game data object
 /// @param a_panelPtr pointer to the panel body object
 ///
-Brood::Application::TileEditor::TileEditor( Brood::Application::Components::GameDataManager* a_gameData,
+Brood::Application::DeckEditor::DeckEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											sf::RectangleShape* a_panelPtr ) :
 	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
 {
@@ -37,7 +38,7 @@ Brood::Application::TileEditor::TileEditor( Brood::Application::Components::Game
 /// @public
 /// @brief default destructor
 /// 
-Brood::Application::TileEditor::~TileEditor()
+Brood::Application::DeckEditor::~DeckEditor()
 {
 	// all the dynamically created panel elements are 
 	// destructed in the base class
@@ -51,7 +52,7 @@ Brood::Application::TileEditor::~TileEditor()
 /// It creates all the component of the workspace. It inializes the board,
 ///		setting section Dropdown Input.
 //
-void Brood::Application::TileEditor::InitializeWorkSpace()
+void Brood::Application::DeckEditor::InitializeWorkSpace()
 {
 
 
@@ -64,9 +65,9 @@ void Brood::Application::TileEditor::InitializeWorkSpace()
 /// 
 ///	Contains all the logic for the initial workspace 
 ///
-void Brood::Application::TileEditor::Update()
+void Brood::Application::DeckEditor::Update()
 {
-	
+
 }
 
 /// 
@@ -76,7 +77,7 @@ void Brood::Application::TileEditor::Update()
 /// 
 
 ///
-void Brood::Application::TileEditor::UpdateAllDispayElement()
+void Brood::Application::DeckEditor::UpdateAllDispayElement()
 {}
 
 /// 
@@ -88,7 +89,7 @@ void Brood::Application::TileEditor::UpdateAllDispayElement()
 /// 
 /// @param a_window reference to the render window
 ///
-void Brood::Application::TileEditor::Draw( sf::RenderWindow& a_window )
+void Brood::Application::DeckEditor::Draw( sf::RenderWindow& a_window )
 {
 	// drawing game component
 	m_gameData->Draw( a_window );
@@ -101,12 +102,12 @@ void Brood::Application::TileEditor::Draw( sf::RenderWindow& a_window )
 /// 
 /// This function helps in debugging the UI elements.
 ///
-void Brood::Application::TileEditor::Debugger()
+void Brood::Application::DeckEditor::Debugger()
 {
 	// base class calls the unnamedUIList 
 	Brood::Application::WorkSpace::Debugger();
 }
 
 // ======================================================================
-// ================= end of TileEditor class ============================
+// ================= end of DeckEditor class ============================
 // ======================================================================

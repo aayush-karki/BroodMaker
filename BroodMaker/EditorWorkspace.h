@@ -18,6 +18,10 @@
 #include "BoardEditor.h"
 #include "GameEditor.h"
 #include "TileEditor.h"
+#include "PlayerEditor.h"
+#include "DiceEditor.h"
+#include "DeckEditor.h"
+#include "CardEditor.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -98,17 +102,8 @@ private:
 	/// holds the index of current active editor workspace
 	unsigned m_activeEditorIdx;
 
-	/// player mangaer for the game
-	Brood::Application::Components::PlayerManager m_playerManager;
-
-	/// Deck mangaer for the game
-	Brood::Application::Components::DeckManager m_deckManager;
-
-	/// board for the game
-	Brood::Application::Components::Board m_board;
-
-	/// dice for the game
-	Brood::Application::Components::Dice m_dice;
+	// all the game data 
+	Brood::Application::Components::GameDataManager m_gameData;
 	
 	/// Ui for edit modes tabs
 	std::vector<Brood::BroodUI::Button*> m_editModesTabs;

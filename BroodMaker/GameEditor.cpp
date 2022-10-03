@@ -24,11 +24,12 @@
 /// 
 /// @brief default constructor
 /// 
-Brood::Application::GameEditor::GameEditor( Brood::Application::Components::DeckManager* a_deckManagerPtr,
-											Brood::Application::Components::PlayerManager* a_playerManagerPtr,
+/// @param a_gameData pointer to the game data object
+/// @param a_panelPtr pointer to the panel body object
+///  
+Brood::Application::GameEditor::GameEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											sf::RectangleShape* a_panelPtr ) :
-	m_deckManagerPtr( a_deckManagerPtr ), m_playerManagerPtr( a_playerManagerPtr ),
-	m_panelBodyPtr( a_panelPtr )
+	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
 {
 	InitializeWorkSpace();
 }
@@ -71,27 +72,19 @@ void Brood::Application::GameEditor::InitializeWorkSpace()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerMinNumPrompt, &m_btnPlayerDecMinNum,
 								 &m_txtPlayerMinNum, &m_btnPlayerIncMinNum,
 								 "Minimum Players",
-								 std::to_string( ( int )m_playerManagerPtr->GetMinPlayer() ) );
+								 std::to_string( ( int )m_gameData->GetPlayerManagerPtr()->GetMinPlayer() ) );
 
 	// initializing the UI to control maximum number of player
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerMaxNumPrompt, &m_btnPlayerDecMaxnNum,
 								 &m_txtPlayerMaxNum, &m_btnPlayerIncMaxNum,
 								 "Maximum Players",
-								 std::to_string( ( int )m_playerManagerPtr->GetMaxPlayer() ) );
+								 std::to_string( ( int )m_gameData->GetPlayerManagerPtr()->GetMaxPlayer() ) );
 
 	// initializing the UI to control number of deck
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDeckNumPrompt, &m_btnDeckDecNum,
 								 &m_txtDeckNum, &m_btnDeckIncNum,
 								 "Deck Number",
-								 std::to_string( ( int )m_deckManagerPtr->GetDeckList().size() ) );
-
-
-
-
-
-
-
-
+								 std::to_string( ( int )m_gameData->GetDeckManagerPtr()->GetDeckList().size() ) );
 
 	// initializing the  m_titleScreenBtn
 	m_titleScreenBtn = DyCreateButton( { 550, 550 }, { 10, 150 }, "Game Name" );
@@ -155,12 +148,8 @@ void Brood::Application::GameEditor::Draw( sf::RenderWindow& a_window )
 	// drawing the title screen
 	m_titleScreenBtn->Draw( a_window );
 
-	std::vector<Brood::BroodUI::UIElement*>::reverse_iterator dyUIListIte = m_unNamedUIList.rbegin();
-	while( dyUIListIte != m_unNamedUIList.rend() )
-	{
-		( *dyUIListIte )->Draw( a_window );
-		++dyUIListIte;
-	}
+	// drawing the ui in the list
+	Brood::Application::WorkSpace::Draw( a_window );
 
 }
 
@@ -260,7 +249,7 @@ void Brood::Application::GameEditor::UpdateMovementTypePanelElement()
 				std::cerr << "item at " << itemIdx << "  Pressed with ID " <<
 					itemList.at( itemIdx )->GetText() << std::endl;
 
-				m_deckManagerPtr->SetMovementType( static_cast< Brood::Application::Components::ENUM_MovementType >( itemIdx ) );
+				m_gameData->GetDeckManagerPtr()->SetMovementType( static_cast< Brood::Application::Components::ENUM_MovementType >( itemIdx ) );
 			}
 		}
 	}
@@ -318,7 +307,7 @@ void Brood::Application::GameEditor::UpdateIncorrectPenaltyPanelElement()
 				std::cerr << "item at " << itemIdx << "  Pressed with ID " <<
 					itemList.at( itemIdx )->GetText() << std::endl;
 
-				m_deckManagerPtr->SetIncorrectPenalty( !itemIdx );
+				m_gameData->GetDeckManagerPtr()->SetIncorrectPenalty( !itemIdx );
 
 			}
 		}
@@ -349,7 +338,7 @@ void Brood::Application::GameEditor::UpdateMinimumPlayerNumber()
 	if( m_btnPlayerDecMinNum->DoElement() )
 	{
 		// getting current minimum Player number
-		unsigned currentMinPlayerNum = m_playerManagerPtr->GetMinPlayer();
+		unsigned currentMinPlayerNum = m_gameData->GetPlayerManagerPtr()->GetMinPlayer();
 
 		// chekcing if the current currentMinPlayerNum is 0 then do nothing
 		if( currentMinPlayerNum == 0 )
@@ -358,7 +347,7 @@ void Brood::Application::GameEditor::UpdateMinimumPlayerNumber()
 		}
 
 		// decrease the minimum player number by 1 units
-		m_playerManagerPtr->SetMinPlayer( currentMinPlayerNum - 1 );
+		m_gameData->GetPlayerManagerPtr()->SetMinPlayer( currentMinPlayerNum - 1 );
 
 		// updating the textbox showing the minimum player value
 		m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum - 1 ) );
@@ -367,17 +356,17 @@ void Brood::Application::GameEditor::UpdateMinimumPlayerNumber()
 	else if( m_btnPlayerIncMinNum->DoElement() )
 	{
 		// chekcing if the decrease the minimum player number was pressed
-		unsigned currentMinPlayerNum = m_playerManagerPtr->GetMinPlayer();
+		unsigned currentMinPlayerNum = m_gameData->GetPlayerManagerPtr()->GetMinPlayer();
 
 		// chekcing if the current minimum player number is 
 		// equal to current deck number the do nothing
-		if( currentMinPlayerNum == m_playerManagerPtr->GetMaxPlayer() )
+		if( currentMinPlayerNum == m_gameData->GetPlayerManagerPtr()->GetMaxPlayer() )
 		{
 			return;
 		}
 
 		// decrease the minimum player number by 1 units
-		m_playerManagerPtr->SetMinPlayer( currentMinPlayerNum + 1 );
+		m_gameData->GetPlayerManagerPtr()->SetMinPlayer( currentMinPlayerNum + 1 );
 
 		// updating the textbox showing the minimum player value
 		m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum + 1 ) );
@@ -407,25 +396,25 @@ void Brood::Application::GameEditor::UpdateMaximumPlayerNumber()
 	if( m_btnPlayerDecMaxnNum->DoElement() )
 	{
 		// getting current maximum Player number
-		unsigned currentMaxPlayerNum = m_playerManagerPtr->GetMaxPlayer();
+		unsigned currentMaxPlayerNum = m_gameData->GetPlayerManagerPtr()->GetMaxPlayer();
 
 		// chekcing if the current currentMaxPlayerNum id 
 		// equal to currentMinPlayerNum then do nothing
-		if( currentMaxPlayerNum == m_playerManagerPtr->GetMinPlayer() )
+		if( currentMaxPlayerNum == m_gameData->GetPlayerManagerPtr()->GetMinPlayer() )
 		{
 			return;
 		}
 
 		// decrease the deck number by 1 units
-		m_playerManagerPtr->SetMaxPlayer( currentMaxPlayerNum - 1 );
+		m_gameData->GetPlayerManagerPtr()->SetMaxPlayer( currentMaxPlayerNum - 1 );
 
 		// updating the textbox showing the deck value
 		m_txtPlayerMaxNum->SetText( std::to_string( currentMaxPlayerNum - 1 ) );
 
 		// chekcing if the currIdx is higher than max player
-		if( m_playerManagerPtr->GetCurrActivePlayerIdx() >= currentMaxPlayerNum - 1 )
+		if( m_gameData->GetPlayerManagerPtr()->GetCurrActivePlayerIdx() >= currentMaxPlayerNum - 1 )
 		{
-			m_playerManagerPtr->SetCurrActivePlayerIdx( currentMaxPlayerNum - 2 );
+			m_gameData->GetPlayerManagerPtr()->SetCurrActivePlayerIdx( currentMaxPlayerNum - 2 );
 
 		}
 	}
@@ -433,7 +422,7 @@ void Brood::Application::GameEditor::UpdateMaximumPlayerNumber()
 	else if( m_btnPlayerIncMaxNum->DoElement() )
 	{
 		// getting current maximum Player number
-		unsigned currentMaxPlayerNum = m_playerManagerPtr->GetMaxPlayer();
+		unsigned currentMaxPlayerNum = m_gameData->GetPlayerManagerPtr()->GetMaxPlayer();
 
 		// chekcing if the current currentMaxPlayerNum id 
 		// equal to 10 then do nothing
@@ -443,7 +432,7 @@ void Brood::Application::GameEditor::UpdateMaximumPlayerNumber()
 		}
 
 		// decrease the deck number by 1 units
-		m_playerManagerPtr->SetMaxPlayer( currentMaxPlayerNum + 1 );
+		m_gameData->GetPlayerManagerPtr()->SetMaxPlayer( currentMaxPlayerNum + 1 );
 
 		// updating the textbox showing the deck value
 		m_txtPlayerMaxNum->SetText( std::to_string( currentMaxPlayerNum + 1 ) );
@@ -472,7 +461,7 @@ void Brood::Application::GameEditor::UpdateDeckNumber()
 	if( m_btnDeckDecNum->DoElement() )
 	{
 		// getting current deck number
-		unsigned currentDeckNum = m_deckManagerPtr->GetDeckList().size();
+		unsigned currentDeckNum = m_gameData->GetDeckManagerPtr()->GetDeckList().size();
 
 		// chekcing if the current currentDeckNum is 
 		// equal to 1 then do nothing
@@ -482,7 +471,7 @@ void Brood::Application::GameEditor::UpdateDeckNumber()
 		}
 
 		// decrease the deck number by 1 units
-		m_deckManagerPtr->SetDeckSize( currentDeckNum - 1 );
+		m_gameData->GetDeckManagerPtr()->SetDeckSize( currentDeckNum - 1 );
 
 		// updating the textbox showing the deck value
 		m_txtDeckNum->SetText( std::to_string( currentDeckNum - 1 ) );
@@ -491,7 +480,7 @@ void Brood::Application::GameEditor::UpdateDeckNumber()
 	else if( m_btnDeckIncNum->DoElement() )
 	{
 		// getting current deck number
-		unsigned currentDeckNum = m_deckManagerPtr->GetDeckList().size();
+		unsigned currentDeckNum = m_gameData->GetDeckManagerPtr()->GetDeckList().size();
 
 		// chekcing if the current currentMaxPlayerNum id 
 		// equal to 10 then do nothing
@@ -501,14 +490,9 @@ void Brood::Application::GameEditor::UpdateDeckNumber()
 		}
 
 		// decrease the deck number by 1 units
-		m_deckManagerPtr->SetDeckSize( currentDeckNum + 1 );
+		m_gameData->GetDeckManagerPtr()->SetDeckSize( currentDeckNum + 1 );
 
 		// updating the textbox showing the deck value
 		m_txtDeckNum->SetText( std::to_string( currentDeckNum + 1 ) );
 	}
 }
-
-
-
-
-

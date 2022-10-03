@@ -48,7 +48,7 @@ namespace Brood::Application
 /// TODO add a function and ctor to load from a file
 /// 
 class Brood::Application::Components::Deck :
-	Brood::BroodUI::Button
+	public Brood::BroodUI::Button
 {
 	// ============= public member funciton =====================
 public:

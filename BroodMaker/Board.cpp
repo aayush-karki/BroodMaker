@@ -9,16 +9,45 @@
 /// 
 /************************************************************************/
 
+// ======================================================================
+// ===================== included files =================================
+// ======================================================================
+
 #include "stdafx.h"
 #include "Board.h"
 
+
+// ======================================================================
+// ================= start of Board class ===============================
+// ======================================================================
+
 /// 
 /// @public
-/// @brief default Constructor
-///   
-Brood::Application::Components::Board::Board() :
-	m_numRows( 0 ), m_numCols( 0 )
-{}
+/// @brief default  Constructor
+/// 
+/// It initializes the board as well as the tiles. 
+/// Tiles are set up according to the 
+/// 
+/// @param a_numRows number of tile rows in a board -> default 1
+/// @param a_numCols number of tile columns in a board-> default 1
+/// @param a_boardSizeX  board's width -> default 50.f
+/// @param a_boardSizeY board's length -> default 50.f
+/// @param a_boardPosX board's x-position on screen; 
+///			relative to the render window -> default 50.f
+/// @param a_boardPosY board's y-position on screen; 
+///			realtive to the render window -> default 50.f
+/// 
+Brood::Application::Components::Board::Board( unsigned a_numRows,
+											  unsigned a_numCols,
+											  float a_boardSizeX,
+											  float a_boardSizeY,
+											  float a_boardPosX,
+											  float a_boardPosY )
+{
+	InitializeBoard( a_numRows, a_numCols,
+					 a_boardSizeX, a_boardSizeY,
+					 a_boardPosX, a_boardPosY );
+}
 
 /// 
 /// @public
@@ -469,8 +498,8 @@ void Brood::Application::Components::Board::DecreaseNumCol( unsigned a_numCols )
 /// @param a_createNew true if new tiles should be created before updating the tiles -> default false
 ///  
 void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin, unsigned a_rowEnd,
-															  unsigned a_colBegin, unsigned a_colEnd,
-															  bool a_createNew )
+															 unsigned a_colBegin, unsigned a_colEnd,
+															 bool a_createNew )
 {
 	float tileSizex = m_boardBody.getSize().x / m_numCols;
 	float tileSizeY = m_boardBody.getSize().y / m_numRows;
@@ -485,9 +514,9 @@ void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin
 			}
 
 			m_boardPaths.at( currRowNum ).at( currColNum )->GetTilePtr()->UpdateTile( currRowNum, currColNum,
-																		tileSizex, tileSizeY,
-																		m_boardBody.getPosition().x,
-																		m_boardBody.getPosition().y );
+																					  tileSizex, tileSizeY,
+																					  m_boardBody.getPosition().x,
+																					  m_boardBody.getPosition().y );
 		}
 	}
 }
@@ -562,3 +591,7 @@ void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin
 //		PlayerRollAndMove();
 //	}
 //}
+
+// ======================================================================
+// ================= end of Board class =================================
+// ======================================================================

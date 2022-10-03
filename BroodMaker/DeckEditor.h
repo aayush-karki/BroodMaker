@@ -1,11 +1,11 @@
 /*************************************************************************/
 /// 
-/// @file TileEditor.h 
+/// @file DeckEditor.h 
 /// 
-/// @brief  This file is a header file for TileEditor class.
+/// @brief  This file is a header file for DeckEditor class.
 /// 
 /// It contains all of the declaration of the member 
-///		funciton of TileEditor class.
+///		funciton of DeckEditor class.
 /// 
 /************************************************************************/
 
@@ -16,6 +16,7 @@
 #include "MenuBar.h" // includes all the other uiElements
 #include "WorkSpace.h"
 
+
 // ======================================================================
 // ================= defining namespace =================================
 // ======================================================================
@@ -23,7 +24,7 @@ namespace Brood
 {
 	namespace Application
 	{
-		class TileEditor;
+		class DeckEditor;
 	}
 }
 // ======================================================================
@@ -31,32 +32,30 @@ namespace Brood
 // ======================================================================
 
 // ======================================================================
-// ================= start of TileEditor class ==========================
+// ================= start of DeckEditor class ==========================
 // ======================================================================
 
 /// 
 /// @ingroup Application
-/// @class TileEditor  "TileEditor.h"
-/// @brief It alows the users to tweek the tile setting
+/// @class TileEditor  "DeckEditor.h"
+/// @brief It alows the users to tweek the deck setting
 ///
 /// It is a container that bundels elements that is present 
-///		in TileEditor workspace
+///		in DeckEditor workspace
 /// 
 /// Derived form Workspace class
 /// 
-/// @todo allowd to enter number in the txt feild
-/// 
-class Brood::Application::TileEditor :
+class Brood::Application::DeckEditor :
 	public Brood::Application::WorkSpace
 {
 	// ================= public member function ===================  
 public:
 	// default constructor
-	TileEditor( Brood::Application::Components::GameDataManager* a_gameData,
+	DeckEditor( Brood::Application::Components::GameDataManager* a_gameData,
 				sf::RectangleShape* a_panelPtr );
 
 	// default destructor
-	~TileEditor();
+	~DeckEditor();
 	// ===== virtual funcitons ====
 
 	// initializes the component of a workspace
@@ -68,7 +67,7 @@ public:
 	// updates all the display elment
 	void UpdateAllDispayElement();
 
-	// renders to the screen
+	// reners to the screen
 	void Draw( sf::RenderWindow& a_window );
 
 	// Calls Debugger for all UI elements in this class
@@ -91,9 +90,8 @@ private:
 
 	/// pointer to the deck manager
 	Brood::Application::Components::DeckManager* m_deckManagerPtr;
-
 };
 
 // ======================================================================
-// ================= end of TileEditor class ============================
+// ================= end of DeckEditor class ============================
 // ======================================================================

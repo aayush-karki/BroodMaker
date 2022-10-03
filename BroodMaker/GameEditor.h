@@ -14,8 +14,7 @@
 // ======================================================================
 #pragma once
 #include "WorkSpace.h"
-#include "DeckManager.h"
-#include "PlayerManager.h"
+
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -54,8 +53,7 @@ class Brood::Application::GameEditor :
 	// ================= public member function ===================  
 public:
 	// default constructor
-	GameEditor( Brood::Application::Components::DeckManager* a_deckManagerPtr,
-				Brood::Application::Components::PlayerManager* a_playerManagerPtr,
+	GameEditor( Brood::Application::Components::GameDataManager* a_gameData,
 				sf::RectangleShape* a_panelPtr );
 
 	// default destructor
@@ -71,15 +69,18 @@ public:
 	// updates all the display elment
 	void UpdateAllDispayElement();
 
-	// reners to the screen
+	// renders to the screen
 	void Draw( sf::RenderWindow& a_window );
 
 	// Calls Debugger for all UI elements in this class
 	void Debugger();
 
-
 	// ================= private member function ================== 
 private:
+
+	// ===========================================================
+	// =========== Update funcitons for general game setting =====
+	// ===========================================================
 
 	// checks if the user interacted with the enter game
 	// name panel element
@@ -111,14 +112,15 @@ private:
 	/// holds the panel body
 	sf::RectangleShape* m_panelBodyPtr;
 
-	/// show how the tile screen of game
+	/// shows how the tile screen of game
 	Brood::BroodUI::Button* m_titleScreenBtn;
 
-	/// pointer to the deck manager
-	Brood::Application::Components::DeckManager* m_deckManagerPtr;
+	/// pointer to the game data
+	Brood::Application::Components::GameDataManager* m_gameData;
 
-	/// pointer to the player manager
-	Brood::Application::Components::PlayerManager* m_playerManagerPtr;
+	// ===========================================================
+	// =========== member variables for general game setting =====
+	// ===========================================================
 
 	// ==== UI elements to show setting title  ====
 	Brood::BroodUI::TextBox* m_txtSettingTitle;
@@ -190,8 +192,6 @@ private:
 
 	/// clicking it will increase the maximum required player number by 1
 	Brood::BroodUI::Button* m_btnDeckIncNum;
-
-
 };
 
 // ======================================================================

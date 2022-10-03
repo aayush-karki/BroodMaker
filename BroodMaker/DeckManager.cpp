@@ -23,10 +23,10 @@
 /// @brief default constructor
 /// 
 Brood::Application::Components::DeckManager::DeckManager() :
-	m_currDeckIdx( 0 ), m_incorrectPenalty(true), 
-	m_movementType(Brood::Application::Components::ENUM_MovementType::MOVEMENT_diceThenCard )
+	m_currDeckIdx( 0 ), m_incorrectPenalty( true ),
+	m_movementType( Brood::Application::Components::ENUM_MovementType::MOVEMENT_diceThenCard )
 {
-	m_deckList.resize(1);
+	m_deckList.resize( 1 );
 }
 
 ///
@@ -98,7 +98,7 @@ Brood::Application::Components::Deck* Brood::Application::Components::DeckManage
 		return nullptr;
 	}
 
-	return &m_deckList.at(a_deckIdx);
+	return &m_deckList.at( a_deckIdx );
 
 }
 
@@ -160,7 +160,7 @@ void Brood::Application::Components::DeckManager::SetMovementType( Brood::Applic
 /// 
 void Brood::Application::Components::DeckManager::SetDeckSize( unsigned a_deckSize )
 {
-	m_deckList.resize(a_deckSize, Deck());
+	m_deckList.resize( a_deckSize, Deck() );
 }
 
 /// 
@@ -180,7 +180,45 @@ void Brood::Application::Components::DeckManager::SetCurrDeckIdx( unsigned a_cur
 ///
 void Brood::Application::Components::DeckManager::AddCardToDeckAtCurrIdx( Brood::Application::Components::CardInfo a_cardToAdd )
 {
-	m_deckList.at(m_currDeckIdx).AddCardInfoToDeck(a_cardToAdd);
+	m_deckList.at( m_currDeckIdx ).AddCardInfoToDeck( a_cardToAdd );
+}
+
+/// 
+/// @public
+/// @virtual
+/// @brief Draw funciton
+/// 
+/// Draws all the component to the screen
+//
+void Brood::Application::Components::DeckManager::Draw( sf::RenderWindow& a_window )
+{
+	// drawing all the decks
+	std::vector<Brood::Application::Components::Deck>::iterator deckListIte = m_deckList.begin();
+
+	while( deckListIte != m_deckList.end() )
+	{
+		( *deckListIte ).Draw( a_window );
+		++deckListIte;
+	}
+}
+
+/// 
+/// @public
+/// @virtual
+/// @brief debugger funciton
+/// 
+/// This function helps in debugging the UI elements.
+///
+void Brood::Application::Components::DeckManager::Debugger()
+{
+	// debugging all the decks
+	std::vector<Brood::Application::Components::Deck>::iterator deckListIte = m_deckList.begin();
+
+	while( deckListIte != m_deckList.end() )
+	{
+		( *deckListIte ).Debugger();
+		++deckListIte;
+	}
 }
 
 

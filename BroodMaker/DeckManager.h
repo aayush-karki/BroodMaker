@@ -103,6 +103,12 @@ public:
 	// adds card to the back of current selected deck
 	void AddCardToDeckAtCurrIdx( Brood::Application::Components::CardInfo a_cardToAdd );
 
+	// draws all the deck to the screen
+	void Draw( sf::RenderWindow& a_window );
+
+	// debugger
+	void Debugger();
+
 	// ===================== private member variables ===================
 private:
 

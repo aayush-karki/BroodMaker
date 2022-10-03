@@ -45,6 +45,24 @@
     <Filter Include="src\Application\main\Header Files">
       <UniqueIdentifier>{b2626c5f-8ee7-4f85-afa0-02e29c682dc8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Application\Workspace\Editors">
+      <UniqueIdentifier>{bad11806-11a2-41f6-b5a1-0864445dd7ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Application\Workspace\Editors\Header Files">
+      <UniqueIdentifier>{01d4115c-d96d-49ab-abf3-d3373e4b3440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Application\Workspace\Editors\Source Siles">
+      <UniqueIdentifier>{823e8581-9a64-4dd8-989b-215a6f7aae33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Managers">
+      <UniqueIdentifier>{8d3a7ad8-c110-4dc6-b989-9cf8726946aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Managers\Header Files">
+      <UniqueIdentifier>{b42e1d69-7cb8-401e-a6d8-65117a2ce383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Managers\Source Files">
+      <UniqueIdentifier>{0b2005b3-5392-4a29-975f-324ac22b5bfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp">
@@ -56,13 +74,7 @@
     <ClCompile Include="Dice.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PathManager.cpp">
-      <Filter>src\Components\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>src\Components\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerManager.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Struct_CtorParam.cpp">
@@ -131,23 +143,44 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>src\Application\main\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BoardEditor.cpp">
-      <Filter>src\Application\Workspace\Source Siles</Filter>
-    </ClCompile>
     <ClCompile Include="MapIdToElement.cpp">
       <Filter>src\BroodUI\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TileEditor.cpp">
-      <Filter>src\Application\Workspace\Source Siles</Filter>
-    </ClCompile>
-    <ClCompile Include="GameEditor.cpp">
-      <Filter>src\Application\Workspace\Source Siles</Filter>
     </ClCompile>
     <ClCompile Include="Deck.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DeckManager.cpp">
+    <ClCompile Include="GameDataManager.cpp">
       <Filter>src\Components\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="TileEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="CardEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="DiceEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerEditor.cpp">
+      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckManager.cpp">
+      <Filter>src\Components\Managers\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>src\Components\Managers\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,13 +193,7 @@
     <ClInclude Include="Dice.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PathManager.h">
-      <Filter>src\Components\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>src\Components\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerManager.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Path.h">
@@ -232,23 +259,44 @@
     <ClInclude Include="stdafx.h">
       <Filter>src\Application\main\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoardEditor.h">
-      <Filter>src\Application\Workspace\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MapIdToElement.h">
       <Filter>src\BroodUI\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TileEditor.h">
-      <Filter>src\Application\Workspace\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEditor.h">
-      <Filter>src\Application\Workspace\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Deck.h">
       <Filter>src\Components\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BoardEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CardEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeckEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiceEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileEditor.h">
+      <Filter>src\Application\Workspace\Editors\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="DeckManager.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\Managers\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>src\Components\Managers\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>src\Components\Managers\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDataManager.h">
+      <Filter>src\Components\Managers\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
