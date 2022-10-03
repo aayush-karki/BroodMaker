@@ -62,8 +62,15 @@ public:
 	/// debugger
 	void Debugger();
 
+	// =========== setter functions ==========
+
+	/// setter funciton to set the game title for the game
+	void SetGameTitle( std::string a_gameTitle);
 
 	// =========== getter functions ==========
+
+	/// Getter funciton to get a saved game title of the game
+	std::string GetGameTitle();
 
 	/// Getter funciton to get a pointer to board of the game
 	Brood::Application::Components::Board* GetBoardPtr();
@@ -79,6 +86,8 @@ public:
 
 	// ===================== private member variables ===================
 private:
+
+	std::string m_gameTitle;
 
 	/// board for the game
 	Brood::Application::Components::Board m_board;

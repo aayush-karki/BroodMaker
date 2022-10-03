@@ -63,7 +63,7 @@ void Brood::Application::DiceEditor::InitializeWorkSpace()
 
 	// creating the setting title
 	m_txtSettingTitle = DyCreateTextBox( { m_panelBodyPtr->getSize().x, 40 },
-										 { m_panelBodyPtr->getPosition().x, 50 }, "General Game Settings" );
+										 { m_panelBodyPtr->getPosition().x, 50 }, "Dice Settings" );
 	m_txtSettingTitle->SetFontSize( 18 );
 
 	// initializing the UI to control number of sides for new Dice
@@ -165,10 +165,28 @@ void Brood::Application::DiceEditor::Update()
 /// @virtual
 /// @brief updates the display element
 /// 
-
-///
 void Brood::Application::DiceEditor::UpdateAllDispayElement()
-{}
+{
+	Brood::Application::Components::Dice* dicePtr = m_gameData->GetDicePtr();
+
+	// update dice side number
+	m_txtDiceSide->SetText( std::to_string( dicePtr->GetNumSides() ) );
+
+	// dice X Size 
+	m_txtDiceSizeX->SetText( std::to_string( dicePtr->GetBodySize().x ) );
+
+	// dice y Size 
+	m_txtDiceSizeY->SetText( std::to_string( dicePtr->GetBodySize().y ) );
+
+	// dice X position 
+	m_txtDicePosX->SetText( std::to_string( dicePtr->GetBodyPosition().x ) );
+
+	// dice y position 
+	m_txtDicePosY->SetText( std::to_string( dicePtr->GetBodyPosition().y ) );
+
+	// dice file name
+	m_txtDiceFileInput->SetText( dicePtr->GetSpriteBody().GetTexturePath() );
+}
 
 /// 
 /// @public

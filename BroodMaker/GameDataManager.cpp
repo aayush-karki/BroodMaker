@@ -22,8 +22,9 @@
 /// 
 /// @brief default constructor
 /// 
-Brood::Application::Components::GameDataManager::GameDataManager():
-	m_board(), m_dice(), m_playerManager(),	m_deckManager()
+Brood::Application::Components::GameDataManager::GameDataManager() :
+	m_board(), m_dice(), m_playerManager(), m_deckManager(),
+	m_gameTitle()
 {}
 
 /// 
@@ -54,7 +55,7 @@ void Brood::Application::Components::GameDataManager::InitializeGameDataManger()
 //
 void Brood::Application::Components::GameDataManager::Draw( sf::RenderWindow& a_window )
 {
-	m_board.Draw(a_window);
+	m_board.Draw( a_window );
 	m_deckManager.Draw( a_window );
 	m_dice.Draw( a_window );
 }
@@ -71,6 +72,28 @@ void Brood::Application::Components::GameDataManager::Debugger()
 	m_board.Debugger();
 	m_dice.Debugger();
 	m_deckManager.Debugger();
+}
+
+/// 
+/// @brief setter funciton to set the game title 
+///		for the game
+/// 
+/// @param a_gameTitle game title
+///
+void Brood::Application::Components::GameDataManager::SetGameTitle( std::string a_gameTitle )
+{
+	m_gameTitle = a_gameTitle;
+}
+
+/// 
+/// @brief Getter funciton to get a saved game title
+///		 of the game 
+/// 
+/// @return game title
+///
+std::string Brood::Application::Components::GameDataManager::GetGameTitle()
+{
+	return m_gameTitle;
 }
 
 /// 

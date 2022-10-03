@@ -41,7 +41,8 @@ namespace Brood
 ///		and game rules.
 ///
 /// It is a container that bundels elements that is present 
-///		in GameEditor workspace
+///		in GameEditor workspace. It contains the following element:
+/// 
 /// 
 /// Derived form Workspace class
 /// 

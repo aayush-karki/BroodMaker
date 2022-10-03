@@ -129,12 +129,37 @@ void Brood::Application::GameEditor::Update()
 /// @public
 /// @virtual
 /// @brief updates the display element
-/// 
-/// As none of the element here is affected by
-///		 any other place we do nothing
 ///
 void Brood::Application::GameEditor::UpdateAllDispayElement()
-{}
+{
+	// game title
+	m_titleScreenBtn->SetText( m_gameData->GetGameTitle());
+
+	// movement type
+	unsigned itemIdx = ( int )m_gameData->GetDeckManagerPtr()->GetMovementType();
+	std::string itemName = m_ddiMovementType->GetItemList().at( itemIdx )->GetText();
+	m_ddiMovementType->SetText( itemName );
+
+	// incorrect penalty
+	itemIdx = !m_gameData->GetDeckManagerPtr()->GetIncorrectPenalty();
+	itemName = m_ddiIncorectPenalty->GetItemList().at( itemIdx )->GetText();
+	while( itemName.size() < 27 )
+	{
+		itemName = " " + itemName + " ";
+	}
+
+	// we know the size of the elemnt
+	m_ddiIncorectPenalty->SetText( itemName + " v" );
+
+	// minimum player
+	m_txtPlayerMinNum->SetText( std::to_string( m_gameData->GetPlayerManagerPtr()->GetMinPlayer() ) );
+
+	// maximum player
+	m_txtPlayerMaxNum->SetText( std::to_string( m_gameData->GetPlayerManagerPtr()->GetMaxPlayer() ) );
+
+	// nubmer of deck
+	m_txtDeckNum->SetText( std::to_string( m_gameData->GetDeckManagerPtr()->GetDeckList().size() ) );
+}
 
 /// 
 /// @public
@@ -188,6 +213,8 @@ void Brood::Application::GameEditor::UpdateGameTitleInput()
 	if( m_txtGameInput->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
 	{
 		m_titleScreenBtn->SetText( m_txtGameInput->GetText() );
+
+		m_gameData->SetGameTitle( m_txtGameInput->GetText() );
 
 		// resetting the m_eterPressed
 		m_txtGameInput->SetEnterPressedFalse();
@@ -308,7 +335,6 @@ void Brood::Application::GameEditor::UpdateIncorrectPenaltyPanelElement()
 					itemList.at( itemIdx )->GetText() << std::endl;
 
 				m_gameData->GetDeckManagerPtr()->SetIncorrectPenalty( !itemIdx );
-
 			}
 		}
 	}
@@ -415,7 +441,6 @@ void Brood::Application::GameEditor::UpdateMaximumPlayerNumber()
 		if( m_gameData->GetPlayerManagerPtr()->GetCurrActivePlayerIdx() >= currentMaxPlayerNum - 1 )
 		{
 			m_gameData->GetPlayerManagerPtr()->SetCurrActivePlayerIdx( currentMaxPlayerNum - 2 );
-
 		}
 	}
 	// chekcing if the increase the deck number was pressed

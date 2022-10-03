@@ -43,6 +43,10 @@ namespace Brood
 /// It is a container that bundels elements that is present 
 ///		in BoardEditor workspace
 /// 
+/// It contatins the folloing panel element: 
+///		board X-postion, board Y-position, boardX-size,
+///		board Y-Size, board row, board column
+/// 
 /// Derived form Workspace class
 /// 
 /// @todo allowd to enter number in the txt feild
@@ -75,42 +79,9 @@ public:
 	// Calls Debugger for all UI elements in this class
 	void Debugger();
 
-	// ================= private member function ==================  
-
-	// Initializes the setting Section dropdown input
-	void InitailizeSettingSelectionDDI();
-
-	// Initializes the General Board Setting panel elements
-	void InitailizeGeneralBoardSettingPanel();
-
-	// Updates the General Board Setting panel elements
-	void UpdateGeneralBoardSettingPanel();
-
-	// Draws the General Board Setting panel elements
-	void DrawGeneralBoardSettingPanel( sf::RenderWindow& a_window );
-
-	// Initializes the Dice Setting panel elements
-	void InitailizeDiceSettingPanel();
-
-	// Updates the Dice Setting panel elements
-	void UpdateDiceSettingPanel();
-
-	// Draws the Dice Setting panel elements
-	void DrawDiceSettingPanel( sf::RenderWindow& a_window );
-
-	// changes the displayed data on the panel 
-	// of player current activeindex
-	void ChangeDisplayedPlayerData();
-
-	// ========= helper Update Funcitons ==============
-
 	// ===========================================================
 	// =========== update for General Board setting ==============
 	// ===========================================================
-
-	// checks if the user interacted with setting Selection
-	//  and updates accordingly
-	void UpdateSettingSelectionDDI();
 
 	// checks if the user interacted with the x position
 	// panel Element
@@ -139,22 +110,17 @@ public:
 	// ================= private data member ======================  
 private:
 
-	/// holds which setting is currently active
-	unsigned m_selectedSettingIdx;
-
 	/// pointer to the game data
 	Brood::Application::Components::GameDataManager* m_gameData;
 
 	/// holds the panel body
 	sf::RectangleShape* m_panelBodyPtr;
-
-	/// holds which catagory of setting the displayed
-	///	user can choose between: General Board Setting, 
-	///	Player setting, and Dice setting
-	Brood::BroodUI::DropDownInput* m_ddiSettingSelection;
-	// ===========================================================
+// ===========================================================
 	// =========== member variables for General board setting ====
 	// ===========================================================
+
+	// ==== UI elements to show setting title  ====
+	Brood::BroodUI::TextBox* m_txtSettingTitle;
 
 	// ==== UI elements to change the board's x position ====
 

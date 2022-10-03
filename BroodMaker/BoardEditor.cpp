@@ -28,8 +28,7 @@
 ///
 Brood::Application::BoardEditor::BoardEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											  sf::RectangleShape* a_panelPtr ) :
-	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr ),
-	m_selectedSettingIdx( 0 )
+	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
 {
 	InitializeWorkSpace();
 }
@@ -50,123 +49,18 @@ Brood::Application::BoardEditor::~BoardEditor()
 /// @virtual
 /// @brief Initializes the work space
 /// 
-/// It creates all the component of the workspace. It inializes the board,
-///		setting section Dropdown Input.
+/// It creates all the component of the workspace. 
+///		It initializes the folloing panel element: 
+///		board X-postion, board Y-position, boardX-size, board Y-Size, 
+///		board row, board column
 //
 void Brood::Application::BoardEditor::InitializeWorkSpace()
 {
-	// Initializing the setting Section dropdown input
-	InitailizeSettingSelectionDDI();
+	// creating the setting title
+	m_txtSettingTitle = DyCreateTextBox( { m_panelBodyPtr->getSize().x, 40 },
+										 { m_panelBodyPtr->getPosition().x, 50 }, "Board Setting" );
+	m_txtSettingTitle->SetFontSize( 18 );
 
-	// Initializing the general board setting panel element
-	InitailizeGeneralBoardSettingPanel(); 
-}
-
-/// 
-/// @public
-/// @virtual
-/// @brief Updates function
-/// 
-///	Contains all the logic for the initial workspace 
-///
-void Brood::Application::BoardEditor::Update()
-{
-	// checking to see if the elments of the
-	//	Drop down input was pressed
-	UpdateSettingSelectionDDI();
-
-	UpdateGeneralBoardSettingPanel();
-}
-
-/// 
-/// @public
-/// @virtual
-/// @brief calls the updates all the display element for 
-///		the current active editor
-///
-void Brood::Application::BoardEditor::UpdateAllDispayElement()
-{
-	/// TODO fill me up
-}
-
-/// 
-/// @public
-/// @virtual
-/// @brief Draw funciton
-/// 
-/// Draws all the component to the screen
-/// 
-/// @param a_window reference to the render window
-///
-void Brood::Application::BoardEditor::Draw( sf::RenderWindow& a_window )
-{
-	// drawing game component
-	m_gameData->Draw( a_window );
-
-	
-	DrawGeneralBoardSettingPanel( a_window );
-	
-	// Drawing the setting selection drop down input
-	m_ddiSettingSelection->Draw( a_window );
-}
-
-/// 
-/// @public
-/// @virtual
-/// @brief debugger funciton
-/// 
-/// This function helps in debugging the UI elements.
-///
-void Brood::Application::BoardEditor::Debugger()
-{
-	// base class calls the unnamedUIList 
-	Brood::Application::WorkSpace::Debugger();
-}
-
-/// 
-/// @private
-/// @brief Initializes the  setting Section dropdown input which is
-///		at the top of the setting pannel
-/// 
-/// It has the 3 settings : Board Settings, Player Settings, and Dice Settings
-/// 
-void Brood::Application::BoardEditor::InitailizeSettingSelectionDDI()
-{
-	// initializing the setting selection DDI
-	float panelSizeX = m_panelBodyPtr->getSize().x;
-	float panelPosX = m_panelBodyPtr->getPosition().x;
-
-	m_ddiSettingSelection = DyCreateDropDownInput( { panelSizeX , 40 },
-												   { panelPosX, 50 },
-												   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
-
-	m_ddiSettingSelection->AddItemToMenu( "General Board Setting" );
-	m_ddiSettingSelection->AddItemToMenu( "Dice Setting" );
-
-	// setting the font size to 18
-	m_ddiSettingSelection->SetFontSize( 18 );
-
-	// setting the first item as the first 
-	std::string itemName = m_ddiSettingSelection->GetItemList().at( m_selectedSettingIdx )->GetText();
-
-	while( itemName.size() < 39 )
-	{
-		itemName = " " + itemName + " ";
-	}
-
-	m_ddiSettingSelection->SetText( itemName + " v" );
-}
-
-/// 
-/// @private
-/// @brief Initializes the panel element of the general board setting 
-/// 
-/// It initializes the folloing panel element: 
-///		board X-postion, board Y-position, boardX-size, board Y-Size, 
-///		board row, board column
-/// 
-void Brood::Application::BoardEditor::InitailizeGeneralBoardSettingPanel()
-{
 	// =======================================================================
 	// ======= Initializing the elements in the  General board setting =======
 	// =======================================================================
@@ -201,19 +95,19 @@ void Brood::Application::BoardEditor::InitailizeGeneralBoardSettingPanel()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardColPromt, &m_btnBoardDecCol,
 								 &m_txtBoardCol, &m_btnBoardIncCol,
 								 "Column Number", std::to_string( ( int )m_gameData->GetBoardPtr()->GetNumCol() ) );
-
-
 }
 
 /// 
-/// @private
-/// @brief Updates the panel element of the general board setting 
+/// @public
+/// @virtual
+/// @brief Updates function
 /// 
-/// It Update the folloing panel element: 
+///	Contains all the logic for the initial workspace.
+///		It Update the folloing panel element: 
 ///		board X-postion, board Y-position, boardX-size, board Y-Size, 
 ///		board row, board column
 ///
-void Brood::Application::BoardEditor::UpdateGeneralBoardSettingPanel()
+void Brood::Application::BoardEditor::Update()
 {
 	// checking to see if the Xpos panel Element was pressed
 	UpdateBoardXPosPanelElement();
@@ -234,106 +128,63 @@ void Brood::Application::BoardEditor::UpdateGeneralBoardSettingPanel()
 	UpdateBoardColPanelElement();
 }
 
-/// @private
-/// @brief Draws the panel element of the general board setting 
 /// 
-/// It draws the folloing panel element: 
-///		board X-postion, board Y-position, boardX-size, board Y-Size, 
-///		board row, board column
+/// @public
+/// @virtual
+/// @brief calls the updates all the display element for 
+///		the current active editor
+///
+void Brood::Application::BoardEditor::UpdateAllDispayElement()
+{
+	Brood::Application::Components::Board* boardPtr = m_gameData->GetBoardPtr();
+
+	// board x Position 
+	m_txtBoardPosX->SetText( std::to_string( boardPtr->GetBoardPos().x ) );
+	
+	// board y Position 
+	m_txtBoardPosY->SetText( std::to_string( boardPtr->GetBoardPos().y ) );
+
+	// board y Position 
+	m_txtBoardSizeX->SetText( std::to_string( boardPtr->GetBoardSize().x ) );
+
+	// board y Position 
+	m_txtBoardSizeY->SetText( std::to_string( boardPtr->GetBoardSize().y ) );
+
+	// board row number
+	m_txtBoardRow->SetText( std::to_string( boardPtr->GetNumRow() ) );
+
+	// board column number
+	m_txtBoardCol->SetText( std::to_string( boardPtr->GetNumCol() ) );
+}
+
+/// 
+/// @public
+/// @virtual
+/// @brief Draw funciton
+/// 
+/// Draws all the component to the screen
 /// 
 /// @param a_window reference to the render window
-/// 
-void Brood::Application::BoardEditor::DrawGeneralBoardSettingPanel( sf::RenderWindow& a_window )
+///
+void Brood::Application::BoardEditor::Draw( sf::RenderWindow& a_window )
 {
-	// Drawing the column panel Elements
-	m_btnBoardIncCol->Draw( a_window );
-	m_txtBoardCol->Draw( a_window );
-	m_btnBoardDecCol->Draw( a_window );
-	m_txtBoardColPromt->Draw( a_window );
+	// drawing game component
+	m_gameData->Draw( a_window );
 
-	// Drawing the row panel Elements
-	m_btnBoardIncRow->Draw( a_window );
-	m_txtBoardRow->Draw( a_window );
-	m_btnBoardDecRow->Draw( a_window );
-	m_txtBoardRowPromt->Draw( a_window );
-
-	// Drawing the Y size panel Elements
-	m_btnBoardSizeIncY->Draw( a_window );
-	m_txtBoardSizeY->Draw( a_window );
-	m_btnBoardSizeDecY->Draw( a_window );
-	m_txtBoardSizePromtY->Draw( a_window );
-
-	// Drawing the X size panel Elements
-	m_btnBoardSizeIncX->Draw( a_window );
-	m_txtBoardSizeX->Draw( a_window );
-	m_btnBoardSizeDecX->Draw( a_window );
-	m_txtBoardSizePromtX->Draw( a_window );
-
-	// Drawing the Y pos panel Elements
-	m_btnBoardPosIncY->Draw( a_window );
-	m_txtBoardPosY->Draw( a_window );
-	m_btnBoardPosDecY->Draw( a_window );
-	m_txtBoardPosPromtY->Draw( a_window );
-
-	// Drawing the X pos panel Elements
-	m_btnBoardPosIncX->Draw( a_window );
-	m_txtBoardPosX->Draw( a_window );
-	m_btnBoardPosDecX->Draw( a_window );
-	m_txtBoardPosPromtX->Draw( a_window );
+	Brood::Application::WorkSpace::Draw( a_window );
 }
 
 /// 
-/// @private
+/// @public
+/// @virtual
+/// @brief debugger funciton
 /// 
-void Brood::Application::BoardEditor::ChangeDisplayedPlayerData()
+/// This function helps in debugging the UI elements.
+///
+void Brood::Application::BoardEditor::Debugger()
 {
-
-}
-
-/// 
-/// @private
-/// @brief checks if the user interacted with setting Selection and
-///		updates accordingly
-/// 
-void Brood::Application::BoardEditor::UpdateSettingSelectionDDI()
-{
-	if( m_ddiSettingSelection->DoElement() )
-	{
-		std::cout << "myDropDownInput Pressed" << std::endl;
-	}
-
-	if( m_ddiSettingSelection->IsSelected() )
-	{
-		auto itemList = m_ddiSettingSelection->GetItemList();
-		if( !itemList.empty() )
-		{
-			// checking if the logics of the items is to be executed or not
-			for( int currIDx = 0; currIDx < itemList.size(); ++currIDx )
-			{
-				if( itemList.at( currIDx )->DoElement() )
-				{
-					// setting the elements name as the item's name
-					// this is important so that the changes can be reflected in the
-					// title
-					// setting the first item as the first 
-					std::string itemName = m_ddiSettingSelection->GetItemList().at( currIDx )->GetText();
-
-					while( itemName.size() < 39 )
-					{
-						itemName = " " + itemName + " ";
-					}
-
-					m_ddiSettingSelection->SetText( itemName + " v" );
-
-					// executing the function
-					std::cerr << "item at " << currIDx << "  Pressed with ID " <<
-						itemList.at( currIDx )->GetText() << std::endl;
-
-					m_selectedSettingIdx = currIDx;
-				}
-			}
-		}
-	}
+	// base class calls the unnamedUIList 
+	Brood::Application::WorkSpace::Debugger();
 }
 
 /// 
