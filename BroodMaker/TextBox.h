@@ -176,6 +176,22 @@ public:
 	// assignment operator
 	Brood::BroodUI::TextBox& operator=( const TextBox& a_otherTextBox );
 
+	// Dynamically create a textbox, initializes it, and adds
+	// it to m_unNameList
+	static Brood::BroodUI::TextBox* DyCreateTextBox( sf::Vector2f a_size,
+											  sf::Vector2f a_pos,
+											  std::string a_text = "",
+											  bool a_isEditable = false,
+											  std::string a_placeholderText = "",
+											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
+	static Brood::BroodUI::TextBox* DyCreateTextBox( float a_sizeX, float a_sizeY,
+											  float a_posX, float a_posY,
+											  std::string a_text = "",
+											  bool a_isEditable = false,
+											  std::string a_placeholderText = "",
+											  sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
+
+
 	// ====== getter funcitons ======
 
 	// checks to see if the text box is editable or not 

@@ -106,6 +106,18 @@ public:
 	// assignment operator
 	Brood::BroodUI::Button& operator=( const Button& a_otherButton );
 
+	// Dynamically create a button, initializes it, and adds
+		// it to m_unNameList
+	static Brood::BroodUI::Button* DyCreateButton( sf::Vector2f a_size,
+											sf::Vector2f a_pos,
+											std::string a_text = "",
+											sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
+
+	static Brood::BroodUI::Button* DyCreateButton( float a_sizeX, float a_sizeY,
+											float a_posX, float a_posY,
+											std::string a_text = "",
+											sf::Color a_color = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
+
 	// ========= Getter funciton ==============
 
 	// gets the sprite body
@@ -125,7 +137,7 @@ public:
 	virtual void Debugger();
 
 	// ============ private member variables =============== 
-private:
+protected:
 
 	/// object to set texture
 	Brood::SpriteHandler m_bodySprite;
@@ -134,3 +146,6 @@ private:
 // ======================================================================
 // ================= end of button class ================================
 // ======================================================================
+
+
+

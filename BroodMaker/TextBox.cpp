@@ -93,6 +93,67 @@ Brood::BroodUI::TextBox& Brood::BroodUI::TextBox::operator=( const Brood::BroodU
 
 /// 
 /// @public
+/// @static
+/// @overlaoded
+/// @brief helper function to dynamically create a textbox element 
+///		initializes it, and adds it to m_unNameList
+/// 
+/// @note assumes that m_font is loaded
+/// 
+/// @param a_size size of the textbox element
+/// @param a_pos  postion of the textbox element
+/// @param a_text text to display in the textbox element ; default ""
+/// @param a_isEditable true if the text box is editable; default false
+/// @param a_color color of the textbox element ; default 
+///		Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
+/// 
+/// @return pointer to dynamically created textbox element
+///  
+Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( sf::Vector2f a_size, sf::Vector2f a_pos, std::string a_text, bool a_isEditable, std::string a_placeholderText, sf::Color a_color )
+{
+	Brood::BroodUI::TextBox* textBoxElement = new Brood::BroodUI::TextBox;
+	textBoxElement->SetBodySize( a_size );
+	textBoxElement->SetBodyPosition( a_pos );
+	textBoxElement->SetFont( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font );
+	textBoxElement->SetFontSize( 18 );
+	textBoxElement->SetBodyColor( a_color );
+	textBoxElement->SetText( a_text );
+	textBoxElement->SetEditable( a_isEditable );
+	textBoxElement->SetPlaceHolderText( a_placeholderText );
+
+	return textBoxElement;
+}
+
+
+/// 
+/// @public
+/// @static
+/// @overlaoded
+/// @brief helper function to dynamically create a textbox element 
+///		initializes it, and adds it to m_unNameList
+/// 
+/// @note assumes that m_font is loaded
+/// 
+/// @param a_sizeX length of the textbox element
+/// @param a_sizeY width of the textbox element
+/// @param a_posX x-postion of the textbox element
+/// @param a_posY y-postion of the textbox element
+/// @param a_text text to display in the textbox element ; default ""
+/// @param a_isEditable true if the text box is editable; default false
+/// @param a_color color of the textbox element ; 
+///		default Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
+/// 
+/// @return pointer to dynamically created textbox element
+///
+
+Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( float a_sizeX, float a_sizeY, float a_posX, float a_posY, std::string a_text, bool a_isEditable, std::string a_placeholderText, sf::Color a_color )
+{
+	return Brood::BroodUI::TextBox::DyCreateTextBox( { a_sizeX, a_sizeY }, { a_posX, a_posY },
+														   a_text, a_isEditable, a_placeholderText, a_color );
+}
+
+/// 
+/// @public
 /// @brief getter funciton to get its editibility
 /// 
 /// @return true if the textbox is editable; else false

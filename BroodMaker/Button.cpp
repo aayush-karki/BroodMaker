@@ -76,6 +76,62 @@ Brood::BroodUI::Button& Brood::BroodUI::Button::operator=( const Brood::BroodUI:
 	return *this;
 }
 
+
+/// 
+/// @public
+/// @static
+/// @overlaoded
+/// @brief helper function to dynamically create a button element 
+///		initializes it, and adds it to m_unNameList
+/// 
+/// @note assumes that m_font is loaded
+/// 
+/// @param a_size size of the button element
+/// @param a_pos  postion of the button element
+/// @param a_text text to display in the button element ; default ""
+/// @param a_color color of the button element ; default
+///		 Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
+/// 
+/// @return pointer to dynamically created Button element
+/// 
+Brood::BroodUI::Button* Brood::BroodUI::Button::DyCreateButton( sf::Vector2f a_size, sf::Vector2f a_pos, std::string a_text, sf::Color a_color )
+{
+	Brood::BroodUI::Button* buttonElement = new Brood::BroodUI::Button;
+	buttonElement->SetBodySize( a_size );
+	buttonElement->SetBodyPosition( a_pos );
+	buttonElement->SetFont( Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font );
+	buttonElement->SetFontSize( 18 );
+	buttonElement->SetBodyColor( a_color );
+	buttonElement->SetText( a_text );
+
+	return buttonElement;
+}
+
+/// 
+/// @public
+/// @static
+/// @overlaoded
+/// @brief helper function to dynamically create a button element 
+///		initializes it, and adds it to m_unNameList
+/// @note assumes that m_font is loaded
+/// 
+/// @param a_sizeX length of the button element
+/// @param a_sizeY width of the button element
+/// @param a_posX x-postion of the button element
+/// @param a_posY y-postion of the button element
+/// @param a_text text to display in the button element ; default ""
+/// @param a_color color of the button element ; default
+///		Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
+/// 
+/// @return pointer to dynamically created Button element
+///
+Brood::BroodUI::Button* Brood::BroodUI::Button::DyCreateButton( float a_sizeX, float a_sizeY, float a_posX, float a_posY, std::string a_text, sf::Color a_color )
+{
+	return Brood::BroodUI::Button::DyCreateButton( { a_sizeX, a_sizeY }, { a_posX, a_posY },
+												   a_text, a_color );
+}
+
+
 ///
 /// @public
 /// @brief Getter function to get the sprite body

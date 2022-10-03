@@ -99,12 +99,7 @@ void Brood::Application::WorkSpace::Debugger()
 Brood::BroodUI::Button* Brood::Application::WorkSpace::DyCreateButton( sf::Vector2f a_size, sf::Vector2f a_pos,
 																	   std::string a_text, sf::Color a_color )
 {
-	Brood::BroodUI::Button* buttonElement = new Brood::BroodUI::Button;
-	buttonElement->SetBodySize( a_size );
-	buttonElement->SetBodyPosition( a_pos );
-	buttonElement->SetFont( *m_font );
-	buttonElement->SetBodyColor( a_color );
-	buttonElement->SetText( a_text );
+	Brood::BroodUI::Button* buttonElement = Brood::BroodUI::Button::DyCreateButton( a_size, a_pos, a_text, a_color );
 
 	// adding the newly created button to the UI elmente list
 	m_unNamedUIList.push_back( buttonElement );
@@ -162,14 +157,9 @@ Brood::BroodUI::TextBox* Brood::Application::WorkSpace::DyCreateTextBox( sf::Vec
 																		 std::string a_placeholderText,
 																		 sf::Color a_color )
 {
-	Brood::BroodUI::TextBox* textBoxElement = new Brood::BroodUI::TextBox;
-	textBoxElement->SetBodySize( a_size );
-	textBoxElement->SetBodyPosition( a_pos );
-	textBoxElement->SetFont( *m_font );
-	textBoxElement->SetBodyColor( a_color );
-	textBoxElement->SetText( a_text );
-	textBoxElement->SetEditable( a_isEditable );
-	textBoxElement->SetPlaceHolderText( a_placeholderText );
+	Brood::BroodUI::TextBox* textBoxElement = Brood::BroodUI::TextBox::DyCreateTextBox( a_size, a_pos,
+																						a_text, a_isEditable,
+																						a_placeholderText, a_color );
 
 	// adding the newly created textbox to the UI elmente list
 	m_unNamedUIList.push_back( textBoxElement );

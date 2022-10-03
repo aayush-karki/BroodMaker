@@ -83,7 +83,7 @@ Brood::Application::Components::Dice::~Dice()
 ///			structue that is being copied from 
 /// 
 Brood::Application::Components::Dice::Dice( const Brood::Application::Components::Dice& a_otherDice ) :
-	Button( a_otherDice ), m_numSides( a_otherDice.m_numSides )
+	Brood::BroodUI::Button( a_otherDice ), m_numSides( a_otherDice.m_numSides )
 {}
 
 ///

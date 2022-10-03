@@ -28,6 +28,7 @@
     <ClCompile Include="DeckEditor.cpp" />
     <ClCompile Include="DeckManager.cpp" />
     <ClCompile Include="DiceEditor.cpp" />
+    <ClCompile Include="DisplayCard.cpp" />
     <ClCompile Include="DropDownInput.cpp" />
     <ClCompile Include="DropDownMenu.cpp" />
     <ClCompile Include="EditorWorkspace.cpp" />
@@ -69,6 +70,7 @@
     <ClInclude Include="DeckEditor.h" />
     <ClInclude Include="DeckManager.h" />
     <ClInclude Include="DiceEditor.h" />
+    <ClInclude Include="DisplayCard.h" />
     <ClInclude Include="DropDownInput.h" />
     <ClInclude Include="DropDownMenu.h" />
     <ClInclude Include="EditorWorkspace.h" />

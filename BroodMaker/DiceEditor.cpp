@@ -564,7 +564,7 @@ void Brood::Application::DiceEditor::UpdateDiceFileTexture()
 	{
 		std::string diceTextureFilePath = Brood::Application::StaticVariables::ST_Folders::stm_diceTextures.string();
 
-		diceTextureFilePath += m_txtDiceFileInput->GetText();
+		diceTextureFilePath += "\\" + m_txtDiceFileInput->GetText();
 
 
 		// loading the texture file

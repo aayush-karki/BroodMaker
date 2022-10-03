@@ -38,9 +38,8 @@ namespace Brood::Application
 
 ///
 /// @ingroup Components
-/// @class PlayerManager  "PlayerManager.h"
-/// m_minPlayer
-/// @brief A PlayerManager Class manages all player realted things
+/// @class GameDataManager  "GameDataManager.h"
+/// @brief A GameDataManager Class manages the game data.
 /// 
 class Brood::Application::Components::GameDataManager
 {

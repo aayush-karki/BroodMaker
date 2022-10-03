@@ -182,6 +182,9 @@
     <ClCompile Include="PlayerManager.cpp">
       <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DisplayCard.cpp">
+      <Filter>src\Components\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
@@ -298,5 +301,6 @@
     <ClInclude Include="GameDataManager.h">
       <Filter>src\Components\Managers\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DisplayCard.h" />
   </ItemGroup>
 </Project>
