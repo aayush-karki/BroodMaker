@@ -107,13 +107,22 @@ Brood::Application::Components::Player& Brood::Application::Components::Player::
 /// @public
 /// @brief Funciton to update the pointer to the path. 
 /// 
-/// It also updates the position of the player body
+/// It also updates the position of the player body. If there
+///		are already player in the tile space it offsets the player
+///		position by 3 px to the left and down
 ///			
 /// @param a_playerNewPathPtr pointer to the new path
 /// 
 void Brood::Application::Components::Player::UpdatePathptr( Brood::Application::Components::Path* a_playerNewPathPtr )
 {
-	if( m_playerCurrPathPtr != nullptr )
+	// checking for self assignment
+	if( m_playerCurrPathPtr == a_playerNewPathPtr )
+	{
+		return;
+	}
+
+	// if the current path is not null then removing itself from the path
+	else if( m_playerCurrPathPtr != nullptr )
 	{
 		// deleting it self form the previous tile list
 		m_playerCurrPathPtr->DeletePlayerFromList( this );
@@ -124,11 +133,25 @@ void Brood::Application::Components::Player::UpdatePathptr( Brood::Application::
 
 	// checking if the passed path is not null ptr then update the path's position
 	if( a_playerNewPathPtr != nullptr )
-		if( a_playerNewPathPtr != nullptr )
+	{
+		// updating the position
+		UpdatePosition();
+
+		// adding the player to the path's player list
+		a_playerNewPathPtr->AddPlayerToList( this );
+
+		// if more than one player exists in the list offset this player position
+
+		unsigned tilePlayerCount = a_playerNewPathPtr->GetPlayerListPtr().size();
+
+		if( tilePlayerCount != 1 )
 		{
-			// updating the position
-			UpdatePosition();
+			sf::Vector2f tilePos = m_playerCurrPathPtr->GetTilePtr()->GetBodyPosition();
+			float playerPosX = tilePos.x + m_positionOffsetX + tilePlayerCount * 3;
+			float playerPosY = tilePos.y + m_positionOffsetY + tilePlayerCount * 3;
+			this->m_playerBody.setPosition( { playerPosX , playerPosY } );
 		}
+	}
 }
 
 /// 
@@ -155,7 +178,9 @@ void Brood::Application::Components::Player::SetPlayerSizeX( float a_sizeX )
 /// @param a_sizeX player's x size 
 /// 
 void Brood::Application::Components::Player::SetPlayerSizeY( float a_sizeY )
-{}
+{
+	m_playerBody.setSize( { m_playerBody.getSize().x, a_sizeY } );
+}
 
 /// 
 /// @public

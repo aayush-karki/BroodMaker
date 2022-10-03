@@ -78,8 +78,12 @@ public:
 	// all the logic for the workspace is here
 	virtual void Update();
 
+	// updates all the display elment
+	void UpdateAllDispayElement();
+
 	// draw to the screen
 	virtual void Draw( sf::RenderWindow& a_window );
+
 
 	// debugger
 	virtual void Debugger();
@@ -105,6 +109,8 @@ private:
 	Brood::BroodUI::MenuBar m_ribbionTabs;
 
 	// main uielement which shows the list of stored game files and editor files
+
+	sf::RectangleShape m_gameOrEditorForeground;
 
 	///> main card that is in the middle of the screen that 
 	///		shows the current game/edit list

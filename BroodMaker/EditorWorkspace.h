@@ -16,6 +16,8 @@
 #pragma once
 #include "WorkSpace.h"
 #include "BoardEditor.h"
+#include "GameEditor.h"
+#include "TileEditor.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -66,6 +68,9 @@ public:
 	/// all the logic for the workspace is here
 	void Update();
 
+	// updates all the display elment
+	void UpdateAllDispayElement();
+
 	/// reners to the screen
 	void Draw( sf::RenderWindow& a_window );
 
@@ -87,8 +92,17 @@ private:
 	// ================= private member variables =================  
 private:
 
+	/// panel body
+	sf::RectangleShape m_sidePanel;
+
 	/// holds the index of current active editor workspace
 	unsigned m_activeEditorIdx;
+
+	/// player mangaer for the game
+	Brood::Application::Components::PlayerManager m_playerManager;
+
+	/// Deck mangaer for the game
+	Brood::Application::Components::DeckManager m_deckManager;
 
 	/// board for the game
 	Brood::Application::Components::Board m_board;
@@ -101,10 +115,6 @@ private:
 
 	/// list of editor workspace
 	std::vector<Brood::Application::WorkSpace*> m_editorWorkspaceList;
-
-	/// panel body
-	sf::RectangleShape m_sidePanel;
-
 };
 
 // ======================================================================

@@ -24,8 +24,9 @@
 /// @brief default constructor
 ///
 Brood::Application::TileEditor::TileEditor( Brood::Application::Components::Board* a_boardPtr,
+											Brood::Application::Components::DeckManager* a_deckManagerPtr,
 											sf::RectangleShape* a_panelPtr ):
-m_boardPtr(a_boardPtr), m_panelBodyPtr(a_panelPtr)
+m_boardPtr(a_boardPtr), m_panelBodyPtr(a_panelPtr), m_deckManagerPtr(a_deckManagerPtr)
 {
 	InitializeWorkSpace();
 }
@@ -66,6 +67,16 @@ void Brood::Application::TileEditor::Update()
 {
 	
 }
+
+/// 
+/// @public
+/// @virtual
+/// @brief updates the display element
+/// 
+
+///
+void Brood::Application::TileEditor::UpdateAllDispayElement()
+{}
 
 /// 
 /// @public

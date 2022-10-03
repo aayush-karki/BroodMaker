@@ -70,6 +70,9 @@ public:
 	// all the logic for the workspace is here
 	void Update();
 
+	// updates all the display elment
+	void UpdateAllDispayElement();
+
 	// reners to the screen
 	void Draw( sf::RenderWindow& a_window );
 
@@ -146,14 +149,6 @@ public:
 	// panel Element
 	void UpdateBoardColPanelElement();
 
-	// checks if the user interacted with the movement 
-	// type panel Element
-	void UpdateMovementTypePanelElement();
-
-	// checks if the user interacted with the incorrect 
-	// penalty panel Element
-	void UpdateIncorrectPenaltyPanelElement();
-
 	// ===========================================================
 	// =========== update for Player setting =====================
 	// ===========================================================
@@ -165,14 +160,6 @@ public:
 	// checks if the user interacted with the start column
 	// number panel Element
 	void UpdateStartColNumber();
-
-	// checks if the user interacted with the minumum 
-	// player number panel Element
-	void UpdateMinimumPlayerNumber();
-
-	// checks if the user interacted with the maximum 
-	// player number panel Element
-	void UpdateMaximumPlayerNumber();
 
 	// checks if the user interacted with the current
 	// selceted player index panel Element
@@ -353,24 +340,6 @@ private:
 	/// clicking it will increase the board's Column by 1
 	Brood::BroodUI::Button* m_btnBoardIncCol;
 
-	// ==== UI elements to change the board movement rule ====
-
-	/// holds the text Movement type prompt
-	Brood::BroodUI::TextBox* m_txtMovementTypePromt;
-
-	/// holds how the player can move: dice, 
-	///	start with dice and then card, and 
-	///	card no dice
-	Brood::BroodUI::DropDownInput* m_ddiMovementType;
-
-	// ==== UI elements to change the board Penalty rule ====
-
-	/// holds the text Movement type prompt
-	Brood::BroodUI::TextBox* m_txtIncorectPenaltyPromt;
-
-	/// holds yes or no
-	Brood::BroodUI::DropDownInput* m_ddiIncorectPenalty;
-
 	// ===========================================================
 	// =========== member variables for player setting ===========
 	// ===========================================================
@@ -402,34 +371,6 @@ private:
 
 	/// clicking it will increase the  start column of the player number by 1
 	Brood::BroodUI::Button* m_btnPlayerIncStartColNum;
-
-	// ==== UI elements to change the minimum player ====
-
-	/// holds the text minimum player prompt
-	Brood::BroodUI::TextBox* m_txtPlayerMinNumPrompt;
-
-	/// clicking it will decrease the minium required player number by 1
-	Brood::BroodUI::Button* m_btnPlayerDecMinNum;
-
-	/// displays the Current minium required player number
-	Brood::BroodUI::TextBox* m_txtPlayerMinNum;
-
-	/// clicking it will increase the minium required player number by 1
-	Brood::BroodUI::Button* m_btnPlayerIncMinNum;
-
-	// ==== UI elements to change the maximum player ====
-
-	/// holds the text maximum player prompt
-	Brood::BroodUI::TextBox* m_txtPlayerMaxNumPrompt;
-
-	/// clicking it will decrease the maximum required player number by 1
-	Brood::BroodUI::Button* m_btnPlayerDecMaxnNum;
-
-	/// displays the Current maximum required player number
-	Brood::BroodUI::TextBox* m_txtPlayerMaxNum;
-
-	/// clicking it will increase the maximum required player number by 1
-	Brood::BroodUI::Button* m_btnPlayerIncMaxNum;
 
 	// ============ UI elements to change current selected player Index ============
 

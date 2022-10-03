@@ -18,6 +18,7 @@
 #pragma once
 #include "Tiles.h"
 #include "Player.h"
+#include "Deck.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -72,8 +73,20 @@ public:
 	// Getter funciton to get the pointer to the tile
 	const Brood::Application::Components::Tiles* GetTilePtr() const;
 
+	// getter function to get the deck pointer
+	const Brood::Application::Components::Deck* GetDeckPtr() const;
+
+	// getter function to get the player list pointer
+	const std::vector<Brood::Application::Components::Player*>& GetPlayerListPtr() const;
+
 	// setter funciton to set the pointer to the tile
 	void SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr );
+
+	// setter funciton to set the pointer to the deck
+	bool SetDeckPtr( Brood::Application::Components::Deck* a_deckPtr );
+
+	// add player to its list
+	bool AddPlayerToList( Brood::Application::Components::Player* a_playerPtr );
 
 	// deletes the player from its player list
 	bool DeletePlayerFromList( Brood::Application::Components::Player* a_playerPtr );
@@ -86,7 +99,11 @@ private:
 	// 
 	Brood::Application::Components::Tiles* m_tilePtr;
 
+	// list of player who are assigned to this path
 	std::vector<Brood::Application::Components::Player*> m_playerPtrList;
+
+	// deck that is assigned to this path
+	Brood::Application::Components::Deck* m_deckPtr;
 };
 
 // ======================================================================

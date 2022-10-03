@@ -16,6 +16,7 @@
 #include "MenuBar.h" // includes all the other uiElements
 #include "WorkSpace.h"
 #include "Board.h"
+#include "DeckManager.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -54,6 +55,7 @@ class Brood::Application::TileEditor :
 public:
 	// default constructor
 	TileEditor( Brood::Application::Components::Board* a_boardPtr,
+				Brood::Application::Components::DeckManager* a_deckManagerPtr,
 				sf::RectangleShape* a_panelPtr );
 
 	// default destructor
@@ -65,6 +67,9 @@ public:
 
 	// all the logic for the workspace is here
 	void Update();
+
+	// updates all the display elment
+	void UpdateAllDispayElement();
 
 	// reners to the screen
 	void Draw( sf::RenderWindow& a_window );
@@ -78,11 +83,15 @@ private:
 	// ================= private member variable ==================  
 private:
 
+	/// holds the panel body
+	sf::RectangleShape* m_panelBodyPtr;
+
 	/// board for the game
 	Brood::Application::Components::Board* m_boardPtr;
 
-	/// holds the panel body
-	sf::RectangleShape* m_panelBodyPtr;
+	/// pointer to the deck manager
+	Brood::Application::Components::DeckManager* m_deckManagerPtr;
+
 };
 
 // ======================================================================

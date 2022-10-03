@@ -95,6 +95,29 @@ const Brood::Application::Components::Tiles* Brood::Application::Components::Pat
 
 /// 
 /// @public
+/// @brief Getter funciton to get the pointer to the deck
+/// 
+/// @return pointer to the deck
+///
+const Brood::Application::Components::Deck* Brood::Application::Components::Path::GetDeckPtr() const
+{
+	return m_deckPtr;
+}
+
+
+/// 
+/// @public
+/// @brief Getter funciton to get a referebce to the player list
+/// 
+/// @return const reference to the player list
+///
+const std::vector<Brood::Application::Components::Player*>& Brood::Application::Components::Path::GetPlayerListPtr() const
+{
+	return m_playerPtrList;
+}
+
+/// 
+/// @public
 /// @brief Setter funciton to set the pointer to the tile
 /// 
 /// @param a_tilePtr pointer to the tile
@@ -102,6 +125,57 @@ const Brood::Application::Components::Tiles* Brood::Application::Components::Pat
 void Brood::Application::Components::Path::SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr )
 {
 	m_tilePtr = a_tilePtr;
+}
+
+bool Brood::Application::Components::Path::SetDeckPtr( Brood::Application::Components::Deck* a_deckPtr )
+{
+	if( a_deckPtr == m_deckPtr )
+	{
+		return false;
+	}
+
+	Brood::Application::Components::Deck* tempDeckPtr = m_deckPtr;
+
+	// the deck ptr is null
+	m_deckPtr = a_deckPtr;
+
+	// removing the path form the deck's list
+	//m_deckPtr->
+}
+
+/// 
+/// @public
+/// @brief adds the player from to the player list
+/// 
+/// @param a_playerPtr pointer to the player which is to be added
+///		from the list
+/// 
+/// @return true if the addition was successfull
+/// 
+bool Brood::Application::Components::Path::AddPlayerToList( Brood::Application::Components::Player* a_playerPtr )
+{
+	// checking if the passed player exist in the list
+	std::vector<Brood::Application::Components::Player*>::iterator currIte = m_playerPtrList.begin();
+	while( currIte != m_playerPtrList.end() )
+	{
+		if( *currIte == a_playerPtr )
+		{
+			break;
+		}
+
+		++currIte;
+	}
+
+	if( currIte != m_playerPtrList.end() )
+	{
+		// player already exist in the list
+		return false;
+	}
+
+	// adding the player from the list
+	m_playerPtrList.push_back(a_playerPtr);
+
+	return true;
 }
 
 /// 
@@ -116,9 +190,9 @@ void Brood::Application::Components::Path::SetTilePtr( Brood::Application::Compo
 /// 
 bool Brood::Application::Components::Path::DeletePlayerFromList( Brood::Application::Components::Player* a_playerPtr )
 {
+	// checking if the passed player exist in the list
 	std::vector<Brood::Application::Components::Player*>::iterator currIte = m_playerPtrList.begin();
 
-	// checking if the passed player exist in the list
 	while( currIte != m_playerPtrList.end() )
 	{
 		if( *currIte == a_playerPtr )
@@ -141,10 +215,8 @@ bool Brood::Application::Components::Path::DeletePlayerFromList( Brood::Applicat
 	*currIte = nullptr;
 	m_playerPtrList.erase( currIte );
 
-	// removing the path's pointer from the player
-	a_playerPtr->UpdatePathptr( nullptr );
 
-	return false;
+	return true;
 }
 
 /// 

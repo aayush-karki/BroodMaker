@@ -25,8 +25,11 @@
 ///	
 /// Initializes the Deck object
 /// 
-Brood::Application::Components::Deck::Deck() :
-	m_currUndealtCardIdx( 0 ), m_cardListFileName( "" )
+/// @param m_parentPtr pointer to the parent element;
+///		if parent does not exist then nullptr -> default value nullptr
+/// 
+Brood::Application::Components::Deck::Deck( Brood::BroodUI::UIElement* a_parentPtr ) :
+	Brood::BroodUI::Button( a_parentPtr ), m_currUndealtCardIdx( 0 )
 {}
 
 /// 
@@ -47,7 +50,8 @@ Brood::Application::Components::Deck::~Deck()
 /// @param a_other reference to the the deck 
 ///			object that is being copied from 
 /// 
-Brood::Application::Components::Deck::Deck( const Deck& a_other )
+Brood::Application::Components::Deck::Deck( const Deck& a_other ) :
+	Brood::BroodUI::Button( a_other )
 {
 	for( int idx = 0; idx < a_other.GetCardList().size(); ++idx )
 	{
@@ -55,7 +59,6 @@ Brood::Application::Components::Deck::Deck( const Deck& a_other )
 	}
 
 	this->m_currUndealtCardIdx = a_other.m_currUndealtCardIdx;
-	this->m_cardListFileName = a_other.m_cardListFileName;
 }
 
 ///
@@ -72,15 +75,17 @@ Brood::Application::Components::Deck& Brood::Application::Components::Deck::oper
 	{
 		return *this;
 	}
+	
+	// copying the button
+	Brood::BroodUI::Button::operator=( a_other );
 
-	// creating a temporary deck object
-	Brood::Application::Components::Deck tempDeck( a_other );
-
-	// swapping the deck of this object and tempDeckObject
-	std::swap( this->m_cardList, tempDeck.m_cardList );
+	// copying the card info
+	for( int idx = 0; idx < a_other.GetCardList().size(); ++idx )
+	{
+		this->m_cardList.push_back( new CardInfo( *( a_other.m_cardList.at( idx ) ) ) );
+	}
 
 	this->m_currUndealtCardIdx = a_other.m_currUndealtCardIdx;
-	this->m_cardListFileName = a_other.m_cardListFileName;
 
 	return *this;
 }
@@ -93,7 +98,7 @@ Brood::Application::Components::Deck& Brood::Application::Components::Deck::oper
 /// 
 const std::vector< Brood::Application::Components::CardInfo*>& Brood::Application::Components::Deck::GetCardList() const
 {
-	return this->m_cardList; 
+	return this->m_cardList;
 }
 
 
@@ -106,7 +111,7 @@ const std::vector< Brood::Application::Components::CardInfo*>& Brood::Applicatio
 /// @return pointer to the card given index
 Brood::Application::Components::CardInfo* Brood::Application::Components::Deck::GetCardPtrAtIdx( unsigned a_cardInfoIdx )
 {
-	return m_cardList.at(a_cardInfoIdx);
+	return m_cardList.at( a_cardInfoIdx );
 }
 
 ///

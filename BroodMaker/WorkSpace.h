@@ -54,11 +54,21 @@ public:
 	void SetFont( sf::Font* a_font );
 
 	// pure virtual funciton
-	virtual void InitializeWorkSpace() = 0; // initializes the component of a workspace
-	virtual void Update() = 0; // all the logic for the workspace is here
-	virtual void Draw( sf::RenderWindow& a_window ) = 0; // draw to the screen
+	
+	// initializes the component of a workspace
+	virtual void InitializeWorkSpace() = 0; 
+	
+	// all the logic for the workspace is here
+	virtual void Update() = 0; 
+	
+	// updates all the display elment
+	virtual void UpdateAllDispayElement() = 0;
 
-	virtual void Debugger() = 0; // debugger
+	// draw to the screen
+	virtual void Draw( sf::RenderWindow& a_window ) = 0;
+
+	// debugger
+	virtual void Debugger() = 0; 
 
 /// @TODO: set the editor or game workspace varialbe here
 
@@ -137,14 +147,29 @@ public:
 										 std::string a_valueToDisplay,
 										 bool a_createFromTop = false );
 
+	// Dynamically createss a Test Input Panel Element. 
+	//		It has 2 UI element and its layout is 
+	//		<textBox prompt>  <textbox>  
+	void DyCreateTextInputPannelElement( sf::RectangleShape* a_panelBodyPtr,
+										 Brood::BroodUI::TextBox** a_txtPromptPtr,
+										 Brood::BroodUI::TextBox** a_txtTextInputtPtr,
+										 std::string a_promptToDisplay,
+										 std::string a_valueToDisplay,
+										 std::string a_placeHolderText,
+										 bool a_createFromTop = false );
+
 
 	// ================= protected data member ==================  
 protected:
 
-	///> font
+	/// font
 	sf::Font* m_font;
-	std::vector<Brood::BroodUI::UIElement*> m_unNamedUIList; ///> stores list of all UI Elements pointer
-	bool m_isDebugger; ///> true if debugger is on
+	
+	/// stores list of all UI Elements pointer
+	std::vector<Brood::BroodUI::UIElement*> m_unNamedUIList; 
+	
+	/// true if debugger is on
+	bool m_isDebugger; 
 };
 
 // ======================================================================

@@ -15,6 +15,7 @@
 
 #pragma once
 #include "stdafx.h"
+#include "Button.h"
 #include "CardInfo.h"
 #include "GlobalVariables.h"
 
@@ -46,13 +47,14 @@ namespace Brood::Application
 /// 
 /// TODO add a function and ctor to load from a file
 /// 
-class Brood::Application::Components::Deck
+class Brood::Application::Components::Deck :
+	Brood::BroodUI::Button
 {
 	// ============= public member funciton =====================
 public:
 
 	// default constructor
-	Deck();
+	Deck( Brood::BroodUI::UIElement* a_parentPtr = nullptr );
 
 	// default destructor
 	~Deck();
@@ -67,7 +69,7 @@ public:
 	const std::vector< Brood::Application::Components::CardInfo*>& GetCardList() const;
 
 	// gets pointer to the card at given index
-	Brood::Application::Components::CardInfo* GetCardPtrAtIdx(unsigned a_cardInfoIdx);
+	Brood::Application::Components::CardInfo* GetCardPtrAtIdx( unsigned a_cardInfoIdx );
 
 	// returns the first undealt card and increases the counter by 1
 	const CardInfo DealCard();
@@ -81,7 +83,7 @@ public:
 
 	// adds the passed card to the deck
 	void AddCardInfoToDeck(
-		Brood::Application::Components::CardInfo a_cardToAdd);
+		Brood::Application::Components::CardInfo a_cardToAdd );
 
 	// ============= private member variable =====================
 private:
@@ -90,9 +92,6 @@ private:
 
 	// holds the index of first undealt card
 	unsigned m_currUndealtCardIdx;
-
-	// holds the filename of the 
-	std::string m_cardListFileName;
 };
 
 

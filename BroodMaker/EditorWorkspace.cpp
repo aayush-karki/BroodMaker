@@ -63,8 +63,22 @@ void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 	// initializing the edit mode
 	InitializeEditModeTabs();
 
-	// initializing the workspaces
+	// ====== initializing the workspaces =======
+
+	// initializing game editor
+	m_editorWorkspaceList.push_back( new GameEditor( &m_deckManager, &m_playerManager, &m_sidePanel ) );
+
+	// initializing boad editor
 	m_editorWorkspaceList.push_back( new BoardEditor( &m_board, &m_dice, &m_sidePanel ) );
+
+	// initializing tile editor
+	m_editorWorkspaceList.push_back( new TileEditor( &m_board, &m_deckManager, &m_sidePanel ) );
+
+
+	// initializing player editor
+	// initializing dice editor
+	// initializing deck editor
+	// initializing card editor
 
 }
 
@@ -90,11 +104,11 @@ void Brood::Application::EditorWorkspace::Update()
 //
 void Brood::Application::EditorWorkspace::Draw( sf::RenderWindow& a_window )
 {
-	// drawing the board
-	m_board.Draw( a_window );
+	//// drawing the board
+	//m_board.Draw( a_window );
 
-	// drawing the dice
-	m_dice.Draw(a_window);
+	//// drawing the dice
+	//m_dice.Draw(a_window);
 
 	// drawing the side panel
 	a_window.draw( m_sidePanel );
@@ -122,6 +136,17 @@ void Brood::Application::EditorWorkspace::Debugger()
 
 	m_board.Debugger();
 	m_dice.Debugger();
+}
+
+/// 
+/// @public
+/// @virtual
+/// @brief calls the updates all the display element for 
+///		the current active editor
+///
+void Brood::Application::EditorWorkspace::UpdateAllDispayElement()
+{
+	m_editorWorkspaceList.at( m_activeEditorIdx )->UpdateAllDispayElement();
 }
 
 /// 
@@ -188,6 +213,7 @@ void Brood::Application::EditorWorkspace::UpdateEditModeTabs()
 
 			// setting the activated tab as selected
 			UpdateActiveEditorIdx( tabIdx );
+			UpdateAllDispayElement();
 			break;
 		}
 	}

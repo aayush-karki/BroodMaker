@@ -100,6 +100,17 @@ void Brood::Application::BoardEditor::Update()
 /// 
 /// @public
 /// @virtual
+/// @brief calls the updates all the display element for 
+///		the current active editor
+///
+void Brood::Application::BoardEditor::UpdateAllDispayElement()
+{
+	/// TODO fill me up
+}
+
+/// 
+/// @public
+/// @virtual
 /// @brief Draw funciton
 /// 
 /// Draws all the component to the screen
@@ -187,7 +198,7 @@ void Brood::Application::BoardEditor::InitailizeSettingSelectionDDI()
 /// 
 /// It initializes the folloing panel element: 
 ///		board X-postion, board Y-position, boardX-size, board Y-Size, 
-///		board row, board column, player movement-type, incorrect-penalty
+///		board row, board column
 /// 
 void Brood::Application::BoardEditor::InitailizeGeneralBoardSettingPanel()
 {
@@ -226,14 +237,7 @@ void Brood::Application::BoardEditor::InitailizeGeneralBoardSettingPanel()
 								 &m_txtBoardCol, &m_btnBoardIncCol,
 								 "Column Number", std::to_string( ( int )m_boardPtr->GetNumCol() ) );
 
-	// initializing the UI to set the movement type
-	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtMovementTypePromt, &m_ddiMovementType,
-										"Movement Type: ",
-										{ "Star Dice then Card", "Dice Only", "Card Only" }, 19 );
-
-	// initializing the UI to set the incorrect penalty
-	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtIncorectPenaltyPromt, &m_ddiIncorectPenalty,
-										"Incorrect Penalty: ", { "Yes", "No" }, 27 );
+	
 }
 
 /// 
@@ -241,8 +245,8 @@ void Brood::Application::BoardEditor::InitailizeGeneralBoardSettingPanel()
 /// @brief Initializes the panel element of the general board setting 
 /// 
 /// It initializes the folloing panel element: 
-///		Player start row, Player start column, Minimum Player number,
-///		Maximum player number, Current player index, Draw current 
+///		Player start row, Player start column,
+///		Current player index, Draw current 
 ///		player, Current player X-Size, current player Y-size, 
 ///		Current player X-offset, Current player Y-offset, and
 ///		Current player texture file name
@@ -264,18 +268,6 @@ void Brood::Application::BoardEditor::InitailizePlayerSettingPanel()
 								 &m_txtPlayerStartColNum, &m_btnPlayerIncStartColNum,
 								 "Start Column",
 								 std::to_string( 0 ) );
-
-	// initializing the UI to control minimum number of player
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerMinNumPrompt, &m_btnPlayerDecMinNum,
-								 &m_txtPlayerMinNum, &m_btnPlayerIncMinNum,
-								 "Minimum Players",
-								 std::to_string( ( int )m_playerManager.GetMinPlayer() ) );
-
-	// initializing the UI to control maximum number of player
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerMaxNumPrompt, &m_btnPlayerDecMaxnNum,
-								 &m_txtPlayerMaxNum, &m_btnPlayerIncMaxNum,
-								 "Maximum Players",
-								 std::to_string( ( int )m_playerManager.GetMaxPlayer() ) );
 
 	// initializing the UI to control current player index
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerCurrIdxPrompt, &m_btnPlayerDecCurrIdx,
@@ -329,7 +321,7 @@ void Brood::Application::BoardEditor::InitailizePlayerSettingPanel()
 /// 
 /// It Update the folloing panel element: 
 ///		board X-postion, board Y-position, boardX-size, board Y-Size, 
-///		board row, board column, player movement-type, incorrect-penalty
+///		board row, board column
 ///
 void Brood::Application::BoardEditor::UpdateGeneralBoardSettingPanel()
 {
@@ -350,14 +342,6 @@ void Brood::Application::BoardEditor::UpdateGeneralBoardSettingPanel()
 
 	// checking to see if the col panel Element was pressed
 	UpdateBoardColPanelElement();
-
-	// checking to see if the movement type panel Element
-	// was pressed
-	UpdateMovementTypePanelElement();
-
-	// checking to see if the incorrect penalty panel 
-	// Element was pressed
-	UpdateIncorrectPenaltyPanelElement();
 }
 
 /// @private
@@ -365,20 +349,12 @@ void Brood::Application::BoardEditor::UpdateGeneralBoardSettingPanel()
 /// 
 /// It draws the folloing panel element: 
 ///		board X-postion, board Y-position, boardX-size, board Y-Size, 
-///		board row, board column, player movement-type, incorrect-penalty
+///		board row, board column
 /// 
 /// @param a_window reference to the render window
 /// 
 void Brood::Application::BoardEditor::DrawGeneralBoardSettingPanel( sf::RenderWindow& a_window )
 {
-	// Drawing the incorrect penalty panel Elements
-	m_ddiIncorectPenalty->Draw( a_window );
-	m_txtIncorectPenaltyPromt->Draw( a_window );
-
-	// Drawing the movement type panel Elements
-	m_ddiMovementType->Draw( a_window );
-	m_txtMovementTypePromt->Draw( a_window );
-
 	// Drawing the column panel Elements
 	m_btnBoardIncCol->Draw( a_window );
 	m_txtBoardCol->Draw( a_window );
@@ -421,8 +397,8 @@ void Brood::Application::BoardEditor::DrawGeneralBoardSettingPanel( sf::RenderWi
 /// @brief Updates the panel element of the player setting 
 /// 
 /// It Updates the folloing panel element: 
-///		Player start row, Player start column, Minimum Player number,
-///		Maximum player number, Current player index, Draw current 
+///		Player start row, Player start column, 
+///		Current player index, Draw current 
 ///		player, Current player X-Size, current player Y-size, 
 ///		Current player X-offset, Current player Y-offset, and
 ///		Current player texture file name
@@ -436,14 +412,6 @@ void Brood::Application::BoardEditor::UpdatePlayerSettingPanel()
 	// checking to see if the player start column number 
 	// panel element was pressed
 	UpdateStartColNumber();
-
-	// checking to see if the minimum Player number panel
-	// element was pressed
-	UpdateMinimumPlayerNumber();
-
-	// checking to see if the maximum Player number panel
-	// element was pressed
-	UpdateMaximumPlayerNumber();
 
 	// checking to see if the draw player at current index
 	// panel element was pressed
@@ -533,18 +501,6 @@ void Brood::Application::BoardEditor::DrawPlayerSettingPanel( sf::RenderWindow& 
 	m_txtPlayerCurrIdx->Draw( a_window );
 	m_btnPlayerDecCurrIdx->Draw( a_window );
 	m_txtPlayerCurrIdxPrompt->Draw( a_window );
-
-	// Drawing the maximum Player number panel Elements
-	m_btnPlayerIncMaxNum->Draw( a_window );
-	m_txtPlayerMaxNum->Draw( a_window );
-	m_btnPlayerDecMaxnNum->Draw( a_window );
-	m_txtPlayerMaxNumPrompt->Draw( a_window );
-
-	// Drawing the minimum Player number panel Elements
-	m_btnPlayerIncMinNum->Draw( a_window );
-	m_txtPlayerMinNum->Draw( a_window );
-	m_btnPlayerDecMinNum->Draw( a_window );
-	m_txtPlayerMinNumPrompt->Draw( a_window );
 
 	// Drawing the Start column number panel Elements
 	m_btnPlayerIncStartColNum->Draw( a_window );
@@ -1155,119 +1111,6 @@ void Brood::Application::BoardEditor::UpdateBoardColPanelElement()
 
 /// 
 /// @private
-/// @brief checks if the user interacted with the movement type panel
-///	
-///  Movement type panel contains Board  movement type promt textbox, 
-///		and drop down input to select a movement type
-/// 
-/// Only the drop down input to select the movement type is interactable
-/// 
-/// If the interactable  drop down input was pressed then it expand to 
-///		show the three option avialble  dice, start with dice and then 
-///		card, and card no dice
-/// 
-void Brood::Application::BoardEditor::UpdateMovementTypePanelElement()
-{
-	//checking if the logics of the element is to be executed or not
-	if( m_ddiMovementType->DoElement() || m_ddiMovementType->IsSelected() )
-	{
-		auto itemList = m_ddiMovementType->GetItemList();
-		unsigned itemIdx = 0;
-		bool itemPressed = false;
-		if( !itemList.empty() )
-		{
-			// checking if the logics of the items is to be executed or not
-			for( itemIdx; itemIdx < itemList.size(); ++itemIdx )
-			{
-				itemPressed = itemList.at( itemIdx )->DoElement();
-				if( itemPressed )
-				{
-					break;
-				}
-			}
-
-			if( itemPressed )
-			{
-				// setting the elements name as the item's name
-				// this is important so that the changes can be reflected in the
-				// title
-
-				std::string itemName = itemList.at( itemIdx )->GetText();
-
-				while( itemName.size() < 19 )
-				{
-					itemName = " " + itemName + " ";
-				}
-
-				// we know the size of the elemnt
-				m_ddiMovementType->SetText( itemName + " v" );
-
-				// executing the function
-				std::cerr << "item at " << itemIdx << "  Pressed with ID " <<
-					itemList.at( itemIdx )->GetText() << std::endl;
-			}
-		}
-	}
-}
-
-/// 
-/// @private
-/// @brief checks if the user interacted with the incorrect penalty panel
-///	
-///  Incorrect penalty panel contains Board incorrect penalty promt textbox, 
-///		and drop down input to select a yes or no for incorrect penalty
-/// 
-/// Only the drop down input to select the incorrect penalty is interactable
-/// 
-/// If the interactable  drop down input was pressed then it expand to 
-///		show the two option avialble  Yes and No
-///
-void Brood::Application::BoardEditor::UpdateIncorrectPenaltyPanelElement()
-{
-	//checking if the logics of the element is to be executed or not
-	if( m_ddiIncorectPenalty->DoElement() || m_ddiIncorectPenalty->IsSelected() )
-	{
-		auto itemList = m_ddiIncorectPenalty->GetItemList();
-		unsigned itemIdx = 0;
-		bool itemPressed = false;
-		if( !itemList.empty() )
-		{
-			// checking if the logics of the items is to be executed or not
-			for( itemIdx; itemIdx < itemList.size(); ++itemIdx )
-			{
-				itemPressed = itemList.at( itemIdx )->DoElement();
-				if( itemPressed )
-				{
-					break;
-				}
-			}
-
-			if( itemPressed )
-			{
-				// setting the elements name as the item's name
-				// this is important so that the changes can be reflected in the
-				// title
-
-				std::string itemName = itemList.at( itemIdx )->GetText();
-
-				while( itemName.size() < 27 )
-				{
-					itemName = " " + itemName + " ";
-				}
-
-				// we know the size of the elemnt
-				m_ddiIncorectPenalty->SetText( itemName + " v" );
-
-				// executing the function
-				std::cerr << "item at " << itemIdx << "  Pressed with ID " <<
-					itemList.at( itemIdx )->GetText() << std::endl;
-			}
-		}
-	}
-}
-
-/// 
-/// @private
 /// @brief checks if the user interacted with the start row panel
 ///	
 /// Start row panel contains the start row number promt textbox, 
@@ -1382,135 +1225,6 @@ void Brood::Application::BoardEditor::UpdateStartColNumber()
 
 		// updating the textbox showing the start column value
 		m_txtPlayerStartColNum->SetText( std::to_string( currentStartColNum + 1 ) );
-	}
-}
-
-/// 
-/// @private
-/// @brief checks if the user interacted with the minumum player panel
-///	
-/// Minumum player panel contains minimum player number promt textbox, 
-///		minimum player number value text box, button to increase the
-///		minimum player number, and button to decrease the minimum 
-///		player number
-/// 
-/// Only the button to increase the minimum player number, and button 
-///		to decrease the minimum player number are interactable
-/// 
-/// If the interactable button was pressed then the minimum player
-///		number is increased or decresed by 1. Minimum player number
-///		should be more than or equal to 0 but less than Maximum player
-///		number
-///
-void Brood::Application::BoardEditor::UpdateMinimumPlayerNumber()
-{
-	// chekcing if the decrease the minimum player number was pressed
-	if( m_btnPlayerDecMinNum->DoElement() )
-	{
-		// getting current minimum Player number
-		unsigned currentMinPlayerNum = m_playerManager.GetMinPlayer();
-
-		// chekcing if the current currentMinPlayerNum is 0 then do nothing
-		if( currentMinPlayerNum == 0 )
-		{
-			return;
-		}
-
-		// decrease the minimum player number by 1 units
-		m_playerManager.SetMinPlayer( currentMinPlayerNum - 1 );
-
-		// updating the textbox showing the minimum player value
-		m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum - 1 ) );
-	}
-	// chekcing if the increase the minimum player number was pressed
-	else if( m_btnPlayerIncMinNum->DoElement() )
-	{
-		// chekcing if the decrease the minimum player number was pressed
-		unsigned currentMinPlayerNum = m_playerManager.GetMinPlayer();
-
-		// chekcing if the current minimum player number is 
-		// equal to current maximum player number the do nothing
-		if( currentMinPlayerNum == m_playerManager.GetMaxPlayer() )
-		{
-			return;
-		}
-
-		// decrease the minimum player number by 1 units
-		m_playerManager.SetMinPlayer( currentMinPlayerNum + 1 );
-
-		// updating the textbox showing the minimum player value
-		m_txtPlayerMinNum->SetText( std::to_string( currentMinPlayerNum + 1 ) );
-	}
-}
-
-/// 
-/// @private
-/// @brief checks if the user interacted with the maximum player panel
-///	
-/// Minumum player panel contains maximum player number promt textbox, 
-///		maximum player number value text box, button to increase the
-///		maximum player number, and button to decrease the maximum 
-///		player number
-/// 
-/// Only the button to increase the maximum player number, and button 
-///		to decrease the maximum player number are interactable
-/// 
-/// If the interactable button was pressed then the maximum player
-///		number is increased or decresed by 1. Maximum player number
-///		should be more than or equal to minimum player number
-///		but less than 10
-///
-void Brood::Application::BoardEditor::UpdateMaximumPlayerNumber()
-{
-	// chekcing if the decrease the maximum player number was pressed
-	if( m_btnPlayerDecMaxnNum->DoElement() )
-	{
-		// getting current maximum Player number
-		unsigned currentMaxPlayerNum = m_playerManager.GetMaxPlayer();
-
-		// chekcing if the current currentMaxPlayerNum id 
-		// equal to currentMinPlayerNum then do nothing
-		if( currentMaxPlayerNum == m_playerManager.GetMinPlayer() )
-		{
-			return;
-		}
-
-		// decrease the maximum player number by 1 units
-		m_playerManager.SetMaxPlayer( currentMaxPlayerNum - 1 );
-
-		// updating the textbox showing the maximum player value
-		m_txtPlayerMaxNum->SetText( std::to_string( currentMaxPlayerNum - 1 ) );
-
-		// chekcing if the currIdx is higher than max player
-		if( m_playerManager.GetCurrActivePlayerIdx() >= currentMaxPlayerNum - 1 )
-		{
-			m_playerManager.SetCurrActivePlayerIdx( currentMaxPlayerNum - 2 );
-
-			// updating the textbox showing the current selceted player index value
-			m_txtPlayerCurrIdx->SetText( std::to_string( m_playerManager.GetCurrActivePlayerIdx() ) );
-
-			// changing the displayed player data
-			ChangeDisplayedPlayerData();
-		}
-	}
-	// chekcing if the increase the maximum player number was pressed
-	else if( m_btnPlayerIncMaxNum->DoElement() )
-	{
-		// getting current maximum Player number
-		unsigned currentMaxPlayerNum = m_playerManager.GetMaxPlayer();
-
-		// chekcing if the current currentMaxPlayerNum id 
-		// equal to 10 then do nothing
-		if( currentMaxPlayerNum == 10 )
-		{
-			return;
-		}
-
-		// decrease the maximum player number by 1 units
-		m_playerManager.SetMaxPlayer( currentMaxPlayerNum + 1 );
-
-		// updating the textbox showing the maximum player value
-		m_txtPlayerMaxNum->SetText( std::to_string( currentMaxPlayerNum + 1 ) );
 	}
 }
 
@@ -1924,7 +1638,6 @@ void Brood::Application::BoardEditor::UpdateCurrPlayerOffsetY()
 	}
 }
 
-
 /// 
 /// @private
 /// @brief checks if the user interacted with the laod player texture 
@@ -1968,7 +1681,6 @@ void Brood::Application::BoardEditor::UpdateCurrPlayerFileTexture()
 		// resetting the m_eterPressed
 		m_txtPlayerFileInput->SetEnterPressedFalse();
 	}
-
 }
 
 /// 

@@ -106,7 +106,7 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 	m_fileNameTxt = DyCreateTextBox( { 500, 100 }, { 200, 250 }, "Enter File Name" );
 
 	// Enter file name feild textbox
-	m_enterFileNameFeildTxt = DyCreateTextBox( { 500, 125 }, { 200, 350 }, "", true, "<Enter a File Name>");
+	m_enterFileNameFeildTxt = DyCreateTextBox( { 500, 125 }, { 200, 350 }, "", true, "<Enter a File Name>" );
 	//m_enterFileNameFeild = new Brood::BroodUI::TextBox;
 	//m_enterFileNameFeild->SetBodySize( 500, 125 );
 	//m_enterFileNameFeild->SetBodyPosition( 200, 350 );
@@ -126,6 +126,18 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 
 	// createing 3 workspace, namely, initialWorkSpace, editorWorSpace,
 	m_workSpacesList.push_back( new Brood::Application::EditorWorkspace() );
+}
+
+/// 
+/// @public
+/// @virtual
+/// @brief Draw funciton
+/// 
+/// Draws all the component to the screen
+///
+void Brood::Application::HomeWorkSpace::UpdateAllDispayElement()
+{
+	/// TODO fill this
 }
 
 /// 

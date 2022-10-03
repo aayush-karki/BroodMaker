@@ -474,6 +474,7 @@ void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( sf::RectangleSh
 /// @param a_btnOpenFilePtr pointer to button pointer where the dynamically
 ///		 created button to display the 'open' is stored
 /// @param a_promptToDisplay text to display in the prompt textbox element
+/// @param a_valueToDisplay text to display in the value textbox element
 /// @param a_createFromTop is true if the created element should be positioned 
 ///		second element form the top
 ///
@@ -536,7 +537,7 @@ void Brood::Application::WorkSpace::DyCreateFileInputPannelElement( sf::Rectangl
 
 
 	// creating a text box for file input
-	*a_txtFileInputPtr = DyCreateTextBox( panelSizeX , 25,
+	*a_txtFileInputPtr = DyCreateTextBox( panelSizeX, 25,
 										  panelPosX, lastPanelElementPosY + lastPanelElementSizeY,
 										  a_valueToDisplay, true, "<enter file name>", panelColor );
 
@@ -555,14 +556,91 @@ void Brood::Application::WorkSpace::DyCreateFileInputPannelElement( sf::Rectangl
 
 	// creating a open box to open file input
 	*a_btnOpenFilePtr = DyCreateButton( { panelSizeX, 25 },
-								   { panelPosX, lastPanelElementPosY + lastPanelElementSizeY },
-								   "Open Loaded File", panelColor );
+										{ panelPosX, lastPanelElementPosY + lastPanelElementSizeY },
+										"Open Loaded File", panelColor );
 	// setitng the font
 	( *a_txtFileInputPtr )->SetFontSize( 12 );
-	
+
 	// setitng the font
 	( *a_btnOpenFilePtr )->SetFontSize( 15 );
 
+}
+/// 
+/// @private
+/// @brief Dynamically creates a Panel Element that user can enter a text
+/// 
+///	It has 2 UI element and its layout is 
+/// 
+///		<textBox prompt> <textbox>  
+///		
+/// For examaple: Game Name	(enter file name) 
+/// 
+///	It alternates the color of the panel element. Color used are:
+///		Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor
+///		and 
+///		Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor
+/// 
+/// @param a_panelBodyPtr pointer to panel body.
+/// @param a_txtPromptPtr pointer to textbox pointer where the dynamically
+///		 created textbox to display the prompt is stored
+/// @param a_txtTextInputtPtr pointer to textbox pointer where the dynamically
+///		 created textbox to enter the text is stored
+/// @param a_promptToDisplay text to display in the prompt textbox element
+/// @param a_valueToDisplay text to display in the value textbox element
+/// @param a_placeHolderText text to display in the value textbox element
+/// @param a_createFromTop is true if the created element should be positioned 
+///		second element form the top
+///
+void Brood::Application::WorkSpace::DyCreateTextInputPannelElement( sf::RectangleShape* a_panelBodyPtr,
+																	Brood::BroodUI::TextBox** a_txtPromptPtr,
+																	Brood::BroodUI::TextBox** a_txtTextInputtPtr,
+																	std::string a_promptToDisplay,
+																	std::string a_valueToDisplay,
+																	std::string a_placeHolderText,
+																	bool a_createFromTop )
+{
+	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
+
+	float panelSizeX = a_panelBodyPtr->getSize().x;
+	float lastPanelElementSizeY = m_unNamedUIList.back()->GetBodySize().y;
+
+	float panelPosX = a_panelBodyPtr->getPosition().x;
+	float lastPanelElementPosY = m_unNamedUIList.back()->GetBodyPosition().y;
+	// getting the color
+	sf::Color panelColor;
+
+	if( m_unNamedUIList.back()->GetBodyColor() == Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor )
+	{
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor;
+	}
+	else
+	{
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+	}
+
+	// if a_createFromTop is passed as true then last panel is the first element 
+	// so using that to get the lastPanelElementPosY 
+	// and setting the color to stm_AppPrimaryColor
+	if( a_createFromTop )
+	{
+		lastPanelElementPosY = m_unNamedUIList.front()->GetBodyPosition().y;
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+	}
+
+	// creating a text box for displaying the promt
+	*a_txtPromptPtr = DyCreateTextBox( panelSizeX / 2.f, 25,
+									   panelPosX, lastPanelElementPosY + lastPanelElementSizeY,
+									   a_promptToDisplay, false, "", panelColor );
+	// setitng the font
+	( *a_txtPromptPtr )->SetFontSize( 15 );
+
+	// creating a dropdown input
+	*a_txtTextInputtPtr = DyCreateTextBox( { panelSizeX / 2.f, 25 },
+										   { panelPosX + ( panelSizeX / 2.f ), lastPanelElementPosY + lastPanelElementSizeY },
+										   a_valueToDisplay, true, a_placeHolderText, panelColor );
+
+	// setitng the font
+	( *a_txtTextInputtPtr )->SetFontSize( 15 );
 }
 
 
