@@ -71,11 +71,11 @@ public:
 	std::string GetBackBgFileName();
 
 	// displays time user have to complete the question
-	Brood::BroodUI::TextBox* GetFrontTimePromtPtr();
+	Brood::BroodUI::TextBox* GetFrontTimePromptPtr();
 	Brood::BroodUI::TextBox* GetFrontTimeValuePtr();
 
 	// displays number of steps that user goes forward
-	Brood::BroodUI::TextBox* GetUpPromtPtr();
+	Brood::BroodUI::TextBox* GetUpPromptPtr();
 	Brood::BroodUI::TextBox* GetUpValuePtr();
 
 	// displays number of steps that user goes backward
@@ -87,7 +87,7 @@ public:
 
 	// ========= back of the card =========
 	// displays time user have to complete the question
-	Brood::BroodUI::TextBox* GetBackTimePromtPtr();
+	Brood::BroodUI::TextBox* GetBackTimePromptPtr();
 	Brood::BroodUI::TextBox* GetBackTimeValuePtr();
 
 	// displays the question that user has to answer
@@ -95,8 +95,8 @@ public:
 	Brood::BroodUI::TextBox* GetQuestionValuePtr();
 
 	// displays the textbox for user to enter theiranswer
-	Brood::BroodUI::TextBox* GetUserAnswerPromptPtr();
-	Brood::BroodUI::TextBox* GetUserAnswerValuePtr();
+	Brood::BroodUI::TextBox* GetAnswerPromptPtr();
+	Brood::BroodUI::TextBox* GetAnswerValuePtr();
 
 	// button to show back of the card
 	Brood::BroodUI::Button* GetSubmitPtr();

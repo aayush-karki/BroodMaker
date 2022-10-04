@@ -84,6 +84,39 @@ private:
 	// initializes the card display panel element
 	void InializeCardDisplayPanel();
 
+	// Update the card display panel element
+	void UpdateCardDisplayPanel();
+
+	// Draw the card display panel element
+	void DrawCardDisplayPanel( sf::RenderWindow& a_window );
+
+	// initializes the card display front component panel element
+	void InializeCardDisplayFcompPanel();
+
+	// Update the card display front component panel element
+	void UpdateCardDisplayFcompPanel();
+
+	// Draw the card display front component panel element
+	void DrawCardDisplayFcompPanel( sf::RenderWindow& a_window );
+
+	// initializes the card display back component panel element
+	void InializeCardDisplayBcompPanel();
+
+	// Update the card display back component panel element
+	void UpdateCardDisplayBcompPanel();
+
+	// Draw the card display back component panel element
+	void DrawCardDisplayBcompPanel( sf::RenderWindow& a_window );
+
+	// initializes the card info panel element
+	void InializeCardInfoPanel();
+
+	// Update the card info panel element
+	void UpdateCardInfoPanel();
+
+	// Draw the card info panel element
+	void DrawCardInfoPanel( sf::RenderWindow& a_window );
+
 	// ================= private member variable ==================  
 private:
 
@@ -104,12 +137,15 @@ private:
 
 	/// holds which catagory of setting the displayed
 	///	user can choose between: Display card Setting, 
-	///	New Card Setting, and Existing Card Setting
+	/// Display card front componet Setting,
+	/// Display card back componet Setting
+	///	Existing info Card Setting
 	Brood::BroodUI::DropDownInput* m_ddiSettingSelection;
 
 	// ===========================================================
 	// =========== member variables for card display setting =====
 	// ===========================================================
+
 	// ==== UI elements to change CardFrontTimePrompt size x ====
 
 	/// holds the text Card size x
@@ -177,7 +213,7 @@ private:
 	/// clicking it will load the CardFront file
 	Brood::BroodUI::Button* m_btnCardFrontBgOpenFile;
 
-	// ==== UI elements to enter a CardBackBg filename texture  ====
+	// ==== UI elements to enter a CardBrontBg filename textur  ====
 
 	/// holds the CardBack texture filename prompt
 	Brood::BroodUI::TextBox* m_txtCardBackBgFileNamePrompt;
@@ -187,6 +223,10 @@ private:
 
 	/// clicking it will load the CardBack file
 	Brood::BroodUI::Button* m_btnCardBackBgOpenFile;
+
+	// ===========================================================
+	// =========== member variables for front of the card ========
+	// ===========================================================
 
 	// ==== UI elements to change CardFrontTimePrompt position x ====
 
@@ -356,7 +396,6 @@ private:
 	/// clicking it will increase the CardDownValue Position y number by 5
 	Brood::BroodUI::Button* m_btnCardDownValueIncPosY;
 
-
 	// ==== UI elements to change CardTurnCard position x ====
 
 	/// holds the text CardTurnCard position x
@@ -384,6 +423,10 @@ private:
 
 	/// clicking it will increase the CardTurnCard Position y number by 5
 	Brood::BroodUI::Button* m_btnCardTurnCardIncPosY;
+
+	// ===========================================================
+	// =========== member variables for back of the card =========
+	// ===========================================================
 
 	// ==== UI elements to change CardBackTimePrompt position x ====
 
@@ -581,6 +624,9 @@ private:
 	/// clicking it will increase the CardSubmit Position y number by 5
 	Brood::BroodUI::Button* m_btnCardSubmitIncPosY;
 
+	// ===========================================================
+	// =========== member variables for card info setting ========
+	// ===========================================================
 };
 
 // ======================================================================

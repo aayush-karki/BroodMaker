@@ -171,7 +171,7 @@ std::string Brood::Application::Components::DisplayCard::GetBackBgFileName()
 /// 
 /// @return pointer to the frontTime prompt ui element
 ///
-Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetFrontTimePromtPtr()
+Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetFrontTimePromptPtr()
 {
 	return m_TxtFrontTimePromt;
 }
@@ -194,7 +194,7 @@ Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetFrontTi
 /// 
 /// @return pointer to the up prompt ui element
 ///
-Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetUpPromtPtr()
+Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetUpPromptPtr()
 {
 	return m_TxtUpPromt;
 }
@@ -250,7 +250,7 @@ Brood::BroodUI::Button* Brood::Application::Components::DisplayCard::GetTurnCard
 /// 
 /// @return pointer to the back time prompt ui element
 ///
-Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetBackTimePromtPtr()
+Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetBackTimePromptPtr()
 {
 	return m_TxtBackTimePromt;
 }
@@ -295,7 +295,7 @@ Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetQuestio
 /// 
 /// @return pointer to the user answer prompt ui element
 ///
-Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetUserAnswerPromptPtr()
+Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetAnswerPromptPtr()
 {
 	return m_TxtUserAnswerPrompt;
 }
@@ -306,7 +306,7 @@ Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetUserAns
 /// 
 /// @return pointer to the user answer value ui element
 ///
-Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetUserAnswerValuePtr()
+Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetAnswerValuePtr()
 {
 	return m_TxtUserAnswerValue;
 }

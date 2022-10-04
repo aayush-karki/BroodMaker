@@ -195,7 +195,7 @@ void Brood::Application::EditorWorkspace::InitializeEditModeTabs()
 	// setting the First tab--board edit as the active tab
 
 	// TODO set me back to 0
-	UpdateActiveEditorIdx( 5 );
+	UpdateActiveEditorIdx( 6 );
 }
 
 /// 
