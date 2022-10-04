@@ -9,6 +9,9 @@ int main()
 	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_diceTextures );
 	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_playerTextures );
 	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_tileTextures );
+	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_deckTextures );
+	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_cardTextures );
+	std::filesystem::create_directories( Brood::Application::StaticVariables::ST_Folders::stm_data);
 
 	// loading font
 	std::filesystem::path arialFont = Brood::Application::StaticVariables::ST_Folders::stm_fonts / std::filesystem::path{ "arial.ttf" };

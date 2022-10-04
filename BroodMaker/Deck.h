@@ -65,11 +65,31 @@ public:
 	// assignment constructor
 	Deck& operator = ( const Brood::Application::Components::Deck& a_other );
 
-	// getter functions
+	// ============= getter functions ========
+
+	// getter funciton to get the card list
 	const std::vector< Brood::Application::Components::CardInfo*>& GetCardList() const;
 
 	// gets pointer to the card at given index
 	Brood::Application::Components::CardInfo* GetCardPtrAtIdx( unsigned a_cardInfoIdx );
+
+	// gets card Init file name
+	std::string GetCardInitFileName();
+
+	// gets card Init file path
+	std::string GetCardInitFilePath();
+
+	// gets card current active card index
+	unsigned GetCurrActiveCardIdx();
+
+	// sets card current active card index
+	void SetCurrActiveCardIdx( unsigned a_currActiveCardIdx );
+
+	// sets deck size
+	void SetCardListSize( unsigned a_cardListSize );
+
+	// loads cards from a card Init file path
+	bool LoadCardFromInitFile( std::string  a_fileInitPath);
 
 	// returns the first undealt card and increases the counter by 1
 	const CardInfo DealCard();
@@ -79,7 +99,6 @@ public:
 
 	// restes the currentCardidx to zero and reshuffels the deck
 	void ResetDeck();
-
 
 	// adds the passed card to the deck
 	void AddCardInfoToDeck(
@@ -92,6 +111,15 @@ private:
 
 	// holds the index of first undealt card
 	unsigned m_currUndealtCardIdx;
+
+	// holds the card init file Path
+	std::string m_cardInitFilePath;
+
+	// holds the card init file Path
+	std::string m_cardInitFileName;
+
+	// holds the index of card that is currently active
+	unsigned m_currActiveCardIdx;
 };
 
 

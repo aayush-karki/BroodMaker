@@ -78,13 +78,19 @@ std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_asset
 
 std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_fonts = Brood::Application::StaticVariables::ST_Folders::stm_assets / std::filesystem::path{ "Fonts" };
 
-std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_Textures = Brood::Application::StaticVariables::ST_Folders::stm_assets / std::filesystem::path{ "Textures" };
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_textures = Brood::Application::StaticVariables::ST_Folders::stm_assets / std::filesystem::path{ "Textures" };
 
-std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_diceTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "DiceTexture" };
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_diceTextures = Brood::Application::StaticVariables::ST_Folders::stm_textures / std::filesystem::path{ "DiceTexture" };
 
-std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_playerTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "PlayerTexture" };
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_playerTextures = Brood::Application::StaticVariables::ST_Folders::stm_textures / std::filesystem::path{ "PlayerTexture" };
 
-std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_tileTextures = Brood::Application::StaticVariables::ST_Folders::stm_Textures / std::filesystem::path{ "TileTexture" };
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_tileTextures = Brood::Application::StaticVariables::ST_Folders::stm_textures / std::filesystem::path{ "TileTexture" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_deckTextures = Brood::Application::StaticVariables::ST_Folders::stm_textures / std::filesystem::path{ "DeckTexture" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_cardTextures = Brood::Application::StaticVariables::ST_Folders::stm_textures / std::filesystem::path{ "CardTexture" };
+
+std::filesystem::path Brood::Application::StaticVariables::ST_Folders::stm_data = Brood::Application::StaticVariables::ST_Folders::stm_cwd / std::filesystem::path{ "Data" };
 
 // ======================================================================
 // ================= start of ST_Folders struct =========================

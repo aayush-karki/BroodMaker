@@ -26,7 +26,7 @@ Brood::Application::Components::DeckManager::DeckManager() :
 	m_currDeckIdx( 0 ), m_incorrectPenalty( true ),
 	m_movementType( Brood::Application::Components::ENUM_MovementType::MOVEMENT_diceThenCard )
 {
-	m_deckList.resize( 1 );
+	m_deckList.resize( 1, Deck());
 }
 
 ///
@@ -85,6 +85,16 @@ Brood::Application::Components::DeckManager& Brood::Application::Components::Dec
 }
 
 /// 
+/// @brief getter funciton to get the current deck index
+/// 
+/// @return current deck index
+/// 
+unsigned Brood::Application::Components::DeckManager::GetCurrActiveDeckIdx()
+{
+	return m_currDeckIdx;
+}
+
+/// 
 /// @brief getter function to get the deck at the passed index
 /// 
 /// @param a_deckIdx index from which the deck is to be returned
@@ -110,6 +120,16 @@ Brood::Application::Components::Deck* Brood::Application::Components::DeckManage
 std::vector<Brood::Application::Components::Deck>& Brood::Application::Components::DeckManager::GetDeckList()
 {
 	return m_deckList;
+}
+
+/// 
+/// @brief getter function to get the current active deck 
+/// 
+/// @return pointer to current active deck
+/// 
+Brood::Application::Components::Deck* Brood::Application::Components::DeckManager::GetCurrActiveDeck()
+{
+	return &m_deckList.at( m_currDeckIdx );
 }
 
 /// 
@@ -160,7 +180,17 @@ void Brood::Application::Components::DeckManager::SetMovementType( Brood::Applic
 /// 
 void Brood::Application::Components::DeckManager::SetDeckSize( unsigned a_deckSize )
 {
+	unsigned prelastIdx = m_deckList.size();
+	sf::Vector2f preLastIdxPos = m_deckList.back().GetBodyPosition();
+
 	m_deckList.resize( a_deckSize, Deck() );
+
+	// positioning all the newly created decks
+	for( prelastIdx; prelastIdx < m_deckList.size(); ++prelastIdx )
+	{
+		preLastIdxPos.x += 40;
+		m_deckList.at( prelastIdx ).SetBodyPosition( preLastIdxPos );
+	}
 }
 
 /// 
@@ -168,7 +198,7 @@ void Brood::Application::Components::DeckManager::SetDeckSize( unsigned a_deckSi
 /// 
 /// @param a_currDeckIdx deck index
 /// 
-void Brood::Application::Components::DeckManager::SetCurrDeckIdx( unsigned a_currDeckIdx )
+void Brood::Application::Components::DeckManager::SetCurrActiveDeckIdx( unsigned a_currDeckIdx )
 {
 	m_currDeckIdx = a_currDeckIdx;
 }

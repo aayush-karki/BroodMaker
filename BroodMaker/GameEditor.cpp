@@ -133,7 +133,7 @@ void Brood::Application::GameEditor::Update()
 void Brood::Application::GameEditor::UpdateAllDispayElement()
 {
 	// game title
-	m_titleScreenBtn->SetText( m_gameData->GetGameTitle());
+	m_titleScreenBtn->SetText( m_gameData->GetGameTitle().empty() ? "Game Title" : m_gameData->GetGameTitle() );
 
 	// movement type
 	unsigned itemIdx = ( int )m_gameData->GetDeckManagerPtr()->GetMovementType();
@@ -500,6 +500,12 @@ void Brood::Application::GameEditor::UpdateDeckNumber()
 
 		// updating the textbox showing the deck value
 		m_txtDeckNum->SetText( std::to_string( currentDeckNum - 1 ) );
+
+		// chekcing if the currIdx is higher than max deck
+		if( m_gameData->GetDeckManagerPtr()->GetCurrActiveDeckIdx() >= currentDeckNum - 1 )
+		{
+			m_gameData->GetDeckManagerPtr()->SetCurrActiveDeckIdx( currentDeckNum - 2 );
+		}
 	}
 	// chekcing if the increase the deck number was pressed
 	else if( m_btnDeckIncNum->DoElement() )

@@ -23,7 +23,7 @@
 // ================= defining namespace =================================
 // ======================================================================
 namespace Brood
-{	
+{
 	class SpriteHandler;
 }
 // ======================================================================
@@ -67,43 +67,84 @@ class Brood::SpriteHandler
 public:
 
 	// default constructor
-	SpriteHandler(sf::RectangleShape* a_body );
+	SpriteHandler( sf::RectangleShape* a_body );
 
 	// default destructor
 	virtual ~SpriteHandler();
 
 	// copy constructor
-	SpriteHandler(const SpriteHandler& a_otherSpriteHandler);
+	SpriteHandler( const SpriteHandler& a_otherSpriteHandler );
 
 	// assignment operator
 	SpriteHandler& operator=( const SpriteHandler& a_otherSpriteHandler );
 
-	// setter function
-	void SetSpriteLength( float a_spriteLength ); // sets sprite length
-	void SetSpriteHeight( float a_spriteHwight ); // sets sprite height
+	// ====== setter function =====
 
-	bool SetTextureFromFilePath( std::string a_texturePath ); // loads and sets the texture form provided path 
-	bool SetTextureFromSavedFilePath(); // loads and sets the texture from saved path
-	void SetSpriteFromTexture( unsigned a_num ); // sets sprite from texture
+	// sets sprite length
+	void SetSpriteLength( float a_spriteLength );
 
-	// getter function 
-	const std::string GetTexturePath();
+	// sets sprite height
+	void SetSpriteHeight( float a_spriteHwight );
+
+	// loads and sets the texture form provided path 
+	bool SetTextureFromFilePath( std::string a_texturePath );
+
+	// loads and sets the texture form provided path 
+	bool SetTextureFromFilePath( std::string a_textureDirectoryPath,
+								 std::string a_textureFileName );
+
+	// loads and sets the texture from saved path
+	bool SetTextureFromSavedFilePath();
+
+	// sets sprite from texture
+	void SetSpriteFromTexture( unsigned a_num );
+
+	// ====== getter function =====
+
+	// getter function to get the textureFilename
+	const std::string GetTextureFileName();
+
+	// getter function to get the file path
+	const std::string GetTextureDirectoryPath();
+
+	// getter function to get the sprite length
 	const float GetSpritLenght();
+
+	// getter function to get the sprite height
 	const float GetSpritHeight();
+
+	// getter function to get the current sprite index
 	const unsigned GetcurrSpriteIndex();
-	
-	void RemoveTexture(); // removes texture from the body
-	void Debugger( ); // removes texture from the body for debuging purposes
+
+	// removes texture from the body
+	void RemoveTexture();
+
+	// removes texture from the body for debuging purposes
+	void Debugger();
 
 	// ============ private member variables =============== 
 private:
-	sf::RectangleShape* m_body; ///> pointer to the body
 
-	std::string m_texturePath; ///> saves the path to the texture
-	sf::Texture m_texture; ///> reference to the  the texture opened from the path
-	float m_spriteLength; ///> sprite length in the texture file
-	float m_spriteHeight; ///> sprite height in the texture file
-	unsigned m_currSpriteIndex; ///> saves the current index of sprite in the texture
+	///> pointer to the body
+	sf::RectangleShape* m_body;
+
+	///> saves the directory path to the texture
+	std::string m_textureDirectoryPath;
+
+	///> saves the path to the texture
+	std::string m_textureFileName;
+
+	///> reference to the  the texture opened from the path
+	sf::Texture m_texture;
+
+	///> sprite length in the texture file
+	float m_spriteLength;
+
+	float m_spriteHeight;
+	///> sprite height in the texture file
+
+	///> saves the current index of sprite in the texture
+	unsigned m_currSpriteIndex;
 };
 
 // ======================================================================

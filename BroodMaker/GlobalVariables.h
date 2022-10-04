@@ -145,7 +145,7 @@ struct Brood::Application::StaticVariables::ST_Folders
 	static std::filesystem::path stm_fonts;
 
 	/// path to Texture folder. It is a sub folder of Assets folder
-	static std::filesystem::path stm_Textures;
+	static std::filesystem::path stm_textures;
 
 	/// path to diceTexture folder. It is a sub folder of Textures folder
 	static std::filesystem::path stm_diceTextures;
@@ -155,6 +155,15 @@ struct Brood::Application::StaticVariables::ST_Folders
 
 	/// path to tileTextures folder. It is a sub folder of Textures folder
 	static std::filesystem::path stm_tileTextures;
+
+	/// path to tileTextures folder. It is a sub folder of Textures folder
+	static std::filesystem::path stm_deckTextures;
+
+	/// path to tileTextures folder. It is a sub folder of Textures folder
+	static std::filesystem::path stm_cardTextures;
+
+	/// path to data folder. It is a sub folder of CWD
+	static std::filesystem::path stm_data;
 };
 
 // ======================================================================

@@ -117,7 +117,7 @@ void Brood::Application::PlayerEditor::InitializeWorkSpace()
 	// texture panel Elements
 	DyCreateFileInputPannelElement( m_panelBodyPtr, &m_txtplayerFileNamePrompt, &m_txtPlayerFileInput,
 									&m_btnPlayerOpenFile, "Player Texture Filename",
-									m_gameData->GetPlayerManagerPtr()->GetPlayerAtCurrIdx()->GetPlayerSpriteBody().GetTexturePath() );
+									m_gameData->GetPlayerManagerPtr()->GetPlayerAtCurrIdx()->GetPlayerSpriteBody().GetTextureFileName() );
 }
 
 /// 
@@ -192,7 +192,7 @@ void Brood::Application::PlayerEditor::UpdateAllDispayElement()
 	m_txtPlayerCurrIdxOffsetY->SetText( std::to_string( currActivePlayer->GetPositionOffsetY() ) );
 
 	// players texture file path
-	m_txtPlayerFileInput->SetText( currActivePlayer->GetPlayerSpriteBody().GetTexturePath() );
+	m_txtPlayerFileInput->SetText( currActivePlayer->GetPlayerSpriteBody().GetTextureFileName() );
 }
 
 /// 

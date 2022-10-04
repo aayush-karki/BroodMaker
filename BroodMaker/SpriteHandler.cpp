@@ -29,8 +29,9 @@
 /// @param a_body pointer the body of the element
 /// 
 Brood::SpriteHandler::SpriteHandler( sf::RectangleShape* a_body ) :
-	m_body( a_body ), m_texturePath( "" ),	m_spriteLength( 0.f ),
-	m_spriteHeight( 0.f ), m_currSpriteIndex(0)
+	m_body( a_body ), m_textureDirectoryPath( "" ),
+	m_textureFileName( "" ), m_spriteLength( 0.f ),
+	m_spriteHeight( 0.f ), m_currSpriteIndex( 0 )
 {}
 
 /// 
@@ -43,19 +44,19 @@ Brood::SpriteHandler::~SpriteHandler()
 /// 
 /// @public
 /// @brief Copy Constructor
-///	
 /// 
 /// @param a_otherSpriteHandler reference to the the other sprite handler
 ///		object that is being copied from 
 ///
-Brood::SpriteHandler::SpriteHandler( const SpriteHandler & a_otherSpriteHandler )
-{
-	this->m_body = a_otherSpriteHandler.m_body;
-	this->m_texture = a_otherSpriteHandler.m_texture;
-	this->m_spriteLength = a_otherSpriteHandler.m_spriteLength;
-	this->m_spriteHeight = a_otherSpriteHandler.m_spriteHeight;
-	this->m_currSpriteIndex = a_otherSpriteHandler.m_currSpriteIndex;
-}
+Brood::SpriteHandler::SpriteHandler( const SpriteHandler& a_otherSpriteHandler ) :
+	m_body( a_otherSpriteHandler.m_body ),
+	m_textureDirectoryPath( a_otherSpriteHandler.m_textureDirectoryPath ),
+	m_textureFileName( a_otherSpriteHandler.m_textureFileName ),
+	m_texture( a_otherSpriteHandler.m_texture ),
+	m_spriteLength( a_otherSpriteHandler.m_spriteLength ),
+	m_spriteHeight( a_otherSpriteHandler.m_spriteLength ),
+	m_currSpriteIndex( a_otherSpriteHandler.m_currSpriteIndex )
+{}
 
 /// 
 /// @public
@@ -73,6 +74,8 @@ Brood::SpriteHandler& Brood::SpriteHandler::operator=( const Brood::SpriteHandle
 	}
 
 	this->m_body = a_otherSpriteHandler.m_body;
+	this->m_textureDirectoryPath = a_otherSpriteHandler.m_textureDirectoryPath;
+	this->m_textureFileName = a_otherSpriteHandler.m_textureFileName;
 	this->m_texture = a_otherSpriteHandler.m_texture;
 	this->m_spriteLength = a_otherSpriteHandler.m_spriteLength;
 	this->m_spriteHeight = a_otherSpriteHandler.m_spriteHeight;
@@ -80,7 +83,6 @@ Brood::SpriteHandler& Brood::SpriteHandler::operator=( const Brood::SpriteHandle
 
 	return *this;
 }
-
 
 /// 
 /// @public
@@ -111,7 +113,7 @@ void Brood::SpriteHandler::SetSpriteHeight( float a_spriteHeight )
 /// It also saves the textureFilepath. By default uses the body size as 
 ///		the sprite size
 /// 
-/// @param a_texturePath file path to to the texture containing face of the dice;
+/// @param a_texturePath file path to to the texture 
 /// 
 /// @return returns true if texture was successfully set; else false
 /// 
@@ -123,7 +125,9 @@ bool Brood::SpriteHandler::SetTextureFromFilePath( std::string a_texturePath )
 		return false;
 	}
 	// saving the texture path
-	m_texturePath = a_texturePath;
+	std::size_t found = a_texturePath.find_last_of( "/\\" );
+	m_textureDirectoryPath = a_texturePath.substr( 0, found );
+	m_textureFileName = a_texturePath.substr( found + 1 );
 
 	// setting the texture
 	m_body->setTexture( &m_texture );
@@ -134,13 +138,31 @@ bool Brood::SpriteHandler::SetTextureFromFilePath( std::string a_texturePath )
 
 /// 
 /// @public
+/// @brief loads and sets the texture from the file path 
+/// 
+/// It also saves the textureFilepath. By default uses the body size as 
+///		the sprite size
+/// 
+/// @param a_textureDirectoryPath file path to the texture
+/// @param a_textureFileName file name of the texture
+/// 
+/// @return returns true if texture was successfully set; else false
+/// 
+bool Brood::SpriteHandler::SetTextureFromFilePath( std::string a_textureDirectoryPath,
+												   std::string a_textureFileName )
+{
+	return SetTextureFromFilePath( a_textureDirectoryPath + a_textureFileName );
+}
+
+/// 
+/// @public
 /// @brief load and sets a texture from the stored texturePath
 /// 
 /// @return returns true if texture was successfully set; else false
 /// 
 bool Brood::SpriteHandler::SetTextureFromSavedFilePath()
 {
-	return SetTextureFromFilePath( m_texturePath );
+	return SetTextureFromFilePath( m_textureDirectoryPath, m_textureFileName );
 }
 
 /// 
@@ -176,16 +198,31 @@ void Brood::SpriteHandler::SetSpriteFromTexture( unsigned a_num )
 }
 
 /// 
+/// @public
 /// @brief Getter function to get the saved texture path
-/// @return string containing the texture path
 /// 
-const std::string Brood::SpriteHandler::GetTexturePath()
+/// @return string containing the texture directory path
+/// 
+const std::string Brood::SpriteHandler::GetTextureFileName()
 {
-	return m_texturePath;
+	return m_textureFileName;
 }
 
 /// 
+/// @public
+/// @brief Getter function to get the saved texture path
+/// 
+/// @return string containing the texture directory path
+/// 
+const std::string Brood::SpriteHandler::GetTextureDirectoryPath()
+{
+	return m_textureDirectoryPath;
+}
+
+/// 
+/// @public
 /// @brief Getter function to get the saved sprite length
+/// 
 /// @return float value containing the sprite length
 /// 
 const float Brood::SpriteHandler::GetSpritLenght()
@@ -194,7 +231,9 @@ const float Brood::SpriteHandler::GetSpritLenght()
 }
 
 /// 
+/// @public
 /// @brief Getter function to get the saved sprite height
+/// 
 /// @return float value containing the sprite length
 /// 
 const float Brood::SpriteHandler::GetSpritHeight()
@@ -203,7 +242,9 @@ const float Brood::SpriteHandler::GetSpritHeight()
 }
 
 /// 
+/// @public
 /// @brief Getter function to get the index of current Sprite
+/// 
 /// @return float value containing the sprite length
 /// 
 const unsigned Brood::SpriteHandler::GetcurrSpriteIndex()
@@ -219,8 +260,8 @@ void Brood::SpriteHandler::RemoveTexture()
 {
 	m_body->setTexture( nullptr );
 
-	sf::IntRect tempRect( 0, 0, 0, 0);
-	m_body->setTextureRect(tempRect);
+	sf::IntRect tempRect( 0, 0, 0, 0 );
+	m_body->setTextureRect( tempRect );
 }
 
 /// 

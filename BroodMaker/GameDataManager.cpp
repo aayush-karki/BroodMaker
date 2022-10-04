@@ -20,14 +20,16 @@
 // ======================================================================
 
 /// 
+/// @public
 /// @brief default constructor
 /// 
 Brood::Application::Components::GameDataManager::GameDataManager() :
 	m_board(), m_dice(), m_playerManager(), m_deckManager(),
-	m_gameTitle()
+	m_gameTitle(), m_displayCard()
 {}
 
 /// 
+/// @public
 /// @brief  default destructor
 ///
 Brood::Application::Components::GameDataManager::~GameDataManager()
@@ -35,6 +37,7 @@ Brood::Application::Components::GameDataManager::~GameDataManager()
 
 
 /// 
+/// @public
 /// @brief Initializes the member variables
 /// 
 void Brood::Application::Components::GameDataManager::InitializeGameDataManger()
@@ -72,9 +75,11 @@ void Brood::Application::Components::GameDataManager::Debugger()
 	m_board.Debugger();
 	m_dice.Debugger();
 	m_deckManager.Debugger();
+	m_displayCard.Debugger();
 }
 
 /// 
+/// @public
 /// @brief setter funciton to set the game title 
 ///		for the game
 /// 
@@ -86,6 +91,7 @@ void Brood::Application::Components::GameDataManager::SetGameTitle( std::string 
 }
 
 /// 
+/// @public
 /// @brief Getter funciton to get a saved game title
 ///		 of the game 
 /// 
@@ -97,6 +103,7 @@ std::string Brood::Application::Components::GameDataManager::GetGameTitle()
 }
 
 /// 
+/// @public
 /// @brief Getter funciton to get a pointer to board
 ///		 of the game 
 /// 
@@ -108,6 +115,7 @@ Brood::Application::Components::Board* Brood::Application::Components::GameDataM
 }
 
 /// 
+/// @public
 /// @brief Getter funciton to get a pointer to dice 
 ///		 of the game 
 /// 
@@ -119,6 +127,7 @@ Brood::Application::Components::Dice* Brood::Application::Components::GameDataMa
 }
 
 /// 
+/// @public
 /// @brief Getter funciton to get a pointer to player mangaer
 ///		 of the game 
 /// 
@@ -130,6 +139,7 @@ Brood::Application::Components::PlayerManager* Brood::Application::Components::G
 }
 
 /// 
+/// @public
 /// @brief Getter funciton to get a pointer to deck mangaer
 ///		 of the game 
 /// 
@@ -138,6 +148,18 @@ Brood::Application::Components::PlayerManager* Brood::Application::Components::G
 Brood::Application::Components::DeckManager* Brood::Application::Components::GameDataManager::GetDeckManagerPtr()
 {
 	return &m_deckManager;
+}
+
+/// 
+/// @public
+/// @brief Getter funciton to get a pointer to
+///		display card of the game
+/// 
+/// @return pointer pointer to the deck mangaer
+///
+Brood::Application::Components::DisplayCard* Brood::Application::Components::GameDataManager::GetDisplayCardPtr()
+{
+	return &m_displayCard;
 }
 
 // ======================================================================

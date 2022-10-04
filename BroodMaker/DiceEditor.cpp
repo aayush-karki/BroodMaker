@@ -100,7 +100,7 @@ void Brood::Application::DiceEditor::InitializeWorkSpace()
 	// texture panel Elements
 	DyCreateFileInputPannelElement( m_panelBodyPtr, &m_txtDiceFileNamePrompt, &m_txtDiceFileInput,
 									&m_btnDiceOpenFile, "Dice Texture Filename",
-									m_gameData->GetDicePtr()->GetSpriteBody().GetTexturePath() );
+									m_gameData->GetDicePtr()->GetSpriteBody().GetTextureFileName() );
 
 	// initializing a UI to roll a dice
 	m_btnRollDice = DyCreateButton( { m_panelBodyPtr->getSize().x, 25 },
@@ -133,7 +133,7 @@ void Brood::Application::DiceEditor::InitializeWorkSpace()
 void Brood::Application::DiceEditor::Update()
 {
 	// checks if the user interacted with the Dice 
-		// side number panel Element
+	// side number panel Element
 	UpdateDiceSideNum();
 
 	// checks if the user interacted with the Dice 
@@ -185,7 +185,7 @@ void Brood::Application::DiceEditor::UpdateAllDispayElement()
 	m_txtDicePosY->SetText( std::to_string( dicePtr->GetBodyPosition().y ) );
 
 	// dice file name
-	m_txtDiceFileInput->SetText( dicePtr->GetSpriteBody().GetTexturePath() );
+	m_txtDiceFileInput->SetText( dicePtr->GetSpriteBody().GetTextureFileName() );
 }
 
 /// 
@@ -277,7 +277,6 @@ void Brood::Application::DiceEditor::UpdateDiceSideNum()
 		m_txtDiceSide->SetText( std::to_string( currsideNum + 1 ) );
 	}
 }
-
 
 /// 
 /// @private
@@ -532,7 +531,6 @@ void Brood::Application::DiceEditor::UpdateDicePosY()
 	}
 }
 
-
 /// 
 /// @private
 /// @brief checks if the user interacted with the laod dice texture 
@@ -551,6 +549,7 @@ void Brood::Application::DiceEditor::UpdateDicePosY()
 /// @warning Texture should always be in .png form
 /// @warning the Texture for the file should be in \Assets\Textures\DiceTexture\
 ///		as it loads them from there. 
+/// 
 void Brood::Application::DiceEditor::UpdateDiceFileTexture()
 {
 	if( m_txtDiceFileInput->DoElement() )
@@ -576,7 +575,6 @@ void Brood::Application::DiceEditor::UpdateDiceFileTexture()
 		// resetting the m_eterPressed
 		m_txtDiceFileInput->SetEnterPressedFalse();
 	}
-
 }
 
 /// 

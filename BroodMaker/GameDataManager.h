@@ -17,6 +17,7 @@
 #include "Dice.h"
 #include "DeckManager.h"
 #include "PlayerManager.h"
+#include "DisplayCard.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -83,6 +84,9 @@ public:
 	/// Getter funciton to get a pointer to Deck mangaer of the game
 	Brood::Application::Components::DeckManager* GetDeckManagerPtr();
 
+	/// Getter funciton to get a pointer to display card of the game
+	Brood::Application::Components::DisplayCard* GetDisplayCardPtr();
+
 	// ===================== private member variables ===================
 private:
 
@@ -100,7 +104,8 @@ private:
 	/// Deck mangaer for the game
 	Brood::Application::Components::DeckManager m_deckManager;
 
-
+	// cardinfo
+	Brood::Application::Components::DisplayCard m_displayCard;
 };
 
 // ======================================================================

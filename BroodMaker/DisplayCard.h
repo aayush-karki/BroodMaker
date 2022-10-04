@@ -59,6 +59,9 @@ public:
 	// assignment operator
 	DisplayCard& operator=( const DisplayCard& a_other );
 
+	// Initializes the ui elements
+	void InializeDisplayCard();
+
 	// ========= Getter funciton ==============
 
 	// getter function to get the front bg filename

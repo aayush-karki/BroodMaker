@@ -29,6 +29,66 @@ Brood::Application::Components::DisplayCard::DisplayCard() :
 	m_frontBgFileName( "" ), m_backBgFileName( "" ),
 	m_cardInfoToDisplay( nullptr ), m_isCurrFront( true )
 {
+	InializeDisplayCard();
+}
+
+/// 
+/// @public
+/// @brief default destrctor
+///
+Brood::Application::Components::DisplayCard::~DisplayCard()
+{}
+
+///
+/// @brief Copy constructor
+/// 
+/// @param a_other reference to the other display card which is used to 
+///		copy the data form 
+/// 
+Brood::Application::Components::DisplayCard::DisplayCard( const DisplayCard& a_other ) :
+	Brood::BroodUI::Button( a_other ), m_frontBgFileName( a_other.m_frontBgFileName ),
+	m_backBgFileName( a_other.m_backBgFileName ), m_cardInfoToDisplay( a_other.m_cardInfoToDisplay ),
+	m_isCurrFront( a_other.m_isCurrFront )
+{
+	InializeDisplayCard();
+
+}
+
+/// 
+/// @brief assignment operator
+/// 
+/// @param a_other reference to the other display card which is used to 
+///		copy the data form 
+/// 
+/// @return pointer to this display card
+///
+Brood::Application::Components::DisplayCard& Brood::Application::Components::DisplayCard::operator=( const Brood::Application::Components::DisplayCard& a_other )
+{
+	// chekcing for self assignment
+	if( this == &a_other )
+	{
+		return *this;
+	}
+
+	// calling the assignment operator
+	Brood::BroodUI::Button::operator=( a_other );
+	this->m_frontBgFileName = a_other.m_frontBgFileName;
+	this->m_backBgFileName = a_other.m_backBgFileName;
+	this->m_cardInfoToDisplay = a_other.m_cardInfoToDisplay;
+	this->m_isCurrFront = a_other.m_isCurrFront;
+
+	// updaing the displayed text in the ui element
+	UpdateDisplayedText();
+
+	return *this;
+}
+
+///
+/// @public
+/// @brief Initializes the display card
+/// 
+void Brood::Application::Components::DisplayCard::InializeDisplayCard()
+{
 	SetBodySize( 400, 200 );
 	SetBodyPosition( 10, 200 );
 	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
@@ -78,51 +138,8 @@ Brood::Application::Components::DisplayCard::DisplayCard() :
 	// initializing submit button
 	m_BtnSubmit = Brood::BroodUI::Button::DyCreateButton( { 200,40 },
 														  { 110,360 }, "Submit Answer" );
-}
 
-/// 
-/// @public
-/// @brief default destrctor
-///
-Brood::Application::Components::DisplayCard::~DisplayCard()
-{}
-
-///
-/// @brief Copy constructor
-/// 
-/// @param a_other reference to the other display card which is used to 
-///		copy the data form 
-/// 
-Brood::Application::Components::DisplayCard::DisplayCard( const DisplayCard& a_other ) :
-	Brood::BroodUI::Button( a_other ), m_frontBgFileName( a_other.m_frontBgFileName ),
-	m_backBgFileName( a_other.m_backBgFileName ), m_cardInfoToDisplay( a_other.m_cardInfoToDisplay ),
-	m_isCurrFront( a_other.m_isCurrFront )
-{}
-
-/// 
-/// @brief assignment operator
-/// 
-/// @param a_other reference to the other display card which is used to 
-///		copy the data form 
-/// 
-/// @return pointer to this display card
-///
-Brood::Application::Components::DisplayCard& Brood::Application::Components::DisplayCard::operator=( const Brood::Application::Components::DisplayCard& a_other )
-{
-	// chekcing for self assignment
-	if( this == &a_other )
-	{
-		return *this;
-	}
-
-	// calling the assignment operator
-	Brood::BroodUI::Button::operator=( a_other );
-	this->m_frontBgFileName = a_other.m_frontBgFileName;
-	this->m_backBgFileName = a_other.m_backBgFileName;
-	this->m_cardInfoToDisplay = a_other.m_cardInfoToDisplay;
-	this->m_isCurrFront = a_other.m_isCurrFront;
-
-	return *this;
+	UpdateDisplayedText();
 }
 
 
@@ -368,6 +385,11 @@ void Brood::Application::Components::DisplayCard::ToggleBackground()
 /// 
 void Brood::Application::Components::DisplayCard::UpdateDisplayedText()
 {
+	if( m_cardInfoToDisplay == nullptr )
+	{
+		return;
+	}
+
 	m_TxtFrontTimeValue->SetText( std::to_string( m_cardInfoToDisplay->GetTime() ) );
 	m_TxtUpValue->SetText( std::to_string( m_cardInfoToDisplay->GetCorrectNumSteps() ) );
 	m_TxtDownValue->SetText( std::to_string( m_cardInfoToDisplay->GetIncorrectNumSteps() ) );
@@ -384,6 +406,8 @@ void Brood::Application::Components::DisplayCard::UpdateDisplayedText()
 /// 
 void Brood::Application::Components::DisplayCard::Draw( sf::RenderWindow& a_window )
 {
+	Brood::BroodUI::Button::Draw( a_window );
+
 	if( m_isCurrFront )
 	{
 

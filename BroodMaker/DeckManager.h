@@ -76,11 +76,17 @@ public:
 	// assignment operator
 	DeckManager& operator=( const Brood::Application::Components::DeckManager& a_otherDeckManager );
 
+	// getter funciton to get the current deck index
+	unsigned GetCurrActiveDeckIdx( );
+
 	// getter funciton to get the deck at the passed index
 	Brood::Application::Components::Deck* GetDeckAtIdx( unsigned a_deckIdx );
 
 	// getter function to get the decklist
 	std::vector<Brood::Application::Components::Deck>& GetDeckList();
+
+	// getter function to get the current active deck
+	Brood::Application::Components::Deck* GetCurrActiveDeck();
 
 	// getter funciton to get incorrect penalty 
 	bool GetIncorrectPenalty();
@@ -98,7 +104,7 @@ public:
 	void SetDeckSize( unsigned a_deckSize );
 
 	// sets current deck index
-	void SetCurrDeckIdx( unsigned a_currDeckIdx );
+	void SetCurrActiveDeckIdx( unsigned a_currDeckIdx );
 
 	// adds card to the back of current selected deck
 	void AddCardToDeckAtCurrIdx( Brood::Application::Components::CardInfo a_cardToAdd );
