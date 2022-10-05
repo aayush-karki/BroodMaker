@@ -312,7 +312,41 @@ void Brood::Application::CardEditor::InializeCardDisplayPanel()
 ///		CardFrontBg filename textur, CardFrontBg filename textur
 ///
 void Brood::Application::CardEditor::UpdateCardDisplayPanel()
-{}
+{
+	// checks if the user interacted with the Card 
+	// x size panel Element
+	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
+	float boardWindowWidth = ( windowWidth * ( 100 - Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage ) ) / 100;
+	UpdateSizeX( m_btnCardDecSizeX, m_txtCardSizeX, m_btnCardIncSizeX,
+				 m_gameData->GetDisplayCardPtr(), 5, 0, boardWindowWidth );
+
+	// checks if the user interacted with the Card 
+	// x size panel Element
+	uint32_t windowHieght = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height;
+	UpdateSizeY( m_btnCardDecSizeY, m_txtCardSizeY, m_btnCardIncSizeY,
+				 m_gameData->GetDisplayCardPtr(), 5, 0, windowHieght );
+
+	// checks if the user interacted with the Card 
+	// x Pos panel Element
+	//UpdateCardPosX();
+	UpdatePosX( m_btnCardDecPosX, m_txtCardPosX, m_btnCardIncPosX,
+				m_gameData->GetDisplayCardPtr(), 5, 0, boardWindowWidth );
+
+	// checks if the user interacted with the Card 
+	// x Pos panel Element
+	//UpdateCardPosY();
+	UpdatePosY( m_btnCardDecPosY, m_txtCardPosY, m_btnCardIncPosY,
+				m_gameData->GetDisplayCardPtr(), 5, 90, windowHieght );
+
+	// checks if the user interacted with the load 
+	// Card texture panel Element
+	UpdateCardFrontFileTexture();
+
+	// checks if the user interacted with the load 
+	// Card texture panel Element
+	UpdateCardBackFileTexture();
+
+}
 
 /// 
 /// @private
@@ -327,9 +361,9 @@ void Brood::Application::CardEditor::UpdateCardDisplayPanel()
 void Brood::Application::CardEditor::DrawCardDisplayPanel( sf::RenderWindow& a_window )
 {
 	// CardBackBg filename textur 
-	m_btnCardBackBgOpenFile->Draw(a_window);
-	m_txtCardBackBgFileInput->Draw(a_window);
-	m_txtCardBackBgFileNamePrompt->Draw(a_window);
+	m_btnCardBackBgOpenFile->Draw( a_window );
+	m_txtCardBackBgFileInput->Draw( a_window );
+	m_txtCardBackBgFileNamePrompt->Draw( a_window );
 
 	// CardFrontBg filename textur 
 	m_btnCardFrontBgOpenFile->Draw( a_window );
@@ -337,10 +371,10 @@ void Brood::Application::CardEditor::DrawCardDisplayPanel( sf::RenderWindow& a_w
 	m_txtCardFrontBgFileNamePrompt->Draw( a_window );
 
 	// Card Position y
-	m_btnCardIncPosY->Draw(a_window);
-	m_txtCardPosY->Draw(a_window);
-	m_btnCardDecPosY->Draw(a_window);
-	m_txtCardPosYPrompt->Draw(a_window);
+	m_btnCardIncPosY->Draw( a_window );
+	m_txtCardPosY->Draw( a_window );
+	m_btnCardDecPosY->Draw( a_window );
+	m_txtCardPosYPrompt->Draw( a_window );
 
 	// Card Position X
 	m_btnCardIncPosX->Draw( a_window );
@@ -713,9 +747,6 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 &m_txtCardSubmitPosY, &m_btnCardSubmitIncPosY,
 								 "Answer Value Y Pos",
 								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
-
-
-
 }
 
 /// 
@@ -860,6 +891,408 @@ void Brood::Application::CardEditor::UpdateCardInfoPanel()
 
 void Brood::Application::CardEditor::DrawCardInfoPanel( sf::RenderWindow& a_window )
 {}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the laod Card texture 
+///		panel
+///	
+/// Load Card front texture file panel contains load Card front texture file 
+///		promt textbox, textbox to enter the file name, and button to 
+///		open and load the file.
+/// 
+/// Only the textbox to enter the file name, and button to 
+///		open and load the file are interactable
+/// 
+/// If the interactable button was pressed then it opens the filename 
+///		entered
+/// 
+/// @warning Texture should always be in .png form
+/// @warning the Texture for the file should be in \Assets\Textures\CardTexture\
+///		as it loads them from there. 
+/// 
+void Brood::Application::CardEditor::UpdateCardFrontFileTexture()
+{
+	if( m_txtCardFrontBgFileInput->DoElement() )
+	{
+		m_txtCardFrontBgFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+	}
+
+	// check if load the button waas pressed or enter was pressed
+	if( m_btnCardFrontBgOpenFile->DoElement() || ( m_txtCardFrontBgFileInput->IsEnterPressed() &&
+												   m_txtCardFrontBgFileInput->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() ) )
+	{
+		std::string CardFrontTextureFilePath = Brood::Application::StaticVariables::ST_Folders::stm_cardTextures.string();
+
+		CardFrontTextureFilePath += "\\" + m_txtCardFrontBgFileInput->GetText();
+
+
+		// loading the texture file
+		if( !m_gameData->GetDisplayCardPtr()->SetFrontBgFileName( CardFrontTextureFilePath ) )
+		{
+			m_txtCardFrontBgFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor );
+		}
+
+		// resetting the m_eterPressed
+		m_txtCardFrontBgFileInput->SetEnterPressedFalse();
+	}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the laod Card texture 
+///		panel
+///	
+/// Load Card Back texture file panel contains load Card Back texture file 
+///		promt textbox, textbox to enter the file name, and button to 
+///		open and load the file.
+/// 
+/// Only the textbox to enter the file name, and button to 
+///		open and load the file are interactable
+/// 
+/// If the interactable button was pressed then it opens the filename 
+///		entered
+/// 
+/// @warning Texture should always be in .png form
+/// @warning the Texture for the file should be in \Assets\Textures\CardTexture\
+///		as it loads them from there. 
+/// 
+void Brood::Application::CardEditor::UpdateCardBackFileTexture()
+{
+	if( m_txtCardBackBgFileInput->DoElement() )
+	{
+		m_txtCardBackBgFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+	}
+
+	// check if load the button waas pressed or enter was pressed
+	if( m_btnCardBackBgOpenFile->DoElement() || ( m_txtCardBackBgFileInput->IsEnterPressed() &&
+												  m_txtCardBackBgFileInput->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() ) )
+	{
+		std::string CardBackTextureFilePath = Brood::Application::StaticVariables::ST_Folders::stm_cardTextures.string();
+
+		CardBackTextureFilePath += "\\" + m_txtCardBackBgFileInput->GetText();
+
+
+		// loading the texture file
+		if( !m_gameData->GetDisplayCardPtr()->SetBackBgFileName( CardBackTextureFilePath ) )
+		{
+			m_txtCardBackBgFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor );
+		}
+
+		// resetting the m_eterPressed
+		m_txtCardBackBgFileInput->SetEnterPressedFalse();
+	}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the element 
+///		SizeX panel
+///	
+/// SizeX panel contains current element SizeX promt textbox, 
+///		current element SizeX value text box, button to increase the
+///		current element SizeX, and button to decrease the 
+///		element SizeX.
+/// 
+/// Only the button to increase the SizeX, and button 
+///		to decrease SizeX are interactable
+/// 
+/// If the interactable button was pressed then the SizeX 
+///		is increased or decresed by specified units if the 
+///		current element does not go outside the upper limit
+///
+/// @param a_btnDecSizeX pointer to the element's panel 
+///		decSizeX button 
+/// @param a_txtSizeX pointer to the element's panel 
+///		sizeX value textbox
+/// @param a_btnIncSizeX pointer to the element's panel 
+///		incSizeX button
+/// @param a_elemnetToChangeSizeX pointer to the element whose 
+///		size being controlled
+/// @param a_unit unit to increase or decrease
+/// @param a_lowerLimit the minimum SizeX of the element
+/// @param a_upperLimit the maximum SizeX of the element
+/// 
+void Brood::Application::CardEditor::UpdateSizeX( Brood::BroodUI::Button* a_btnDecSizeX,
+												  Brood::BroodUI::TextBox* a_txtSizeX,
+												  Brood::BroodUI::Button* a_btnIncSizeX,
+												  Brood::BroodUI::UIElement* a_elemnetToChangeSizeX,
+												  unsigned a_unit,
+												  unsigned a_lowerLimit,
+												  unsigned a_upperLimit )
+{
+	// chekcing if the decrease the X size was pressed
+	if( a_btnDecSizeX->DoElement() )
+	{
+		// getting x-size information
+		sf::Vector2f currentSize = a_elemnetToChangeSizeX->GetBodySize();
+		int currentSizeX = currentSize.x;
+
+		// checking if the decreasing the element's size any further 
+		// would make the element size less than the lower limit
+		if( currentSizeX - a_unit + 1 <= a_lowerLimit )
+		{
+			return;
+		}
+
+		// decrease the x position by a_unit units
+		a_elemnetToChangeSizeX->SetBodySize( currentSizeX - a_unit, currentSize.y );
+
+		// updating the textbox showing the x-positon value
+		a_txtSizeX->SetText( std::to_string( currentSizeX - a_unit ) );
+	}
+	// chekcing if the incresase the X size was pressed
+	else if( a_btnIncSizeX->DoElement() )
+	{
+		// getting x-size information
+		sf::Vector2f currentSize = a_elemnetToChangeSizeX->GetBodySize();
+		int currentSizeX = currentSize.x;
+
+		// chekcing if increasing the size.x would make element to go
+		// over the upper limit
+		if( ( unsigned )a_elemnetToChangeSizeX->GetBodyPosition().x + currentSizeX + a_unit >= a_upperLimit )
+		{
+			return;
+		}
+
+		// increase the x position by a_unit units
+		a_elemnetToChangeSizeX->SetBodySize( currentSizeX + a_unit, currentSize.y );
+
+		// updating the textbox showing the x-positon value
+		a_txtSizeX->SetText( std::to_string( currentSizeX + a_unit ) );
+	}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the element 
+///		SizeY panel
+///	
+/// SizeY panel contains current element SizeY promt textbox, 
+///		current element SizeY value text box, button to increase the
+///		current element SizeY, and button to decrease the 
+///		element SizeY.
+/// 
+/// Only the button to increase the SizeY, and button 
+///		to decrease SizeY are interactable
+/// 
+/// If the interactable button was pressed then the SizeY 
+///		is increased or decresed by specified units if the 
+///		current element does not go outside the upper limit
+///
+/// @param a_btnDecSizeY pointer to the element's panel 
+///		decSizeY button 
+/// @param a_txtSizeY pointer to the element's panel 
+///		sizeY value textbox
+/// @param a_btnIncSizeY pointer to the element's panel 
+///		incSizeY button
+/// @param a_elemnetToChangeSizeY pointer to the element whose 
+///		size being controlled
+/// @param a_unit unit to increase or decrease
+/// @param a_lowerLimit the minimum SizeY of the element
+/// @param a_upperLimit the maximum SizeY of the element
+/// 
+void Brood::Application::CardEditor::UpdateSizeY( Brood::BroodUI::Button* a_btnDecSizeY,
+												  Brood::BroodUI::TextBox* a_txtSizeY,
+												  Brood::BroodUI::Button* a_btnIncSizeY,
+												  Brood::BroodUI::UIElement* a_elemnetToChangeSizeY,
+												  unsigned a_unit,
+												  unsigned a_lowerLimit,
+												  unsigned a_upperLimit )
+{
+	// chekcing if the decrease the Y size was pressed
+	if( a_btnDecSizeY->DoElement() )
+	{
+		// getting y-size information
+		sf::Vector2f currentSize = a_elemnetToChangeSizeY->GetBodySize();
+		int currentSizeY = currentSize.y;
+
+		// chekcing if the current size.Y is lower limit
+		if( currentSizeY - a_unit + 1 <= a_lowerLimit )
+		{
+			return;
+		}
+
+		// decrease the x position by a_unit units
+		a_elemnetToChangeSizeY->SetBodySize( currentSize.x, currentSizeY - a_unit );
+
+		// updating the textbox showing the x-positon value
+		a_txtSizeY->SetText( std::to_string( currentSizeY - a_unit ) );
+	}
+	// chekcing if the Increase the Y size was pressed
+	else if( a_btnIncSizeY->DoElement() )
+	{
+		// getting y-size information
+		sf::Vector2f currentSize = a_elemnetToChangeSizeY->GetBodySize();
+		int currentSizeY = currentSize.y;
+
+		// chekcing if increasing the size would make elemet 
+		// go over the upper limit
+		if( ( unsigned )a_elemnetToChangeSizeY->GetBodyPosition().y + currentSizeY + a_unit >= a_upperLimit )
+		{
+			return;
+		}
+
+		// increase the Card x position by a_unit units
+		a_elemnetToChangeSizeY->SetBodySize( currentSize.x, currentSizeY + a_unit );
+
+		// updating the textbox showing the x-positon value
+		a_txtSizeY->SetText( std::to_string( currentSizeY + a_unit ) );
+	}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the element 
+///		PosX panel
+///	
+/// PosX panel contains current element PosX promt textbox, 
+///		current element PosX value text box, button to increase the
+///		current element PosX, and button to decrease the 
+///		element PosX.
+/// 
+/// Only the button to increase the PosX, and button 
+///		to decrease PosX are interactable
+/// 
+/// If the interactable button was pressed then the PosX 
+///		is increased or decresed by specified units if the 
+///		current element does not go outside the upper limit
+///
+/// @param a_btnDecPosX pointer to the element's panel 
+///		decPosX button 
+/// @param a_txtPosX pointer to the element's panel 
+///		PosX value textbox
+/// @param a_btnIncPosX pointer to the element's panel 
+///		incPosX button
+/// @param a_elemnetToChangePosX pointer to the element whose 
+///		size being controlled
+/// @param a_unit unit to increase or decrease
+/// @param a_lowerLimit the minimum PosX of the element
+/// @param a_upperLimit the maximum PosX of the element
+/// 
+void Brood::Application::CardEditor::UpdatePosX( Brood::BroodUI::Button* a_btnDecPosX,
+												 Brood::BroodUI::TextBox* a_txtPosX,
+												 Brood::BroodUI::Button* a_btnIncPosX,
+												 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
+												 unsigned a_unit,
+												 unsigned a_lowerLimit,
+												 unsigned a_upperLimit )
+{
+	// chekcing if the decrease the Card X postion was pressed
+	if( a_btnDecPosX->DoElement() )
+	{
+		// getting x-position information
+		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
+		int currentPosX = currentPos.x;
+
+		// checking if decreasing the element position any further
+		// would make the element goes under lower limit 
+		if( currentPosX - a_unit + 1 <= a_lowerLimit )
+		{
+			return;
+		}
+
+		// checking if decreasing the element position any further
+		// would make the element goes over upper limit 
+		if( currentPosX - a_unit <= a_lowerLimit )
+		{
+			return;
+		}
+
+		// decrease the Card x position by a_unit units
+		a_elemnetToChangePosX->SetBodyPosition( currentPosX - a_unit, currentPos.y );
+
+		// updating the textbox showing the x-positon value
+		a_txtPosX->SetText( std::to_string( currentPosX - a_unit ) );
+	}
+	// chekcing if the Increase the Card X postion was pressed
+	else if( a_btnIncPosX->DoElement() )
+	{
+		// getting x-position information
+		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
+		int currentPosX = currentPos.x;
+
+		// checking if increased the element position any further
+		// would make the element goes over upper limit 
+		if( currentPosX + ( unsigned )m_gameData->GetDisplayCardPtr()->GetBodySize().x + a_unit >= a_upperLimit )
+		{
+			return;
+		}
+
+		// increase the Card x position by a_unit units
+		a_elemnetToChangePosX->SetBodyPosition( currentPosX + a_unit, currentPos.y );
+
+		// updating the textbox showing the x-positon value
+		a_txtPosX->SetText( std::to_string( currentPosX + a_unit ) );
+	}
+}
+
+/// 
+/// @private
+/// @brief checks if the user interacted with the player Y Offset panel
+///	
+/// Player Y Offset panel contains current player Y Offset promt textbox, 
+///		current player Y Offset value text box, button to increase the
+///		current player Y Offset, and button to decrease the current 
+///		player Y Offset.
+/// 
+/// Only the button to increase the current player Y Offset, and button 
+///		to decrease the current player Y Offset are interactable
+/// 
+/// If the interactable button was pressed then the current player 
+///		Y Offset is increased or decresed by 1 if the current player
+///		does not go outside the board window 
+///
+void Brood::Application::CardEditor::UpdatePosY( Brood::BroodUI::Button* a_btnDecPosY,
+												 Brood::BroodUI::TextBox* a_txtPosY,
+												 Brood::BroodUI::Button* a_btnIncPosY,
+												 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
+												 unsigned a_unit,
+												 unsigned a_lowerLimit,
+												 unsigned a_upperLimit )
+{
+	// chekcing if the decrease the Card Y postion was pressed
+	if( a_btnDecPosY->DoElement() )
+	{
+		// getting y-position information
+		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
+		int currentPosY = currentPos.y;
+
+		// checking if decreasing the element position any further
+		// would make the element goes under lower limit 
+		if( currentPosY - a_unit + 1 <= a_lowerLimit )
+		{
+			return;
+		}
+
+		// decrease the Card y position by a_unit units
+		a_elemnetToChangePosX->SetBodyPosition( currentPos.x, currentPosY - a_unit );
+
+		// updating the textbox showing the x-positon value
+		a_txtPosY->SetText( std::to_string( currentPosY - a_unit ) );
+	}
+	// chekcing if the increase the Card Y postion was pressed
+	else if( a_btnIncPosY->DoElement() )
+	{
+		// getting y-position information
+		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
+		int currentPosY = currentPos.y;
+
+		// checking if increased the element position any further
+		// would make the element goes over upper limit 
+		if( currentPosY + ( unsigned )m_gameData->GetDisplayCardPtr()->GetBodySize().y + a_unit >= a_upperLimit )
+		{
+			return;
+		}
+
+		// increase the Card x position by 5 units
+		a_elemnetToChangePosX->SetBodyPosition( currentPos.x, currentPosY + 5 );
+
+		// updating the textbox showing the x-positon value
+		a_txtPosY->SetText( std::to_string( currentPosY + 5 ) );
+	}
+}
+
 
 // ======================================================================
 // ================= end of CardEditor class ============================

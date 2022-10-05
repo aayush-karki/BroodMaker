@@ -105,10 +105,10 @@ public:
 	// ========= Setter funciton ==============
 
 	// setter function to set the front bg filename
-	void SetFrontBgFileName( std::string a_frontBgFilename );
+	bool SetFrontBgFileName( std::string a_frontBgFilename );
 
 	// setter function to set the back bg filename
-	void SetBackBgFileName( std::string a_backBgFilename );
+	bool SetBackBgFileName( std::string a_backBgFilename );
 
 	// setter funciton to set the card info that will be 
 	// used to display

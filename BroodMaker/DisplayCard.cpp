@@ -328,9 +328,16 @@ Brood::BroodUI::Button* Brood::Application::Components::DisplayCard::GetSubmitPt
 /// 
 /// @param a_frontBgFilename front background filename
 ///
-void Brood::Application::Components::DisplayCard::SetFrontBgFileName( std::string a_frontBgFilename )
+/// @return true if texture was successfully set
+/// 
+bool Brood::Application::Components::DisplayCard::SetFrontBgFileName( std::string a_frontBgFilename )
 {
-	m_frontBgFileName = a_frontBgFilename;
+	if( GetSpriteBody().SetTextureFromFilePath( a_frontBgFilename ) )
+	{
+		m_frontBgFileName = a_frontBgFilename;
+		return true;
+	}
+	return false;
 }
 
 /// 
@@ -339,9 +346,16 @@ void Brood::Application::Components::DisplayCard::SetFrontBgFileName( std::strin
 /// 
 /// @param a_backBgFilename back background filename
 /// 
-void Brood::Application::Components::DisplayCard::SetBackBgFileName( std::string a_backBgFilename )
+/// @return true if texture was successfully set
+/// 
+bool Brood::Application::Components::DisplayCard::SetBackBgFileName( std::string a_backBgFilename )
 {
-	m_backBgFileName = a_backBgFilename;
+	if( GetSpriteBody().SetTextureFromFilePath( a_backBgFilename ) )
+	{
+		m_backBgFileName = a_backBgFilename;
+		return true;
+	}
+	return false;
 }
 
 /// 

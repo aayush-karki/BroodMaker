@@ -117,6 +117,69 @@ private:
 	// Draw the card info panel element
 	void DrawCardInfoPanel( sf::RenderWindow& a_window );
 
+	// ===========================================================
+	// =========== generalized update functions ==================
+	// ===========================================================
+
+	// TODO may be generalize for other editor too
+	// TODO maybe could be made like a initializer function
+	// TODO make this a signify if the if the element was 
+	//		increased, decreased, or none
+	// checks if the user interacted with the 
+	// x size panel Element
+	// This is a generalized update SizeX
+	void UpdateSizeX( Brood::BroodUI::Button* a_btnDecSizeX,
+					  Brood::BroodUI::TextBox* a_txtSizeX, 
+					  Brood::BroodUI::Button* a_btnIncSizeX, 
+					  Brood::BroodUI::UIElement* a_elemnetToChangeSizeX,
+					  unsigned a_unit, 
+					  unsigned a_lowerLimit,
+					  unsigned a_upperLimit );
+
+	// checks if the user interacted with the 
+	// x size panel Element
+	// This is a generalized update SizeY
+	void UpdateSizeY( Brood::BroodUI::Button* a_btnDecSizeY,
+					  Brood::BroodUI::TextBox* a_txtSizeY,
+					  Brood::BroodUI::Button* a_btnIncSizeY,
+					  Brood::BroodUI::UIElement* a_elemnetToChangeSizeY,
+					  unsigned a_unit, 
+					  unsigned a_lowerLimit,
+					  unsigned a_upperLimit );
+
+	// checks if the user interacted with the Card 
+	// x Pos panel Element
+	void UpdatePosX( Brood::BroodUI::Button* a_btnDecPosX,
+					 Brood::BroodUI::TextBox* a_txtPosX,
+					 Brood::BroodUI::Button* a_btnIncPosX,
+					 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
+					 unsigned a_unit,
+					 unsigned a_lowerLimit,
+					 unsigned a_upperLimit );
+
+	// checks if the user interacted with the Card 
+	// x Pos panel Element
+	void UpdatePosY( Brood::BroodUI::Button* a_btnDecPosY,
+					 Brood::BroodUI::TextBox* a_txtPosY,
+					 Brood::BroodUI::Button* a_btnIncPosY,
+					 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
+					 unsigned a_unit,
+					 unsigned a_lowerLimit,
+					 unsigned a_upperLimit );
+
+	// ===========================================================
+	// =========== update functions for card display setting ======
+	// ===========================================================
+
+
+	// checks if the user interacted with the load 
+	// Card texture panel Element
+	void UpdateCardFrontFileTexture();
+
+	// checks if the user interacted with the load 
+	// Card texture panel Element
+	void UpdateCardBackFileTexture();
+
 	// ================= private member variable ==================  
 private:
 
@@ -632,3 +695,6 @@ private:
 // ======================================================================
 // ================= end of TileEditor class ============================
 // ======================================================================
+
+
+/// TODO see if you can generalize the update function for pos 
