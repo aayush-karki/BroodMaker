@@ -42,7 +42,7 @@ namespace Brood::Application
 /// m_minPlayer
 /// @brief A PlayerManager Class manages all player realted things
 /// 
-class Brood::Application::Components::DisplayCard:
+class Brood::Application::Components::DisplayCard :
 	public Brood::BroodUI::Button
 {
 	// ===================== public member function ===================
@@ -101,6 +101,13 @@ public:
 	// button to show back of the card
 	Brood::BroodUI::Button* GetSubmitPtr();
 
+	// gets the bottom right cordinate of the box that
+	// encloses all the component
+	sf::Vector2f GetFurtherstBottomRightCordinate();
+
+	// gets the top left cordinate of the box that
+	// encloses all the component
+	sf::Vector2f GetNearestTopLeftCordinate();
 
 	// ========= Setter funciton ==============
 
@@ -114,9 +121,12 @@ public:
 	// used to display
 	void SetCardInfoToDisplay( Brood::Application::Components::CardInfo* a_cardInfoToDisplay );
 
-	// toggles the background; if current bg is front
-	// then toggles it to back
-	void ToggleBackground();
+	// toggles the card to display front of the card 
+	// of back of the card
+	void ToggleCardFace();
+
+	// sets m_isCurrFront
+	void SetCardFront( bool a_currFront);
 
 	// updates the displayed text
 	void UpdateDisplayedText();
@@ -125,6 +135,21 @@ public:
 	void Draw( sf::RenderWindow& a_window );
 
 	void Debugger(); // adds the element ID to the text
+
+private:
+	// getter funciton to get the bottom right 
+	// coridinate of the passed component 
+	sf::Vector2f GetCompUpperPos( Brood::BroodUI::UIElement* a_comp );
+
+	// updates the passed largest upper pos by comparaing it with the 
+	// upper position of the passed component
+	void UpdateLargestUpperPos( sf::Vector2f& a_largestUpperPos,
+								Brood::BroodUI::UIElement* a_comp );
+
+	// updates the passed smaller lower pos by comparaing it with the 
+	// lower position of the passed component
+	void UpdateSmallestLowerPos( sf::Vector2f& a_smallestLowerPos,
+								 Brood::BroodUI::UIElement* a_comp );
 
 
 	// ===================== private member variables ===================
@@ -140,24 +165,24 @@ private:
 
 	// pointer contains the info to display
 	Brood::Application::Components::CardInfo* m_cardInfoToDisplay;
-	
+
 	// ========= Font of the card =========
 
 	// displays time user have to complete the question
 	Brood::BroodUI::TextBox* m_TxtFrontTimePromt;
 	Brood::BroodUI::TextBox* m_TxtFrontTimeValue;
-	
+
 	// displays number of steps that user goes forward
 	Brood::BroodUI::TextBox* m_TxtUpPromt;
 	Brood::BroodUI::TextBox* m_TxtUpValue;
-	
+
 	// displays number of steps that user goes backward
 	Brood::BroodUI::TextBox* m_TxtDownPrompt;
 	Brood::BroodUI::TextBox* m_TxtDownValue;
 
 	// button to turn the card of the card
 	Brood::BroodUI::Button* m_BtnTurnCard;
-	
+
 	// ========= back of the card =========
 	// displays time user have to complete the question
 	Brood::BroodUI::TextBox* m_TxtBackTimePromt;
@@ -166,7 +191,7 @@ private:
 	// displays the question that user has to answer
 	Brood::BroodUI::TextBox* m_TxtQuestionPrompt;
 	Brood::BroodUI::TextBox* m_TxtQuestionValue;
-	
+
 	// displays the textbox for user to enter theiranswer
 	Brood::BroodUI::TextBox* m_TxtUserAnswerPrompt;
 	Brood::BroodUI::TextBox* m_TxtUserAnswerValue;

@@ -82,6 +82,9 @@ public:
 	// gets card current active card index
 	unsigned GetCurrActiveCardIdx();
 
+	// gets pointer to card  at current active card index
+	CardInfo* GetCurrActiveCardPtr();
+
 	// sets card current active card index
 	void SetCurrActiveCardIdx( unsigned a_currActiveCardIdx );
 

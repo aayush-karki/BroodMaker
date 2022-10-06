@@ -47,6 +47,8 @@ void Brood::Application::Components::GameDataManager::InitializeGameDataManger()
 
 	// initializing  the playerManager
 	m_playerManager.InitializePlayerManger( m_board.GetBoardPathList().at( 0 ).at( 0 ) );
+
+	m_displayCard.SetCardInfoToDisplay( m_deckManager.GetCurrActiveDeck()->GetCurrActiveCardPtr() );
 }
 
 /// 

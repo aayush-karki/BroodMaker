@@ -195,13 +195,13 @@ void Brood::Application::GameEditor::Debugger()
 /// @brief checks if the user interacted with the set Game Title name 
 ///		panel
 ///	
-/// Game tiel panel contains game title promt textbox, 
+/// Game title panel contains game title promt textbox, 
 ///		and textbox to enter the game title.
 /// 
 /// Only the textbox to enter the game title is interactable
 /// 
 /// If the interactable textbox was pressed then it allows the
-///		player to set the game title
+///		user to set the game title
 /// 
 /// 
 void Brood::Application::GameEditor::UpdateGameTitleInput()

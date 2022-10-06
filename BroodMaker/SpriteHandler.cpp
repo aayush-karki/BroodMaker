@@ -119,6 +119,11 @@ void Brood::SpriteHandler::SetSpriteHeight( float a_spriteHeight )
 /// 
 bool Brood::SpriteHandler::SetTextureFromFilePath( std::string a_texturePath )
 {
+	if( a_texturePath.empty() )
+	{
+		return false;
+	}
+
 	// open texture
 	if( !Brood::UtilityFuncs::LoadTextureFromFile( m_texture, a_texturePath ) )
 	{

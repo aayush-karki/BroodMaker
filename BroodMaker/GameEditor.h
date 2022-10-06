@@ -113,7 +113,7 @@ private:
 	/// holds the panel body
 	sf::RectangleShape* m_panelBodyPtr;
 
-	/// shows how the tile screen of game
+	/// shows the tile screen of game
 	Brood::BroodUI::Button* m_titleScreenBtn;
 
 	/// pointer to the game data
@@ -126,7 +126,7 @@ private:
 	// ==== UI elements to show setting title  ====
 	Brood::BroodUI::TextBox* m_txtSettingTitle;
 
-	// ==== UI elements to enter a game title texture  ====
+	// ==== UI elements to enter a game title name  ====
 
 	/// holds the Game name prompt
 	Brood::BroodUI::TextBox* m_txtGameNamePrompt;

@@ -117,56 +117,7 @@ private:
 	// Draw the card info panel element
 	void DrawCardInfoPanel( sf::RenderWindow& a_window );
 
-	// ===========================================================
-	// =========== generalized update functions ==================
-	// ===========================================================
-
-	// TODO may be generalize for other editor too
-	// TODO maybe could be made like a initializer function
-	// TODO make this a signify if the if the element was 
-	//		increased, decreased, or none
-	// checks if the user interacted with the 
-	// x size panel Element
-	// This is a generalized update SizeX
-	void UpdateSizeX( Brood::BroodUI::Button* a_btnDecSizeX,
-					  Brood::BroodUI::TextBox* a_txtSizeX, 
-					  Brood::BroodUI::Button* a_btnIncSizeX, 
-					  Brood::BroodUI::UIElement* a_elemnetToChangeSizeX,
-					  unsigned a_unit, 
-					  unsigned a_lowerLimit,
-					  unsigned a_upperLimit );
-
-	// checks if the user interacted with the 
-	// x size panel Element
-	// This is a generalized update SizeY
-	void UpdateSizeY( Brood::BroodUI::Button* a_btnDecSizeY,
-					  Brood::BroodUI::TextBox* a_txtSizeY,
-					  Brood::BroodUI::Button* a_btnIncSizeY,
-					  Brood::BroodUI::UIElement* a_elemnetToChangeSizeY,
-					  unsigned a_unit, 
-					  unsigned a_lowerLimit,
-					  unsigned a_upperLimit );
-
-	// checks if the user interacted with the Card 
-	// x Pos panel Element
-	void UpdatePosX( Brood::BroodUI::Button* a_btnDecPosX,
-					 Brood::BroodUI::TextBox* a_txtPosX,
-					 Brood::BroodUI::Button* a_btnIncPosX,
-					 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
-					 unsigned a_unit,
-					 unsigned a_lowerLimit,
-					 unsigned a_upperLimit );
-
-	// checks if the user interacted with the Card 
-	// x Pos panel Element
-	void UpdatePosY( Brood::BroodUI::Button* a_btnDecPosY,
-					 Brood::BroodUI::TextBox* a_txtPosY,
-					 Brood::BroodUI::Button* a_btnIncPosY,
-					 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
-					 unsigned a_unit,
-					 unsigned a_lowerLimit,
-					 unsigned a_upperLimit );
-
+	
 	// ===========================================================
 	// =========== update functions for card display setting ======
 	// ===========================================================
@@ -180,6 +131,38 @@ private:
 	// Card texture panel Element
 	void UpdateCardBackFileTexture();
 
+	// checks if the user interacted with the 
+	// current selceted deck index panel
+	void UpdateCurrSelectedDeckIdx();
+
+	// checks if the user interacted with the 
+	// current selceted Card index panel
+	void UpdateCurrSelectedCardIdx();
+
+	// checks if the user interacted with the 
+	// time panel
+	void UpdateCurrCardInfoTime();
+
+	// checks if the user interacted with the 
+	// Up panel
+	void UpdateCurrCardInfoUp();
+
+	// checks if the user interacted with the 
+	// Down panel
+	void UpdateCurrCardInfoDown();
+
+	// checks if the user interacted with the
+	// enter curr card question panel element
+	void UpdateCurrCardQuestionInput();
+
+	// checks if the user interacted with the
+	// enter curr card answer panel element
+	void UpdateCurrCardAnswerInput();
+
+	// checks if the user interacted with the
+	// turn card panel element
+	void UpdateTurnCard();
+
 	// ================= private member variable ==================  
 private:
 
@@ -188,12 +171,6 @@ private:
 
 	/// holds the panel body
 	sf::RectangleShape* m_panelBodyPtr;
-
-	/// board for the game
-	Brood::Application::Components::Board* m_boardPtr;
-
-	/// pointer to the deck manager
-	Brood::Application::Components::DeckManager* m_deckManagerPtr;
 
 	// holds which setting it is displaying
 	unsigned m_selectedSettingIdx;
@@ -487,6 +464,202 @@ private:
 	/// clicking it will increase the CardTurnCard Position y number by 5
 	Brood::BroodUI::Button* m_btnCardTurnCardIncPosY;
 
+	// ==== UI elements to change CardFrontTimePrompt size x ====
+
+	/// holds the text CardFrontTimePrompt size x
+	Brood::BroodUI::TextBox* m_txtCardFrontTimePromptSizeXPrompt;
+
+	/// clicking it will decrease the CardFrontTimePrompt size x number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimePromptDecSizeX;
+
+	/// displays the current CardFrontTimePrompt size X
+	Brood::BroodUI::TextBox* m_txtCardFrontTimePromptSizeX;
+
+	/// clicking it will increase the CardFrontTimePrompt size x number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimePromptIncSizeX;
+
+	// ==== UI elements to change CardFrontTimePrompt size y ====
+
+	/// holds the text CardFrontTimePrompt size y
+	Brood::BroodUI::TextBox* m_txtCardFrontTimePromptSizeYPrompt;
+
+	/// clicking it will decrease the CardFrontTimePrompt size y number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimePromptDecSizeY;
+
+	/// displays the current CardFrontTimePrompt size y
+	Brood::BroodUI::TextBox* m_txtCardFrontTimePromptSizeY;
+
+	/// clicking it will increase the CardFrontTimePrompt size y number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimePromptIncSizeY;
+
+	// ==== UI elements to change CardFrontTimeValue size x ====
+
+	/// holds the text CardFrontTimeValue size x
+	Brood::BroodUI::TextBox* m_txtCardFrontTimeValueSizeXPrompt;
+
+	/// clicking it will decrease the CardFrontTimeValue size x number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimeValueDecSizeX;
+
+	/// displays the current CardFrontTimeValue size X
+	Brood::BroodUI::TextBox* m_txtCardFrontTimeValueSizeX;
+
+	/// clicking it will increase the CardFrontTimeValue size x number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimeValueIncSizeX;
+
+	// ==== UI elements to change CardFrontTimeValue size y ====
+
+	/// holds the text CardFrontTimeValue size y
+	Brood::BroodUI::TextBox* m_txtCardFrontTimeValueSizeYPrompt;
+
+	/// clicking it will decrease the CardFrontTimeValue size y number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimeValueDecSizeY;
+
+	/// displays the current CardFrontTimeValue size y
+	Brood::BroodUI::TextBox* m_txtCardFrontTimeValueSizeY;
+
+	/// clicking it will increase the CardFrontTimeValue size y number by 5
+	Brood::BroodUI::Button* m_btnCardFrontTimeValueIncSizeY;
+
+	// ==== UI elements to change CardUpPrompt size x ====
+
+	/// holds the text CardUpPrompt size x
+	Brood::BroodUI::TextBox* m_txtCardUpPromptSizeXPrompt;
+
+	/// clicking it will decrease the CardUpPrompt size x number by 5
+	Brood::BroodUI::Button* m_btnCardUpPromptDecSizeX;
+
+	/// displays the current CardUpPrompt size X
+	Brood::BroodUI::TextBox* m_txtCardUpPromptSizeX;
+
+	/// clicking it will increase the CardUpPrompt size x number by 5
+	Brood::BroodUI::Button* m_btnCardUpPromptIncSizeX;
+
+	// ==== UI elements to change CardUpPrompt size y ====
+
+	/// holds the text CardUpPrompt size y
+	Brood::BroodUI::TextBox* m_txtCardUpPromptSizeYPrompt;
+
+	/// clicking it will decrease the CardUpPrompt size y number by 5
+	Brood::BroodUI::Button* m_btnCardUpPromptDecSizeY;
+
+	/// displays the current CardUpPrompt size y
+	Brood::BroodUI::TextBox* m_txtCardUpPromptSizeY;
+
+	/// clicking it will increase the CardUpPrompt size y number by 5
+	Brood::BroodUI::Button* m_btnCardUpPromptIncSizeY;
+
+	// ==== UI elements to change CardUpValue size x ====
+
+	/// holds the text CardUpValue size x
+	Brood::BroodUI::TextBox* m_txtCardUpValueSizeXPrompt;
+
+	/// clicking it will decrease the CardUpValue size x number by 5
+	Brood::BroodUI::Button* m_btnCardUpValueDecSizeX;
+
+	/// displays the current CardUpValue size X
+	Brood::BroodUI::TextBox* m_txtCardUpValueSizeX;
+
+	/// clicking it will increase the CardUpValue size x number by 5
+	Brood::BroodUI::Button* m_btnCardUpValueIncSizeX;
+
+	// ==== UI elements to change CardUpValue size y ====
+
+	/// holds the text CardUpValue size y
+	Brood::BroodUI::TextBox* m_txtCardUpValueSizeYPrompt;
+
+	/// clicking it will decrease the CardUpValue size y number by 5
+	Brood::BroodUI::Button* m_btnCardUpValueDecSizeY;
+
+	/// displays the current CardUpValue size y
+	Brood::BroodUI::TextBox* m_txtCardUpValueSizeY;
+
+	/// clicking it will increase the CardUpValue size y number by 5
+	Brood::BroodUI::Button* m_btnCardUpValueIncSizeY;
+
+	// ==== UI elements to change CardDownPrompt size x ====
+
+	/// holds the text CardDownPrompt size x
+	Brood::BroodUI::TextBox* m_txtCardDownPromptSizeXPrompt;
+
+	/// clicking it will decrease the CardDownPrompt size x number by 5
+	Brood::BroodUI::Button* m_btnCardDownPromptDecSizeX;
+
+	/// displays the current CardDownPrompt size X
+	Brood::BroodUI::TextBox* m_txtCardDownPromptSizeX;
+
+	/// clicking it will increase the CardDownPrompt size x number by 5
+	Brood::BroodUI::Button* m_btnCardDownPromptIncSizeX;
+
+	// ==== UI elements to change CardDownPrompt size y ====
+
+	/// holds the text CardDownPrompt size y
+	Brood::BroodUI::TextBox* m_txtCardDownPromptSizeYPrompt;
+
+	/// clicking it will decrease the CardDownPrompt size y number by 5
+	Brood::BroodUI::Button* m_btnCardDownPromptDecSizeY;
+
+	/// displays the current CardDownPrompt size y
+	Brood::BroodUI::TextBox* m_txtCardDownPromptSizeY;
+
+	/// clicking it will increase the CardDownPrompt size y number by 5
+	Brood::BroodUI::Button* m_btnCardDownPromptIncSizeY;
+
+	// ==== UI elements to change CardDownValue size x ====
+
+	/// holds the text CardDownValue size x
+	Brood::BroodUI::TextBox* m_txtCardDownValueSizeXPrompt;
+
+	/// clicking it will decrease the CardDownValue size x number by 5
+	Brood::BroodUI::Button* m_btnCardDownValueDecSizeX;
+
+	/// displays the current CardDownValue size X
+	Brood::BroodUI::TextBox* m_txtCardDownValueSizeX;
+
+	/// clicking it will increase the CardDownValue size x number by 5
+	Brood::BroodUI::Button* m_btnCardDownValueIncSizeX;
+
+	// ==== UI elements to change CardDownValue size y ====
+
+	/// holds the text CardDownValue size y
+	Brood::BroodUI::TextBox* m_txtCardDownValueSizeYPrompt;
+
+	/// clicking it will decrease the CardDownValue size y number by 5
+	Brood::BroodUI::Button* m_btnCardDownValueDecSizeY;
+
+	/// displays the current CardDownValue size y
+	Brood::BroodUI::TextBox* m_txtCardDownValueSizeY;
+
+	/// clicking it will increase the CardDownValue size y number by 5
+	Brood::BroodUI::Button* m_btnCardDownValueIncSizeY;
+
+	// ==== UI elements to change CardTurnCard size x ====
+
+	/// holds the text CardTurnCard size x
+	Brood::BroodUI::TextBox* m_txtCardTurnCardSizeXPrompt;
+
+	/// clicking it will decrease the CardTurnCard size x number by 5
+	Brood::BroodUI::Button* m_btnCardTurnCardDecSizeX;
+
+	/// displays the current CardTurnCard size X
+	Brood::BroodUI::TextBox* m_txtCardTurnCardSizeX;
+
+	/// clicking it will increase the CardTurnCard size x number by 5
+	Brood::BroodUI::Button* m_btnCardTurnCardIncSizeX;
+
+	// ==== UI elements to change CardTurnCard size y ====
+
+	/// holds the text CardTurnCard size y
+	Brood::BroodUI::TextBox* m_txtCardTurnCardSizeYPrompt;
+
+	/// clicking it will decrease the CardTurnCard size y number by 5
+	Brood::BroodUI::Button* m_btnCardTurnCardDecSizeY;
+
+	/// displays the current CardTurnCard size y
+	Brood::BroodUI::TextBox* m_txtCardTurnCardSizeY;
+
+	/// clicking it will increase the CardTurnCard size y number by 5
+	Brood::BroodUI::Button* m_btnCardTurnCardIncSizeY;
+
 	// ===========================================================
 	// =========== member variables for back of the card =========
 	// ===========================================================
@@ -684,12 +857,298 @@ private:
 	/// displays the current CardSubmit Position y
 	Brood::BroodUI::TextBox* m_txtCardSubmitPosY;
 
-	/// clicking it will increase the CardSubmit Position y number by 5
+	/// clicking it will increase the CardSubmit Size y number by 5
 	Brood::BroodUI::Button* m_btnCardSubmitIncPosY;
+
+	// ==== UI elements to change CardBackTimePrompt position x ====
+
+	/// holds the text CardBackTimePrompt position x
+	Brood::BroodUI::TextBox* m_txtCardBackTimePromptSizeXPrompt;
+
+	/// clicking it will decrease the CardBackTimePrompt Size x number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimePromptDecSizeX;
+
+	/// displays the current CardBackTimePrompt Size X
+	Brood::BroodUI::TextBox* m_txtCardBackTimePromptSizeX;
+
+	/// clicking it will increase the CardBackTimePrompt Size x number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimePromptIncSizeX;
+
+	// ==== UI elements to change CardBackTimePrompt Size y ====
+
+	/// holds the text CardBackTimePrompt Size y
+	Brood::BroodUI::TextBox* m_txtCardBackTimePromptSizeYPrompt;
+
+	/// clicking it will decrease the CardBackTimePrompt Size y number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimePromptDecSizeY;
+
+	/// displays the current CardBackTimePrompt Size y
+	Brood::BroodUI::TextBox* m_txtCardBackTimePromptSizeY;
+
+	/// clicking it will increase the CardBackTimePrompt Size y number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimePromptIncSizeY;
+
+	// ==== UI elements to change CardBackTimeValue position x ====
+
+	/// holds the text CardBackTimeValue position x
+	Brood::BroodUI::TextBox* m_txtCardBackTimeValueSizeXPrompt;
+
+	/// clicking it will decrease the CardBackTimeValue Size x number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimeValueDecSizeX;
+
+	/// displays the current CardBackTimeValue Size X
+	Brood::BroodUI::TextBox* m_txtCardBackTimeValueSizeX;
+
+	/// clicking it will increase the CardBackTimeValue Size x number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimeValueIncSizeX;
+
+	// ==== UI elements to change CardBackTimeValue Size y ====
+
+	/// holds the text CardBackTimeValue Size y
+	Brood::BroodUI::TextBox* m_txtCardBackTimeValueSizeYPrompt;
+
+	/// clicking it will decrease the CardBackTimeValue Size y number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimeValueDecSizeY;
+
+	/// displays the current CardBackTimeValue Size y
+	Brood::BroodUI::TextBox* m_txtCardBackTimeValueSizeY;
+
+	/// clicking it will increase the CardBackTimeValue Size y number by 5
+	Brood::BroodUI::Button* m_btnCardBackTimeValueIncSizeY;
+
+	// ==== UI elements to change CardQuestionPrompt position x ====
+
+	/// holds the text CardQuestionPrompt position x
+	Brood::BroodUI::TextBox* m_txtCardQuestionPromptSizeXPrompt;
+
+	/// clicking it will decrease the CardQuestionPrompt Size x number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionPromptDecSizeX;
+
+	/// displays the current CardQuestionPrompt Size X
+	Brood::BroodUI::TextBox* m_txtCardQuestionPromptSizeX;
+
+	/// clicking it will increase the CardQuestionPrompt Size x number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionPromptIncSizeX;
+
+	// ==== UI elements to change CardQuestionPrompt Size y ====
+
+	/// holds the text CardQuestionPrompt Size y
+	Brood::BroodUI::TextBox* m_txtCardQuestionPromptSizeYPrompt;
+
+	/// clicking it will decrease the CardQuestionPrompt Size y number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionPromptDecSizeY;
+
+	/// displays the current CardQuestionPrompt Size y
+	Brood::BroodUI::TextBox* m_txtCardQuestionPromptSizeY;
+
+	/// clicking it will increase the CardQuestionPrompt Size y number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionPromptIncSizeY;
+
+	// ==== UI elements to change CardQuestionValue position x ====
+
+	/// holds the text CardQuestionValue position x
+	Brood::BroodUI::TextBox* m_txtCardQuestionValueSizeXPrompt;
+
+	/// clicking it will decrease the CardQuestionValue Size x number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionValueDecSizeX;
+
+	/// displays the current CardQuestionValue Size X
+	Brood::BroodUI::TextBox* m_txtCardQuestionValueSizeX;
+
+	/// clicking it will increase the CardQuestionValue Size x number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionValueIncSizeX;
+
+	// ==== UI elements to change CardQuestionValue Size y ====
+
+	/// holds the text CardQuestionValue Size y
+	Brood::BroodUI::TextBox* m_txtCardQuestionValueSizeYPrompt;
+
+	/// clicking it will decrease the CardQuestionValue Size y number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionValueDecSizeY;
+
+	/// displays the current CardQuestionValue Size y
+	Brood::BroodUI::TextBox* m_txtCardQuestionValueSizeY;
+
+	/// clicking it will increase the CardQuestionValue Size y number by 5
+	Brood::BroodUI::Button* m_btnCardQuestionValueIncSizeY;
+
+	// ==== UI elements to change CardAnswerPrompt position x ====
+
+	/// holds the text CardAnswerPrompt position x
+	Brood::BroodUI::TextBox* m_txtCardAnswerPromptSizeXPrompt;
+
+	/// clicking it will decrease the CardAnswerPrompt Size x number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerPromptDecSizeX;
+
+	/// displays the current CardAnswerPrompt Size X
+	Brood::BroodUI::TextBox* m_txtCardAnswerPromptSizeX;
+
+	/// clicking it will increase the CardAnswerPrompt Size x number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerPromptIncSizeX;
+
+	// ==== UI elements to change CardAnswerPrompt Size y ====
+
+	/// holds the text CardAnswerPrompt Size y
+	Brood::BroodUI::TextBox* m_txtCardAnswerPromptSizeYPrompt;
+
+	/// clicking it will decrease the CardAnswerPrompt Size y number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerPromptDecSizeY;
+
+	/// displays the current CardAnswerPrompt Size y
+	Brood::BroodUI::TextBox* m_txtCardAnswerPromptSizeY;
+
+	/// clicking it will increase the CardAnswerPrompt Size y number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerPromptIncSizeY;
+
+	// ==== UI elements to change CardAnswerValue position x ====
+
+	/// holds the text CardAnswerValue position x
+	Brood::BroodUI::TextBox* m_txtCardAnswerValueSizeXPrompt;
+
+	/// clicking it will decrease the CardAnswerValue Size x number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerValueDecSizeX;
+
+	/// displays the current CardAnswerValue Size X
+	Brood::BroodUI::TextBox* m_txtCardAnswerValueSizeX;
+
+	/// clicking it will increase the CardAnswerValue Size x number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerValueIncSizeX;
+
+	// ==== UI elements to change CardAnswerValue Size y ====
+
+	/// holds the text CardAnswerValue Size y
+	Brood::BroodUI::TextBox* m_txtCardAnswerValueSizeYPrompt;
+
+	/// clicking it will decrease the CardAnswerValue Size y number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerValueDecSizeY;
+
+	/// displays the current CardAnswerValue Size y
+	Brood::BroodUI::TextBox* m_txtCardAnswerValueSizeY;
+
+	/// clicking it will increase the CardAnswerValue Size y number by 5
+	Brood::BroodUI::Button* m_btnCardAnswerValueIncSizeY;
+
+	// ==== UI elements to change CardSubmit position x ====
+
+	/// holds the text CardSubmit position x
+	Brood::BroodUI::TextBox* m_txtCardSubmitSizeXPrompt;
+
+	/// clicking it will decrease the CardSubmit Size x number by 5
+	Brood::BroodUI::Button* m_btnCardSubmitDecSizeX;
+
+	/// displays the current CardSubmit Size X
+	Brood::BroodUI::TextBox* m_txtCardSubmitSizeX;
+
+	/// clicking it will increase the CardSubmit Size x number by 5
+	Brood::BroodUI::Button* m_btnCardSubmitIncSizeX;
+
+	// ==== UI elements to change CardSubmit Size y ====
+
+	/// holds the text CardSubmit Size y
+	Brood::BroodUI::TextBox* m_txtCardSubmitSizeYPrompt;
+
+	/// clicking it will decrease the CardSubmit Size y number by 5
+	Brood::BroodUI::Button* m_btnCardSubmitDecSizeY;
+
+	/// displays the current CardSubmit Size y
+	Brood::BroodUI::TextBox* m_txtCardSubmitSizeY;
+
+	/// clicking it will increase the CardSubmit Size y number by 5
+	Brood::BroodUI::Button* m_btnCardSubmitIncSizeY;
 
 	// ===========================================================
 	// =========== member variables for card info setting ========
 	// ===========================================================
+
+	// ==== UI elements to change current Deck number ====
+
+	/// holds the text Curr Deck Num
+	Brood::BroodUI::TextBox* m_txtDeckNumPrompt;
+
+	/// clicking it will decrease the Curr Deck Num number by 1
+	Brood::BroodUI::Button* m_btnDecDeckNum;
+
+	/// displays the current CardSubmit Size y
+	Brood::BroodUI::TextBox* m_txtDeckNum;
+
+	/// clicking it will increase the Curr Deck Num number by 1
+	Brood::BroodUI::Button* m_btnIncDeckNum;
+
+	// ==== UI elements to change current Card number ====
+
+	/// holds the text Curr card Num
+	Brood::BroodUI::TextBox* m_txtCurrCardNumPrompt;
+
+	/// clicking it will decrease the Curr card number by 1
+	Brood::BroodUI::Button* m_btnDecCurrCardNum;
+
+	/// displays the current CardSubmit Size y
+	Brood::BroodUI::TextBox* m_txtCurrCardNum;
+
+	/// clicking it will increase the Curr card Num number by 1
+	Brood::BroodUI::Button* m_btnIncCurrCardNum;
+
+	// ==== UI elements to change current Card Time ====
+
+	/// holds the text Curr card time
+	Brood::BroodUI::TextBox* m_txtCurrCardTimePrompt;
+
+	/// clicking it will decrease the Curr card time number by 1
+	Brood::BroodUI::Button* m_btnDecCurrCardTime;
+
+	/// displays the current Curr card time
+	Brood::BroodUI::TextBox* m_txtCurrCardTime;
+
+	/// clicking it will increase the Curr card Time number by 1
+	Brood::BroodUI::Button* m_btnIncCurrCardTime;
+
+	// ==== UI elements to change current Card Up ====
+
+	/// holds the text Curr card up
+	Brood::BroodUI::TextBox* m_txtCurrCardUpPrompt;
+
+	/// clicking it will decrease the Curr card up number by 1
+	Brood::BroodUI::Button* m_btnDecCurrCardUp;
+
+	/// displays the current Curr card up
+	Brood::BroodUI::TextBox* m_txtCurrCardUp;
+
+	/// clicking it will increase the Curr card up number by 1
+	Brood::BroodUI::Button* m_btnIncCurrCardUp;
+
+	// ==== UI elements to change current Card Down ====
+
+	/// holds the text Curr card down
+	Brood::BroodUI::TextBox* m_txtCurrCardDownPrompt;
+
+	/// clicking it will decrease the Curr card down number by 1
+	Brood::BroodUI::Button* m_btnDecCurrCardDown;
+
+	/// displays the current Curr card down
+	Brood::BroodUI::TextBox* m_txtCurrCardDown;
+
+	/// clicking it will increase the Curr card down number by 1
+	Brood::BroodUI::Button* m_btnIncCurrCardDown;
+
+	// ==== UI elements to enter a curr Card Question  ====
+
+	/// holds the curr Card Question prompt
+	Brood::BroodUI::TextBox* m_txtCurrCardQuestionPrompt;
+
+	/// holds the question user enters
+	Brood::BroodUI::TextBox* m_txtCurrCardQuestionInput;
+
+	// ==== UI elements to enter a curr Card Answer  ====
+
+	/// holds the curr Card Answer prompt
+	Brood::BroodUI::TextBox* m_txtCurrCardAnswerPrompt;
+
+	/// holds the question user enters
+	Brood::BroodUI::TextBox* m_txtCurrCardAnswerInput;
+
+	// ==== UI elements to turn the card  ====
+
+	Brood::BroodUI::Button* m_btnTurnCardAround;
 };
 
 // ======================================================================

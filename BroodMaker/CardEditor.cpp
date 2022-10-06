@@ -29,7 +29,8 @@
 ///
 Brood::Application::CardEditor::CardEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											sf::RectangleShape* a_panelPtr ) :
-	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
+	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr ),
+	m_selectedSettingIdx( 0 )
 {
 	InitializeWorkSpace();
 }
@@ -92,6 +93,8 @@ void Brood::Application::CardEditor::Update()
 	{
 		// Update the card display front componet panel
 		UpdateCardDisplayFcompPanel();
+		m_gameData->GetDisplayCardPtr()->SetCardFront( true );
+
 	}
 	else if( m_selectedSettingIdx == 2 )
 	{
@@ -111,7 +114,14 @@ void Brood::Application::CardEditor::Update()
 /// @brief updates the display element
 /// 
 void Brood::Application::CardEditor::UpdateAllDispayElement()
-{}
+{
+
+	Brood::Application::Components::Deck* activeDeck = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck();
+
+
+	// updating the display card
+	m_gameData->GetDisplayCardPtr()->SetCardInfoToDisplay( activeDeck->GetCurrActiveCardPtr() );
+}
 
 /// 
 /// @public
@@ -127,7 +137,6 @@ void Brood::Application::CardEditor::Draw( sf::RenderWindow& a_window )
 	// drawing game component
 	m_gameData->Draw( a_window );
 
-	m_gameData->GetDisplayCardPtr()->Draw( a_window );
 
 	if( m_selectedSettingIdx == 0 )
 	{
@@ -149,6 +158,8 @@ void Brood::Application::CardEditor::Draw( sf::RenderWindow& a_window )
 		// Draw the card info panel
 		DrawCardInfoPanel( a_window );
 	}
+
+	m_gameData->GetDisplayCardPtr()->Draw( a_window );
 
 	// Drawing the setting selection drop down input
 	m_ddiSettingSelection->Draw( a_window );
@@ -190,8 +201,8 @@ void Brood::Application::CardEditor::InitailizeSettingSelectionDDI()
 												   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 
 	m_ddiSettingSelection->AddItemToMenu( "Display card Setting" );
-	m_ddiSettingSelection->AddItemToMenu( "Display card front componet Setting" );
-	m_ddiSettingSelection->AddItemToMenu( "Display card back componet Setting" );
+	m_ddiSettingSelection->AddItemToMenu( "Display card f.component Setting" );
+	m_ddiSettingSelection->AddItemToMenu( "Display card b.component Setting" );
 	m_ddiSettingSelection->AddItemToMenu( "Existing Card Setting" );
 
 	// setting the font size to 18
@@ -200,7 +211,7 @@ void Brood::Application::CardEditor::InitailizeSettingSelectionDDI()
 	// setting the first item as the first 
 	std::string itemName = m_ddiSettingSelection->GetItemList().at( m_selectedSettingIdx )->GetText();
 
-	while( itemName.size() < 39 )
+	while( itemName.size() < 33 )
 	{
 		itemName = " " + itemName + " ";
 	}
@@ -248,6 +259,15 @@ void Brood::Application::CardEditor::UpdateSettingSelectionDDI()
 						itemList.at( currIDx )->GetText() << std::endl;
 
 					m_selectedSettingIdx = currIDx;
+
+					if( currIDx == 1 )
+					{
+						m_gameData->GetDisplayCardPtr()->SetCardFront( true );
+					}
+					else if( currIDx == 2 )
+					{
+						m_gameData->GetDisplayCardPtr()->SetCardFront( false );
+					}
 				}
 			}
 		}
@@ -259,7 +279,7 @@ void Brood::Application::CardEditor::UpdateSettingSelectionDDI()
 /// @brief Initializes the panel element of the Card Display setting 
 /// 
 /// It initializes the folloing panel element: 
-///		card X-postion, card Y-position, card X-size, card Y-Size, 
+///		card X-position, card Y-position, card X-size, card Y-Size, 
 ///		CardFrontBg filename textur, CardFrontBg filename textur
 ///
 void Brood::Application::CardEditor::InializeCardDisplayPanel()
@@ -308,35 +328,41 @@ void Brood::Application::CardEditor::InializeCardDisplayPanel()
 /// @brief Updates the panel element of the Card Display setting 
 /// 
 /// It Updates the folloing panel element: 
-///		card X-postion, card Y-position, card X-size, card Y-Size, 
+///		card X-position, card Y-position, card X-size, card Y-Size, 
 ///		CardFrontBg filename textur, CardFrontBg filename textur
 ///
+/// TODO make it so that when the display card pos changes the 
+///		pos of it component also changed
+/// 
 void Brood::Application::CardEditor::UpdateCardDisplayPanel()
 {
+	Brood::Application::Components::DisplayCard* displayCardPtr = m_gameData->GetDisplayCardPtr();
+
 	// checks if the user interacted with the Card 
 	// x size panel Element
 	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
 	float boardWindowWidth = ( windowWidth * ( 100 - Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_panelPercentage ) ) / 100;
-	UpdateSizeX( m_btnCardDecSizeX, m_txtCardSizeX, m_btnCardIncSizeX,
-				 m_gameData->GetDisplayCardPtr(), 5, 0, boardWindowWidth );
+
+	UpdateDecIncSizeX( m_btnCardDecSizeX, m_txtCardSizeX, m_btnCardIncSizeX,
+					   displayCardPtr, 5, 0, boardWindowWidth );
 
 	// checks if the user interacted with the Card 
 	// x size panel Element
 	uint32_t windowHieght = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_height;
-	UpdateSizeY( m_btnCardDecSizeY, m_txtCardSizeY, m_btnCardIncSizeY,
-				 m_gameData->GetDisplayCardPtr(), 5, 0, windowHieght );
+	UpdateDecIncSizeY( m_btnCardDecSizeY, m_txtCardSizeY, m_btnCardIncSizeY,
+					   displayCardPtr, 5, 0, windowHieght );
 
 	// checks if the user interacted with the Card 
 	// x Pos panel Element
 	//UpdateCardPosX();
-	UpdatePosX( m_btnCardDecPosX, m_txtCardPosX, m_btnCardIncPosX,
-				m_gameData->GetDisplayCardPtr(), 5, 0, boardWindowWidth );
+	UpdateDecIncPosX( m_btnCardDecPosX, m_txtCardPosX, m_btnCardIncPosX,
+					  displayCardPtr, 5, 0, boardWindowWidth );
 
 	// checks if the user interacted with the Card 
 	// x Pos panel Element
 	//UpdateCardPosY();
-	UpdatePosY( m_btnCardDecPosY, m_txtCardPosY, m_btnCardIncPosY,
-				m_gameData->GetDisplayCardPtr(), 5, 90, windowHieght );
+	UpdateDecIncPosY( m_btnCardDecPosY, m_txtCardPosY, m_btnCardIncPosY,
+					  displayCardPtr, 5, 90, windowHieght );
 
 	// checks if the user interacted with the load 
 	// Card texture panel Element
@@ -353,7 +379,7 @@ void Brood::Application::CardEditor::UpdateCardDisplayPanel()
 /// @brief Draws the panel element of the Card Display setting 
 /// 
 /// It draws the folloing panel element: 
-///		card X-postion, card Y-position, card X-size, card Y-Size, 
+///		card X-position, card Y-position, card X-size, card Y-Size, 
 ///		CardFrontBg filename textur, CardFrontBg filename textur
 /// 
 /// @param a_window reference to the render window
@@ -401,20 +427,34 @@ void Brood::Application::CardEditor::DrawCardDisplayPanel( sf::RenderWindow& a_w
 ///		front component setting 
 /// 
 /// It initializes the folloing panel element: 
-///		card front time prompt X-postion, 
+///		card front time prompt X-position, 
 ///		card front time prompt Y-position,
-///		card front time value X-postion, 
+///		card front time value X-position, 
 ///		card front time value Y-position,
-///		card up prompt X-postion, 
+///		card up prompt X-position, 
 ///		card up prompt Y-position,
-///		card up value X-postion, 
+///		card up value X-position, 
 ///		card up value Y-position,
-///		card down prompt X-postion, 
+///		card down prompt X-position, 
 ///		card down prompt Y-position,
-///		card down value X-postion, 
+///		card down value X-position, 
 ///		card down value Y-position,
-///		card turn card X-postion, 
+///		card turn card X-position, 
 ///		card turn card Y-position
+///		card front time prompt X-size, 
+///		card front time prompt Y-size,
+///		card front time value X-size, 
+///		card front time value Y-size,
+///		card up prompt X-size, 
+///		card up prompt Y-size,
+///		card up value X-size, 
+///		card up value Y-size,
+///		card down prompt X-size, 
+///		card down prompt Y-size,
+///		card down value X-size, 
+///		card down value Y-size,
+///		card turn card X-size, 
+///		card turn card Y-size
 ///
 void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 {
@@ -495,14 +535,99 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 	// creating a panel element to control the CardTurnCard Pos X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosXPrompt, &m_btnCardTurnCardDecPosX,
 								 &m_txtCardTurnCardPosX, &m_btnCardTurnCardIncPosX,
-								 "Down Value X Pos",
+								 "Turn Card X Pos",
 								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
 
 	// creating a panel element to control the CardTurnCard Pos Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosYPrompt, &m_btnCardTurnCardDecPosY,
 								 &m_txtCardTurnCardPosY, &m_btnCardTurnCardIncPosY,
-								 "Down Value Y Pos",
+								 "Turn Card Y Pos",
 								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
+
+	// creating a panel element to control the CardFrontTimePrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeXPrompt, &m_btnCardFrontTimePromptDecSizeX,
+								 &m_txtCardFrontTimePromptSizeX, &m_btnCardFrontTimePromptIncSizeX,
+								 "Front Time Pmt X Size",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardFrontTimePrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeYPrompt, &m_btnCardFrontTimePromptDecSizeY,
+								 &m_txtCardFrontTimePromptSizeY, &m_btnCardFrontTimePromptIncSizeY,
+								 "Front Time Pmt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardFrontTimeValue Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValueSizeXPrompt, &m_btnCardFrontTimeValueDecSizeX,
+								 &m_txtCardFrontTimeValueSizeX, &m_btnCardFrontTimeValueIncSizeX,
+								 "Front Time Val X Size",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardFrontTimeValue Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValueSizeYPrompt, &m_btnCardFrontTimeValueDecSizeY,
+								 &m_txtCardFrontTimeValueSizeY, &m_btnCardFrontTimeValueIncSizeY,
+								 "Front Time Val Y Size",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardUpPrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptSizeXPrompt, &m_btnCardUpPromptDecSizeX,
+								 &m_txtCardUpPromptSizeX, &m_btnCardUpPromptIncSizeX,
+								 "Up Prompt X Size",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardUpPrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptSizeYPrompt, &m_btnCardUpPromptDecSizeY,
+								 &m_txtCardUpPromptSizeY, &m_btnCardUpPromptIncSizeY,
+								 "Up Prompt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardUpValue Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValueSizeXPrompt, &m_btnCardUpValueDecSizeX,
+								 &m_txtCardUpValueSizeX, &m_btnCardUpValueIncSizeX,
+								 "Up Value X Size",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardUpValue Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValueSizeYPrompt, &m_btnCardUpValueDecSizeY,
+								 &m_txtCardUpValueSizeY, &m_btnCardUpValueIncSizeY,
+								 "Up Value Y Size",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardDownPrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptSizeXPrompt, &m_btnCardDownPromptDecSizeX,
+								 &m_txtCardDownPromptSizeX, &m_btnCardDownPromptIncSizeX,
+								 "Down Prompt X Size",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardDownPrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptSizeYPrompt, &m_btnCardDownPromptDecSizeY,
+								 &m_txtCardDownPromptSizeY, &m_btnCardDownPromptIncSizeY,
+								 "Down Prompt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardDownValue Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValueSizeXPrompt, &m_btnCardDownValueDecSizeX,
+								 &m_txtCardDownValueSizeX, &m_btnCardDownValueIncSizeX,
+								 "Down Value X Size",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardDownValue Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValueSizeYPrompt, &m_btnCardDownValueDecSizeY,
+								 &m_txtCardDownValueSizeY, &m_btnCardDownValueIncSizeY,
+								 "Down Value Y Size",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardTurnCard Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardSizeXPrompt, &m_btnCardTurnCardDecSizeX,
+								 &m_txtCardTurnCardSizeX, &m_btnCardTurnCardIncSizeX,
+								 "Turn Card X Size",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardTurnCard Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardSizeYPrompt, &m_btnCardTurnCardDecSizeY,
+								 &m_txtCardTurnCardSizeY, &m_btnCardTurnCardIncSizeY,
+								 "Turn Card Y Size",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
+
 }
 
 /// 
@@ -511,23 +636,186 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 ///		front component setting 
 /// 
 /// It Updates the folloing panel element: 
-///		card front time prompt X-postion, 
+///		card front time prompt X-position, 
 ///		card front time prompt Y-position,
-///		card front time value X-postion, 
+///		card front time value X-position, 
 ///		card front time value Y-position,
-///		card up prompt X-postion, 
+///		card up prompt X-position, 
 ///		card up prompt Y-position,
-///		card up value X-postion, 
+///		card up value X-position, 
 ///		card up value Y-position,
-///		card down prompt X-postion, 
+///		card down prompt X-position, 
 ///		card down prompt Y-position,
-///		card down value X-postion, 
+///		card down value X-position, 
 ///		card down value Y-position,
-///		card turn card X-postion, 
+///		card turn card X-position, 
 ///		card turn card Y-position
+///		card front time prompt X-size, 
+///		card front time prompt Y-size,
+///		card front time value X-size, 
+///		card front time value Y-size,
+///		card up prompt X-size, 
+///		card up prompt Y-size,
+///		card up value X-size, 
+///		card up value Y-size,
+///		card down prompt X-size, 
+///		card down prompt Y-size,
+///		card down value X-size, 
+///		card down value Y-size,
+///		card turn card X-size, 
+///		card turn card Y-size
+/// 
+/// TODO make it so that card component are bound inside
 /// 
 void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
-{}
+{
+	Brood::Application::Components::DisplayCard* displayCardPtr = m_gameData->GetDisplayCardPtr();
+	unsigned displayCardLowerLimitX = displayCardPtr->GetBodyPosition().x;
+	unsigned displayCardPosUpperLimitX = displayCardPtr->GetBodyPosition().x + displayCardPtr->GetBodySize().x;
+
+	unsigned displayCardLowerLimitY = displayCardPtr->GetBodyPosition().y;
+	unsigned displayCardPosUpperLimitY = displayCardPtr->GetBodyPosition().y + displayCardPtr->GetBodySize().y;
+
+	// checks if the user interacted with the CardFrontTimePrompt 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardFrontTimePromptDecPosX, m_txtCardFrontTimePromptPosX, m_btnCardFrontTimePromptIncPosX,
+					  displayCardPtr->GetFrontTimePromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardFrontTimePrompt 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardFrontTimePromptDecPosY, m_txtCardFrontTimePromptPosY, m_btnCardFrontTimePromptIncPosY,
+					  displayCardPtr->GetFrontTimePromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardFrontTimeValue 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardFrontTimeValueDecPosX, m_txtCardFrontTimeValuePosX, m_btnCardFrontTimeValueIncPosX,
+					  displayCardPtr->GetFrontTimeValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardFrontTimeValue 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardFrontTimeValueDecPosY, m_txtCardFrontTimeValuePosY, m_btnCardFrontTimeValueIncPosY,
+					  displayCardPtr->GetFrontTimeValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardUpPrompt 
+		// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardUpPromptDecPosX, m_txtCardUpPromptPosX, m_btnCardUpPromptIncPosX,
+					  displayCardPtr->GetUpPromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardUpPrompt 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardUpPromptDecPosY, m_txtCardUpPromptPosY, m_btnCardUpPromptIncPosY,
+					  displayCardPtr->GetUpPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardUpValue 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardUpValueDecPosX, m_txtCardUpValuePosX, m_btnCardUpValueIncPosX,
+					  displayCardPtr->GetUpValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardUpValue 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardUpValueDecPosY, m_txtCardUpValuePosY, m_btnCardUpValueIncPosY,
+					  displayCardPtr->GetUpValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardDownPrompt 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardDownPromptDecPosX, m_txtCardDownPromptPosX, m_btnCardDownPromptIncPosX,
+					  displayCardPtr->GetDownPromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardDownPrompt 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardDownPromptDecPosY, m_txtCardDownPromptPosY, m_btnCardDownPromptIncPosY,
+					  displayCardPtr->GetDownPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardDownValue 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardDownValueDecPosX, m_txtCardDownValuePosX, m_btnCardDownValueIncPosX,
+					  displayCardPtr->GetDownValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardDownValue 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardDownValueDecPosY, m_txtCardDownValuePosY, m_btnCardDownValueIncPosY,
+					  displayCardPtr->GetDownValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardTurnCard 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardTurnCardDecPosX, m_txtCardTurnCardPosX, m_btnCardTurnCardIncPosX,
+					  displayCardPtr->GetTurnCardPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardTurnCard 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardTurnCardDecPosY, m_txtCardTurnCardPosY, m_btnCardTurnCardIncPosY,
+					  displayCardPtr->GetTurnCardPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardFrontTimePrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardFrontTimePromptDecSizeX, m_txtCardFrontTimePromptSizeX, m_btnCardFrontTimePromptIncSizeX,
+					   displayCardPtr->GetFrontTimePromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardFrontTimePrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardFrontTimePromptDecSizeY, m_txtCardFrontTimePromptSizeY, m_btnCardFrontTimePromptIncSizeY,
+					   displayCardPtr->GetFrontTimePromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardFrontTimeValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardFrontTimeValueDecSizeX, m_txtCardFrontTimeValueSizeX, m_btnCardFrontTimeValueIncSizeX,
+					   displayCardPtr->GetFrontTimeValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardFrontTimeValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardFrontTimeValueDecSizeY, m_txtCardFrontTimeValueSizeY, m_btnCardFrontTimeValueIncSizeY,
+					   displayCardPtr->GetFrontTimeValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardUpPrompt 
+		// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardUpPromptDecSizeX, m_txtCardUpPromptSizeX, m_btnCardUpPromptIncSizeX,
+					   displayCardPtr->GetUpPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardUpPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardUpPromptDecSizeY, m_txtCardUpPromptSizeY, m_btnCardUpPromptIncSizeY,
+					   displayCardPtr->GetUpPromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardUpValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardUpValueDecSizeX, m_txtCardUpValueSizeX, m_btnCardUpValueIncSizeX,
+					   displayCardPtr->GetUpValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardUpValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardUpValueDecSizeY, m_txtCardUpValueSizeY, m_btnCardUpValueIncSizeY,
+					   displayCardPtr->GetUpValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardDownPrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardDownPromptDecSizeX, m_txtCardDownPromptSizeX, m_btnCardDownPromptIncSizeX,
+					   displayCardPtr->GetDownPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardDownPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardDownPromptDecSizeY, m_txtCardDownPromptSizeY, m_btnCardDownPromptIncSizeY,
+					   displayCardPtr->GetDownPromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardDownValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardDownValueDecSizeX, m_txtCardDownValueSizeX, m_btnCardDownValueIncSizeX,
+					   displayCardPtr->GetDownValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardDownValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardDownValueDecSizeY, m_txtCardDownValueSizeY, m_btnCardDownValueIncSizeY,
+					   displayCardPtr->GetDownValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardTurnCard 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardTurnCardDecSizeX, m_txtCardTurnCardSizeX, m_btnCardTurnCardIncSizeX,
+					   displayCardPtr->GetTurnCardPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardTurnCard 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardTurnCardDecSizeY, m_txtCardTurnCardSizeY, m_btnCardTurnCardIncSizeY,
+					   displayCardPtr->GetTurnCardPtr(), 5, 0, displayCardPosUpperLimitY );
+}
 
 /// 
 /// @private
@@ -535,25 +823,124 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 ///		front component setting 
 /// 
 /// It draws the folloing panel element: 
-///		card front time prompt X-postion, 
+///		card front time prompt X-position, 
 ///		card front time prompt Y-position,
-///		card front time value X-postion, 
+///		card front time value X-position, 
 ///		card front time value Y-position,
-///		card up prompt X-postion, 
+///		card up prompt X-position, 
 ///		card up prompt Y-position,
-///		card up value X-postion, 
+///		card up value X-position, 
 ///		card up value Y-position,
-///		card down prompt X-postion, 
+///		card down prompt X-position, 
 ///		card down prompt Y-position,
-///		card down value X-postion, 
+///		card down value X-position, 
 ///		card down value Y-position,
-///		card turn card X-postion, 
+///		card turn card X-position, 
 ///		card turn card Y-position
+///		card front time prompt X-size, 
+///		card front time prompt Y-size,
+///		card front time value X-size, 
+///		card front time value Y-size,
+///		card up prompt X-size, 
+///		card up prompt Y-size,
+///		card up value X-size, 
+///		card up value Y-size,
+///		card down prompt X-size, 
+///		card down prompt Y-size,
+///		card down value X-size, 
+///		card down value Y-size,
+///		card turn card X-size, 
+///		card turn card Y-size
 /// 
 /// @param a_window reference to the render window
 /// 
 void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow& a_window )
 {
+	// CardTurnCard Size y
+	m_btnCardTurnCardIncSizeY->Draw( a_window );
+	m_txtCardTurnCardSizeY->Draw( a_window );
+	m_btnCardTurnCardDecSizeY->Draw( a_window );
+	m_txtCardTurnCardSizeYPrompt->Draw( a_window );
+
+	// CardTurnCard Size X
+	m_btnCardTurnCardIncSizeX->Draw( a_window );
+	m_txtCardTurnCardSizeX->Draw( a_window );
+	m_btnCardTurnCardDecSizeX->Draw( a_window );
+	m_txtCardTurnCardSizeXPrompt->Draw( a_window );
+
+	// CardDownValue Size y
+	m_btnCardDownValueIncSizeY->Draw( a_window );
+	m_txtCardDownValueSizeY->Draw( a_window );
+	m_btnCardDownValueDecSizeY->Draw( a_window );
+	m_txtCardDownValueSizeYPrompt->Draw( a_window );
+
+	// CardDownValue Size X
+	m_btnCardDownValueIncSizeX->Draw( a_window );
+	m_txtCardDownValueSizeX->Draw( a_window );
+	m_btnCardDownValueDecSizeX->Draw( a_window );
+	m_txtCardDownValueSizeXPrompt->Draw( a_window );
+
+	// CardDownPrompt Size y
+	m_btnCardDownPromptIncSizeY->Draw( a_window );
+	m_txtCardDownPromptSizeY->Draw( a_window );
+	m_btnCardDownPromptDecSizeY->Draw( a_window );
+	m_txtCardDownPromptSizeYPrompt->Draw( a_window );
+
+	// CardDownPrompt Size X
+	m_btnCardDownPromptIncSizeX->Draw( a_window );
+	m_txtCardDownPromptSizeX->Draw( a_window );
+	m_btnCardDownPromptDecSizeX->Draw( a_window );
+	m_txtCardDownPromptSizeXPrompt->Draw( a_window );
+
+	// CardUpValue Size y
+	m_btnCardUpValueIncSizeY->Draw( a_window );
+	m_txtCardUpValueSizeY->Draw( a_window );
+	m_btnCardUpValueDecSizeY->Draw( a_window );
+	m_txtCardUpValueSizeYPrompt->Draw( a_window );
+
+	// CardUpValue Size X
+	m_btnCardUpValueIncSizeX->Draw( a_window );
+	m_txtCardUpValueSizeX->Draw( a_window );
+	m_btnCardUpValueDecSizeX->Draw( a_window );
+	m_txtCardUpValueSizeXPrompt->Draw( a_window );
+
+	// CardUpPrompt Size y
+	m_btnCardUpPromptIncSizeY->Draw( a_window );
+	m_txtCardUpPromptSizeY->Draw( a_window );
+	m_btnCardUpPromptDecSizeY->Draw( a_window );
+	m_txtCardUpPromptSizeYPrompt->Draw( a_window );
+
+	// CardUpPrompt Size X
+	m_btnCardUpPromptIncSizeX->Draw( a_window );
+	m_txtCardUpPromptSizeX->Draw( a_window );
+	m_btnCardUpPromptDecSizeX->Draw( a_window );
+	m_txtCardUpPromptSizeXPrompt->Draw( a_window );
+
+	// CardFrontTimeValue Size y
+	m_btnCardFrontTimeValueIncSizeY->Draw( a_window );
+	m_txtCardFrontTimeValueSizeY->Draw( a_window );
+	m_btnCardFrontTimeValueDecSizeY->Draw( a_window );
+	m_txtCardFrontTimeValueSizeYPrompt->Draw( a_window );
+
+	// CardFrontTimeValue Size X
+	m_btnCardFrontTimeValueIncSizeX->Draw( a_window );
+	m_txtCardFrontTimeValueSizeX->Draw( a_window );
+	m_btnCardFrontTimeValueDecSizeX->Draw( a_window );
+	m_txtCardFrontTimeValueSizeXPrompt->Draw( a_window );
+
+	// CardFrontTimePrompt Size y
+	m_btnCardFrontTimePromptIncSizeY->Draw( a_window );
+	m_txtCardFrontTimePromptSizeY->Draw( a_window );
+	m_btnCardFrontTimePromptDecSizeY->Draw( a_window );
+	m_txtCardFrontTimePromptSizeYPrompt->Draw( a_window );
+
+	// CardFrontTimePrompt Size X
+	m_btnCardFrontTimePromptIncSizeX->Draw( a_window );
+	m_txtCardFrontTimePromptSizeX->Draw( a_window );
+	m_btnCardFrontTimePromptDecSizeX->Draw( a_window );
+	m_txtCardFrontTimePromptSizeXPrompt->Draw( a_window );
+
+
 	// CardTurnCard Position y
 	m_btnCardTurnCardIncPosY->Draw( a_window );
 	m_txtCardTurnCardPosY->Draw( a_window );
@@ -645,20 +1032,34 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 ///		back component setting 
 /// 
 /// It initializes the folloing panel element: 
-///		card back time prompt X-postion, 
+///		card back time prompt X-position, 
 ///		card back time prompt Y-position,
-///		card back time value X-postion, 
+///		card back time value X-position, 
 ///		card back time value Y-position,
-///		card question prompt X-postion, 
+///		card question prompt X-position, 
 ///		card question prompt Y-position,
-///		card question value X-postion, 
+///		card question value X-position, 
 ///		card question value Y-position,
-///		card answer prompt X-postion, 
+///		card answer prompt X-position, 
 ///		card answer prompt Y-position,
-///		card answer value X-postion, 
+///		card answer value X-position, 
 ///		card answer value Y-position,
-///		card submit X-postion, 
-///		card submit Y-position
+///		card submit X-position, 
+///		card submit Y-position,
+///		card back time prompt X-size, 
+///		card back time prompt Y-size,
+///		card back time value X-size, 
+///		card back time value Y-size,
+///		card question prompt X-size, 
+///		card question prompt Y-size,
+///		card question value X-size, 
+///		card question value Y-size,
+///		card answer prompt X-size, 
+///		card answer prompt Y-size,
+///		card answer value X-size, 
+///		card answer value Y-size,
+///		card submit X-size, 
+///		card submit Y-size
 ///
 void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 {
@@ -691,13 +1092,13 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 	// creating a panel element to control the CardQuestionPrompt Pos X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptPosXPrompt, &m_btnCardQuestionPromptDecPosX,
 								 &m_txtCardQuestionPromptPosX, &m_btnCardQuestionPromptIncPosX,
-								 "Question Prompt X Pos",
+								 "Question Pmt X Pos",
 								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().x ) );
 
 	// creating a panel element to control the CardQuestionPrompt Pos Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptPosYPrompt, &m_btnCardQuestionPromptDecPosY,
 								 &m_txtCardQuestionPromptPosY, &m_btnCardQuestionPromptIncPosY,
-								 "Question Prompt Y Pos",
+								 "Question Pmt Y Pos",
 								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardQuestionValue Pos X
@@ -739,14 +1140,99 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 	// creating a panel element to control the CardSubmit Pos X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosXPrompt, &m_btnCardSubmitDecPosX,
 								 &m_txtCardSubmitPosX, &m_btnCardSubmitIncPosX,
-								 "Answer Value X Pos",
+								 "Submit Button X Pos",
 								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
 
 	// creating a panel element to control the CardSubmit Pos Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosYPrompt, &m_btnCardSubmitDecPosY,
 								 &m_txtCardSubmitPosY, &m_btnCardSubmitIncPosY,
-								 "Answer Value Y Pos",
+								 "Submit Button Y Pos",
 								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
+
+	// creating a panel element to control the CardBackTimePrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptSizeXPrompt, &m_btnCardBackTimePromptDecSizeX,
+								 &m_txtCardBackTimePromptSizeX, &m_btnCardBackTimePromptIncSizeX,
+								 "Back Time Pmt X Size",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardBackTimePrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptSizeYPrompt, &m_btnCardBackTimePromptDecSizeY,
+								 &m_txtCardBackTimePromptSizeY, &m_btnCardBackTimePromptIncSizeY,
+								 "Back Time Pmt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardBackTimeValue Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValueSizeXPrompt, &m_btnCardBackTimeValueDecSizeX,
+								 &m_txtCardBackTimeValueSizeX, &m_btnCardBackTimeValueIncSizeX,
+								 "Back Time Val X Size",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardBackTimeValue Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValueSizeYPrompt, &m_btnCardBackTimeValueDecSizeY,
+								 &m_txtCardBackTimeValueSizeY, &m_btnCardBackTimeValueIncSizeY,
+								 "Back Time Val Y Size",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardQuestionPrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptSizeXPrompt, &m_btnCardQuestionPromptDecSizeX,
+								 &m_txtCardQuestionPromptSizeX, &m_btnCardQuestionPromptIncSizeX,
+								 "Question Pmt X Size",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardQuestionPrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptSizeYPrompt, &m_btnCardQuestionPromptDecSizeY,
+								 &m_txtCardQuestionPromptSizeY, &m_btnCardQuestionPromptIncSizeY,
+								 "Question Pmt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardQuestionValue Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValueSizeXPrompt, &m_btnCardQuestionValueDecSizeX,
+								 &m_txtCardQuestionValueSizeX, &m_btnCardQuestionValueIncSizeX,
+								 "Question Value X Size",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardQuestionValue Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValueSizeYPrompt, &m_btnCardQuestionValueDecSizeY,
+								 &m_txtCardQuestionValueSizeY, &m_btnCardQuestionValueIncSizeY,
+								 "Question Value Y Size",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardAnswerPrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptSizeXPrompt, &m_btnCardAnswerPromptDecSizeX,
+								 &m_txtCardAnswerPromptSizeX, &m_btnCardAnswerPromptIncSizeX,
+								 "Answer Prompt X Size",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardAnswerPrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptSizeYPrompt, &m_btnCardAnswerPromptDecSizeY,
+								 &m_txtCardAnswerPromptSizeY, &m_btnCardAnswerPromptIncSizeY,
+								 "Answer Prompt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardAnswerValue Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValueSizeXPrompt, &m_btnCardAnswerValueDecSizeX,
+								 &m_txtCardAnswerValueSizeX, &m_btnCardAnswerValueIncSizeX,
+								 "Answer Value X Size",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardAnswerValue Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValueSizeYPrompt, &m_btnCardAnswerValueDecSizeY,
+								 &m_txtCardAnswerValueSizeY, &m_btnCardAnswerValueIncSizeY,
+								 "Answer Value Y Size",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardSubmit Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitSizeXPrompt, &m_btnCardSubmitDecSizeX,
+								 &m_txtCardSubmitSizeX, &m_btnCardSubmitIncSizeX,
+								 "Submit Button X Size",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().x ) );
+
+	// creating a panel element to control the CardSubmit Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitSizeYPrompt, &m_btnCardSubmitDecSizeY,
+								 &m_txtCardSubmitSizeY, &m_btnCardSubmitIncSizeY,
+								 "Submit Button Y Size",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
+
 }
 
 /// 
@@ -755,23 +1241,186 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 ///		back component setting 
 /// 
 /// It Updates the folloing panel element: 
-///		card back time prompt X-postion, 
+///		card back time prompt X-position, 
 ///		card back time prompt Y-position,
-///		card back time value X-postion, 
+///		card back time value X-position, 
 ///		card back time value Y-position,
-///		card question prompt X-postion, 
+///		card question prompt X-position, 
 ///		card question prompt Y-position,
-///		card question value X-postion, 
+///		card question value X-position, 
 ///		card question value Y-position,
-///		card answer prompt X-postion, 
+///		card answer prompt X-position, 
 ///		card answer prompt Y-position,
-///		card answer value X-postion, 
+///		card answer value X-position, 
 ///		card answer value Y-position,
-///		card submit X-postion, 
-///		card submit Y-position
+///		card submit X-position, 
+///		card submit Y-position,
+///		card back time prompt X-size, 
+///		card back time prompt Y-size,
+///		card back time value X-size, 
+///		card back time value Y-size,
+///		card question prompt X-size, 
+///		card question prompt Y-size,
+///		card question value X-size, 
+///		card question value Y-size,
+///		card answer prompt X-size, 
+///		card answer prompt Y-size,
+///		card answer value X-size, 
+///		card answer value Y-size,
+///		card submit X-size, 
+///		card submit Y-size
 /// 
 void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
-{}
+{
+	Brood::Application::Components::DisplayCard* displayCardPtr = m_gameData->GetDisplayCardPtr();
+	unsigned displayCardLowerLimitX = displayCardPtr->GetBodyPosition().x;
+	unsigned displayCardPosUpperLimitX = displayCardPtr->GetBodyPosition().x + displayCardPtr->GetBodySize().x;
+
+	unsigned displayCardLowerLimitY = displayCardPtr->GetBodyPosition().y;
+	unsigned displayCardPosUpperLimitY = displayCardPtr->GetBodyPosition().y + displayCardPtr->GetBodySize().y;
+
+	// checks if the user interacted with the CardBackTimePrompt 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardBackTimePromptDecPosX, m_txtCardBackTimePromptPosX, m_btnCardBackTimePromptIncPosX,
+					  displayCardPtr->GetBackTimePromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardBackTimePrompt 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardBackTimePromptDecPosY, m_txtCardBackTimePromptPosY, m_btnCardBackTimePromptIncPosY,
+					  displayCardPtr->GetBackTimePromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardBackTimeValue 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardBackTimeValueDecPosX, m_txtCardBackTimeValuePosX, m_btnCardBackTimeValueIncPosX,
+					  displayCardPtr->GetBackTimeValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardBackTimeValue 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardBackTimeValueDecPosY, m_txtCardBackTimeValuePosY, m_btnCardBackTimeValueIncPosY,
+					  displayCardPtr->GetBackTimeValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardQuestionPrompt 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardQuestionPromptDecPosX, m_txtCardQuestionPromptPosX, m_btnCardQuestionPromptIncPosX,
+					  displayCardPtr->GetQuestionPromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardQuestionPrompt 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardQuestionPromptDecPosY, m_txtCardQuestionPromptPosY, m_btnCardQuestionPromptIncPosY,
+					  displayCardPtr->GetQuestionPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardQuestionValue 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardQuestionValueDecPosX, m_txtCardQuestionValuePosX, m_btnCardQuestionValueIncPosX,
+					  displayCardPtr->GetQuestionValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardQuestionValue 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardQuestionValueDecPosY, m_txtCardQuestionValuePosY, m_btnCardQuestionValueIncPosY,
+					  displayCardPtr->GetQuestionValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardAnswerPrompt 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardAnswerPromptDecPosX, m_txtCardAnswerPromptPosX, m_btnCardAnswerPromptIncPosX,
+					  displayCardPtr->GetAnswerPromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardAnswerPrompt 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardAnswerPromptDecPosY, m_txtCardAnswerPromptPosY, m_btnCardAnswerPromptIncPosY,
+					  displayCardPtr->GetAnswerPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardAnswerValue 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardAnswerValueDecPosX, m_txtCardAnswerValuePosX, m_btnCardAnswerValueIncPosX,
+					  displayCardPtr->GetAnswerValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardAnswerValue 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardAnswerValueDecPosY, m_txtCardAnswerValuePosY, m_btnCardAnswerValueIncPosY,
+					  displayCardPtr->GetAnswerValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardSubmit 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardSubmitDecPosX, m_txtCardSubmitPosX, m_btnCardSubmitIncPosX,
+					  displayCardPtr->GetSubmitPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardSubmit 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardSubmitDecPosY, m_txtCardSubmitPosY, m_btnCardSubmitIncPosY,
+					  displayCardPtr->GetSubmitPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+
+	// checks if the user interacted with the CardBackTimePrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardBackTimePromptDecSizeX, m_txtCardBackTimePromptSizeX, m_btnCardBackTimePromptIncSizeX,
+					   displayCardPtr->GetBackTimePromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardBackTimePrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardBackTimePromptDecSizeY, m_txtCardBackTimePromptSizeY, m_btnCardBackTimePromptIncSizeY,
+					   displayCardPtr->GetBackTimePromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardBackTimeValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardBackTimeValueDecSizeX, m_txtCardBackTimeValueSizeX, m_btnCardBackTimeValueIncSizeX,
+					   displayCardPtr->GetBackTimeValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardBackTimeValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardBackTimeValueDecSizeY, m_txtCardBackTimeValueSizeY, m_btnCardBackTimeValueIncSizeY,
+					   displayCardPtr->GetBackTimeValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardQuestionPrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardQuestionPromptDecSizeX, m_txtCardQuestionPromptSizeX, m_btnCardQuestionPromptIncSizeX,
+					   displayCardPtr->GetQuestionPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardQuestionPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardQuestionPromptDecSizeY, m_txtCardQuestionPromptSizeY, m_btnCardQuestionPromptIncSizeY,
+					   displayCardPtr->GetQuestionPromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardQuestionValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardQuestionValueDecSizeX, m_txtCardQuestionValueSizeX, m_btnCardQuestionValueIncSizeX,
+					   displayCardPtr->GetQuestionValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardQuestionValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardQuestionValueDecSizeY, m_txtCardQuestionValueSizeY, m_btnCardQuestionValueIncSizeY,
+					   displayCardPtr->GetQuestionValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardAnswerPrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardAnswerPromptDecSizeX, m_txtCardAnswerPromptSizeX, m_btnCardAnswerPromptIncSizeX,
+					   displayCardPtr->GetAnswerPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardAnswerPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardAnswerPromptDecSizeY, m_txtCardAnswerPromptSizeY, m_btnCardAnswerPromptIncSizeY,
+					   displayCardPtr->GetAnswerPromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardAnswerValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardAnswerValueDecSizeX, m_txtCardAnswerValueSizeX, m_btnCardAnswerValueIncSizeX,
+					   displayCardPtr->GetAnswerValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardAnswerValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardAnswerValueDecSizeY, m_txtCardAnswerValueSizeY, m_btnCardAnswerValueIncSizeY,
+					   displayCardPtr->GetAnswerValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardSubmit 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardSubmitDecSizeX, m_txtCardSubmitSizeX, m_btnCardSubmitIncSizeX,
+					   displayCardPtr->GetSubmitPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardSubmit 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardSubmitDecSizeY, m_txtCardSubmitSizeY, m_btnCardSubmitIncSizeY,
+					   displayCardPtr->GetSubmitPtr(), 5, 0, displayCardPosUpperLimitY );
+
+}
 
 /// 
 /// @private
@@ -779,25 +1428,123 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 ///		back component setting 
 /// 
 /// It draws the folloing panel element: 
-///		card back time prompt X-postion, 
+///		card back time prompt X-position, 
 ///		card back time prompt Y-position,
-///		card back time value X-postion, 
+///		card back time value X-position, 
 ///		card back time value Y-position,
-///		card question prompt X-postion, 
+///		card question prompt X-position, 
 ///		card question prompt Y-position,
-///		card question value X-postion, 
+///		card question value X-position, 
 ///		card question value Y-position,
-///		card answer prompt X-postion, 
+///		card answer prompt X-position, 
 ///		card answer prompt Y-position,
-///		card answer value X-postion, 
+///		card answer value X-position, 
 ///		card answer value Y-position,
-///		card submit X-postion, 
-///		card submit Y-position
+///		card submit X-position, 
+///		card submit Y-position,
+///		card back time prompt X-size, 
+///		card back time prompt Y-size,
+///		card back time value X-size, 
+///		card back time value Y-size,
+///		card question prompt X-size, 
+///		card question prompt Y-size,
+///		card question value X-size, 
+///		card question value Y-size,
+///		card answer prompt X-size, 
+///		card answer prompt Y-size,
+///		card answer value X-size, 
+///		card answer value Y-size,
+///		card submit X-size, 
+///		card submit Y-size
 /// 
 /// @param a_window reference to the render window
 ///
 void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow& a_window )
 {
+	// CardSubmit Size y
+	m_btnCardSubmitIncSizeY->Draw( a_window );
+	m_txtCardSubmitSizeY->Draw( a_window );
+	m_btnCardSubmitDecSizeY->Draw( a_window );
+	m_txtCardSubmitSizeYPrompt->Draw( a_window );
+
+	// CardSubmit Size X
+	m_btnCardSubmitIncSizeX->Draw( a_window );
+	m_txtCardSubmitSizeX->Draw( a_window );
+	m_btnCardSubmitDecSizeX->Draw( a_window );
+	m_txtCardSubmitSizeXPrompt->Draw( a_window );
+
+	// CardAnswerValue Size y
+	m_btnCardAnswerValueIncSizeY->Draw( a_window );
+	m_txtCardAnswerValueSizeY->Draw( a_window );
+	m_btnCardAnswerValueDecSizeY->Draw( a_window );
+	m_txtCardAnswerValueSizeYPrompt->Draw( a_window );
+
+	// CardAnswerValue Size X
+	m_btnCardAnswerValueIncSizeX->Draw( a_window );
+	m_txtCardAnswerValueSizeX->Draw( a_window );
+	m_btnCardAnswerValueDecSizeX->Draw( a_window );
+	m_txtCardAnswerValueSizeXPrompt->Draw( a_window );
+
+	// CardAnswerPrompt Size y
+	m_btnCardAnswerPromptIncSizeY->Draw( a_window );
+	m_txtCardAnswerPromptSizeY->Draw( a_window );
+	m_btnCardAnswerPromptDecSizeY->Draw( a_window );
+	m_txtCardAnswerPromptSizeYPrompt->Draw( a_window );
+
+	// CardAnswerPrompt Size X
+	m_btnCardAnswerPromptIncSizeX->Draw( a_window );
+	m_txtCardAnswerPromptSizeX->Draw( a_window );
+	m_btnCardAnswerPromptDecSizeX->Draw( a_window );
+	m_txtCardAnswerPromptSizeXPrompt->Draw( a_window );
+
+	// CardQuestionValue Size y
+	m_btnCardQuestionValueIncSizeY->Draw( a_window );
+	m_txtCardQuestionValueSizeY->Draw( a_window );
+	m_btnCardQuestionValueDecSizeY->Draw( a_window );
+	m_txtCardQuestionValueSizeYPrompt->Draw( a_window );
+
+	// CardQuestionValue Size X
+	m_btnCardQuestionValueIncSizeX->Draw( a_window );
+	m_txtCardQuestionValueSizeX->Draw( a_window );
+	m_btnCardQuestionValueDecSizeX->Draw( a_window );
+	m_txtCardQuestionValueSizeXPrompt->Draw( a_window );
+
+	// CardQuestionPrompt Size y
+	m_btnCardQuestionPromptIncSizeY->Draw( a_window );
+	m_txtCardQuestionPromptSizeY->Draw( a_window );
+	m_btnCardQuestionPromptDecSizeY->Draw( a_window );
+	m_txtCardQuestionPromptSizeYPrompt->Draw( a_window );
+
+	// CardQuestionPrompt Size X
+	m_btnCardQuestionPromptIncSizeX->Draw( a_window );
+	m_txtCardQuestionPromptSizeX->Draw( a_window );
+	m_btnCardQuestionPromptDecSizeX->Draw( a_window );
+	m_txtCardQuestionPromptSizeXPrompt->Draw( a_window );
+
+	// CardBackTimeValue Size y
+	m_btnCardBackTimeValueIncSizeY->Draw( a_window );
+	m_txtCardBackTimeValueSizeY->Draw( a_window );
+	m_btnCardBackTimeValueDecSizeY->Draw( a_window );
+	m_txtCardBackTimeValueSizeYPrompt->Draw( a_window );
+
+	// CardBackTimeValue Size X
+	m_btnCardBackTimeValueIncSizeX->Draw( a_window );
+	m_txtCardBackTimeValueSizeX->Draw( a_window );
+	m_btnCardBackTimeValueDecSizeX->Draw( a_window );
+	m_txtCardBackTimeValueSizeXPrompt->Draw( a_window );
+
+	// CardBackTimePrompt Size y
+	m_btnCardBackTimePromptIncSizeY->Draw( a_window );
+	m_txtCardBackTimePromptSizeY->Draw( a_window );
+	m_btnCardBackTimePromptDecSizeY->Draw( a_window );
+	m_txtCardBackTimePromptSizeYPrompt->Draw( a_window );
+
+	// CardBackTimePrompt Size X
+	m_btnCardBackTimePromptIncSizeX->Draw( a_window );
+	m_txtCardBackTimePromptSizeX->Draw( a_window );
+	m_btnCardBackTimePromptDecSizeX->Draw( a_window );
+	m_txtCardBackTimePromptSizeXPrompt->Draw( a_window );
+
 	// CardSubmit Position y
 	m_btnCardSubmitIncPosY->Draw( a_window );
 	m_txtCardSubmitPosY->Draw( a_window );
@@ -883,14 +1630,202 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_txtCardBackTimePromptPosXPrompt->Draw( a_window );
 }
 
+/// 
+/// @private
+/// @brief Initializes the panel element of the Card Display 
+///		back component setting 
+/// 
+/// It initializes the folloing panel element: 
+///		Curr Deck Num prompt,
+///		Curr Card Num prompt,
+///		Curr Card Time prompt,
+///		Curr Card up prompt,
+///		Curr Card down prompt,
+///		Curr Card question prompt,
+///		Curr Card answer prompt,
+///		turn card around
+/// 
 void Brood::Application::CardEditor::InializeCardInfoPanel()
-{}
+{
+	Brood::Application::Components::DeckManager* currDeckManagerPtr = m_gameData->GetDeckManagerPtr();
+	Brood::Application::Components::Deck* CurrDeckPtr = currDeckManagerPtr->GetCurrActiveDeck();
+	Brood::Application::Components::CardInfo* currCardPtr = CurrDeckPtr->GetCurrActiveCardPtr();
 
+	// creating a panel element to control the curr active deck
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDeckNumPrompt, &m_btnDecDeckNum,
+								 &m_txtDeckNum, &m_btnIncDeckNum,
+								 "Curr Active Deck Idx ",
+								 std::to_string( ( int )currDeckManagerPtr->GetCurrActiveDeckIdx() ), true );
+
+	// creating a panel element to control the curr active Card
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCurrCardNumPrompt, &m_btnDecCurrCardNum,
+								 &m_txtCurrCardNum, &m_btnIncCurrCardNum,
+								 "Curr Active Card Idx",
+								 std::to_string( ( int )CurrDeckPtr->GetCurrActiveCardIdx() ) );
+
+	// creating a panel element to control the curr active CardTime
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCurrCardTimePrompt, &m_btnDecCurrCardTime,
+								 &m_txtCurrCardTime, &m_btnIncCurrCardTime,
+								 "Card Time ",
+								 std::to_string( ( int )currCardPtr->GetTime() ) );
+
+	// creating a panel element to control the curr active CardUp
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCurrCardUpPrompt, &m_btnDecCurrCardUp,
+								 &m_txtCurrCardUp, &m_btnIncCurrCardUp,
+								 "Card Up ",
+								 std::to_string( ( int )currCardPtr->GetCorrectNumSteps() ) );
+
+	// creating a panel element to control the curr active CardDown
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCurrCardDownPrompt, &m_btnDecCurrCardDown,
+								 &m_txtCurrCardDown, &m_btnIncCurrCardDown,
+								 "Card Down ",
+								 std::to_string( ( int )currCardPtr->GetIncorrectNumSteps() ) );
+
+	// creating a panel element to enter a Card Question 
+	DyCreateTextInputPannelElement( m_panelBodyPtr, &m_txtCurrCardQuestionPrompt, &m_txtCurrCardQuestionInput,
+									"Card Question", "", "question" );
+
+	// creating a panel element to enter a Card Answer 
+	DyCreateTextInputPannelElement( m_panelBodyPtr, &m_txtCurrCardAnswerPrompt, &m_txtCurrCardAnswerInput,
+									"Card Correct Answer", "", "answer" );
+
+	// creating a button to turn the card
+	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
+
+	float panelSizeX = m_panelBodyPtr->getSize().x;
+	float lastPanelElementSizeY = m_unNamedUIList.back()->GetBodySize().y;
+
+	float panelPosX = m_panelBodyPtr->getPosition().x;
+	float lastPanelElementPosY = m_unNamedUIList.back()->GetBodyPosition().y;
+	// getting the color
+	sf::Color panelColor;
+
+	if( m_unNamedUIList.back()->GetBodyColor() == Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor )
+	{
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor;
+	}
+	else
+	{
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+	}
+
+	m_btnTurnCardAround = DyCreateButton( { panelSizeX , 25 },
+										  { panelPosX , lastPanelElementPosY + lastPanelElementSizeY },
+										  "Turn Card", panelColor );
+
+}
+
+/// 
+/// @private
+/// @brief Updates the panel element of the Card Display 
+///		back component setting 
+/// 
+/// It Updates the folloing panel element: 
+///		Curr Deck Num prompt,
+///		Curr Card Num prompt,
+///		Curr Card Time prompt,
+///		Curr Card up prompt,
+///		Curr Card down prompt,
+///		Curr Card question prompt,
+///		Curr Card answer prompt,
+///		turn card around
+/// 
 void Brood::Application::CardEditor::UpdateCardInfoPanel()
-{}
+{
 
+	// checks if the user interacted with the 
+	// current selceted deck index panel
+	UpdateCurrSelectedDeckIdx();
+
+	// checks if the user interacted with the 
+	// current selceted deck index panel
+	UpdateCurrSelectedCardIdx();
+
+	// checks if the user interacted with the 
+	// time panel
+	UpdateCurrCardInfoTime();
+
+	// checks if the user interacted with the 
+	// Up panel
+	UpdateCurrCardInfoUp();
+
+	// checks if the user interacted with the 
+	// Down panel
+	UpdateCurrCardInfoDown();
+
+	// checks if the user interacted with the
+	// enter curr card question panel element
+	UpdateCurrCardQuestionInput();
+
+	// checks if the user interacted with the
+	// enter curr card answer panel element
+	UpdateCurrCardAnswerInput();
+
+	// checks if the user interacted with the
+	// turn card panel element
+	UpdateTurnCard();
+}
+
+/// 
+/// @private
+/// @brief Draws the panel element of the Card Display 
+///		back component setting 
+/// 
+/// It draws the folloing panel element: 
+///		Curr Deck idx prompt,
+///		Curr Card idx prompt,
+///		Curr Card Time prompt,
+///		Curr Card up prompt,
+///		Curr Card down prompt,
+///		Curr Card question prompt,
+///		Curr Card answer prompt,
+///		turn card around
+/// 
+/// @param a_window reference to the render window
+///
 void Brood::Application::CardEditor::DrawCardInfoPanel( sf::RenderWindow& a_window )
-{}
+{
+	// drawing turn card
+	m_btnTurnCardAround->Draw( a_window );
+
+	// drawing curr active CurrCardAnswer panel element
+	m_txtCurrCardAnswerPrompt->Draw( a_window );
+	m_txtCurrCardAnswerInput->Draw( a_window );
+
+	// drawing curr active CurrCardQuestion panel element
+	m_txtCurrCardQuestionPrompt->Draw( a_window );
+	m_txtCurrCardQuestionInput->Draw( a_window );
+
+	// drawing curr active CurrCardDown panel element
+	m_btnIncCurrCardDown->Draw( a_window );
+	m_txtCurrCardDown->Draw( a_window );
+	m_btnDecCurrCardDown->Draw( a_window );
+	m_txtCurrCardDownPrompt->Draw( a_window );
+
+	// drawing curr active CurrCardUp panel element
+	m_btnIncCurrCardUp->Draw( a_window );
+	m_txtCurrCardUp->Draw( a_window );
+	m_btnDecCurrCardUp->Draw( a_window );
+	m_txtCurrCardUpPrompt->Draw( a_window );
+
+	// drawing curr active CurrCardTime panel element
+	m_btnIncCurrCardTime->Draw( a_window );
+	m_txtCurrCardTime->Draw( a_window );
+	m_btnDecCurrCardTime->Draw( a_window );
+	m_txtCurrCardTimePrompt->Draw( a_window );
+
+	// drawing curr active CurrCardNum panel element
+	m_btnIncCurrCardNum->Draw( a_window );
+	m_txtCurrCardNum->Draw( a_window );
+	m_btnDecCurrCardNum->Draw( a_window );
+	m_txtCurrCardNumPrompt->Draw( a_window );
+
+	// drawing curr active deck panel element
+	m_btnIncDeckNum->Draw( a_window );
+	m_txtDeckNum->Draw( a_window );
+	m_btnDecDeckNum->Draw( a_window );
+	m_txtDeckNumPrompt->Draw( a_window );
+}
 
 /// 
 /// @private
@@ -984,315 +1919,422 @@ void Brood::Application::CardEditor::UpdateCardBackFileTexture()
 	}
 }
 
-/// 
-/// @private
-/// @brief checks if the user interacted with the element 
-///		SizeX panel
-///	
-/// SizeX panel contains current element SizeX promt textbox, 
-///		current element SizeX value text box, button to increase the
-///		current element SizeX, and button to decrease the 
-///		element SizeX.
-/// 
-/// Only the button to increase the SizeX, and button 
-///		to decrease SizeX are interactable
-/// 
-/// If the interactable button was pressed then the SizeX 
-///		is increased or decresed by specified units if the 
-///		current element does not go outside the upper limit
 ///
-/// @param a_btnDecSizeX pointer to the element's panel 
-///		decSizeX button 
-/// @param a_txtSizeX pointer to the element's panel 
-///		sizeX value textbox
-/// @param a_btnIncSizeX pointer to the element's panel 
-///		incSizeX button
-/// @param a_elemnetToChangeSizeX pointer to the element whose 
-///		size being controlled
-/// @param a_unit unit to increase or decrease
-/// @param a_lowerLimit the minimum SizeX of the element
-/// @param a_upperLimit the maximum SizeX of the element
+/// @private
+/// @brief checks if the user interacted with the current selceted deck 
+///		index panel
+///	
+/// Current selceted deck index panel contains  current selceted deck 
+///		index promt textbox, current selceted deck index value text box, 
+///		button to increase the current selceted deck index, and button 
+///		to decrease the current selceted deck index
 /// 
-void Brood::Application::CardEditor::UpdateSizeX( Brood::BroodUI::Button* a_btnDecSizeX,
-												  Brood::BroodUI::TextBox* a_txtSizeX,
-												  Brood::BroodUI::Button* a_btnIncSizeX,
-												  Brood::BroodUI::UIElement* a_elemnetToChangeSizeX,
-												  unsigned a_unit,
-												  unsigned a_lowerLimit,
-												  unsigned a_upperLimit )
+/// Only the button to increase the current selceted deck index, and 
+///		button to decrease the current selceted deck index are interactable
+/// 
+/// If the interactable button was pressed then the current selceted deck 
+///		index is increased or decresed by 1. current selceted deck index
+///		should be more than or equal to 0 but less than minimum deck number
+///
+void Brood::Application::CardEditor::UpdateCurrSelectedDeckIdx()
 {
-	// chekcing if the decrease the X size was pressed
-	if( a_btnDecSizeX->DoElement() )
+	// chekcing if the decrease the current selceted player index was pressed
+	if( m_btnDecDeckNum->DoElement() )
 	{
-		// getting x-size information
-		sf::Vector2f currentSize = a_elemnetToChangeSizeX->GetBodySize();
-		int currentSizeX = currentSize.x;
+		// getting current selceted Deck index
+		unsigned currentDeckIdx = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeckIdx();
 
-		// checking if the decreasing the element's size any further 
-		// would make the element size less than the lower limit
-		if( currentSizeX - a_unit + 1 <= a_lowerLimit )
+		// chekcing if the current currentMaxDeckNum id 
+		// equal to 0 then do nothing
+		if( currentDeckIdx == 0 )
 		{
 			return;
 		}
 
-		// decrease the x position by a_unit units
-		a_elemnetToChangeSizeX->SetBodySize( currentSizeX - a_unit, currentSize.y );
+		// decrease the current selceted Deck index by 1 units
+		m_gameData->GetDeckManagerPtr()->SetCurrActiveDeckIdx( currentDeckIdx - 1 );
 
-		// updating the textbox showing the x-positon value
-		a_txtSizeX->SetText( std::to_string( currentSizeX - a_unit ) );
+		// updating the textbox showing the current selceted Deck index value
+		m_txtDeckNum->SetText( std::to_string( currentDeckIdx - 1 ) );
+
+		// changing the displayed Deck data
+		UpdateAllDispayElement();
+
 	}
-	// chekcing if the incresase the X size was pressed
-	else if( a_btnIncSizeX->DoElement() )
+	// chekcing if the increase the current selceted player index was pressed
+	else if( m_btnIncDeckNum->DoElement() )
 	{
-		// getting x-size information
-		sf::Vector2f currentSize = a_elemnetToChangeSizeX->GetBodySize();
-		int currentSizeX = currentSize.x;
+		// getting position information
+		unsigned currentDeckIdx = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeckIdx();
 
-		// chekcing if increasing the size.x would make element to go
-		// over the upper limit
-		if( ( unsigned )a_elemnetToChangeSizeX->GetBodyPosition().x + currentSizeX + a_unit >= a_upperLimit )
+		// chekcing if the current currentMaxDeckNum id 
+		// equal to maimum number of Deck then do nothing
+		if( currentDeckIdx == m_gameData->GetDeckManagerPtr()->GetDeckList().size() - 1 )
 		{
 			return;
 		}
 
-		// increase the x position by a_unit units
-		a_elemnetToChangeSizeX->SetBodySize( currentSizeX + a_unit, currentSize.y );
+		// decrease the current selceted Deck index by 1 units
+		m_gameData->GetDeckManagerPtr()->SetCurrActiveDeckIdx( currentDeckIdx + 1 );
 
-		// updating the textbox showing the x-positon value
-		a_txtSizeX->SetText( std::to_string( currentSizeX + a_unit ) );
+		// updating the textbox showing the current selceted Deck index value
+		m_txtDeckNum->SetText( std::to_string( currentDeckIdx + 1 ) );
+
+		// changing the displayed Deck data
+		UpdateAllDispayElement();
+	}
+}
+
+///
+/// @private
+/// @brief checks if the user interacted with the current selceted Card 
+///		index panel
+///	
+/// Current selceted Card index panel contains  current selceted Card 
+///		index promt textbox, current selceted Card index value text box, 
+///		button to increase the current selceted Card index, and button 
+///		to decrease the current selceted Card index
+/// 
+/// Only the button to increase the current selceted Card index, and 
+///		button to decrease the current selceted Card index are interactable
+/// 
+/// If the interactable button was pressed then the current selceted Card 
+///		index is increased or decresed by 1. current selceted Card index
+///		should be more than or equal to 0 but less than minimum Card number
+///
+void Brood::Application::CardEditor::UpdateCurrSelectedCardIdx()
+{
+	// chekcing if the decrease the current selceted player index was pressed
+	if( m_btnDecCurrCardNum->DoElement() )
+	{
+		// getting the current active deck
+		Brood::Application::Components::Deck* currentDeckPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck();
+
+		// getting current selceted Card index
+		unsigned currentCardIdx = currentDeckPtr->GetCurrActiveCardIdx();
+
+		// chekcing if the current currentMaxCardNum id 
+		// equal to 0 then do nothing
+		if( currentCardIdx == 0 )
+		{
+			return;
+		}
+
+		// decrease the current selceted Card index by 1 units
+		currentDeckPtr->SetCurrActiveCardIdx( currentCardIdx - 1 );
+
+		// updating the textbox showing the current selceted Card index value
+		m_txtCurrCardNum->SetText( std::to_string( currentCardIdx - 1 ) );
+
+		// changing the displayed Card data
+		UpdateAllDispayElement();
+
+	}
+	// chekcing if the increase the current selceted player index was pressed
+	else if( m_btnIncCurrCardNum->DoElement() )
+	{
+		// getting the current active deck
+		Brood::Application::Components::Deck* currentDeckPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck();
+
+		// getting current selceted Card index
+		unsigned currentCardIdx = currentDeckPtr->GetCurrActiveCardIdx();
+
+		// chekcing if the current currentMaxCardNum id 
+		// equal to maimum number of Card then do nothing
+		if( currentCardIdx == currentDeckPtr->GetCardList().size() - 1 )
+		{
+			return;
+		}
+
+		// decrease the current selceted Card index by 1 units
+		currentDeckPtr->SetCurrActiveCardIdx( currentCardIdx + 1 );
+
+		// updating the textbox showing the current selceted Card index value
+		m_txtCurrCardNum->SetText( std::to_string( currentCardIdx + 1 ) );
+
+		// changing the displayed Card data
+		UpdateAllDispayElement();
+
+
+	}
+}
+
+///
+/// @private
+/// @brief checks if the user interacted with the current selceted Card 
+///		time panel
+///	
+/// Current selceted Card index panel contains  current selceted Card 
+///		time promt textbox, current selceted Card time value text box, 
+///		button to increase the current selceted Card time, and button 
+///		to decrease the current selceted Card time
+/// 
+/// Only the button to increase the current selceted Card time, and 
+///		button to decrease the current selceted Card time are interactable
+/// 
+/// If the interactable button was pressed then the current selceted Card 
+///		time is increased or decresed by 1. current selceted Card index
+///		should be more than or equal to 0 
+///
+void Brood::Application::CardEditor::UpdateCurrCardInfoTime()
+{
+	// chekcing if the decrease the current selceted player index was pressed
+	if( m_btnDecCurrCardTime->DoElement() )
+	{
+		// getting the current active card
+		Brood::Application::Components::CardInfo* currentCardInfoPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr();
+
+		// getting current selceted Card index
+		unsigned currentTime = currentCardInfoPtr->GetTime();
+
+		// chekcing if the current currentMaxCardNum id 
+		// equal to 0 then do nothing
+		if( currentTime == 0 )
+		{
+			return;
+		}
+
+		// decrease the current selceted Card index by 1 units
+		currentCardInfoPtr->SetTime( currentTime - 1 );
+
+		// updating the textbox showing the current selceted Card index value
+		m_txtCurrCardTime->SetText( std::to_string( currentTime - 1 ) );
+
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
+	}
+	// chekcing if the increase the current selceted player index was pressed
+	else if( m_btnIncCurrCardTime->DoElement() )
+	{
+		// getting the current active card
+		Brood::Application::Components::CardInfo* currentCardInfoPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr();
+
+		// getting current selceted Card index
+		unsigned currentTime = currentCardInfoPtr->GetTime();
+
+		// increase the current selceted Card index by 1 units
+		currentCardInfoPtr->SetTime( currentTime + 1 );
+
+		// updating the textbox showing the current selceted Card index value
+		m_txtCurrCardTime->SetText( std::to_string( currentTime + 1 ) );
+
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
+	}
+}
+
+///
+/// @private
+/// @brief checks if the user interacted with the current selceted Card 
+///		Up panel
+///	
+/// Current selceted Card index panel contains  current selceted Card 
+///		Up promt textbox, current selceted Card Up value text box, 
+///		button to increase the current selceted Card Up, and button 
+///		to decrease the current selceted Card Up
+/// 
+/// Only the button to increase the current selceted Card Up, and 
+///		button to decrease the current selceted Card Up are interactable
+/// 
+/// If the interactable button was pressed then the current selceted Card 
+///		Up is increased or decresed by 1. current selceted Card index
+///		should be more than or equal to 0 
+///
+void Brood::Application::CardEditor::UpdateCurrCardInfoUp()
+{
+	// chekcing if the decrease the current selceted player index was pressed
+	if( m_btnDecCurrCardUp->DoElement() )
+	{
+		// getting the current active card
+		Brood::Application::Components::CardInfo* currentCardInfoPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr();
+
+		// getting current selceted Card index
+		unsigned currentUp = currentCardInfoPtr->GetCorrectNumSteps();
+
+		// chekcing if the current currentMaxCardNum id 
+		// equal to 0 then do nothing
+		if( currentUp == 0 )
+		{
+			return;
+		}
+
+		// decrease the current selceted Card index by 1 units
+		currentCardInfoPtr->SetCorrectNumSteps( currentUp - 1 );
+
+		// updating the textbox showing the current selceted Card index value
+		m_txtCurrCardUp->SetText( std::to_string( currentUp - 1 ) );
+
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
+	}
+	// chekcing if the increase the current selceted player index was pressed
+	else if( m_btnIncCurrCardUp->DoElement() )
+	{
+		// getting the current active card
+		Brood::Application::Components::CardInfo* currentCardInfoPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr();
+
+		// getting current selceted Card index
+		unsigned currentUp = currentCardInfoPtr->GetCorrectNumSteps();
+
+		// increase the current selceted Card index by 1 units
+		currentCardInfoPtr->SetCorrectNumSteps( currentUp + 1 );
+
+		// updating the textbox showing the current selceted Card index value
+		m_txtCurrCardUp->SetText( std::to_string( currentUp + 1 ) );
+
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
+	}
+}
+
+///
+/// @private
+/// @brief checks if the user interacted with the current selceted Card 
+///		Down panel
+///	
+/// Current selceted Card index panel contains  current selceted Card 
+///		Down promt textbox, current selceted Card Down value text box, 
+///		button to increase the current selceted Card Down, and button 
+///		to decrease the current selceted Card Down
+/// 
+/// Only the button to increase the current selceted Card Down, and 
+///		button to decrease the current selceted Card Down are interactable
+/// 
+/// If the interactable button was pressed then the current selceted Card 
+///		Down is increased or decresed by 1. current selceted Card index
+///		should be more than or equal to 0 
+///
+void Brood::Application::CardEditor::UpdateCurrCardInfoDown()
+{
+	// chekcing if the decrease the current selceted player index was pressed
+	if( m_btnDecCurrCardDown->DoElement() )
+	{
+		// getting the current active card
+		Brood::Application::Components::CardInfo* currentCardInfoPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr();
+
+		// getting current selceted Card index
+		unsigned currentDown = currentCardInfoPtr->GetIncorrectNumSteps();
+
+		// chekcing if the current currentMaxCardNum id 
+		// equal to 0 then do nothing
+		if( currentDown == 0 )
+		{
+			return;
+		}
+
+		// decrease the current selceted Card index by 1 units
+		currentCardInfoPtr->SetIncorrectNumSteps( currentDown - 1 );
+
+		// Downdating the textbox showing the current selceted Card index value
+		m_txtCurrCardDown->SetText( std::to_string( currentDown - 1 ) );
+
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
+	}
+	// chekcing if the increase the current selceted player index was pressed
+	else if( m_btnIncCurrCardDown->DoElement() )
+	{
+		// getting the current active card
+		Brood::Application::Components::CardInfo* currentCardInfoPtr = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr();
+
+		// getting current selceted Card index
+		unsigned currentDown = currentCardInfoPtr->GetIncorrectNumSteps();
+
+		// increase the current selceted Card index by 1 units
+		currentCardInfoPtr->SetIncorrectNumSteps( currentDown + 1 );
+
+		// Downdating the textbox showing the current selceted Card index value
+		m_txtCurrCardDown->SetText( std::to_string( currentDown + 1 ) );
+
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
 	}
 }
 
 /// 
 /// @private
-/// @brief checks if the user interacted with the element 
-///		SizeY panel
+/// @brief checks if the user interacted with the set Curr Card 
+///		Question panel
 ///	
-/// SizeY panel contains current element SizeY promt textbox, 
-///		current element SizeY value text box, button to increase the
-///		current element SizeY, and button to decrease the 
-///		element SizeY.
+/// Curr Card Question panel contains Curr Card Question promt textbox, 
+///		and textbox to enter the Curr Card Question.
 /// 
-/// Only the button to increase the SizeY, and button 
-///		to decrease SizeY are interactable
+/// Only the textbox to enter the Curr Card Question is interactable
 /// 
-/// If the interactable button was pressed then the SizeY 
-///		is increased or decresed by specified units if the 
-///		current element does not go outside the upper limit
-///
-/// @param a_btnDecSizeY pointer to the element's panel 
-///		decSizeY button 
-/// @param a_txtSizeY pointer to the element's panel 
-///		sizeY value textbox
-/// @param a_btnIncSizeY pointer to the element's panel 
-///		incSizeY button
-/// @param a_elemnetToChangeSizeY pointer to the element whose 
-///		size being controlled
-/// @param a_unit unit to increase or decrease
-/// @param a_lowerLimit the minimum SizeY of the element
-/// @param a_upperLimit the maximum SizeY of the element
+/// If the interactable textbox was pressed then it allows the
+///		user to set the game title
 /// 
-void Brood::Application::CardEditor::UpdateSizeY( Brood::BroodUI::Button* a_btnDecSizeY,
-												  Brood::BroodUI::TextBox* a_txtSizeY,
-												  Brood::BroodUI::Button* a_btnIncSizeY,
-												  Brood::BroodUI::UIElement* a_elemnetToChangeSizeY,
-												  unsigned a_unit,
-												  unsigned a_lowerLimit,
-												  unsigned a_upperLimit )
+void Brood::Application::CardEditor::UpdateCurrCardQuestionInput()
 {
-	// chekcing if the decrease the Y size was pressed
-	if( a_btnDecSizeY->DoElement() )
+	m_txtCurrCardQuestionInput->DoElement();
+
+	// check if game title textbox was de selected then save 
+	// the name to the title screen
+	if( m_txtCurrCardQuestionInput->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
 	{
-		// getting y-size information
-		sf::Vector2f currentSize = a_elemnetToChangeSizeY->GetBodySize();
-		int currentSizeY = currentSize.y;
+		m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr()->SetQuestion( m_txtCurrCardQuestionInput->GetText() );
 
-		// chekcing if the current size.Y is lower limit
-		if( currentSizeY - a_unit + 1 <= a_lowerLimit )
-		{
-			return;
-		}
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
 
-		// decrease the x position by a_unit units
-		a_elemnetToChangeSizeY->SetBodySize( currentSize.x, currentSizeY - a_unit );
-
-		// updating the textbox showing the x-positon value
-		a_txtSizeY->SetText( std::to_string( currentSizeY - a_unit ) );
-	}
-	// chekcing if the Increase the Y size was pressed
-	else if( a_btnIncSizeY->DoElement() )
-	{
-		// getting y-size information
-		sf::Vector2f currentSize = a_elemnetToChangeSizeY->GetBodySize();
-		int currentSizeY = currentSize.y;
-
-		// chekcing if increasing the size would make elemet 
-		// go over the upper limit
-		if( ( unsigned )a_elemnetToChangeSizeY->GetBodyPosition().y + currentSizeY + a_unit >= a_upperLimit )
-		{
-			return;
-		}
-
-		// increase the Card x position by a_unit units
-		a_elemnetToChangeSizeY->SetBodySize( currentSize.x, currentSizeY + a_unit );
-
-		// updating the textbox showing the x-positon value
-		a_txtSizeY->SetText( std::to_string( currentSizeY + a_unit ) );
+		// resetting the m_eterPressed
+		m_txtCurrCardQuestionInput->SetEnterPressedFalse();
+		// TODO change the folder name 
 	}
 }
 
 /// 
 /// @private
-/// @brief checks if the user interacted with the element 
-///		PosX panel
+/// @brief checks if the user interacted with the set Curr Card 
+///		Answer panel
 ///	
-/// PosX panel contains current element PosX promt textbox, 
-///		current element PosX value text box, button to increase the
-///		current element PosX, and button to decrease the 
-///		element PosX.
+/// Curr Card Answer panel contains Curr Card Answer promt textbox, 
+///		and textbox to enter the Curr Card Answer.
 /// 
-/// Only the button to increase the PosX, and button 
-///		to decrease PosX are interactable
+/// Only the textbox to enter the Curr Card Answer is interactable
 /// 
-/// If the interactable button was pressed then the PosX 
-///		is increased or decresed by specified units if the 
-///		current element does not go outside the upper limit
-///
-/// @param a_btnDecPosX pointer to the element's panel 
-///		decPosX button 
-/// @param a_txtPosX pointer to the element's panel 
-///		PosX value textbox
-/// @param a_btnIncPosX pointer to the element's panel 
-///		incPosX button
-/// @param a_elemnetToChangePosX pointer to the element whose 
-///		size being controlled
-/// @param a_unit unit to increase or decrease
-/// @param a_lowerLimit the minimum PosX of the element
-/// @param a_upperLimit the maximum PosX of the element
+/// If the interactable textbox was pressed then it allows the
+///		user to set the game title
 /// 
-void Brood::Application::CardEditor::UpdatePosX( Brood::BroodUI::Button* a_btnDecPosX,
-												 Brood::BroodUI::TextBox* a_txtPosX,
-												 Brood::BroodUI::Button* a_btnIncPosX,
-												 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
-												 unsigned a_unit,
-												 unsigned a_lowerLimit,
-												 unsigned a_upperLimit )
+void Brood::Application::CardEditor::UpdateCurrCardAnswerInput()
 {
-	// chekcing if the decrease the Card X postion was pressed
-	if( a_btnDecPosX->DoElement() )
+	m_txtCurrCardAnswerInput->DoElement();
+
+	// check if game title textbox was de selected then save 
+	// the name to the title screen
+	if( m_txtCurrCardAnswerInput->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
 	{
-		// getting x-position information
-		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
-		int currentPosX = currentPos.x;
+		m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->GetCurrActiveCardPtr()->SetCorrectAnswer( m_txtCurrCardAnswerInput->GetText() );
 
-		// checking if decreasing the element position any further
-		// would make the element goes under lower limit 
-		if( currentPosX - a_unit + 1 <= a_lowerLimit )
-		{
-			return;
-		}
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
 
-		// checking if decreasing the element position any further
-		// would make the element goes over upper limit 
-		if( currentPosX - a_unit <= a_lowerLimit )
-		{
-			return;
-		}
-
-		// decrease the Card x position by a_unit units
-		a_elemnetToChangePosX->SetBodyPosition( currentPosX - a_unit, currentPos.y );
-
-		// updating the textbox showing the x-positon value
-		a_txtPosX->SetText( std::to_string( currentPosX - a_unit ) );
-	}
-	// chekcing if the Increase the Card X postion was pressed
-	else if( a_btnIncPosX->DoElement() )
-	{
-		// getting x-position information
-		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
-		int currentPosX = currentPos.x;
-
-		// checking if increased the element position any further
-		// would make the element goes over upper limit 
-		if( currentPosX + ( unsigned )m_gameData->GetDisplayCardPtr()->GetBodySize().x + a_unit >= a_upperLimit )
-		{
-			return;
-		}
-
-		// increase the Card x position by a_unit units
-		a_elemnetToChangePosX->SetBodyPosition( currentPosX + a_unit, currentPos.y );
-
-		// updating the textbox showing the x-positon value
-		a_txtPosX->SetText( std::to_string( currentPosX + a_unit ) );
+		// resetting the m_eterPressed
+		m_txtCurrCardAnswerInput->SetEnterPressedFalse();
+		// TODO change the folder name 
 	}
 }
 
 /// 
 /// @private
-/// @brief checks if the user interacted with the player Y Offset panel
+/// @brief checks if the user interacted with the turn card panel
 ///	
-/// Player Y Offset panel contains current player Y Offset promt textbox, 
-///		current player Y Offset value text box, button to increase the
-///		current player Y Offset, and button to decrease the current 
-///		player Y Offset.
+/// turn card panel contains only turn card button to turn the 
+///		display card.
 /// 
-/// Only the button to increase the current player Y Offset, and button 
-///		to decrease the current player Y Offset are interactable
+/// Only the button to turn the display card is interactable.
+///		
+/// If the interactable button was pressed then it allows the
+///		user to turn the display card.
 /// 
-/// If the interactable button was pressed then the current player 
-///		Y Offset is increased or decresed by 1 if the current player
-///		does not go outside the board window 
-///
-void Brood::Application::CardEditor::UpdatePosY( Brood::BroodUI::Button* a_btnDecPosY,
-												 Brood::BroodUI::TextBox* a_txtPosY,
-												 Brood::BroodUI::Button* a_btnIncPosY,
-												 Brood::BroodUI::UIElement* a_elemnetToChangePosX,
-												 unsigned a_unit,
-												 unsigned a_lowerLimit,
-												 unsigned a_upperLimit )
+void Brood::Application::CardEditor::UpdateTurnCard()
 {
-	// chekcing if the decrease the Card Y postion was pressed
-	if( a_btnDecPosY->DoElement() )
+	if( m_btnTurnCardAround->DoElement() )
 	{
-		// getting y-position information
-		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
-		int currentPosY = currentPos.y;
-
-		// checking if decreasing the element position any further
-		// would make the element goes under lower limit 
-		if( currentPosY - a_unit + 1 <= a_lowerLimit )
-		{
-			return;
-		}
-
-		// decrease the Card y position by a_unit units
-		a_elemnetToChangePosX->SetBodyPosition( currentPos.x, currentPosY - a_unit );
-
-		// updating the textbox showing the x-positon value
-		a_txtPosY->SetText( std::to_string( currentPosY - a_unit ) );
-	}
-	// chekcing if the increase the Card Y postion was pressed
-	else if( a_btnIncPosY->DoElement() )
-	{
-		// getting y-position information
-		sf::Vector2f currentPos = a_elemnetToChangePosX->GetBodyPosition();
-		int currentPosY = currentPos.y;
-
-		// checking if increased the element position any further
-		// would make the element goes over upper limit 
-		if( currentPosY + ( unsigned )m_gameData->GetDisplayCardPtr()->GetBodySize().y + a_unit >= a_upperLimit )
-		{
-			return;
-		}
-
-		// increase the Card x position by 5 units
-		a_elemnetToChangePosX->SetBodyPosition( currentPos.x, currentPosY + 5 );
-
-		// updating the textbox showing the x-positon value
-		a_txtPosY->SetText( std::to_string( currentPosY + 5 ) );
+		// updating the display card
+		m_gameData->GetDisplayCardPtr()->ToggleCardFace();
 	}
 }
-
 
 // ======================================================================
 // ================= end of CardEditor class ============================

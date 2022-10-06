@@ -161,6 +161,11 @@ unsigned Brood::Application::Components::Deck::GetCurrActiveCardIdx()
 	return m_currActiveCardIdx;
 }
 
+Brood::Application::Components::CardInfo* Brood::Application::Components::Deck::GetCurrActiveCardPtr()
+{
+	return m_cardList.at(m_currActiveCardIdx);
+}
+
 /// 
 /// @public
 /// @brief sets card current active card index

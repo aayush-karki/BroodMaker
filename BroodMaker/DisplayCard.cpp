@@ -89,57 +89,69 @@ Brood::Application::Components::DisplayCard& Brood::Application::Components::Dis
 /// 
 void Brood::Application::Components::DisplayCard::InializeDisplayCard()
 {
-	SetBodySize( 400, 200 );
-	SetBodyPosition( 10, 200 );
-	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
-
 	// ========= Font of the card =========
 
 	// initializing front time
-	m_TxtFrontTimePromt = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																	{ 110,210 }, "Time" );
-	m_TxtFrontTimeValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																	{ 110,260 }, "", "TimeValue" );
+	m_TxtFrontTimePromt = Brood::BroodUI::TextBox::DyCreateTextBox( { 120,35 },
+																	{ 135,265 }, "Time" );
+	m_TxtFrontTimeValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 60,35 },
+																	{ 265,265 }, "", "TimeValue" );
 
 	// initializing up
-	m_TxtUpPromt = Brood::BroodUI::TextBox::DyCreateTextBox( { 50,40 },
-															 { 210,310 }, "Up:" );
-	m_TxtUpValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 50,40 },
-															 { 210,360 }, "", "UpValue" );
+	m_TxtUpPromt = Brood::BroodUI::TextBox::DyCreateTextBox( { 120,35 },
+															 { 135,310 }, "Up:" );
+	m_TxtUpValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 60,35 },
+															 { 265,310 }, "", "UpValue" );
 
 	// initializing down
-	m_TxtDownPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 50,40 },
-																{ 260,310 }, "Down:" );
-	m_TxtDownValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 50,40 },
-															   { 260,360 }, "", "downValue" );
-	m_BtnTurnCard = Brood::BroodUI::Button::DyCreateButton( { 50, 200 },
-															{ 10, 3600 }, "turn card" );;
+	m_TxtDownPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 120,35 },
+																{ 135,355 }, "Down:" );
+	m_TxtDownValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 60,35 },
+															   { 265,355 }, "", "downValue" );
+	// initializing turn card
+	m_BtnTurnCard = Brood::BroodUI::Button::DyCreateButton( { 190, 35 },
+															{ 135, 400 }, "turn card" );
 
 	// ========= back of the card =========
 
 	// initializing back time
-	m_TxtBackTimePromt = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																   { 110,210 }, "Time left" );
-	m_TxtBackTimeValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																   { 110,260 }, "", "TimeValue" );
+	m_TxtBackTimePromt = Brood::BroodUI::TextBox::DyCreateTextBox( { 85,35 },
+																   { 115,220 }, "Time left" );
+	m_TxtBackTimeValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 140,35 },
+																   { 210,220 }, "", "TimeValue" );
 
 	// initializing question
-	m_TxtQuestionPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																	{ 110,210 }, "Question: " );
-	m_TxtQuestionValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																   { 110,260 }, "", "question" );
+	m_TxtQuestionPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
+																	{ 115,265 }, "Question: " );
+	m_TxtQuestionValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
+																   { 115,310 }, "", "question" );
 
 	// initializing userAnswer
-	m_TxtUserAnswerPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 100,40 },
-																	  { 110,310 }, "Answer:" );
-	m_TxtUserAnswerValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 200,40 },
-																	 { 220,310 }, "", "enter your answer" );
+	m_TxtUserAnswerPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
+																	  { 115,355 }, "Answer:" );
+	m_TxtUserAnswerValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
+																	 { 115,400 }, "", "enter your answer" );
 
 	// initializing submit button
-	m_BtnSubmit = Brood::BroodUI::Button::DyCreateButton( { 200,40 },
-														  { 110,360 }, "Submit Answer" );
+	m_BtnSubmit = Brood::BroodUI::Button::DyCreateButton( { 140, 35 },
+														  { 165, 445 }, "Submit Answer" );
 
+	// updating the displayed text in the box
 	UpdateDisplayedText();
+
+	// setting up the card 
+	// 
+	// getting the top left cordinate of the box that
+	//		encloses all the displayCard component
+	sf::Vector2f topLeftPos = GetNearestTopLeftCordinate();
+
+	// getting the bottom right cordinate of the box that
+	//		encloses all the displayCard component
+	sf::Vector2f bottomRightPos = GetFurtherstBottomRightCordinate();
+
+	SetBodySize( ( bottomRightPos.x - topLeftPos.x ) + 20.f, ( bottomRightPos.y - topLeftPos.y ) + 20.f );
+	SetBodyPosition( topLeftPos - sf::Vector2f{ 10,10 } );
+	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 }
 
 
@@ -324,6 +336,122 @@ Brood::BroodUI::Button* Brood::Application::Components::DisplayCard::GetSubmitPt
 
 /// 
 /// @public
+/// @brief gets the bottom right cordinate of the box that
+///		encloses all the child component
+/// 
+/// @return gets the bottom right cordinate of the box that
+///		encloses all the child component
+///
+sf::Vector2f Brood::Application::Components::DisplayCard::GetFurtherstBottomRightCordinate()
+{
+	// stores the largest Upper position found
+	sf::Vector2f largestUpperPos = { std::numeric_limits<float>::min(), std::numeric_limits<float>::min() };
+
+	// for m_TxtFrontTimePromt
+	UpdateLargestUpperPos( largestUpperPos, m_TxtFrontTimePromt );
+
+	// for m_TxtFrontTimeValue
+	UpdateLargestUpperPos( largestUpperPos, m_TxtFrontTimeValue );
+
+	// for m_TxtUpPromt
+	UpdateLargestUpperPos( largestUpperPos, m_TxtUpPromt );
+
+	// for m_TxtUpValue
+	UpdateLargestUpperPos( largestUpperPos, m_TxtUpValue );
+
+	// for m_TxtDownPrompt
+	UpdateLargestUpperPos( largestUpperPos, m_TxtDownPrompt );
+
+	// for m_TxtDownValue
+	UpdateLargestUpperPos( largestUpperPos, m_TxtDownValue );
+
+	// for m_BtnTurnCard
+	UpdateLargestUpperPos( largestUpperPos, m_BtnTurnCard );
+
+	// for m_TxtBackTimePromt
+	UpdateLargestUpperPos( largestUpperPos, m_TxtBackTimePromt );
+
+	// for m_TxtBackTimeValue
+	UpdateLargestUpperPos( largestUpperPos, m_TxtBackTimeValue );
+
+	// for m_TxtQuestionPrompt
+	UpdateLargestUpperPos( largestUpperPos, m_TxtQuestionPrompt );
+
+	// for m_TxtBackTimeValue
+	UpdateLargestUpperPos( largestUpperPos, m_TxtBackTimeValue );
+
+	// for m_TxtUserAnswerPrompt
+	UpdateLargestUpperPos( largestUpperPos, m_TxtUserAnswerPrompt );
+
+	// for m_TxtUserAnswerValue
+	UpdateLargestUpperPos( largestUpperPos, m_TxtUserAnswerValue );
+
+	// for m_BtnSubmit
+	UpdateLargestUpperPos( largestUpperPos, m_BtnSubmit );
+
+	return largestUpperPos;
+}
+
+/// 
+/// @public
+/// @brief gets top left cordinate of the box that
+///		encloses all the child component
+/// 
+/// @return gets top left cordinate of the box that
+///		encloses all the child component
+///
+sf::Vector2f Brood::Application::Components::DisplayCard::GetNearestTopLeftCordinate()
+{
+	// stores the largest Upper position found
+	sf::Vector2f smallestLowerPos = { std::numeric_limits<float>::max(), std::numeric_limits<float>::max() };
+
+	// for m_TxtFrontTimePromt
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtFrontTimePromt );
+
+	// for m_TxtFrontTimeValue
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtFrontTimeValue );
+
+	// for m_TxtUpPromt
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtUpPromt );
+
+	// for m_TxtUpValue
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtUpValue );
+
+	// for m_TxtDownPrompt
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtDownPrompt );
+
+	// for m_TxtDownValue
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtDownValue );
+
+	// for m_BtnTurnCard
+	UpdateSmallestLowerPos( smallestLowerPos, m_BtnTurnCard );
+
+	// for m_TxtBackTimePromt
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtBackTimePromt );
+
+	// for m_TxtBackTimeValue
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtBackTimeValue );
+
+	// for m_TxtQuestionPrompt
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtQuestionPrompt );
+
+	// for m_TxtBackTimeValue
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtBackTimeValue );
+
+	// for m_TxtUserAnswerPrompt
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtUserAnswerPrompt );
+
+	// for m_TxtUserAnswerValue
+	UpdateSmallestLowerPos( smallestLowerPos, m_TxtUserAnswerValue );
+
+	// for m_BtnSubmit
+	UpdateSmallestLowerPos( smallestLowerPos, m_BtnSubmit );
+
+	return smallestLowerPos;
+}
+
+/// 
+/// @public
 /// @brief Setter function to set a front background filename
 /// 
 /// @param a_frontBgFilename front background filename
@@ -378,19 +506,42 @@ void Brood::Application::Components::DisplayCard::SetCardInfoToDisplay( Brood::A
 /// 
 ///  If current bg is using front then toggles it to use back
 /// 
-void Brood::Application::Components::DisplayCard::ToggleBackground()
+void Brood::Application::Components::DisplayCard::ToggleCardFace()
 {
 	if( m_isCurrFront )
 	{
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActiveOverlay );
 		m_bodySprite.SetTextureFromFilePath( m_backBgFileName );
-
 	}
 	else
 	{
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu );
 		m_bodySprite.SetTextureFromFilePath( m_frontBgFileName );
 	}
 
 	m_isCurrFront = !m_isCurrFront;
+}
+
+/// 
+/// @public
+/// @brief sets m_currFront
+/// 
+/// @param a_currFront If current bg is using front then toggles it to use back
+/// 
+void Brood::Application::Components::DisplayCard::SetCardFront( bool a_currFront )
+{
+	m_isCurrFront = a_currFront;
+
+	if( m_isCurrFront )
+	{
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActiveOverlay );
+		m_bodySprite.SetTextureFromFilePath( m_backBgFileName );
+	}
+	else
+	{
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu );
+		m_bodySprite.SetTextureFromFilePath( m_frontBgFileName );
+	}
 }
 
 /// 
@@ -409,6 +560,7 @@ void Brood::Application::Components::DisplayCard::UpdateDisplayedText()
 	m_TxtDownValue->SetText( std::to_string( m_cardInfoToDisplay->GetIncorrectNumSteps() ) );
 	m_TxtBackTimeValue->SetText( std::to_string( m_cardInfoToDisplay->GetTime() ) );
 	m_TxtQuestionValue->SetText( m_cardInfoToDisplay->GetQuestion() );
+	m_TxtQuestionValue->SetText( m_cardInfoToDisplay->GetCorrectAnswer() );
 }
 
 ///
@@ -496,6 +648,55 @@ void Brood::Application::Components::DisplayCard::Debugger()
 	// debugging submit button
 	m_BtnSubmit->Debugger();
 }
+
+/// 
+/// @private
+/// @brief Getter function to get the bottom right coridinate  of the
+///		passed component 
+/// 
+/// @param a_comp component whose bottom right coridinate is to be found
+///
+/// @return the bottom right coridinate  of the passed component
+///
+sf::Vector2f Brood::Application::Components::DisplayCard::GetCompUpperPos( Brood::BroodUI::UIElement* a_comp )
+{
+	return  ( a_comp->GetBodyPosition() + a_comp->GetBodySize() );
+}
+
+/// 
+/// @private
+/// @brief updates the passed largest upper pos by comparaing it with the 
+///		upper position of the passed component
+/// 
+/// @param a_largestUpperPos largest upper pos passed by reference
+/// @param a_comp component whose upperPos is to be compared to
+/// 
+void Brood::Application::Components::DisplayCard::UpdateLargestUpperPos( sf::Vector2f& a_largestUpperPos,
+																		 Brood::BroodUI::UIElement* a_comp )
+{
+	sf::Vector2f currComponentUpperPos = GetCompUpperPos( a_comp );
+
+	a_largestUpperPos.x = std::max( a_largestUpperPos.x, currComponentUpperPos.x );
+	a_largestUpperPos.y = std::max( a_largestUpperPos.y, currComponentUpperPos.y );
+}
+
+/// 
+/// @private
+/// @brief updates the passed smallest lower pos by comparaing it with the 
+///		lower position of the passed component
+/// 
+/// @param a_smallestLowerPos smallest lower pos passed by reference
+/// @param a_comp component whose lowerPos is to be compared to
+/// 
+void Brood::Application::Components::DisplayCard::UpdateSmallestLowerPos( sf::Vector2f& a_smallestLowerPos,
+																		  Brood::BroodUI::UIElement* a_comp )
+{
+	sf::Vector2f currComponentUpperPos = ( sf::Vector2f )a_comp->GetBodyPosition();
+
+	a_smallestLowerPos.x = std::min( a_smallestLowerPos.x, currComponentUpperPos.x );
+	a_smallestLowerPos.y = std::min( a_smallestLowerPos.y, currComponentUpperPos.y );
+}
+
 
 
 // ======================================================================

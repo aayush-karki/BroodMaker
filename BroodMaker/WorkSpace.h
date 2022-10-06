@@ -55,13 +55,13 @@ public:
 	void SetFont( sf::Font* a_font );
 
 	// pure virtual funciton
-	
+
 	// initializes the component of a workspace
-	virtual void InitializeWorkSpace() = 0; 
-	
+	virtual void InitializeWorkSpace() = 0;
+
 	// all the logic for the workspace is here
-	virtual void Update() = 0; 
-	
+	virtual void Update() = 0;
+
 	// updates all the display elment
 	virtual void UpdateAllDispayElement() = 0;
 
@@ -69,14 +69,16 @@ public:
 	virtual void Draw( sf::RenderWindow& a_window ) = 0;
 
 	// debugger
-	virtual void Debugger() = 0; 
+	virtual void Debugger() = 0;
 
-/// @TODO: set the editor or game workspace varialbe here
+	/// @TODO: set the editor or game workspace varialbe here
 
 	// ================= protected member function ==============
 
+	// ===========================================================
 	// ===== helper funciton to dynamicallycreate UI elements =====
-
+	// ===========================================================
+	
 	// Dynamically create a button, initializes it, and adds
 	// it to m_unNameList
 	Brood::BroodUI::Button* DyCreateButton( sf::Vector2f a_size,
@@ -159,18 +161,69 @@ public:
 										 std::string a_placeHolderText,
 										 bool a_createFromTop = false );
 
+	// ===========================================================
+	// =========== generalized update functions ==================
+	// ===========================================================
+
+	// TODO may be generalize for other editor too
+	// TODO maybe could be made like a initializer function
+	// TODO make this a signify if the if the element was 
+	//		increased, decreased, or none
+	
+	// checks if the user interacted with the 
+	// x size panel Element
+	// This is a generalized update SizeX
+	void UpdateDecIncSizeX( Brood::BroodUI::Button* a_btnDecSizeX,
+							Brood::BroodUI::TextBox* a_txtSizeX,
+							Brood::BroodUI::Button* a_btnIncSizeX,
+							Brood::BroodUI::UIElement* a_elemnetToChangeSizeX,
+							unsigned a_unit,
+							unsigned a_lowerLimit,
+							unsigned a_upperLimit );
+
+	// checks if the user interacted with the 
+	// x size panel Element
+	// This is a generalized update SizeY
+	void UpdateDecIncSizeY( Brood::BroodUI::Button* a_btnDecSizeY,
+							Brood::BroodUI::TextBox* a_txtSizeY,
+							Brood::BroodUI::Button* a_btnIncSizeY,
+							Brood::BroodUI::UIElement* a_elemnetToChangeSizeY,
+							unsigned a_unit,
+							unsigned a_lowerLimit,
+							unsigned a_upperLimit );
+
+	// checks if the user interacted with the Card 
+	// x Pos panel Element
+	void UpdateDecIncPosX( Brood::BroodUI::Button* a_btnDecPosX,
+						   Brood::BroodUI::TextBox* a_txtPosX,
+						   Brood::BroodUI::Button* a_btnIncPosX,
+						   Brood::BroodUI::UIElement* a_elemnetToChangePosX,
+						   unsigned a_unit,
+						   unsigned a_lowerLimit,
+						   unsigned a_upperLimit );
+
+	// checks if the user interacted with the Card 
+	// x Pos panel Element
+	void UpdateDecIncPosY( Brood::BroodUI::Button* a_btnDecPosY,
+						   Brood::BroodUI::TextBox* a_txtPosY,
+						   Brood::BroodUI::Button* a_btnIncPosY,
+						   Brood::BroodUI::UIElement* a_elemnetToChangePosX,
+						   unsigned a_unit,
+						   unsigned a_lowerLimit,
+						   unsigned a_upperLimit );
+
 
 	// ================= protected data member ==================  
 protected:
 
 	/// font
 	sf::Font* m_font;
-	
+
 	/// stores list of all UI Elements pointer
-	std::vector<Brood::BroodUI::UIElement*> m_unNamedUIList; 
-	
+	std::vector<Brood::BroodUI::UIElement*> m_unNamedUIList;
+
 	/// true if debugger is on
-	bool m_isDebugger; 
+	bool m_isDebugger;
 };
 
 // ======================================================================
