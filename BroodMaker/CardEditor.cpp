@@ -115,12 +115,136 @@ void Brood::Application::CardEditor::Update()
 /// 
 void Brood::Application::CardEditor::UpdateAllDispayElement()
 {
-
 	Brood::Application::Components::Deck* activeDeck = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck();
-
-
+	
 	// updating the display card
 	m_gameData->GetDisplayCardPtr()->SetCardInfoToDisplay( activeDeck->GetCurrActiveCardPtr() );
+
+	// ======================================================================
+	// ========== update the panel elements in the CardDisplay Panel ========
+	// ======================================================================
+
+	Brood::Application::Components::DisplayCard* displayCardPtr = m_gameData->GetDisplayCardPtr();
+
+	m_txtCardSizeX->SetText( std::to_string( displayCardPtr->GetBodySize().x ) );
+	m_txtCardSizeY->SetText( std::to_string( displayCardPtr->GetBodySize().y ) );
+
+	m_txtCardPosX->SetText( std::to_string( displayCardPtr->GetBodyPosition().x ) );
+	m_txtCardPosY->SetText( std::to_string( displayCardPtr->GetBodyPosition().y ) );
+
+	m_txtCardFrontBgFileInput->SetText( displayCardPtr->GetFrontBgFileName() );
+	m_txtCardBackBgFileInput->SetText( displayCardPtr->GetBackBgFileName());
+
+
+
+
+	// ======================================================================
+	// = update the panel elements in the CardDisplay Front component Panel =
+	// ======================================================================
+	
+	// front time prompt
+	m_txtCardFrontTimePromptSizeX->SetText( std::to_string( displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().x ) );
+	m_txtCardFrontTimePromptSizeY->SetText( std::to_string( displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
+
+	m_txtCardFrontTimePromptPosX->SetText( std::to_string( displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().x ) );
+	m_txtCardFrontTimePromptPosY->SetText( std::to_string( displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().y ) );
+
+	// front time value
+	m_txtCardFrontTimeValueSizeX->SetText( std::to_string( displayCardPtr->GetFrontTimeValuePtr()->GetBodySize().x ) );
+	m_txtCardFrontTimeValueSizeY->SetText( std::to_string( displayCardPtr->GetFrontTimeValuePtr()->GetBodySize().y ) );
+
+	m_txtCardFrontTimeValuePosX->SetText( std::to_string( displayCardPtr->GetFrontTimeValuePtr()->GetBodyPosition().x ) );
+	m_txtCardFrontTimeValuePosY->SetText( std::to_string( displayCardPtr->GetFrontTimeValuePtr()->GetBodyPosition().y ) );
+
+	// Up prompt
+	m_txtCardUpPromptSizeX->SetText( std::to_string( displayCardPtr->GetUpPromptPtr()->GetBodySize().x ) );
+	m_txtCardUpPromptSizeY->SetText( std::to_string( displayCardPtr->GetUpPromptPtr()->GetBodySize().y ) );
+
+	m_txtCardUpPromptPosX->SetText( std::to_string( displayCardPtr->GetUpPromptPtr()->GetBodyPosition().x ) );
+	m_txtCardUpPromptPosY->SetText( std::to_string( displayCardPtr->GetUpPromptPtr()->GetBodyPosition().y ) );
+
+	// Up value
+	m_txtCardUpValueSizeX->SetText( std::to_string( displayCardPtr->GetUpValuePtr()->GetBodySize().x ) );
+	m_txtCardUpValueSizeY->SetText( std::to_string( displayCardPtr->GetUpValuePtr()->GetBodySize().y ) );
+
+	m_txtCardUpValuePosX->SetText( std::to_string( displayCardPtr->GetUpValuePtr()->GetBodyPosition().x ) );
+	m_txtCardUpValuePosY->SetText( std::to_string( displayCardPtr->GetUpValuePtr()->GetBodyPosition().y ) );
+
+	// Down prompt
+	m_txtCardDownPromptSizeX->SetText( std::to_string( displayCardPtr->GetDownPromptPtr()->GetBodySize().x ) );
+	m_txtCardDownPromptSizeY->SetText( std::to_string( displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
+
+	m_txtCardDownPromptPosX->SetText( std::to_string( displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
+	m_txtCardDownPromptPosY->SetText( std::to_string( displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
+
+	// Down value
+	m_txtCardDownValueSizeX->SetText( std::to_string( displayCardPtr->GetDownValuePtr()->GetBodySize().x ) );
+	m_txtCardDownValueSizeY->SetText( std::to_string( displayCardPtr->GetDownValuePtr()->GetBodySize().y ) );
+
+	m_txtCardDownValuePosX->SetText( std::to_string( displayCardPtr->GetDownValuePtr()->GetBodyPosition().x ) );
+	m_txtCardDownValuePosY->SetText( std::to_string( displayCardPtr->GetDownValuePtr()->GetBodyPosition().y ) );
+
+	// TurnCard 
+	m_txtCardTurnCardSizeX->SetText( std::to_string( displayCardPtr->GetTurnCardPtr()->GetBodySize().x ) );
+	m_txtCardTurnCardSizeY->SetText( std::to_string( displayCardPtr->GetTurnCardPtr()->GetBodySize().y ) );
+
+	m_txtCardTurnCardPosX->SetText( std::to_string( displayCardPtr->GetTurnCardPtr()->GetBodyPosition().x ) );
+	m_txtCardTurnCardPosY->SetText( std::to_string( displayCardPtr->GetTurnCardPtr()->GetBodyPosition().y ) );
+
+	// ======================================================================
+	// = update the panel elements in the CardDisplay back component Panel =
+	// ======================================================================
+
+	// Back time prompt
+	m_txtCardBackTimePromptSizeX->SetText( std::to_string( displayCardPtr->GetBackTimePromptPtr()->GetBodySize().x ) );
+	m_txtCardBackTimePromptSizeY->SetText( std::to_string( displayCardPtr->GetBackTimePromptPtr()->GetBodySize().y ) );
+
+	m_txtCardBackTimePromptPosX->SetText( std::to_string( displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().x ) );
+	m_txtCardBackTimePromptPosY->SetText( std::to_string( displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().y ) );
+
+	// Back time value
+	m_txtCardBackTimeValueSizeX->SetText( std::to_string( displayCardPtr->GetBackTimeValuePtr()->GetBodySize().x ) );
+	m_txtCardBackTimeValueSizeY->SetText( std::to_string( displayCardPtr->GetBackTimeValuePtr()->GetBodySize().y ) );
+
+	m_txtCardBackTimeValuePosX->SetText( std::to_string( displayCardPtr->GetBackTimeValuePtr()->GetBodyPosition().x ) );
+	m_txtCardBackTimeValuePosY->SetText( std::to_string( displayCardPtr->GetBackTimeValuePtr()->GetBodyPosition().y ) );
+
+	// Question prompt
+	m_txtCardQuestionPromptSizeX->SetText( std::to_string( displayCardPtr->GetQuestionPromptPtr()->GetBodySize().x ) );
+	m_txtCardQuestionPromptSizeY->SetText( std::to_string( displayCardPtr->GetQuestionPromptPtr()->GetBodySize().y ) );
+
+	m_txtCardQuestionPromptPosX->SetText( std::to_string( displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().x ) );
+	m_txtCardQuestionPromptPosY->SetText( std::to_string( displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().y ) );
+
+	// Question value
+	m_txtCardQuestionValueSizeX->SetText( std::to_string( displayCardPtr->GetQuestionValuePtr()->GetBodySize().x ) );
+	m_txtCardQuestionValueSizeY->SetText( std::to_string( displayCardPtr->GetQuestionValuePtr()->GetBodySize().y ) );
+
+	m_txtCardQuestionValuePosX->SetText( std::to_string( displayCardPtr->GetQuestionValuePtr()->GetBodyPosition().x ) );
+	m_txtCardQuestionValuePosY->SetText( std::to_string( displayCardPtr->GetQuestionValuePtr()->GetBodyPosition().y ) );
+
+	// Answer prompt
+	m_txtCardAnswerPromptSizeX->SetText( std::to_string( displayCardPtr->GetAnswerPromptPtr()->GetBodySize().x ) );
+	m_txtCardAnswerPromptSizeY->SetText( std::to_string( displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
+
+	m_txtCardAnswerPromptPosX->SetText( std::to_string( displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
+	m_txtCardAnswerPromptPosY->SetText( std::to_string( displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
+
+	// Answer value
+	m_txtCardAnswerValueSizeX->SetText( std::to_string( displayCardPtr->GetAnswerValuePtr()->GetBodySize().x ) );
+	m_txtCardAnswerValueSizeY->SetText( std::to_string( displayCardPtr->GetAnswerValuePtr()->GetBodySize().y ) );
+
+	m_txtCardAnswerValuePosX->SetText( std::to_string( displayCardPtr->GetAnswerValuePtr()->GetBodyPosition().x ) );
+	m_txtCardAnswerValuePosY->SetText( std::to_string( displayCardPtr->GetAnswerValuePtr()->GetBodyPosition().y ) );
+
+	// Submit 
+	m_txtCardSubmitSizeX->SetText( std::to_string( displayCardPtr->GetSubmitPtr()->GetBodySize().x ) );
+	m_txtCardSubmitSizeY->SetText( std::to_string( displayCardPtr->GetSubmitPtr()->GetBodySize().y ) );
+
+	m_txtCardSubmitPosX->SetText( std::to_string( displayCardPtr->GetSubmitPtr()->GetBodyPosition().x ) );
+	m_txtCardSubmitPosY->SetText( std::to_string( displayCardPtr->GetSubmitPtr()->GetBodyPosition().y ) );
+
+
 }
 
 /// 
@@ -536,13 +660,13 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosXPrompt, &m_btnCardTurnCardDecPosX,
 								 &m_txtCardTurnCardPosX, &m_btnCardTurnCardIncPosX,
 								 "Turn Card X Pos",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
+								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodyPosition().x ) );
 
 	// creating a panel element to control the CardTurnCard Pos Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosYPrompt, &m_btnCardTurnCardDecPosY,
 								 &m_txtCardTurnCardPosY, &m_btnCardTurnCardIncPosY,
 								 "Turn Card Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
+								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardFrontTimePrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeXPrompt, &m_btnCardFrontTimePromptDecSizeX,
@@ -620,13 +744,13 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardSizeXPrompt, &m_btnCardTurnCardDecSizeX,
 								 &m_txtCardTurnCardSizeX, &m_btnCardTurnCardIncSizeX,
 								 "Turn Card X Size",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().x ) );
+								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodySize().x ) );
 
 	// creating a panel element to control the CardTurnCard Size Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardSizeYPrompt, &m_btnCardTurnCardDecSizeY,
 								 &m_txtCardTurnCardSizeY, &m_btnCardTurnCardIncSizeY,
 								 "Turn Card Y Size",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
+								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodySize().y ) );
 
 }
 
@@ -1141,13 +1265,13 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosXPrompt, &m_btnCardSubmitDecPosX,
 								 &m_txtCardSubmitPosX, &m_btnCardSubmitIncPosX,
 								 "Submit Button X Pos",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
+								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodyPosition().x ) );
 
 	// creating a panel element to control the CardSubmit Pos Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosYPrompt, &m_btnCardSubmitDecPosY,
 								 &m_txtCardSubmitPosY, &m_btnCardSubmitIncPosY,
 								 "Submit Button Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
+								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardBackTimePrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptSizeXPrompt, &m_btnCardBackTimePromptDecSizeX,
@@ -1225,13 +1349,13 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitSizeXPrompt, &m_btnCardSubmitDecSizeX,
 								 &m_txtCardSubmitSizeX, &m_btnCardSubmitIncSizeX,
 								 "Submit Button X Size",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().x ) );
+								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodySize().x ) );
 
 	// creating a panel element to control the CardSubmit Size Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitSizeYPrompt, &m_btnCardSubmitDecSizeY,
 								 &m_txtCardSubmitSizeY, &m_btnCardSubmitIncSizeY,
 								 "Submit Button Y Size",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
+								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodySize().y ) );
 
 }
 

@@ -187,7 +187,7 @@ void Brood::Application::DeckEditor::UpdateAllDispayElement()
 	m_txtCardInitFileInput->SetText( deckManagerPtr->GetCurrActiveDeck()->GetCardInitFileName() );
 
 	// number of cards
-	deckManagerPtr->GetCurrActiveDeck()->SetCardListSize( deckManagerPtr->GetCurrActiveDeck()->GetCardList().size() );
+	m_txtCardNum->SetText( std::to_string( deckManagerPtr->GetCurrActiveDeck()->GetCardList().size() ));
 }
 
 /// 
