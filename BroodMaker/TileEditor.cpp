@@ -55,7 +55,7 @@ void Brood::Application::TileEditor::InitializeWorkSpace()
 {
 	// creating the setting title
 	m_txtSettingTitle = DyCreateTextBox( { m_panelBodyPtr->getSize().x, 40 },
-										 { m_panelBodyPtr->getPosition().x, 50 }, "Path Settings" );
+										 { m_panelBodyPtr->getPosition().x, 50 }, "Tile Settings" );
 	m_txtSettingTitle->SetFontSize( 18 );
 
 	Brood::Application::Components::Path* currActivePath = m_gameData->GetBoardPtr()->GetCurrentActivePath();
@@ -74,8 +74,8 @@ void Brood::Application::TileEditor::InitializeWorkSpace()
 
 	// initializing the UI to set the tile type
 	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtTileTypePromt, &m_ddiTileType,
-										"Tile Type: ", { "Blank Tile",	"Tile Tile","Start Tile", "End Tile", "Bridge Tile" },
-										19 );
+										"Tile Type: ", { "Blank Tile",	"Normal Tile","Start Tile", "End Tile", "Bridge Tile" },
+										15 );
 
 	// creating a panel element to control the NextPath tile's row
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtTileNextPathRowPromt, &m_btnTileDecNextPathRow,
@@ -145,33 +145,45 @@ void Brood::Application::TileEditor::Update()
 	// panel Element
 	UpdateTileType();
 
-	// checks if the user interacted with the NextPath row
-	// number panel Element
-	UpdateNextPathRowNumber();
+	Brood::Application::Components::ENUM_TileType currTileType = m_gameData->GetBoardPtr()->GetCurrentActivePath()->GetTileType();
 
-	// checks if the user interacted with the NextPath column
-	// number panel Element
-	UpdateNextPathColNumber();
+	if( currTileType == Brood::Application::Components::ENUM_TileType::TILE_tile
+		|| currTileType == Brood::Application::Components::ENUM_TileType::TILE_start
+		|| currTileType == Brood::Application::Components::ENUM_TileType::TILE_bridge )
+	{
+		// checks if the user interacted with the NextPath row
+		// number panel Element
+		UpdateNextPathRowNumber();
 
-	// checks if the user interacted with the EndBridge row
-	// number panel Element
-	UpdateEndBridgeRowNumber();
+		// checks if the user interacted with the NextPath column
+		// number panel Element
+		UpdateNextPathColNumber();
 
-	// checks if the user interacted with the EndBridge column
-	// number panel Element
-	UpdateEndBridgeColNumber();
+		// checks if the user interacted with the correct number 
+		// of card panel Element
+		UpdateCorrectCardNumber();
 
-	// checks if the user interacted with the correct number 
-	// of card panel Element
-	UpdateCorrectCardNumber();
+		// checks if the user interacted with the assign deck idx
+		// panel Element
+		UpdateAssinedDeckIdx();
 
-	// checks if the user interacted with the assign deck idx
-	// panel Element
-	UpdateAssinedDeckIdx();
+		// checks if the user interacted with the force dice roll
+		// panel Element
+		UpdateForceDiceRoll();
+	}
 
-	// checks if the user interacted with the force dice roll
-	// panel Element
-	UpdateForceDiceRoll();
+	if( currTileType == Brood::Application::Components::ENUM_TileType::TILE_bridge )
+	{
+
+		// checks if the user interacted with the EndBridge row
+		// number panel Element
+		UpdateEndBridgeRowNumber();
+
+		// checks if the user interacted with the EndBridge column
+		// number panel Element
+		UpdateEndBridgeColNumber();
+	}
+
 
 	// checks if the user interacted with the load 
 	// tile texture panel Element
@@ -200,6 +212,10 @@ void Brood::Application::TileEditor::UpdateAllDispayElement()
 	// tile type
 	unsigned itemIdx = ( int )currActivepathPtr->GetTileType();
 	std::string itemName = m_ddiTileType->GetItemList().at( itemIdx )->GetText();
+	while( itemName.size() < 15 )
+	{
+		itemName = " " + itemName + " ";
+	}
 	m_ddiTileType->SetText( itemName );
 
 	// next path row
@@ -223,7 +239,7 @@ void Brood::Application::TileEditor::UpdateAllDispayElement()
 	// Force dice roll
 	itemIdx = !currActivepathPtr->GetForceDiceRoll();
 	itemName = m_ddiTileForceDiceRoll->GetItemList().at( itemIdx )->GetText();
-	while( itemName.size() < 27 )
+	while( itemName.size() < 20 )
 	{
 		itemName = " " + itemName + " ";
 	}
@@ -435,7 +451,7 @@ void Brood::Application::TileEditor::UpdateTileType()
 					// setting the first item as the first 
 					std::string itemName = m_ddiTileType->GetItemList().at( currIDx )->GetText();
 
-					while( itemName.size() < 33 )
+					while( itemName.size() < 15 )
 					{
 						itemName = "     " + itemName + "     ";
 					}

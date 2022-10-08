@@ -104,13 +104,13 @@ void Brood::Application::DeckEditor::InitializeWorkSpace()
 	// initializing the UI to control deck cardInit file name 
 	// texture panel Elements
 	DyCreateFileInputPannelElement( m_panelBodyPtr, &m_txtCardInitFileNamePrompt, &m_txtCardInitFileInput,
-									&m_btnCardInitOpenFile, "Deck Texture Filename",
+									&m_btnCardInitOpenFile, "Card Init Filename",
 									deckManagerPtr->GetCurrActiveDeck()->GetCardInitFileName() );
 
 	// creating a panel element to control  number of cards in the deck
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardNumPrompt, &m_btnDecCardNum,
 								 &m_txtCardNum, &m_btnIncCardNum,
-								 "Total Number of Cards",
+								 "Num Cards in Deck",
 								 std::to_string( ( int )deckManagerPtr->GetCurrActiveDeck()->GetCardList().size() ) );
 }
 

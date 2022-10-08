@@ -16,12 +16,8 @@
 // ======================================================================
 
 #pragma once
-#include "Path.h"
 #include "GlobalVariables.h"
-//#include "Player.h"
-//#include "Dice.h"
-//#include "PathManager.h"
-//#include "PlayerManager.h"
+#include "Path.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -164,3 +160,8 @@ private:
 	///		used by the tile editor
 	Brood::Application::Components::Path* m_currActivePathPtr;
 };
+
+// ======================================================================
+// ================= end of Brood class =================================
+// ======================================================================
+

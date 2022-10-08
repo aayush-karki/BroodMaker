@@ -57,12 +57,12 @@ void Brood::Application::GameEditor::InitializeWorkSpace()
 
 	// creating a panel element to enter a game title
 	DyCreateTextInputPannelElement( m_panelBodyPtr, &m_txtGameNamePrompt, &m_txtGameInput,
-									"Game Title", "", "fun game", true );
+									"Game Title", "", "fun game" );
 
 	// initializing the UI to set the movement type
 	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtMovementTypePromt, &m_ddiMovementType,
 										"Movement Type: ",
-										{ "Star Dice then Card", "Dice Only", "Card Only" }, 19 );
+										{ "Start Dice then Card", "Dice Only", "Card Only" }, 19 );
 
 	// initializing the UI to set the incorrect penalty
 	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtIncorectPenaltyPromt, &m_ddiIncorectPenalty,
@@ -138,6 +138,10 @@ void Brood::Application::GameEditor::UpdateAllDispayElement()
 	// movement type
 	unsigned itemIdx = ( int )m_gameData->GetDeckManagerPtr()->GetMovementType();
 	std::string itemName = m_ddiMovementType->GetItemList().at( itemIdx )->GetText();
+	while( itemName.size() < 27 )
+	{
+		itemName = " " + itemName + " ";
+	}
 	m_ddiMovementType->SetText( itemName );
 
 	// incorrect penalty
@@ -147,8 +151,6 @@ void Brood::Application::GameEditor::UpdateAllDispayElement()
 	{
 		itemName = " " + itemName + " ";
 	}
-
-	// we know the size of the elemnt
 	m_ddiIncorectPenalty->SetText( itemName + " v" );
 
 	// minimum player

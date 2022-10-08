@@ -116,7 +116,7 @@ void Brood::Application::CardEditor::Update()
 void Brood::Application::CardEditor::UpdateAllDispayElement()
 {
 	Brood::Application::Components::Deck* activeDeck = m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck();
-	
+
 	// updating the display card
 	m_gameData->GetDisplayCardPtr()->SetCardInfoToDisplay( activeDeck->GetCurrActiveCardPtr() );
 
@@ -133,15 +133,12 @@ void Brood::Application::CardEditor::UpdateAllDispayElement()
 	m_txtCardPosY->SetText( std::to_string( displayCardPtr->GetBodyPosition().y ) );
 
 	m_txtCardFrontBgFileInput->SetText( displayCardPtr->GetFrontBgFileName() );
-	m_txtCardBackBgFileInput->SetText( displayCardPtr->GetBackBgFileName());
-
-
-
+	m_txtCardBackBgFileInput->SetText( displayCardPtr->GetBackBgFileName() );
 
 	// ======================================================================
 	// = update the panel elements in the CardDisplay Front component Panel =
 	// ======================================================================
-	
+
 	// front time prompt
 	m_txtCardFrontTimePromptSizeX->SetText( std::to_string( displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().x ) );
 	m_txtCardFrontTimePromptSizeY->SetText( std::to_string( displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
@@ -322,7 +319,7 @@ void Brood::Application::CardEditor::InitailizeSettingSelectionDDI()
 
 	m_ddiSettingSelection = DyCreateDropDownInput( { panelSizeX , 40 },
 												   { panelPosX, 50 },
-												   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
+												   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 
 	m_ddiSettingSelection->AddItemToMenu( "Display card Setting" );
 	m_ddiSettingSelection->AddItemToMenu( "Display card f.component Setting" );
@@ -584,11 +581,24 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 {
 	Brood::Application::Components::DisplayCard* displayCardPtr = m_gameData->GetDisplayCardPtr();
 
+
+	// creating a panel element to control the CardFrontTimePrompt Size X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeXPrompt, &m_btnCardFrontTimePromptDecSizeX,
+								 &m_txtCardFrontTimePromptSizeX, &m_btnCardFrontTimePromptIncSizeX,
+								 "Front Time Pmt X Size",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().x ), true );
+
+	// creating a panel element to control the CardFrontTimePrompt Size Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeYPrompt, &m_btnCardFrontTimePromptDecSizeY,
+								 &m_txtCardFrontTimePromptSizeY, &m_btnCardFrontTimePromptIncSizeY,
+								 "Front Time Pmt Y Size",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
+
 	// creating a panel element to control the CardFrontTimePrompt Pos X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptPosXPrompt, &m_btnCardFrontTimePromptDecPosX,
 								 &m_txtCardFrontTimePromptPosX, &m_btnCardFrontTimePromptIncPosX,
 								 "Front Time Pmt X Pos",
-								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().x ), true );
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().x ) );
 
 	// creating a panel element to control the CardFrontTimePrompt Pos Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptPosYPrompt, &m_btnCardFrontTimePromptDecPosY,
@@ -596,89 +606,6 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 "Front Time Pmt Y Pos",
 								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().y ) );
 
-	// creating a panel element to control the CardFrontTimeValue Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValuePosXPrompt, &m_btnCardFrontTimeValueDecPosX,
-								 &m_txtCardFrontTimeValuePosX, &m_btnCardFrontTimeValueIncPosX,
-								 "Front Time Val X Pos",
-								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardFrontTimeValue Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValuePosYPrompt, &m_btnCardFrontTimeValueDecPosY,
-								 &m_txtCardFrontTimeValuePosY, &m_btnCardFrontTimeValueIncPosY,
-								 "Front Time Val Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardUpPrompt Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptPosXPrompt, &m_btnCardUpPromptDecPosX,
-								 &m_txtCardUpPromptPosX, &m_btnCardUpPromptIncPosX,
-								 "Up Prompt X Pos",
-								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardUpPrompt Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptPosYPrompt, &m_btnCardUpPromptDecPosY,
-								 &m_txtCardUpPromptPosY, &m_btnCardUpPromptIncPosY,
-								 "Up Prompt Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardUpValue Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValuePosXPrompt, &m_btnCardUpValueDecPosX,
-								 &m_txtCardUpValuePosX, &m_btnCardUpValueIncPosX,
-								 "Up Value X Pos",
-								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardUpValue Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValuePosYPrompt, &m_btnCardUpValueDecPosY,
-								 &m_txtCardUpValuePosY, &m_btnCardUpValueIncPosY,
-								 "Up Value Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardDownPrompt Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptPosXPrompt, &m_btnCardDownPromptDecPosX,
-								 &m_txtCardDownPromptPosX, &m_btnCardDownPromptIncPosX,
-								 "Down Prompt X Pos",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardDownPrompt Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptPosYPrompt, &m_btnCardDownPromptDecPosY,
-								 &m_txtCardDownPromptPosY, &m_btnCardDownPromptIncPosY,
-								 "Down Prompt Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardDownValue Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValuePosXPrompt, &m_btnCardDownValueDecPosX,
-								 &m_txtCardDownValuePosX, &m_btnCardDownValueIncPosX,
-								 "Down Value X Pos",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardDownValue Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValuePosYPrompt, &m_btnCardDownValueDecPosY,
-								 &m_txtCardDownValuePosY, &m_btnCardDownValueIncPosY,
-								 "Down Value Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardTurnCard Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosXPrompt, &m_btnCardTurnCardDecPosX,
-								 &m_txtCardTurnCardPosX, &m_btnCardTurnCardIncPosX,
-								 "Turn Card X Pos",
-								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardTurnCard Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosYPrompt, &m_btnCardTurnCardDecPosY,
-								 &m_txtCardTurnCardPosY, &m_btnCardTurnCardIncPosY,
-								 "Turn Card Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardFrontTimePrompt Size X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeXPrompt, &m_btnCardFrontTimePromptDecSizeX,
-								 &m_txtCardFrontTimePromptSizeX, &m_btnCardFrontTimePromptIncSizeX,
-								 "Front Time Pmt X Size",
-								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().x ) );
-
-	// creating a panel element to control the CardFrontTimePrompt Size Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimePromptSizeYPrompt, &m_btnCardFrontTimePromptDecSizeY,
-								 &m_txtCardFrontTimePromptSizeY, &m_btnCardFrontTimePromptIncSizeY,
-								 "Front Time Pmt Y Size",
-								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
 
 	// creating a panel element to control the CardFrontTimeValue Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValueSizeXPrompt, &m_btnCardFrontTimeValueDecSizeX,
@@ -692,6 +619,18 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 "Front Time Val Y Size",
 								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardFrontTimeValue Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValuePosXPrompt, &m_btnCardFrontTimeValueDecPosX,
+								 &m_txtCardFrontTimeValuePosX, &m_btnCardFrontTimeValueIncPosX,
+								 "Front Time Val X Pos",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardFrontTimeValue Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardFrontTimeValuePosYPrompt, &m_btnCardFrontTimeValueDecPosY,
+								 &m_txtCardFrontTimeValuePosY, &m_btnCardFrontTimeValueIncPosY,
+								 "Front Time Val Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetFrontTimePromptPtr()->GetBodyPosition().y ) );
+
 	// creating a panel element to control the CardUpPrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptSizeXPrompt, &m_btnCardUpPromptDecSizeX,
 								 &m_txtCardUpPromptSizeX, &m_btnCardUpPromptIncSizeX,
@@ -703,6 +642,19 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 &m_txtCardUpPromptSizeY, &m_btnCardUpPromptIncSizeY,
 								 "Up Prompt Y Size",
 								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardUpPrompt Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptPosXPrompt, &m_btnCardUpPromptDecPosX,
+								 &m_txtCardUpPromptPosX, &m_btnCardUpPromptIncPosX,
+								 "Up Prompt X Pos",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardUpPrompt Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpPromptPosYPrompt, &m_btnCardUpPromptDecPosY,
+								 &m_txtCardUpPromptPosY, &m_btnCardUpPromptIncPosY,
+								 "Up Prompt Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().y ) );
+
 
 	// creating a panel element to control the CardUpValue Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValueSizeXPrompt, &m_btnCardUpValueDecSizeX,
@@ -716,6 +668,18 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 "Up Value Y Size",
 								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardUpValue Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValuePosXPrompt, &m_btnCardUpValueDecPosX,
+								 &m_txtCardUpValuePosX, &m_btnCardUpValueIncPosX,
+								 "Up Value X Pos",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardUpValue Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardUpValuePosYPrompt, &m_btnCardUpValueDecPosY,
+								 &m_txtCardUpValuePosY, &m_btnCardUpValueIncPosY,
+								 "Up Value Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetUpPromptPtr()->GetBodyPosition().y ) );
+
 	// creating a panel element to control the CardDownPrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptSizeXPrompt, &m_btnCardDownPromptDecSizeX,
 								 &m_txtCardDownPromptSizeX, &m_btnCardDownPromptIncSizeX,
@@ -727,6 +691,18 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 &m_txtCardDownPromptSizeY, &m_btnCardDownPromptIncSizeY,
 								 "Down Prompt Y Size",
 								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardDownPrompt Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptPosXPrompt, &m_btnCardDownPromptDecPosX,
+								 &m_txtCardDownPromptPosX, &m_btnCardDownPromptIncPosX,
+								 "Down Prompt X Pos",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardDownPrompt Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownPromptPosYPrompt, &m_btnCardDownPromptDecPosY,
+								 &m_txtCardDownPromptPosY, &m_btnCardDownPromptIncPosY,
+								 "Down Prompt Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardDownValue Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValueSizeXPrompt, &m_btnCardDownValueDecSizeX,
@@ -740,6 +716,18 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 "Down Value Y Size",
 								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardDownValue Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValuePosXPrompt, &m_btnCardDownValueDecPosX,
+								 &m_txtCardDownValuePosX, &m_btnCardDownValueIncPosX,
+								 "Down Value X Pos",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardDownValue Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardDownValuePosYPrompt, &m_btnCardDownValueDecPosY,
+								 &m_txtCardDownValuePosY, &m_btnCardDownValueIncPosY,
+								 "Down Value Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetDownPromptPtr()->GetBodyPosition().y ) );
+
 	// creating a panel element to control the CardTurnCard Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardSizeXPrompt, &m_btnCardTurnCardDecSizeX,
 								 &m_txtCardTurnCardSizeX, &m_btnCardTurnCardIncSizeX,
@@ -752,6 +740,17 @@ void Brood::Application::CardEditor::InializeCardDisplayFcompPanel()
 								 "Turn Card Y Size",
 								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardTurnCard Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosXPrompt, &m_btnCardTurnCardDecPosX,
+								 &m_txtCardTurnCardPosX, &m_btnCardTurnCardIncPosX,
+								 "Turn Card X Pos",
+								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardTurnCard Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardTurnCardPosYPrompt, &m_btnCardTurnCardDecPosY,
+								 &m_txtCardTurnCardPosY, &m_btnCardTurnCardIncPosY,
+								 "Turn Card Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetTurnCardPtr()->GetBodyPosition().y ) );
 }
 
 /// 
@@ -800,6 +799,17 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 	unsigned displayCardLowerLimitY = displayCardPtr->GetBodyPosition().y;
 	unsigned displayCardPosUpperLimitY = displayCardPtr->GetBodyPosition().y + displayCardPtr->GetBodySize().y;
 
+
+	// checks if the user interacted with the CardFrontTimePrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardFrontTimePromptDecSizeX, m_txtCardFrontTimePromptSizeX, m_btnCardFrontTimePromptIncSizeX,
+					   displayCardPtr->GetFrontTimePromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardFrontTimePrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardFrontTimePromptDecSizeY, m_txtCardFrontTimePromptSizeY, m_btnCardFrontTimePromptIncSizeY,
+					   displayCardPtr->GetFrontTimePromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
 	// checks if the user interacted with the CardFrontTimePrompt 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardFrontTimePromptDecPosX, m_txtCardFrontTimePromptPosX, m_btnCardFrontTimePromptIncPosX,
@@ -810,6 +820,17 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 	UpdateDecIncPosY( m_btnCardFrontTimePromptDecPosY, m_txtCardFrontTimePromptPosY, m_btnCardFrontTimePromptIncPosY,
 					  displayCardPtr->GetFrontTimePromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
+
+	// checks if the user interacted with the CardFrontTimeValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardFrontTimeValueDecSizeX, m_txtCardFrontTimeValueSizeX, m_btnCardFrontTimeValueIncSizeX,
+					   displayCardPtr->GetFrontTimeValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardFrontTimeValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardFrontTimeValueDecSizeY, m_txtCardFrontTimeValueSizeY, m_btnCardFrontTimeValueIncSizeY,
+					   displayCardPtr->GetFrontTimeValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
 	// checks if the user interacted with the CardFrontTimeValue 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardFrontTimeValueDecPosX, m_txtCardFrontTimeValuePosX, m_btnCardFrontTimeValueIncPosX,
@@ -819,6 +840,17 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 	// y Pos panel Element
 	UpdateDecIncPosY( m_btnCardFrontTimeValueDecPosY, m_txtCardFrontTimeValuePosY, m_btnCardFrontTimeValueIncPosY,
 					  displayCardPtr->GetFrontTimeValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+
+	// checks if the user interacted with the CardUpPrompt 
+		// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardUpPromptDecSizeX, m_txtCardUpPromptSizeX, m_btnCardUpPromptIncSizeX,
+					   displayCardPtr->GetUpPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardUpPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardUpPromptDecSizeY, m_txtCardUpPromptSizeY, m_btnCardUpPromptIncSizeY,
+					   displayCardPtr->GetUpPromptPtr(), 5, 0, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardUpPrompt 
 		// x Pos panel Element
@@ -831,6 +863,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 					  displayCardPtr->GetUpPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardUpValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardUpValueDecSizeX, m_txtCardUpValueSizeX, m_btnCardUpValueIncSizeX,
+					   displayCardPtr->GetUpValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardUpValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardUpValueDecSizeY, m_txtCardUpValueSizeY, m_btnCardUpValueIncSizeY,
+					   displayCardPtr->GetUpValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardUpValue 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardUpValueDecPosX, m_txtCardUpValuePosX, m_btnCardUpValueIncPosX,
 					  displayCardPtr->GetUpValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
@@ -839,6 +881,17 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 	// y Pos panel Element
 	UpdateDecIncPosY( m_btnCardUpValueDecPosY, m_txtCardUpValuePosY, m_btnCardUpValueIncPosY,
 					  displayCardPtr->GetUpValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+
+	// checks if the user interacted with the CardDownPrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardDownPromptDecSizeX, m_txtCardDownPromptSizeX, m_btnCardDownPromptIncSizeX,
+					   displayCardPtr->GetDownPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardDownPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardDownPromptDecSizeY, m_txtCardDownPromptSizeY, m_btnCardDownPromptIncSizeY,
+					   displayCardPtr->GetDownPromptPtr(), 5, 0, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardDownPrompt 
 	// x Pos panel Element
@@ -851,6 +904,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 					  displayCardPtr->GetDownPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardDownValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardDownValueDecSizeX, m_txtCardDownValueSizeX, m_btnCardDownValueIncSizeX,
+					   displayCardPtr->GetDownValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardDownValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardDownValueDecSizeY, m_txtCardDownValueSizeY, m_btnCardDownValueIncSizeY,
+					   displayCardPtr->GetDownValuePtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardDownValue 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardDownValueDecPosX, m_txtCardDownValuePosX, m_btnCardDownValueIncPosX,
 					  displayCardPtr->GetDownValuePtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
@@ -861,76 +924,6 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 					  displayCardPtr->GetDownValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardTurnCard 
-	// x Pos panel Element
-	UpdateDecIncPosX( m_btnCardTurnCardDecPosX, m_txtCardTurnCardPosX, m_btnCardTurnCardIncPosX,
-					  displayCardPtr->GetTurnCardPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardTurnCard 
-	// y Pos panel Element
-	UpdateDecIncPosY( m_btnCardTurnCardDecPosY, m_txtCardTurnCardPosY, m_btnCardTurnCardIncPosY,
-					  displayCardPtr->GetTurnCardPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardFrontTimePrompt 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardFrontTimePromptDecSizeX, m_txtCardFrontTimePromptSizeX, m_btnCardFrontTimePromptIncSizeX,
-					   displayCardPtr->GetFrontTimePromptPtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardFrontTimePrompt 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardFrontTimePromptDecSizeY, m_txtCardFrontTimePromptSizeY, m_btnCardFrontTimePromptIncSizeY,
-					   displayCardPtr->GetFrontTimePromptPtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardFrontTimeValue 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardFrontTimeValueDecSizeX, m_txtCardFrontTimeValueSizeX, m_btnCardFrontTimeValueIncSizeX,
-					   displayCardPtr->GetFrontTimeValuePtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardFrontTimeValue 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardFrontTimeValueDecSizeY, m_txtCardFrontTimeValueSizeY, m_btnCardFrontTimeValueIncSizeY,
-					   displayCardPtr->GetFrontTimeValuePtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardUpPrompt 
-		// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardUpPromptDecSizeX, m_txtCardUpPromptSizeX, m_btnCardUpPromptIncSizeX,
-					   displayCardPtr->GetUpPromptPtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardUpPrompt 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardUpPromptDecSizeY, m_txtCardUpPromptSizeY, m_btnCardUpPromptIncSizeY,
-					   displayCardPtr->GetUpPromptPtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardUpValue 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardUpValueDecSizeX, m_txtCardUpValueSizeX, m_btnCardUpValueIncSizeX,
-					   displayCardPtr->GetUpValuePtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardUpValue 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardUpValueDecSizeY, m_txtCardUpValueSizeY, m_btnCardUpValueIncSizeY,
-					   displayCardPtr->GetUpValuePtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardDownPrompt 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardDownPromptDecSizeX, m_txtCardDownPromptSizeX, m_btnCardDownPromptIncSizeX,
-					   displayCardPtr->GetDownPromptPtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardDownPrompt 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardDownPromptDecSizeY, m_txtCardDownPromptSizeY, m_btnCardDownPromptIncSizeY,
-					   displayCardPtr->GetDownPromptPtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardDownValue 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardDownValueDecSizeX, m_txtCardDownValueSizeX, m_btnCardDownValueIncSizeX,
-					   displayCardPtr->GetDownValuePtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardDownValue 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardDownValueDecSizeY, m_txtCardDownValueSizeY, m_btnCardDownValueIncSizeY,
-					   displayCardPtr->GetDownValuePtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardTurnCard 
 	// x Size panel Element
 	UpdateDecIncSizeX( m_btnCardTurnCardDecSizeX, m_txtCardTurnCardSizeX, m_btnCardTurnCardIncSizeX,
 					   displayCardPtr->GetTurnCardPtr(), 5, 0, displayCardPosUpperLimitX );
@@ -939,6 +932,15 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 	// y Size panel Element
 	UpdateDecIncSizeY( m_btnCardTurnCardDecSizeY, m_txtCardTurnCardSizeY, m_btnCardTurnCardIncSizeY,
 					   displayCardPtr->GetTurnCardPtr(), 5, 0, displayCardPosUpperLimitY );
+	// checks if the user interacted with the CardTurnCard 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardTurnCardDecPosX, m_txtCardTurnCardPosX, m_btnCardTurnCardIncPosX,
+					  displayCardPtr->GetTurnCardPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardTurnCard 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardTurnCardDecPosY, m_txtCardTurnCardPosY, m_btnCardTurnCardIncPosY,
+					  displayCardPtr->GetTurnCardPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 }
 
 /// 
@@ -980,91 +982,6 @@ void Brood::Application::CardEditor::UpdateCardDisplayFcompPanel()
 /// 
 void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow& a_window )
 {
-	// CardTurnCard Size y
-	m_btnCardTurnCardIncSizeY->Draw( a_window );
-	m_txtCardTurnCardSizeY->Draw( a_window );
-	m_btnCardTurnCardDecSizeY->Draw( a_window );
-	m_txtCardTurnCardSizeYPrompt->Draw( a_window );
-
-	// CardTurnCard Size X
-	m_btnCardTurnCardIncSizeX->Draw( a_window );
-	m_txtCardTurnCardSizeX->Draw( a_window );
-	m_btnCardTurnCardDecSizeX->Draw( a_window );
-	m_txtCardTurnCardSizeXPrompt->Draw( a_window );
-
-	// CardDownValue Size y
-	m_btnCardDownValueIncSizeY->Draw( a_window );
-	m_txtCardDownValueSizeY->Draw( a_window );
-	m_btnCardDownValueDecSizeY->Draw( a_window );
-	m_txtCardDownValueSizeYPrompt->Draw( a_window );
-
-	// CardDownValue Size X
-	m_btnCardDownValueIncSizeX->Draw( a_window );
-	m_txtCardDownValueSizeX->Draw( a_window );
-	m_btnCardDownValueDecSizeX->Draw( a_window );
-	m_txtCardDownValueSizeXPrompt->Draw( a_window );
-
-	// CardDownPrompt Size y
-	m_btnCardDownPromptIncSizeY->Draw( a_window );
-	m_txtCardDownPromptSizeY->Draw( a_window );
-	m_btnCardDownPromptDecSizeY->Draw( a_window );
-	m_txtCardDownPromptSizeYPrompt->Draw( a_window );
-
-	// CardDownPrompt Size X
-	m_btnCardDownPromptIncSizeX->Draw( a_window );
-	m_txtCardDownPromptSizeX->Draw( a_window );
-	m_btnCardDownPromptDecSizeX->Draw( a_window );
-	m_txtCardDownPromptSizeXPrompt->Draw( a_window );
-
-	// CardUpValue Size y
-	m_btnCardUpValueIncSizeY->Draw( a_window );
-	m_txtCardUpValueSizeY->Draw( a_window );
-	m_btnCardUpValueDecSizeY->Draw( a_window );
-	m_txtCardUpValueSizeYPrompt->Draw( a_window );
-
-	// CardUpValue Size X
-	m_btnCardUpValueIncSizeX->Draw( a_window );
-	m_txtCardUpValueSizeX->Draw( a_window );
-	m_btnCardUpValueDecSizeX->Draw( a_window );
-	m_txtCardUpValueSizeXPrompt->Draw( a_window );
-
-	// CardUpPrompt Size y
-	m_btnCardUpPromptIncSizeY->Draw( a_window );
-	m_txtCardUpPromptSizeY->Draw( a_window );
-	m_btnCardUpPromptDecSizeY->Draw( a_window );
-	m_txtCardUpPromptSizeYPrompt->Draw( a_window );
-
-	// CardUpPrompt Size X
-	m_btnCardUpPromptIncSizeX->Draw( a_window );
-	m_txtCardUpPromptSizeX->Draw( a_window );
-	m_btnCardUpPromptDecSizeX->Draw( a_window );
-	m_txtCardUpPromptSizeXPrompt->Draw( a_window );
-
-	// CardFrontTimeValue Size y
-	m_btnCardFrontTimeValueIncSizeY->Draw( a_window );
-	m_txtCardFrontTimeValueSizeY->Draw( a_window );
-	m_btnCardFrontTimeValueDecSizeY->Draw( a_window );
-	m_txtCardFrontTimeValueSizeYPrompt->Draw( a_window );
-
-	// CardFrontTimeValue Size X
-	m_btnCardFrontTimeValueIncSizeX->Draw( a_window );
-	m_txtCardFrontTimeValueSizeX->Draw( a_window );
-	m_btnCardFrontTimeValueDecSizeX->Draw( a_window );
-	m_txtCardFrontTimeValueSizeXPrompt->Draw( a_window );
-
-	// CardFrontTimePrompt Size y
-	m_btnCardFrontTimePromptIncSizeY->Draw( a_window );
-	m_txtCardFrontTimePromptSizeY->Draw( a_window );
-	m_btnCardFrontTimePromptDecSizeY->Draw( a_window );
-	m_txtCardFrontTimePromptSizeYPrompt->Draw( a_window );
-
-	// CardFrontTimePrompt Size X
-	m_btnCardFrontTimePromptIncSizeX->Draw( a_window );
-	m_txtCardFrontTimePromptSizeX->Draw( a_window );
-	m_btnCardFrontTimePromptDecSizeX->Draw( a_window );
-	m_txtCardFrontTimePromptSizeXPrompt->Draw( a_window );
-
-
 	// CardTurnCard Position y
 	m_btnCardTurnCardIncPosY->Draw( a_window );
 	m_txtCardTurnCardPosY->Draw( a_window );
@@ -1076,6 +993,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_txtCardTurnCardPosX->Draw( a_window );
 	m_btnCardTurnCardDecPosX->Draw( a_window );
 	m_txtCardTurnCardPosXPrompt->Draw( a_window );
+
+	// CardTurnCard Size y
+	m_btnCardTurnCardIncSizeY->Draw( a_window );
+	m_txtCardTurnCardSizeY->Draw( a_window );
+	m_btnCardTurnCardDecSizeY->Draw( a_window );
+	m_txtCardTurnCardSizeYPrompt->Draw( a_window );
+
+	// CardTurnCard Size X
+	m_btnCardTurnCardIncSizeX->Draw( a_window );
+	m_txtCardTurnCardSizeX->Draw( a_window );
+	m_btnCardTurnCardDecSizeX->Draw( a_window );
+	m_txtCardTurnCardSizeXPrompt->Draw( a_window );
 
 	// CardDownValue Position y
 	m_btnCardDownValueIncPosY->Draw( a_window );
@@ -1089,6 +1018,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_btnCardDownValueDecPosX->Draw( a_window );
 	m_txtCardDownValuePosXPrompt->Draw( a_window );
 
+	// CardDownValue Size y
+	m_btnCardDownValueIncSizeY->Draw( a_window );
+	m_txtCardDownValueSizeY->Draw( a_window );
+	m_btnCardDownValueDecSizeY->Draw( a_window );
+	m_txtCardDownValueSizeYPrompt->Draw( a_window );
+
+	// CardDownValue Size X
+	m_btnCardDownValueIncSizeX->Draw( a_window );
+	m_txtCardDownValueSizeX->Draw( a_window );
+	m_btnCardDownValueDecSizeX->Draw( a_window );
+	m_txtCardDownValueSizeXPrompt->Draw( a_window );
+
 	// CardDownPrompt Position y
 	m_btnCardDownPromptIncPosY->Draw( a_window );
 	m_txtCardDownPromptPosY->Draw( a_window );
@@ -1101,6 +1042,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_btnCardDownPromptDecPosX->Draw( a_window );
 	m_txtCardDownPromptPosXPrompt->Draw( a_window );
 
+	// CardDownPrompt Size y
+	m_btnCardDownPromptIncSizeY->Draw( a_window );
+	m_txtCardDownPromptSizeY->Draw( a_window );
+	m_btnCardDownPromptDecSizeY->Draw( a_window );
+	m_txtCardDownPromptSizeYPrompt->Draw( a_window );
+
+	// CardDownPrompt Size X
+	m_btnCardDownPromptIncSizeX->Draw( a_window );
+	m_txtCardDownPromptSizeX->Draw( a_window );
+	m_btnCardDownPromptDecSizeX->Draw( a_window );
+	m_txtCardDownPromptSizeXPrompt->Draw( a_window );
+
 	// CardUpValue Position y
 	m_btnCardUpValueIncPosY->Draw( a_window );
 	m_txtCardUpValuePosY->Draw( a_window );
@@ -1112,6 +1065,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_txtCardUpValuePosX->Draw( a_window );
 	m_btnCardUpValueDecPosX->Draw( a_window );
 	m_txtCardUpValuePosXPrompt->Draw( a_window );
+	
+	// CardUpValue Size y
+	m_btnCardUpValueIncSizeY->Draw( a_window );
+	m_txtCardUpValueSizeY->Draw( a_window );
+	m_btnCardUpValueDecSizeY->Draw( a_window );
+	m_txtCardUpValueSizeYPrompt->Draw( a_window );
+
+	// CardUpValue Size X
+	m_btnCardUpValueIncSizeX->Draw( a_window );
+	m_txtCardUpValueSizeX->Draw( a_window );
+	m_btnCardUpValueDecSizeX->Draw( a_window );
+	m_txtCardUpValueSizeXPrompt->Draw( a_window );
 
 	// CardUpPrompt Position y
 	m_btnCardUpPromptIncPosY->Draw( a_window );
@@ -1125,6 +1090,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_btnCardUpPromptDecPosX->Draw( a_window );
 	m_txtCardUpPromptPosXPrompt->Draw( a_window );
 
+	// CardUpPrompt Size y
+	m_btnCardUpPromptIncSizeY->Draw( a_window );
+	m_txtCardUpPromptSizeY->Draw( a_window );
+	m_btnCardUpPromptDecSizeY->Draw( a_window );
+	m_txtCardUpPromptSizeYPrompt->Draw( a_window );
+
+	// CardUpPrompt Size X
+	m_btnCardUpPromptIncSizeX->Draw( a_window );
+	m_txtCardUpPromptSizeX->Draw( a_window );
+	m_btnCardUpPromptDecSizeX->Draw( a_window );
+	m_txtCardUpPromptSizeXPrompt->Draw( a_window );
+
 	// CardFrontTimeValue Position y
 	m_btnCardFrontTimeValueIncPosY->Draw( a_window );
 	m_txtCardFrontTimeValuePosY->Draw( a_window );
@@ -1137,6 +1114,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_btnCardFrontTimeValueDecPosX->Draw( a_window );
 	m_txtCardFrontTimeValuePosXPrompt->Draw( a_window );
 
+	// CardFrontTimeValue Size y
+	m_btnCardFrontTimeValueIncSizeY->Draw( a_window );
+	m_txtCardFrontTimeValueSizeY->Draw( a_window );
+	m_btnCardFrontTimeValueDecSizeY->Draw( a_window );
+	m_txtCardFrontTimeValueSizeYPrompt->Draw( a_window );
+
+	// CardFrontTimeValue Size X
+	m_btnCardFrontTimeValueIncSizeX->Draw( a_window );
+	m_txtCardFrontTimeValueSizeX->Draw( a_window );
+	m_btnCardFrontTimeValueDecSizeX->Draw( a_window );
+	m_txtCardFrontTimeValueSizeXPrompt->Draw( a_window );
+
 	// CardFrontTimePrompt Position y
 	m_btnCardFrontTimePromptIncPosY->Draw( a_window );
 	m_txtCardFrontTimePromptPosY->Draw( a_window );
@@ -1148,6 +1137,18 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_txtCardFrontTimePromptPosX->Draw( a_window );
 	m_btnCardFrontTimePromptDecPosX->Draw( a_window );
 	m_txtCardFrontTimePromptPosXPrompt->Draw( a_window );
+
+	// CardFrontTimePrompt Size y
+	m_btnCardFrontTimePromptIncSizeY->Draw( a_window );
+	m_txtCardFrontTimePromptSizeY->Draw( a_window );
+	m_btnCardFrontTimePromptDecSizeY->Draw( a_window );
+	m_txtCardFrontTimePromptSizeYPrompt->Draw( a_window );
+
+	// CardFrontTimePrompt Size X
+	m_btnCardFrontTimePromptIncSizeX->Draw( a_window );
+	m_txtCardFrontTimePromptSizeX->Draw( a_window );
+	m_btnCardFrontTimePromptDecSizeX->Draw( a_window );
+	m_txtCardFrontTimePromptSizeXPrompt->Draw( a_window );
 }
 
 /// 
@@ -1189,101 +1190,29 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 {
 	Brood::Application::Components::DisplayCard* displayCardPtr = m_gameData->GetDisplayCardPtr();
 
-	// creating a panel element to control the CardBackTimePrompt Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptPosXPrompt, &m_btnCardBackTimePromptDecPosX,
-								 &m_txtCardBackTimePromptPosX, &m_btnCardBackTimePromptIncPosX,
-								 "Back Time Pmt X Pos",
-								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().x ), true );
-
-	// creating a panel element to control the CardBackTimePrompt Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptPosYPrompt, &m_btnCardBackTimePromptDecPosY,
-								 &m_txtCardBackTimePromptPosY, &m_btnCardBackTimePromptIncPosY,
-								 "Back Time Pmt Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardBackTimeValue Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValuePosXPrompt, &m_btnCardBackTimeValueDecPosX,
-								 &m_txtCardBackTimeValuePosX, &m_btnCardBackTimeValueIncPosX,
-								 "Back Time Val X Pos",
-								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardBackTimeValue Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValuePosYPrompt, &m_btnCardBackTimeValueDecPosY,
-								 &m_txtCardBackTimeValuePosY, &m_btnCardBackTimeValueIncPosY,
-								 "Back Time Val Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardQuestionPrompt Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptPosXPrompt, &m_btnCardQuestionPromptDecPosX,
-								 &m_txtCardQuestionPromptPosX, &m_btnCardQuestionPromptIncPosX,
-								 "Question Pmt X Pos",
-								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardQuestionPrompt Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptPosYPrompt, &m_btnCardQuestionPromptDecPosY,
-								 &m_txtCardQuestionPromptPosY, &m_btnCardQuestionPromptIncPosY,
-								 "Question Pmt Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardQuestionValue Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValuePosXPrompt, &m_btnCardQuestionValueDecPosX,
-								 &m_txtCardQuestionValuePosX, &m_btnCardQuestionValueIncPosX,
-								 "Question Value X Pos",
-								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardQuestionValue Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValuePosYPrompt, &m_btnCardQuestionValueDecPosY,
-								 &m_txtCardQuestionValuePosY, &m_btnCardQuestionValueIncPosY,
-								 "Question Value Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardAnswerPrompt Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptPosXPrompt, &m_btnCardAnswerPromptDecPosX,
-								 &m_txtCardAnswerPromptPosX, &m_btnCardAnswerPromptIncPosX,
-								 "Answer Prompt X Pos",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardAnswerPrompt Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptPosYPrompt, &m_btnCardAnswerPromptDecPosY,
-								 &m_txtCardAnswerPromptPosY, &m_btnCardAnswerPromptIncPosY,
-								 "Answer Prompt Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardAnswerValue Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValuePosXPrompt, &m_btnCardAnswerValueDecPosX,
-								 &m_txtCardAnswerValuePosX, &m_btnCardAnswerValueIncPosX,
-								 "Answer Value X Pos",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardAnswerValue Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValuePosYPrompt, &m_btnCardAnswerValueDecPosY,
-								 &m_txtCardAnswerValuePosY, &m_btnCardAnswerValueIncPosY,
-								 "Answer Value Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
-
-	// creating a panel element to control the CardSubmit Pos X
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosXPrompt, &m_btnCardSubmitDecPosX,
-								 &m_txtCardSubmitPosX, &m_btnCardSubmitIncPosX,
-								 "Submit Button X Pos",
-								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodyPosition().x ) );
-
-	// creating a panel element to control the CardSubmit Pos Y
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosYPrompt, &m_btnCardSubmitDecPosY,
-								 &m_txtCardSubmitPosY, &m_btnCardSubmitIncPosY,
-								 "Submit Button Y Pos",
-								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodyPosition().y ) );
-
 	// creating a panel element to control the CardBackTimePrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptSizeXPrompt, &m_btnCardBackTimePromptDecSizeX,
 								 &m_txtCardBackTimePromptSizeX, &m_btnCardBackTimePromptIncSizeX,
 								 "Back Time Pmt X Size",
-								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().x ) );
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().x ), true );
 
 	// creating a panel element to control the CardBackTimePrompt Size Y
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptSizeYPrompt, &m_btnCardBackTimePromptDecSizeY,
 								 &m_txtCardBackTimePromptSizeY, &m_btnCardBackTimePromptIncSizeY,
 								 "Back Time Pmt Y Size",
 								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardBackTimePrompt Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptPosXPrompt, &m_btnCardBackTimePromptDecPosX,
+								 &m_txtCardBackTimePromptPosX, &m_btnCardBackTimePromptIncPosX,
+								 "Back Time Pmt X Pos",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardBackTimePrompt Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimePromptPosYPrompt, &m_btnCardBackTimePromptDecPosY,
+								 &m_txtCardBackTimePromptPosY, &m_btnCardBackTimePromptIncPosY,
+								 "Back Time Pmt Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardBackTimeValue Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValueSizeXPrompt, &m_btnCardBackTimeValueDecSizeX,
@@ -1297,6 +1226,18 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 "Back Time Val Y Size",
 								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardBackTimeValue Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValuePosXPrompt, &m_btnCardBackTimeValueDecPosX,
+								 &m_txtCardBackTimeValuePosX, &m_btnCardBackTimeValueIncPosX,
+								 "Back Time Val X Pos",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardBackTimeValue Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardBackTimeValuePosYPrompt, &m_btnCardBackTimeValueDecPosY,
+								 &m_txtCardBackTimeValuePosY, &m_btnCardBackTimeValueIncPosY,
+								 "Back Time Val Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetBackTimePromptPtr()->GetBodyPosition().y ) );
+
 	// creating a panel element to control the CardQuestionPrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptSizeXPrompt, &m_btnCardQuestionPromptDecSizeX,
 								 &m_txtCardQuestionPromptSizeX, &m_btnCardQuestionPromptIncSizeX,
@@ -1308,6 +1249,18 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 &m_txtCardQuestionPromptSizeY, &m_btnCardQuestionPromptIncSizeY,
 								 "Question Pmt Y Size",
 								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardQuestionPrompt Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptPosXPrompt, &m_btnCardQuestionPromptDecPosX,
+								 &m_txtCardQuestionPromptPosX, &m_btnCardQuestionPromptIncPosX,
+								 "Question Pmt X Pos",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardQuestionPrompt Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionPromptPosYPrompt, &m_btnCardQuestionPromptDecPosY,
+								 &m_txtCardQuestionPromptPosY, &m_btnCardQuestionPromptIncPosY,
+								 "Question Pmt Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardQuestionValue Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValueSizeXPrompt, &m_btnCardQuestionValueDecSizeX,
@@ -1321,6 +1274,18 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 "Question Value Y Size",
 								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardQuestionValue Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValuePosXPrompt, &m_btnCardQuestionValueDecPosX,
+								 &m_txtCardQuestionValuePosX, &m_btnCardQuestionValueIncPosX,
+								 "Question Value X Pos",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardQuestionValue Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardQuestionValuePosYPrompt, &m_btnCardQuestionValueDecPosY,
+								 &m_txtCardQuestionValuePosY, &m_btnCardQuestionValueIncPosY,
+								 "Question Value Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetQuestionPromptPtr()->GetBodyPosition().y ) );
+
 	// creating a panel element to control the CardAnswerPrompt Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptSizeXPrompt, &m_btnCardAnswerPromptDecSizeX,
 								 &m_txtCardAnswerPromptSizeX, &m_btnCardAnswerPromptIncSizeX,
@@ -1332,6 +1297,18 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 &m_txtCardAnswerPromptSizeY, &m_btnCardAnswerPromptIncSizeY,
 								 "Answer Prompt Y Size",
 								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
+
+	// creating a panel element to control the CardAnswerPrompt Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptPosXPrompt, &m_btnCardAnswerPromptDecPosX,
+								 &m_txtCardAnswerPromptPosX, &m_btnCardAnswerPromptIncPosX,
+								 "Answer Prompt X Pos",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardAnswerPrompt Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerPromptPosYPrompt, &m_btnCardAnswerPromptDecPosY,
+								 &m_txtCardAnswerPromptPosY, &m_btnCardAnswerPromptIncPosY,
+								 "Answer Prompt Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
 
 	// creating a panel element to control the CardAnswerValue Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValueSizeXPrompt, &m_btnCardAnswerValueDecSizeX,
@@ -1345,6 +1322,18 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 "Answer Value Y Size",
 								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardAnswerValue Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValuePosXPrompt, &m_btnCardAnswerValueDecPosX,
+								 &m_txtCardAnswerValuePosX, &m_btnCardAnswerValueIncPosX,
+								 "Answer Value X Pos",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardAnswerValue Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardAnswerValuePosYPrompt, &m_btnCardAnswerValueDecPosY,
+								 &m_txtCardAnswerValuePosY, &m_btnCardAnswerValueIncPosY,
+								 "Answer Value Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetAnswerPromptPtr()->GetBodyPosition().y ) );
+
 	// creating a panel element to control the CardSubmit Size X
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitSizeXPrompt, &m_btnCardSubmitDecSizeX,
 								 &m_txtCardSubmitSizeX, &m_btnCardSubmitIncSizeX,
@@ -1357,6 +1346,17 @@ void Brood::Application::CardEditor::InializeCardDisplayBcompPanel()
 								 "Submit Button Y Size",
 								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodySize().y ) );
 
+	// creating a panel element to control the CardSubmit Pos X
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosXPrompt, &m_btnCardSubmitDecPosX,
+								 &m_txtCardSubmitPosX, &m_btnCardSubmitIncPosX,
+								 "Submit Button X Pos",
+								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodyPosition().x ) );
+
+	// creating a panel element to control the CardSubmit Pos Y
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtCardSubmitPosYPrompt, &m_btnCardSubmitDecPosY,
+								 &m_txtCardSubmitPosY, &m_btnCardSubmitIncPosY,
+								 "Submit Button Y Pos",
+								 std::to_string( ( int )displayCardPtr->GetSubmitPtr()->GetBodyPosition().y ) );
 }
 
 /// 
@@ -1404,6 +1404,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 	unsigned displayCardPosUpperLimitY = displayCardPtr->GetBodyPosition().y + displayCardPtr->GetBodySize().y;
 
 	// checks if the user interacted with the CardBackTimePrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardBackTimePromptDecSizeX, m_txtCardBackTimePromptSizeX, m_btnCardBackTimePromptIncSizeX,
+					   displayCardPtr->GetBackTimePromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardBackTimePrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardBackTimePromptDecSizeY, m_txtCardBackTimePromptSizeY, m_btnCardBackTimePromptIncSizeY,
+					   displayCardPtr->GetBackTimePromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardBackTimePrompt 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardBackTimePromptDecPosX, m_txtCardBackTimePromptPosX, m_btnCardBackTimePromptIncPosX,
 					  displayCardPtr->GetBackTimePromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
@@ -1412,6 +1422,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 	// y Pos panel Element
 	UpdateDecIncPosY( m_btnCardBackTimePromptDecPosY, m_txtCardBackTimePromptPosY, m_btnCardBackTimePromptIncPosY,
 					  displayCardPtr->GetBackTimePromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardBackTimeValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardBackTimeValueDecSizeX, m_txtCardBackTimeValueSizeX, m_btnCardBackTimeValueIncSizeX,
+					   displayCardPtr->GetBackTimeValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardBackTimeValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardBackTimeValueDecSizeY, m_txtCardBackTimeValueSizeY, m_btnCardBackTimeValueIncSizeY,
+					   displayCardPtr->GetBackTimeValuePtr(), 5, 0, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardBackTimeValue 
 	// x Pos panel Element
@@ -1424,6 +1444,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 					  displayCardPtr->GetBackTimeValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardQuestionPrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardQuestionPromptDecSizeX, m_txtCardQuestionPromptSizeX, m_btnCardQuestionPromptIncSizeX,
+					   displayCardPtr->GetQuestionPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardQuestionPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardQuestionPromptDecSizeY, m_txtCardQuestionPromptSizeY, m_btnCardQuestionPromptIncSizeY,
+					   displayCardPtr->GetQuestionPromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardQuestionPrompt 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardQuestionPromptDecPosX, m_txtCardQuestionPromptPosX, m_btnCardQuestionPromptIncPosX,
 					  displayCardPtr->GetQuestionPromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
@@ -1432,6 +1462,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 	// y Pos panel Element
 	UpdateDecIncPosY( m_btnCardQuestionPromptDecPosY, m_txtCardQuestionPromptPosY, m_btnCardQuestionPromptIncPosY,
 					  displayCardPtr->GetQuestionPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardQuestionValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardQuestionValueDecSizeX, m_txtCardQuestionValueSizeX, m_btnCardQuestionValueIncSizeX,
+					   displayCardPtr->GetQuestionValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardQuestionValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardQuestionValueDecSizeY, m_txtCardQuestionValueSizeY, m_btnCardQuestionValueIncSizeY,
+					   displayCardPtr->GetQuestionValuePtr(), 5, 0, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardQuestionValue 
 	// x Pos panel Element
@@ -1444,6 +1484,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 					  displayCardPtr->GetQuestionValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardAnswerPrompt 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardAnswerPromptDecSizeX, m_txtCardAnswerPromptSizeX, m_btnCardAnswerPromptIncSizeX,
+					   displayCardPtr->GetAnswerPromptPtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardAnswerPrompt 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardAnswerPromptDecSizeY, m_txtCardAnswerPromptSizeY, m_btnCardAnswerPromptIncSizeY,
+					   displayCardPtr->GetAnswerPromptPtr(), 5, 0, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardAnswerPrompt 
 	// x Pos panel Element
 	UpdateDecIncPosX( m_btnCardAnswerPromptDecPosX, m_txtCardAnswerPromptPosX, m_btnCardAnswerPromptIncPosX,
 					  displayCardPtr->GetAnswerPromptPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
@@ -1452,6 +1502,16 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 	// y Pos panel Element
 	UpdateDecIncPosY( m_btnCardAnswerPromptDecPosY, m_txtCardAnswerPromptPosY, m_btnCardAnswerPromptIncPosY,
 					  displayCardPtr->GetAnswerPromptPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
+
+	// checks if the user interacted with the CardAnswerValue 
+	// x Size panel Element
+	UpdateDecIncSizeX( m_btnCardAnswerValueDecSizeX, m_txtCardAnswerValueSizeX, m_btnCardAnswerValueIncSizeX,
+					   displayCardPtr->GetAnswerValuePtr(), 5, 0, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardAnswerValue 
+	// y Size panel Element
+	UpdateDecIncSizeY( m_btnCardAnswerValueDecSizeY, m_txtCardAnswerValueSizeY, m_btnCardAnswerValueIncSizeY,
+					   displayCardPtr->GetAnswerValuePtr(), 5, 0, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardAnswerValue 
 	// x Pos panel Element
@@ -1464,77 +1524,6 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 					  displayCardPtr->GetAnswerValuePtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 
 	// checks if the user interacted with the CardSubmit 
-	// x Pos panel Element
-	UpdateDecIncPosX( m_btnCardSubmitDecPosX, m_txtCardSubmitPosX, m_btnCardSubmitIncPosX,
-					  displayCardPtr->GetSubmitPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardSubmit 
-	// y Pos panel Element
-	UpdateDecIncPosY( m_btnCardSubmitDecPosY, m_txtCardSubmitPosY, m_btnCardSubmitIncPosY,
-					  displayCardPtr->GetSubmitPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
-
-
-	// checks if the user interacted with the CardBackTimePrompt 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardBackTimePromptDecSizeX, m_txtCardBackTimePromptSizeX, m_btnCardBackTimePromptIncSizeX,
-					   displayCardPtr->GetBackTimePromptPtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardBackTimePrompt 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardBackTimePromptDecSizeY, m_txtCardBackTimePromptSizeY, m_btnCardBackTimePromptIncSizeY,
-					   displayCardPtr->GetBackTimePromptPtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardBackTimeValue 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardBackTimeValueDecSizeX, m_txtCardBackTimeValueSizeX, m_btnCardBackTimeValueIncSizeX,
-					   displayCardPtr->GetBackTimeValuePtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardBackTimeValue 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardBackTimeValueDecSizeY, m_txtCardBackTimeValueSizeY, m_btnCardBackTimeValueIncSizeY,
-					   displayCardPtr->GetBackTimeValuePtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardQuestionPrompt 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardQuestionPromptDecSizeX, m_txtCardQuestionPromptSizeX, m_btnCardQuestionPromptIncSizeX,
-					   displayCardPtr->GetQuestionPromptPtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardQuestionPrompt 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardQuestionPromptDecSizeY, m_txtCardQuestionPromptSizeY, m_btnCardQuestionPromptIncSizeY,
-					   displayCardPtr->GetQuestionPromptPtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardQuestionValue 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardQuestionValueDecSizeX, m_txtCardQuestionValueSizeX, m_btnCardQuestionValueIncSizeX,
-					   displayCardPtr->GetQuestionValuePtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardQuestionValue 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardQuestionValueDecSizeY, m_txtCardQuestionValueSizeY, m_btnCardQuestionValueIncSizeY,
-					   displayCardPtr->GetQuestionValuePtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardAnswerPrompt 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardAnswerPromptDecSizeX, m_txtCardAnswerPromptSizeX, m_btnCardAnswerPromptIncSizeX,
-					   displayCardPtr->GetAnswerPromptPtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardAnswerPrompt 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardAnswerPromptDecSizeY, m_txtCardAnswerPromptSizeY, m_btnCardAnswerPromptIncSizeY,
-					   displayCardPtr->GetAnswerPromptPtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardAnswerValue 
-	// x Size panel Element
-	UpdateDecIncSizeX( m_btnCardAnswerValueDecSizeX, m_txtCardAnswerValueSizeX, m_btnCardAnswerValueIncSizeX,
-					   displayCardPtr->GetAnswerValuePtr(), 5, 0, displayCardPosUpperLimitX );
-
-	// checks if the user interacted with the CardAnswerValue 
-	// y Size panel Element
-	UpdateDecIncSizeY( m_btnCardAnswerValueDecSizeY, m_txtCardAnswerValueSizeY, m_btnCardAnswerValueIncSizeY,
-					   displayCardPtr->GetAnswerValuePtr(), 5, 0, displayCardPosUpperLimitY );
-
-	// checks if the user interacted with the CardSubmit 
 	// x Size panel Element
 	UpdateDecIncSizeX( m_btnCardSubmitDecSizeX, m_txtCardSubmitSizeX, m_btnCardSubmitIncSizeX,
 					   displayCardPtr->GetSubmitPtr(), 5, 0, displayCardPosUpperLimitX );
@@ -1544,6 +1533,15 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 	UpdateDecIncSizeY( m_btnCardSubmitDecSizeY, m_txtCardSubmitSizeY, m_btnCardSubmitIncSizeY,
 					   displayCardPtr->GetSubmitPtr(), 5, 0, displayCardPosUpperLimitY );
 
+	// checks if the user interacted with the CardSubmit 
+	// x Pos panel Element
+	UpdateDecIncPosX( m_btnCardSubmitDecPosX, m_txtCardSubmitPosX, m_btnCardSubmitIncPosX,
+					  displayCardPtr->GetSubmitPtr(), 5, displayCardLowerLimitX, displayCardPosUpperLimitX );
+
+	// checks if the user interacted with the CardSubmit 
+	// y Pos panel Element
+	UpdateDecIncPosY( m_btnCardSubmitDecPosY, m_txtCardSubmitPosY, m_btnCardSubmitIncPosY,
+					  displayCardPtr->GetSubmitPtr(), 5, displayCardLowerLimitY, displayCardPosUpperLimitY );
 }
 
 /// 
@@ -1585,6 +1583,18 @@ void Brood::Application::CardEditor::UpdateCardDisplayBcompPanel()
 ///
 void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow& a_window )
 {
+	// CardSubmit Position y
+	m_btnCardSubmitIncPosY->Draw( a_window );
+	m_txtCardSubmitPosY->Draw( a_window );
+	m_btnCardSubmitDecPosY->Draw( a_window );
+	m_txtCardSubmitPosYPrompt->Draw( a_window );
+
+	// CardSubmit Position X
+	m_btnCardSubmitIncPosX->Draw( a_window );
+	m_txtCardSubmitPosX->Draw( a_window );
+	m_btnCardSubmitDecPosX->Draw( a_window );
+	m_txtCardSubmitPosXPrompt->Draw( a_window );
+
 	// CardSubmit Size y
 	m_btnCardSubmitIncSizeY->Draw( a_window );
 	m_txtCardSubmitSizeY->Draw( a_window );
@@ -1596,6 +1606,18 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_txtCardSubmitSizeX->Draw( a_window );
 	m_btnCardSubmitDecSizeX->Draw( a_window );
 	m_txtCardSubmitSizeXPrompt->Draw( a_window );
+	
+	// CardAnswerValue Position y
+	m_btnCardAnswerValueIncPosY->Draw( a_window );
+	m_txtCardAnswerValuePosY->Draw( a_window );
+	m_btnCardAnswerValueDecPosY->Draw( a_window );
+	m_txtCardAnswerValuePosYPrompt->Draw( a_window );
+
+	// CardAnswerValue Position X
+	m_btnCardAnswerValueIncPosX->Draw( a_window );
+	m_txtCardAnswerValuePosX->Draw( a_window );
+	m_btnCardAnswerValueDecPosX->Draw( a_window );
+	m_txtCardAnswerValuePosXPrompt->Draw( a_window );
 
 	// CardAnswerValue Size y
 	m_btnCardAnswerValueIncSizeY->Draw( a_window );
@@ -1609,90 +1631,6 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_btnCardAnswerValueDecSizeX->Draw( a_window );
 	m_txtCardAnswerValueSizeXPrompt->Draw( a_window );
 
-	// CardAnswerPrompt Size y
-	m_btnCardAnswerPromptIncSizeY->Draw( a_window );
-	m_txtCardAnswerPromptSizeY->Draw( a_window );
-	m_btnCardAnswerPromptDecSizeY->Draw( a_window );
-	m_txtCardAnswerPromptSizeYPrompt->Draw( a_window );
-
-	// CardAnswerPrompt Size X
-	m_btnCardAnswerPromptIncSizeX->Draw( a_window );
-	m_txtCardAnswerPromptSizeX->Draw( a_window );
-	m_btnCardAnswerPromptDecSizeX->Draw( a_window );
-	m_txtCardAnswerPromptSizeXPrompt->Draw( a_window );
-
-	// CardQuestionValue Size y
-	m_btnCardQuestionValueIncSizeY->Draw( a_window );
-	m_txtCardQuestionValueSizeY->Draw( a_window );
-	m_btnCardQuestionValueDecSizeY->Draw( a_window );
-	m_txtCardQuestionValueSizeYPrompt->Draw( a_window );
-
-	// CardQuestionValue Size X
-	m_btnCardQuestionValueIncSizeX->Draw( a_window );
-	m_txtCardQuestionValueSizeX->Draw( a_window );
-	m_btnCardQuestionValueDecSizeX->Draw( a_window );
-	m_txtCardQuestionValueSizeXPrompt->Draw( a_window );
-
-	// CardQuestionPrompt Size y
-	m_btnCardQuestionPromptIncSizeY->Draw( a_window );
-	m_txtCardQuestionPromptSizeY->Draw( a_window );
-	m_btnCardQuestionPromptDecSizeY->Draw( a_window );
-	m_txtCardQuestionPromptSizeYPrompt->Draw( a_window );
-
-	// CardQuestionPrompt Size X
-	m_btnCardQuestionPromptIncSizeX->Draw( a_window );
-	m_txtCardQuestionPromptSizeX->Draw( a_window );
-	m_btnCardQuestionPromptDecSizeX->Draw( a_window );
-	m_txtCardQuestionPromptSizeXPrompt->Draw( a_window );
-
-	// CardBackTimeValue Size y
-	m_btnCardBackTimeValueIncSizeY->Draw( a_window );
-	m_txtCardBackTimeValueSizeY->Draw( a_window );
-	m_btnCardBackTimeValueDecSizeY->Draw( a_window );
-	m_txtCardBackTimeValueSizeYPrompt->Draw( a_window );
-
-	// CardBackTimeValue Size X
-	m_btnCardBackTimeValueIncSizeX->Draw( a_window );
-	m_txtCardBackTimeValueSizeX->Draw( a_window );
-	m_btnCardBackTimeValueDecSizeX->Draw( a_window );
-	m_txtCardBackTimeValueSizeXPrompt->Draw( a_window );
-
-	// CardBackTimePrompt Size y
-	m_btnCardBackTimePromptIncSizeY->Draw( a_window );
-	m_txtCardBackTimePromptSizeY->Draw( a_window );
-	m_btnCardBackTimePromptDecSizeY->Draw( a_window );
-	m_txtCardBackTimePromptSizeYPrompt->Draw( a_window );
-
-	// CardBackTimePrompt Size X
-	m_btnCardBackTimePromptIncSizeX->Draw( a_window );
-	m_txtCardBackTimePromptSizeX->Draw( a_window );
-	m_btnCardBackTimePromptDecSizeX->Draw( a_window );
-	m_txtCardBackTimePromptSizeXPrompt->Draw( a_window );
-
-	// CardSubmit Position y
-	m_btnCardSubmitIncPosY->Draw( a_window );
-	m_txtCardSubmitPosY->Draw( a_window );
-	m_btnCardSubmitDecPosY->Draw( a_window );
-	m_txtCardSubmitPosYPrompt->Draw( a_window );
-
-	// CardSubmit Position X
-	m_btnCardSubmitIncPosX->Draw( a_window );
-	m_txtCardSubmitPosX->Draw( a_window );
-	m_btnCardSubmitDecPosX->Draw( a_window );
-	m_txtCardSubmitPosXPrompt->Draw( a_window );
-
-	// CardAnswerValue Position y
-	m_btnCardAnswerValueIncPosY->Draw( a_window );
-	m_txtCardAnswerValuePosY->Draw( a_window );
-	m_btnCardAnswerValueDecPosY->Draw( a_window );
-	m_txtCardAnswerValuePosYPrompt->Draw( a_window );
-
-	// CardAnswerValue Position X
-	m_btnCardAnswerValueIncPosX->Draw( a_window );
-	m_txtCardAnswerValuePosX->Draw( a_window );
-	m_btnCardAnswerValueDecPosX->Draw( a_window );
-	m_txtCardAnswerValuePosXPrompt->Draw( a_window );
-
 	// CardAnswerPrompt Position y
 	m_btnCardAnswerPromptIncPosY->Draw( a_window );
 	m_txtCardAnswerPromptPosY->Draw( a_window );
@@ -1704,6 +1642,18 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_txtCardAnswerPromptPosX->Draw( a_window );
 	m_btnCardAnswerPromptDecPosX->Draw( a_window );
 	m_txtCardAnswerPromptPosXPrompt->Draw( a_window );
+
+	// CardAnswerPrompt Size y
+	m_btnCardAnswerPromptIncSizeY->Draw( a_window );
+	m_txtCardAnswerPromptSizeY->Draw( a_window );
+	m_btnCardAnswerPromptDecSizeY->Draw( a_window );
+	m_txtCardAnswerPromptSizeYPrompt->Draw( a_window );
+
+	// CardAnswerPrompt Size X
+	m_btnCardAnswerPromptIncSizeX->Draw( a_window );
+	m_txtCardAnswerPromptSizeX->Draw( a_window );
+	m_btnCardAnswerPromptDecSizeX->Draw( a_window );
+	m_txtCardAnswerPromptSizeXPrompt->Draw( a_window );
 
 	// CardQuestionValue Position y
 	m_btnCardQuestionValueIncPosY->Draw( a_window );
@@ -1717,6 +1667,18 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_btnCardQuestionValueDecPosX->Draw( a_window );
 	m_txtCardQuestionValuePosXPrompt->Draw( a_window );
 
+	// CardQuestionValue Size y
+	m_btnCardQuestionValueIncSizeY->Draw( a_window );
+	m_txtCardQuestionValueSizeY->Draw( a_window );
+	m_btnCardQuestionValueDecSizeY->Draw( a_window );
+	m_txtCardQuestionValueSizeYPrompt->Draw( a_window );
+
+	// CardQuestionValue Size X
+	m_btnCardQuestionValueIncSizeX->Draw( a_window );
+	m_txtCardQuestionValueSizeX->Draw( a_window );
+	m_btnCardQuestionValueDecSizeX->Draw( a_window );
+	m_txtCardQuestionValueSizeXPrompt->Draw( a_window );
+
 	// CardQuestionPrompt Position y
 	m_btnCardQuestionPromptIncPosY->Draw( a_window );
 	m_txtCardQuestionPromptPosY->Draw( a_window );
@@ -1728,6 +1690,18 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_txtCardQuestionPromptPosX->Draw( a_window );
 	m_btnCardQuestionPromptDecPosX->Draw( a_window );
 	m_txtCardQuestionPromptPosXPrompt->Draw( a_window );
+
+	// CardQuestionPrompt Size y
+	m_btnCardQuestionPromptIncSizeY->Draw( a_window );
+	m_txtCardQuestionPromptSizeY->Draw( a_window );
+	m_btnCardQuestionPromptDecSizeY->Draw( a_window );
+	m_txtCardQuestionPromptSizeYPrompt->Draw( a_window );
+
+	// CardQuestionPrompt Size X
+	m_btnCardQuestionPromptIncSizeX->Draw( a_window );
+	m_txtCardQuestionPromptSizeX->Draw( a_window );
+	m_btnCardQuestionPromptDecSizeX->Draw( a_window );
+	m_txtCardQuestionPromptSizeXPrompt->Draw( a_window );
 
 	// CardBackTimeValue Position y
 	m_btnCardBackTimeValueIncPosY->Draw( a_window );
@@ -1741,6 +1715,18 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_btnCardBackTimeValueDecPosX->Draw( a_window );
 	m_txtCardBackTimeValuePosXPrompt->Draw( a_window );
 
+	// CardBackTimeValue Size y
+	m_btnCardBackTimeValueIncSizeY->Draw( a_window );
+	m_txtCardBackTimeValueSizeY->Draw( a_window );
+	m_btnCardBackTimeValueDecSizeY->Draw( a_window );
+	m_txtCardBackTimeValueSizeYPrompt->Draw( a_window );
+
+	// CardBackTimeValue Size X
+	m_btnCardBackTimeValueIncSizeX->Draw( a_window );
+	m_txtCardBackTimeValueSizeX->Draw( a_window );
+	m_btnCardBackTimeValueDecSizeX->Draw( a_window );
+	m_txtCardBackTimeValueSizeXPrompt->Draw( a_window );
+
 	// CardBackTimePrompt Position y
 	m_btnCardBackTimePromptIncPosY->Draw( a_window );
 	m_txtCardBackTimePromptPosY->Draw( a_window );
@@ -1752,6 +1738,18 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_txtCardBackTimePromptPosX->Draw( a_window );
 	m_btnCardBackTimePromptDecPosX->Draw( a_window );
 	m_txtCardBackTimePromptPosXPrompt->Draw( a_window );
+
+	// CardBackTimePrompt Size y
+	m_btnCardBackTimePromptIncSizeY->Draw( a_window );
+	m_txtCardBackTimePromptSizeY->Draw( a_window );
+	m_btnCardBackTimePromptDecSizeY->Draw( a_window );
+	m_txtCardBackTimePromptSizeYPrompt->Draw( a_window );
+
+	// CardBackTimePrompt Size X
+	m_btnCardBackTimePromptIncSizeX->Draw( a_window );
+	m_txtCardBackTimePromptSizeX->Draw( a_window );
+	m_btnCardBackTimePromptDecSizeX->Draw( a_window );
+	m_txtCardBackTimePromptSizeXPrompt->Draw( a_window );
 }
 
 /// 
@@ -2403,7 +2401,6 @@ void Brood::Application::CardEditor::UpdateCurrCardQuestionInput()
 
 		// resetting the m_eterPressed
 		m_txtCurrCardQuestionInput->SetEnterPressedFalse();
-		// TODO change the folder name 
 	}
 }
 

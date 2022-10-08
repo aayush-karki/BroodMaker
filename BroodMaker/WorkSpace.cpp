@@ -314,7 +314,7 @@ void Brood::Application::WorkSpace::DyCreateDropdownInputPannelElement( sf::Rect
 	if( a_createFromTop )
 	{
 		lastPanelElementPosY = m_unNamedUIList.front()->GetBodyPosition().y;
-		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor;
 	}
 
 	// creating a text box for displaying the promt
@@ -417,7 +417,7 @@ void Brood::Application::WorkSpace::DyCreateDecIncPannelElement( sf::RectangleSh
 		lastPanelElementPosY = m_unNamedUIList.front()->GetBodyPosition().y;
 		lastPanelElementSizeY = m_unNamedUIList.front()->GetBodySize().y;
 
-		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor;
 	}
 
 	// creating a text box for displaying the promt
@@ -518,7 +518,7 @@ void Brood::Application::WorkSpace::DyCreateFileInputPannelElement( sf::Rectangl
 		lastPanelElementPosY = m_unNamedUIList.front()->GetBodyPosition().y;
 		lastPanelElementSizeY = m_unNamedUIList.front()->GetBodySize().y;
 
-		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor;
 	}
 
 	// creating a text box for displaying the promt
@@ -631,7 +631,7 @@ void Brood::Application::WorkSpace::DyCreateTextInputPannelElement( sf::Rectangl
 	if( a_createFromTop )
 	{
 		lastPanelElementPosY = m_unNamedUIList.front()->GetBodyPosition().y;
-		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor;
+		panelColor = Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor;
 	}
 
 	// creating a text box for displaying the promt

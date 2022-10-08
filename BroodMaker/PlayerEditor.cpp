@@ -70,15 +70,14 @@ void Brood::Application::PlayerEditor::InitializeWorkSpace()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerCurrIdxPrompt, &m_btnPlayerDecCurrIdx,
 								 &m_txtPlayerCurrIdx, &m_btnPlayerIncCurrIdx,
 								 "Current Player Index",
-								 std::to_string( ( int )m_gameData->GetPlayerManagerPtr()->GetCurrActivePlayerIdx() ),
-								 true );
+								 std::to_string( ( int )m_gameData->GetPlayerManagerPtr()->GetCurrActivePlayerIdx() ) );
 
 
 	// initializing the UI to control Start row for new player
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerStartRowPrompt, &m_btnPlayerDecStartRowNum,
 								 &m_txtPlayerStartRowNum, &m_btnPlayerIncStartRowNum,
 								 "Start Row",
-								 std::to_string( 0 ));
+								 std::to_string( 0 ) );
 
 	// initializing the UI to control Start column for new player
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtPlayerStartColPrompt, &m_btnPlayerDecStartColNum,
@@ -212,7 +211,7 @@ void Brood::Application::PlayerEditor::Draw( sf::RenderWindow& a_window )
 	// drawing the player
 	m_gameData->GetPlayerManagerPtr()->GetPlayerAtCurrIdx()->Draw( a_window );
 
-	Brood::Application::WorkSpace::Draw(a_window);
+	Brood::Application::WorkSpace::Draw( a_window );
 }
 
 /// 

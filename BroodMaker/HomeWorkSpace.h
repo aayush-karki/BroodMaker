@@ -108,7 +108,8 @@ private:
 	///> Ui for ribbon tabs
 	Brood::BroodUI::MenuBar m_ribbionTabs;
 
-	// main uielement which shows the list of stored game files and editor files
+	// main uielement which shows the list of stored game files and
+	// editor files
 
 	sf::RectangleShape m_gameOrEditorForeground;
 

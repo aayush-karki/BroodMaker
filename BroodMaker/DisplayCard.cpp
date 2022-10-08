@@ -510,12 +510,12 @@ void Brood::Application::Components::DisplayCard::ToggleCardFace()
 {
 	if( m_isCurrFront )
 	{
-		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActiveOverlay );
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 		m_bodySprite.SetTextureFromFilePath( m_backBgFileName );
 	}
 	else
 	{
-		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu );
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 		m_bodySprite.SetTextureFromFilePath( m_frontBgFileName );
 	}
 
@@ -534,12 +534,12 @@ void Brood::Application::Components::DisplayCard::SetCardFront( bool a_currFront
 
 	if( m_isCurrFront )
 	{
-		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_CurrActiveOverlay );
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 		m_bodySprite.SetTextureFromFilePath( m_backBgFileName );
 	}
 	else
 	{
-		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu );
+		SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 		m_bodySprite.SetTextureFromFilePath( m_frontBgFileName );
 	}
 }

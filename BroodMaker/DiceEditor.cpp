@@ -70,7 +70,7 @@ void Brood::Application::DiceEditor::InitializeWorkSpace()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSidePrompt, &m_btnDiceDecSide,
 								 &m_txtDiceSide, &m_btnDiceIncSide,
 								 "Dice Side Number",
-								 std::to_string( m_gameData->GetDicePtr()->GetNumSides() ), true );
+								 std::to_string( m_gameData->GetDicePtr()->GetNumSides() ) );
 
 	// initializing the UI to control x-size of Dice
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtDiceSizeXPrompt, &m_btnDiceDecSizeX,

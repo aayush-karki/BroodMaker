@@ -65,17 +65,6 @@ void Brood::Application::BoardEditor::InitializeWorkSpace()
 	// ======= Initializing the elements in the  General board setting =======
 	// =======================================================================
 
-	// initializing the UI to control board's X position 
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardPosPromtX, &m_btnBoardPosDecX,
-								 &m_txtBoardPosX, &m_btnBoardPosIncX,
-								 "X-Position", std::to_string( ( int )m_gameData->GetBoardPtr()->GetBoardPos().x ),
-								 true );
-
-	// initializing the UI to control board's Y position 
-	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardPosPromtY, &m_btnBoardPosDecY,
-								 &m_txtBoardPosY, &m_btnBoardPosIncY,
-								 "Y-Position", std::to_string( ( int )m_gameData->GetBoardPtr()->GetBoardPos().y ) );
-
 	// initializing the UI to control board's X size 
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardSizePromtX, &m_btnBoardSizeDecX,
 								 &m_txtBoardSizeX, &m_btnBoardSizeIncX,
@@ -85,6 +74,16 @@ void Brood::Application::BoardEditor::InitializeWorkSpace()
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardSizePromtY, &m_btnBoardSizeDecY,
 								 &m_txtBoardSizeY, &m_btnBoardSizeIncY,
 								 "Y-Size", std::to_string( ( int )m_gameData->GetBoardPtr()->GetBoardSize().y ) );
+
+	// initializing the UI to control board's X position 
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardPosPromtX, &m_btnBoardPosDecX,
+								 &m_txtBoardPosX, &m_btnBoardPosIncX,
+								 "X-Position", std::to_string( ( int )m_gameData->GetBoardPtr()->GetBoardPos().x ) );
+
+	// initializing the UI to control board's Y position 
+	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardPosPromtY, &m_btnBoardPosDecY,
+								 &m_txtBoardPosY, &m_btnBoardPosIncY,
+								 "Y-Position", std::to_string( ( int )m_gameData->GetBoardPtr()->GetBoardPos().y ) );
 
 	// initializing the UI to control board's row
 	DyCreateDecIncPannelElement( m_panelBodyPtr, &m_txtBoardRowPromt, &m_btnBoardDecRow,
@@ -109,17 +108,17 @@ void Brood::Application::BoardEditor::InitializeWorkSpace()
 ///
 void Brood::Application::BoardEditor::Update()
 {
-	// checking to see if the Xpos panel Element was pressed
-	UpdateBoardXPosPanelElement();
-
-	// checking to see if the Ypos panel Element was pressed
-	UpdateBoardYPosPanelElement();
-
 	// checking to see if the Xsize panel Element was pressed
 	UpdateBoardXSizePanelElement();
 
 	// checking to see if the Ysize panel Element was pressed
 	UpdateBoardYSizePanelElement();
+
+	// checking to see if the Xpos panel Element was pressed
+	UpdateBoardXPosPanelElement();
+
+	// checking to see if the Ypos panel Element was pressed
+	UpdateBoardYPosPanelElement();
 
 	// checking to see if the row panel Element was pressed
 	UpdateBoardRowPanelElement();
@@ -140,7 +139,7 @@ void Brood::Application::BoardEditor::UpdateAllDispayElement()
 
 	// board x Position 
 	m_txtBoardPosX->SetText( std::to_string( boardPtr->GetBoardPos().x ) );
-	
+
 	// board y Position 
 	m_txtBoardPosY->SetText( std::to_string( boardPtr->GetBoardPos().y ) );
 
@@ -466,7 +465,7 @@ void Brood::Application::BoardEditor::UpdateBoardRowPanelElement()
 		}
 
 		// decrease the board row number by 1 units
-		m_gameData->GetBoardPtr()->SetNumRow( currentRow - 1, nullptr);
+		m_gameData->GetBoardPtr()->SetNumRow( currentRow - 1, nullptr );
 
 		// updating the textbox showing the row value
 		m_txtBoardRow->SetText( std::to_string( currentRow - 1 ) );

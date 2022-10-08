@@ -83,14 +83,6 @@ public:
 	// =========== update for General Board setting ==============
 	// ===========================================================
 
-	// checks if the user interacted with the x position
-	// panel Element
-	void UpdateBoardXPosPanelElement();
-
-	// checks if the user interacted with the y position
-	// panel Element
-	void UpdateBoardYPosPanelElement();
-
 	// checks if the user interacted with the x size 
 	// panel Element
 	void UpdateBoardXSizePanelElement();
@@ -98,6 +90,14 @@ public:
 	// checks if the user interacted with the y size 
 	// panel Element
 	void UpdateBoardYSizePanelElement();
+
+	// checks if the user interacted with the x position
+	// panel Element
+	void UpdateBoardXPosPanelElement();
+
+	// checks if the user interacted with the y position
+	// panel Element
+	void UpdateBoardYPosPanelElement();
 
 	// checks if the user interacted with the row 
 	// panel Element
@@ -121,34 +121,6 @@ private:
 
 	// ==== UI elements to show setting title  ====
 	Brood::BroodUI::TextBox* m_txtSettingTitle;
-
-	// ==== UI elements to change the board's x position ====
-
-	/// holds the text Board X position prompt
-	Brood::BroodUI::TextBox* m_txtBoardPosPromtX;
-
-	/// clicking it will decrease the board x position by 5
-	Brood::BroodUI::Button* m_btnBoardPosDecX;
-
-	/// displays the board's x position 
-	Brood::BroodUI::TextBox* m_txtBoardPosX;
-
-	/// clicking it will increase the board x position by 5
-	Brood::BroodUI::Button* m_btnBoardPosIncX;
-
-	// ==== UI elements to change the board's y position ====
-
-	/// holds the text Board y position prompt
-	Brood::BroodUI::TextBox* m_txtBoardPosPromtY;
-
-	/// clicking it will decrease the board y position by 5
-	Brood::BroodUI::Button* m_btnBoardPosDecY;
-
-	/// displays the board's y position 
-	Brood::BroodUI::TextBox* m_txtBoardPosY;
-
-	/// clicking it will increase the board y position by 5
-	Brood::BroodUI::Button* m_btnBoardPosIncY;
 
 	// ==== UI elements to change the board's x size ====
 
@@ -177,6 +149,34 @@ private:
 
 	/// clicking it will increase the board x size by 5
 	Brood::BroodUI::Button* m_btnBoardSizeIncY;
+
+	// ==== UI elements to change the board's x position ====
+
+	/// holds the text Board X position prompt
+	Brood::BroodUI::TextBox* m_txtBoardPosPromtX;
+
+	/// clicking it will decrease the board x position by 5
+	Brood::BroodUI::Button* m_btnBoardPosDecX;
+
+	/// displays the board's x position 
+	Brood::BroodUI::TextBox* m_txtBoardPosX;
+
+	/// clicking it will increase the board x position by 5
+	Brood::BroodUI::Button* m_btnBoardPosIncX;
+
+	// ==== UI elements to change the board's y position ====
+
+	/// holds the text Board y position prompt
+	Brood::BroodUI::TextBox* m_txtBoardPosPromtY;
+
+	/// clicking it will decrease the board y position by 5
+	Brood::BroodUI::Button* m_btnBoardPosDecY;
+
+	/// displays the board's y position 
+	Brood::BroodUI::TextBox* m_txtBoardPosY;
+
+	/// clicking it will increase the board y position by 5
+	Brood::BroodUI::Button* m_btnBoardPosIncY;
 
 	// ==== UI elements to change the board's Row ====
 

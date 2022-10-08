@@ -19,14 +19,6 @@
     <Filter Include="src\Components">
       <UniqueIdentifier>{d7106b46-e160-4d73-a505-e73ac7966967}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Components\Header Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="src\Components\Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="src\Application\Workspace">
       <UniqueIdentifier>{05706462-4b35-4426-aec7-cf2c61586aa3}</UniqueIdentifier>
     </Filter>
@@ -63,28 +55,36 @@
     <Filter Include="src\Components\Managers\Source Files">
       <UniqueIdentifier>{0b2005b3-5392-4a29-975f-324ac22b5bfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Components\units">
+      <UniqueIdentifier>{581e682a-391b-4172-9a11-34936b0d062d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\units\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\Components\units\Header Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CardInfo.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dice.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>src\Components\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Struct_CtorParam.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Path.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tiles.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>src\Application\main\Source Files</Filter>
@@ -147,7 +147,7 @@
       <Filter>src\BroodUI\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Deck.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BoardEditor.cpp">
       <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
@@ -177,30 +177,33 @@
       <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DisplayCard.cpp">
-      <Filter>src\Components\Source Files</Filter>
+      <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameDataManager.cpp">
       <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileAccess.cpp">
+      <Filter>src\Application\main\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CardInfo.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dice.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Path.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tiles.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>src\Application\main\Header Files</Filter>
@@ -210,9 +213,6 @@
     </ClInclude>
     <ClInclude Include="GlobalVariables.h">
       <Filter>src\Application\main\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Struct_CtorParam.h">
-      <Filter>src\Components\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>src\BroodUI\Header Files</Filter>
@@ -263,7 +263,7 @@
       <Filter>src\BroodUI\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Deck.h">
-      <Filter>src\Components\Header Files</Filter>
+      <Filter>src\Components\units\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BoardEditor.h">
       <Filter>src\Application\Workspace\Editors\Header Files</Filter>
@@ -295,6 +295,11 @@
     <ClInclude Include="GameDataManager.h">
       <Filter>src\Components\Managers\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DisplayCard.h" />
+    <ClInclude Include="DisplayCard.h">
+      <Filter>src\Components\units\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileAccess.h">
+      <Filter>src\Application\main\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
