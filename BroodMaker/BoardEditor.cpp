@@ -466,7 +466,7 @@ void Brood::Application::BoardEditor::UpdateBoardRowPanelElement()
 		}
 
 		// decrease the board row number by 1 units
-		m_gameData->GetBoardPtr()->SetNumRow( currentRow - 1 );
+		m_gameData->GetBoardPtr()->SetNumRow( currentRow - 1, nullptr);
 
 		// updating the textbox showing the row value
 		m_txtBoardRow->SetText( std::to_string( currentRow - 1 ) );
@@ -484,7 +484,7 @@ void Brood::Application::BoardEditor::UpdateBoardRowPanelElement()
 		}
 
 		// increase the board row number by 1 units
-		m_gameData->GetBoardPtr()->SetNumRow( currentRow + 1 );
+		m_gameData->GetBoardPtr()->SetNumRow( currentRow + 1, m_gameData->GetDeckManagerPtr()->GetDeckAtIdx( 0 ) );
 
 		// updating the textbox showing the row value
 		m_txtBoardRow->SetText( std::to_string( currentRow + 1 ) );
@@ -521,10 +521,10 @@ void Brood::Application::BoardEditor::UpdateBoardColPanelElement()
 		}
 
 		// decrease the board row number by 1 units
-		m_gameData->GetBoardPtr()->SetNumCol( currentCol - 1 );
+		m_gameData->GetBoardPtr()->SetNumCol( currentCol - 1, nullptr );
 
 		// updating the textbox showing the column value
-		m_txtBoardColPromt->SetText( std::to_string( currentCol - 1 ) );
+		m_txtBoardCol->SetText( std::to_string( currentCol - 1 ) );
 	}
 	// chekcing if the increase the Board column was pressed
 	else if( m_btnBoardIncCol->DoElement() )
@@ -539,7 +539,7 @@ void Brood::Application::BoardEditor::UpdateBoardColPanelElement()
 		}
 
 		// increase the board row number by 1 units
-		m_gameData->GetBoardPtr()->SetNumCol( currentCol + 1 );
+		m_gameData->GetBoardPtr()->SetNumCol( currentCol + 1, m_gameData->GetDeckManagerPtr()->GetDeckAtIdx( 0 ) );
 
 		// updating the textbox showing the column value
 		m_txtBoardCol->SetText( std::to_string( currentCol + 1 ) );

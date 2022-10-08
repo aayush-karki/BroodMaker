@@ -340,7 +340,6 @@ void Brood::Application::GameEditor::UpdateIncorrectPenaltyPanelElement()
 	}
 }
 
-
 /// 
 /// @private
 /// @brief checks if the user interacted with the minumum player panel

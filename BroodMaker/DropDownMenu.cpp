@@ -226,7 +226,7 @@ void Brood::BroodUI::DropDownMenu::SetFont( sf::Font* a_font )
 /// 
 void Brood::BroodUI::DropDownMenu::SetFontColor( sf::Color a_color )
 {
-	Brood::BroodUI::Button::SetFontColor(a_color);
+	Brood::BroodUI::Button::SetFontColor( a_color );
 
 	// setting the font color for all its items
 	if( !m_items.empty() )
@@ -234,7 +234,7 @@ void Brood::BroodUI::DropDownMenu::SetFontColor( sf::Color a_color )
 		// postion all items according to the new menu position
 		for( int i = 0; i < m_items.size(); ++i )
 		{
-			m_items.at( i )->SetFontColor(a_color);
+			m_items.at( i )->SetFontColor( a_color );
 		}
 	}
 }

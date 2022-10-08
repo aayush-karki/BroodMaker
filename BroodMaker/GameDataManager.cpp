@@ -45,6 +45,8 @@ void Brood::Application::Components::GameDataManager::InitializeGameDataManger()
 	// initializing  the board
 	m_board.InitializeBoard( 1, 1, 500, 500, 50, 200 );
 
+	m_board.GetCurrentActivePath()->SetDeckPtr( m_deckManager.GetCurrActiveDeck());
+
 	// initializing  the playerManager
 	m_playerManager.InitializePlayerManger( m_board.GetBoardPathList().at( 0 ).at( 0 ) );
 

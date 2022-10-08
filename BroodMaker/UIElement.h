@@ -208,7 +208,7 @@ public:
 	// draw funciton
 	virtual void Draw( sf::RenderWindow& a_window );
 
-	virtual void Debugger(); // adds the element ID to the text
+	virtual void Debugger() = 0; // adds the element ID to the text
 
 	// ================= protected member function =================  
 protected:

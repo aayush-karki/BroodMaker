@@ -73,10 +73,10 @@ public:
 	// ===== setter funcitons ==== 
 
 	// setter function to set the nubmer of rows in the board
-	void SetNumRow( unsigned a_numRows );
+	void SetNumRow( unsigned a_numRows, Brood::Application::Components::Deck* a_deckPtr );
 
 	// setter function to set the nubmer of coulumns in the board
-	void SetNumCol( unsigned a_numCols );
+	void SetNumCol( unsigned a_numCols, Brood::Application::Components::Deck* a_deckPtr );
 
 	// setter function to set the board size
 	void SetBoardSize( sf::Vector2f a_boardSize );
@@ -89,6 +89,9 @@ public:
 
 	// setter function to set the board position
 	void SetBoardPos( float a_boardPosX, float a_boardPosY );
+
+	// getter function to get the currentActiveTile
+	void SetCurrentActiveTilePtr( Brood::Application::Components::Path* a_newActivePathPtr );
 
 	// ===== getter funcitons ==== 
 
@@ -105,7 +108,13 @@ public:
 	const sf::Vector2f GetBoardPos() const;
 
 	// getter function to get the board path list
-	const std::vector<std::vector<Path*>>& GetBoardPathList() const;
+	const std::vector<std::vector<Brood::Application::Components::Path*>>& GetBoardPathList() const;
+
+	// getter function to get the currentActive path
+	Brood::Application::Components::Path* GetCurrentActivePath();
+
+	// toggles the draw line for all the paths 
+	void ToggleDrawLine();
 
 	void Debugger(); // debugger
 
@@ -119,13 +128,13 @@ public:
 private:
 
 	// increases the number of row and populates it
-	void IncreaseNumRow( unsigned a_numRows );
+	void IncreaseNumRow( unsigned a_numRows, Brood::Application::Components::Deck* a_deckPtr );
 
 	// decrease the number of row
 	void DecreaseNumRow( unsigned a_numRows );
 
 	// increases the number of col and populates it
-	void IncreaseNumCol( unsigned a_numCols );
+	void IncreaseNumCol( unsigned a_numCols, Brood::Application::Components::Deck* a_deckPtr );
 
 	// decrease the number of col
 	void DecreaseNumCol( unsigned a_numCols );
@@ -133,25 +142,25 @@ private:
 	// updates the tile in board by using the member variables
 	void UpdateBoardPath( unsigned a_rowBegin, unsigned a_rowEnd,
 						   unsigned a_colBegin, unsigned a_colEnd,
-						   bool a_createNew = false );
+						   bool a_createNew = false,
+						  Brood::Application::Components::Deck* a_deckPtr = nullptr);
 
 	// ========== private member varibles ===============
 private:
 
-	///> main board
+	/// main board
 	sf::RectangleShape m_boardBody;
 
-	///> number of cell rows in the board
+	/// number of cell rows in the board
 	unsigned m_numRows;
 
-	///> number of cell columns in the board
+	/// number of cell columns in the board
 	unsigned m_numCols;
 
-	///> contains the board Path whic in turn contains tile
-	std::vector<std::vector<Path*>> m_boardPaths;
+	/// contains the board Path whic in turn contains tile
+	std::vector<std::vector<Brood::Application::Components::Path*>> m_boardPaths;
 
-	//PathManager m_pathsList; // contains the path of the game
-	//PlayerManager m_playerManger; // contains all the player in the game
-
-	//Brood::Dice m_dice; // dice obj
+	/// holds the pointer ot the current active path
+	///		used by the tile editor
+	Brood::Application::Components::Path* m_currActivePathPtr;
 };

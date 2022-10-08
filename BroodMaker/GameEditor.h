@@ -136,7 +136,7 @@ private:
 
 	// ==== UI elements to change the board movement rule ====
 
-		/// holds the text Movement type prompt
+	/// holds the text Movement type prompt
 	Brood::BroodUI::TextBox* m_txtMovementTypePromt;
 
 	/// holds how the player can move: dice, 

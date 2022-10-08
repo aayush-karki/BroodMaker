@@ -83,7 +83,7 @@ public:
 	Brood::Application::Components::Deck* GetDeckAtIdx( unsigned a_deckIdx );
 
 	// getter function to get the decklist
-	std::vector<Brood::Application::Components::Deck>& GetDeckList();
+	std::vector<Brood::Application::Components::Deck*>& GetDeckList();
 
 	// getter function to get the current active deck
 	Brood::Application::Components::Deck* GetCurrActiveDeck();
@@ -128,7 +128,7 @@ private:
 	unsigned m_currDeckIdx;
 
 	// deck list
-	std::vector<Brood::Application::Components::Deck> m_deckList;
+	std::vector<Brood::Application::Components::Deck*> m_deckList;
 };
 
 // ======================================================================

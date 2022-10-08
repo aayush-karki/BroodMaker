@@ -91,11 +91,14 @@ void Brood::Application::Components::Board::Draw( sf::RenderWindow& a_window )
 		}
 	}
 
-	//// drawing players
-	//m_playerManger.Draw( a_window );
-
-	//// drawing the dice
-	//m_dice.Draw( a_window );
+	// drawing the path line
+	for( rowTile = m_boardPaths.begin(); rowTile != m_boardPaths.end(); rowTile++ )
+	{
+		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
+		{
+			( *colTile )->DrawPath( a_window );
+		}
+	}
 }
 
 /// 
@@ -124,10 +127,13 @@ void Brood::Application::Components::Board::InitializeBoard( unsigned a_numRows,
 	this->m_boardBody.setFillColor( sf::Color::Blue );
 
 	// setting up the column and row number
-	this->SetNumCol( a_numCols );
-	this->SetNumRow( a_numRows );
+	this->SetNumCol( a_numCols, nullptr );
+	this->SetNumRow( a_numRows, nullptr );
 
-	/// @todo delete me
+	// setting the first tile as the active path
+	m_currActivePathPtr = m_boardPaths[ 0 ][ 0 ];
+
+	/// assigning the path and color
 	for( unsigned currRowNum = 0; currRowNum < m_numRows; ++currRowNum )
 	{
 		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
@@ -143,11 +149,11 @@ void Brood::Application::Components::Board::InitializeBoard( unsigned a_numRows,
 /// 
 /// @param a_numRows number of tile rows to set in a board 
 /// 
-void Brood::Application::Components::Board::SetNumRow( unsigned a_numRows )
+void Brood::Application::Components::Board::SetNumRow( unsigned a_numRows, Brood::Application::Components::Deck* a_deckPtr )
 {
 	if( a_numRows > m_numRows )
 	{
-		IncreaseNumRow( a_numRows );
+		IncreaseNumRow( a_numRows, a_deckPtr );
 	}
 	else
 	{
@@ -161,11 +167,11 @@ void Brood::Application::Components::Board::SetNumRow( unsigned a_numRows )
 /// 
 /// @param a_numCols number of tile col to set in a board 
 /// 
-void Brood::Application::Components::Board::SetNumCol( unsigned a_numCols )
+void Brood::Application::Components::Board::SetNumCol( unsigned a_numCols, Brood::Application::Components::Deck* a_deckPtr )
 {
 	if( a_numCols > m_numCols )
 	{
-		IncreaseNumCol( a_numCols );
+		IncreaseNumCol( a_numCols, a_deckPtr );
 	}
 	else
 	{
@@ -244,6 +250,17 @@ void Brood::Application::Components::Board::SetBoardPos( float a_boardPosX, floa
 	Brood::Application::Components::Board::SetBoardPos( { a_boardPosX, a_boardPosY } );
 }
 
+/// 
+/// @public
+/// @brief Setter funciton to set the current active path
+/// 
+/// @param a_newActiveTilePtr pointer to the new active path
+/// 
+void Brood::Application::Components::Board::SetCurrentActiveTilePtr( Brood::Application::Components::Path* a_newActivePathPtr )
+{
+	m_currActivePathPtr = a_newActivePathPtr;
+}
+
 
 /// 
 /// @public
@@ -303,6 +320,34 @@ const std::vector<std::vector<Brood::Application::Components::Path*>>& Brood::Ap
 
 /// 
 /// @public
+/// @brief Getter funciton to get the current active path pointer
+/// 
+/// @returns  pointer to the current active path
+///
+Brood::Application::Components::Path* Brood::Application::Components::Board::GetCurrentActivePath()
+{
+	return m_currActivePathPtr;
+}
+
+/// 
+/// @public
+/// @brief Toggles draw line variable for all the path
+/// 
+void Brood::Application::Components::Board::ToggleDrawLine()
+{
+	std::vector< std::vector<Path*> >::iterator rowTile;
+	std::vector<Path*>::iterator colTile;
+	for( rowTile = m_boardPaths.begin(); rowTile != m_boardPaths.end(); rowTile++ )
+	{
+		for( colTile = rowTile->begin(); colTile != rowTile->end(); colTile++ )
+		{
+			( *colTile )->ToggleDrawLine();
+		}
+	}
+}
+
+/// 
+/// @public
 /// @virtual
 /// @brief Draw funciton
 /// 
@@ -332,7 +377,8 @@ void Brood::Application::Components::Board::Debugger()
 ///
 /// @param a_numRows number of tile rows to set in a board 
 /// 
-void Brood::Application::Components::Board::IncreaseNumRow( unsigned a_numRows )
+void Brood::Application::Components::Board::IncreaseNumRow( unsigned a_numRows,
+															Brood::Application::Components::Deck* a_deckPtr )
 {
 	// saving the curr row num for later use
 	unsigned lastRowNum = m_numRows;
@@ -358,7 +404,7 @@ void Brood::Application::Components::Board::IncreaseNumRow( unsigned a_numRows )
 	}
 
 	// creating new tiles for newly added rows
-	UpdateBoardPath( lastRowNum, m_numRows, 0, m_numCols, true );
+	UpdateBoardPath( lastRowNum, m_numRows, 0, m_numCols, true, a_deckPtr );
 }
 
 /// 
@@ -408,7 +454,8 @@ void Brood::Application::Components::Board::DecreaseNumRow( unsigned a_numRows )
 ///
 /// @param a_numCols number of tile cols to set in a board 
 /// 
-void Brood::Application::Components::Board::IncreaseNumCol( unsigned a_numCols )
+void Brood::Application::Components::Board::IncreaseNumCol( unsigned a_numCols,
+															Brood::Application::Components::Deck* a_deckPtr )
 {
 	// saving the curr row num for later use
 	unsigned lastColNum = m_numCols;
@@ -437,7 +484,7 @@ void Brood::Application::Components::Board::IncreaseNumCol( unsigned a_numCols )
 	}
 
 	// creating new tiles for newly added col
-	UpdateBoardPath( 0, m_numRows, lastColNum, m_numCols, true );
+	UpdateBoardPath( 0, m_numRows, lastColNum, m_numCols, true, a_deckPtr );
 }
 
 /// 
@@ -499,7 +546,8 @@ void Brood::Application::Components::Board::DecreaseNumCol( unsigned a_numCols )
 ///  
 void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin, unsigned a_rowEnd,
 															 unsigned a_colBegin, unsigned a_colEnd,
-															 bool a_createNew )
+															 bool a_createNew,
+															 Brood::Application::Components::Deck* a_deckPtr )
 {
 	float tileSizex = m_boardBody.getSize().x / m_numCols;
 	float tileSizeY = m_boardBody.getSize().y / m_numRows;
@@ -510,13 +558,16 @@ void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin
 		{
 			if( a_createNew )
 			{
-				m_boardPaths.at( currRowNum ).at( currColNum ) = new Path();
+				m_boardPaths.at( currRowNum ).at( currColNum ) = new Path(nullptr, a_deckPtr);
 			}
 
 			m_boardPaths.at( currRowNum ).at( currColNum )->GetTilePtr()->UpdateTile( currRowNum, currColNum,
 																					  tileSizex, tileSizeY,
 																					  m_boardBody.getPosition().x,
 																					  m_boardBody.getPosition().y );
+
+			// updating the path lines
+			m_boardPaths.at( currRowNum ).at( currColNum )->UpdatePathLines();
 		}
 	}
 }

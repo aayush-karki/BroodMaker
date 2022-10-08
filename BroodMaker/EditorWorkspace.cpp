@@ -195,7 +195,7 @@ void Brood::Application::EditorWorkspace::InitializeEditModeTabs()
 	// setting the First tab--board edit as the active tab
 
 	// TODO set me back to 0
-	UpdateActiveEditorIdx( 3 );
+	UpdateActiveEditorIdx( 2 );
 }
 
 /// 
@@ -232,8 +232,23 @@ void Brood::Application::EditorWorkspace::UpdateEditModeTabs()
 /// 
 void Brood::Application::EditorWorkspace::UpdateActiveEditorIdx( unsigned a_idx )
 {
+	// checking if the same idx was pressed
+	if( a_idx == m_activeEditorIdx )
+	{
+		return;
+	}
+
+	// if the current a_activeEditorIdx or the a_editor is the tile ediot
+	// which is at idx 2 then toggle the draw line
+	if( a_idx == 2 || m_activeEditorIdx == 2)
+	{
+		// toggling the draw line
+		m_gameData.GetBoardPtr()->ToggleDrawLine();
+	}
+
 	m_editModesTabs.at( a_idx )->SetSelected( true );
 	m_activeEditorIdx = a_idx;
+
 }
 
 // ======================================================================

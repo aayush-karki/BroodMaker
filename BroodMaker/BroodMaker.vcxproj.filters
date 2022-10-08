@@ -149,9 +149,6 @@
     <ClCompile Include="Deck.cpp">
       <Filter>src\Components\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameDataManager.cpp">
-      <Filter>src\Components\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BoardEditor.cpp">
       <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
     </ClCompile>
@@ -176,14 +173,14 @@
     <ClCompile Include="DeckManager.cpp">
       <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PathManager.cpp">
-      <Filter>src\Components\Managers\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerManager.cpp">
       <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DisplayCard.cpp">
       <Filter>src\Components\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDataManager.cpp">
+      <Filter>src\Components\Managers\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -290,9 +287,6 @@
       <Filter>src\Application\Workspace\Editors\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DeckManager.h">
-      <Filter>src\Components\Managers\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PathManager.h">
       <Filter>src\Components\Managers\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerManager.h">

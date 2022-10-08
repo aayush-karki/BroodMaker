@@ -395,6 +395,16 @@ void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
 	}
 }
 
+
+/// 
+/// @private
+/// @brief debugger
+///
+void Brood::BroodUI::TextBox::Debugger()
+{
+	Brood::BroodUI::UIElement::Debugger();
+}
+
 /// 
 /// @private
 /// @brief logic of what happens when different keys are pressed

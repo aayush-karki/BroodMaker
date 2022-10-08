@@ -64,7 +64,7 @@ public:
 	// default destructor
 	virtual ~EditorWorkspace();
 
-	// ===== virtual funcitons ====
+	// ===== virtual funcitons ====   
 
 	/// initializes the component of a workspace
 	void InitializeWorkSpace();

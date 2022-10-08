@@ -233,6 +233,8 @@ public:
 	// draw funciton
 	virtual void Draw( sf::RenderWindow& a_window ) override;
 
+	// debugger
+	virtual void Debugger( ) override;
 
 	// ============ private member function =============== 
 private:

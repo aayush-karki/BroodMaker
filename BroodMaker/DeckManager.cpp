@@ -26,7 +26,7 @@ Brood::Application::Components::DeckManager::DeckManager() :
 	m_currDeckIdx( 0 ), m_incorrectPenalty( true ),
 	m_movementType( Brood::Application::Components::ENUM_MovementType::MOVEMENT_diceThenCard )
 {
-	m_deckList.resize( 1, Deck());
+	m_deckList.push_back( new Deck() );
 }
 
 ///
@@ -44,15 +44,10 @@ Brood::Application::Components::DeckManager::~DeckManager()
 Brood::Application::Components::DeckManager::DeckManager( const Brood::Application::Components::DeckManager& a_otherDeckManager ) :
 	m_currDeckIdx( a_otherDeckManager.m_currDeckIdx ), m_incorrectPenalty( a_otherDeckManager.m_incorrectPenalty ),
 	m_movementType( a_otherDeckManager.m_movementType )
-
-
 {
-	std::vector<Brood::Application::Components::Deck>::const_iterator otherDeckListIte = a_otherDeckManager.m_deckList.begin();
-
-	while( otherDeckListIte != a_otherDeckManager.m_deckList.end() )
+	for( int idx = 0; idx < a_otherDeckManager.m_deckList.size(); ++idx )
 	{
-		this->m_deckList.push_back( Deck( *otherDeckListIte ) );
-		++otherDeckListIte;
+		this->m_deckList.push_back( new Deck( *( a_otherDeckManager.m_deckList.at( idx ) ) ) );
 	}
 }
 
@@ -108,7 +103,7 @@ Brood::Application::Components::Deck* Brood::Application::Components::DeckManage
 		return nullptr;
 	}
 
-	return &m_deckList.at( a_deckIdx );
+	return m_deckList.at( a_deckIdx );
 
 }
 
@@ -117,7 +112,7 @@ Brood::Application::Components::Deck* Brood::Application::Components::DeckManage
 /// 
 /// @return reference to the decklist
 /// 
-std::vector<Brood::Application::Components::Deck>& Brood::Application::Components::DeckManager::GetDeckList()
+std::vector<Brood::Application::Components::Deck*>& Brood::Application::Components::DeckManager::GetDeckList()
 {
 	return m_deckList;
 }
@@ -129,7 +124,7 @@ std::vector<Brood::Application::Components::Deck>& Brood::Application::Component
 /// 
 Brood::Application::Components::Deck* Brood::Application::Components::DeckManager::GetCurrActiveDeck()
 {
-	return &m_deckList.at( m_currDeckIdx );
+	return m_deckList.at( m_currDeckIdx );
 }
 
 /// 
@@ -181,15 +176,24 @@ void Brood::Application::Components::DeckManager::SetMovementType( Brood::Applic
 void Brood::Application::Components::DeckManager::SetDeckSize( unsigned a_deckSize )
 {
 	unsigned prelastIdx = m_deckList.size();
-	sf::Vector2f preLastIdxPos = m_deckList.back().GetBodyPosition();
+	sf::Vector2f preLastIdxPos = m_deckList.back()->GetBodyPosition();
 
-	m_deckList.resize( a_deckSize, Deck() );
+	// dynamically removing the extra deck
+	if( a_deckSize < m_deckList.size() )
+	{
+		for( int idx = a_deckSize - 1; idx < m_deckList.size(); ++idx )
+		{
+			delete m_deckList.at( idx );
+		}
+	}
+
+	m_deckList.resize( a_deckSize, new Deck() );
 
 	// positioning all the newly created decks
 	for( prelastIdx; prelastIdx < m_deckList.size(); ++prelastIdx )
 	{
 		preLastIdxPos.x += 40;
-		m_deckList.at( prelastIdx ).SetBodyPosition( preLastIdxPos );
+		m_deckList.at( prelastIdx )->SetBodyPosition( preLastIdxPos );
 	}
 }
 
@@ -210,7 +214,7 @@ void Brood::Application::Components::DeckManager::SetCurrActiveDeckIdx( unsigned
 ///
 void Brood::Application::Components::DeckManager::AddCardToDeckAtCurrIdx( Brood::Application::Components::CardInfo a_cardToAdd )
 {
-	m_deckList.at( m_currDeckIdx ).AddCardInfoToDeck( a_cardToAdd );
+	m_deckList.at( m_currDeckIdx )->AddCardInfoToDeck( a_cardToAdd );
 }
 
 /// 
@@ -223,11 +227,11 @@ void Brood::Application::Components::DeckManager::AddCardToDeckAtCurrIdx( Brood:
 void Brood::Application::Components::DeckManager::Draw( sf::RenderWindow& a_window )
 {
 	// drawing all the decks
-	std::vector<Brood::Application::Components::Deck>::iterator deckListIte = m_deckList.begin();
+	std::vector<Brood::Application::Components::Deck*>::iterator deckListIte = m_deckList.begin();
 
 	while( deckListIte != m_deckList.end() )
 	{
-		( *deckListIte ).Draw( a_window );
+		( *deckListIte )->Draw( a_window );
 		++deckListIte;
 	}
 }
@@ -242,11 +246,12 @@ void Brood::Application::Components::DeckManager::Draw( sf::RenderWindow& a_wind
 void Brood::Application::Components::DeckManager::Debugger()
 {
 	// debugging all the decks
-	std::vector<Brood::Application::Components::Deck>::iterator deckListIte = m_deckList.begin();
+	std::vector<Brood::Application::Components::Deck*>::iterator deckListIte = m_deckList.begin();
 
 	while( deckListIte != m_deckList.end() )
 	{
-		( *deckListIte ).Debugger();
+		//( *deckListIte ).Debugger();
+		(*deckListIte)->Debugger();
 		++deckListIte;
 	}
 }
