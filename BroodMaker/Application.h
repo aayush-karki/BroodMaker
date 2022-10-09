@@ -28,7 +28,6 @@
 #include "HomeWorkSpace.h"
 
 #include "Path.h"
-#include "Struct_CtorParam.h"
 #include "GlobalVariables.h"
 
 // ======================================================================

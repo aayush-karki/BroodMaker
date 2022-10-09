@@ -62,6 +62,12 @@ public:
 	/// debugger
 	void Debugger();
 
+	// initialize the game Data Manager
+	void InitializeGameDataManager( Brood::Application::Data::ST_GameData& a_gameDataManager);
+
+	// returns the game Data manager data to save 
+	Brood::Application::Data::ST_GameData GetDataToSave();
+
 	// =========== setter functions ==========
 
 	/// setter funciton to set the game title for the game

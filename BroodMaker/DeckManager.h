@@ -14,6 +14,7 @@
 // ======================================================================
 #pragma once
 #include "Deck.h"
+#include "Data.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -30,12 +31,13 @@ namespace Brood::Application
 // ================= end of namespace defination ========================
 // ======================================================================
 
+
 // ======================================================================
 // ================= start of ENUM_MovementType Enum class defination ===
 // ======================================================================
 
 /// 
-/// @ingroup Components
+/// @ingroup Data
 /// @enum ENUM_MovementType
 /// @brief list all the different movement type
 ///
@@ -49,7 +51,6 @@ enum class Brood::Application::Components::ENUM_MovementType
 // ======================================================================
 // ================= end of ENUM_UIType Enum class defination ===========
 // ======================================================================
-
 // ======================================================================
 // ================= start of DeckManager class =========================
 // ======================================================================
@@ -76,6 +77,14 @@ public:
 	// assignment operator
 	DeckManager& operator=( const Brood::Application::Components::DeckManager& a_otherDeckManager );
 
+	// initialize the Deck Manager
+	void InitializeDeckManager( Brood::Application::Data::ST_DeckManagerData& a_deckManagerData );
+
+	// returns the deck manager data to save 
+	Brood::Application::Data::ST_DeckManagerData GetDataToSave();
+
+	// ============= getter functions ========
+
 	// getter funciton to get the current deck index
 	unsigned GetCurrActiveDeckIdx( );
 
@@ -93,6 +102,8 @@ public:
 
 	// getter funciton to get movement type
 	Brood::Application::Components::ENUM_MovementType GetMovementType();
+
+	// ============= setter functions ========
 
 	// getter funciton to get incorrect penalty 
 	void SetIncorrectPenalty( bool  a_incorrectPenatly );

@@ -31,7 +31,7 @@ Brood::Application::Components::Path::Path( Brood::Application::Components::Tile
 											Brood::Application::Components::ENUM_TileType a_tileType ) :
 	m_tilePtr( a_tilePtr == nullptr ? new Brood::Application::Components::Tiles() : a_tilePtr ),
 	m_tileType( a_tileType ), m_nextPathPtr( this ), m_previousPathPtr( this ),
-	m_bridgeEndPathPtr( this ), m_deckPtr( a_deckPtr ), m_deckIdx( 0 ), m_numCardDraw(1),
+	m_bridgeEndPathPtr( this ), m_deckPtr( a_deckPtr ), m_deckIdx( 0 ), m_numCardDraw( 1 ),
 	m_drawLine( false ), m_nextPathLine( sf::PrimitiveType::Lines, 2 ),
 	m_bridgePathLine( sf::PrimitiveType::Lines, 2 )
 {
@@ -69,8 +69,8 @@ Brood::Application::Components::Path::Path( const Path& a_otherPath ) :
 	m_previousPathPtr( a_otherPath.m_previousPathPtr ),
 	m_bridgeEndPathPtr( a_otherPath.m_bridgeEndPathPtr ),
 	m_deckPtr( a_otherPath.m_deckPtr ), m_deckIdx( a_otherPath.m_deckIdx ),
-	m_numCardDraw( a_otherPath.m_numCardDraw ),	m_drawLine( a_otherPath.m_drawLine ),
-	m_nextPathLine( a_otherPath.m_nextPathLine ),m_bridgePathLine( a_otherPath.m_bridgePathLine )
+	m_numCardDraw( a_otherPath.m_numCardDraw ), m_drawLine( a_otherPath.m_drawLine ),
+	m_nextPathLine( a_otherPath.m_nextPathLine ), m_bridgePathLine( a_otherPath.m_bridgePathLine )
 {
 	delete m_tilePtr;
 	this->m_tilePtr = new  Brood::Application::Components::Tiles();
@@ -126,6 +126,55 @@ Brood::Application::Components::Path& Brood::Application::Components::Path::oper
 	UpdatePathLines();
 
 	return *this;
+}
+
+/// 
+/// @brief  initializes the player with the passed data
+/// 
+/// @param a_deckData reference of the player data
+/// @param a_nextPathPtr pointer to the next path
+/// @param a_bridgeEndPathPtr pointer to the bridge end path
+/// @param a_deckPtr pointer to the assigned deck
+void Brood::Application::Components::Path::InitializePath( Brood::Application::Data::ST_PathPrefabData& a_pathData,
+														   Brood::Application::Components::Path* a_nextPathPtr,
+														   Brood::Application::Components::Path* a_bridgeEndPathPtr,
+														   Brood::Application::Components::Deck* a_deckPtr )
+{
+	SetNextPathPtr( a_nextPathPtr );
+	SetBridgeEndPathPtr( a_nextPathPtr );
+	SetDeckPtr( a_deckPtr );
+
+	m_tileType = static_cast< Brood::Application::Components::ENUM_TileType >( a_pathData.stm_tileType );
+	m_deckIdx = a_pathData.stm_assignedDeckId;
+	m_numCardDraw = a_pathData.stm_numberCardDraw;
+	m_forceDiceRoll = a_pathData.stm_forceDiceRoll;
+
+	m_tilePtr->GetSpriteBody().SetTextureFromFilePath( a_pathData.stm_textureFileName );
+}
+
+/// 
+/// @public
+/// @brief creates and returns player data struct
+/// 
+/// @return player data struct with the dice data in it
+/// 
+Brood::Application::Data::ST_PathPrefabData Brood::Application::Components::Path::GetDataToSave()
+{
+	Brood::Application::Data::ST_PathPrefabData pathData;
+
+	pathData.stm_tileType = (unsigned)m_tileType;
+	pathData.stm_RowNum = m_tilePtr->GetRow();
+	pathData.stm_ColNum = m_tilePtr->GetCol();
+	pathData.stm_nextTileRowNum = m_nextPathPtr->GetTilePtr()->GetRow();
+	pathData.stm_nextTileColNum = m_nextPathPtr->GetTilePtr()->GetCol();
+	pathData.stm_endBridgeTileRowNum = m_bridgeEndPathPtr->GetTilePtr()->GetRow();
+	pathData.stm_endBridgeTileColNum = m_bridgeEndPathPtr->GetTilePtr()->GetCol();
+	pathData.stm_numberCardDraw = m_numCardDraw;
+	pathData.stm_assignedDeckId = m_deckIdx;
+	pathData.stm_forceDiceRoll = m_forceDiceRoll;
+	pathData.stm_textureFileName = m_tilePtr->GetSpriteBody().GetTextureFileName();
+
+	return pathData;
 }
 
 /// 
@@ -233,7 +282,7 @@ unsigned Brood::Application::Components::Path::GetDeckIdx()
 /// 
 /// @return  get the number of card to be drawn
 ///
-unsigned Brood::Application::Components::Path::GetNumCardDraw( )
+unsigned Brood::Application::Components::Path::GetNumCardDraw()
 {
 	return m_numCardDraw;
 }
@@ -345,6 +394,8 @@ void Brood::Application::Components::Path::SetNextPathPtr( Brood::Application::C
 {
 	m_nextPathPtr = a_nextPathPtr;
 
+	a_nextPathPtr->SetPreviouPathPtr( this );
+
 	// updating the path lines
 	UpdatePathLines();
 
@@ -415,7 +466,7 @@ void Brood::Application::Components::Path::SetDeckIdx( unsigned a_deckIdx )
 /// @param a_deckPtr index of the assigned deck 
 /// 
 void Brood::Application::Components::Path::SetNumCardDraw( unsigned a_numCardDraw )
-{ 
+{
 	m_numCardDraw = a_numCardDraw;
 }
 
@@ -521,7 +572,7 @@ bool Brood::Application::Components::Path::DeletePlayerFromList( Brood::Applicat
 /// 
 void Brood::Application::Components::Path::UpdatePathLines()
 {
-// updating next Path Line
+	// updating next Path Line
 	m_nextPathLine[ 0 ] = GetTileCenter();
 	m_nextPathLine[ 1 ] = m_nextPathPtr->GetTileCenter();
 

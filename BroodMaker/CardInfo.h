@@ -15,6 +15,7 @@
 // ======================================================================
 
 #pragma once
+#include "Data.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -58,6 +59,14 @@ public:
 	// assignment constructor
 	CardInfo& operator = ( const CardInfo& a_other );
 
+	// initialize the card info
+	void InitializeCard( Brood::Application::Data::ST_CardInfoPrefabData& a_cardinfoData );
+
+	// returns the card Info data to save 
+	Brood::Application::Data::ST_CardInfoPrefabData GetDataToSave();
+
+	// ============ getter function ==============
+
 	// getter funciton to get time
 	unsigned GetTime();
 
@@ -73,6 +82,8 @@ public:
 	// getter funciton to get correct answer
 	std::string GetCorrectAnswer();
 
+	// ============ setter function ==============
+	
 	// setter funciton to get time
 	void SetTime( unsigned a_time );
 
@@ -91,7 +102,7 @@ public:
 	// ============== private memeber variables =================
 private:
 
-	// following are in the front of the card
+	// ============ following are in the front of the card =========
 
 	/// the time the player has to answer the question
 	unsigned m_time;
@@ -102,7 +113,7 @@ private:
 	/// number steps the player move backward if answered incorrectly
 	unsigned m_incorrectNumSteps;
 
-	// following are in the back of the card
+	// ====== following are in the back of the card =======
 
 	/// stores the question
 	std::string m_question;

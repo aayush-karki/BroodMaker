@@ -94,6 +94,40 @@ void Brood::Application::Components::PlayerManager::InitializePlayerManger( Broo
 }
 
 /// 
+/// @brief  initializes the player manager with the passed data
+/// 
+/// @param a_deckData reference of the player manager data
+/// @param a_playerCurrPath path that the new player starts on
+/// 
+void Brood::Application::Components::PlayerManager::InitializePlayerManager( Brood::Application::Data::ST_PlayerManagerData& a_playerManagerData,
+																			 Brood::Application::Components::Path* a_playerCurrPath )
+{
+	m_startPathPtr = a_playerCurrPath;
+	SetMaxPlayer( a_playerManagerData.stm_maxPlayer );
+	SetMinPlayer( a_playerManagerData.stm_minPlayer );
+	m_currActivePlayerIdx = a_playerManagerData.stm_currPlayerIdx;
+}
+
+
+/// 
+/// @public
+/// @brief creates and returns player data struct
+/// 
+/// @return player data struct with the dice data in it
+/// 
+Brood::Application::Data::ST_PlayerManagerData Brood::Application::Components::PlayerManager::GetDataToSave()
+{
+	Brood::Application::Data::ST_PlayerManagerData playerManagerData;
+	
+	playerManagerData.stm_maxPlayer = m_maxPlayer;
+	playerManagerData.stm_minPlayer = m_minPlayer;
+	playerManagerData.stm_currPlayerIdx = m_currActivePlayerIdx;
+
+	return playerManagerData;
+}
+
+
+/// 
 /// @public
 /// @brief Getter function to get the maximum number of player
 /// 
@@ -243,6 +277,7 @@ Brood::Application::Components::Player* Brood::Application::Components::PlayerMa
 
 	return m_allPlayers.at( m_currActivePlayerIdx );
 }
+
 
 /// 
 /// @public

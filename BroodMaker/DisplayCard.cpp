@@ -120,11 +120,11 @@ void Brood::Application::Components::DisplayCard::InializeDisplayCard()
 	m_TxtBackTimeValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 140,35 },
 																   { 210,220 }, "", "TimeValue" );
 
-	// initializing question
+	// initializing answer
 	m_TxtQuestionPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
 																	{ 115,265 }, "Question: " );
 	m_TxtQuestionValue = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
-																   { 115,310 }, "", "question" );
+																   { 115,310 }, "", "answer" );
 
 	// initializing userAnswer
 	m_TxtUserAnswerPrompt = Brood::BroodUI::TextBox::DyCreateTextBox( { 240,35 },
@@ -152,6 +152,211 @@ void Brood::Application::Components::DisplayCard::InializeDisplayCard()
 	SetBodySize( ( bottomRightPos.x - topLeftPos.x ) + 20.f, ( bottomRightPos.y - topLeftPos.y ) + 20.f );
 	SetBodyPosition( topLeftPos - sf::Vector2f{ 10,10 } );
 	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
+}
+
+/// 
+/// @brief  initializes the displayCard with the passed data
+/// 
+/// @param a_displayCardData reference of the card info data
+/// 
+void Brood::Application::Components::DisplayCard::InitializeDisplayCard( Brood::Application::Data::ST_DisplayCardData& a_displayCardData )
+{
+	// this never runs but
+	// just to be sure
+	if( m_TxtFrontTimePromt == nullptr )
+	{
+		InializeDisplayCard();
+	}
+
+	// setting up body
+	SetBodySize( { a_displayCardData.stm_displayCardSizeX, a_displayCardData.stm_displayCardSizeY });
+	SetBodyPosition({ a_displayCardData.stm_displayCardPositionX, a_displayCardData.stm_displayCardPositionY });
+	
+	if( !a_displayCardData.stm_displayCardFrontTextureFilename.empty())
+	{
+		SetFrontBgFileName( a_displayCardData.stm_displayCardFrontTextureFilename );
+	}
+
+	if( !a_displayCardData.stm_displayCardBackTextureFilename.empty() )
+	{
+		SetBackBgFileName( a_displayCardData.stm_displayCardBackTextureFilename );
+	}
+
+	// displays time user have to complete the answer
+	m_TxtFrontTimePromt->SetBodySize( { a_displayCardData.stm_frontTimePromptSizeX, a_displayCardData.stm_frontTimePromptSizeY } );
+	m_TxtFrontTimePromt->SetBodyPosition({ a_displayCardData.stm_frontTimePromptPositionX, a_displayCardData.stm_frontTimePromptPositonY});
+
+	m_TxtFrontTimeValue->SetBodySize( { a_displayCardData.stm_frontTimeValueSizeX, a_displayCardData.stm_frontTimeValueSizeY } );
+	m_TxtFrontTimeValue->SetBodyPosition( { a_displayCardData.stm_frontTimeValuePositionX, a_displayCardData.stm_frontTimeValuePositonY } );
+
+	// displays number of steps that user goes forward
+	m_TxtUpPromt->SetBodySize( { a_displayCardData.stm_upPromptSizeX, a_displayCardData.stm_upPromptSizeY } );
+	m_TxtUpPromt->SetBodyPosition( { a_displayCardData.stm_upPromptPositionX, a_displayCardData.stm_upPromptPositonY } );
+
+	m_TxtUpValue->SetBodySize( { a_displayCardData.stm_upValueSizeX, a_displayCardData.stm_upValueSizeY } );
+	m_TxtUpValue->SetBodyPosition( { a_displayCardData.stm_upValuePositionX, a_displayCardData.stm_upValuePositonY } );
+
+	// displays number of steps that user goes backward
+	m_TxtDownPrompt->SetBodySize( { a_displayCardData.stm_downPromptSizeX, a_displayCardData.stm_downPromptSizeY } );
+	m_TxtDownPrompt->SetBodyPosition( { a_displayCardData.stm_downPromptPositionX, a_displayCardData.stm_downPromptPositonY } );
+
+	m_TxtDownValue->SetBodySize( { a_displayCardData.stm_downValueSizeX, a_displayCardData.stm_downValueSizeY } );
+	m_TxtDownValue->SetBodyPosition( { a_displayCardData.stm_downValuePositionX, a_displayCardData.stm_downValuePositonY } );
+
+
+	// button to turn the card of the card
+	m_BtnTurnCard->SetBodySize( { a_displayCardData.stm_turnCardPromptSizeX, a_displayCardData.stm_turnCardPromptSizeY } );
+	m_BtnTurnCard->SetBodyPosition( { a_displayCardData.stm_turnCardPromptPositionX, a_displayCardData.stm_turnCardPromptPositonY } );
+
+	// ========= back of the card =========
+	// displays time user have to complete the answer
+	m_TxtBackTimePromt->SetBodySize( { a_displayCardData.stm_backTimePromptSizeX, a_displayCardData.stm_backTimePromptSizeY } );
+	m_TxtBackTimePromt->SetBodyPosition( { a_displayCardData.stm_backTimePromptPositionX, a_displayCardData.stm_backTimePromptPositonY } );
+
+	m_TxtBackTimeValue->SetBodySize( { a_displayCardData.stm_backTimeValueSizeX, a_displayCardData.stm_backTimeValueSizeY } );
+	m_TxtBackTimeValue->SetBodyPosition( { a_displayCardData.stm_backTimeValuePositionX, a_displayCardData.stm_backTimeValuePositonY } );
+
+	// displays the answer that user has to answer
+	m_TxtQuestionPrompt->SetBodySize( { a_displayCardData.stm_answerPromptSizeX, a_displayCardData.stm_answerPromptSizeY } );
+	m_TxtQuestionPrompt->SetBodyPosition( { a_displayCardData.stm_answerPromptPositionX, a_displayCardData.stm_answerPromptPositonY } );
+
+	m_TxtQuestionValue->SetBodySize( { a_displayCardData.stm_answerValueSizeX, a_displayCardData.stm_answerValueSizeY } );
+	m_TxtQuestionValue->SetBodyPosition( { a_displayCardData.stm_answerValuePositionX, a_displayCardData.stm_answerValuePositonY } );
+
+	// displays the textbox for user to enter theiranswer
+	m_TxtUserAnswerPrompt->SetBodySize( { a_displayCardData.stm_answerPromptSizeX, a_displayCardData.stm_answerPromptSizeY } );
+	m_TxtUserAnswerPrompt->SetBodyPosition( { a_displayCardData.stm_answerPromptPositionX, a_displayCardData.stm_answerPromptPositonY } );
+
+	m_TxtUserAnswerValue->SetBodySize( { a_displayCardData.stm_answerValueSizeX, a_displayCardData.stm_answerValueSizeY } );
+	m_TxtUserAnswerValue->SetBodyPosition( { a_displayCardData.stm_answerValuePositionX, a_displayCardData.stm_answerValuePositonY } );
+
+	// button to show back of the card
+	m_BtnSubmit->SetBodySize( { a_displayCardData.stm_submitButtonValueSizeX, a_displayCardData.stm_submitButtonValueSizeY } );
+	m_BtnSubmit->SetBodyPosition( { a_displayCardData.stm_submitButtonValuePositionX, a_displayCardData.stm_submitButtonValuePositonY } );
+}
+
+/// 
+/// @public
+/// @brief creates and returns displayCard data struct
+/// 
+/// @return displayCard data struct with the displayCard data in it
+/// 
+Brood::Application::Data::ST_DisplayCardData Brood::Application::Components::DisplayCard::GetDataToSave()
+{
+	Brood::Application::Data::ST_DisplayCardData displayCardData;
+
+	// saving up body
+	displayCardData.stm_displayCardSizeX = GetBodySize().x;	
+	displayCardData.stm_displayCardSizeY  = GetBodySize().y;
+	displayCardData.stm_displayCardPositionX = GetBodyPosition().x;
+	displayCardData.stm_displayCardPositionY = GetBodyPosition().y;
+
+	// saving file texture
+	displayCardData.stm_displayCardFrontTextureFilename = m_frontBgFileName;
+	displayCardData.stm_displayCardBackTextureFilename = m_backBgFileName;
+
+	// displays time user have to complete the answer
+	
+	displayCardData.stm_frontTimePromptSizeX = m_TxtFrontTimePromt->GetBodySize().x;
+	displayCardData.stm_frontTimePromptSizeY = m_TxtFrontTimePromt->GetBodySize().y;
+	
+	displayCardData.stm_frontTimePromptPositionX = m_TxtFrontTimePromt->GetBodyPosition().x;
+	displayCardData.stm_frontTimePromptPositonY = m_TxtFrontTimePromt->GetBodyPosition().y;
+
+	displayCardData.stm_frontTimeValueSizeX = m_TxtFrontTimeValue->GetBodySize().x;
+	displayCardData.stm_frontTimeValueSizeY = m_TxtFrontTimeValue->GetBodySize().y;
+
+	displayCardData.stm_frontTimeValuePositionX = m_TxtFrontTimeValue->GetBodyPosition().x;
+	displayCardData.stm_frontTimeValuePositonY = m_TxtFrontTimeValue->GetBodyPosition().y;
+
+	// displays number of steps that user goes forward
+
+	displayCardData.stm_upPromptSizeX = m_TxtUpPromt->GetBodySize().x;
+	displayCardData.stm_upPromptSizeY = m_TxtUpPromt->GetBodySize().y;
+
+	displayCardData.stm_upPromptPositionX = m_TxtUpPromt->GetBodyPosition().x;
+	displayCardData.stm_upPromptPositonY = m_TxtUpPromt->GetBodyPosition().y;
+
+	displayCardData.stm_upValueSizeX = m_TxtUpValue->GetBodySize().x;
+	displayCardData.stm_upValueSizeY = m_TxtUpValue->GetBodySize().y;
+
+	displayCardData.stm_upValuePositionX = m_TxtUpValue->GetBodyPosition().x;
+	displayCardData.stm_upValuePositonY = m_TxtUpValue->GetBodyPosition().y;
+
+	// displays number of steps that user goes backward
+
+	displayCardData.stm_downPromptSizeX = m_TxtDownValue->GetBodySize().x;
+	displayCardData.stm_downPromptSizeY = m_TxtDownValue->GetBodySize().y;
+
+	displayCardData.stm_downPromptPositionX = m_TxtDownValue->GetBodyPosition().x;
+	displayCardData.stm_downPromptPositonY = m_TxtDownValue->GetBodyPosition().y;
+
+	displayCardData.stm_downValueSizeX = m_TxtDownValue->GetBodySize().x;
+	displayCardData.stm_downValueSizeY = m_TxtDownValue->GetBodySize().y;
+
+	displayCardData.stm_downValuePositionX = m_TxtDownValue->GetBodyPosition().x;
+	displayCardData.stm_downValuePositonY = m_TxtDownValue->GetBodyPosition().y;
+
+	// button to turn the card of the card
+
+	displayCardData.stm_turnCardPromptSizeX = m_BtnTurnCard->GetBodySize().x;
+	displayCardData.stm_turnCardPromptSizeY = m_BtnTurnCard->GetBodySize().y;
+
+	displayCardData.stm_turnCardPromptPositionX = m_BtnTurnCard->GetBodyPosition().x;
+	displayCardData.stm_turnCardPromptPositonY = m_BtnTurnCard->GetBodyPosition().y;
+
+	// ========= back of the card =========
+	 
+	// displays time user have to complete the answer
+
+	displayCardData.stm_backTimePromptSizeX = m_TxtBackTimePromt->GetBodySize().x;
+	displayCardData.stm_backTimePromptSizeY = m_TxtBackTimePromt->GetBodySize().y;
+
+	displayCardData.stm_backTimePromptPositionX = m_TxtBackTimePromt->GetBodyPosition().x;
+	displayCardData.stm_backTimePromptPositonY = m_TxtBackTimePromt->GetBodyPosition().y;
+
+	displayCardData.stm_backTimeValueSizeX = m_TxtBackTimeValue->GetBodySize().x;
+	displayCardData.stm_backTimeValueSizeY = m_TxtBackTimeValue->GetBodySize().y;
+
+	displayCardData.stm_backTimeValuePositionX = m_TxtBackTimeValue->GetBodyPosition().x;
+	displayCardData.stm_backTimeValuePositonY = m_TxtBackTimeValue->GetBodyPosition().y;
+
+	// displays the answer that user has to answer
+
+	displayCardData.stm_answerPromptSizeX = m_TxtQuestionValue->GetBodySize().x;
+	displayCardData.stm_answerPromptSizeY = m_TxtQuestionValue->GetBodySize().y;
+
+	displayCardData.stm_answerPromptPositionX = m_TxtQuestionValue->GetBodyPosition().x;
+	displayCardData.stm_answerPromptPositonY = m_TxtQuestionValue->GetBodyPosition().y;
+
+	displayCardData.stm_answerValueSizeX = m_TxtQuestionValue->GetBodySize().x;
+	displayCardData.stm_answerValueSizeY = m_TxtQuestionValue->GetBodySize().y;
+
+	displayCardData.stm_answerValuePositionX = m_TxtQuestionValue->GetBodyPosition().x;
+	displayCardData.stm_answerValuePositonY = m_TxtQuestionValue->GetBodyPosition().y;
+
+	// displays the textbox for user to enter theiranswer
+
+	displayCardData.stm_answerPromptSizeX = m_TxtUserAnswerValue->GetBodySize().x;
+	displayCardData.stm_answerPromptSizeY = m_TxtUserAnswerValue->GetBodySize().y;
+
+	displayCardData.stm_answerPromptPositionX = m_TxtUserAnswerValue->GetBodyPosition().x;
+	displayCardData.stm_answerPromptPositonY = m_TxtUserAnswerValue->GetBodyPosition().y;
+
+	displayCardData.stm_answerValueSizeX = m_TxtUserAnswerValue->GetBodySize().x;
+	displayCardData.stm_answerValueSizeY = m_TxtUserAnswerValue->GetBodySize().y;
+
+	displayCardData.stm_answerValuePositionX = m_TxtUserAnswerValue->GetBodyPosition().x;
+	displayCardData.stm_answerValuePositonY = m_TxtUserAnswerValue->GetBodyPosition().y;
+
+	// button to show back of the card
+	displayCardData.stm_submitButtonValueSizeX = m_BtnSubmit->GetBodySize().x;
+	displayCardData.stm_submitButtonValueSizeY = m_BtnSubmit->GetBodySize().y;
+
+	displayCardData.stm_submitButtonValuePositionX = m_BtnSubmit->GetBodyPosition().x;
+	displayCardData.stm_submitButtonValuePositonY = m_BtnSubmit->GetBodyPosition().y;
+
+	return displayCardData;
 }
 
 
@@ -281,9 +486,9 @@ Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetBackTim
 
 /// 
 /// @public
-/// @brief Getter function to get the pointer to the question prompt ui element
+/// @brief Getter function to get the pointer to the answer prompt ui element
 /// 
-/// @return pointer to the question prompt ui element
+/// @return pointer to the answer prompt ui element
 ///
 Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetQuestionPromptPtr()
 {
@@ -292,9 +497,9 @@ Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetQuestio
 
 /// 
 /// @public
-/// @brief Getter function to get the pointer to the question value ui element
+/// @brief Getter function to get the pointer to the answer value ui element
 /// 
-/// @return pointer to the question value ui element
+/// @return pointer to the answer value ui element
 ///
 Brood::BroodUI::TextBox* Brood::Application::Components::DisplayCard::GetQuestionValuePtr()
 {
@@ -598,7 +803,7 @@ void Brood::Application::Components::DisplayCard::Draw( sf::RenderWindow& a_wind
 		m_TxtBackTimePromt->Draw( a_window );
 		m_TxtBackTimeValue->Draw( a_window );
 
-		// drawing question
+		// drawing answer
 		m_TxtQuestionPrompt->Draw( a_window );
 		m_TxtQuestionValue->Draw( a_window );
 
@@ -637,7 +842,7 @@ void Brood::Application::Components::DisplayCard::Debugger()
 	m_TxtBackTimePromt->Debugger();
 	m_TxtBackTimeValue->Debugger();
 
-	// debugging question
+	// debugging answer
 	m_TxtQuestionPrompt->Debugger();
 	m_TxtQuestionValue->Debugger();
 

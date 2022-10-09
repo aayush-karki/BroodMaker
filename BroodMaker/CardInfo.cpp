@@ -79,6 +79,39 @@ Brood::Application::Components::CardInfo& Brood::Application::Components::CardIn
 }
 
 /// 
+/// @brief  initializes the card info with the passed data
+/// 
+/// @param a_cardinfoData reference of the card info data
+/// 
+void Brood::Application::Components::CardInfo::InitializeCard( Brood::Application::Data::ST_CardInfoPrefabData& a_cardinfoData )
+{
+	this->m_time = a_cardinfoData.stm_time;
+	this->m_correctNumSteps = a_cardinfoData.stm_correctNumSteps;
+	this->m_incorrectNumSteps = a_cardinfoData.stm_incorrectNumSteps;
+	this->m_question = a_cardinfoData.stm_question;
+	this->m_correctAnswer = a_cardinfoData.stm_correctAnswer;
+}
+
+/// 
+/// @public
+/// @brief creates and returns cardInfo data struct
+/// 
+/// @return cardInfo data struct with the cardInfo data in it
+/// 
+Brood::Application::Data::ST_CardInfoPrefabData Brood::Application::Components::CardInfo::GetDataToSave()
+{
+	Brood::Application::Data::ST_CardInfoPrefabData cardInfoData;
+
+	cardInfoData.stm_time = this->m_time;
+	cardInfoData.stm_correctNumSteps = this->m_correctNumSteps;
+	cardInfoData.stm_incorrectNumSteps = this->m_incorrectNumSteps;
+	cardInfoData.stm_question = this->m_question;
+	cardInfoData.stm_correctAnswer = this->m_correctAnswer;
+
+	return cardInfoData;
+}
+
+/// 
 /// @public
 /// @brief Getter funciton to get time to complete the question
 /// 

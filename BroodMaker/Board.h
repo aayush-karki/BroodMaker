@@ -18,6 +18,7 @@
 #pragma once
 #include "GlobalVariables.h"
 #include "Path.h"
+#include "Data.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -65,6 +66,12 @@ public:
 	void InitializeBoard( unsigned  a_numRows = 0, unsigned a_numCols = 0,
 						  float a_boardSizeX = 0.f, float a_boardSizeY = 0.f,
 						  float a_boardPosX = 0.f, float a_boardPosY = 0.f );
+
+	// initialize the board
+	void InitializeBoard(Brood::Application::Data::ST_BoardData& a_boardData);
+
+	// returns the baord data to save 
+	Brood::Application::Data::ST_BoardData GetDataToSave();
 
 	// ===== setter funcitons ==== 
 

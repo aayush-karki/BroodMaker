@@ -18,6 +18,7 @@
 #include "stdafx.h"
 
 #include "Path.h"
+#include "Data.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -68,6 +69,13 @@ public:
 
 	// assignment operator
 	Player& operator=( const Player& a_otherPlayer );
+
+	// initialize the player
+	void InitializePlayer( Brood::Application::Data::ST_PlayerPrefabData& a_playerData,
+						   Brood::Application::Components::Path* a_playerCurrPath );
+
+	// returns the player data to save 
+	Brood::Application::Data::ST_PlayerPrefabData GetDataToSave();
 
 	// function to update the path iterator
 	void UpdatePathptr( Brood::Application::Components::Path* a_playerNewPathPtr );

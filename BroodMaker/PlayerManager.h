@@ -61,6 +61,14 @@ public:
 	// initializes the player Manger
 	void InitializePlayerManger( Brood::Application::Components::Path* a_pathPtr );
 
+
+	// initialize the player manager
+	void InitializePlayerManager( Brood::Application::Data::ST_PlayerManagerData& a_playerData,
+								  Brood::Application::Components::Path* a_playerCurrPath );
+
+	// returns the player data to save 
+	Brood::Application::Data::ST_PlayerManagerData GetDataToSave();
+
 	// =========== getter function ===========
 
 	// getter funciton to get the maximum player 

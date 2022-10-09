@@ -110,6 +110,48 @@ Brood::Application::Components::Dice& Brood::Application::Components::Dice::oper
 	return *this;
 }
 
+
+/// 
+/// @brief  initializes the dice with the passed data
+/// 
+/// @param a_deckData reference of the dice data
+/// 
+void Brood::Application::Components::Dice::InitializeDice( Brood::Application::Data::ST_DicePrefabData& a_diceData )
+{
+	m_numSides = a_diceData.stm_numSides;
+
+	SetBodySize( a_diceData.stm_diceSizeX, a_diceData.stm_diceSizeY );
+	SetBodyPosition( a_diceData.stm_dicePosX, a_diceData.stm_dicePosY );
+
+	if( !a_diceData.stm_textureFileName.empty() )
+	{
+		m_bodySprite.SetTextureFromFilePath( a_diceData.stm_textureFileName );
+	}
+
+}
+
+/// 
+/// @public
+/// @brief creates and returns dice data struct
+/// 
+/// @return dice data struct with the dice data in it
+/// 
+Brood::Application::Data::ST_DicePrefabData Brood::Application::Components::Dice::GetDataToSave()
+{
+
+	Brood::Application::Data::ST_DicePrefabData diceData;
+
+	diceData.stm_diceSizeX = GetBodySize().x;
+	diceData.stm_diceSizeY = GetBodySize().y;
+	diceData.stm_dicePosX = GetBodyPosition().x;
+	diceData.stm_dicePosY = GetBodyPosition().y;
+
+	diceData.stm_textureFileName = m_bodySprite.GetTextureFileName();
+	diceData.stm_numSides = m_numSides;
+
+	return diceData;
+}
+
 /// 
 /// @public
 /// @virtual

@@ -17,6 +17,7 @@
 #include "CardInfo.h"
 #include "Button.h"
 #include "TextBox.h"
+#include "Data.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -61,6 +62,12 @@ public:
 
 	// Initializes the ui elements
 	void InializeDisplayCard();
+
+	// initialize the display Card
+	void InitializeDisplayCard( Brood::Application::Data::ST_DisplayCardData& a_displayCardData );
+
+	// returns the display Card data to save 
+	Brood::Application::Data::ST_DisplayCardData GetDataToSave();
 
 	// ========= Getter funciton ==============
 

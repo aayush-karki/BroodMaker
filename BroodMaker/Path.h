@@ -55,7 +55,7 @@ public:
 	//default constructor
 	Path( Brood::Application::Components::Tiles* a_tilePtr = nullptr,
 		  Brood::Application::Components::Deck* a_deckPtr = nullptr,
-		  Brood::Application::Components::ENUM_TileType a_tileType = Brood::Application::Components::ENUM_TileType::TILE_blank);
+		  Brood::Application::Components::ENUM_TileType a_tileType = Brood::Application::Components::ENUM_TileType::TILE_blank );
 
 	// destructor
 	~Path();
@@ -65,6 +65,15 @@ public:
 
 	// assignment operator
 	Path& operator=( const Path& a_otherPath );
+
+	// initialize the path
+	void InitializePath( Brood::Application::Data::ST_PathPrefabData& a_pathData,
+						 Brood::Application::Components::Path* a_nextPathPtr,
+						 Brood::Application::Components::Path* a_bridgeEndPathPtr,
+						 Brood::Application::Components::Deck* a_deckPtr );
+
+	// returns the path data to save 
+	Brood::Application::Data::ST_PathPrefabData GetDataToSave();
 
 	// ======= getter funciton ===========
 
@@ -96,10 +105,10 @@ public:
 	unsigned GetDeckIdx();
 
 	// Getter funciton to get the number of card to be drawn
-	unsigned GetNumCardDraw( );
+	unsigned GetNumCardDraw();
 
 	// getter funciton to get force dice roll
-	bool GetForceDiceRoll( );
+	bool GetForceDiceRoll();
 
 	// gets the center point of the tile
 	sf::Vector2f GetTileCenter();
@@ -110,19 +119,19 @@ public:
 	// ======= setter funciton ===========
 
 	// Setter funciton to Set the tile type of the tile
-	void SetTileType( Brood::Application::Components::ENUM_TileType a_tileType);
+	void SetTileType( Brood::Application::Components::ENUM_TileType a_tileType );
 
 	// setter funciton to set the pointer to the tile
 	void SetTilePtr( Brood::Application::Components::Tiles* a_tilePtr );
 
 	// Setter funciton to Set the pointer to the next path 
-	void SetNextPathPtr( Brood::Application::Components::Path* a_nextPathPtr);
+	void SetNextPathPtr( Brood::Application::Components::Path* a_nextPathPtr );
 
 	// Setter funciton to Set the pointer to the previous path 
 	void SetPreviouPathPtr( Brood::Application::Components::Path* a_previousPathPtr );
 
 	// Setter funciton to Set the pointer to the bridge end path 
-	void SetBridgeEndPathPtr( Brood::Application::Components::Path*  a_bridgeEndPathPtr);
+	void SetBridgeEndPathPtr( Brood::Application::Components::Path* a_bridgeEndPathPtr );
 
 	// setter funciton to set the pointer to the deck
 	void SetDeckPtr( Brood::Application::Components::Deck* a_deckPtr );
@@ -134,7 +143,7 @@ public:
 	void SetNumCardDraw( unsigned a_numCardDraw );
 
 	// Setter funciton to Set force dice roll
-	void SetForceDiceRoll (bool a_diceRoll);
+	void SetForceDiceRoll( bool a_diceRoll );
 
 	// toggles the the draw line var
 	void ToggleDrawLine();

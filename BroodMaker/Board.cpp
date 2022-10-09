@@ -106,7 +106,6 @@ void Brood::Application::Components::Board::Draw( sf::RenderWindow& a_window )
 /// @brief sets up the board 
 /// 
 /// It initializes the board as well as the tiles. 
-/// Tiles are set up according to the 
 /// 
 /// @param a_numRows number of tile rows in a board -> default 0
 /// @param a_numCols number of tile columns in a board-> default 0
@@ -141,6 +140,42 @@ void Brood::Application::Components::Board::InitializeBoard( unsigned a_numRows,
 			m_boardPaths.at( currRowNum ).at( currColNum )->GetTilePtr()->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
 		}
 	}
+}
+
+/// 
+/// @public
+/// @brief sets up the board 
+/// 
+/// It initializes the board as well as the tiles. 
+/// 
+/// @param a_boardData struct containing all the board data
+/// 
+void Brood::Application::Components::Board::InitializeBoard( Brood::Application::Data::ST_BoardData& a_boardData )
+{
+	InitializeBoard( a_boardData.stm_numRow, a_boardData.stm_numCol,
+					 a_boardData.stm_boardSizeX, a_boardData.stm_boardSizeY,
+					 a_boardData.stm_boardPosX, a_boardData.stm_boardPosY );
+}
+
+/// 
+/// @public
+/// @brief creates and returns boardData struct
+/// 
+/// @return boardData struct with the board data in it
+/// 
+Brood::Application::Data::ST_BoardData Brood::Application::Components::Board::GetDataToSave()
+{
+	Brood::Application::Data::ST_BoardData boardData;
+	boardData.stm_numRow = this->m_boardPaths.size();
+	boardData.stm_numCol = this->m_boardPaths.front().size();
+
+	boardData.stm_boardSizeX = this->m_boardBody.getSize().x;
+	boardData.stm_boardSizeY = this->m_boardBody.getSize().y;
+
+	boardData.stm_boardPosX = this->m_boardBody.getPosition().x;
+	boardData.stm_boardPosY = this->m_boardBody.getPosition().y;
+
+	return boardData;
 }
 
 /// 
@@ -558,7 +593,7 @@ void Brood::Application::Components::Board::UpdateBoardPath( unsigned a_rowBegin
 		{
 			if( a_createNew )
 			{
-				m_boardPaths.at( currRowNum ).at( currColNum ) = new Path(nullptr, a_deckPtr);
+				m_boardPaths.at( currRowNum ).at( currColNum ) = new Path( nullptr, a_deckPtr );
 			}
 
 			m_boardPaths.at( currRowNum ).at( currColNum )->GetTilePtr()->UpdateTile( currRowNum, currColNum,

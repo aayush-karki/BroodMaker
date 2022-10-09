@@ -83,6 +83,24 @@ void Brood::Application::Components::GameDataManager::Debugger()
 }
 
 /// 
+/// @brief  initializes the game data manager with the passed data
+/// 
+/// @param a_gameDataManager reference of the game data
+void Brood::Application::Components::GameDataManager::InitializeGameDataManager( Brood::Application::Data::ST_GameData& a_gameDataManager )
+{
+	m_gameTitle = a_gameDataManager.stm_gameTitle;
+}
+
+Brood::Application::Data::ST_GameData Brood::Application::Components::GameDataManager::GetDataToSave()
+{
+	Brood::Application::Data::ST_GameData gameDataManager;
+
+	gameDataManager.stm_gameTitle = m_gameTitle;
+
+	return gameDataManager;
+}
+
+/// 
 /// @public
 /// @brief setter funciton to set the game title 
 ///		for the game

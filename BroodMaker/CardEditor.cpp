@@ -2176,8 +2176,6 @@ void Brood::Application::CardEditor::UpdateCurrSelectedCardIdx()
 
 		// changing the displayed Card data
 		UpdateAllDispayElement();
-
-
 	}
 }
 

@@ -14,6 +14,7 @@
 // ======================================================================
 #pragma once
 #include "Button.h"
+#include "Data.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -62,6 +63,12 @@ public:
 
 	// assignment operator
 	Dice& operator=( const Dice& a_otherDice );
+
+	// initialize the dice
+	void InitializeDice( Brood::Application::Data::ST_DicePrefabData& a_diceData );
+
+	// returns the dice data to save 
+	Brood::Application::Data::ST_DicePrefabData GetDataToSave();
 
 	// setter function to set the body size
 	void SetBodySize( sf::Vector2f  a_size ) override;

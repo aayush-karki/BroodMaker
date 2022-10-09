@@ -104,6 +104,51 @@ Brood::Application::Components::Player& Brood::Application::Components::Player::
 }
 
 /// 
+/// @brief  initializes the player with the passed data
+/// 
+/// @param a_deckData reference of the player data
+/// @param a_playerCurrPath path that teh player is currently on
+/// 
+void Brood::Application::Components::Player::InitializePlayer( Brood::Application::Data::ST_PlayerPrefabData& a_playerData,
+															   Brood::Application::Components::Path* a_playerCurrPath)
+{
+	// setting up the body
+	m_playerBody.setSize( {a_playerData.stm_playerSizeX, a_playerData.stm_playerSizeY });
+	SetPositionOffsetX( a_playerData.stm_playerOffsetX );
+	SetPositionOffsetY( a_playerData.stm_playerOffsetY);
+
+	if( !a_playerData.stm_textureFileName.empty() )
+	{
+		m_spriteBody.SetTextureFromFilePath( a_playerData.stm_textureFileName );
+	}
+
+	m_playerCurrPathPtr = a_playerCurrPath;
+}
+
+/// 
+/// @public
+/// @brief creates and returns player data struct
+/// 
+/// @return player data struct with the dice data in it
+/// 
+Brood::Application::Data::ST_PlayerPrefabData Brood::Application::Components::Player::GetDataToSave()
+{
+	Brood::Application::Data::ST_PlayerPrefabData playerData;
+
+	playerData.stm_playerSizeX = m_playerBody.getSize().x;
+	playerData.stm_playerSizeY = m_playerBody.getSize().y;
+	playerData.stm_playerOffsetX = m_positionOffsetX;
+	playerData.stm_playerOffsetX = m_positionOffsetY;
+
+	playerData.stm_textureFileName = m_spriteBody.GetTextureFileName();
+
+	playerData.stm_currRow = m_playerCurrPathPtr->GetTilePtr()->GetRow();
+	playerData.stm_currCol = m_playerCurrPathPtr->GetTilePtr()->GetCol();
+
+	return playerData;
+}
+
+/// 
 /// @public
 /// @brief Funciton to update the pointer to the path. 
 /// 

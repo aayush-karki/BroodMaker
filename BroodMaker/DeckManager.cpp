@@ -80,6 +80,37 @@ Brood::Application::Components::DeckManager& Brood::Application::Components::Dec
 }
 
 /// 
+/// @public
+/// @brief  initializes the deck manager with the passed data
+/// 
+/// @param a_deckManagerData reference of the deck manager data
+/// 
+void Brood::Application::Components::DeckManager::InitializeDeckManager( Brood::Application::Data::ST_DeckManagerData& a_deckManagerData )
+{
+	m_incorrectPenalty =  a_deckManagerData.stm_incorrectPenalty ;
+	m_movementType = static_cast< Brood::Application::Components::ENUM_MovementType >( a_deckManagerData.stm_movementType );
+	m_currDeckIdx = a_deckManagerData.stm_currDecksIdx;
+	m_deckList.resize(a_deckManagerData.stm_numDecks);
+}
+
+/// @public
+/// @brief creates and returns deck manager data struct
+/// 
+/// @return cardInfo data struct with the deck manager data in it
+/// 
+Brood::Application::Data::ST_DeckManagerData Brood::Application::Components::DeckManager::GetDataToSave()
+{
+	Brood::Application::Data::ST_DeckManagerData deckManagerData;
+	
+	deckManagerData.stm_incorrectPenalty = m_incorrectPenalty;
+	deckManagerData.stm_movementType = ( unsigned )m_movementType;
+	deckManagerData.stm_currDecksIdx = m_currDeckIdx;
+	deckManagerData.stm_numDecks= m_deckList.size();
+
+	return deckManagerData;
+}
+
+/// 
 /// @brief getter funciton to get the current deck index
 /// 
 /// @return current deck index

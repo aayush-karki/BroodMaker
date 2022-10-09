@@ -65,6 +65,13 @@ public:
 	// assignment constructor
 	Deck& operator = ( const Brood::Application::Components::Deck& a_other );
 
+	// initialize the deck
+	void InitializeDeck( Brood::Application::Data::ST_DeckPrefabData& a_deckData );
+
+	// returns the deck data to save 
+	Brood::Application::Data::ST_DeckPrefabData GetDataToSave();
+
+
 	// ============= getter functions ========
 
 	// getter funciton to get the card list
@@ -85,6 +92,8 @@ public:
 	// gets pointer to card  at current active card index
 	CardInfo* GetCurrActiveCardPtr();
 
+	// ============= setter functions ========
+	
 	// sets card current active card index
 	void SetCurrActiveCardIdx( unsigned a_currActiveCardIdx );
 
@@ -93,6 +102,9 @@ public:
 
 	// loads cards from a card Init file path
 	bool LoadCardFromInitFile( std::string  a_fileInitPath);
+
+	// loads cards from a card Init file path
+	bool SaveCardToInitFile( std::string  a_fileInitPath );
 
 	// returns the first undealt card and increases the counter by 1
 	const CardInfo DealCard();

@@ -29,15 +29,15 @@
 ///		if parent does not exist then nullptr -> default value nullptr
 /// 
 Brood::Application::Components::Deck::Deck( Brood::BroodUI::UIElement* a_parentPtr ) :
-	Brood::BroodUI::Button( a_parentPtr ), m_currUndealtCardIdx( 0 ), 
-	m_cardInitFilePath(""), m_cardInitFileName(""), m_currActiveCardIdx(0)
+	Brood::BroodUI::Button( a_parentPtr ), m_currUndealtCardIdx( 0 ),
+	m_cardInitFilePath( "" ), m_cardInitFileName( "" ), m_currActiveCardIdx( 0 )
 {
 
 	SetBodySize( 100, 50 );
 	SetBodyPosition( 70, 100 );
 	SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::GetRandomColor() );
 
-	m_cardList.resize(1, new CardInfo());
+	m_cardList.resize( 1, new CardInfo() );
 }
 
 /// 
@@ -104,6 +104,62 @@ Brood::Application::Components::Deck& Brood::Application::Components::Deck::oper
 	return *this;
 }
 
+/// 
+/// @brief  initializes the deck with the passed data
+/// 
+/// @param a_deckData reference of the deck data
+/// 
+void Brood::Application::Components::Deck::InitializeDeck( Brood::Application::Data::ST_DeckPrefabData& a_deckData )
+{
+	/// setting up the deck 
+	SetBodySize( a_deckData.stm_deckSizeX, a_deckData.stm_deckSizeY );
+	SetBodyPosition( a_deckData.stm_deckPosX, a_deckData.stm_deckPosY );
+
+	if( !a_deckData.stm_textureFileName.empty() )
+	{
+		m_bodySprite.SetTextureFromFilePath( a_deckData.stm_textureFileName );
+	}
+
+	m_cardList.resize( a_deckData.stm_numTotalCard );
+
+	if( !a_deckData.stm_cardInitFilename.empty() )
+	{
+		m_cardInitFilePath = a_deckData.stm_cardInitFilename;
+		LoadCardFromInitFile( m_cardInitFilePath );
+	}
+
+	m_currUndealtCardIdx = a_deckData.stm_undealtCardIdx;
+	m_currActiveCardIdx = a_deckData.stm_currActiveCardIdx;
+
+}
+
+/// 
+/// @public
+/// @brief creates and returns deck data struct
+/// 
+/// @return cardInfo data struct with the deck data in it
+/// 
+Brood::Application::Data::ST_DeckPrefabData Brood::Application::Components::Deck::GetDataToSave()
+{
+	Brood::Application::Data::ST_DeckPrefabData deckData;
+
+	/// setting up the deck 
+	deckData.stm_deckSizeX = GetBodySize().x;
+	deckData.stm_deckSizeY = GetBodySize().y;
+	deckData.stm_deckPosX = GetBodyPosition().x;
+	deckData.stm_deckPosY = GetBodyPosition().y;
+
+	deckData.stm_textureFileName = m_bodySprite.GetTextureFileName();
+
+	deckData.stm_numTotalCard = m_cardList.size();
+	deckData.stm_cardInitFilename = m_cardInitFilePath;
+
+	deckData.stm_undealtCardIdx = m_currUndealtCardIdx;
+	deckData.stm_currActiveCardIdx = m_currActiveCardIdx;
+
+	return deckData;
+}
+
 ///
 /// @public 
 /// @brief Getter function to get the cardInfoList
@@ -163,7 +219,7 @@ unsigned Brood::Application::Components::Deck::GetCurrActiveCardIdx()
 
 Brood::Application::Components::CardInfo* Brood::Application::Components::Deck::GetCurrActiveCardPtr()
 {
-	return m_cardList.at(m_currActiveCardIdx);
+	return m_cardList.at( m_currActiveCardIdx );
 }
 
 /// 
@@ -186,24 +242,37 @@ void Brood::Application::Components::Deck::SetCardListSize( unsigned a_cardListS
 
 /// 
 /// @public
-/// @brief cards from a card Init file path
+/// @brief loads cards from a card Init file path
 /// 
 /// @param a_fileInitPath path to a file from which cards can be loaded into
 /// 
 bool Brood::Application::Components::Deck::LoadCardFromInitFile( std::string a_fileInitPath )
 {
-	/// open texture
-	//	if( !Brood::UtilityFuncs::LoadTextureFromFile( m_texture, a_texturePath ) )
-	//	{
-	//		return false;
-	//	}
-	// 
-	// saving the texture path
+	// TODO LoadCardFromInitFile
+		/// open texture
+		//	if( !Brood::UtilityFuncs::LoadTextureFromFile( m_texture, a_texturePath ) )
+		//	{
+		//		return false;
+		//	}
+		// 
+		// saving the texture path
 	std::size_t found = a_fileInitPath.find_last_of( "/\\" );
 	m_cardInitFilePath = a_fileInitPath.substr( 0, found );
 	m_cardInitFileName = a_fileInitPath.substr( found + 1 );
 
 	return true;
+}
+
+/// 
+/// @public
+/// @brief saves cards to a card Init file path
+/// 
+/// @param a_fileInitPath path to a file to which cards can be saveed into
+///
+bool Brood::Application::Components::Deck::SaveCardToInitFile( std::string a_fileInitPath )
+{
+	// TODO SaceCardFromInitFile
+	return false;
 }
 
 ///
