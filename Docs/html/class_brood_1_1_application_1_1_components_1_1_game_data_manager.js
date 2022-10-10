@@ -1,0 +1,25 @@
+var class_brood_1_1_application_1_1_components_1_1_game_data_manager =
+[
+    [ "GameDataManager", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#ab104aed7b7bf15d66295a31618f829e0", null ],
+    [ "~GameDataManager", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a9e8d3fb37f1499fa243ae79943a0a9c2", null ],
+    [ "Debugger", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#af3d3e3d4a7d9861641c2c6bf9a65bf8b", null ],
+    [ "Draw", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#ae9d7fab5196c7b859c8bac432d298343", null ],
+    [ "GetBoardPtr", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a8c21e00936efe7ed60a92f16cb48a8a9", null ],
+    [ "GetDataToSave", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#ae60ea1933d8eb90d3dba79b1470ed5db", null ],
+    [ "GetDeckManagerPtr", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#ac8340539494085672b8a73c8e19c8fa8", null ],
+    [ "GetDicePtr", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#ab34103b38c485fd7c09bc34ef7d46fbb", null ],
+    [ "GetDisplayCardPtr", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#aaed9318f5eb739ad04288381cb2c5950", null ],
+    [ "GetGameTitle", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a4ffa8a594d59b27da471a91d6a361b0f", null ],
+    [ "GetPlayerManagerPtr", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a199d2e162ac42df6aa9ca745b70bce9d", null ],
+    [ "InitializeGameDataManager", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a817cae24ea72646b0618ebff9b44b17e", null ],
+    [ "InitializeGameDataManger", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a27bb378a66452e168c10a8bb569b7fbf", null ],
+    [ "LoadDataFromFile", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a37be536152390cb0d27f158b58f92888", null ],
+    [ "SaveDataToFile", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a7537909e68f385450ce648b0c947b566", null ],
+    [ "SetGameTitle", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a79ff9232201205761584f344cd936443", null ],
+    [ "m_board", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a20ea4a72392224130802a1be69a33818", null ],
+    [ "m_deckManager", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a270b67639fdfc3a39738a3b3da525610", null ],
+    [ "m_dice", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a16d316e92cd4668bfc4408ca7f9c3dcc", null ],
+    [ "m_displayCard", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a37c4df344b6b4155a8d00c0e83a2467a", null ],
+    [ "m_gameTitle", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#ab8ea1b451ca91deb5af356e3b17f3497", null ],
+    [ "m_playerManager", "class_brood_1_1_application_1_1_components_1_1_game_data_manager.html#a42fb7cb3b045140b7c8cc153cfb04f39", null ]
+];

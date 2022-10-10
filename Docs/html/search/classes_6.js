@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mapidtoelement_0',['MapIdToElement',['../struct_map_id_to_element.html',1,'']]],
-  ['menubar_1',['MenuBar',['../class_brood_1_1_brood_u_i_1_1_menu_bar.html',1,'Brood::BroodUI::MenuBar'],['../class_menu_bar.html',1,'MenuBar']]],
-  ['mousehandler_2',['MouseHandler',['../class_brood_1_1_mouse_handler.html',1,'Brood']]]
+  ['gamedatamanager_0',['GameDataManager',['../class_brood_1_1_application_1_1_components_1_1_game_data_manager.html',1,'Brood::Application::Components::GameDataManager'],['../class_game_data_manager.html',1,'GameDataManager']]],
+  ['gameeditor_1',['GameEditor',['../class_brood_1_1_application_1_1_game_editor.html',1,'Brood::Application']]]
 ];

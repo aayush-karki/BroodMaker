@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['loadtexturefromfile_0',['LoadTextureFromFile',['../namespace_brood_1_1_utility_funcs.html#a355a5889aa373b9b3cfa523a13bfef19',1,'Brood::UtilityFuncs::LoadTextureFromFile(sf::Texture &amp;a_texture, const std::string &amp;a_cwd, std::string a_filePath)'],['../namespace_brood_1_1_utility_funcs.html#ace67d70296cb2bda76ccf42cf6ba8975',1,'Brood::UtilityFuncs::LoadTextureFromFile(sf::Texture &amp;a_texture, std::string a_filePath)']]]
+  ['haschild_0',['HasChild',['../class_brood_1_1_brood_u_i_1_1_id.html#af9967f94b9677fc6f3ea87bb4a9d1d89',1,'Brood::BroodUI::Id']]],
+  ['hasparent_1',['HasParent',['../class_brood_1_1_brood_u_i_1_1_id.html#aee02dc9ca18a8af266707f3b71edbcf3',1,'Brood::BroodUI::Id']]],
+  ['homeworkspace_2',['HomeWorkSpace',['../class_brood_1_1_application_1_1_home_work_space.html#aab0652e930dbc0118c53c0b3f729cc45',1,'Brood::Application::HomeWorkSpace']]]
 ];

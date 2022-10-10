@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pathmanager_0',['PathManager',['../class_path_manager.html',1,'']]],
-  ['player_1',['Player',['../class_player.html',1,'']]],
-  ['playermanager_2',['PlayerManager',['../class_player_manager.html',1,'']]]
+  ['homeworkspace_0',['HomeWorkSpace',['../class_brood_1_1_application_1_1_home_work_space.html',1,'Brood::Application::HomeWorkSpace'],['../class_home_work_space.html',1,'HomeWorkSpace']]]
 ];

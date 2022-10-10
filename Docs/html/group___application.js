@@ -1,40 +1,26 @@
 var group___application =
 [
+    [ "Data", "group___data.html", "group___data" ],
+    [ "Components", "group___components.html", "group___components" ],
+    [ "Brood::Application::Application", "class_brood_1_1_application_1_1_application.html", [
+      [ "Application", "class_brood_1_1_application_1_1_application.html#aabab7652b41709a5cfd9d69d8f238f77", null ],
+      [ "~Application", "class_brood_1_1_application_1_1_application.html#a4902b005ed4f6c27e58f68c3486f9348", null ],
+      [ "CreateWorkSpace", "class_brood_1_1_application_1_1_application.html#a112002e1a21954d9027a0a89cdea0734", null ],
+      [ "Debugger", "class_brood_1_1_application_1_1_application.html#a2bf3c85eb6d71e16e4624aa51696cf9d", null ],
+      [ "Draw", "class_brood_1_1_application_1_1_application.html#a975eb752937bbef880d09a1aa060e953", null ],
+      [ "PollEvents", "class_brood_1_1_application_1_1_application.html#a5d894c5dc1d004156a72bc38eb6a138e", null ],
+      [ "RunApplicaiton", "class_brood_1_1_application_1_1_application.html#ad726c075f0c482b9c1980959b61c673d", null ],
+      [ "m_events", "class_brood_1_1_application_1_1_application.html#a4f85bb8d805d3b9585e908192158d6bd", null ],
+      [ "m_mainWorkspace", "class_brood_1_1_application_1_1_application.html#a1fd59aad264b805767444db4df74ae55", null ],
+      [ "m_window", "class_brood_1_1_application_1_1_application.html#a2b4c6e872f0e96757ee81aa3be5edff4", null ],
+      [ "myBoard", "class_brood_1_1_application_1_1_application.html#a62df68e806d14e0aeafe32d863ea8c06", null ],
+      [ "myDice", "class_brood_1_1_application_1_1_application.html#a7af37c878c5faf143a12e5c01154f574", null ]
+    ] ],
     [ "BoardEditor", "class_board_editor.html", null ],
-    [ "ST_ApplicationData", "struct_s_t___application_data.html", null ],
-    [ "ST_BoardData", "struct_s_t___board_data.html", null ],
-    [ "ST_PathData", "struct_s_t___path_data.html", null ],
-    [ "ST_TilePrefabData", "struct_s_t___tile_prefab_data.html", null ],
-    [ "ST_DeckPrefabData", "struct_s_t___deck_prefab_data.html", [
-      [ "stm_deckPosX", "struct_s_t___deck_prefab_data.html#afc1a8b98185b575c7a932e3e90c05ffe", null ],
-      [ "stm_deckPosY", "struct_s_t___deck_prefab_data.html#ab50c9c238cd14c419907459e42769487", null ],
-      [ "stm_deckSizeX", "struct_s_t___deck_prefab_data.html#a69f8a0a2616b1bfddd647a8fb753dceb", null ],
-      [ "stm_deckSizeY", "struct_s_t___deck_prefab_data.html#af080c48c59ba0e9ac192d5cc88824481", null ],
-      [ "stm_numTotalCard", "struct_s_t___deck_prefab_data.html#a1b5ccb1bc26816114db6836ed7b01b4b", null ],
-      [ "stm_uniqueDeckId", "struct_s_t___deck_prefab_data.html#a5cdb75046bcb9ef5bb1ac064818af777", null ]
-    ] ],
-    [ "ST_CardPrefabData", "struct_s_t___card_prefab_data.html", [
-      [ "stm_correctAnswer", "struct_s_t___card_prefab_data.html#a4cf81a18aa7cf5078cfeb5e26edff756", null ],
-      [ "stm_correctNumSteps", "struct_s_t___card_prefab_data.html#a4ed4e32acd65fd581ee8aea887e8f3dc", null ],
-      [ "stm_deckIndex", "struct_s_t___card_prefab_data.html#a521d7eeab0d5c37fffa9ebbdc36bf8e3", null ],
-      [ "stm_incorrectNumSteps", "struct_s_t___card_prefab_data.html#aca25f4b6f95719624d80c7edafa9b2e2", null ],
-      [ "stm_question", "struct_s_t___card_prefab_data.html#a55e54ed19974ba80d48153f33d6eaa1f", null ],
-      [ "stm_time", "struct_s_t___card_prefab_data.html#ae53d98e9f2aca3fbdb78973c58ae1833", null ]
-    ] ],
-    [ "ST_PlayerPrefabData", "struct_s_t___player_prefab_data.html", [
-      [ "stm_currColumn", "struct_s_t___player_prefab_data.html#a82f7e722954021891342e50d7ca73c29", null ],
-      [ "stm_currRow", "struct_s_t___player_prefab_data.html#a06fac874366291c3463e87eb2156c5f7", null ],
-      [ "stm_playerIndex", "struct_s_t___player_prefab_data.html#ad52a962c7ff842b468601e56963e2b8d", null ],
-      [ "stm_playerSizeX", "struct_s_t___player_prefab_data.html#a299631d7634c9a701db45271bacd8a34", null ],
-      [ "stm_playerSizeY", "struct_s_t___player_prefab_data.html#a985aad6be180faf425c7e441524fac49", null ],
-      [ "stm_uniquePlayerId", "struct_s_t___player_prefab_data.html#a80c278401202c2f51bf2fc3b85a1857b", null ]
-    ] ],
-    [ "ST_DicePrefabData", "struct_s_t___dice_prefab_data.html", [
-      [ "stm_dicePosX", "struct_s_t___dice_prefab_data.html#a5ca9bc9bc40b13e7770db0842b78e034", null ],
-      [ "stm_dicePosY", "struct_s_t___dice_prefab_data.html#a8f67f5b3a0a47b82c52ad370e5e333f7", null ],
-      [ "stm_diceSizeX", "struct_s_t___dice_prefab_data.html#a0cbc32094b172a5d96825cae98387926", null ],
-      [ "stm_diceSizeY", "struct_s_t___dice_prefab_data.html#a317edf3d2f705c7ac06b7d45e1ced4aa", null ],
-      [ "stm_numSides", "struct_s_t___dice_prefab_data.html#a95514763f0c493d94b9f77e92bc2f8dd", null ]
-    ] ],
+    [ "CardEditor", "class_card_editor.html", null ],
+    [ "TileEditor", "class_tile_editor.html", null ],
+    [ "DiceEditor", "class_dice_editor.html", null ],
+    [ "HomeWorkSpace", "class_home_work_space.html", null ],
+    [ "PlayerEditor", "class_player_editor.html", null ],
     [ "WorkSpace", "class_work_space.html", null ]
 ];
