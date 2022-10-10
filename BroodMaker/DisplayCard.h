@@ -39,6 +39,9 @@ namespace Brood::Application
 // ================= start of DisplayCard class =========================
 // ======================================================================
 
+// todo fix the bug where the display card values are not loaded properly
+//	and one of the compoennt seems to be vanish on loading from file
+
 ///
 /// @ingroup Components
 /// @class PlayerManager  "DisplayCard.h"

@@ -19,6 +19,9 @@
 // ================= start of BoardEditor class =========================
 // ======================================================================
 
+/// todo fix the bug where the tiles are not loaded properly. their
+/// for the tiles, the next path line is set to first tile
+
 /// 
 /// @public
 /// @brief default constructor

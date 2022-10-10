@@ -165,9 +165,9 @@ void Brood::Application::EditorWorkspace::SetGameDataManager( Brood::Application
 ///
 void Brood::Application::EditorWorkspace::UpdateAllDispayElement()
 {
-	for( Brood::Application::WorkSpace* currWorkSpace : m_editorWorkspaceList )
+	for( unsigned i = 0; i < m_editorWorkspaceList.size(); ++i )
 	{
-		currWorkSpace->UpdateAllDispayElement();
+		m_editorWorkspaceList.at(i)->UpdateAllDispayElement();
 	}
 }
 

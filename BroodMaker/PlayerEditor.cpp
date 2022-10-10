@@ -22,6 +22,8 @@
 // ================= start of PlayerEditor class ========================
 // ======================================================================
 
+// todo 
+
 /// 
 /// @public
 /// @brief default constructor
@@ -263,7 +265,7 @@ void Brood::Application::PlayerEditor::UpdateStartRowNumber()
 		}
 
 		// decrease the start row number by 1 units
-		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_boardPtr->GetBoardPathList().at( currentStartRowNum - 1 ).at( currentStartColNum ) );
+		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_gameData->GetBoardPtr()->GetBoardPathList().at( currentStartRowNum - 1 ).at( currentStartColNum ) );
 
 		// updating the textbox showing the start row value
 		m_txtPlayerStartRowNum->SetText( std::to_string( currentStartRowNum - 1 ) );
@@ -277,13 +279,13 @@ void Brood::Application::PlayerEditor::UpdateStartRowNumber()
 
 		// chekcing if the current currentStartRowNum is equal 
 		// to the board row number then do nothing
-		if( currentStartRowNum == m_boardPtr->GetNumRow() - 1 )
+		if( currentStartRowNum == m_gameData->GetBoardPtr()->GetNumRow() - 1 )
 		{
 			return;
 		}
 
 		// increase the start row number by 1 units
-		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_boardPtr->GetBoardPathList().at( currentStartRowNum + 1 ).at( currentStartColNum ) );
+		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_gameData->GetBoardPtr()->GetBoardPathList().at( currentStartRowNum + 1 ).at( currentStartColNum ) );
 
 		// updating the textbox showing the start row value
 		m_txtPlayerStartRowNum->SetText( std::to_string( currentStartRowNum + 1 ) );
@@ -321,7 +323,7 @@ void Brood::Application::PlayerEditor::UpdateStartColNumber()
 		}
 
 		// decrease the start column number by 1 units
-		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_boardPtr->GetBoardPathList().at( currentStartRowNum ).at( currentStartColNum - 1 ) );
+		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_gameData->GetBoardPtr()->GetBoardPathList().at( currentStartRowNum ).at( currentStartColNum - 1 ) );
 
 		// updating the textbox showing the start column value
 		m_txtPlayerStartColNum->SetText( std::to_string( currentStartColNum - 1 ) );
@@ -335,13 +337,13 @@ void Brood::Application::PlayerEditor::UpdateStartColNumber()
 
 		// chekcing if the current currentStartRowNum is equal 
 		// to the board column number then do nothing
-		if( currentStartColNum == m_boardPtr->GetNumCol() - 1 )
+		if( currentStartColNum == m_gameData->GetBoardPtr()->GetNumCol() - 1 )
 		{
 			return;
 		}
 
 		// increase the start column number by 1 units
-		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_boardPtr->GetBoardPathList().at( currentStartRowNum ).at( currentStartColNum + 1 ) );
+		m_gameData->GetPlayerManagerPtr()->SetPlayerStartPath( m_gameData->GetBoardPtr()->GetBoardPathList().at( currentStartRowNum ).at( currentStartColNum + 1 ) );
 
 		// updating the textbox showing the start column value
 		m_txtPlayerStartColNum->SetText( std::to_string( currentStartColNum + 1 ) );
@@ -544,7 +546,7 @@ void Brood::Application::PlayerEditor::UpdateCurrPlayerSizeY()
 		float limitPosY = windowHieght - currentSizeY +
 			m_gameData->GetPlayerManagerPtr()->GetPlayerAtCurrIdx()->GetPositionOffsetY();
 
-		if( ( unsigned )m_boardPtr->GetBoardPos().y + currentSizeY + 5 >= windowHieght
+		if( ( unsigned )m_gameData->GetBoardPtr()->GetBoardPos().y + currentSizeY + 5 >= windowHieght
 			|| playerPosY >= limitPosY )
 		{
 			return;

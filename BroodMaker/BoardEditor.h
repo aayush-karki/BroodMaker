@@ -49,8 +49,6 @@ namespace Brood
 /// 
 /// Derived form Workspace class
 /// 
-/// @todo allowd to enter number in the txt feild
-/// 
 class Brood::Application::BoardEditor :
 	public Brood::Application::WorkSpace
 {

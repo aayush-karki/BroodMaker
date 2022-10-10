@@ -257,7 +257,7 @@ void Brood::Application::Components::DeckManager::SetDeckSize( unsigned a_deckSi
 	// dynamically removing the extra deck
 	if( a_deckSize < m_deckList.size() )
 	{
-		for( int idx = a_deckSize - 1; idx < m_deckList.size(); ++idx )
+		for( int idx = a_deckSize; idx < m_deckList.size(); ++idx )
 		{
 			delete m_deckList.at( idx );
 		}

@@ -304,7 +304,7 @@ void Brood::Application::Components::Deck::SetCardListSize( unsigned a_cardListS
 	// dynamically removing the extra deck
 	if( a_cardListSize < m_cardList.size() )
 	{
-		for( int idx = a_cardListSize - 1; idx < m_cardList.size(); ++idx )
+		for( int idx = a_cardListSize; idx < m_cardList.size(); ++idx )
 		{
 			delete m_cardList.at( idx );
 		}
@@ -312,7 +312,7 @@ void Brood::Application::Components::Deck::SetCardListSize( unsigned a_cardListS
 	}
 	else
 	{
-		for( int idx = m_cardList.size(); idx < m_cardList.size(); ++idx )
+		for( unsigned idx = m_cardList.size(); idx < a_cardListSize; ++idx )
 		{
 			m_cardList.push_back( new Brood::Application::Components::CardInfo() );
 		}

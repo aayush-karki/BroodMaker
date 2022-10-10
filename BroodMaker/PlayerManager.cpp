@@ -257,7 +257,7 @@ void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_max
 	// dynamically removing the extra deck
 	if( a_maxPlayer < m_allPlayers.size() )
 	{
-		for( int idx = a_maxPlayer - 1; idx < m_allPlayers.size(); ++idx )
+		for( int idx = a_maxPlayer; idx < m_allPlayers.size(); ++idx )
 		{
 			delete m_allPlayers.at( idx );
 		}
@@ -309,6 +309,13 @@ void Brood::Application::Components::PlayerManager::SetCurrActivePlayerIdx( unsi
 void Brood::Application::Components::PlayerManager::SetPlayerStartPath( Brood::Application::Components::Path* a_startPathPtr )
 {
 	m_startPathPtr = a_startPathPtr;
+
+	std::vector<Brood::Application::Components::Player*>::iterator currPlayer = m_allPlayers.begin();
+	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
+	{
+		( *currPlayer )->UpdatePathptr( a_startPathPtr );
+	}
+
 }
 
 
