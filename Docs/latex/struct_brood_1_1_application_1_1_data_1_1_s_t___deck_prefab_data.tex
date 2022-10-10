@@ -1,0 +1,164 @@
+\hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{}\doxysection{Brood\+::Application\+::Data\+::ST\+\_\+\+Deck\+Prefab\+Data Struct Reference}
+\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+
+
+{\ttfamily \#include $<$Data.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a57fe53889eac721e5eb6cfc2b4a95919}{Populate\+From\+String}} (std\+::string a\+\_\+string)
+\begin{DoxyCompactList}\small\item\em populates the struct from passed string \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a130895c4448892b5b20cae546cfd6714}{Get\+String}} () const
+\begin{DoxyCompactList}\small\item\em creats a string and appends each data to its back seperated by \textquotesingle{} \textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_afc6d04a6f8f4928abbe7ae261e836a03}{stm\+\_\+deck\+SizeX}} = 0
+\begin{DoxyCompactList}\small\item\em length of deck \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_af0e4165a7cbb4d2f18706412401f521d}{stm\+\_\+deck\+SizeY}} = 0
+\begin{DoxyCompactList}\small\item\em height of deck \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_aeb4a86e30b5a04f14c444c4e70bb1e80}{stm\+\_\+deck\+PosX}} = 0
+\begin{DoxyCompactList}\small\item\em x-\/cordinate of deck\textquotesingle{}s upper left corner \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a6e7acae4791692e70d59c5e540310231}{stm\+\_\+deck\+PosY}} = 0
+\begin{DoxyCompactList}\small\item\em y-\/cordinate of deck\textquotesingle{}s upper left corner \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a82634e141cde136fd099fb4c88c5b13b}{stm\+\_\+texture\+File\+Name}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em filename for the texture \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a0429e2e8a5d3a4bcd649369c827bec88}{stm\+\_\+card\+Init\+Filename}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em filename for the card init \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_addb2755143b1cdd65e20d7606c0b53f8}{stm\+\_\+num\+Total\+Card}} = 1
+\begin{DoxyCompactList}\small\item\em number of card in this deck \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a8e1d68d05937a6fefe0e5db22b489dc5}{stm\+\_\+undealt\+Card\+Idx}} = 0
+\begin{DoxyCompactList}\small\item\em idx of undealt card in this deck \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a161ce546ca3eb465dca0986ca068e151}{stm\+\_\+curr\+Active\+Card\+Idx}} = 0
+\begin{DoxyCompactList}\small\item\em idx of current active card in this deck \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a130895c4448892b5b20cae546cfd6714}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a130895c4448892b5b20cae546cfd6714}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!GetString@{GetString}}
+\index{GetString@{GetString}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}}
+{\footnotesize\ttfamily const std\+::string ST\+\_\+\+Deck\+Prefab\+Data\+::\+Get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+creats a string and appends each data to its back seperated by \textquotesingle{} \textquotesingle{} 
+
+\begin{DoxyReturn}{Returns}
+string containg all the data appended to it seperated by \textquotesingle{} \textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a57fe53889eac721e5eb6cfc2b4a95919}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a57fe53889eac721e5eb6cfc2b4a95919}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!PopulateFromString@{PopulateFromString}}
+\index{PopulateFromString@{PopulateFromString}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{PopulateFromString()}{PopulateFromString()}}
+{\footnotesize\ttfamily void ST\+\_\+\+Deck\+Prefab\+Data\+::\+Populate\+From\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+populates the struct from passed string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+string} & string containing all of the data seperated by \textquotesingle{} \textquotesingle{} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a0429e2e8a5d3a4bcd649369c827bec88}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a0429e2e8a5d3a4bcd649369c827bec88}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_cardInitFilename@{stm\_cardInitFilename}}
+\index{stm\_cardInitFilename@{stm\_cardInitFilename}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_cardInitFilename}{stm\_cardInitFilename}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+card\+Init\+Filename = \char`\"{}\char`\"{}}
+
+
+
+filename for the card init 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a161ce546ca3eb465dca0986ca068e151}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a161ce546ca3eb465dca0986ca068e151}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_currActiveCardIdx@{stm\_currActiveCardIdx}}
+\index{stm\_currActiveCardIdx@{stm\_currActiveCardIdx}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_currActiveCardIdx}{stm\_currActiveCardIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+curr\+Active\+Card\+Idx = 0}
+
+
+
+idx of current active card in this deck 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_aeb4a86e30b5a04f14c444c4e70bb1e80}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_aeb4a86e30b5a04f14c444c4e70bb1e80}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_deckPosX@{stm\_deckPosX}}
+\index{stm\_deckPosX@{stm\_deckPosX}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_deckPosX}{stm\_deckPosX}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+deck\+PosX = 0}
+
+
+
+x-\/cordinate of deck\textquotesingle{}s upper left corner 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a6e7acae4791692e70d59c5e540310231}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a6e7acae4791692e70d59c5e540310231}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_deckPosY@{stm\_deckPosY}}
+\index{stm\_deckPosY@{stm\_deckPosY}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_deckPosY}{stm\_deckPosY}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+deck\+PosY = 0}
+
+
+
+y-\/cordinate of deck\textquotesingle{}s upper left corner 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_afc6d04a6f8f4928abbe7ae261e836a03}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_afc6d04a6f8f4928abbe7ae261e836a03}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_deckSizeX@{stm\_deckSizeX}}
+\index{stm\_deckSizeX@{stm\_deckSizeX}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_deckSizeX}{stm\_deckSizeX}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+deck\+SizeX = 0}
+
+
+
+length of deck 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_af0e4165a7cbb4d2f18706412401f521d}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_af0e4165a7cbb4d2f18706412401f521d}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_deckSizeY@{stm\_deckSizeY}}
+\index{stm\_deckSizeY@{stm\_deckSizeY}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_deckSizeY}{stm\_deckSizeY}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+deck\+SizeY = 0}
+
+
+
+height of deck 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_addb2755143b1cdd65e20d7606c0b53f8}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_addb2755143b1cdd65e20d7606c0b53f8}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_numTotalCard@{stm\_numTotalCard}}
+\index{stm\_numTotalCard@{stm\_numTotalCard}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_numTotalCard}{stm\_numTotalCard}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+num\+Total\+Card = 1}
+
+
+
+number of card in this deck 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a82634e141cde136fd099fb4c88c5b13b}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a82634e141cde136fd099fb4c88c5b13b}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_textureFileName@{stm\_textureFileName}}
+\index{stm\_textureFileName@{stm\_textureFileName}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_textureFileName}{stm\_textureFileName}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+texture\+File\+Name = \char`\"{}\char`\"{}}
+
+
+
+filename for the texture 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a8e1d68d05937a6fefe0e5db22b489dc5}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a8e1d68d05937a6fefe0e5db22b489dc5}} 
+\index{Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}!stm\_undealtCardIdx@{stm\_undealtCardIdx}}
+\index{stm\_undealtCardIdx@{stm\_undealtCardIdx}!Brood::Application::Data::ST\_DeckPrefabData@{Brood::Application::Data::ST\_DeckPrefabData}}
+\doxysubsubsection{\texorpdfstring{stm\_undealtCardIdx}{stm\_undealtCardIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data\+::stm\+\_\+undealt\+Card\+Idx = 0}
+
+
+
+idx of undealt card in this deck 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_data_8h}{Data.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_data_8cpp}{Data.\+cpp}}\end{DoxyCompactItemize}

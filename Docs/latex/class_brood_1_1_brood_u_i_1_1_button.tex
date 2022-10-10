@@ -1,0 +1,270 @@
+\hypertarget{class_brood_1_1_brood_u_i_1_1_button}{}\doxysection{Brood\+::Brood\+UI\+::Button Class Reference}
+\label{class_brood_1_1_brood_u_i_1_1_button}\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+Inheritance diagram for Brood\+::Brood\+UI\+::Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.635036cm]{class_brood_1_1_brood_u_i_1_1_button}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a2c09b3ec9ecbe1f343507c91258b3035}{Button}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr, \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} a\+\_\+enum\+Type=\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8abec2c2f233f3a32181746ea370014e9e}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType\+::\+UI\+\_\+button}})
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a2a001eb9c3cc8ae54768a850dd345002}{$\sim$\+Button}} ()
+\begin{DoxyCompactList}\small\item\em default destrctor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a8e81790c8c0be2fa8ef4fbccf99ec922}{Button}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Button}} \&a\+\_\+other\+Element)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a16ad3eff5ff4cded856a32cdafb42fdb}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Button}} \&a\+\_\+other\+Button)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{Get\+Sprite\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the sprite body. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a06d63a517d4250e9e596229e8ad0fea9}{Set\+Selected}} (bool a\+\_\+selected)
+\begin{DoxyCompactList}\small\item\em setter function to set the state of the element i.\+e. if it is seleected or not \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_aca2ed0939aacd97a03a4ca455aa2c18c}{Do\+Element}} () override
+\begin{DoxyCompactList}\small\item\em checks if the logics of the element is to be executed or not \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a08a2bc12d60d35ca91635b55965ca6fa}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em changes the text/texture of the element to its the element ID when debug is on and changes it back to the text/texture it had before debugging when debug is off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_aa3c4dfa0b191367ad14438b44c909be2}{Dy\+Create\+Button}} (sf\+::\+Vector2f a\+\_\+size, sf\+::\+Vector2f a\+\_\+pos, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a1761717e4bc7ba7c81b5b6bbeca90b92}{Dy\+Create\+Button}} (float a\+\_\+sizeX, float a\+\_\+sizeY, float a\+\_\+posX, float a\+\_\+posY, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ac2a002baea6ef995478dfbfa118a3087}{m\+\_\+body\+Sprite}}
+\begin{DoxyCompactList}\small\item\em object to set texture \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a2c09b3ec9ecbe1f343507c91258b3035}\label{class_brood_1_1_brood_u_i_1_1_button_a2c09b3ec9ecbe1f343507c91258b3035}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!Button@{Button}}
+\index{Button@{Button}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}}}]{a\+\_\+enum\+Type = {\ttfamily \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8abec2c2f233f3a32181746ea370014e9e}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType\+::\+UI\+\_\+button}}} }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes the button object
+
+\begin{DoxyNote}{Note}
+by default it sets the text that is displayed on the button to empty string
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a2a001eb9c3cc8ae54768a850dd345002}\label{class_brood_1_1_brood_u_i_1_1_button_a2a001eb9c3cc8ae54768a850dd345002}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!````~Button@{$\sim$Button}}
+\index{````~Button@{$\sim$Button}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{$\sim$Button()}{~Button()}}
+{\footnotesize\ttfamily Button\+::$\sim$\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+default destrctor 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a8e81790c8c0be2fa8ef4fbccf99ec922}\label{class_brood_1_1_brood_u_i_1_1_button_a8e81790c8c0be2fa8ef4fbccf99ec922}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!Button@{Button}}
+\index{Button@{Button}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Button}} \&}]{a\+\_\+other\+Element }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Element} & reference to the ui\+Element which is used to copy the data form \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a08a2bc12d60d35ca91635b55965ca6fa}\label{class_brood_1_1_brood_u_i_1_1_button_a08a2bc12d60d35ca91635b55965ca6fa}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Button\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+changes the text/texture of the element to its the element ID when debug is on and changes it back to the text/texture it had before debugging when debug is off. 
+
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5a2ed094c6d67350c2011b41ee931429}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a2719850df670711b691a64b13b2c8e46}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_aee081882b4267fe5438239a649d87c95}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_aca2ed0939aacd97a03a4ca455aa2c18c}\label{class_brood_1_1_brood_u_i_1_1_button_aca2ed0939aacd97a03a4ca455aa2c18c}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!DoElement@{DoElement}}
+\index{DoElement@{DoElement}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{DoElement()}{DoElement()}}
+{\footnotesize\ttfamily bool Button\+::\+Do\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+checks if the logics of the element is to be executed or not 
+
+It checks the mouse position and button state to determine if to execute the elements logic or not. It does this by manupulating the element selection class. It also set the overlay
+
+\begin{DoxyReturn}{Returns}
+true if the element\textquotesingle{}s funciton is to be executed; else false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ae13e9edc8d67e64a2d53d52a30af27fa}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a1523cd65885636efa7e76703e2594a10}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a1761717e4bc7ba7c81b5b6bbeca90b92}\label{class_brood_1_1_brood_u_i_1_1_button_a1761717e4bc7ba7c81b5b6bbeca90b92}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!DyCreateButton@{DyCreateButton}}
+\index{DyCreateButton@{DyCreateButton}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{DyCreateButton()}{DyCreateButton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ Button\+::\+Dy\+Create\+Button (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY,  }\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded \begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the button element \\
+\hline
+{\em a\+\_\+sizeY} & width of the button element \\
+\hline
+{\em a\+\_\+posX} & x-\/postion of the button element \\
+\hline
+{\em a\+\_\+posY} & y-\/postion of the button element \\
+\hline
+{\em a\+\_\+text} & text to display in the button element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+color} & color of the button element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Button}} element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_aa3c4dfa0b191367ad14438b44c909be2}\label{class_brood_1_1_brood_u_i_1_1_button_aa3c4dfa0b191367ad14438b44c909be2}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!DyCreateButton@{DyCreateButton}}
+\index{DyCreateButton@{DyCreateButton}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{DyCreateButton()}{DyCreateButton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ Button\+::\+Dy\+Create\+Button (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size,  }\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the button element \\
+\hline
+{\em a\+\_\+pos} & postion of the button element \\
+\hline
+{\em a\+\_\+text} & text to display in the button element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+color} & color of the button element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Button}} element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}\label{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!GetSpriteBody@{GetSpriteBody}}
+\index{GetSpriteBody@{GetSpriteBody}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{GetSpriteBody()}{GetSpriteBody()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \& Button\+::\+Get\+Sprite\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the sprite body. 
+
+Sprite body allows to manupulate the sprite/texture
+
+\begin{DoxyReturn}{Returns}
+reference to the spritebody object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a16ad3eff5ff4cded856a32cdafb42fdb}\label{class_brood_1_1_brood_u_i_1_1_button_a16ad3eff5ff4cded856a32cdafb42fdb}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} \& Button\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Button}} \&}]{a\+\_\+other\+Button }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Button} & reference to the button which is used to copy the data form\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to this element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_a06d63a517d4250e9e596229e8ad0fea9}\label{class_brood_1_1_brood_u_i_1_1_button_a06d63a517d4250e9e596229e8ad0fea9}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!SetSelected@{SetSelected}}
+\index{SetSelected@{SetSelected}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{SetSelected()}{SetSelected()}}
+{\footnotesize\ttfamily void Button\+::\+Set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the state of the element i.\+e. if it is seleected or not 
+
+\begin{DoxyNote}{Note}
+this is used to display the active overlay or not
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+selected} & true if current button is selected or not \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a4f20356fd55746d4d27767a358021042}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_button_ac2a002baea6ef995478dfbfa118a3087}\label{class_brood_1_1_brood_u_i_1_1_button_ac2a002baea6ef995478dfbfa118a3087}} 
+\index{Brood::BroodUI::Button@{Brood::BroodUI::Button}!m\_bodySprite@{m\_bodySprite}}
+\index{m\_bodySprite@{m\_bodySprite}!Brood::BroodUI::Button@{Brood::BroodUI::Button}}
+\doxysubsubsection{\texorpdfstring{m\_bodySprite}{m\_bodySprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} Brood\+::\+Brood\+UI\+::\+Button\+::m\+\_\+body\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+object to set texture 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_button_8h}{Button.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_button_8cpp}{Button.\+cpp}}\end{DoxyCompactItemize}

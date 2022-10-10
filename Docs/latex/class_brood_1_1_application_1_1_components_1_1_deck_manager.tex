@@ -1,0 +1,394 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager}{}\doxysection{Brood\+::Application\+::Components\+::Deck\+Manager Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_deck_manager}\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+
+
+{\ttfamily \#include $<$Deck\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3d155ed79184606cb58eb35a8feafe87}{Deck\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a9460cb6b44f9c4f0c9eabe2239dd4257}{$\sim$\+Deck\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3317c285f5d4056add1022d534ccda1d}{Deck\+Manager}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} \&a\+\_\+other\+Deck\+Manager)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Deck\+Manager}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_aab213c5fcb7d0c9bd05c6fea88eeb289}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} \&a\+\_\+other\+Deck\+Manager)
+\begin{DoxyCompactList}\small\item\em assignmnet operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad370d5c3353f24733ba7388849e94878}{Initialize\+Deck\+Manager}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Manager\+Data}} \&a\+\_\+deck\+Manager\+Data)
+\begin{DoxyCompactList}\small\item\em initializes the deck manager with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Manager\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a6da8d9451ba38ec83a5d71195bf71190}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns deck manager data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_af7903c863c284f88d78817871847a850}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr, std\+::string a\+\_\+game\+Tile)
+\begin{DoxyCompactList}\small\item\em saves the deck manager and its path data to passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a40f23b5cc2adc1424703b078e3004aa1}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the deck manager from passed file \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae26b5875ef59b411f63cfae39ac3732c}{Get\+Curr\+Active\+Deck\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em getter funciton to get the current deck index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_abbc0ac495a5c36636ed97a8e901e42cf}{Get\+Deck\+At\+Idx}} (unsigned a\+\_\+deck\+Idx)
+\begin{DoxyCompactList}\small\item\em getter function to get the deck at the passed index \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ $>$ \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_aed10b8ae9a08b811352dd3b836a89ec0}{Get\+Deck\+List}} ()
+\begin{DoxyCompactList}\small\item\em getter function to get the deck list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a2fd090108900edf6ab37074edf83f08f}{Get\+Curr\+Active\+Deck}} ()
+\begin{DoxyCompactList}\small\item\em getter function to get the current active deck \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a451815e9606dcfd193987d7d20bed61f}{Get\+Incorrect\+Penalty}} ()
+\begin{DoxyCompactList}\small\item\em getter function to get current incorrect penalty value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood\+::\+Application\+::\+Components\+::\+ENUM\+\_\+\+Movement\+Type}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a4a5c19df815f064470d676ee3f3ab255}{Get\+Movement\+Type}} ()
+\begin{DoxyCompactList}\small\item\em getter function to get current movement type value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a13793ccdfeb3e785981c2252874ba33d}{Set\+Incorrect\+Penalty}} (bool a\+\_\+incorrect\+Penatly)
+\begin{DoxyCompactList}\small\item\em setter function to set current incorrect penalty value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ade0ff6284facac6e5a2fbdd4851de90a}{Set\+Movement\+Type}} (\mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood\+::\+Application\+::\+Components\+::\+ENUM\+\_\+\+Movement\+Type}} a\+\_\+movement\+Type)
+\begin{DoxyCompactList}\small\item\em setter function to set current movement type value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a416fde6e5785a9e52d560a495cd275bd}{Set\+Deck\+Size}} (unsigned a\+\_\+deck\+Size)
+\begin{DoxyCompactList}\small\item\em Resizes the deck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_abab6687090f6808adb4eaa58607a5ed6}{Set\+Curr\+Active\+Deck\+Idx}} (unsigned a\+\_\+curr\+Deck\+Idx)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the current deck index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a467c20d68ada6123fc1e1401279bc3f3}{Add\+Card\+To\+Deck\+At\+Curr\+Idx}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} a\+\_\+card\+To\+Add)
+\begin{DoxyCompactList}\small\item\em Adds a card to the deck at current index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a64f34064f837873c22504de98f99610c}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_af05cc1469341e6fe42a60757d0b503a8}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3bc87a72a9b8791688e81fbc8b3a3aeb}{m\+\_\+incorrect\+Penalty}}
+\item 
+\mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood\+::\+Application\+::\+Components\+::\+ENUM\+\_\+\+Movement\+Type}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad51e1b6d76d3f4b4e1e55c20778a12a0}{m\+\_\+movement\+Type}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae4770d64f6db48aba3c5746fd3ef3ab8}{m\+\_\+curr\+Deck\+Idx}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae6e90e6d137c600a1aec59919cec8e32}{m\+\_\+deck\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3d155ed79184606cb58eb35a8feafe87}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3d155ed79184606cb58eb35a8feafe87}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!DeckManager@{DeckManager}}
+\index{DeckManager@{DeckManager}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{DeckManager()}{DeckManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Deck\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a9460cb6b44f9c4f0c9eabe2239dd4257}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a9460cb6b44f9c4f0c9eabe2239dd4257}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!````~DeckManager@{$\sim$DeckManager}}
+\index{````~DeckManager@{$\sim$DeckManager}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$DeckManager()}{~DeckManager()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::$\sim$\+Deck\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3317c285f5d4056add1022d534ccda1d}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3317c285f5d4056add1022d534ccda1d}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!DeckManager@{DeckManager}}
+\index{DeckManager@{DeckManager}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{DeckManager()}{DeckManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Deck\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} \&}]{a\+\_\+other\+Deck\+Manager }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Deck\+Manager} & reference to the the deck manager object that is being copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a467c20d68ada6123fc1e1401279bc3f3}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a467c20d68ada6123fc1e1401279bc3f3}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!AddCardToDeckAtCurrIdx@{AddCardToDeckAtCurrIdx}}
+\index{AddCardToDeckAtCurrIdx@{AddCardToDeckAtCurrIdx}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{AddCardToDeckAtCurrIdx()}{AddCardToDeckAtCurrIdx()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Add\+Card\+To\+Deck\+At\+Curr\+Idx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}}}]{a\+\_\+card\+To\+Add }\end{DoxyParamCaption})}
+
+
+
+Adds a card to the deck at current index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+card\+To\+Add} & card info to add the current deck \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_af05cc1469341e6fe42a60757d0b503a8}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_af05cc1469341e6fe42a60757d0b503a8}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a64f34064f837873c22504de98f99610c}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a64f34064f837873c22504de98f99610c}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a2fd090108900edf6ab37074edf83f08f}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a2fd090108900edf6ab37074edf83f08f}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetCurrActiveDeck@{GetCurrActiveDeck}}
+\index{GetCurrActiveDeck@{GetCurrActiveDeck}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetCurrActiveDeck()}{GetCurrActiveDeck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Curr\+Active\+Deck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter function to get the current active deck 
+
+\begin{DoxyReturn}{Returns}
+pointer to current active deck 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae26b5875ef59b411f63cfae39ac3732c}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae26b5875ef59b411f63cfae39ac3732c}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetCurrActiveDeckIdx@{GetCurrActiveDeckIdx}}
+\index{GetCurrActiveDeckIdx@{GetCurrActiveDeckIdx}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetCurrActiveDeckIdx()}{GetCurrActiveDeckIdx()}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Curr\+Active\+Deck\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter funciton to get the current deck index 
+
+\begin{DoxyReturn}{Returns}
+current deck index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a6da8d9451ba38ec83a5d71195bf71190}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a6da8d9451ba38ec83a5d71195bf71190}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Manager\+Data}} Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns deck manager data struct 
+
+\begin{DoxyReturn}{Returns}
+card\+Info data struct with the deck manager data in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_abbc0ac495a5c36636ed97a8e901e42cf}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_abbc0ac495a5c36636ed97a8e901e42cf}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetDeckAtIdx@{GetDeckAtIdx}}
+\index{GetDeckAtIdx@{GetDeckAtIdx}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetDeckAtIdx()}{GetDeckAtIdx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Deck\+At\+Idx (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+deck\+Idx }\end{DoxyParamCaption})}
+
+
+
+getter function to get the deck at the passed index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Idx} & index from which the deck is to be returned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the deck at passed index if valid; else nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_aed10b8ae9a08b811352dd3b836a89ec0}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_aed10b8ae9a08b811352dd3b836a89ec0}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetDeckList@{GetDeckList}}
+\index{GetDeckList@{GetDeckList}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetDeckList()}{GetDeckList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$ $>$ \& Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Deck\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter function to get the deck list 
+
+\begin{DoxyReturn}{Returns}
+reference to the decklist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a451815e9606dcfd193987d7d20bed61f}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a451815e9606dcfd193987d7d20bed61f}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetIncorrectPenalty@{GetIncorrectPenalty}}
+\index{GetIncorrectPenalty@{GetIncorrectPenalty}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetIncorrectPenalty()}{GetIncorrectPenalty()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Incorrect\+Penalty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter function to get current incorrect penalty value 
+
+\begin{DoxyReturn}{Returns}
+current incorrect penalty value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a4a5c19df815f064470d676ee3f3ab255}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a4a5c19df815f064470d676ee3f3ab255}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!GetMovementType@{GetMovementType}}
+\index{GetMovementType@{GetMovementType}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{GetMovementType()}{GetMovementType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood\+::\+Application\+::\+Components\+::\+ENUM\+\_\+\+Movement\+Type}} Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Get\+Movement\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter function to get current movement type value 
+
+\begin{DoxyReturn}{Returns}
+current current movement type value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad370d5c3353f24733ba7388849e94878}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad370d5c3353f24733ba7388849e94878}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!InitializeDeckManager@{InitializeDeckManager}}
+\index{InitializeDeckManager@{InitializeDeckManager}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{InitializeDeckManager()}{InitializeDeckManager()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Initialize\+Deck\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Manager\+Data}} \&}]{a\+\_\+deck\+Manager\+Data }\end{DoxyParamCaption})}
+
+
+
+initializes the deck manager with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Manager\+Data} & reference of the deck manager data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a40f23b5cc2adc1424703b078e3004aa1}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a40f23b5cc2adc1424703b078e3004aa1}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the deck manager from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_aab213c5fcb7d0c9bd05c6fea88eeb289}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_aab213c5fcb7d0c9bd05c6fea88eeb289}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} \& Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} \&}]{a\+\_\+other\+Deck\+Manager }\end{DoxyParamCaption})}
+
+
+
+assignmnet operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Deck\+Manager} & reference to the the deck manager object that is being copied from ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_af7903c863c284f88d78817871847a850}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_af7903c863c284f88d78817871847a850}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr,  }\item[{std\+::string}]{a\+\_\+game\+Tile }\end{DoxyParamCaption})}
+
+
+
+saves the deck manager and its path data to passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+{\em a\+\_\+game\+Title} & title of the game \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_abab6687090f6808adb4eaa58607a5ed6}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_abab6687090f6808adb4eaa58607a5ed6}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!SetCurrActiveDeckIdx@{SetCurrActiveDeckIdx}}
+\index{SetCurrActiveDeckIdx@{SetCurrActiveDeckIdx}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{SetCurrActiveDeckIdx()}{SetCurrActiveDeckIdx()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Set\+Curr\+Active\+Deck\+Idx (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+curr\+Deck\+Idx }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the current deck index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+curr\+Deck\+Idx} & deck index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a416fde6e5785a9e52d560a495cd275bd}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a416fde6e5785a9e52d560a495cd275bd}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!SetDeckSize@{SetDeckSize}}
+\index{SetDeckSize@{SetDeckSize}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{SetDeckSize()}{SetDeckSize()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Set\+Deck\+Size (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+deck\+Size }\end{DoxyParamCaption})}
+
+
+
+Resizes the deck. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Size} & deck size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a13793ccdfeb3e785981c2252874ba33d}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a13793ccdfeb3e785981c2252874ba33d}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!SetIncorrectPenalty@{SetIncorrectPenalty}}
+\index{SetIncorrectPenalty@{SetIncorrectPenalty}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{SetIncorrectPenalty()}{SetIncorrectPenalty()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Set\+Incorrect\+Penalty (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+incorrect\+Penatly }\end{DoxyParamCaption})}
+
+
+
+setter function to set current incorrect penalty value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+incorrect\+Penatly} & incorrect penalty value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_ade0ff6284facac6e5a2fbdd4851de90a}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_ade0ff6284facac6e5a2fbdd4851de90a}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!SetMovementType@{SetMovementType}}
+\index{SetMovementType@{SetMovementType}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{SetMovementType()}{SetMovementType()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::\+Set\+Movement\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood\+::\+Application\+::\+Components\+::\+ENUM\+\_\+\+Movement\+Type}}}]{a\+\_\+movement\+Type }\end{DoxyParamCaption})}
+
+
+
+setter function to set current movement type value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+movement\+Type} & current movement type value to set \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae4770d64f6db48aba3c5746fd3ef3ab8}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae4770d64f6db48aba3c5746fd3ef3ab8}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!m\_currDeckIdx@{m\_currDeckIdx}}
+\index{m\_currDeckIdx@{m\_currDeckIdx}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{m\_currDeckIdx}{m\_currDeckIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::m\+\_\+curr\+Deck\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae6e90e6d137c600a1aec59919cec8e32}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae6e90e6d137c600a1aec59919cec8e32}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!m\_deckList@{m\_deckList}}
+\index{m\_deckList@{m\_deckList}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{m\_deckList}{m\_deckList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}}$\ast$$>$ Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::m\+\_\+deck\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3bc87a72a9b8791688e81fbc8b3a3aeb}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3bc87a72a9b8791688e81fbc8b3a3aeb}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!m\_incorrectPenalty@{m\_incorrectPenalty}}
+\index{m\_incorrectPenalty@{m\_incorrectPenalty}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{m\_incorrectPenalty}{m\_incorrectPenalty}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::m\+\_\+incorrect\+Penalty\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad51e1b6d76d3f4b4e1e55c20778a12a0}\label{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad51e1b6d76d3f4b4e1e55c20778a12a0}} 
+\index{Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}!m\_movementType@{m\_movementType}}
+\index{m\_movementType@{m\_movementType}!Brood::Application::Components::DeckManager@{Brood::Application::Components::DeckManager}}
+\doxysubsubsection{\texorpdfstring{m\_movementType}{m\_movementType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood\+::\+Application\+::\+Components\+::\+ENUM\+\_\+\+Movement\+Type}} Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager\+::m\+\_\+movement\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_deck_manager_8h}{Deck\+Manager.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_deck_manager_8cpp}{Deck\+Manager.\+cpp}}\end{DoxyCompactItemize}

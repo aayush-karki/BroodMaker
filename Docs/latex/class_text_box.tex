@@ -1,0 +1,134 @@
+\hypertarget{class_text_box}{}\doxysection{Text\+Box Class Reference}
+\label{class_text_box}\index{TextBox@{TextBox}}
+
+
+a uielemnt that represent the text in the UI  
+
+
+
+
+{\ttfamily \#include \char`\"{}Text\+Box.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+a uielemnt that represent the text in the UI 
+
+A class derived from UI elements class. It can be set as mutable or immutable text.
+
+\begin{DoxyWarning}{Warning}
+The following code needs to be present in the event switch for the textbox to be editable\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{case} sf::Event::TextEntered:}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a847392c09556c5ef5f9377f85ba88e43}{Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr}}() == \textcolor{keyword}{nullptr} )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// checking if the current active element is a editable textbox}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} currActiveElementId = \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a847392c09556c5ef5f9377f85ba88e43}{Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr}}()-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_abf1e43c9b8f200e76061f75349a0a1fb}{GetElementID}}();}
+\DoxyCodeLine{    \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* currActiveElement = \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_aa81cbf475fc698c5dfcd5ec581496f36}{Brood::BroodUI::MapIdToElement::GetElementPtrFromMap}}( currActiveElementId );}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( currActiveElement-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac6a877e9b684cca9a373639be58c69d3}{GetElementType}}() == \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8a3b5a0c6cd8b6f37a40f8c831571c29ba}{Brood::BroodUI::ENUM\_UIType::UI\_textBox}} )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{comment}{// checking if it is editable or not}}
+\DoxyCodeLine{        \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* currActiveTextBox = ( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* )currActiveElement;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}( currActiveTextBox-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae0d0f2edb48f5d421fc69f4a228ef224}{IsEditable}}() )}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{comment}{// if yes then sent the textEntered event to the element}}
+\DoxyCodeLine{            currActiveTextBox-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a69ca852368c6f5b52e928bb3f5b4d5a4}{TypeOn}}( events );}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyWarning}
+\hypertarget{class_text_box_autotoc_md4}{}\doxyparagraph{Example Case}\label{class_text_box_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// window object}}
+\DoxyCodeLine{sf::RenderWindow window( sf::VideoMode( 500, 500 ), \textcolor{stringliteral}{"{}BroodMaker"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// event object }}
+\DoxyCodeLine{sf::Event events;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// creating a textbox object}}
+\DoxyCodeLine{myTextBox.SetBodySize( 100, 50 );}
+\DoxyCodeLine{myTextBox.SetBodyPosition( 160, 350 );}
+\DoxyCodeLine{myTextBox.SetBodyColor( sf::Color::White );}
+\DoxyCodeLine{myTextBox.SetFont( font );}
+\DoxyCodeLine{myTextBox.SetFontSize( 25 );}
+\DoxyCodeLine{myTextBox.SetFontColor( sf::Color::Black );}
+\DoxyCodeLine{myTextBox.SetText( \textcolor{stringliteral}{"{}hello is this god"{}} );}
+\DoxyCodeLine{myTextBox.SetEditable( \textcolor{keyword}{true} );}
+\DoxyCodeLine{myTextBox.SetLimit( \textcolor{keyword}{true}, 4 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//app loop}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}( !exit )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// events}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}( window.pollEvent( events ) )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{switch}( events.type )}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{comment}{// other events}}
+\DoxyCodeLine{            \textcolor{comment}{// == in the even polling loop ==}}
+\DoxyCodeLine{            \textcolor{keywordflow}{case} sf::Event::TextEntered:}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a847392c09556c5ef5f9377f85ba88e43}{Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr}}() == \textcolor{keyword}{nullptr} )}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{break};}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{            }
+\DoxyCodeLine{                \textcolor{comment}{// checking if the current active element is a editable textbox}}
+\DoxyCodeLine{                \textcolor{keywordtype}{int} currActiveElementId = \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a847392c09556c5ef5f9377f85ba88e43}{Brood::BroodUI::ElementSelection::GetCurrActiveElementIdPtr}}()-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_abf1e43c9b8f200e76061f75349a0a1fb}{GetElementID}}();}
+\DoxyCodeLine{                \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* currActiveElement = \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_aa81cbf475fc698c5dfcd5ec581496f36}{Brood::BroodUI::MapIdToElement::GetElementPtrFromMap}}( currActiveElementId );}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}( currActiveElement-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac6a877e9b684cca9a373639be58c69d3}{GetElementType}}() == \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8a3b5a0c6cd8b6f37a40f8c831571c29ba}{Brood::BroodUI::ENUM\_UIType::UI\_textBox}} )}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{comment}{// checking if it is editable or not}}
+\DoxyCodeLine{                    \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* currActiveTextBox = ( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* )currActiveElement;}
+\DoxyCodeLine{                    \textcolor{keywordflow}{if}( currActiveTextBox-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae0d0f2edb48f5d421fc69f4a228ef224}{IsEditable}}() )}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        \textcolor{comment}{// if yes then sent the textEntered event to the element}}
+\DoxyCodeLine{                        currActiveTextBox-\/>\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a69ca852368c6f5b52e928bb3f5b4d5a4}{TypeOn}}( events );}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{                \textcolor{keywordflow}{break};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// logics}}
+\DoxyCodeLine{    myTextBox.DoElement();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// code to detect enter press then get the string user entered and process it}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( myTextBox-\/>IsEnterPressed() \&\&}
+\DoxyCodeLine{        myTextBox-\/>GetElementIdPtr() == \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a07523d28d54a617f2fddb52b6172810d}{Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr}}() )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cerr << myTextBox-\/>GetText() << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// resetting the m\_enterPressed}}
+\DoxyCodeLine{        myTextBox-\/>SetEnterPressedFalse();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// render}}
+\DoxyCodeLine{    myTextBox.Draw( window );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000015}{Todo}}]add a way to add place holder text 
+
+add view to the textbox feild that gets scrolled when the type text go of window 
+
+add a actual cursor instead of \+\_\+\end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_text_box_8h}{Text\+Box.\+h}}\end{DoxyCompactItemize}

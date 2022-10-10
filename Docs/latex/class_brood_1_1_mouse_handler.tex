@@ -1,0 +1,411 @@
+\hypertarget{class_brood_1_1_mouse_handler}{}\doxysection{Brood\+::Mouse\+Handler Class Reference}
+\label{class_brood_1_1_mouse_handler}\index{Brood::MouseHandler@{Brood::MouseHandler}}
+
+
+{\ttfamily \#include $<$Mouse\+Handler.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}{ENUM\+\_\+\+Mouse\+Cursor\+Type}} \{ \newline
+\mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca787a08bbf7eef142aa44df018f402ce1}{CURSOR\+\_\+arrow}}
+, \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca2d3994c8f39a05730a4980ed8078f66a}{CURSOR\+\_\+wait}}
+, \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca8ddfc544551ada11bd0bcc63118ae8b1}{CURSOR\+\_\+text}}
+, \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca78a166611b09594b33cec58782bbfc06}{CURSOR\+\_\+hand}}
+, \newline
+\mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca007c89b46dd4828ca2d31809ea62e944}{CURSOR\+\_\+size\+Horizontal}}
+, \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14acaae93337b535f173294fec37b6045e7ed}{CURSOR\+\_\+help}}
+, \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca3ecd63db796cb3ba0b73c661c45b3276}{CURSOR\+\_\+not\+Allowed}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_brood_1_1_mouse_handler_a25c77806eeeb02c262f4d383b7b4a23b}{Initialize\+Cursor}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Initializes the cursor and sets it for the window. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4988a5b33f15a8a994569be97e648c18}{Update\+Mouse\+Pos}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em a static function to keep track of the mouse Position \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_brood_1_1_mouse_handler_ae262bcde794b2e23172080b1510a6480}{Change\+Cursor\+To}} (sf\+::\+Render\+Window \&a\+\_\+window, const \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}{Brood\+::\+Mouse\+Handler\+::\+ENUM\+\_\+\+Mouse\+Cursor\+Type}} a\+\_\+cursor\+Type)
+\begin{DoxyCompactList}\small\item\em changes the cursor to specifed cursor type \end{DoxyCompactList}\item 
+static sf\+::\+Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a502764371d0c7d6ed390d76b93fad65f}{Get\+Last\+Frame\+Mouse\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the last frame mouse position. \end{DoxyCompactList}\item 
+static sf\+::\+Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a1a82f13395a96c993ed1e08d02782e18}{Get\+Curr\+Frame\+Mouse\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the currrent frame mouse position. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a89bad9e122cd3649a2448dd4cbc7ca0d}{Getlast\+Frame\+LMSStatus}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the last frame left mouse button press status. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_ac65ca6963e5301804895316db9344182}{Get\+Curr\+Frame\+LMSStatus}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the current frame left mouse button press status. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a934659082975b28da4e2d06746ba9e09}{Getlast\+Frame\+RMSStatus}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the last frame right mouse button press status. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a8e12c47b2ac71d2a79ccd50d70c8f6e8}{Get\+Curr\+Frame\+RMSStatus}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the current frame right mouse button press status. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_brood_1_1_mouse_handler_a57e1e930df88cd639b84e8d438365be4}{Update\+Mouse\+Button\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Updates mouse button status and saves the mouse button status for this frame and last frame. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a9bbf03c9f25364cd2428baaec4c2e7ca}{Is\+Left\+Button\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Check if the left mouse button is in hold state. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a75403d32a05299696fead67535560024}{Is\+Left\+Button\+Pressed}} ()
+\begin{DoxyCompactList}\small\item\em Check if the left mouse button is pressed or not. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a740ffb7fb92a2cf1e99c49670bf9f494}{Is\+Left\+Button\+Released}} ()
+\begin{DoxyCompactList}\small\item\em Check if the left mouse button is released or not. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_acddd072e71a8a0f2a164f5c92781e58b}{Is\+Right\+Button\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Check if the right mouse button is in hold state. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a3d0d2aa7c153a1f2ca2b68c02f13863f}{Is\+Right\+Button\+Pressed}} ()
+\begin{DoxyCompactList}\small\item\em Check if the right mouse button is pressed or not. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_ab150840c405b284b2afd0c5679e33ff4}{Is\+Right\+Button\+Released}} ()
+\begin{DoxyCompactList}\small\item\em Check if the right mouse button is released or not. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_brood_1_1_mouse_handler_a9f12460a0a24bb27ca69474cd17dc471}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em Prints the mouse states like button press and current position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static sf\+::\+Cursor \mbox{\hyperlink{class_brood_1_1_mouse_handler_a3dffc63855ba7307cb003e1050bcadb4}{m\+\_\+cursor}}
+\item 
+static sf\+::\+Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4bd613ae8f553eb47821956edfdbd1f1}{m\+\_\+last\+Frame\+Mouse\+Pos}}
+\item 
+static sf\+::\+Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a3784e2c84a7874b434daa89deb09c3b5}{m\+\_\+curr\+Frame\+Mouse\+Pos}}
+\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a9387019b1c0d70e3893606d6985a0b29}{m\+\_\+last\+Frame\+Left\+Mouse\+Button\+Pressed}}
+\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a8f6a7114dd5bbcb930bd25c44a747179}{m\+\_\+last\+Frame\+Right\+Mouse\+Button\+Pressed}}
+\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4ff6b246eadf9c1f18f7a8fd0afa05cc}{m\+\_\+curr\+Frame\+Left\+Mouse\+Button\+Pressed}}
+\item 
+static bool \mbox{\hyperlink{class_brood_1_1_mouse_handler_a62a32b0eaeeb6cc8805d1ee6c3122e89}{m\+\_\+curr\+Frame\+Right\+Mouse\+Button\+Pressed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!ENUM\_MouseCursorType@{ENUM\_MouseCursorType}}
+\index{ENUM\_MouseCursorType@{ENUM\_MouseCursorType}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{ENUM\_MouseCursorType}{ENUM\_MouseCursorType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}{Brood\+::\+Mouse\+Handler\+::\+ENUM\+\_\+\+Mouse\+Cursor\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_arrow@{CURSOR\_arrow}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_arrow@{CURSOR\_arrow}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca787a08bbf7eef142aa44df018f402ce1}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca787a08bbf7eef142aa44df018f402ce1}} 
+CURSOR\+\_\+arrow&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_wait@{CURSOR\_wait}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_wait@{CURSOR\_wait}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca2d3994c8f39a05730a4980ed8078f66a}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca2d3994c8f39a05730a4980ed8078f66a}} 
+CURSOR\+\_\+wait&\begin{quote}
+default cursor \end{quote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_text@{CURSOR\_text}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_text@{CURSOR\_text}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca8ddfc544551ada11bd0bcc63118ae8b1}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca8ddfc544551ada11bd0bcc63118ae8b1}} 
+CURSOR\+\_\+text&\begin{quote}
+busy cursor \end{quote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_hand@{CURSOR\_hand}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_hand@{CURSOR\_hand}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca78a166611b09594b33cec58782bbfc06}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca78a166611b09594b33cec58782bbfc06}} 
+CURSOR\+\_\+hand&\begin{quote}
+I-\/beam cursor, when hovering overa field allowing text entry \end{quote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_sizeHorizontal@{CURSOR\_sizeHorizontal}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_sizeHorizontal@{CURSOR\_sizeHorizontal}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca007c89b46dd4828ca2d31809ea62e944}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca007c89b46dd4828ca2d31809ea62e944}} 
+CURSOR\+\_\+size\+Horizontal&\begin{quote}
+Pointing hand cursor \end{quote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_help@{CURSOR\_help}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_help@{CURSOR\_help}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14acaae93337b535f173294fec37b6045e7ed}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14acaae93337b535f173294fec37b6045e7ed}} 
+CURSOR\+\_\+help&\begin{quote}
+horizontal cursor with arrow head at both ends \end{quote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURSOR\_notAllowed@{CURSOR\_notAllowed}!Brood::MouseHandler@{Brood::MouseHandler}}\index{Brood::MouseHandler@{Brood::MouseHandler}!CURSOR\_notAllowed@{CURSOR\_notAllowed}}}\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca3ecd63db796cb3ba0b73c661c45b3276}\label{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14aca3ecd63db796cb3ba0b73c661c45b3276}} 
+CURSOR\+\_\+not\+Allowed&\begin{quote}
+help cursor with ? on it \end{quote}
+\begin{quote}
+action not allowed cursor \end{quote}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_ae262bcde794b2e23172080b1510a6480}\label{class_brood_1_1_mouse_handler_ae262bcde794b2e23172080b1510a6480}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!ChangeCursorTo@{ChangeCursorTo}}
+\index{ChangeCursorTo@{ChangeCursorTo}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{ChangeCursorTo()}{ChangeCursorTo()}}
+{\footnotesize\ttfamily void Mouse\+Handler\+::\+Change\+Cursor\+To (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window,  }\item[{const \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}{Brood\+::\+Mouse\+Handler\+::\+ENUM\+\_\+\+Mouse\+Cursor\+Type}}}]{a\+\_\+cursor\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+changes the cursor to specifed cursor type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to render window \\
+\hline
+{\em a\+\_\+cursor\+Type} & cursor type to change to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a9f12460a0a24bb27ca69474cd17dc471}\label{class_brood_1_1_mouse_handler_a9f12460a0a24bb27ca69474cd17dc471}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Mouse\+Handler\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the mouse states like button press and current position. 
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_ac65ca6963e5301804895316db9344182}\label{class_brood_1_1_mouse_handler_ac65ca6963e5301804895316db9344182}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!GetCurrFrameLMSStatus@{GetCurrFrameLMSStatus}}
+\index{GetCurrFrameLMSStatus@{GetCurrFrameLMSStatus}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{GetCurrFrameLMSStatus()}{GetCurrFrameLMSStatus()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Get\+Curr\+Frame\+LMSStatus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter function to get the current frame left mouse button press status. 
+
+\begin{DoxyReturn}{Returns}
+currrent current frame left mouse button press status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a1a82f13395a96c993ed1e08d02782e18}\label{class_brood_1_1_mouse_handler_a1a82f13395a96c993ed1e08d02782e18}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!GetCurrFrameMousePos@{GetCurrFrameMousePos}}
+\index{GetCurrFrameMousePos@{GetCurrFrameMousePos}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{GetCurrFrameMousePos()}{GetCurrFrameMousePos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Mouse\+Handler\+::\+Get\+Curr\+Frame\+Mouse\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter function to get the currrent frame mouse position. 
+
+\begin{DoxyReturn}{Returns}
+currrent frame mouse position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a8e12c47b2ac71d2a79ccd50d70c8f6e8}\label{class_brood_1_1_mouse_handler_a8e12c47b2ac71d2a79ccd50d70c8f6e8}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!GetCurrFrameRMSStatus@{GetCurrFrameRMSStatus}}
+\index{GetCurrFrameRMSStatus@{GetCurrFrameRMSStatus}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{GetCurrFrameRMSStatus()}{GetCurrFrameRMSStatus()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Get\+Curr\+Frame\+RMSStatus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter function to get the current frame right mouse button press status. 
+
+\begin{DoxyReturn}{Returns}
+currrent current frame right mouse button press status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a89bad9e122cd3649a2448dd4cbc7ca0d}\label{class_brood_1_1_mouse_handler_a89bad9e122cd3649a2448dd4cbc7ca0d}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!GetlastFrameLMSStatus@{GetlastFrameLMSStatus}}
+\index{GetlastFrameLMSStatus@{GetlastFrameLMSStatus}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{GetlastFrameLMSStatus()}{GetlastFrameLMSStatus()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Getlast\+Frame\+LMSStatus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter function to get the last frame left mouse button press status. 
+
+\begin{DoxyReturn}{Returns}
+currrent last frame left mouse button press status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a502764371d0c7d6ed390d76b93fad65f}\label{class_brood_1_1_mouse_handler_a502764371d0c7d6ed390d76b93fad65f}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!GetLastFrameMousePos@{GetLastFrameMousePos}}
+\index{GetLastFrameMousePos@{GetLastFrameMousePos}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{GetLastFrameMousePos()}{GetLastFrameMousePos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Mouse\+Handler\+::\+Get\+Last\+Frame\+Mouse\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter function to get the last frame mouse position. 
+
+\begin{DoxyReturn}{Returns}
+last frame mouse position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a934659082975b28da4e2d06746ba9e09}\label{class_brood_1_1_mouse_handler_a934659082975b28da4e2d06746ba9e09}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!GetlastFrameRMSStatus@{GetlastFrameRMSStatus}}
+\index{GetlastFrameRMSStatus@{GetlastFrameRMSStatus}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{GetlastFrameRMSStatus()}{GetlastFrameRMSStatus()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Getlast\+Frame\+RMSStatus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter function to get the last frame right mouse button press status. 
+
+///
+
+\begin{DoxyReturn}{Returns}
+currrent last frame right mouse button press status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a25c77806eeeb02c262f4d383b7b4a23b}\label{class_brood_1_1_mouse_handler_a25c77806eeeb02c262f4d383b7b4a23b}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!InitializeCursor@{InitializeCursor}}
+\index{InitializeCursor@{InitializeCursor}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{InitializeCursor()}{InitializeCursor()}}
+{\footnotesize\ttfamily void Mouse\+Handler\+::\+Initialize\+Cursor (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the cursor and sets it for the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a9bbf03c9f25364cd2428baaec4c2e7ca}\label{class_brood_1_1_mouse_handler_a9bbf03c9f25364cd2428baaec4c2e7ca}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!IsLeftButtonHold@{IsLeftButtonHold}}
+\index{IsLeftButtonHold@{IsLeftButtonHold}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{IsLeftButtonHold()}{IsLeftButtonHold()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Is\+Left\+Button\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the left mouse button is in hold state. 
+
+\begin{DoxyReturn}{Returns}
+true if the left mouse button is in hold state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a75403d32a05299696fead67535560024}\label{class_brood_1_1_mouse_handler_a75403d32a05299696fead67535560024}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!IsLeftButtonPressed@{IsLeftButtonPressed}}
+\index{IsLeftButtonPressed@{IsLeftButtonPressed}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{IsLeftButtonPressed()}{IsLeftButtonPressed()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Is\+Left\+Button\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the left mouse button is pressed or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the left mouse button is pressed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a740ffb7fb92a2cf1e99c49670bf9f494}\label{class_brood_1_1_mouse_handler_a740ffb7fb92a2cf1e99c49670bf9f494}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!IsLeftButtonReleased@{IsLeftButtonReleased}}
+\index{IsLeftButtonReleased@{IsLeftButtonReleased}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{IsLeftButtonReleased()}{IsLeftButtonReleased()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Is\+Left\+Button\+Released (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the left mouse button is released or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the left mouse button is released 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_acddd072e71a8a0f2a164f5c92781e58b}\label{class_brood_1_1_mouse_handler_acddd072e71a8a0f2a164f5c92781e58b}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!IsRightButtonHold@{IsRightButtonHold}}
+\index{IsRightButtonHold@{IsRightButtonHold}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{IsRightButtonHold()}{IsRightButtonHold()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Is\+Right\+Button\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the right mouse button is in hold state. 
+
+\begin{DoxyReturn}{Returns}
+true if the right mouse button is in hold state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a3d0d2aa7c153a1f2ca2b68c02f13863f}\label{class_brood_1_1_mouse_handler_a3d0d2aa7c153a1f2ca2b68c02f13863f}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!IsRightButtonPressed@{IsRightButtonPressed}}
+\index{IsRightButtonPressed@{IsRightButtonPressed}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{IsRightButtonPressed()}{IsRightButtonPressed()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Is\+Right\+Button\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the right mouse button is pressed or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the right mouse button is pressed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_ab150840c405b284b2afd0c5679e33ff4}\label{class_brood_1_1_mouse_handler_ab150840c405b284b2afd0c5679e33ff4}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!IsRightButtonReleased@{IsRightButtonReleased}}
+\index{IsRightButtonReleased@{IsRightButtonReleased}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{IsRightButtonReleased()}{IsRightButtonReleased()}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::\+Is\+Right\+Button\+Released (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the right mouse button is released or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the rrght mouse button is released 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a57e1e930df88cd639b84e8d438365be4}\label{class_brood_1_1_mouse_handler_a57e1e930df88cd639b84e8d438365be4}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!UpdateMouseButtonStatus@{UpdateMouseButtonStatus}}
+\index{UpdateMouseButtonStatus@{UpdateMouseButtonStatus}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateMouseButtonStatus()}{UpdateMouseButtonStatus()}}
+{\footnotesize\ttfamily void Mouse\+Handler\+::\+Update\+Mouse\+Button\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates mouse button status and saves the mouse button status for this frame and last frame. 
+
+\begin{DoxyNote}{Note}
+only consideres left and right mouse button 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4988a5b33f15a8a994569be97e648c18}\label{class_brood_1_1_mouse_handler_a4988a5b33f15a8a994569be97e648c18}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!UpdateMousePos@{UpdateMousePos}}
+\index{UpdateMousePos@{UpdateMousePos}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateMousePos()}{UpdateMousePos()}}
+{\footnotesize\ttfamily void Mouse\+Handler\+::\+Update\+Mouse\+Pos (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+a static function to keep track of the mouse Position 
+
+It keep track of mouse position last frame and this frame
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4ff6b246eadf9c1f18f7a8fd0afa05cc}\label{class_brood_1_1_mouse_handler_a4ff6b246eadf9c1f18f7a8fd0afa05cc}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_currFrameLeftMouseButtonPressed@{m\_currFrameLeftMouseButtonPressed}}
+\index{m\_currFrameLeftMouseButtonPressed@{m\_currFrameLeftMouseButtonPressed}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_currFrameLeftMouseButtonPressed}{m\_currFrameLeftMouseButtonPressed}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::m\+\_\+curr\+Frame\+Left\+Mouse\+Button\+Pressed\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a3784e2c84a7874b434daa89deb09c3b5}\label{class_brood_1_1_mouse_handler_a3784e2c84a7874b434daa89deb09c3b5}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_currFrameMousePos@{m\_currFrameMousePos}}
+\index{m\_currFrameMousePos@{m\_currFrameMousePos}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_currFrameMousePos}{m\_currFrameMousePos}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Mouse\+Handler\+::m\+\_\+curr\+Frame\+Mouse\+Pos\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a62a32b0eaeeb6cc8805d1ee6c3122e89}\label{class_brood_1_1_mouse_handler_a62a32b0eaeeb6cc8805d1ee6c3122e89}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_currFrameRightMouseButtonPressed@{m\_currFrameRightMouseButtonPressed}}
+\index{m\_currFrameRightMouseButtonPressed@{m\_currFrameRightMouseButtonPressed}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_currFrameRightMouseButtonPressed}{m\_currFrameRightMouseButtonPressed}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::m\+\_\+curr\+Frame\+Right\+Mouse\+Button\+Pressed\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a3dffc63855ba7307cb003e1050bcadb4}\label{class_brood_1_1_mouse_handler_a3dffc63855ba7307cb003e1050bcadb4}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_cursor@{m\_cursor}}
+\index{m\_cursor@{m\_cursor}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_cursor}{m\_cursor}}
+{\footnotesize\ttfamily sf\+::\+Cursor Mouse\+Handler\+::m\+\_\+cursor\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a9387019b1c0d70e3893606d6985a0b29}\label{class_brood_1_1_mouse_handler_a9387019b1c0d70e3893606d6985a0b29}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_lastFrameLeftMouseButtonPressed@{m\_lastFrameLeftMouseButtonPressed}}
+\index{m\_lastFrameLeftMouseButtonPressed@{m\_lastFrameLeftMouseButtonPressed}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_lastFrameLeftMouseButtonPressed}{m\_lastFrameLeftMouseButtonPressed}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::m\+\_\+last\+Frame\+Left\+Mouse\+Button\+Pressed\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a4bd613ae8f553eb47821956edfdbd1f1}\label{class_brood_1_1_mouse_handler_a4bd613ae8f553eb47821956edfdbd1f1}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_lastFrameMousePos@{m\_lastFrameMousePos}}
+\index{m\_lastFrameMousePos@{m\_lastFrameMousePos}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_lastFrameMousePos}{m\_lastFrameMousePos}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Mouse\+Handler\+::m\+\_\+last\+Frame\+Mouse\+Pos\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_mouse_handler_a8f6a7114dd5bbcb930bd25c44a747179}\label{class_brood_1_1_mouse_handler_a8f6a7114dd5bbcb930bd25c44a747179}} 
+\index{Brood::MouseHandler@{Brood::MouseHandler}!m\_lastFrameRightMouseButtonPressed@{m\_lastFrameRightMouseButtonPressed}}
+\index{m\_lastFrameRightMouseButtonPressed@{m\_lastFrameRightMouseButtonPressed}!Brood::MouseHandler@{Brood::MouseHandler}}
+\doxysubsubsection{\texorpdfstring{m\_lastFrameRightMouseButtonPressed}{m\_lastFrameRightMouseButtonPressed}}
+{\footnotesize\ttfamily bool Mouse\+Handler\+::m\+\_\+last\+Frame\+Right\+Mouse\+Button\+Pressed\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_mouse_handler_8h}{Mouse\+Handler.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_mouse_handler_8cpp}{Mouse\+Handler.\+cpp}}\end{DoxyCompactItemize}

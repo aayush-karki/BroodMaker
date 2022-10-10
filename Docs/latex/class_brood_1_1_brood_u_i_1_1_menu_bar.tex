@@ -1,0 +1,544 @@
+\hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar}{}\doxysection{Brood\+::Brood\+UI\+::Menu\+Bar Class Reference}
+\label{class_brood_1_1_brood_u_i_1_1_menu_bar}\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+
+
+{\ttfamily \#include $<$Menu\+Bar.\+h$>$}
+
+Inheritance diagram for Brood\+::Brood\+UI\+::Menu\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_brood_u_i_1_1_menu_bar}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a99df555a44852c6cc31f02a2595fdf4d}{Menu\+Bar}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a8b05a88c9f5b058b9819b74994f520b0}{$\sim$\+Menu\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Default Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_ab54672dce021a9056902b03155744b21}{Menu\+Bar}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}} \&a\+\_\+other\+Element)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}} \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a0e8f6e30a54108e22f4e45eb4c5d5c90}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}} \&a\+\_\+other\+Element)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}} $\ast$ $>$ \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{Get\+Menu\+List}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the menu List. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aef094f4b37ecea46ad9ca9926ed767dd}{Set\+Body\+Size}} (sf\+::\+Vector2f a\+\_\+each\+Item\+Size) override
+\begin{DoxyCompactList}\small\item\em Setter function to set the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}}\textquotesingle{}s size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a362aedc3a8bebff33dbc07b9ce5b1760}{Set\+Body\+Size}} (float a\+\_\+item\+SizeX, float a\+\_\+item\+SizeY) override
+\begin{DoxyCompactList}\small\item\em Setter function to set the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}}\textquotesingle{}s size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aec4d1f774197f4645d0a0b4cacd93d24}{Set\+Body\+Position}} (sf\+::\+Vector2f a\+\_\+pos, bool a\+\_\+relative\+To\+Parent=false) override
+\begin{DoxyCompactList}\small\item\em Setter function to set the menubar\textquotesingle{}s Position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a6a2c5173d84c6d1ebfedd8ef2d3aafe3}{Set\+Body\+Position}} (float a\+\_\+posX, float a\+\_\+posY, bool a\+\_\+relative\+To\+Parent=false) override
+\begin{DoxyCompactList}\small\item\em Setter function to set the menubar\textquotesingle{}s Position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a4b7d9913f8f3186aace13fa28680ef04}{Set\+Font}} (sf\+::\+Font $\ast$a\+\_\+font)
+\begin{DoxyCompactList}\small\item\em Setter function to set the font for the menu. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a74dc0c8e167a1887dba8712476ec413a}{Set\+Font\+Color}} (sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+White}})
+\begin{DoxyCompactList}\small\item\em setter function to set the Font color \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_ae4ac0394ac16b600f06f46e468ec4704}{Set\+Font\+Size}} (unsigned a\+\_\+font\+Size)
+\begin{DoxyCompactList}\small\item\em Setter funtion to set the size of the font. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_ac5426e6e442b44462c49e136c22b0673}{Set\+Body\+Color}} (sf\+::\+Color a\+\_\+body\+Color)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element body color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a30b18842ced7f9f9208d583d78f6ab6a}{Set\+Active\+Overlay\+Color}} (sf\+::\+Color a\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s active color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a2459fafbd1bea356c095707d95b5178b}{Set\+Hot\+Overlay\+Color}} (sf\+::\+Color a\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s hot color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a10bf65d08edee2d7e609cd86eb44d9c1}{Add\+Menu\+To\+Menu\+Bar}} (std\+::string a\+\_\+menu\+Name)
+\begin{DoxyCompactList}\small\item\em Function to add menu to the menubar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aec9610cbdeefcb81cf733062ddb572ae}{Add\+Menu\+To\+Menu\+Bar}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}} $\ast$a\+\_\+dropdown\+Menu\+Ptr\+To\+Add, bool a\+\_\+create\+New=true)
+\begin{DoxyCompactList}\small\item\em Function to adds the passed \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Drop\+Down\+Menu}} at back of menubar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a7e9d2fa1985234e37abb91f16fe1db82}{Add\+Item\+To\+Menu}} (unsigned a\+\_\+index, std\+::string a\+\_\+menu\+Name)
+\begin{DoxyCompactList}\small\item\em Function to add menu item to menu in menubar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_ab53007bde10115a6649d6dbde4c9f9b7}{Add\+Item\+To\+Menu}} (unsigned a\+\_\+index, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+button\+Ptr\+To\+Add, bool a\+\_\+create\+New=true)
+\begin{DoxyCompactList}\small\item\em Function to adds the passed button to dropdown menu at passed index. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a5163e101ea44d7f88d9bbff09dad4496}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window) override
+\begin{DoxyCompactList}\small\item\em Draw function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a490e7a1893546d5389e78702f0036ccf}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em changes the text of the element to its the element ID when debug is on and changes it back to the text it had before debugging when debug is off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a5eb1ba7453c4c29d11c12d002cd0b35d}{Set\+Menu\+Body\+Size}} (int a\+\_\+item\+Index)
+\begin{DoxyCompactList}\small\item\em helper funciton to set the body size of the menus correctly in the menubar \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a3372e05987ce2f314e8a3433eb58c96e}{Set\+Menu\+Pos}} (int a\+\_\+item\+Index)
+\begin{DoxyCompactList}\small\item\em helper funciton to position the menus correctly in the menubar \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a991e55c21bc2656d486725131084ed68}{m\+\_\+menus}}
+\begin{DoxyCompactList}\small\item\em stores the list of drop down menus \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a99df555a44852c6cc31f02a2595fdf4d}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a99df555a44852c6cc31f02a2595fdf4d}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!MenuBar@{MenuBar}}
+\index{MenuBar@{MenuBar}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{MenuBar()}{MenuBar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Menu\+Bar\+::\+Menu\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a8b05a88c9f5b058b9819b74994f520b0}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a8b05a88c9f5b058b9819b74994f520b0}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!````~MenuBar@{$\sim$MenuBar}}
+\index{````~MenuBar@{$\sim$MenuBar}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{$\sim$MenuBar()}{~MenuBar()}}
+{\footnotesize\ttfamily Menu\+Bar\+::$\sim$\+Menu\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Default Destructor. 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_ab54672dce021a9056902b03155744b21}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_ab54672dce021a9056902b03155744b21}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!MenuBar@{MenuBar}}
+\index{MenuBar@{MenuBar}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{MenuBar()}{MenuBar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Menu\+Bar\+::\+Menu\+Bar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}} \&}]{a\+\_\+other\+Element }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Element} & reference to the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}} which is used to copy the data form \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_ab53007bde10115a6649d6dbde4c9f9b7}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_ab53007bde10115a6649d6dbde4c9f9b7}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!AddItemToMenu@{AddItemToMenu}}
+\index{AddItemToMenu@{AddItemToMenu}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{AddItemToMenu()}{AddItemToMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Add\+Item\+To\+Menu (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+index,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+button\+Ptr\+To\+Add,  }\item[{bool}]{a\+\_\+create\+New = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Function to adds the passed button to dropdown menu at passed index. 
+
+if a\+\_\+create\+New is true then create a new button using the passed item then adds the new button to the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Drop\+Down\+Menu}}
+
+It dynamically allocates memory for the newly created item
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+index} & menu bar which dropdown the item is to be added to \\
+\hline
+{\em a\+\_\+button\+Ptr\+To\+Add} & pointer to the button element which is used to add \\
+\hline
+{\em a\+\_\+create\+New} & if a\+\_\+create\+New is true then create a new ~\newline
+ button using the passed item then adds the new button \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a7e9d2fa1985234e37abb91f16fe1db82}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a7e9d2fa1985234e37abb91f16fe1db82}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!AddItemToMenu@{AddItemToMenu}}
+\index{AddItemToMenu@{AddItemToMenu}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{AddItemToMenu()}{AddItemToMenu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Add\+Item\+To\+Menu (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+index,  }\item[{std\+::string}]{a\+\_\+menu\+Item\+Name }\end{DoxyParamCaption})}
+
+
+
+Function to add menu item to menu in menubar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+index} & menu bar which dropdown the item is to be added to \\
+\hline
+{\em a\+\_\+menu\+Item\+Name} & name of the item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_aec9610cbdeefcb81cf733062ddb572ae}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_aec9610cbdeefcb81cf733062ddb572ae}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!AddMenuToMenuBar@{AddMenuToMenuBar}}
+\index{AddMenuToMenuBar@{AddMenuToMenuBar}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{AddMenuToMenuBar()}{AddMenuToMenuBar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Add\+Menu\+To\+Menu\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}} $\ast$}]{a\+\_\+dropdown\+Menu\+Ptr\+To\+Add,  }\item[{bool}]{a\+\_\+create\+New = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Function to adds the passed \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Drop\+Down\+Menu}} at back of menubar. 
+
+if a\+\_\+create\+New is true then create a new \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Drop\+Down\+Menu}} using the passed item then adds the new \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Drop\+Down\+Menu}} to the menubar It dynamically allocates memory for the newly created item
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+dropdown\+Menu\+Ptr\+To\+Add} & pointer to the dropdown\+Menu element which is used to add at the back \\
+\hline
+{\em a\+\_\+create\+New} & if a\+\_\+create\+New is true then create a new ~\newline
+ dropdown\+Menu using the passed item then adds the new button \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a10bf65d08edee2d7e609cd86eb44d9c1}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a10bf65d08edee2d7e609cd86eb44d9c1}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!AddMenuToMenuBar@{AddMenuToMenuBar}}
+\index{AddMenuToMenuBar@{AddMenuToMenuBar}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{AddMenuToMenuBar()}{AddMenuToMenuBar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Add\+Menu\+To\+Menu\+Bar (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+menu\+Name }\end{DoxyParamCaption})}
+
+
+
+Function to add menu to the menubar. 
+
+It dynamically allocates memory for the menu and adds it to the list.
+
+\begin{DoxyNote}{Note}
+assumes that menu bar is already set. For more informantion 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a5eb1ba7453c4c29d11c12d002cd0b35d}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar\+::\+Set\+Menu\+Body\+Size()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+assumes font is set. For more informantion 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b6fcad37e347bde0b955eed6fdb3ed4}{Brood\+::\+Brood\+UI\+::\+UIElement\+::\+Set\+Font()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+assumes font size is set. For more informantion 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+Brood\+::\+Brood\+UI\+::\+UIElement\+::\+Set\+Character\+Size()
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+menu\+Name} & name of the item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a490e7a1893546d5389e78702f0036ccf}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a490e7a1893546d5389e78702f0036ccf}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+changes the text of the element to its the element ID when debug is on and changes it back to the text it had before debugging when debug is off. 
+
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5a2ed094c6d67350c2011b41ee931429}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a5163e101ea44d7f88d9bbff09dad4496}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a5163e101ea44d7f88d9bbff09dad4496}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to render window \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!GetMenuList@{GetMenuList}}
+\index{GetMenuList@{GetMenuList}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{GetMenuList()}{GetMenuList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}} $\ast$ $>$ \& Menu\+Bar\+::\+Get\+Menu\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get the menu List. 
+
+\begin{DoxyReturn}{Returns}
+reference to the menu list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a0e8f6e30a54108e22f4e45eb4c5d5c90}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a0e8f6e30a54108e22f4e45eb4c5d5c90}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}} \& Menu\+Bar\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}} \&}]{a\+\_\+other\+Element }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Element} & reference to the dropdown menu which is used to copy the data form\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to this element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a30b18842ced7f9f9208d583d78f6ab6a}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a30b18842ced7f9f9208d583d78f6ab6a}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetActiveOverlayColor@{SetActiveOverlayColor}}
+\index{SetActiveOverlayColor@{SetActiveOverlayColor}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetActiveOverlayColor()}{SetActiveOverlayColor()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Active\+Overlay\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s active color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+color} & color of the body when it is active \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a8b6fc7a31add16161734d34bd1dbd8e9}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_ac5426e6e442b44462c49e136c22b0673}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_ac5426e6e442b44462c49e136c22b0673}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetBodyColor@{SetBodyColor}}
+\index{SetBodyColor@{SetBodyColor}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetBodyColor()}{SetBodyColor()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Body\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+body\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element body color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+body\+Color} & color of the body \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_afb64ef858e0e4bfdbd73ca4fa3639b78}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a6a2c5173d84c6d1ebfedd8ef2d3aafe3}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a6a2c5173d84c6d1ebfedd8ef2d3aafe3}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetBodyPosition@{SetBodyPosition}}
+\index{SetBodyPosition@{SetBodyPosition}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetBodyPosition()}{SetBodyPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Body\+Position (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{bool}]{a\+\_\+relative\+To\+Parent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter function to set the menubar\textquotesingle{}s Position. 
+
+@virtual
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+posX} & x-\/position of the element \\
+\hline
+{\em a\+\_\+posY} & y-\/position of the element \\
+\hline
+{\em a\+\_\+relative\+To\+Parent} & is true if the passed position is relative to its parent; default -\/\texorpdfstring{$>$}{>} false. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a6b25e6274568034173591d614bf7401c}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_aec4d1f774197f4645d0a0b4cacd93d24}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_aec4d1f774197f4645d0a0b4cacd93d24}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetBodyPosition@{SetBodyPosition}}
+\index{SetBodyPosition@{SetBodyPosition}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetBodyPosition()}{SetBodyPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Body\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{bool}]{a\+\_\+relative\+To\+Parent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter function to set the menubar\textquotesingle{}s Position. 
+
+@virtual
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+pos} & position of the element \\
+\hline
+{\em a\+\_\+relative\+To\+Parent} & is true if the passed position is relative to its parent; default -\/\texorpdfstring{$>$}{>} false. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa37f83be67b060565445cea7fd940d8c}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a362aedc3a8bebff33dbc07b9ce5b1760}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a362aedc3a8bebff33dbc07b9ce5b1760}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetBodySize@{SetBodySize}}
+\index{SetBodySize@{SetBodySize}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetBodySize()}{SetBodySize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Body\+Size (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter function to set the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}}\textquotesingle{}s size. 
+
+@virtual
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+\begin{DoxyNote}{Note}
+this is the menu bar size and not the menus size. Menu size is determined by its content.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+item\+SizeX} & length of the menubar \\
+\hline
+{\em a\+\_\+item\+SizeY} & height of the menubar \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a1d06f2c992d2e68f82c172e6506cb79e}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_aef094f4b37ecea46ad9ca9926ed767dd}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_aef094f4b37ecea46ad9ca9926ed767dd}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetBodySize@{SetBodySize}}
+\index{SetBodySize@{SetBodySize}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetBodySize()}{SetBodySize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Body\+Size (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter function to set the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Menu\+Bar}}\textquotesingle{}s size. 
+
+@virtual
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+\begin{DoxyNote}{Note}
+this is the menu bar size and not the menu itself
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The menu height cannot be smaller than font size + 2 px.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & length and height the menubar -\/\texorpdfstring{$>$}{>} sf\+::vector2f \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a4b7d9913f8f3186aace13fa28680ef04}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a4b7d9913f8f3186aace13fa28680ef04}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetFont@{SetFont}}
+\index{SetFont@{SetFont}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetFont()}{SetFont()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font $\ast$}]{a\+\_\+font }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the font for the menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+font} & pointer to a loaded font \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a74dc0c8e167a1887dba8712476ec413a}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a74dc0c8e167a1887dba8712476ec413a}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetFontColor@{SetFontColor}}
+\index{SetFontColor@{SetFontColor}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetFontColor()}{SetFontColor()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Font\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+White}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the Font color 
+
+param a\+\_\+color font color -\/\texorpdfstring{$>$}{>} default sf\+::\+Color\+::\+White 
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5d80523467040d5d75d0742d26c077e8}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_ae4ac0394ac16b600f06f46e468ec4704}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_ae4ac0394ac16b600f06f46e468ec4704}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetFontSize@{SetFontSize}}
+\index{SetFontSize@{SetFontSize}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetFontSize()}{SetFontSize()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Font\+Size (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+font\+Size }\end{DoxyParamCaption})}
+
+
+
+Setter funtion to set the size of the font. 
+
+This does not affect the menubar height at all.
+
+\begin{DoxyWarning}{Warning}
+Before setting the font size set the menubar height
+
+Font size cannot be bigger than menu height -\/ 2. If a a\+\_\+font\+Size is bigger than the menu height by menu height -\/ 2. then sets the font size to menu height -\/ 2
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+font\+Size} & size of the font in pixel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a2459fafbd1bea356c095707d95b5178b}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a2459fafbd1bea356c095707d95b5178b}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetHotOverlayColor@{SetHotOverlayColor}}
+\index{SetHotOverlayColor@{SetHotOverlayColor}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetHotOverlayColor()}{SetHotOverlayColor()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Hot\+Overlay\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s hot color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+color} & color of the body when it is hot \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac97cdc5598f5902a63e4298d2fabf7c5}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a5eb1ba7453c4c29d11c12d002cd0b35d}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a5eb1ba7453c4c29d11c12d002cd0b35d}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetMenuBodySize@{SetMenuBodySize}}
+\index{SetMenuBodySize@{SetMenuBodySize}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetMenuBodySize()}{SetMenuBodySize()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Menu\+Body\+Size (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+item\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+helper funciton to set the body size of the menus correctly in the menubar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+item\+Index} & index of the menu in the menu list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a3372e05987ce2f314e8a3433eb58c96e}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a3372e05987ce2f314e8a3433eb58c96e}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!SetMenuPos@{SetMenuPos}}
+\index{SetMenuPos@{SetMenuPos}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{SetMenuPos()}{SetMenuPos()}}
+{\footnotesize\ttfamily void Menu\+Bar\+::\+Set\+Menu\+Pos (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+item\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+helper funciton to position the menus correctly in the menubar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+item\+Index} & index of the menu in the menu list \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_menu_bar_a991e55c21bc2656d486725131084ed68}\label{class_brood_1_1_brood_u_i_1_1_menu_bar_a991e55c21bc2656d486725131084ed68}} 
+\index{Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}!m\_menus@{m\_menus}}
+\index{m\_menus@{m\_menus}!Brood::BroodUI::MenuBar@{Brood::BroodUI::MenuBar}}
+\doxysubsubsection{\texorpdfstring{m\_menus}{m\_menus}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}$\ast$$>$ Brood\+::\+Brood\+UI\+::\+Menu\+Bar\+::m\+\_\+menus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores the list of drop down menus 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_menu_bar_8h}{Menu\+Bar.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_menu_bar_8cpp}{Menu\+Bar.\+cpp}}\end{DoxyCompactItemize}

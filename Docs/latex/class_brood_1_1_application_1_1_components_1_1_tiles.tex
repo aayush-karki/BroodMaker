@@ -1,0 +1,233 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles}{}\doxysection{Brood\+::Application\+::Components\+::Tiles Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_tiles}\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+
+
+{\ttfamily \#include $<$Tiles.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Components\+::Tiles\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_brood_1_1_application_1_1_components_1_1_tiles}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a3cafab4efdd0282a7afe22a4cc0bd1c9}{Tiles}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a2bb3d1679f24c7e174c9c7481c016a44}{$\sim$\+Tiles}} ()
+\begin{DoxyCompactList}\small\item\em Default Destructors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ad6d5bb3ef6715f1263f7b9fad387b8ce}{Tiles}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}} \&a\+\_\+other\+Tile)
+\begin{DoxyCompactList}\small\item\em Copy contrutor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ab1628b245d7840ea05b8c9e4bd58d774}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}} \&a\+\_\+other)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+const sf\+::\+Vector2u \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ac7bc51481115a577b5f181e901a5c6a1}{Get\+Row\+And\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Getter Function to get the postion of the tile relative to the board\textquotesingle{}s column and row. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_abf62fdae2e4284e7bab27a2d299868c3}{Get\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Getter Function to get the row number of the tile relative to the board\textquotesingle{}s row. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_aadef9d77c9c13b4191434d222eef26ef}{Get\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Getter Function to get the col number of the tile relative to the board\textquotesingle{}s col. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_aa27f498848660b6315d6de94659d65ee}{Set\+Row\+And\+Col}} (sf\+::\+Vector2u a\+\_\+row\+Col)
+\begin{DoxyCompactList}\small\item\em Setter Function to set the postion of the tile relative to the board\textquotesingle{}s column and row. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ae7eb4d9d598b6b466ad3b2d1c7629665}{Set\+Row}} (unsigned a\+\_\+row)
+\begin{DoxyCompactList}\small\item\em Setter Function to set the row number of the tile relative to the board\textquotesingle{}s row. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a8f3505d23bec25c55d1a964526875612}{Set\+Col}} (unsigned a\+\_\+col)
+\begin{DoxyCompactList}\small\item\em Setter Function to set the col number of the tile relative to the board\textquotesingle{}s col. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a01d36ef1aac302d9b0f6afe8f3714ff4}{Update\+Tile}} (unsigned a\+\_\+tile\+Row\+Num=0, unsigned a\+\_\+tile\+Col\+Num=0, float a\+\_\+tile\+SizeX=0.f, float a\+\_\+tile\+SizeY=0.f, float a\+\_\+board\+PosX=0.f, float a\+\_\+board\+PosY=0.f)
+\begin{DoxyCompactList}\small\item\em updates the member variable and size of this tile \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_aa637e4fbb1bf5be700c25958f20362dd}{m\+\_\+tile\+Row\+Num}}
+\begin{DoxyCompactList}\small\item\em row position in a board \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a7132362299cef4106b682399f5250893}{m\+\_\+tile\+Col\+Num}}
+\begin{DoxyCompactList}\small\item\em column position in a board \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_a3cafab4efdd0282a7afe22a4cc0bd1c9}\label{class_brood_1_1_application_1_1_components_1_1_tiles_a3cafab4efdd0282a7afe22a4cc0bd1c9}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!Tiles@{Tiles}}
+\index{Tiles@{Tiles}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{Tiles()}{Tiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Tiles\+::\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_a2bb3d1679f24c7e174c9c7481c016a44}\label{class_brood_1_1_application_1_1_components_1_1_tiles_a2bb3d1679f24c7e174c9c7481c016a44}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!````~Tiles@{$\sim$Tiles}}
+\index{````~Tiles@{$\sim$Tiles}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{$\sim$Tiles()}{~Tiles()}}
+{\footnotesize\ttfamily Tiles\+::$\sim$\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Destructors. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_ad6d5bb3ef6715f1263f7b9fad387b8ce}\label{class_brood_1_1_application_1_1_components_1_1_tiles_ad6d5bb3ef6715f1263f7b9fad387b8ce}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!Tiles@{Tiles}}
+\index{Tiles@{Tiles}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{Tiles()}{Tiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Tiles\+::\+Tiles (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}} \&}]{a\+\_\+other\+Tile }\end{DoxyParamCaption})}
+
+
+
+Copy contrutor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_aadef9d77c9c13b4191434d222eef26ef}\label{class_brood_1_1_application_1_1_components_1_1_tiles_aadef9d77c9c13b4191434d222eef26ef}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!GetCol@{GetCol}}
+\index{GetCol@{GetCol}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{GetCol()}{GetCol()}}
+{\footnotesize\ttfamily const unsigned Tiles\+::\+Get\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter Function to get the col number of the tile relative to the board\textquotesingle{}s col. 
+
+\begin{DoxyReturn}{Returns}
+col number of the tile relative to the board\textquotesingle{}s col 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_abf62fdae2e4284e7bab27a2d299868c3}\label{class_brood_1_1_application_1_1_components_1_1_tiles_abf62fdae2e4284e7bab27a2d299868c3}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!GetRow@{GetRow}}
+\index{GetRow@{GetRow}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{GetRow()}{GetRow()}}
+{\footnotesize\ttfamily const unsigned Tiles\+::\+Get\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter Function to get the row number of the tile relative to the board\textquotesingle{}s row. 
+
+\begin{DoxyReturn}{Returns}
+row number of the tile relative to the board\textquotesingle{}s row 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_ac7bc51481115a577b5f181e901a5c6a1}\label{class_brood_1_1_application_1_1_components_1_1_tiles_ac7bc51481115a577b5f181e901a5c6a1}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!GetRowAndCol@{GetRowAndCol}}
+\index{GetRowAndCol@{GetRowAndCol}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{GetRowAndCol()}{GetRowAndCol()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2u Tiles\+::\+Get\+Row\+And\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter Function to get the postion of the tile relative to the board\textquotesingle{}s column and row. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000017}{Todo}}]add copy constructor and assignment \end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+a vector2i containing the position of the tile; .x-\/\texorpdfstring{$>$}{>} is the tile\textquotesingle{}s column number; .y-\/\texorpdfstring{$>$}{>} is the tile\textquotesingle{}s row number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_ab1628b245d7840ea05b8c9e4bd58d774}\label{class_brood_1_1_application_1_1_components_1_1_tiles_ab1628b245d7840ea05b8c9e4bd58d774}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood\+::\+Application\+::\+Components\+::\+Tiles}} \& Tiles\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}} \&}]{a\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_a8f3505d23bec25c55d1a964526875612}\label{class_brood_1_1_application_1_1_components_1_1_tiles_a8f3505d23bec25c55d1a964526875612}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!SetCol@{SetCol}}
+\index{SetCol@{SetCol}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{SetCol()}{SetCol()}}
+{\footnotesize\ttfamily void Tiles\+::\+Set\+Col (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+Setter Function to set the col number of the tile relative to the board\textquotesingle{}s col. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+row} & row number of the tile relative to the board\textquotesingle{}s col \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_ae7eb4d9d598b6b466ad3b2d1c7629665}\label{class_brood_1_1_application_1_1_components_1_1_tiles_ae7eb4d9d598b6b466ad3b2d1c7629665}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!SetRow@{SetRow}}
+\index{SetRow@{SetRow}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{SetRow()}{SetRow()}}
+{\footnotesize\ttfamily void Tiles\+::\+Set\+Row (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+row }\end{DoxyParamCaption})}
+
+
+
+Setter Function to set the row number of the tile relative to the board\textquotesingle{}s row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+row} & row number of the tile relative to the board\textquotesingle{}s row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_aa27f498848660b6315d6de94659d65ee}\label{class_brood_1_1_application_1_1_components_1_1_tiles_aa27f498848660b6315d6de94659d65ee}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!SetRowAndCol@{SetRowAndCol}}
+\index{SetRowAndCol@{SetRowAndCol}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{SetRowAndCol()}{SetRowAndCol()}}
+{\footnotesize\ttfamily void Tiles\+::\+Set\+Row\+And\+Col (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2u}]{a\+\_\+row\+Col }\end{DoxyParamCaption})}
+
+
+
+Setter Function to set the postion of the tile relative to the board\textquotesingle{}s column and row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+row\+Col} & a vector2u containing the position of the tile; .x-\/\texorpdfstring{$>$}{>} is the tile\textquotesingle{}s column number; .y-\/\texorpdfstring{$>$}{>} is the tile\textquotesingle{}s row number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_a01d36ef1aac302d9b0f6afe8f3714ff4}\label{class_brood_1_1_application_1_1_components_1_1_tiles_a01d36ef1aac302d9b0f6afe8f3714ff4}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!UpdateTile@{UpdateTile}}
+\index{UpdateTile@{UpdateTile}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{UpdateTile()}{UpdateTile()}}
+{\footnotesize\ttfamily void Tiles\+::\+Update\+Tile (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+tile\+Row\+Num = {\ttfamily 0},  }\item[{unsigned}]{a\+\_\+tile\+Col\+Num = {\ttfamily 0},  }\item[{float}]{a\+\_\+tile\+SizeX = {\ttfamily 0.f},  }\item[{float}]{a\+\_\+tile\+SizeY = {\ttfamily 0.f},  }\item[{float}]{a\+\_\+board\+PosX = {\ttfamily 0.f},  }\item[{float}]{a\+\_\+board\+PosY = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
+
+
+updates the member variable and size of this tile 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+tile\+Row\+Num} & represents row number of the board -\/\texorpdfstring{$>$}{>} default 0 \\
+\hline
+{\em a\+\_\+tile\+Col\+Num} & represents column of the board -\/\texorpdfstring{$>$}{>} default 0 \\
+\hline
+{\em a\+\_\+tile\+SizeX} & size of each tile in x-\/asix -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+{\em a\+\_\+tile\+SizeY} & size of each tile in y-\/asix -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+{\em a\+\_\+board\+PosX} & board\textquotesingle{}s x-\/position on screen -\/\texorpdfstring{$>$}{>} default 0.\+f relative to the render window -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+{\em a\+\_\+board\+PosY} & board\textquotesingle{}s y-\/position on screen; realtive to the render window -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_a7132362299cef4106b682399f5250893}\label{class_brood_1_1_application_1_1_components_1_1_tiles_a7132362299cef4106b682399f5250893}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!m\_tileColNum@{m\_tileColNum}}
+\index{m\_tileColNum@{m\_tileColNum}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{m\_tileColNum}{m\_tileColNum}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Tiles\+::m\+\_\+tile\+Col\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+column position in a board 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_tiles_aa637e4fbb1bf5be700c25958f20362dd}\label{class_brood_1_1_application_1_1_components_1_1_tiles_aa637e4fbb1bf5be700c25958f20362dd}} 
+\index{Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}!m\_tileRowNum@{m\_tileRowNum}}
+\index{m\_tileRowNum@{m\_tileRowNum}!Brood::Application::Components::Tiles@{Brood::Application::Components::Tiles}}
+\doxysubsubsection{\texorpdfstring{m\_tileRowNum}{m\_tileRowNum}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Tiles\+::m\+\_\+tile\+Row\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+row position in a board 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_tiles_8h}{Tiles.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_tiles_8cpp}{Tiles.\+cpp}}\end{DoxyCompactItemize}

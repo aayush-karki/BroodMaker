@@ -1,0 +1,37 @@
+\hypertarget{class_u_i_element}{}\doxysection{UIElement Class Reference}
+\label{class_u_i_element}\index{UIElement@{UIElement}}
+
+
+a abstract base class that is parent to all the different UI elements  
+
+
+
+
+{\ttfamily \#include \char`\"{}UIElement.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+a abstract base class that is parent to all the different UI elements 
+
+For the UI element the order of update logic and rending matters.
+
+Update Logic\+: We first check if we should execute the funciton for the element with Do\+Element() function which returns a boolean value. Another method for some but not all of the UI Element is to check if the m\+\_\+is\+Selected value is true or false. On the same note the order for checking update logic is from top left to bottom right-- like reading a english book.
+
+Render Logic\+: The order for render logic is to go from bottom to top starting form bottom-\/right to left. This is because of how rendering works where things drawn last is always on top.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000018}{Todo}}]create a verticalmenus for ma \mbox{\hyperlink{class_u_i_element}{UIElement}}. This could be used to for Drop down menus. 
+
+create a font class whose job is to load and save font and replace all the m\+\_\+font to object of that file 
+
+Encapsulate the Brood\+UI better. 
+
+create a log class that logs all the errors 
+
+change the setter funciton to return bool, error\+Message\end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_u_i_element_8h}{UIElement.\+h}}\end{DoxyCompactItemize}

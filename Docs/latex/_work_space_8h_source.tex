@@ -1,0 +1,224 @@
+\hypertarget{_work_space_8h_source}{}\doxysection{Work\+Space.\+h}
+\label{_work_space_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/WorkSpace.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/WorkSpace.h}}
+\mbox{\hyperlink{_work_space_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_drop_down_input_8h}{DropDownInput.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_text_box_8h}{TextBox.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_data_manager_8h}{GameDataManager.h}}"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{23 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keyword}{class }\mbox{\hyperlink{class_work_space}{WorkSpace}};}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 \textcolor{comment}{// ================= start of WorkSpace class ===========================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{comment}{// ================= public member function =================  }}
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a2006b83469ebe20060971ffc54e65c6e}{WorkSpace}}();}
+\DoxyCodeLine{51     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a810a685db430d3cd621a1f0cadb8d333}{\string~WorkSpace}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{// setter function}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a704c59b12f33bec0586ac01c0cc15c47}{SetFont}}( sf::Font* a\_font );}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// pure virtual funciton}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{60     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{InitializeWorkSpace}}() = 0;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{63     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Update}}() = 0;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{66     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{UpdateAllDispayElement}}() = 0;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// draw to the screen}}
+\DoxyCodeLine{69     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Draw}}( sf::RenderWindow\& a\_window ) = 0;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// debugger}}
+\DoxyCodeLine{72     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Debugger}}() = 0;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// setter function for game data}}
+\DoxyCodeLine{75     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a2c7c568ac6c67fb2f73558a076dc42b1}{SetGameDataManager}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameDataManagerPtr);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// ================= protected member function ==============}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{82     \textcolor{comment}{// ===== helper funciton to dynamicallycreate UI elements =====}}
+\DoxyCodeLine{83     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85     \textcolor{comment}{// Dynamically create a button, initializes it, and adds}}
+\DoxyCodeLine{86     \textcolor{comment}{// it to m\_unNameList}}
+\DoxyCodeLine{87     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a92969455f3ae48bec2f94bd90030dcc8}{DyCreateButton}}( sf::Vector2f a\_size,}
+\DoxyCodeLine{88                                             sf::Vector2f a\_pos,}
+\DoxyCodeLine{89                                             std::string a\_text = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{90                                             sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{91     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a92969455f3ae48bec2f94bd90030dcc8}{DyCreateButton}}( \textcolor{keywordtype}{float} a\_sizeX, \textcolor{keywordtype}{float} a\_sizeY,}
+\DoxyCodeLine{92                                             \textcolor{keywordtype}{float} a\_posX, \textcolor{keywordtype}{float} a\_posY,}
+\DoxyCodeLine{93                                             std::string a\_text = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{94                                             sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// Dynamically create a textbox, initializes it, and adds}}
+\DoxyCodeLine{97     \textcolor{comment}{// it to m\_unNameList}}
+\DoxyCodeLine{98     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a1dfec50931065c6410a6180f39f8dfef}{DyCreateTextBox}}( sf::Vector2f a\_size,}
+\DoxyCodeLine{99                                               sf::Vector2f a\_pos,}
+\DoxyCodeLine{100                                               std::string a\_text = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{101                                               \textcolor{keywordtype}{bool} a\_isEditable = \textcolor{keyword}{false},}
+\DoxyCodeLine{102                                               std::string a\_placeholderText = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{103                                               sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{104     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a1dfec50931065c6410a6180f39f8dfef}{DyCreateTextBox}}( \textcolor{keywordtype}{float} a\_sizeX, \textcolor{keywordtype}{float} a\_sizeY,}
+\DoxyCodeLine{105                                               \textcolor{keywordtype}{float} a\_posX, \textcolor{keywordtype}{float} a\_posY,}
+\DoxyCodeLine{106                                               std::string a\_text = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{107                                               \textcolor{keywordtype}{bool} a\_isEditable = \textcolor{keyword}{false},}
+\DoxyCodeLine{108                                               std::string a\_placeholderText = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{109                                               sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{// Dynamically create a Drop down Input, initializes it, }}
+\DoxyCodeLine{112     \textcolor{comment}{// and adds it to m\_unNameList}}
+\DoxyCodeLine{113     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a977fbec0e2ec48b14ade5eefe68f8f8a}{DyCreateDropDownInput}}( sf::Vector2f a\_size,}
+\DoxyCodeLine{114                                                           sf::Vector2f a\_pos,}
+\DoxyCodeLine{115                                                           sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{116     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a977fbec0e2ec48b14ade5eefe68f8f8a}{DyCreateDropDownInput}}( \textcolor{keywordtype}{float} a\_sizeX, \textcolor{keywordtype}{float} a\_sizeY,}
+\DoxyCodeLine{117                                                           \textcolor{keywordtype}{float} a\_posX, \textcolor{keywordtype}{float} a\_posY,}
+\DoxyCodeLine{118                                                           sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{comment}{// Dynamically createss a dropdown input Panel Element. }}
+\DoxyCodeLine{121     \textcolor{comment}{//      It has 2 UI element and its layout is }}
+\DoxyCodeLine{122     \textcolor{comment}{//      <textBox prompt> <dropdown input> }}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_ac15710913ecf0f0352fabe4e1a8776dd}{DyCreateDropdownInputPannelElement}}( sf::RectangleShape* a\_panelBodyPtr,}
+\DoxyCodeLine{124                                              \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtPromptPtr,}
+\DoxyCodeLine{125                                              \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}** a\_ddiPtr,}
+\DoxyCodeLine{126                                              std::string a\_promptToDisplay,}
+\DoxyCodeLine{127                                              std::vector<std::string> a\_itemsToAdd,}
+\DoxyCodeLine{128                                              \textcolor{keywordtype}{unsigned} a\_firstItemLength = 0,}
+\DoxyCodeLine{129                                              \textcolor{keywordtype}{bool} a\_createFromTop = \textcolor{keyword}{false} );}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{comment}{// Dynamically createss a Panel Element. }}
+\DoxyCodeLine{132     \textcolor{comment}{//      It has 4 UI element and its layout is }}
+\DoxyCodeLine{133     \textcolor{comment}{//      <textBox prompt> <button '<'> <textbox value> <button '>'> }}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a5b3506094cded273a3ca56e5736994da}{DyCreateDecIncPannelElement}}( sf::RectangleShape* a\_panelBodyPtr,}
+\DoxyCodeLine{135                                       \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtPromptPtr,}
+\DoxyCodeLine{136                                       \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}** a\_btnDecPtr,}
+\DoxyCodeLine{137                                       \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtValuePtr,}
+\DoxyCodeLine{138                                       \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}** a\_btnIncPtr,}
+\DoxyCodeLine{139                                       std::string a\_promptToDisplay,}
+\DoxyCodeLine{140                                       std::string a\_valueToDisplay,}
+\DoxyCodeLine{141                                       \textcolor{keywordtype}{bool} a\_createFromTop = \textcolor{keyword}{false} );}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{// Dynamically createss a file input Panel Element. }}
+\DoxyCodeLine{144     \textcolor{comment}{//      It has 3 UI element and its layout is }}
+\DoxyCodeLine{145     \textcolor{comment}{//      <textBox prompt> }}
+\DoxyCodeLine{146     \textcolor{comment}{//      <textbox>  }}
+\DoxyCodeLine{147     \textcolor{comment}{//      <open butotn>}}
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a796747b84c5b4a79e118ab97e35b73e2}{DyCreateFileInputPannelElement}}( sf::RectangleShape* a\_panelBodyPtr,}
+\DoxyCodeLine{149                                          \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtPromptPtr,}
+\DoxyCodeLine{150                                          \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtFileInputPtr,}
+\DoxyCodeLine{151                                          \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}** a\_btnOpenFilePtr,}
+\DoxyCodeLine{152                                          std::string a\_promptToDisplay,}
+\DoxyCodeLine{153                                          std::string a\_valueToDisplay,}
+\DoxyCodeLine{154                                          \textcolor{keywordtype}{bool} a\_createFromTop = \textcolor{keyword}{false} );}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{comment}{// Dynamically createss a Test Input Panel Element. }}
+\DoxyCodeLine{157     \textcolor{comment}{//      It has 2 UI element and its layout is }}
+\DoxyCodeLine{158     \textcolor{comment}{//      <textBox prompt>  <textbox>  }}
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_af5c9a4ee6fa6c5d9dcaac6ea4f42013e}{DyCreateTextInputPannelElement}}( sf::RectangleShape* a\_panelBodyPtr,}
+\DoxyCodeLine{160                                          \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtPromptPtr,}
+\DoxyCodeLine{161                                          \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}** a\_txtTextInputtPtr,}
+\DoxyCodeLine{162                                          std::string a\_promptToDisplay,}
+\DoxyCodeLine{163                                          std::string a\_valueToDisplay,}
+\DoxyCodeLine{164                                          std::string a\_placeHolderText,}
+\DoxyCodeLine{165                                          \textcolor{keywordtype}{bool} a\_createFromTop = \textcolor{keyword}{false} );}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{168     \textcolor{comment}{// =========== generalized update functions ==================}}
+\DoxyCodeLine{169     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \textcolor{comment}{// TODO may be generalize for other editor too}}
+\DoxyCodeLine{172     \textcolor{comment}{// TODO maybe could be made like a initializer function}}
+\DoxyCodeLine{173     \textcolor{comment}{// TODO make this a signify if the if the element was }}
+\DoxyCodeLine{174     \textcolor{comment}{//      increased, decreased, or none}}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{176     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{177     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{178     \textcolor{comment}{// This is a generalized update SizeX}}
+\DoxyCodeLine{179     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_ae885b1259e5d77e131a8acedcd0ce47d}{UpdateDecIncSizeX}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnDecSizeX,}
+\DoxyCodeLine{180                             \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* a\_txtSizeX,}
+\DoxyCodeLine{181                             \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnIncSizeX,}
+\DoxyCodeLine{182                             \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_elemnetToChangeSizeX,}
+\DoxyCodeLine{183                             \textcolor{keywordtype}{unsigned} a\_unit,}
+\DoxyCodeLine{184                             \textcolor{keywordtype}{unsigned} a\_lowerLimit,}
+\DoxyCodeLine{185                             \textcolor{keywordtype}{unsigned} a\_upperLimit );}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{188     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{189     \textcolor{comment}{// This is a generalized update SizeY}}
+\DoxyCodeLine{190     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a29ba281446bafc409bcbc6e5c3a5a864}{UpdateDecIncSizeY}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnDecSizeY,}
+\DoxyCodeLine{191                             \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* a\_txtSizeY,}
+\DoxyCodeLine{192                             \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnIncSizeY,}
+\DoxyCodeLine{193                             \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_elemnetToChangeSizeY,}
+\DoxyCodeLine{194                             \textcolor{keywordtype}{unsigned} a\_unit,}
+\DoxyCodeLine{195                             \textcolor{keywordtype}{unsigned} a\_lowerLimit,}
+\DoxyCodeLine{196                             \textcolor{keywordtype}{unsigned} a\_upperLimit );}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{comment}{// checks if the user interacted with the Card }}
+\DoxyCodeLine{199     \textcolor{comment}{// x Pos panel Element}}
+\DoxyCodeLine{200     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aea9c5cc849be1d58cbe5f6b069262b7b}{UpdateDecIncPosX}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnDecPosX,}
+\DoxyCodeLine{201                            \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* a\_txtPosX,}
+\DoxyCodeLine{202                            \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnIncPosX,}
+\DoxyCodeLine{203                            \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_elemnetToChangePosX,}
+\DoxyCodeLine{204                            \textcolor{keywordtype}{unsigned} a\_unit,}
+\DoxyCodeLine{205                            \textcolor{keywordtype}{unsigned} a\_lowerLimit,}
+\DoxyCodeLine{206                            \textcolor{keywordtype}{unsigned} a\_upperLimit );}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{comment}{// checks if the user interacted with the Card }}
+\DoxyCodeLine{209     \textcolor{comment}{// x Pos panel Element}}
+\DoxyCodeLine{210     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa0b11026799876e2aa0b27a1062746c5}{UpdateDecIncPosY}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnDecPosY,}
+\DoxyCodeLine{211                            \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* a\_txtPosY,}
+\DoxyCodeLine{212                            \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_btnIncPosY,}
+\DoxyCodeLine{213                            \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_elemnetToChangePosX,}
+\DoxyCodeLine{214                            \textcolor{keywordtype}{unsigned} a\_unit,}
+\DoxyCodeLine{215                            \textcolor{keywordtype}{unsigned} a\_lowerLimit,}
+\DoxyCodeLine{216                            \textcolor{keywordtype}{unsigned} a\_upperLimit );}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219     \textcolor{comment}{// ================= protected data member ==================  }}
+\DoxyCodeLine{220 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{223     sf::Font* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_acf292b0f1e5366338144ff4749e8bf43}{m\_font}};}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{226     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_adf8b2b8db6aea0d19be393b5b472d5c0}{m\_gameData}};}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{229     std::vector<Brood::BroodUI::UIElement*> \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a598672ddf3a92cdbbaab46d213500e6e}{m\_unNamedUIList}};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{232     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a70800d911b625232a6f2191faa97e2f6}{m\_isDebugger}};}
+\DoxyCodeLine{233 \};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{236 \textcolor{comment}{// ================= end of WorkSpace class =============================}}
+\DoxyCodeLine{237 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

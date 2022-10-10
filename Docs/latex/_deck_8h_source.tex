@@ -1,0 +1,138 @@
+\hypertarget{_deck_8h_source}{}\doxysection{Deck.\+h}
+\label{_deck_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Deck.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Deck.h}}
+\mbox{\hyperlink{_deck_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{stdafx_8h}{stdafx.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_button_8h}{Button.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_card_info_8h}{CardInfo.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_global_variables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_access_8h}{FileAccess.h}}"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{24 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{25 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         \textcolor{keyword}{class }Deck;}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ================= start of Deck class ================================}}
+\DoxyCodeLine{39 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}} :}
+\DoxyCodeLine{52     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{comment}{// ============= public member funciton =====================}}
+\DoxyCodeLine{55 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a3f377408a57d2b06ded3b9cff47498d2}{Deck}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_parentPtr = \textcolor{keyword}{nullptr} );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{61     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a0788447d397264f6900118530d0d6174}{\string~Deck}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a3f377408a57d2b06ded3b9cff47498d2}{Deck}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}\& a\_other );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{comment}{// assignment constructor}}
+\DoxyCodeLine{67     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a2a5afbbe90ff80433c67907d8df77fa2}{operator = }}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}\& a\_other );}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// initialize the deck}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a4916241f36171d6de8d4e1da6d715e12}{InitializeDeck}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood::Application::Data::ST\_DeckPrefabData}}\& a\_deckData );}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// returns the deck data to save }}
+\DoxyCodeLine{73     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood::Application::Data::ST\_DeckPrefabData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a40621e1085a947b16bed17816dc2aa5d}{GetDataToSave}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// appends the the deck data to passed file }}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a2a9807eead4aa91090646b705d6e162a}{SaveDataToFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr, std::string a\_gameTitle,}
+\DoxyCodeLine{77     \textcolor{keywordtype}{unsigned} a\_idx );}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// appends the the deck data to passed file }}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ac4b8328ca06869eb52db15285b87317a}{LoadDataFromFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr );}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// ============= getter functions ========}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// getter funciton to get the card list}}
+\DoxyCodeLine{85     \textcolor{keyword}{const} std::vector< Brood::Application::Components::CardInfo*>\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a69ea097a748122cee6dacdc7a4f9fb66}{GetCardList}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// gets pointer to the card at given index}}
+\DoxyCodeLine{88     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood::Application::Components::CardInfo}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a47bd26258a27c01d32f85b2ffa67c167}{GetCardPtrAtIdx}}( \textcolor{keywordtype}{unsigned} a\_cardInfoIdx );}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// gets card Init file name}}
+\DoxyCodeLine{91     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a5950b42673e8813500bc413a077ab3ba}{GetCardInitFileName}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{// gets card Init file path}}
+\DoxyCodeLine{94     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ad777338149e601a99d2b453a77d1356a}{GetCardInitFilePath}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// gets card current active card index}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a9ab9bdb2e5675af4ffecbd51a2681ac6}{GetCurrActiveCardIdx}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// gets pointer to card  at current active card index}}
+\DoxyCodeLine{100     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{CardInfo}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a1910e85e7a29963e167d09111877ab97}{GetCurrActiveCardPtr}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// ============= setter functions ========}}
+\DoxyCodeLine{103     }
+\DoxyCodeLine{104     \textcolor{comment}{// sets card current active card index}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ac73fabb43a252a875021cb05b3a37cda}{SetCurrActiveCardIdx}}( \textcolor{keywordtype}{unsigned} a\_currActiveCardIdx );}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// sets deck size}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a8cafff0ea15411d59b1a0aed491aeec1}{SetCardListSize}}( \textcolor{keywordtype}{unsigned} a\_cardListSize );}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// loads cards from a card Init file path}}
+\DoxyCodeLine{111     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a4f9fb5a7063ff7e78f66ea450eed30e9}{LoadCardFromInitFile}}( std::string  a\_fileInitPath);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{// loads cards from a card Init file path}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_acbb7ff590ae7af992409f8a7685be25a}{SaveCardToInitFile}}( std::string  a\_fileInitPath );}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// returns the first undealt card and increases the counter by 1}}
+\DoxyCodeLine{117     \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{CardInfo}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a38bbdcf678b3fd0b7858656ea4d00c36}{DealCard}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// shuffels the cards in m\_stock}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a5539082aa002cb2640abcb0b4c06ab95}{Shuffel}}();}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{// restes the currentCardidx to zero and reshuffels the deck}}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a65b9d1bbb9a78eb2f654f4d1c56e8986}{ResetDeck}}();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{// adds the passed card to the deck}}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ad7ea5b6709f575b3a3f1cbd305cc98c4}{AddCardInfoToDeck}}(}
+\DoxyCodeLine{127         \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood::Application::Components::CardInfo}} a\_cardToAdd );}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// ============= private member variable =====================}}
+\DoxyCodeLine{130 \textcolor{keyword}{private}:}
+\DoxyCodeLine{131     \textcolor{comment}{// stack of undelt cards}}
+\DoxyCodeLine{132     std::vector<Brood::Application::Components::CardInfo*> \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a00d62cc70dff72ca8082c043fcf7a13b}{m\_cardList}};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{// holds the index of first undealt card}}
+\DoxyCodeLine{135     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ad91dc56224f29a355d083a79726d20f5}{m\_currUndealtCardIdx}};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{comment}{// holds the card init file Path}}
+\DoxyCodeLine{138     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a121a315be96ed07b24c0400c46d6ab7b}{m\_cardInitFilePath}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{// holds the card init file Path}}
+\DoxyCodeLine{141     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a7b3014c38a1b14e29bcc1a5290695458}{m\_cardInitFileName}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{// holds the index of card that is currently active}}
+\DoxyCodeLine{144     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a50d7baf779e0fc75b5159ff3ef3c92a0}{m\_currActiveCardIdx}};}
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{149 \textcolor{comment}{// ================= start of Deck class ================================}}
+\DoxyCodeLine{150 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

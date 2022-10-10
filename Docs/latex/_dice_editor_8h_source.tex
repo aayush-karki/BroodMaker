@@ -1,0 +1,180 @@
+\hypertarget{_dice_editor_8h_source}{}\doxysection{Dice\+Editor.\+h}
+\label{_dice_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DiceEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DiceEditor.h}}
+\mbox{\hyperlink{_dice_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}} \textcolor{comment}{// includes all the other uiElements}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{class }\mbox{\hyperlink{class_dice_editor}{DiceEditor}};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= start of DiceEditor class ==========================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor}{Brood::Application::DiceEditor}} :}
+\DoxyCodeLine{53     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{56 \textcolor{keyword}{public}:}
+\DoxyCodeLine{57     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab0e5e9081e111aa34dac09d803557738}{DiceEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{59                 sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab74111712406fc20f271777dd1b586f4}{\string~DiceEditor}}();}
+\DoxyCodeLine{63     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aaf59b8843cb98cce5b8cd3ee1c5e3ce2}{InitializeWorkSpace}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a441a2d147839326560719a96563f344e}{Update}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a711bdab1aee6897d5943e99a948f86c9}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// renders to the screen}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a064e14551ec334cc2108c0724c1f7f9a}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9a6c20dcbaa3aa574dc064509b5affe5}{Debugger}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{// ================= private member function ==================     }}
+\DoxyCodeLine{81 \textcolor{keyword}{private}:}
+\DoxyCodeLine{82     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{83     \textcolor{comment}{// =========== update for Dice setting =======================}}
+\DoxyCodeLine{84     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// checks if the user interacted with the Dice }}
+\DoxyCodeLine{87     \textcolor{comment}{// side number panel Element}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a08f85cd505d71c880858ffb8d8dca801}{UpdateDiceSideNum}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// checks if the user interacted with the Dice }}
+\DoxyCodeLine{91     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a7a1f2e9833a425546861f306db551394}{UpdateDiceSizeX}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// checks if the user interacted with the Dice }}
+\DoxyCodeLine{95     \textcolor{comment}{// y Pos panel Element}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aa73fb48e998cde3904068bd3b9e82529}{UpdateDiceSizeY}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// checks if the user interacted with the Dice }}
+\DoxyCodeLine{99     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_adbc2dfea7af57d48515729120348dbaa}{UpdateDicePosX}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// checks if the user interacted with the Dice }}
+\DoxyCodeLine{103     \textcolor{comment}{// y Pos panel Element}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab0728291e0d08b5fac1857b277dbde10}{UpdateDicePosY}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{107     \textcolor{comment}{// Dice texture panel Element}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a2698ad782df4b00611d5bd518fe94fd5}{UpdateDiceFileTexture}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{111     \textcolor{comment}{// roll dice button}}
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a087bb70559bdae96c2ce727be3233ca7}{UpdateRollDice}}();}
+\DoxyCodeLine{113     \textcolor{comment}{// ================= private member variable ==================  }}
+\DoxyCodeLine{114 \textcolor{keyword}{private}:}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a804ff7353db52a8e670dec768b28f83e}{m\_panelBodyPtr}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{120     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a59c4b1c9cfab99cdc0b031da8590deeb}{m\_boardPtr}};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{123     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood::Application::Components::Dice}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9081b64185976677e176cff4113d3d9e}{m\_dicePtr}};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{126     \textcolor{comment}{// =========== member variables for dice setting =============}}
+\DoxyCodeLine{127     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129     \textcolor{comment}{// ==== UI elements to show setting title  ====}}
+\DoxyCodeLine{130     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_adfda2255710b4e8535eb0dad74fa9759}{m\_txtSettingTitle}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{comment}{// ==== UI elements to change dice sides ====}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{135     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab8e1b6afc7f1c6937e5964117ff8978d}{m\_txtDiceSidePrompt}};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{138     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a18641e61f341e21dea85abf4de681c0c}{m\_btnDiceDecSide}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aa20963e410ba6f9dfae7619a374f613f}{m\_txtDiceSide}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a39cadb170044ae0e883bad9574b7ee5e}{m\_btnDiceIncSide}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// ==== UI elements to change x-\/size of dice ====}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{149     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a8d44450a10d8e8c47d49b174199b394a}{m\_txtDiceSizeXPrompt}};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{152     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a2be0326d357bbc5f7c70d5f465410b02}{m\_btnDiceDecSizeX}};}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{155     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ada4cc165e0c640cb8c77c9fb2a578423}{m\_txtDiceSizeX}};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_afdd88a5e0aedfe391c09507906adc050}{m\_btnDiceIncSizeX}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// ==== UI elements to change y-\/size of  y-\/size Index ====}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{163     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a27f1b7539c5a04bec30170c0e66201e5}{m\_txtDiceSizeYPrompt}};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{166     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a2ccbc6cb84cd3b9ff1082f08e9c96f1b}{m\_btnDiceDecSizeY}};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{169     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab6b31117efabda709915b02f85807418}{m\_txtDiceSizeY}};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a675b32c13d3ef7d9355a444d2a023c43}{m\_btnDiceIncSizeY}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     \textcolor{comment}{// ==== UI elements to change x-\/Pos of  Dice Index ====}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{177     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_acecd3da73aa33e6a6eb2e60deaea5648}{m\_txtDicePosXPrompt}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{180     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_af32329fae989032aacdd8deecc5faab5}{m\_btnDiceDecPosX}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{183     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aba04b2be322775a7f547c7f309254b8a}{m\_txtDicePosX}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a1dbd03b3927b6bb6a529ffa8c0bf11c7}{m\_btnDiceIncPosX}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{comment}{// ==== UI elements to change y-\/Pos of  Dice Index ====}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{191     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a3ca5de373a4c4c44b6dc96bbae64e057}{m\_txtDicePosYPrompt}};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{194     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a08934ac0318a7ae7a72a01a4ef01aba4}{m\_btnDiceDecPosY}};}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{197     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a73dc82bffc6beeb2a6720cf1af1af57d}{m\_txtDicePosY}};}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{200     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9ce4b9ed87fdeeb8de9ad2e835d80e8d}{m\_btnDiceIncPosY}};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{comment}{// ==== UI elements to enter a filename texture  ====}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{205     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a414d0c29c4725811fc09079eff3d3e2f}{m\_txtDiceFileNamePrompt}};}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{208     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a67970549db8377f41a665ec03b1cc1d4}{m\_txtDiceFileInput}};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{211     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_afa0bbcfc2e2da5c9a2df7ce5f99ef146}{m\_btnDiceOpenFile}};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{comment}{// ==== UI elements to change Dice sprite ====}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{218     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a1267a8db753342f84888784bd6e79f2b}{m\_btnRollDice}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{224 \textcolor{comment}{// ================= end of DiceEditor class ============================}}
+\DoxyCodeLine{225 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

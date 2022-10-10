@@ -1,0 +1,68 @@
+\hypertarget{namespace_brood_1_1_utility_funcs}{}\doxysection{Brood\+::Utility\+Funcs Namespace Reference}
+\label{namespace_brood_1_1_utility_funcs}\index{Brood::UtilityFuncs@{Brood::UtilityFuncs}}
+
+
+It contains all the utility functions for which making a stand alone class would not make sense.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespace_brood_1_1_utility_funcs_a355a5889aa373b9b3cfa523a13bfef19}{Load\+Texture\+From\+File}} (sf\+::\+Texture \&a\+\_\+texture, const std\+::string \&a\+\_\+cwd, std\+::string a\+\_\+file\+Path)
+\begin{DoxyCompactList}\small\item\em It opens a texture form a file and loads it into the texture. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_brood_1_1_utility_funcs_ace67d70296cb2bda76ccf42cf6ba8975}{Load\+Texture\+From\+File}} (sf\+::\+Texture \&a\+\_\+texture, std\+::string a\+\_\+file\+Path)
+\begin{DoxyCompactList}\small\item\em It opens a texture form a file and loads it into the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It contains all the utility functions for which making a stand alone class would not make sense. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_brood_1_1_utility_funcs_a355a5889aa373b9b3cfa523a13bfef19}\label{namespace_brood_1_1_utility_funcs_a355a5889aa373b9b3cfa523a13bfef19}} 
+\index{Brood::UtilityFuncs@{Brood::UtilityFuncs}!LoadTextureFromFile@{LoadTextureFromFile}}
+\index{LoadTextureFromFile@{LoadTextureFromFile}!Brood::UtilityFuncs@{Brood::UtilityFuncs}}
+\doxysubsubsection{\texorpdfstring{LoadTextureFromFile()}{LoadTextureFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Brood\+::\+Utility\+Funcs\+::\+Load\+Texture\+From\+File (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{a\+\_\+texture,  }\item[{const std\+::string \&}]{a\+\_\+cwd,  }\item[{std\+::string}]{a\+\_\+file\+Path }\end{DoxyParamCaption})}
+
+
+
+It opens a texture form a file and loads it into the texture. 
+
+@overlaod
+
+It also log to console if texture loading was unsucessful
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+texture} & reference to the texture object where the loaded texture is to be stored \\
+\hline
+{\em a\+\_\+cwd} & current working directory \\
+\hline
+{\em a\+\_\+file\+Path} & file path that points to the texture to be loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the texture was loaded successfully; else returns false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_brood_1_1_utility_funcs_ace67d70296cb2bda76ccf42cf6ba8975}\label{namespace_brood_1_1_utility_funcs_ace67d70296cb2bda76ccf42cf6ba8975}} 
+\index{Brood::UtilityFuncs@{Brood::UtilityFuncs}!LoadTextureFromFile@{LoadTextureFromFile}}
+\index{LoadTextureFromFile@{LoadTextureFromFile}!Brood::UtilityFuncs@{Brood::UtilityFuncs}}
+\doxysubsubsection{\texorpdfstring{LoadTextureFromFile()}{LoadTextureFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Brood\+::\+Utility\+Funcs\+::\+Load\+Texture\+From\+File (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{a\+\_\+texture,  }\item[{std\+::string}]{a\+\_\+file\+Path }\end{DoxyParamCaption})}
+
+
+
+It opens a texture form a file and loads it into the texture. 
+
+It also log to console if texture loading was unsucessful
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+texture} & reference to the texture object where the loaded texture is to be stored \\
+\hline
+{\em a\+\_\+file\+Path} & file path that points to the texture to be loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the texture was loaded successfully; else returns false 
+\end{DoxyReturn}

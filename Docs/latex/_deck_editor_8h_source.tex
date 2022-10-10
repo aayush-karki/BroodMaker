@@ -1,0 +1,190 @@
+\hypertarget{_deck_editor_8h_source}{}\doxysection{Deck\+Editor.\+h}
+\label{_deck_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DeckEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DeckEditor.h}}
+\mbox{\hyperlink{_deck_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}} \textcolor{comment}{// includes all the other uiElements}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keyword}{class }DeckEditor;}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{30 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ================= start of DeckEditor class ==========================}}
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor}{Brood::Application::DeckEditor}} :}
+\DoxyCodeLine{49     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ae8fb00d292c8786be20ba6508806a5d2}{DeckEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{55                 sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_af5497c18d524a01d28330bc6f5994fd0}{\string~DeckEditor}}();}
+\DoxyCodeLine{59     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adb109156626044f4dbab0e17fc3a58fa}{InitializeWorkSpace}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ad1c08b596ab8c032e2a80a92a0146498}{Update}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a22198153282178ebc940bcb5470555b8}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// reners to the screen}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a27a045c274b8cbe55690f318fda9dc4e}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a6abcdf9a97bcf0ec3c424271f3109e0d}{Debugger}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// ================= private member function ==================     }}
+\DoxyCodeLine{77 \textcolor{keyword}{private}:}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// checks if the user interacted current deck index}}
+\DoxyCodeLine{80     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ab0b632e95cd71509a5c38569f4af918c}{UpdateCurrSelectedDeckIdx}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// checks if the user interacted with the Deck }}
+\DoxyCodeLine{84     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adda6625be86f2631001eec118310fc98}{UpdateDeckSizeX}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// checks if the user interacted with the Deck }}
+\DoxyCodeLine{88     \textcolor{comment}{// y Pos panel Element}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a845b7dd5506b14d18f53c66a5b1bef8a}{UpdateDeckSizeY}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// checks if the user interacted with the Deck }}
+\DoxyCodeLine{92     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a5d5626b536669e1879394139d1e541e3}{UpdateDeckPosX}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// checks if the user interacted with the Deck }}
+\DoxyCodeLine{96     \textcolor{comment}{// y Pos panel Element}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ad7c292a0d3d05aac299a3b8d2ba63b93}{UpdateDeckPosY}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{100     \textcolor{comment}{// deck texture panel Element}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a81bba2d08ff8680f2847216231b9af66}{UpdateDeckFileTexture}}();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{104     \textcolor{comment}{// card init file panel Element}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a847162aba3e1f4a3b054b82969ce2912}{UpdateCardInitFile}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// checks if the user interacted with the number }}
+\DoxyCodeLine{108     \textcolor{comment}{// of card panel Element}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a1fd0e953fce5c8ecfb00b3622f7023ff}{UpdateCardNumber}}();}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{// ================= private member variable ==================  }}
+\DoxyCodeLine{112 \textcolor{keyword}{private}:}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a0e288b394f38ed69fead6caaa35dba87}{m\_panelBodyPtr}};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{118     \textcolor{comment}{// =========== member variables for deck setting =============}}
+\DoxyCodeLine{119     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{// ==== UI elements to show setting title  ====}}
+\DoxyCodeLine{122     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a1fdc96bbd1053af7112e73d61172f62a}{m\_txtSettingTitle}};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{comment}{// ==== UI elements to change deck current index ====}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{127     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a7d4fe17aa52f7e3f138f4bc85f1c859e}{m\_txtDeckCurrIdxPrompt}};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{130     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac50ed7e1509671d2d8a57a9dab81b810}{m\_btnDeckDecCurrIdx}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{133     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a89c8d2f8421071a9dd17eb6852e0696b}{m\_txtDeckCurrIdx}};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{136     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac4f958d33d930fdc6a6d1aea19bea6ba}{m\_btnDeckIncCurrIdx}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{// ==== UI elements to change deck size x ====}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a394c14e1b1cbfa4f3e66703a019f19e7}{m\_txtDeckSizeXPrompt}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a9888801d1eede8060ba11811f76754a4}{m\_btnDeckDecSizeX}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{147     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a599abae8a900fa73ad15b1e706063312}{m\_txtDeckSizeX}} ;}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_acbc590e1818d1cb4a4cb376dbe379089}{m\_btnDeckIncSizeX}};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{comment}{// ==== UI elements to change deck size y ====}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{155     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_aced0d688385d86d85401dd8dc28ae26d}{m\_txtDeckSizeYPrompt}};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adc3cd1f0fdee74c711f1d8fb09fbac6b}{m\_btnDeckDecSizeY}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a10dd53f8c39d31ebe49d7cb180f0ccd3}{m\_txtDeckSizeY}};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{164     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ab62c5643bb6e08a728397182210326e6}{m\_btnDeckIncSizeY}};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{comment}{// ==== UI elements to change deck position x ====}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{169     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a67492fbd105638d68d130f68712de941}{m\_txtDeckPosXPrompt}};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a6566bae94c1de63f92d65b0016925714}{m\_btnDeckDecPosX}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{175     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_af26fb5ecdeb81e3c22e4c0552a0eaf25}{m\_txtDeckPosX}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ae4b70c314193818c5d2081c311617401}{m\_btnDeckIncPosX}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \textcolor{comment}{// ==== UI elements to change deck Position y ====}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{183     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a5da3ca06189902068bfe050e8b7d0df7}{m\_txtDeckPosYPrompt}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a77910914a6d4fee5703b3a1cd5c5faa3}{m\_btnDeckDecPosY}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_af039e060b9d4684f6ff14eb69f3c0623}{m\_txtDeckPosY}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac692e786406843eaea42358f0caa8cfe}{m\_btnDeckIncPosY}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{comment}{// ==== UI elements to enter a deck filename texture  ====}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{197     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_afe07fe25df2c81e84496bcefc9e230ce}{m\_txtDeckBgFileNamePrompt}};}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{200     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a3cee3467cb6cdf6c6a6c5f0162bf72dc}{m\_txtDeckBgFileInput}};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{203     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a5553fd4327671a3c2dd33232e474ed72}{m\_btnDeckBgOpenFile}};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     \textcolor{comment}{// ==== UI elements to enter a filename for card init  ====}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{208     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a4e501851334866213c7eca5bb94f7f6d}{m\_txtCardInitFileNamePrompt}};}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{211     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a8e1798a461610a06851dcbe1beb0ca5c}{m\_txtCardInitFileInput}};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{214     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac75753c4482b9282b4c296a4cad78e69}{m\_btnCardInitOpenFile}};}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     \textcolor{comment}{// ==== UI elements to change number of cards in the deck ====}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{219     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a3c0d5ffdaec1e49396ced5c8867279d3}{m\_txtCardNumPrompt}};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{222     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a598077a9f47f0fc7c1d0b555f4872cc0}{m\_btnDecCardNum}};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{225     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a421c61bbba5bc31e757dd31784d9550e}{m\_txtCardNum}};}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{228     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a73472d0ceb460058cd7cee7bfda8450e}{m\_btnIncCardNum}};}
+\DoxyCodeLine{229 \};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{232 \textcolor{comment}{// ================= end of DeckEditor class ============================}}
+\DoxyCodeLine{233 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

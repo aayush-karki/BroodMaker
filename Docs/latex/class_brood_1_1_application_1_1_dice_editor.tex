@@ -1,0 +1,625 @@
+\hypertarget{class_brood_1_1_application_1_1_dice_editor}{}\doxysection{Brood\+::Application\+::Dice\+Editor Class Reference}
+\label{class_brood_1_1_application_1_1_dice_editor}\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+
+
+{\ttfamily \#include $<$Dice\+Editor.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Dice\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_dice_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab0e5e9081e111aa34dac09d803557738}{Dice\+Editor}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data, sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Ptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab74111712406fc20f271777dd1b586f4}{$\sim$\+Dice\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aaf59b8843cb98cce5b8cd3ee1c5e3ce2}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the work space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a441a2d147839326560719a96563f344e}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a711bdab1aee6897d5943e99a948f86c9}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em updates the display element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a064e14551ec334cc2108c0724c1f7f9a}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9a6c20dcbaa3aa574dc064509b5affe5}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a08f85cd505d71c880858ffb8d8dca801}{Update\+Dice\+Side\+Num}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the dice side number panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a7a1f2e9833a425546861f306db551394}{Update\+Dice\+SizeX}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the dice x size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aa73fb48e998cde3904068bd3b9e82529}{Update\+Dice\+SizeY}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the dice y size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_adbc2dfea7af57d48515729120348dbaa}{Update\+Dice\+PosX}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the dice x position panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab0728291e0d08b5fac1857b277dbde10}{Update\+Dice\+PosY}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player Y Offset panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a2698ad782df4b00611d5bd518fe94fd5}{Update\+Dice\+File\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the laod dice texture panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a087bb70559bdae96c2ce727be3233ca7}{Update\+Roll\+Dice}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the roll dice panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a804ff7353db52a8e670dec768b28f83e}{m\+\_\+panel\+Body\+Ptr}}
+\begin{DoxyCompactList}\small\item\em holds the panel body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a59c4b1c9cfab99cdc0b031da8590deeb}{m\+\_\+board\+Ptr}}
+\begin{DoxyCompactList}\small\item\em board for the game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9081b64185976677e176cff4113d3d9e}{m\+\_\+dice\+Ptr}}
+\begin{DoxyCompactList}\small\item\em pointer to the deck manager \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_adfda2255710b4e8535eb0dad74fa9759}{m\+\_\+txt\+Setting\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab8e1b6afc7f1c6937e5964117ff8978d}{m\+\_\+txt\+Dice\+Side\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_dice}{Dice}} side \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a18641e61f341e21dea85abf4de681c0c}{m\+\_\+btn\+Dice\+Dec\+Side}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the Diceside number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aa20963e410ba6f9dfae7619a374f613f}{m\+\_\+txt\+Dice\+Side}}
+\begin{DoxyCompactList}\small\item\em displays the \mbox{\hyperlink{class_dice}{Dice}} Side \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a39cadb170044ae0e883bad9574b7ee5e}{m\+\_\+btn\+Dice\+Inc\+Side}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} Side number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a8d44450a10d8e8c47d49b174199b394a}{m\+\_\+txt\+Dice\+Size\+XPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a2be0326d357bbc5f7c70d5f465410b02}{m\+\_\+btn\+Dice\+Dec\+SizeX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} x-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ada4cc165e0c640cb8c77c9fb2a578423}{m\+\_\+txt\+Dice\+SizeX}}
+\begin{DoxyCompactList}\small\item\em displays the \mbox{\hyperlink{class_dice}{Dice}} x-\/size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_afdd88a5e0aedfe391c09507906adc050}{m\+\_\+btn\+Dice\+Inc\+SizeX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} x-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a27f1b7539c5a04bec30170c0e66201e5}{m\+\_\+txt\+Dice\+Size\+YPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a2ccbc6cb84cd3b9ff1082f08e9c96f1b}{m\+\_\+btn\+Dice\+Dec\+SizeY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} y-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_ab6b31117efabda709915b02f85807418}{m\+\_\+txt\+Dice\+SizeY}}
+\begin{DoxyCompactList}\small\item\em displays the \mbox{\hyperlink{class_dice}{Dice}} y-\/size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a675b32c13d3ef7d9355a444d2a023c43}{m\+\_\+btn\+Dice\+Inc\+SizeY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} y-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_acecd3da73aa33e6a6eb2e60deaea5648}{m\+\_\+txt\+Dice\+Pos\+XPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_af32329fae989032aacdd8deecc5faab5}{m\+\_\+btn\+Dice\+Dec\+PosX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aba04b2be322775a7f547c7f309254b8a}{m\+\_\+txt\+Dice\+PosX}}
+\begin{DoxyCompactList}\small\item\em displays the \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a1dbd03b3927b6bb6a529ffa8c0bf11c7}{m\+\_\+btn\+Dice\+Inc\+PosX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a3ca5de373a4c4c44b6dc96bbae64e057}{m\+\_\+txt\+Dice\+Pos\+YPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a08934ac0318a7ae7a72a01a4ef01aba4}{m\+\_\+btn\+Dice\+Dec\+PosY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a73dc82bffc6beeb2a6720cf1af1af57d}{m\+\_\+txt\+Dice\+PosY}}
+\begin{DoxyCompactList}\small\item\em displays the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9ce4b9ed87fdeeb8de9ad2e835d80e8d}{m\+\_\+btn\+Dice\+Inc\+PosY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a414d0c29c4725811fc09079eff3d3e2f}{m\+\_\+txt\+Dice\+File\+Name\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the \mbox{\hyperlink{class_dice}{Dice}} texture filename prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a67970549db8377f41a665ec03b1cc1d4}{m\+\_\+txt\+Dice\+File\+Input}}
+\begin{DoxyCompactList}\small\item\em holds the file name user enters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_afa0bbcfc2e2da5c9a2df7ce5f99ef146}{m\+\_\+btn\+Dice\+Open\+File}}
+\begin{DoxyCompactList}\small\item\em clicking it will load the \mbox{\hyperlink{class_dice}{Dice}} file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a1267a8db753342f84888784bd6e79f2b}{m\+\_\+btn\+Roll\+Dice}}
+\begin{DoxyCompactList}\small\item\em Rolls the dice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_ab0e5e9081e111aa34dac09d803557738}\label{class_brood_1_1_application_1_1_dice_editor_ab0e5e9081e111aa34dac09d803557738}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!DiceEditor@{DiceEditor}}
+\index{DiceEditor@{DiceEditor}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{DiceEditor()}{DiceEditor()}}
+{\footnotesize\ttfamily Dice\+Editor\+::\+Dice\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Ptr }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data} & pointer to the game data object \\
+\hline
+{\em a\+\_\+panel\+Ptr} & pointer to the panel body object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_ab74111712406fc20f271777dd1b586f4}\label{class_brood_1_1_application_1_1_dice_editor_ab74111712406fc20f271777dd1b586f4}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!````~DiceEditor@{$\sim$DiceEditor}}
+\index{````~DiceEditor@{$\sim$DiceEditor}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$DiceEditor()}{~DiceEditor()}}
+{\footnotesize\ttfamily Dice\+Editor\+::$\sim$\+Dice\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a9a6c20dcbaa3aa574dc064509b5affe5}\label{class_brood_1_1_application_1_1_dice_editor_a9a6c20dcbaa3aa574dc064509b5affe5}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a064e14551ec334cc2108c0724c1f7f9a}\label{class_brood_1_1_application_1_1_dice_editor_a064e14551ec334cc2108c0724c1f7f9a}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_aaf59b8843cb98cce5b8cd3ee1c5e3ce2}\label{class_brood_1_1_application_1_1_dice_editor_aaf59b8843cb98cce5b8cd3ee1c5e3ce2}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the work space. 
+
+@virtual
+
+It initializes the folloing panel element\+: dice side number, dice x-\/size, dice y-\/size, dice x-\/pos, dice-\/ypos, dice texture filename input, and roll a dice to check if the texture works 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a441a2d147839326560719a96563f344e}\label{class_brood_1_1_application_1_1_dice_editor_a441a2d147839326560719a96563f344e}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates function. 
+
+@virtual
+
+Contains all the logic for the dice editor workspace
+
+Updates the panel element of the dice setting
+
+It Updates the following panel element\+: dice side number, dice x-\/size, dice y-\/size, dice x-\/pos, dice-\/ypos, dice texture filename input, and roll a dice to check if the texture works 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a711bdab1aee6897d5943e99a948f86c9}\label{class_brood_1_1_application_1_1_dice_editor_a711bdab1aee6897d5943e99a948f86c9}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+updates the display element 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a2698ad782df4b00611d5bd518fe94fd5}\label{class_brood_1_1_application_1_1_dice_editor_a2698ad782df4b00611d5bd518fe94fd5}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateDiceFileTexture@{UpdateDiceFileTexture}}
+\index{UpdateDiceFileTexture@{UpdateDiceFileTexture}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDiceFileTexture()}{UpdateDiceFileTexture()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Dice\+File\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the laod dice texture panel 
+
+Load dice texture file panel contains load dice texture file promt textbox, textbox to enter the file name, and button to open and load the file.
+
+Only the textbox to enter the file name, and button to open and load the file are interactable
+
+If the interactable button was pressed then it opens the filename entered
+
+\begin{DoxyWarning}{Warning}
+Texture should always be in .png form 
+
+the Texture for the file should be in \textbackslash{}\+Assets\textbackslash{}\+Textures\textbackslash{}\+Dice\+Texture\textbackslash{} as it loads them from there. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_adbc2dfea7af57d48515729120348dbaa}\label{class_brood_1_1_application_1_1_dice_editor_adbc2dfea7af57d48515729120348dbaa}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateDicePosX@{UpdateDicePosX}}
+\index{UpdateDicePosX@{UpdateDicePosX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDicePosX()}{UpdateDicePosX()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Dice\+PosX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the dice x position panel 
+
+dice X position panel contains current dice X position promt textbox, current dice X position value text box, button to increase the current dice X position, and button to decrease the current dice X position.
+
+Only the button to increase the current dice X position, and button to decrease the current dice X position are interactable
+
+If the interactable button was pressed then the current dice X position is increased or decresed by 1 if the current dice does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_ab0728291e0d08b5fac1857b277dbde10}\label{class_brood_1_1_application_1_1_dice_editor_ab0728291e0d08b5fac1857b277dbde10}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateDicePosY@{UpdateDicePosY}}
+\index{UpdateDicePosY@{UpdateDicePosY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDicePosY()}{UpdateDicePosY()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Dice\+PosY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the player Y Offset panel 
+
+\mbox{\hyperlink{class_player}{Player}} Y Offset panel contains current player Y Offset promt textbox, current player Y Offset value text box, button to increase the current player Y Offset, and button to decrease the current player Y Offset.
+
+Only the button to increase the current player Y Offset, and button to decrease the current player Y Offset are interactable
+
+If the interactable button was pressed then the current player Y Offset is increased or decresed by 1 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a08f85cd505d71c880858ffb8d8dca801}\label{class_brood_1_1_application_1_1_dice_editor_a08f85cd505d71c880858ffb8d8dca801}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateDiceSideNum@{UpdateDiceSideNum}}
+\index{UpdateDiceSideNum@{UpdateDiceSideNum}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDiceSideNum()}{UpdateDiceSideNum()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Dice\+Side\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the dice side number panel 
+
+dice side number panel contains current diceside number promt textbox, current dice side number value text box, button to increase the current dice side number, and button to decrease the current dice side number.
+
+Only the button to increase the current dice side number, and button to decrease the current dice side number are interactable
+
+If the interactable button was pressed then the current dice side number is increased or decresed by 1. The side number can be between 1 and 100 \mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a7a1f2e9833a425546861f306db551394}\label{class_brood_1_1_application_1_1_dice_editor_a7a1f2e9833a425546861f306db551394}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateDiceSizeX@{UpdateDiceSizeX}}
+\index{UpdateDiceSizeX@{UpdateDiceSizeX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDiceSizeX()}{UpdateDiceSizeX()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Dice\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the dice x size panel 
+
+dice X size panel contains current dice X size promt textbox, current dice X size value text box, button to increase the current dice X size, and button to decrease the current dice X size.
+
+Only the button to increase the current dice X size, and button to decrease the current dice X size are interactable
+
+If the interactable button was pressed then the current dice X size is increased or decresed by 5 if the current dice does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_aa73fb48e998cde3904068bd3b9e82529}\label{class_brood_1_1_application_1_1_dice_editor_aa73fb48e998cde3904068bd3b9e82529}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateDiceSizeY@{UpdateDiceSizeY}}
+\index{UpdateDiceSizeY@{UpdateDiceSizeY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDiceSizeY()}{UpdateDiceSizeY()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Dice\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the dice y size panel 
+
+dice Y size panel contains current dice y size promt textbox, current dice y size value text box, button to increase the current dice y size, and button to decrease the current dice y size.
+
+Only the button to increase the current dice y size, and button to decrease the current dice y size are interactable
+
+If the interactable button was pressed then the current dice y size is increased or decresed by 5 if the current dice does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a087bb70559bdae96c2ce727be3233ca7}\label{class_brood_1_1_application_1_1_dice_editor_a087bb70559bdae96c2ce727be3233ca7}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!UpdateRollDice@{UpdateRollDice}}
+\index{UpdateRollDice@{UpdateRollDice}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateRollDice()}{UpdateRollDice()}}
+{\footnotesize\ttfamily void Dice\+Editor\+::\+Update\+Roll\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the roll dice panel 
+
+Roll dice contains a button to roll a dice
+
+Only the button to roll a dice is interactable
+
+If the interactable button was pressed then it rolls a dice
+
+\begin{DoxyWarning}{Warning}
+Texture should always be in .png form 
+
+the Texture for the file should be in \textbackslash{}Assets\textbackslash{}Textures\textbackslash{}Dice\+Texture\textbackslash{} as it loads them from there. Do not include .png 
+\end{DoxyWarning}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a59c4b1c9cfab99cdc0b031da8590deeb}\label{class_brood_1_1_application_1_1_dice_editor_a59c4b1c9cfab99cdc0b031da8590deeb}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_boardPtr@{m\_boardPtr}}
+\index{m\_boardPtr@{m\_boardPtr}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_boardPtr}{m\_boardPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+board\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+board for the game 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_af32329fae989032aacdd8deecc5faab5}\label{class_brood_1_1_application_1_1_dice_editor_af32329fae989032aacdd8deecc5faab5}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceDecPosX@{m\_btnDiceDecPosX}}
+\index{m\_btnDiceDecPosX@{m\_btnDiceDecPosX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceDecPosX}{m\_btnDiceDecPosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Dec\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a08934ac0318a7ae7a72a01a4ef01aba4}\label{class_brood_1_1_application_1_1_dice_editor_a08934ac0318a7ae7a72a01a4ef01aba4}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceDecPosY@{m\_btnDiceDecPosY}}
+\index{m\_btnDiceDecPosY@{m\_btnDiceDecPosY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceDecPosY}{m\_btnDiceDecPosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Dec\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a18641e61f341e21dea85abf4de681c0c}\label{class_brood_1_1_application_1_1_dice_editor_a18641e61f341e21dea85abf4de681c0c}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceDecSide@{m\_btnDiceDecSide}}
+\index{m\_btnDiceDecSide@{m\_btnDiceDecSide}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceDecSide}{m\_btnDiceDecSide}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Dec\+Side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the Diceside number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a2be0326d357bbc5f7c70d5f465410b02}\label{class_brood_1_1_application_1_1_dice_editor_a2be0326d357bbc5f7c70d5f465410b02}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceDecSizeX@{m\_btnDiceDecSizeX}}
+\index{m\_btnDiceDecSizeX@{m\_btnDiceDecSizeX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceDecSizeX}{m\_btnDiceDecSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Dec\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} x-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a2ccbc6cb84cd3b9ff1082f08e9c96f1b}\label{class_brood_1_1_application_1_1_dice_editor_a2ccbc6cb84cd3b9ff1082f08e9c96f1b}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceDecSizeY@{m\_btnDiceDecSizeY}}
+\index{m\_btnDiceDecSizeY@{m\_btnDiceDecSizeY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceDecSizeY}{m\_btnDiceDecSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Dec\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} y-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a1dbd03b3927b6bb6a529ffa8c0bf11c7}\label{class_brood_1_1_application_1_1_dice_editor_a1dbd03b3927b6bb6a529ffa8c0bf11c7}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceIncPosX@{m\_btnDiceIncPosX}}
+\index{m\_btnDiceIncPosX@{m\_btnDiceIncPosX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceIncPosX}{m\_btnDiceIncPosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Inc\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a9ce4b9ed87fdeeb8de9ad2e835d80e8d}\label{class_brood_1_1_application_1_1_dice_editor_a9ce4b9ed87fdeeb8de9ad2e835d80e8d}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceIncPosY@{m\_btnDiceIncPosY}}
+\index{m\_btnDiceIncPosY@{m\_btnDiceIncPosY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceIncPosY}{m\_btnDiceIncPosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Inc\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a39cadb170044ae0e883bad9574b7ee5e}\label{class_brood_1_1_application_1_1_dice_editor_a39cadb170044ae0e883bad9574b7ee5e}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceIncSide@{m\_btnDiceIncSide}}
+\index{m\_btnDiceIncSide@{m\_btnDiceIncSide}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceIncSide}{m\_btnDiceIncSide}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Inc\+Side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} Side number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_afdd88a5e0aedfe391c09507906adc050}\label{class_brood_1_1_application_1_1_dice_editor_afdd88a5e0aedfe391c09507906adc050}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceIncSizeX@{m\_btnDiceIncSizeX}}
+\index{m\_btnDiceIncSizeX@{m\_btnDiceIncSizeX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceIncSizeX}{m\_btnDiceIncSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Inc\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} x-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a675b32c13d3ef7d9355a444d2a023c43}\label{class_brood_1_1_application_1_1_dice_editor_a675b32c13d3ef7d9355a444d2a023c43}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceIncSizeY@{m\_btnDiceIncSizeY}}
+\index{m\_btnDiceIncSizeY@{m\_btnDiceIncSizeY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceIncSizeY}{m\_btnDiceIncSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Inc\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the \mbox{\hyperlink{class_dice}{Dice}} y-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_afa0bbcfc2e2da5c9a2df7ce5f99ef146}\label{class_brood_1_1_application_1_1_dice_editor_afa0bbcfc2e2da5c9a2df7ce5f99ef146}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnDiceOpenFile@{m\_btnDiceOpenFile}}
+\index{m\_btnDiceOpenFile@{m\_btnDiceOpenFile}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDiceOpenFile}{m\_btnDiceOpenFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Dice\+Open\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will load the \mbox{\hyperlink{class_dice}{Dice}} file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a1267a8db753342f84888784bd6e79f2b}\label{class_brood_1_1_application_1_1_dice_editor_a1267a8db753342f84888784bd6e79f2b}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_btnRollDice@{m\_btnRollDice}}
+\index{m\_btnRollDice@{m\_btnRollDice}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnRollDice}{m\_btnRollDice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+btn\+Roll\+Dice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rolls the dice. 
+
+clicking it will decrease the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos number by 5 \mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a9081b64185976677e176cff4113d3d9e}\label{class_brood_1_1_application_1_1_dice_editor_a9081b64185976677e176cff4113d3d9e}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_dicePtr@{m\_dicePtr}}
+\index{m\_dicePtr@{m\_dicePtr}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_dicePtr}{m\_dicePtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+dice\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the deck manager 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a804ff7353db52a8e670dec768b28f83e}\label{class_brood_1_1_application_1_1_dice_editor_a804ff7353db52a8e670dec768b28f83e}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_panelBodyPtr@{m\_panelBodyPtr}}
+\index{m\_panelBodyPtr@{m\_panelBodyPtr}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_panelBodyPtr}{m\_panelBodyPtr}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+panel\+Body\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the panel body 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a67970549db8377f41a665ec03b1cc1d4}\label{class_brood_1_1_application_1_1_dice_editor_a67970549db8377f41a665ec03b1cc1d4}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceFileInput@{m\_txtDiceFileInput}}
+\index{m\_txtDiceFileInput@{m\_txtDiceFileInput}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceFileInput}{m\_txtDiceFileInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+File\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the file name user enters 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a414d0c29c4725811fc09079eff3d3e2f}\label{class_brood_1_1_application_1_1_dice_editor_a414d0c29c4725811fc09079eff3d3e2f}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceFileNamePrompt@{m\_txtDiceFileNamePrompt}}
+\index{m\_txtDiceFileNamePrompt@{m\_txtDiceFileNamePrompt}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceFileNamePrompt}{m\_txtDiceFileNamePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+File\+Name\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the \mbox{\hyperlink{class_dice}{Dice}} texture filename prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_aba04b2be322775a7f547c7f309254b8a}\label{class_brood_1_1_application_1_1_dice_editor_aba04b2be322775a7f547c7f309254b8a}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDicePosX@{m\_txtDicePosX}}
+\index{m\_txtDicePosX@{m\_txtDicePosX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDicePosX}{m\_txtDicePosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_acecd3da73aa33e6a6eb2e60deaea5648}\label{class_brood_1_1_application_1_1_dice_editor_acecd3da73aa33e6a6eb2e60deaea5648}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDicePosXPrompt@{m\_txtDicePosXPrompt}}
+\index{m\_txtDicePosXPrompt@{m\_txtDicePosXPrompt}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDicePosXPrompt}{m\_txtDicePosXPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+Pos\+XPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Pos 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a73dc82bffc6beeb2a6720cf1af1af57d}\label{class_brood_1_1_application_1_1_dice_editor_a73dc82bffc6beeb2a6720cf1af1af57d}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDicePosY@{m\_txtDicePosY}}
+\index{m\_txtDicePosY@{m\_txtDicePosY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDicePosY}{m\_txtDicePosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a3ca5de373a4c4c44b6dc96bbae64e057}\label{class_brood_1_1_application_1_1_dice_editor_a3ca5de373a4c4c44b6dc96bbae64e057}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDicePosYPrompt@{m\_txtDicePosYPrompt}}
+\index{m\_txtDicePosYPrompt@{m\_txtDicePosYPrompt}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDicePosYPrompt}{m\_txtDicePosYPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+Pos\+YPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Pos prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_aa20963e410ba6f9dfae7619a374f613f}\label{class_brood_1_1_application_1_1_dice_editor_aa20963e410ba6f9dfae7619a374f613f}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceSide@{m\_txtDiceSide}}
+\index{m\_txtDiceSide@{m\_txtDiceSide}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceSide}{m\_txtDiceSide}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+Side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the \mbox{\hyperlink{class_dice}{Dice}} Side 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_ab8e1b6afc7f1c6937e5964117ff8978d}\label{class_brood_1_1_application_1_1_dice_editor_ab8e1b6afc7f1c6937e5964117ff8978d}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceSidePrompt@{m\_txtDiceSidePrompt}}
+\index{m\_txtDiceSidePrompt@{m\_txtDiceSidePrompt}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceSidePrompt}{m\_txtDiceSidePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+Side\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_dice}{Dice}} side 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_ada4cc165e0c640cb8c77c9fb2a578423}\label{class_brood_1_1_application_1_1_dice_editor_ada4cc165e0c640cb8c77c9fb2a578423}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceSizeX@{m\_txtDiceSizeX}}
+\index{m\_txtDiceSizeX@{m\_txtDiceSizeX}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceSizeX}{m\_txtDiceSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the \mbox{\hyperlink{class_dice}{Dice}} x-\/size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a8d44450a10d8e8c47d49b174199b394a}\label{class_brood_1_1_application_1_1_dice_editor_a8d44450a10d8e8c47d49b174199b394a}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceSizeXPrompt@{m\_txtDiceSizeXPrompt}}
+\index{m\_txtDiceSizeXPrompt@{m\_txtDiceSizeXPrompt}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceSizeXPrompt}{m\_txtDiceSizeXPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+Size\+XPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_dice}{Dice}} X-\/\+Size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_ab6b31117efabda709915b02f85807418}\label{class_brood_1_1_application_1_1_dice_editor_ab6b31117efabda709915b02f85807418}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceSizeY@{m\_txtDiceSizeY}}
+\index{m\_txtDiceSizeY@{m\_txtDiceSizeY}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceSizeY}{m\_txtDiceSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the \mbox{\hyperlink{class_dice}{Dice}} y-\/size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_a27f1b7539c5a04bec30170c0e66201e5}\label{class_brood_1_1_application_1_1_dice_editor_a27f1b7539c5a04bec30170c0e66201e5}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtDiceSizeYPrompt@{m\_txtDiceSizeYPrompt}}
+\index{m\_txtDiceSizeYPrompt@{m\_txtDiceSizeYPrompt}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDiceSizeYPrompt}{m\_txtDiceSizeYPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Dice\+Size\+YPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_dice}{Dice}} y-\/\+Size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_dice_editor_adfda2255710b4e8535eb0dad74fa9759}\label{class_brood_1_1_application_1_1_dice_editor_adfda2255710b4e8535eb0dad74fa9759}} 
+\index{Brood::Application::DiceEditor@{Brood::Application::DiceEditor}!m\_txtSettingTitle@{m\_txtSettingTitle}}
+\index{m\_txtSettingTitle@{m\_txtSettingTitle}!Brood::Application::DiceEditor@{Brood::Application::DiceEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtSettingTitle}{m\_txtSettingTitle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Dice\+Editor\+::m\+\_\+txt\+Setting\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_dice_editor_8h}{Dice\+Editor.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_dice_editor_8cpp}{Dice\+Editor.\+cpp}}\end{DoxyCompactItemize}

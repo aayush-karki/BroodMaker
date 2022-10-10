@@ -1,0 +1,130 @@
+\hypertarget{_mouse_handler_8h_source}{}\doxysection{Mouse\+Handler.\+h}
+\label{_mouse_handler_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/MouseHandler.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/MouseHandler.h}}
+\mbox{\hyperlink{_mouse_handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{12 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{16 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{class }MouseHandler;}
+\DoxyCodeLine{25 \}}
+\DoxyCodeLine{26 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{27 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{28 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ================= start of MouseHandler class ========================}}
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_mouse_handler}{Brood::MouseHandler}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{comment}{// ================= public member function =================  }}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{48     \textcolor{keyword}{enum class} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}{ENUM\_MouseCursorType}}}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         CURSOR\_arrow, }
+\DoxyCodeLine{51         CURSOR\_wait, }
+\DoxyCodeLine{52         CURSOR\_text, }
+\DoxyCodeLine{53         CURSOR\_hand, }
+\DoxyCodeLine{54         CURSOR\_sizeHorizontal, }
+\DoxyCodeLine{55         CURSOR\_help, }
+\DoxyCodeLine{56         CURSOR\_notAllowed }
+\DoxyCodeLine{57     \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{// initializes the cursor}}
+\DoxyCodeLine{60     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a25c77806eeeb02c262f4d383b7b4a23b}{InitializeCursor}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{// updates the mouse pos}}
+\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4988a5b33f15a8a994569be97e648c18}{UpdateMousePos}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// changes the cursor to the specified cursor}}
+\DoxyCodeLine{66     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_mouse_handler_ae262bcde794b2e23172080b1510a6480}{ChangeCursorTo}}( sf::RenderWindow\& a\_window,}
+\DoxyCodeLine{67                                 \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4d67d26476d7da71b5fac2ea08fc14ac}{Brood::MouseHandler::ENUM\_MouseCursorType}} a\_cursorType );}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// ====== getter function ======}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// gets the mosuse position on last frame}}
+\DoxyCodeLine{72     \textcolor{keyword}{static} sf::Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a502764371d0c7d6ed390d76b93fad65f}{GetLastFrameMousePos}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// gets the mosuse position on current frame}}
+\DoxyCodeLine{75     \textcolor{keyword}{static} sf::Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a1a82f13395a96c993ed1e08d02782e18}{GetCurrFrameMousePos}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{// gets the left mouse button status on last frame}}
+\DoxyCodeLine{78     \textcolor{comment}{// i.e. is if it was pressed or not}}
+\DoxyCodeLine{79     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a89bad9e122cd3649a2448dd4cbc7ca0d}{GetlastFrameLMSStatus}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// gets the left mouse button status on current frame}}
+\DoxyCodeLine{82     \textcolor{comment}{// i.e. is if it is pressed or not}}
+\DoxyCodeLine{83     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_ac65ca6963e5301804895316db9344182}{GetCurrFrameLMSStatus}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{// gets the right mouse button status on last frame}}
+\DoxyCodeLine{86     \textcolor{comment}{// i.e. is if it was pressed or not}}
+\DoxyCodeLine{87     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a934659082975b28da4e2d06746ba9e09}{GetlastFrameRMSStatus}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// gets the right mouse button status on current frame}}
+\DoxyCodeLine{90     \textcolor{comment}{// i.e. is if it is pressed or not}}
+\DoxyCodeLine{91     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a8e12c47b2ac71d2a79ccd50d70c8f6e8}{GetCurrFrameRMSStatus}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{//Updates mouse button status and saves the mouse }}
+\DoxyCodeLine{94     \textcolor{comment}{// button status for this frame and last frame}}
+\DoxyCodeLine{95     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a57e1e930df88cd639b84e8d438365be4}{UpdateMouseButtonStatus}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{// checkes to see if the left mouse button is held or not}}
+\DoxyCodeLine{98     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a9bbf03c9f25364cd2428baaec4c2e7ca}{IsLeftButtonHold}}();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// checkes to see if the left mouse button is pressed or not}}
+\DoxyCodeLine{101     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a75403d32a05299696fead67535560024}{IsLeftButtonPressed}}();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// checkes to see if the left mouse button is released or not}}
+\DoxyCodeLine{104     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a740ffb7fb92a2cf1e99c49670bf9f494}{IsLeftButtonReleased}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// checkes to see if the right mouse button is held or not}}
+\DoxyCodeLine{107     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_acddd072e71a8a0f2a164f5c92781e58b}{IsRightButtonHold}}();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// checkes to see if the right mouse button is pressed or not}}
+\DoxyCodeLine{110     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a3d0d2aa7c153a1f2ca2b68c02f13863f}{IsRightButtonPressed}}();}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// checkes to see if the right mouse button is released or not}}
+\DoxyCodeLine{113     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_ab150840c405b284b2afd0c5679e33ff4}{IsRightButtonReleased}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// debugger}}
+\DoxyCodeLine{116     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a9f12460a0a24bb27ca69474cd17dc471}{Debugger}}();}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{// ================= private member variables =================  }}
+\DoxyCodeLine{119 \textcolor{keyword}{private}:}
+\DoxyCodeLine{120     \textcolor{comment}{// holds the cursor to display}}
+\DoxyCodeLine{121     \textcolor{keyword}{static} sf::Cursor \mbox{\hyperlink{class_brood_1_1_mouse_handler_a3dffc63855ba7307cb003e1050bcadb4}{m\_cursor}};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// stores the last frame mouse position}}
+\DoxyCodeLine{124     \textcolor{keyword}{static} sf::Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4bd613ae8f553eb47821956edfdbd1f1}{m\_lastFrameMousePos}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// stores the current frame mouse position}}
+\DoxyCodeLine{127     \textcolor{keyword}{static} sf::Vector2i \mbox{\hyperlink{class_brood_1_1_mouse_handler_a3784e2c84a7874b434daa89deb09c3b5}{m\_currFrameMousePos}};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// holds left mouse button state for last frame, true == was pressed}}
+\DoxyCodeLine{130     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a9387019b1c0d70e3893606d6985a0b29}{m\_lastFrameLeftMouseButtonPressed}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{comment}{// holds right mouse button state for last frame, true == was pressed}}
+\DoxyCodeLine{133     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a8f6a7114dd5bbcb930bd25c44a747179}{m\_lastFrameRightMouseButtonPressed}};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{comment}{// holds left mouse button state for current frame, true == was pressed}}
+\DoxyCodeLine{136     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a4ff6b246eadf9c1f18f7a8fd0afa05cc}{m\_currFrameLeftMouseButtonPressed}}; }
+\DoxyCodeLine{137     }
+\DoxyCodeLine{138     \textcolor{comment}{// holds right mouse button state for current frame, true == was pressed}}
+\DoxyCodeLine{139     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_mouse_handler_a62a32b0eaeeb6cc8805d1ee6c3122e89}{m\_currFrameRightMouseButtonPressed}};}
+\DoxyCodeLine{140 \};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{143 \textcolor{comment}{// ================= end of MouseHandler class ==========================}}
+\DoxyCodeLine{144 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

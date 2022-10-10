@@ -1,0 +1,267 @@
+\hypertarget{class_brood_1_1_application_1_1_editor_workspace}{}\doxysection{Brood\+::Application\+::Editor\+Workspace Class Reference}
+\label{class_brood_1_1_application_1_1_editor_workspace}\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+
+
+{\ttfamily \#include $<$Editor\+Workspace.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Editor\+Workspace\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_editor_workspace}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a2a8d1f12a17ef1a164ff3bf088767864}{Editor\+Workspace}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a8e99cf19c9da019694f53a147d3a0a81}{$\sim$\+Editor\+Workspace}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a8b7dceac808bbb5ddfe5e8cc5081c70f}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em initializes the component of a workspace \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ac9db5e38b2fc2c30a2f07cf4042d374d}{Update}} ()
+\begin{DoxyCompactList}\small\item\em all the logic for the workspace is here \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ad15c6e3c80044f5023f39b0e93a7e392}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em calls the updates all the display element for the current active editor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_abf093d7c69ad7190537c9bf37ce8640a}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em reners to the screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a55c829ded1ed77a133b8c1ac57ac75d8}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em Calls Debugger for all UI elements in this class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a2b04ba33533d30f64d03e6c36851d04e}{Set\+Game\+Data\+Manager}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data\+Manager\+Ptr)
+\begin{DoxyCompactList}\small\item\em setter function for game data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ab583586cbd4cd992f5f4baad9d6cdd15}{Initialize\+Edit\+Mode\+Tabs}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the edit mode tabs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a48b172ad0e66037a23031dd9510cff56}{Update\+Edit\+Mode\+Tabs}} ()
+\begin{DoxyCompactList}\small\item\em checks if the ribbion tabs was pressed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a64efc914faec1f59173719a30e6dd10c}{Update\+Active\+Editor\+Idx}} (unsigned a\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em updates the edit Tab and selects the proper tab \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a4a485395c0fe296278537b9af4c582a3}{m\+\_\+side\+Panel}}
+\begin{DoxyCompactList}\small\item\em panel body \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a7a5fcf2502f9ed8afbf64f478810e8ab}{m\+\_\+active\+Editor\+Idx}}
+\begin{DoxyCompactList}\small\item\em holds the index of current active editor workspace \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a7f7584a4ca79760ca420572cb0cec143}{m\+\_\+edit\+Modes\+Tabs}}
+\begin{DoxyCompactList}\small\item\em Ui for edit modes tabs. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood\+::\+Application\+::\+Work\+Space}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a45c5ac8dc4739eec969f123b14bd9831}{m\+\_\+editor\+Workspace\+List}}
+\begin{DoxyCompactList}\small\item\em list of editor workspace \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a2a8d1f12a17ef1a164ff3bf088767864}\label{class_brood_1_1_application_1_1_editor_workspace_a2a8d1f12a17ef1a164ff3bf088767864}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!EditorWorkspace@{EditorWorkspace}}
+\index{EditorWorkspace@{EditorWorkspace}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{EditorWorkspace()}{EditorWorkspace()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Editor\+Workspace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a8e99cf19c9da019694f53a147d3a0a81}\label{class_brood_1_1_application_1_1_editor_workspace_a8e99cf19c9da019694f53a147d3a0a81}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!````~EditorWorkspace@{$\sim$EditorWorkspace}}
+\index{````~EditorWorkspace@{$\sim$EditorWorkspace}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{$\sim$EditorWorkspace()}{~EditorWorkspace()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Editor\+Workspace\+::$\sim$\+Editor\+Workspace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a55c829ded1ed77a133b8c1ac57ac75d8}\label{class_brood_1_1_application_1_1_editor_workspace_a55c829ded1ed77a133b8c1ac57ac75d8}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calls Debugger for all UI elements in this class. 
+
+debugger funciton
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_abf093d7c69ad7190537c9bf37ce8640a}\label{class_brood_1_1_application_1_1_editor_workspace_abf093d7c69ad7190537c9bf37ce8640a}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+reners to the screen 
+
+Draw funciton.
+
+@virtual
+
+Draws all the component to the screen 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_ab583586cbd4cd992f5f4baad9d6cdd15}\label{class_brood_1_1_application_1_1_editor_workspace_ab583586cbd4cd992f5f4baad9d6cdd15}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!InitializeEditModeTabs@{InitializeEditModeTabs}}
+\index{InitializeEditModeTabs@{InitializeEditModeTabs}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{InitializeEditModeTabs()}{InitializeEditModeTabs()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Initialize\+Edit\+Mode\+Tabs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the edit mode tabs. 
+
+Initializes the edit mode tab bar which is at the top of the edit window.
+
+It has the 4 edit modes in it\+: \mbox{\hyperlink{class_board}{Board}} Edit, \mbox{\hyperlink{class_tiles}{Tiles}} Edit, \mbox{\hyperlink{class_path}{Path}} Edit, and Deck Edit
+
+\mbox{\hyperlink{class_board}{Board}} Edit allows for the general settings to be edited.
+
+Tile Edit allows for tiles setting to be changed for indivisual tiles.
+
+\mbox{\hyperlink{class_path}{Path}} Edit allows for the path that the players take to be changed.
+
+Deck Edit allows for the deck and card setting to be changed \mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a8b7dceac808bbb5ddfe5e8cc5081c70f}\label{class_brood_1_1_application_1_1_editor_workspace_a8b7dceac808bbb5ddfe5e8cc5081c70f}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initializes the component of a workspace 
+
+Initializes the work space.
+
+@virtual
+
+It creates all the component of the workspace. It initializes the Edit\+MOde tabs and the editor workspaces 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a2b04ba33533d30f64d03e6c36851d04e}\label{class_brood_1_1_application_1_1_editor_workspace_a2b04ba33533d30f64d03e6c36851d04e}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!SetGameDataManager@{SetGameDataManager}}
+\index{SetGameDataManager@{SetGameDataManager}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{SetGameDataManager()}{SetGameDataManager()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Set\+Game\+Data\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data\+Manager\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function for game data 
+
+@virtual 
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a2c7c568ac6c67fb2f73558a076dc42b1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_ac9db5e38b2fc2c30a2f07cf4042d374d}\label{class_brood_1_1_application_1_1_editor_workspace_ac9db5e38b2fc2c30a2f07cf4042d374d}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+all the logic for the workspace is here 
+
+Updates function.
+
+@virtual
+
+Contains all the logic for the initial workspace 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a64efc914faec1f59173719a30e6dd10c}\label{class_brood_1_1_application_1_1_editor_workspace_a64efc914faec1f59173719a30e6dd10c}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!UpdateActiveEditorIdx@{UpdateActiveEditorIdx}}
+\index{UpdateActiveEditorIdx@{UpdateActiveEditorIdx}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{UpdateActiveEditorIdx()}{UpdateActiveEditorIdx()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Update\+Active\+Editor\+Idx (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the edit Tab and selects the proper tab 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_ad15c6e3c80044f5023f39b0e93a7e392}\label{class_brood_1_1_application_1_1_editor_workspace_ad15c6e3c80044f5023f39b0e93a7e392}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+calls the updates all the display element for the current active editor 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a48b172ad0e66037a23031dd9510cff56}\label{class_brood_1_1_application_1_1_editor_workspace_a48b172ad0e66037a23031dd9510cff56}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!UpdateEditModeTabs@{UpdateEditModeTabs}}
+\index{UpdateEditModeTabs@{UpdateEditModeTabs}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{UpdateEditModeTabs()}{UpdateEditModeTabs()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Editor\+Workspace\+::\+Update\+Edit\+Mode\+Tabs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the ribbion tabs was pressed 
+
+Checks to see if the ribbion tabs\textquotesingle{}s logic is to be executed or not. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a7a5fcf2502f9ed8afbf64f478810e8ab}\label{class_brood_1_1_application_1_1_editor_workspace_a7a5fcf2502f9ed8afbf64f478810e8ab}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!m\_activeEditorIdx@{m\_activeEditorIdx}}
+\index{m\_activeEditorIdx@{m\_activeEditorIdx}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{m\_activeEditorIdx}{m\_activeEditorIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Editor\+Workspace\+::m\+\_\+active\+Editor\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the index of current active editor workspace 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a7f7584a4ca79760ca420572cb0cec143}\label{class_brood_1_1_application_1_1_editor_workspace_a7f7584a4ca79760ca420572cb0cec143}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!m\_editModesTabs@{m\_editModesTabs}}
+\index{m\_editModesTabs@{m\_editModesTabs}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{m\_editModesTabs}{m\_editModesTabs}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$$>$ Brood\+::\+Application\+::\+Editor\+Workspace\+::m\+\_\+edit\+Modes\+Tabs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ui for edit modes tabs. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a45c5ac8dc4739eec969f123b14bd9831}\label{class_brood_1_1_application_1_1_editor_workspace_a45c5ac8dc4739eec969f123b14bd9831}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!m\_editorWorkspaceList@{m\_editorWorkspaceList}}
+\index{m\_editorWorkspaceList@{m\_editorWorkspaceList}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{m\_editorWorkspaceList}{m\_editorWorkspaceList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood\+::\+Application\+::\+Work\+Space}}$\ast$$>$ Brood\+::\+Application\+::\+Editor\+Workspace\+::m\+\_\+editor\+Workspace\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+list of editor workspace 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_editor_workspace_a4a485395c0fe296278537b9af4c582a3}\label{class_brood_1_1_application_1_1_editor_workspace_a4a485395c0fe296278537b9af4c582a3}} 
+\index{Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}!m\_sidePanel@{m\_sidePanel}}
+\index{m\_sidePanel@{m\_sidePanel}!Brood::Application::EditorWorkspace@{Brood::Application::EditorWorkspace}}
+\doxysubsubsection{\texorpdfstring{m\_sidePanel}{m\_sidePanel}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Brood\+::\+Application\+::\+Editor\+Workspace\+::m\+\_\+side\+Panel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+panel body 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_editor_workspace_8h}{Editor\+Workspace.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_editor_workspace_8cpp}{Editor\+Workspace.\+cpp}}\end{DoxyCompactItemize}

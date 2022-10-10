@@ -1,0 +1,422 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_deck}{}\doxysection{Brood\+::Application\+::Components\+::Deck Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_deck}\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+
+
+{\ttfamily \#include $<$Deck.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Components\+::Deck\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_brood_1_1_application_1_1_components_1_1_deck}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a3f377408a57d2b06ded3b9cff47498d2}{Deck}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a0788447d397264f6900118530d0d6174}{$\sim$\+Deck}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a87ccdcb3fa32da4db88ef5d449c40e62}{Deck}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} \&a\+\_\+other)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a2a5afbbe90ff80433c67907d8df77fa2}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} \&a\+\_\+other)
+\begin{DoxyCompactList}\small\item\em assignmnet operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a4916241f36171d6de8d4e1da6d715e12}{Initialize\+Deck}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data}} \&a\+\_\+deck\+Data)
+\begin{DoxyCompactList}\small\item\em initializes the deck with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a40621e1085a947b16bed17816dc2aa5d}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns deck data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a2a9807eead4aa91090646b705d6e162a}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr, std\+::string a\+\_\+game\+Title, unsigned a\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em initializes the deck with the passed data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ac4b8328ca06869eb52db15285b87317a}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the deck and its path data from passed file \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ $>$ \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a69ea097a748122cee6dacdc7a4f9fb66}{Get\+Card\+List}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the card\+Info\+List. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a47bd26258a27c01d32f85b2ffa67c167}{Get\+Card\+Ptr\+At\+Idx}} (unsigned a\+\_\+card\+Info\+Idx)
+\begin{DoxyCompactList}\small\item\em Gets a card info pointer to the passed index. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a5950b42673e8813500bc413a077ab3ba}{Get\+Card\+Init\+File\+Name}} ()
+\begin{DoxyCompactList}\small\item\em gets card Init file name \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ad777338149e601a99d2b453a77d1356a}{Get\+Card\+Init\+File\+Path}} ()
+\begin{DoxyCompactList}\small\item\em gets card Init file path \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a9ab9bdb2e5675af4ffecbd51a2681ac6}{Get\+Curr\+Active\+Card\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em gets card current active card index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Card\+Info}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a1910e85e7a29963e167d09111877ab97}{Get\+Curr\+Active\+Card\+Ptr}} ()
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ac73fabb43a252a875021cb05b3a37cda}{Set\+Curr\+Active\+Card\+Idx}} (unsigned a\+\_\+curr\+Active\+Card\+Idx)
+\begin{DoxyCompactList}\small\item\em sets card current active card index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a8cafff0ea15411d59b1a0aed491aeec1}{Set\+Card\+List\+Size}} (unsigned a\+\_\+card\+List\+Size)
+\begin{DoxyCompactList}\small\item\em resizes the card list \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a4f9fb5a7063ff7e78f66ea450eed30e9}{Load\+Card\+From\+Init\+File}} (std\+::string a\+\_\+file\+Init\+Path)
+\begin{DoxyCompactList}\small\item\em loads cards from a card Init file path \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_acbb7ff590ae7af992409f8a7685be25a}{Save\+Card\+To\+Init\+File}} (std\+::string a\+\_\+file\+Init\+Path)
+\begin{DoxyCompactList}\small\item\em saves cards to a card Init file path \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Card\+Info}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a38bbdcf678b3fd0b7858656ea4d00c36}{Deal\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Function to deal the next undeal card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a5539082aa002cb2640abcb0b4c06ab95}{Shuffel}} ()
+\begin{DoxyCompactList}\small\item\em shuffels the deck \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a65b9d1bbb9a78eb2f654f4d1c56e8986}{Reset\+Deck}} ()
+\begin{DoxyCompactList}\small\item\em resets the m\+\_\+curr\+Undealt card index to zero and suffels the deck \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ad7ea5b6709f575b3a3f1cbd305cc98c4}{Add\+Card\+Info\+To\+Deck}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} a\+\_\+card\+To\+Add)
+\begin{DoxyCompactList}\small\item\em adds the passed card info into the list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a00d62cc70dff72ca8082c043fcf7a13b}{m\+\_\+card\+List}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_ad91dc56224f29a355d083a79726d20f5}{m\+\_\+curr\+Undealt\+Card\+Idx}}
+\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a121a315be96ed07b24c0400c46d6ab7b}{m\+\_\+card\+Init\+File\+Path}}
+\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a7b3014c38a1b14e29bcc1a5290695458}{m\+\_\+card\+Init\+File\+Name}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_a50d7baf779e0fc75b5159ff3ef3c92a0}{m\+\_\+curr\+Active\+Card\+Idx}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a3f377408a57d2b06ded3b9cff47498d2}\label{class_brood_1_1_application_1_1_components_1_1_deck_a3f377408a57d2b06ded3b9cff47498d2}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Deck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a0788447d397264f6900118530d0d6174}\label{class_brood_1_1_application_1_1_components_1_1_deck_a0788447d397264f6900118530d0d6174}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!````~Deck@{$\sim$Deck}}
+\index{````~Deck@{$\sim$Deck}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{$\sim$Deck()}{~Deck()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Deck\+::$\sim$\+Deck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a87ccdcb3fa32da4db88ef5d449c40e62}\label{class_brood_1_1_application_1_1_components_1_1_deck_a87ccdcb3fa32da4db88ef5d449c40e62}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Deck (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} \&}]{a\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other} & reference to the the deck object that is being copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_ad7ea5b6709f575b3a3f1cbd305cc98c4}\label{class_brood_1_1_application_1_1_components_1_1_deck_ad7ea5b6709f575b3a3f1cbd305cc98c4}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!AddCardInfoToDeck@{AddCardInfoToDeck}}
+\index{AddCardInfoToDeck@{AddCardInfoToDeck}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{AddCardInfoToDeck()}{AddCardInfoToDeck()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Add\+Card\+Info\+To\+Deck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}}}]{a\+\_\+card\+To\+Add }\end{DoxyParamCaption})}
+
+
+
+adds the passed card info into the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+card\+To\+Add} & card to add to the deck \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a38bbdcf678b3fd0b7858656ea4d00c36}\label{class_brood_1_1_application_1_1_components_1_1_deck_a38bbdcf678b3fd0b7858656ea4d00c36}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!DealCard@{DealCard}}
+\index{DealCard@{DealCard}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{DealCard()}{DealCard()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Deal\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to deal the next undeal card. 
+
+If all the card are dealt then it resets the dealt and shuffles it
+
+\begin{DoxyReturn}{Returns}
+a card\+Info object witht the dealt card 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a5950b42673e8813500bc413a077ab3ba}\label{class_brood_1_1_application_1_1_components_1_1_deck_a5950b42673e8813500bc413a077ab3ba}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetCardInitFileName@{GetCardInitFileName}}
+\index{GetCardInitFileName@{GetCardInitFileName}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetCardInitFileName()}{GetCardInitFileName()}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Card\+Init\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets card Init file name 
+
+\begin{DoxyReturn}{Returns}
+card Init file name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_ad777338149e601a99d2b453a77d1356a}\label{class_brood_1_1_application_1_1_components_1_1_deck_ad777338149e601a99d2b453a77d1356a}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetCardInitFilePath@{GetCardInitFilePath}}
+\index{GetCardInitFilePath@{GetCardInitFilePath}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetCardInitFilePath()}{GetCardInitFilePath()}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Card\+Init\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets card Init file path 
+
+\begin{DoxyReturn}{Returns}
+card Init file path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a69ea097a748122cee6dacdc7a4f9fb66}\label{class_brood_1_1_application_1_1_components_1_1_deck_a69ea097a748122cee6dacdc7a4f9fb66}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetCardList@{GetCardList}}
+\index{GetCardList@{GetCardList}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetCardList()}{GetCardList()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ $>$ \& Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Card\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the card\+Info\+List. 
+
+\begin{DoxyReturn}{Returns}
+constance reference to the card Info List 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a47bd26258a27c01d32f85b2ffa67c167}\label{class_brood_1_1_application_1_1_components_1_1_deck_a47bd26258a27c01d32f85b2ffa67c167}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetCardPtrAtIdx@{GetCardPtrAtIdx}}
+\index{GetCardPtrAtIdx@{GetCardPtrAtIdx}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetCardPtrAtIdx()}{GetCardPtrAtIdx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Card\+Ptr\+At\+Idx (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+card\+Info\+Idx }\end{DoxyParamCaption})}
+
+
+
+Gets a card info pointer to the passed index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+card\+Info\+Idx} & card info at passed index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the card given index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a9ab9bdb2e5675af4ffecbd51a2681ac6}\label{class_brood_1_1_application_1_1_components_1_1_deck_a9ab9bdb2e5675af4ffecbd51a2681ac6}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetCurrActiveCardIdx@{GetCurrActiveCardIdx}}
+\index{GetCurrActiveCardIdx@{GetCurrActiveCardIdx}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetCurrActiveCardIdx()}{GetCurrActiveCardIdx()}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Curr\+Active\+Card\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets card current active card index 
+
+\begin{DoxyReturn}{Returns}
+card Init file path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a1910e85e7a29963e167d09111877ab97}\label{class_brood_1_1_application_1_1_components_1_1_deck_a1910e85e7a29963e167d09111877ab97}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetCurrActiveCardPtr@{GetCurrActiveCardPtr}}
+\index{GetCurrActiveCardPtr@{GetCurrActiveCardPtr}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetCurrActiveCardPtr()}{GetCurrActiveCardPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Curr\+Active\+Card\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a40621e1085a947b16bed17816dc2aa5d}\label{class_brood_1_1_application_1_1_components_1_1_deck_a40621e1085a947b16bed17816dc2aa5d}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data}} Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns deck data struct 
+
+\begin{DoxyReturn}{Returns}
+card\+Info data struct with the deck data in it 
+\end{DoxyReturn}
+setting up the deck\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a4916241f36171d6de8d4e1da6d715e12}\label{class_brood_1_1_application_1_1_components_1_1_deck_a4916241f36171d6de8d4e1da6d715e12}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!InitializeDeck@{InitializeDeck}}
+\index{InitializeDeck@{InitializeDeck}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{InitializeDeck()}{InitializeDeck()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Initialize\+Deck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Deck\+Prefab\+Data}} \&}]{a\+\_\+deck\+Data }\end{DoxyParamCaption})}
+
+
+
+initializes the deck with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Data} & reference of the deck data \\
+\hline
+\end{DoxyParams}
+setting up the deck\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a4f9fb5a7063ff7e78f66ea450eed30e9}\label{class_brood_1_1_application_1_1_components_1_1_deck_a4f9fb5a7063ff7e78f66ea450eed30e9}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!LoadCardFromInitFile@{LoadCardFromInitFile}}
+\index{LoadCardFromInitFile@{LoadCardFromInitFile}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{LoadCardFromInitFile()}{LoadCardFromInitFile()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Load\+Card\+From\+Init\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+file\+Init\+Path }\end{DoxyParamCaption})}
+
+
+
+loads cards from a card Init file path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Init\+Path} & path to a file from which cards can be loaded into \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_ac4b8328ca06869eb52db15285b87317a}\label{class_brood_1_1_application_1_1_components_1_1_deck_ac4b8328ca06869eb52db15285b87317a}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the deck and its path data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a2a5afbbe90ff80433c67907d8df77fa2}\label{class_brood_1_1_application_1_1_components_1_1_deck_a2a5afbbe90ff80433c67907d8df77fa2}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} \& Brood\+::\+Application\+::\+Components\+::\+Deck\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} \&}]{a\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+assignmnet operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other} & reference to the the deck object that is being copied from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a65b9d1bbb9a78eb2f654f4d1c56e8986}\label{class_brood_1_1_application_1_1_components_1_1_deck_a65b9d1bbb9a78eb2f654f4d1c56e8986}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!ResetDeck@{ResetDeck}}
+\index{ResetDeck@{ResetDeck}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{ResetDeck()}{ResetDeck()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Reset\+Deck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+resets the m\+\_\+curr\+Undealt card index to zero and suffels the deck 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_acbb7ff590ae7af992409f8a7685be25a}\label{class_brood_1_1_application_1_1_components_1_1_deck_acbb7ff590ae7af992409f8a7685be25a}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!SaveCardToInitFile@{SaveCardToInitFile}}
+\index{SaveCardToInitFile@{SaveCardToInitFile}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{SaveCardToInitFile()}{SaveCardToInitFile()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Save\+Card\+To\+Init\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+file\+Init\+Path }\end{DoxyParamCaption})}
+
+
+
+saves cards to a card Init file path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Init\+Path} & path to a file to which cards can be saveed into \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a2a9807eead4aa91090646b705d6e162a}\label{class_brood_1_1_application_1_1_components_1_1_deck_a2a9807eead4aa91090646b705d6e162a}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr,  }\item[{std\+::string}]{a\+\_\+game\+Title,  }\item[{unsigned}]{a\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+initializes the deck with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+{\em a\+\_\+game\+Title} & title of the game \\
+\hline
+{\em a\+\_\+idx} & this deck index in the deck manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a8cafff0ea15411d59b1a0aed491aeec1}\label{class_brood_1_1_application_1_1_components_1_1_deck_a8cafff0ea15411d59b1a0aed491aeec1}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!SetCardListSize@{SetCardListSize}}
+\index{SetCardListSize@{SetCardListSize}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{SetCardListSize()}{SetCardListSize()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Set\+Card\+List\+Size (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+card\+List\+Size }\end{DoxyParamCaption})}
+
+
+
+resizes the card list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+card\+List\+Size} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_ac73fabb43a252a875021cb05b3a37cda}\label{class_brood_1_1_application_1_1_components_1_1_deck_ac73fabb43a252a875021cb05b3a37cda}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!SetCurrActiveCardIdx@{SetCurrActiveCardIdx}}
+\index{SetCurrActiveCardIdx@{SetCurrActiveCardIdx}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{SetCurrActiveCardIdx()}{SetCurrActiveCardIdx()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Set\+Curr\+Active\+Card\+Idx (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+curr\+Active\+Card\+Idx }\end{DoxyParamCaption})}
+
+
+
+sets card current active card index 
+
+\begin{DoxyReturn}{Returns}
+card Init file path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a5539082aa002cb2640abcb0b4c06ab95}\label{class_brood_1_1_application_1_1_components_1_1_deck_a5539082aa002cb2640abcb0b4c06ab95}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!Shuffel@{Shuffel}}
+\index{Shuffel@{Shuffel}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{Shuffel()}{Shuffel()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Deck\+::\+Shuffel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+shuffels the deck 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a7b3014c38a1b14e29bcc1a5290695458}\label{class_brood_1_1_application_1_1_components_1_1_deck_a7b3014c38a1b14e29bcc1a5290695458}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!m\_cardInitFileName@{m\_cardInitFileName}}
+\index{m\_cardInitFileName@{m\_cardInitFileName}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{m\_cardInitFileName}{m\_cardInitFileName}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Deck\+::m\+\_\+card\+Init\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a121a315be96ed07b24c0400c46d6ab7b}\label{class_brood_1_1_application_1_1_components_1_1_deck_a121a315be96ed07b24c0400c46d6ab7b}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!m\_cardInitFilePath@{m\_cardInitFilePath}}
+\index{m\_cardInitFilePath@{m\_cardInitFilePath}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{m\_cardInitFilePath}{m\_cardInitFilePath}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Deck\+::m\+\_\+card\+Init\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a00d62cc70dff72ca8082c043fcf7a13b}\label{class_brood_1_1_application_1_1_components_1_1_deck_a00d62cc70dff72ca8082c043fcf7a13b}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!m\_cardList@{m\_cardList}}
+\index{m\_cardList@{m\_cardList}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{m\_cardList}{m\_cardList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}}$\ast$$>$ Brood\+::\+Application\+::\+Components\+::\+Deck\+::m\+\_\+card\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_a50d7baf779e0fc75b5159ff3ef3c92a0}\label{class_brood_1_1_application_1_1_components_1_1_deck_a50d7baf779e0fc75b5159ff3ef3c92a0}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!m\_currActiveCardIdx@{m\_currActiveCardIdx}}
+\index{m\_currActiveCardIdx@{m\_currActiveCardIdx}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{m\_currActiveCardIdx}{m\_currActiveCardIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Deck\+::m\+\_\+curr\+Active\+Card\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_deck_ad91dc56224f29a355d083a79726d20f5}\label{class_brood_1_1_application_1_1_components_1_1_deck_ad91dc56224f29a355d083a79726d20f5}} 
+\index{Brood::Application::Components::Deck@{Brood::Application::Components::Deck}!m\_currUndealtCardIdx@{m\_currUndealtCardIdx}}
+\index{m\_currUndealtCardIdx@{m\_currUndealtCardIdx}!Brood::Application::Components::Deck@{Brood::Application::Components::Deck}}
+\doxysubsubsection{\texorpdfstring{m\_currUndealtCardIdx}{m\_currUndealtCardIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Deck\+::m\+\_\+curr\+Undealt\+Card\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_deck_8h}{Deck.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_deck_8cpp}{Deck.\+cpp}}\end{DoxyCompactItemize}

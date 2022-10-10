@@ -1,0 +1,44 @@
+\hypertarget{class_sprite_handler}{}\doxysection{Sprite\+Handler Class Reference}
+\label{class_sprite_handler}\index{SpriteHandler@{SpriteHandler}}
+
+
+a class to handel the sprite  
+
+
+
+
+{\ttfamily \#include \char`\"{}Sprite\+Handler.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+a class to handel the sprite 
+
+This class has function to manupulate the sprite and textures. It allows to load texture from file.
+
+\begin{DoxyNote}{Note}
+A sprite sheet should always be horizontal
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// creating a button}}
+\DoxyCodeLine{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}} mySpriteButton;}
+\DoxyCodeLine{mySpriteButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}{SetBodySize}}( 50, 50 );}
+\DoxyCodeLine{mySpriteButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa37f83be67b060565445cea7fd940d8c}{SetBodyPosition}}( 55, 100 );}
+\DoxyCodeLine{mySpriteButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b6fcad37e347bde0b955eed6fdb3ed4}{SetFont}}( font );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// loading the texture}}
+\DoxyCodeLine{mySpriteButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{GetSpriteBody}}().\mbox{\hyperlink{class_brood_1_1_sprite_handler_a2208776de455e333b5755335f678db02}{SetTextureFromFilePath}}( fileName );}
+\DoxyCodeLine{\textcolor{comment}{// setting the second sprite from the texture file}}
+\DoxyCodeLine{mySpriteButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{GetSpriteBody}}().\mbox{\hyperlink{class_brood_1_1_sprite_handler_a5ac5756649b5396c2e9a7bfd9bff49f8}{SetSpriteFromTexture}}( 1 );}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000014}{Todo}}]make this animatable. next Sprit() which get the next sprite and loops back to idx 0 \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_sprite_handler_8h}{Sprite\+Handler.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,418 @@
+\hypertarget{class_brood_1_1_sprite_handler}{}\doxysection{Brood\+::Sprite\+Handler Class Reference}
+\label{class_brood_1_1_sprite_handler}\index{Brood::SpriteHandler@{Brood::SpriteHandler}}
+
+
+{\ttfamily \#include $<$Sprite\+Handler.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler_a893369df4824f1ff7e1f8f4d46275b1d}{Sprite\+Handler}} (sf\+::\+Rectangle\+Shape $\ast$a\+\_\+body)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_sprite_handler_a653970b95088bef113d00a2b6c34b563}{$\sim$\+Sprite\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em default destrctor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler_a96794c50f6206166de0b80f7f53f2cee}{Sprite\+Handler}} (const \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Sprite\+Handler}} \&a\+\_\+other\+Sprite\+Handler)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler}{Sprite\+Handler}} \& \mbox{\hyperlink{class_brood_1_1_sprite_handler_a117889456458744ce4e80b40dcd02be0}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Sprite\+Handler}} \&a\+\_\+other\+Sprite\+Handler)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_sprite_handler_a257b9aa14240d469a5558f3cd1e2ded6}{Set\+Sprite\+Length}} (float a\+\_\+sprite\+Length)
+\begin{DoxyCompactList}\small\item\em setter funciton to set the sprite length \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_sprite_handler_aa5b1f8a3bd4567a281a9e9ef0e3c883a}{Set\+Sprite\+Height}} (float a\+\_\+sprite\+Hwight)
+\begin{DoxyCompactList}\small\item\em setter funciton to set the sprite height \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_sprite_handler_a2208776de455e333b5755335f678db02}{Set\+Texture\+From\+File\+Path}} (std\+::string a\+\_\+texture\+Path)
+\begin{DoxyCompactList}\small\item\em loads and sets the texture from the file path \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_sprite_handler_aaf2af23b31fe85634285d1577ee78cda}{Set\+Texture\+From\+File\+Path}} (std\+::string a\+\_\+texture\+Directory\+Path, std\+::string a\+\_\+texture\+File\+Name)
+\begin{DoxyCompactList}\small\item\em loads and sets the texture from the file path \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_sprite_handler_ad63ea5017f156bf850a2313c1f4e5dba}{Set\+Texture\+From\+Saved\+File\+Path}} ()
+\begin{DoxyCompactList}\small\item\em load and sets a texture from the stored texture\+Path \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_sprite_handler_a5ac5756649b5396c2e9a7bfd9bff49f8}{Set\+Sprite\+From\+Texture}} (unsigned a\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Setter for texture. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_brood_1_1_sprite_handler_af464f7d1cdaa85c8b7db7137b59227c6}{Get\+Texture\+File\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the saved texture path. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_brood_1_1_sprite_handler_a553a48445014d5ced4f800d149f09fde}{Get\+Texture\+Directory\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the saved texture path. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_brood_1_1_sprite_handler_a44186584b26d37234c72fc4d685d8cbd}{Get\+Sprit\+Lenght}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the saved sprite length. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_brood_1_1_sprite_handler_a8a0cce492941e36d3f54a99ab835043b}{Get\+Sprit\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the saved sprite height. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_sprite_handler_a8f43b0c83eb666eea0e83173531af6ab}{Getcurr\+Sprite\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the index of current Sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_sprite_handler_a06f51f1261f91bc9b1f1a4edaf6c6e86}{Remove\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Removes the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_sprite_handler_a39b49114e8eb21313a1ac99992664494}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em changes the texture of the element to its the element ID when debug is on and changes it back to the texture it had before debugging when debug is off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_sprite_handler_ae006c8d8afb6335391b6433b483d2923}{m\+\_\+body}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+pointer to the body \end{quote}
+\end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_sprite_handler_a5219c84445dcd03a71df7313c07a322e}{m\+\_\+texture\+Directory\+Path}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+saves the directory path to the texture \end{quote}
+\end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_sprite_handler_a05ee3edbbf46c48b1841016eae042e1a}{m\+\_\+texture\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+saves the path to the texture \end{quote}
+\end{DoxyCompactList}\item 
+sf\+::\+Texture \mbox{\hyperlink{class_brood_1_1_sprite_handler_a91bbc8d1a662ce29575dbc145a238dfe}{m\+\_\+texture}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+reference to the the texture opened from the path \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_brood_1_1_sprite_handler_aa237c9fec05fa972806fbd5b14a3dd5f}{m\+\_\+sprite\+Length}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+sprite length in the texture file \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_brood_1_1_sprite_handler_ad9f99db6fd6d17e238755cc165228f0e}{m\+\_\+sprite\+Height}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_sprite_handler_a943f37c8c7c10f3a51a18470c8736ccc}{m\+\_\+curr\+Sprite\+Index}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+sprite height in the texture file \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a893369df4824f1ff7e1f8f4d46275b1d}\label{class_brood_1_1_sprite_handler_a893369df4824f1ff7e1f8f4d46275b1d}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SpriteHandler@{SpriteHandler}}
+\index{SpriteHandler@{SpriteHandler}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SpriteHandler()}{SpriteHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sprite\+Handler\+::\+Sprite\+Handler (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+body }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes the \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Sprite\+Handler}} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+body} & pointer the body of the element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a653970b95088bef113d00a2b6c34b563}\label{class_brood_1_1_sprite_handler_a653970b95088bef113d00a2b6c34b563}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!````~SpriteHandler@{$\sim$SpriteHandler}}
+\index{````~SpriteHandler@{$\sim$SpriteHandler}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$SpriteHandler()}{~SpriteHandler()}}
+{\footnotesize\ttfamily Sprite\+Handler\+::$\sim$\+Sprite\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+default destrctor 
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a96794c50f6206166de0b80f7f53f2cee}\label{class_brood_1_1_sprite_handler_a96794c50f6206166de0b80f7f53f2cee}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SpriteHandler@{SpriteHandler}}
+\index{SpriteHandler@{SpriteHandler}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SpriteHandler()}{SpriteHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sprite\+Handler\+::\+Sprite\+Handler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Sprite\+Handler}} \&}]{a\+\_\+other\+Sprite\+Handler }\end{DoxyParamCaption})}
+
+
+
+Copy Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Sprite\+Handler} & reference to the the other sprite handler object that is being copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a39b49114e8eb21313a1ac99992664494}\label{class_brood_1_1_sprite_handler_a39b49114e8eb21313a1ac99992664494}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Sprite\+Handler\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+changes the texture of the element to its the element ID when debug is on and changes it back to the texture it had before debugging when debug is off. 
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a8f43b0c83eb666eea0e83173531af6ab}\label{class_brood_1_1_sprite_handler_a8f43b0c83eb666eea0e83173531af6ab}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!GetcurrSpriteIndex@{GetcurrSpriteIndex}}
+\index{GetcurrSpriteIndex@{GetcurrSpriteIndex}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{GetcurrSpriteIndex()}{GetcurrSpriteIndex()}}
+{\footnotesize\ttfamily const unsigned Sprite\+Handler\+::\+Getcurr\+Sprite\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the index of current Sprite. 
+
+\begin{DoxyReturn}{Returns}
+float value containing the sprite length 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a8a0cce492941e36d3f54a99ab835043b}\label{class_brood_1_1_sprite_handler_a8a0cce492941e36d3f54a99ab835043b}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!GetSpritHeight@{GetSpritHeight}}
+\index{GetSpritHeight@{GetSpritHeight}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{GetSpritHeight()}{GetSpritHeight()}}
+{\footnotesize\ttfamily const float Sprite\+Handler\+::\+Get\+Sprit\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the saved sprite height. 
+
+\begin{DoxyReturn}{Returns}
+float value containing the sprite length 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a44186584b26d37234c72fc4d685d8cbd}\label{class_brood_1_1_sprite_handler_a44186584b26d37234c72fc4d685d8cbd}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!GetSpritLenght@{GetSpritLenght}}
+\index{GetSpritLenght@{GetSpritLenght}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{GetSpritLenght()}{GetSpritLenght()}}
+{\footnotesize\ttfamily const float Sprite\+Handler\+::\+Get\+Sprit\+Lenght (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the saved sprite length. 
+
+\begin{DoxyReturn}{Returns}
+float value containing the sprite length 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a553a48445014d5ced4f800d149f09fde}\label{class_brood_1_1_sprite_handler_a553a48445014d5ced4f800d149f09fde}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!GetTextureDirectoryPath@{GetTextureDirectoryPath}}
+\index{GetTextureDirectoryPath@{GetTextureDirectoryPath}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{GetTextureDirectoryPath()}{GetTextureDirectoryPath()}}
+{\footnotesize\ttfamily const std\+::string Sprite\+Handler\+::\+Get\+Texture\+Directory\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the saved texture path. 
+
+\begin{DoxyReturn}{Returns}
+string containing the texture directory path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_af464f7d1cdaa85c8b7db7137b59227c6}\label{class_brood_1_1_sprite_handler_af464f7d1cdaa85c8b7db7137b59227c6}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!GetTextureFileName@{GetTextureFileName}}
+\index{GetTextureFileName@{GetTextureFileName}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{GetTextureFileName()}{GetTextureFileName()}}
+{\footnotesize\ttfamily const std\+::string Sprite\+Handler\+::\+Get\+Texture\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the saved texture path. 
+
+\begin{DoxyReturn}{Returns}
+string containing the texture directory path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a117889456458744ce4e80b40dcd02be0}\label{class_brood_1_1_sprite_handler_a117889456458744ce4e80b40dcd02be0}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \& Sprite\+Handler\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Sprite\+Handler}} \&}]{a\+\_\+other\+Sprite\+Handler }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Sprite\+Handler} & reference to the the other sprite handler object that is being copied from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a06f51f1261f91bc9b1f1a4edaf6c6e86}\label{class_brood_1_1_sprite_handler_a06f51f1261f91bc9b1f1a4edaf6c6e86}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!RemoveTexture@{RemoveTexture}}
+\index{RemoveTexture@{RemoveTexture}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{RemoveTexture()}{RemoveTexture()}}
+{\footnotesize\ttfamily void Sprite\+Handler\+::\+Remove\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes the texture. 
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a5ac5756649b5396c2e9a7bfd9bff49f8}\label{class_brood_1_1_sprite_handler_a5ac5756649b5396c2e9a7bfd9bff49f8}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SetSpriteFromTexture@{SetSpriteFromTexture}}
+\index{SetSpriteFromTexture@{SetSpriteFromTexture}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SetSpriteFromTexture()}{SetSpriteFromTexture()}}
+{\footnotesize\ttfamily void Sprite\+Handler\+::\+Set\+Sprite\+From\+Texture (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Setter for texture. 
+
+sets the texture from the texture vector if it is not empty. If either the sprite height and length is equal to zero then, it sets them to body\textquotesingle{}s height and length
+
+\begin{DoxyWarning}{Warning}
+Assumes that The sprite for the faces are lined linearly. That is assumes that there is only one row of sprite.
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000013}{Todo}}]make the adaptable for number of rows and column\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num} & index of sprite in the texture \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_aa5b1f8a3bd4567a281a9e9ef0e3c883a}\label{class_brood_1_1_sprite_handler_aa5b1f8a3bd4567a281a9e9ef0e3c883a}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SetSpriteHeight@{SetSpriteHeight}}
+\index{SetSpriteHeight@{SetSpriteHeight}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SetSpriteHeight()}{SetSpriteHeight()}}
+{\footnotesize\ttfamily void Sprite\+Handler\+::\+Set\+Sprite\+Height (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sprite\+Height }\end{DoxyParamCaption})}
+
+
+
+setter funciton to set the sprite height 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sprite\+Length} & height of the sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a257b9aa14240d469a5558f3cd1e2ded6}\label{class_brood_1_1_sprite_handler_a257b9aa14240d469a5558f3cd1e2ded6}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SetSpriteLength@{SetSpriteLength}}
+\index{SetSpriteLength@{SetSpriteLength}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SetSpriteLength()}{SetSpriteLength()}}
+{\footnotesize\ttfamily void Sprite\+Handler\+::\+Set\+Sprite\+Length (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sprite\+Length }\end{DoxyParamCaption})}
+
+
+
+setter funciton to set the sprite length 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sprite\+Length} & length of the sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_aaf2af23b31fe85634285d1577ee78cda}\label{class_brood_1_1_sprite_handler_aaf2af23b31fe85634285d1577ee78cda}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SetTextureFromFilePath@{SetTextureFromFilePath}}
+\index{SetTextureFromFilePath@{SetTextureFromFilePath}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SetTextureFromFilePath()}{SetTextureFromFilePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sprite\+Handler\+::\+Set\+Texture\+From\+File\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+texture\+Directory\+Path,  }\item[{std\+::string}]{a\+\_\+texture\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+loads and sets the texture from the file path 
+
+It also saves the texture\+Filepath. By default uses the body size as the sprite size
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+texture\+Directory\+Path} & file path to the texture \\
+\hline
+{\em a\+\_\+texture\+File\+Name} & file name of the texture\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if texture was successfully set; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a2208776de455e333b5755335f678db02}\label{class_brood_1_1_sprite_handler_a2208776de455e333b5755335f678db02}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SetTextureFromFilePath@{SetTextureFromFilePath}}
+\index{SetTextureFromFilePath@{SetTextureFromFilePath}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SetTextureFromFilePath()}{SetTextureFromFilePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sprite\+Handler\+::\+Set\+Texture\+From\+File\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+texture\+Path }\end{DoxyParamCaption})}
+
+
+
+loads and sets the texture from the file path 
+
+It also saves the texture\+Filepath. By default uses the body size as the sprite size
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+texture\+Path} & file path to to the texture\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if texture was successfully set; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_ad63ea5017f156bf850a2313c1f4e5dba}\label{class_brood_1_1_sprite_handler_ad63ea5017f156bf850a2313c1f4e5dba}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!SetTextureFromSavedFilePath@{SetTextureFromSavedFilePath}}
+\index{SetTextureFromSavedFilePath@{SetTextureFromSavedFilePath}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{SetTextureFromSavedFilePath()}{SetTextureFromSavedFilePath()}}
+{\footnotesize\ttfamily bool Sprite\+Handler\+::\+Set\+Texture\+From\+Saved\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load and sets a texture from the stored texture\+Path 
+
+\begin{DoxyReturn}{Returns}
+returns true if texture was successfully set; else false 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_ae006c8d8afb6335391b6433b483d2923}\label{class_brood_1_1_sprite_handler_ae006c8d8afb6335391b6433b483d2923}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_body@{m\_body}}
+\index{m\_body@{m\_body}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_body}{m\_body}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Sprite\+Handler\+::m\+\_\+body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+pointer to the body \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a943f37c8c7c10f3a51a18470c8736ccc}\label{class_brood_1_1_sprite_handler_a943f37c8c7c10f3a51a18470c8736ccc}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_currSpriteIndex@{m\_currSpriteIndex}}
+\index{m\_currSpriteIndex@{m\_currSpriteIndex}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_currSpriteIndex}{m\_currSpriteIndex}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Sprite\+Handler\+::m\+\_\+curr\+Sprite\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+sprite height in the texture file \end{quote}
+
+
+\begin{quote}
+saves the current index of sprite in the texture \end{quote}
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_ad9f99db6fd6d17e238755cc165228f0e}\label{class_brood_1_1_sprite_handler_ad9f99db6fd6d17e238755cc165228f0e}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_spriteHeight@{m\_spriteHeight}}
+\index{m\_spriteHeight@{m\_spriteHeight}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_spriteHeight}{m\_spriteHeight}}
+{\footnotesize\ttfamily float Brood\+::\+Sprite\+Handler\+::m\+\_\+sprite\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_aa237c9fec05fa972806fbd5b14a3dd5f}\label{class_brood_1_1_sprite_handler_aa237c9fec05fa972806fbd5b14a3dd5f}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_spriteLength@{m\_spriteLength}}
+\index{m\_spriteLength@{m\_spriteLength}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_spriteLength}{m\_spriteLength}}
+{\footnotesize\ttfamily float Brood\+::\+Sprite\+Handler\+::m\+\_\+sprite\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+sprite length in the texture file \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a91bbc8d1a662ce29575dbc145a238dfe}\label{class_brood_1_1_sprite_handler_a91bbc8d1a662ce29575dbc145a238dfe}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily sf\+::\+Texture Brood\+::\+Sprite\+Handler\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+reference to the the texture opened from the path \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a5219c84445dcd03a71df7313c07a322e}\label{class_brood_1_1_sprite_handler_a5219c84445dcd03a71df7313c07a322e}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_textureDirectoryPath@{m\_textureDirectoryPath}}
+\index{m\_textureDirectoryPath@{m\_textureDirectoryPath}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_textureDirectoryPath}{m\_textureDirectoryPath}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Sprite\+Handler\+::m\+\_\+texture\+Directory\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+saves the directory path to the texture \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_sprite_handler_a05ee3edbbf46c48b1841016eae042e1a}\label{class_brood_1_1_sprite_handler_a05ee3edbbf46c48b1841016eae042e1a}} 
+\index{Brood::SpriteHandler@{Brood::SpriteHandler}!m\_textureFileName@{m\_textureFileName}}
+\index{m\_textureFileName@{m\_textureFileName}!Brood::SpriteHandler@{Brood::SpriteHandler}}
+\doxysubsubsection{\texorpdfstring{m\_textureFileName}{m\_textureFileName}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Sprite\+Handler\+::m\+\_\+texture\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+saves the path to the texture \end{quote}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_sprite_handler_8h}{Sprite\+Handler.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_sprite_handler_8cpp}{Sprite\+Handler.\+cpp}}\end{DoxyCompactItemize}

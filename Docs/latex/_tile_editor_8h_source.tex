@@ -1,0 +1,226 @@
+\hypertarget{_tile_editor_8h_source}{}\doxysection{Tile\+Editor.\+h}
+\label{_tile_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/TileEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/TileEditor.h}}
+\mbox{\hyperlink{_tile_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{19 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \textcolor{keyword}{class }\mbox{\hyperlink{class_tile_editor}{TileEditor}};}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{29 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ================= start of TileEditor class ==========================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor}{Brood::Application::TileEditor}} :}
+\DoxyCodeLine{49     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ab9e180e264ffb26cc7bd04bd5baaa0c9}{TileEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{55                 sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a01a95a6374179a3289e51a9018425af6}{\string~TileEditor}}();}
+\DoxyCodeLine{59     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2407d094d264d12f551525ce077a22dc}{InitializeWorkSpace}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a15339b1cbda21fb9c06a471269a51f30}{Update}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aa59a9b9756fe0b0d00899b5738d2a03b}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// renders to the screen}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_afb394ca92d0dc54071d0e1c4706fe897}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_acaf7c4cdd35a8044d8faa4232710c2dc}{Debugger}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// ================= private member function ==================     }}
+\DoxyCodeLine{77 \textcolor{keyword}{private}:}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// checks if the user interacted with the tile row}}
+\DoxyCodeLine{80     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a902c178510d298e05edd02766c538bcb}{UpdateTileRowNumber}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// checks if the user interacted with the tile column}}
+\DoxyCodeLine{84     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a08da41619c0ab7291c27d05f83c97ea0}{UpdateTileColNumber}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// checks if the user interacted with the tile type}}
+\DoxyCodeLine{88     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a0093a80bb7ca0107bd47f1632b531c82}{UpdateTileType}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// checks if the user interacted with the NextPath row}}
+\DoxyCodeLine{92     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a8a7b4557919685577eb7c10a6b9ec15a}{UpdateNextPathRowNumber}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// checks if the user interacted with the NextPath column}}
+\DoxyCodeLine{96     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad5c1b4be320868d87aa76f66e3365da1}{UpdateNextPathColNumber}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// checks if the user interacted with the EndBridge row}}
+\DoxyCodeLine{100     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ab5fff35129443d3a5ca2cc9e6fe2cfaf}{UpdateEndBridgeRowNumber}}();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// checks if the user interacted with the EndBridge column}}
+\DoxyCodeLine{104     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aa92e3b4332ba79cd0870fa2fb913ac66}{UpdateEndBridgeColNumber}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// checks if the user interacted with the correct number }}
+\DoxyCodeLine{108     \textcolor{comment}{// of card panel Element}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a4ed0fd4462688b06fa4c320dc353f445}{UpdateCorrectCardNumber}}();}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{// checks if the user interacted with the assign deck idx}}
+\DoxyCodeLine{112     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ae622c4ac5cec6192843f768062b2b858}{UpdateAssinedDeckIdx}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// checks if the user interacted with the force dice roll}}
+\DoxyCodeLine{116     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{117     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_acf4c5c47a74313094ca31db0d7e4a5ae}{UpdateForceDiceRoll}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{120     \textcolor{comment}{// tile texture panel Element}}
+\DoxyCodeLine{121     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad14197e4cb1023fa9d22090e25863e49}{UpdateTileFileTexture}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// ================= private member variable ==================  }}
+\DoxyCodeLine{124 \textcolor{keyword}{private}:}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{127     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a70afb9d09f5108bbe17816828cda9b3a}{m\_panelBodyPtr}};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{130     \textcolor{comment}{// =========== member variables for general game setting =====}}
+\DoxyCodeLine{131     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{// ==== UI elements to show setting title  ====}}
+\DoxyCodeLine{134     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a81fa7580816719ba647fca38a11a685b}{m\_txtSettingTitle}};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{// ==== UI elements to change the current tile Row ====}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{139     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a27ee5b8879e83bc4acd8063f10514157}{m\_txtTileCurrRowPromt}};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{142     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a7fa8ea1b24df64eb1ff567a1794b0635}{m\_btnTileDecCurrRow}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1cea002791383ffcae1e2daf258ed3a8}{m\_txtTileCurrRow}};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a5e90eff325859c6009446d0ec8951368}{m\_btnTileIncCurrRow}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{comment}{// ==== UI elements to change the current tile Col ====}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a501dca534b2b0fea1c7e169212fb9441}{m\_txtTileCurrColPromt}};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a5a2539cdd231a21e61d897dfc5d0b8f5}{m\_btnTileDecCurrCol}};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{159     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a293256509c1fa5aad04a246eefd977f0}{m\_txtTileCurrCol}};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{162     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_af7f3dd7c6750d08adc99adede322681d}{m\_btnTileIncCurrCol}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{comment}{// ==== UI elements to change the Tile type ====}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aae7d2e01809fa9088de0d2ed64948a40}{m\_txtTileTypePromt}};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{171     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a54e0956e7f52ba5f4be5e69f26aeab91}{m\_ddiTileType}};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{// ==== UI elements to change the NextPath tile Row ====}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{176     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad30dc34784d96954f51d673f3f51f025}{m\_txtTileNextPathRowPromt}};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1b02280c76f1f3b02f9ea5692bde12e4}{m\_btnTileDecNextPathRow}};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{182     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ae688c119b83fe9e95578bee435dd6b57}{m\_txtTileNextPathRow}};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{185     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_afe4eb1e76597558d0d7abb8ce0047008}{m\_btnTileIncNextPathRow}};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{comment}{// ==== UI elements to change the NextPath tile Col ====}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{190     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ab4236c871890c4683a887c2120e6d84d}{m\_txtTileNextPathColPromt}};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{193     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a3e4bfbb187e3521325b82fa9a5afab23}{m\_btnTileDecNextPathCol}};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{196     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad6156b21c01913524d8753bf041dd451}{m\_txtTileNextPathCol}};}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{199     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ace307099721069a45707b05e49c625f9}{m\_btnTileIncNextPathCol}};}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     \textcolor{comment}{// ==== UI elements to change the EndBridge tile Row ====}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{204     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a407e7da8f4a4a76dae3bca9cf9cc1a0e}{m\_txtTileEndBridgeRowPromt}};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{207     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a073d715e62186df73d312ab8ff2ae67d}{m\_btnTileDecEndBridgeRow}};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{210     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a959049207c47b3249bab8eacbe00c883}{m\_txtTileEndBridgeRow}};}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{213     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a895e48377dc0590a3cc15d99c17b1e3d}{m\_btnTileIncEndBridgeRow}};}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \textcolor{comment}{// ==== UI elements to change the EndBridge tile Col ====}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{218     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a09aab8e80df6c9a73052f7035c188b61}{m\_txtTileEndBridgeColPromt}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{221     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ac3ffe79103199d05f74f96ad8f141f93}{m\_btnTileDecEndBridgeCol}};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{224     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a0fc26f4532b75b0ac113adb856fb8f5c}{m\_txtTileEndBridgeCol}};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{227     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a14edd6642f485ad0cb338387e4cf1799}{m\_btnTileIncEndBridgeCol}};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229     \textcolor{comment}{// ==== UI elements to change the tile's NumCorrectCard ====}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{232     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a7c1a9ba899b89ebf55c4c5dd5ac24f77}{m\_txtTileNumCorrectCardPromt}};}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{235     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2718a82ebd17f7e1be16b343a9070b64}{m\_btnTileDecNumCorrectCard}};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{238     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aae349225708d82fa677e18c2c1715388}{m\_txtTileNumCorrectCard}};}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{241     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1a34f62d322d4d1924bcbcd581f597d5}{m\_btnTileIncNumCorrectCard}};}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{comment}{// ==== UI elements to change the AssignDeckNum tile ====}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{246     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2460ef2f3ad5fe5d061be550188ecfbd}{m\_txtTileAssignedDeckIdxPromt}};}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{249     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a42009c48c32288ce9b4152bdc93f92f7}{m\_btnTileDecAssignedDeckIdx}};}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{252     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_adb0c068fad5418c19de0cfce35cbe7c8}{m\_txtTileAssignedDeckIdx}};}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{255     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a35ef4e8e36a81bf9a12d1c43c2beabea}{m\_btnTileIncAssignedDeckIdx}};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \textcolor{comment}{// ==== UI elements to change tile force dice Roll rule ====}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{260     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a723cd1f8f44b33c6a4bbfe8627043806}{m\_txtTileForceDiceRollPromt}};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{263     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a563f398236a2929a2adf0662e5857531}{m\_ddiTileForceDiceRoll}};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{comment}{// ==== UI elements to enter a Tile filename texture  ====}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{268     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1d45222be1a9757a0a2994c6d5e2771f}{m\_txtTileBgFileNamePrompt}};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{271     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a07c41878e6b9573e5b5349cbfb76b0ac}{m\_txtTileBgFileInput}};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{274     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a5b1ef4445e50fdd1efa503f0dd4fc67b}{m\_btnTileBgOpenFile}};}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \};}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{280 \textcolor{comment}{// ================= end of TileEditor class ============================}}
+\DoxyCodeLine{281 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

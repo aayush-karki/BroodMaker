@@ -1,0 +1,107 @@
+\hypertarget{_tiles_8h_source}{}\doxysection{Tiles.\+h}
+\label{_tiles_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Tiles.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Tiles.h}}
+\mbox{\hyperlink{_tiles_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{12 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{16 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_button_8h}{Button.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{30     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bb}{ENUM\_TileType}};}
+\DoxyCodeLine{33         \textcolor{keyword}{class }\mbox{\hyperlink{class_tiles}{Tiles}};}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{41 \textcolor{comment}{// ================= start of ENUM\_pathType enum class ==================}}
+\DoxyCodeLine{42 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bb}{Brood::Application::Components::ENUM\_TileType}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bba9d0da57eee4ad160953cf36570cccc04}{TILE\_blank}},}
+\DoxyCodeLine{47     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bba8076fb65221785f5c5b25064952b16a6}{TILE\_tile}},}
+\DoxyCodeLine{48     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bbad205b9061ded067d3dfc700a267c2de8}{TILE\_start}},}
+\DoxyCodeLine{49     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bba5ff7bb0ed6a14366d611afa11abb356f}{TILE\_end}},}
+\DoxyCodeLine{50     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bba5517e97ddbe95f644e5f52ac81e7a548}{TILE\_bridge}}}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{54 \textcolor{comment}{// ================= start of ENUM\_pathType enum class ==================}}
+\DoxyCodeLine{55 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{58 \textcolor{comment}{// ================= start of Tiles class ===============================}}
+\DoxyCodeLine{59 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{77 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood::Application::Components::Tiles}} :}
+\DoxyCodeLine{78     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}}
+\DoxyCodeLine{79 \{}
+\DoxyCodeLine{80     \textcolor{comment}{// =============== public member functions =================}}
+\DoxyCodeLine{81 \textcolor{keyword}{public}:}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{84     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a3cafab4efdd0282a7afe22a4cc0bd1c9}{Tiles}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// default  destructors}}
+\DoxyCodeLine{87     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a2bb3d1679f24c7e174c9c7481c016a44}{\string~Tiles}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{90     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a3cafab4efdd0282a7afe22a4cc0bd1c9}{Tiles}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}}\& a\_otherTile );}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// assignment constructor}}
+\DoxyCodeLine{93     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ab1628b245d7840ea05b8c9e4bd58d774}{operator = }}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}}\& a\_other );}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// getter funciton  to set the row and column}}
+\DoxyCodeLine{99     \textcolor{keyword}{const} sf::Vector2u \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ac7bc51481115a577b5f181e901a5c6a1}{GetRowAndCol}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// getter funciton  to set the row}}
+\DoxyCodeLine{102     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_abf62fdae2e4284e7bab27a2d299868c3}{GetRow}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// getter funciton  to set the column}}
+\DoxyCodeLine{105     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_aadef9d77c9c13b4191434d222eef26ef}{GetCol}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// setter funciton  to set the row and column}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_aa27f498848660b6315d6de94659d65ee}{SetRowAndCol}}( sf::Vector2u a\_rowCol );}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// setter funciton  to set the row}}
+\DoxyCodeLine{111     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_ae7eb4d9d598b6b466ad3b2d1c7629665}{SetRow}}( \textcolor{keywordtype}{unsigned} a\_row );}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{// setter funciton  to set the column}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a8f3505d23bec25c55d1a964526875612}{SetCol}}( \textcolor{keywordtype}{unsigned} a\_col );}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// Populates the member variable and sets the position and size of the}}
+\DoxyCodeLine{117     \textcolor{comment}{// tile}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a01d36ef1aac302d9b0f6afe8f3714ff4}{UpdateTile}}( \textcolor{keywordtype}{unsigned}  a\_tileRowNum = 0, \textcolor{keywordtype}{unsigned} a\_tileColNum = 0,}
+\DoxyCodeLine{119                      \textcolor{keywordtype}{float} a\_tileSizeX = 0.f, \textcolor{keywordtype}{float} a\_tileSizeY = 0.f,}
+\DoxyCodeLine{120                      \textcolor{keywordtype}{float} a\_boardPosX = 0.f, \textcolor{keywordtype}{float} a\_boardPosY = 0.f );}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{// ===== private member variables =====}}
+\DoxyCodeLine{123 \textcolor{keyword}{private}:}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_aa637e4fbb1bf5be700c25958f20362dd}{m\_tileRowNum}};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a7132362299cef4106b682399f5250893}{m\_tileColNum}};}
+\DoxyCodeLine{130 \};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{133 \textcolor{comment}{// ================= end of Tiles class =================================}}
+\DoxyCodeLine{134 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

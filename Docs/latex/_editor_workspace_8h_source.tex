@@ -1,0 +1,92 @@
+\hypertarget{_editor_workspace_8h_source}{}\doxysection{Editor\+Workspace.\+h}
+\label{_editor_workspace_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/EditorWorkspace.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/EditorWorkspace.h}}
+\mbox{\hyperlink{_editor_workspace_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{11 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_board_editor_8h}{BoardEditor.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_editor_8h}{GameEditor.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tile_editor_8h}{TileEditor.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_editor_8h}{PlayerEditor.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dice_editor_8h}{DiceEditor.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_deck_editor_8h}{DeckEditor.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_card_editor_8h}{CardEditor.h}}"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{27 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{28 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         \textcolor{keyword}{class }EditorWorkspace;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{41 \textcolor{comment}{// ================= start of EditorWorkspace class =====================}}
+\DoxyCodeLine{42 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace}{Brood::Application::EditorWorkspace}} :}
+\DoxyCodeLine{57     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     \textcolor{comment}{// ================= public member variables =================  }}
+\DoxyCodeLine{60 \textcolor{keyword}{public}:}
+\DoxyCodeLine{61     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a2a8d1f12a17ef1a164ff3bf088767864}{EditorWorkspace}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData );}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{65     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a8e99cf19c9da019694f53a147d3a0a81}{\string~EditorWorkspace}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// ===== virtual funcitons ====   }}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a8b7dceac808bbb5ddfe5e8cc5081c70f}{InitializeWorkSpace}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ac9db5e38b2fc2c30a2f07cf4042d374d}{Update}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ad15c6e3c80044f5023f39b0e93a7e392}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_abf093d7c69ad7190537c9bf37ce8640a}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a55c829ded1ed77a133b8c1ac57ac75d8}{Debugger}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// setter function for game data}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a2b04ba33533d30f64d03e6c36851d04e}{SetGameDataManager}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameDataManagerPtr );}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// ================= private member function ==================  }}
+\DoxyCodeLine{88 \textcolor{keyword}{private}:}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ab583586cbd4cd992f5f4baad9d6cdd15}{InitializeEditModeTabs}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a48b172ad0e66037a23031dd9510cff56}{UpdateEditModeTabs}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// updates the edit Tab and selects the proper tab}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a64efc914faec1f59173719a30e6dd10c}{UpdateActiveEditorIdx}}( \textcolor{keywordtype}{unsigned} a\_idx );}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// ================= private member variables =================  }}
+\DoxyCodeLine{100 \textcolor{keyword}{private}:}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103     sf::RectangleShape \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a4a485395c0fe296278537b9af4c582a3}{m\_sidePanel}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a7a5fcf2502f9ed8afbf64f478810e8ab}{m\_activeEditorIdx}};}
+\DoxyCodeLine{107     }
+\DoxyCodeLine{109     std::vector<Brood::BroodUI::Button*> \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a7f7584a4ca79760ca420572cb0cec143}{m\_editModesTabs}};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112     std::vector<Brood::Application::WorkSpace*> \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a45c5ac8dc4739eec969f123b14bd9831}{m\_editorWorkspaceList}};}
+\DoxyCodeLine{113 \};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{116 \textcolor{comment}{// ================= end of EditorWorkspace class =======================}}
+\DoxyCodeLine{117 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

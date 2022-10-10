@@ -1,0 +1,150 @@
+\hypertarget{_home_work_space_8h_source}{}\doxysection{Home\+Work\+Space.\+h}
+\label{_home_work_space_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/HomeWorkSpace.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/HomeWorkSpace.h}}
+\mbox{\hyperlink{_home_work_space_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{11 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_editor_workspace_8h}{EditorWorkspace.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_access_8h}{FileAccess.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{comment}{// defining what component of this file will be inside namespace BroodUI}}
+\DoxyCodeLine{28         \textcolor{keyword}{class }\mbox{\hyperlink{class_home_work_space}{HomeWorkSpace}};}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 \textcolor{comment}{// ================= start of InitialWorkSpace class ====================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{65 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space}{Brood::Application::HomeWorkSpace}} :}
+\DoxyCodeLine{66     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68     \textcolor{comment}{// ================= public member variables =================  }}
+\DoxyCodeLine{69 \textcolor{keyword}{public}:}
+\DoxyCodeLine{70     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_aab0652e930dbc0118c53c0b3f729cc45}{HomeWorkSpace}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{74     \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ad62c6981f40d2e9d467de2cd5779a6d3}{\string~HomeWorkSpace}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// override functions}}
+\DoxyCodeLine{77     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a2a0cf1dc18a0513a78795b43ebc3b696}{InitializeWorkSpace}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{80     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a9d2d709055310b1d5ba484008633e135}{Update}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a80fdd48119746afd787490fede05d1a7}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{// draw to the screen}}
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ab0d8659bcabe456902bc0ae5661df41a}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{// debugger}}
+\DoxyCodeLine{89     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a107a5845f330acc170c7abc458531e66}{Debugger}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// ================= private member function =================  }}
+\DoxyCodeLine{92 \textcolor{keyword}{private}:}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// Initialize the Ribbion Tabs}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a8b09d1b7a61bc9a95f0da610b312be69}{InitializeRibbionTabs}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{// checks if the ribbion tabs was pressed}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a85ce756821f0722bd59a61691fd4434f}{UpdateRibbionTabs}}();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// executes the menu item at the passed indexs}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a2cd50d91059894e2348d18ed885ee5ca}{ExecuteMenuItem}}( \textcolor{keywordtype}{unsigned} a\_iIdx, \textcolor{keywordtype}{unsigned} a\_jIdx );}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// executes the logic for homeworkspace excluding the main menu}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a7f29a8f1cadd86bfb7b8c3a8810abbf7}{UpdateHomeWorkspace}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// executes the logic for load game data}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a3ac78b0eb108cae13b44dd80251b51b7}{UpdateFileNameFeildDialog}}();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// Swtichs to home workspace if it is not in it}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a3eb058ca19c08c2a360edaef56404ef5}{SwitchToHomeWorkspace}}();}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// opening a dialog box so that user can enter file name to }}
+\DoxyCodeLine{113     \textcolor{comment}{// load previous edit}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_af62fa0ddb218a5794846a05035111995}{ExecuteLoadPreviousEditDialogBox}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// opening a dialog box so that user can enter file name to }}
+\DoxyCodeLine{117     \textcolor{comment}{// create new edit}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a819feb9dda161c8828722f7a66a80b02}{ExecuteCreateNewEditDialogBox}}();}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{comment}{// resets the game data}}
+\DoxyCodeLine{121     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ab50239ef3d2ab24fcc13157b5d93362a}{ResetGameData}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// saves the game data to the file}}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a4fcb8caaef6a3ace77223c30531e60a0}{SaveGameData}}();}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// load the game data from the file}}
+\DoxyCodeLine{127     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a6aad5fcbd0aa7332ab6618557f46f35f}{LoadGameData}}( std::filesystem::path a\_gameOrEditorFile );}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// ================= private member variables =================  }}
+\DoxyCodeLine{130 \textcolor{keyword}{private}:}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{comment}{// save what to do when openfile button is pressed}}
+\DoxyCodeLine{133     \textcolor{comment}{// it currently has 2 states: open game file and open edit file}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a9b0c86e2402dcc006e7c1c481d51c58e}{m\_openFileBtnIdx}};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Brood::BroodUI::MenuBar}} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a85475ce4360c4479d185e9424a758242}{m\_ribbionTabs}};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{141     sf::RectangleShape \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a4dcc24d4c6b5b73b1cdace258fa2f537}{m\_gameOrEditorForeground}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{145     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a96928a9f18873108ecc5fe1ebd6eb8c0}{m\_gameOrEditorBtn}};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a1024eaab71755695846597a309d1d1f1}{m\_toggleGameInfoLeftBtn}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a505a6fa9b939d8d7ce2e4f090135547a}{m\_toggleGameInfoRightBtn}};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_aa0166ae5f9fbb89dc583fc05f1071569}{m\_currGameInfoIdx}};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{157     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_aed48b41fbca38f524c1869ecb2940df2}{m\_showImportDialogBox}};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{160     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ac1bc9097b8aabe5dd143b1af4f07a76f}{m\_importGameBtn}};}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{163     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a79157eea86ab8bfa91f7390a175ae5b3}{m\_loadPreviousEditsBtn}};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{166     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ae83776adfa344be40a81fadab7072903}{m\_createNewEditBtn}};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{169     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a38802d8fb6b6eba8bfc21c74ca9f4cd8}{m\_cancleBtn}};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_af8b13c72da2c6dd7e5fda6f6d0fea324}{m\_showEnterFilenameDialogBox}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{175     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a096feb8b7849ebed379a93d52e3b769a}{m\_fileNameTxt}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_aad25261289be6a0a5cf717ca50949738}{m\_enterFileNameFeildTxt}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a9e452f2c78a7f20c32e8f61e77c87f00}{m\_openFileBtn}};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184     std::vector<std::string> \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ae3d5d1fcc5d9d3ccbf1a12babf39f104}{m\_gameInfoFilePathList}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{187     std::vector<sf::Texture> \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ad3b78f39f9c2729c015d78331ef95e81}{m\_gameListTexture}};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{191     std::vector<Brood::Application::WorkSpace*> \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a67e15e166caf53133caa916e6af71212}{m\_workSpacesList}};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{195     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a729fe6fcf22a0d25eb0c92b4c831f883}{m\_currWorkSpaceIdx}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{199     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ac74fd653878b520a37746a92aa3019a2}{m\_isHomeWorkspace}};}
+\DoxyCodeLine{200 \};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{203 \textcolor{comment}{// ================= end of InitialWorkSpace class ======================}}
+\DoxyCodeLine{204 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

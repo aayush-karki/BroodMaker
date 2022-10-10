@@ -1,0 +1,175 @@
+\hypertarget{class_brood_1_1_application_1_1_file_access}{}\doxysection{Brood\+::Application\+::File\+Access Class Reference}
+\label{class_brood_1_1_application_1_1_file_access}\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+
+
+{\ttfamily \#include $<$File\+Access.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_acf745d00a6ff3f990e5697aeb9c8124a}{File\+Access}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_af5334f79d3b46c1f5e34acb2fec3da15}{$\sim$\+File\+Access}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_ae82a02c76957b57820f88ae37b3b9dca}{Open\+File}} (std\+::string a\+\_\+fullfile\+Name)
+\begin{DoxyCompactList}\small\item\em opens the passed file in read and write mode \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_ae1dab1f4ca696315271efb41c0ecb25b}{Create\+File}} (std\+::string a\+\_\+fullfile\+Name)
+\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_ab8d9ca242a436cd7337adc3a59bb70b0}{Get\+Next\+Line}} (std\+::string \&a\+\_\+line)
+\begin{DoxyCompactList}\small\item\em Get the next line from the file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_a8616fd4b6491a2fd8864ca71cba30f39}{Rewind}} ()
+\begin{DoxyCompactList}\small\item\em points the pointer to beginning of the file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_a7ff89d5012b68f9401f663fd316fed2e}{Remove\+All\+Content}} ()
+\begin{DoxyCompactList}\small\item\em removes all content form the file and points the pointer to beginning of the file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_ae4b53893605aacf91448350a3d1a856c}{Write\+One\+Line\+To\+File}} (const std\+::string \&a\+\_\+line)
+\begin{DoxyCompactList}\small\item\em wrties a line to the the file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_af55deba7cb375e54496ebfed87deb9c8}{Check\+EOF}} ()
+\begin{DoxyCompactList}\small\item\em checks if the end of file is reached or not \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::fstream \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_aafc368854a216e1c5ee28a88e76a9052}{m\+\_\+file\+Handler}}
+\begin{DoxyCompactList}\small\item\em file handler \end{DoxyCompactList}\item 
+std\+::filesystem\+::path \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access_ab9ba50b8c384dcd838b7ba77c5cfd54b}{m\+\_\+file\+Path}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_acf745d00a6ff3f990e5697aeb9c8124a}\label{class_brood_1_1_application_1_1_file_access_acf745d00a6ff3f990e5697aeb9c8124a}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!FileAccess@{FileAccess}}
+\index{FileAccess@{FileAccess}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{FileAccess()}{FileAccess()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+File\+Access\+::\+File\+Access (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_af5334f79d3b46c1f5e34acb2fec3da15}\label{class_brood_1_1_application_1_1_file_access_af5334f79d3b46c1f5e34acb2fec3da15}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!````~FileAccess@{$\sim$FileAccess}}
+\index{````~FileAccess@{$\sim$FileAccess}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{$\sim$FileAccess()}{~FileAccess()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+File\+Access\+::$\sim$\+File\+Access (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_af55deba7cb375e54496ebfed87deb9c8}\label{class_brood_1_1_application_1_1_file_access_af55deba7cb375e54496ebfed87deb9c8}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!CheckEOF@{CheckEOF}}
+\index{CheckEOF@{CheckEOF}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{CheckEOF()}{CheckEOF()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+File\+Access\+::\+Check\+EOF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the end of file is reached or not 
+
+\begin{DoxyReturn}{Returns}
+true if file pointer is pointed at end of file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_ae1dab1f4ca696315271efb41c0ecb25b}\label{class_brood_1_1_application_1_1_file_access_ae1dab1f4ca696315271efb41c0ecb25b}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!CreateFile@{CreateFile}}
+\index{CreateFile@{CreateFile}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{CreateFile()}{CreateFile()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+File\+Access\+::\+Create\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+fullfile\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_ab8d9ca242a436cd7337adc3a59bb70b0}\label{class_brood_1_1_application_1_1_file_access_ab8d9ca242a436cd7337adc3a59bb70b0}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!GetNextLine@{GetNextLine}}
+\index{GetNextLine@{GetNextLine}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{GetNextLine()}{GetNextLine()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+File\+Access\+::\+Get\+Next\+Line (\begin{DoxyParamCaption}\item[{std\+::string \&}]{a\+\_\+line }\end{DoxyParamCaption})}
+
+
+
+Get the next line from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & the string where the extracted line is stored\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there was one. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_ae82a02c76957b57820f88ae37b3b9dca}\label{class_brood_1_1_application_1_1_file_access_ae82a02c76957b57820f88ae37b3b9dca}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!OpenFile@{OpenFile}}
+\index{OpenFile@{OpenFile}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{OpenFile()}{OpenFile()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+File\+Access\+::\+Open\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+fullfile\+Name }\end{DoxyParamCaption})}
+
+
+
+opens the passed file in read and write mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+fullfile\+Name} & filepath to the file that is to be opened\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on successfull opening; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_a7ff89d5012b68f9401f663fd316fed2e}\label{class_brood_1_1_application_1_1_file_access_a7ff89d5012b68f9401f663fd316fed2e}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!RemoveAllContent@{RemoveAllContent}}
+\index{RemoveAllContent@{RemoveAllContent}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{RemoveAllContent()}{RemoveAllContent()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+File\+Access\+::\+Remove\+All\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+removes all content form the file and points the pointer to beginning of the file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_a8616fd4b6491a2fd8864ca71cba30f39}\label{class_brood_1_1_application_1_1_file_access_a8616fd4b6491a2fd8864ca71cba30f39}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!Rewind@{Rewind}}
+\index{Rewind@{Rewind}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{Rewind()}{Rewind()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+File\+Access\+::\+Rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+points the pointer to beginning of the file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_ae4b53893605aacf91448350a3d1a856c}\label{class_brood_1_1_application_1_1_file_access_ae4b53893605aacf91448350a3d1a856c}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!WriteOneLineToFile@{WriteOneLineToFile}}
+\index{WriteOneLineToFile@{WriteOneLineToFile}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{WriteOneLineToFile()}{WriteOneLineToFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+File\+Access\+::\+Write\+One\+Line\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+\_\+line }\end{DoxyParamCaption})}
+
+
+
+wrties a line to the the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & the string that is added to the file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_aafc368854a216e1c5ee28a88e76a9052}\label{class_brood_1_1_application_1_1_file_access_aafc368854a216e1c5ee28a88e76a9052}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!m\_fileHandler@{m\_fileHandler}}
+\index{m\_fileHandler@{m\_fileHandler}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{m\_fileHandler}{m\_fileHandler}}
+{\footnotesize\ttfamily std\+::fstream Brood\+::\+Application\+::\+File\+Access\+::m\+\_\+file\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+file handler 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_file_access_ab9ba50b8c384dcd838b7ba77c5cfd54b}\label{class_brood_1_1_application_1_1_file_access_ab9ba50b8c384dcd838b7ba77c5cfd54b}} 
+\index{Brood::Application::FileAccess@{Brood::Application::FileAccess}!m\_filePath@{m\_filePath}}
+\index{m\_filePath@{m\_filePath}!Brood::Application::FileAccess@{Brood::Application::FileAccess}}
+\doxysubsubsection{\texorpdfstring{m\_filePath}{m\_filePath}}
+{\footnotesize\ttfamily std\+::filesystem\+::path Brood\+::\+Application\+::\+File\+Access\+::m\+\_\+file\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_file_access_8h}{File\+Access.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_file_access_8cpp}{File\+Access.\+cpp}}\end{DoxyCompactItemize}

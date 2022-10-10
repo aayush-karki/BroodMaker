@@ -1,0 +1,327 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_dice}{}\doxysection{Brood\+::Application\+::Components\+::Dice Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_dice}\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+
+
+{\ttfamily \#include $<$Dice.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Components\+::Dice\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_brood_1_1_application_1_1_components_1_1_dice}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a0226414da94edcfac1777e8ca89f95b3}{Dice}} (int a\+\_\+num\+Sides=6, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_aff20ea75742cef08be854c613f7e635e}{Dice}} (std\+::string a\+\_\+texture\+Path, int a\+\_\+num\+Sides=6, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em Initializes the butoon object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a48e90392d2ff1e6736c88f22e8a87751}{$\sim$\+Dice}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a228b40f2c0e4dee55a03b669ea656362}{Dice}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Dice}} \&a\+\_\+other\+Dice)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Dice}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_aa7d787704323db804f0d4c08e3d5d54b}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Dice}} \&a\+\_\+other\+Dice)
+\begin{DoxyCompactList}\small\item\em assignmnet operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a84b00ce4dcc38cf47b76a8732d65e281}{Initialize\+Dice}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Dice\+Prefab\+Data}} \&a\+\_\+dice\+Data)
+\begin{DoxyCompactList}\small\item\em initializes the dice with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Dice\+Prefab\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a2ca1a9b6bb7ce39c62200137b9f5524e}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns dice data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a45539751030f25e1b2bf896531ce2147}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the dice data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a16bccf4c0231b5a4901ceb52885a44b2}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the dice and its path data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a6bdaa8d7c77282e863ec013192787be5}{Set\+Body\+Size}} (sf\+::\+Vector2f a\+\_\+size) override
+\begin{DoxyCompactList}\small\item\em Setter function to set the dice\textquotesingle{}s Size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_ac8482fdd6f8c6d4190fc18b0c7a794c3}{Set\+Body\+Size}} (float a\+\_\+sizeX, float a\+\_\+sizeY) override
+\begin{DoxyCompactList}\small\item\em Setter function to set the dice\textquotesingle{}s Size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a97c6ca0b454f34615bcb1cdf91624b94}{Set\+Num\+Sides}} (unsigned a\+\_\+num\+Sides)
+\begin{DoxyCompactList}\small\item\em Sets number of side the dice has. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a84b20e8fa675bc7b501e1ef317ded51d}{Set\+Texture}} (std\+::string a\+\_\+texture\+Path)
+\begin{DoxyCompactList}\small\item\em Sets texture for the dice. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_aec183bd7a4cce4628005fbf809a85aa9}{Get\+Num\+Sides}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the dice\textquotesingle{}s number of sides. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a5bf3ae0fbf552f6be5f5257d8f2c7019}{Roll\+Dice}} ()
+\begin{DoxyCompactList}\small\item\em Rolls the dice to get a number between 0 and m\+\_\+num\+Sides. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_aaa11f825c47f4554f159954c199b147f}{m\+\_\+num\+Sides}}
+\begin{DoxyCompactList}\small\item\em number of side in a die \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a0226414da94edcfac1777e8ca89f95b3}\label{class_brood_1_1_application_1_1_components_1_1_dice_a0226414da94edcfac1777e8ca89f95b3}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!Dice@{Dice}}
+\index{Dice@{Dice}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{Dice()}{Dice()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Dice\+::\+Dice (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+num\+Sides = {\ttfamily 6},  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes the button object
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+{\em a\+\_\+index} & the nth child of the parent; if parent does not exist then -\/1 -\/\texorpdfstring{$>$}{>} default value -\/1 \\
+\hline
+{\em a\+\_\+num\+Sides} & number of a side that the dice has; -\/\texorpdfstring{$>$}{>} default 6 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_aff20ea75742cef08be854c613f7e635e}\label{class_brood_1_1_application_1_1_components_1_1_dice_aff20ea75742cef08be854c613f7e635e}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!Dice@{Dice}}
+\index{Dice@{Dice}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{Dice()}{Dice()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Dice\+::\+Dice (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+texture\+Path,  }\item[{int}]{a\+\_\+num\+Sides = {\ttfamily 6},  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Initializes the butoon object. 
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+\begin{DoxyWarning}{Warning}
+The sprite for the face of the should be lined linearly. That is only one row of sprite should be present. 
+
+Assumus that the sprites are square.
+\end{DoxyWarning}
+This contructor is called when a texture is passed is passed
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+texture\+Path} & file path to to the texture containing face of the dice; it is a single texture that has texture for num faces of the dice \\
+\hline
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+{\em a\+\_\+index} & the nth child of the parent; if parent does not exist then -\/1 -\/\texorpdfstring{$>$}{>} default value -\/1 \\
+\hline
+{\em a\+\_\+num\+Sides} & number of a side that the dice has; -\/\texorpdfstring{$>$}{>} default 6 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a48e90392d2ff1e6736c88f22e8a87751}\label{class_brood_1_1_application_1_1_components_1_1_dice_a48e90392d2ff1e6736c88f22e8a87751}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!````~Dice@{$\sim$Dice}}
+\index{````~Dice@{$\sim$Dice}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{$\sim$Dice()}{~Dice()}}
+{\footnotesize\ttfamily Dice\+::$\sim$\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a228b40f2c0e4dee55a03b669ea656362}\label{class_brood_1_1_application_1_1_components_1_1_dice_a228b40f2c0e4dee55a03b669ea656362}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!Dice@{Dice}}
+\index{Dice@{Dice}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{Dice()}{Dice()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Dice\+::\+Dice (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Dice}} \&}]{a\+\_\+other\+Dice }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Dice} & reference to the the dice structue that is being copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a2ca1a9b6bb7ce39c62200137b9f5524e}\label{class_brood_1_1_application_1_1_components_1_1_dice_a2ca1a9b6bb7ce39c62200137b9f5524e}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Dice\+Prefab\+Data}} Dice\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns dice data struct 
+
+\begin{DoxyReturn}{Returns}
+dice data struct with the dice data in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_aec183bd7a4cce4628005fbf809a85aa9}\label{class_brood_1_1_application_1_1_components_1_1_dice_aec183bd7a4cce4628005fbf809a85aa9}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!GetNumSides@{GetNumSides}}
+\index{GetNumSides@{GetNumSides}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{GetNumSides()}{GetNumSides()}}
+{\footnotesize\ttfamily const unsigned Dice\+::\+Get\+Num\+Sides (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the dice\textquotesingle{}s number of sides. 
+
+\begin{DoxyReturn}{Returns}
+dice\textquotesingle{}s saved number of side 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a84b00ce4dcc38cf47b76a8732d65e281}\label{class_brood_1_1_application_1_1_components_1_1_dice_a84b00ce4dcc38cf47b76a8732d65e281}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!InitializeDice@{InitializeDice}}
+\index{InitializeDice@{InitializeDice}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{InitializeDice()}{InitializeDice()}}
+{\footnotesize\ttfamily void Dice\+::\+Initialize\+Dice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Dice\+Prefab\+Data}} \&}]{a\+\_\+dice\+Data }\end{DoxyParamCaption})}
+
+
+
+initializes the dice with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Data} & reference of the dice data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a16bccf4c0231b5a4901ceb52885a44b2}\label{class_brood_1_1_application_1_1_components_1_1_dice_a16bccf4c0231b5a4901ceb52885a44b2}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Dice\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the dice and its path data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_aa7d787704323db804f0d4c08e3d5d54b}\label{class_brood_1_1_application_1_1_components_1_1_dice_aa7d787704323db804f0d4c08e3d5d54b}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} \& Dice\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Dice}} \&}]{a\+\_\+other\+Dice }\end{DoxyParamCaption})}
+
+
+
+assignmnet operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Dice} & reference to the the path structue that is being copied from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a5bf3ae0fbf552f6be5f5257d8f2c7019}\label{class_brood_1_1_application_1_1_components_1_1_dice_a5bf3ae0fbf552f6be5f5257d8f2c7019}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!RollDice@{RollDice}}
+\index{RollDice@{RollDice}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{RollDice()}{RollDice()}}
+{\footnotesize\ttfamily unsigned Dice\+::\+Roll\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rolls the dice to get a number between 0 and m\+\_\+num\+Sides. 
+
+This also sets the sprite from the loaded texture
+
+\begin{DoxyReturn}{Returns}
+random number between 0 and m\+\_\+num\+Sides 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a45539751030f25e1b2bf896531ce2147}\label{class_brood_1_1_application_1_1_components_1_1_dice_a45539751030f25e1b2bf896531ce2147}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Dice\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the dice data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_ac8482fdd6f8c6d4190fc18b0c7a794c3}\label{class_brood_1_1_application_1_1_components_1_1_dice_ac8482fdd6f8c6d4190fc18b0c7a794c3}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!SetBodySize@{SetBodySize}}
+\index{SetBodySize@{SetBodySize}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{SetBodySize()}{SetBodySize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dice\+::\+Set\+Body\+Size (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter function to set the dice\textquotesingle{}s Size. 
+
+@virtual This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the element \\
+\hline
+{\em a\+\_\+sizeY} & width of the element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a1d06f2c992d2e68f82c172e6506cb79e}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a6bdaa8d7c77282e863ec013192787be5}\label{class_brood_1_1_application_1_1_components_1_1_dice_a6bdaa8d7c77282e863ec013192787be5}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!SetBodySize@{SetBodySize}}
+\index{SetBodySize@{SetBodySize}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{SetBodySize()}{SetBodySize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dice\+::\+Set\+Body\+Size (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Setter function to set the dice\textquotesingle{}s Size. 
+
+@virtual
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a97c6ca0b454f34615bcb1cdf91624b94}\label{class_brood_1_1_application_1_1_components_1_1_dice_a97c6ca0b454f34615bcb1cdf91624b94}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!SetNumSides@{SetNumSides}}
+\index{SetNumSides@{SetNumSides}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{SetNumSides()}{SetNumSides()}}
+{\footnotesize\ttfamily void Dice\+::\+Set\+Num\+Sides (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Sides }\end{DoxyParamCaption})}
+
+
+
+Sets number of side the dice has. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Sides} & number of sides the dice has \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_a84b20e8fa675bc7b501e1ef317ded51d}\label{class_brood_1_1_application_1_1_components_1_1_dice_a84b20e8fa675bc7b501e1ef317ded51d}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily bool Dice\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+texture\+Path }\end{DoxyParamCaption})}
+
+
+
+Sets texture for the dice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+texture\+Pathfile} & path to to the texture containing face of the dice; it is a single texture that has texture for num faces of the dice \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_dice_aaa11f825c47f4554f159954c199b147f}\label{class_brood_1_1_application_1_1_components_1_1_dice_aaa11f825c47f4554f159954c199b147f}} 
+\index{Brood::Application::Components::Dice@{Brood::Application::Components::Dice}!m\_numSides@{m\_numSides}}
+\index{m\_numSides@{m\_numSides}!Brood::Application::Components::Dice@{Brood::Application::Components::Dice}}
+\doxysubsubsection{\texorpdfstring{m\_numSides}{m\_numSides}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Dice\+::m\+\_\+num\+Sides\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of side in a die 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_dice_8h}{Dice.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_dice_8cpp}{Dice.\+cpp}}\end{DoxyCompactItemize}

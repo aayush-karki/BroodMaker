@@ -1,0 +1,589 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_board}{}\doxysection{Brood\+::Application\+::Components\+::Board Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_board}\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab68d3d8229d4772282d3dfa594ea13a4}{Board}} (unsigned a\+\_\+num\+Rows=1, unsigned a\+\_\+num\+Cols=1, float a\+\_\+board\+SizeX=50.f, float a\+\_\+board\+SizeY=50.f, float a\+\_\+board\+PosX=50.f, float a\+\_\+board\+PosY=50.f)
+\begin{DoxyCompactList}\small\item\em default Constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_af73f45730119a1fd8f6670f53f959e68}{$\sim$\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ad200b074312b0ffb21a94fcbf782a685}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton draws the board to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a96cd23a30daf98bd4f61e84f6387ac0a}{Initialize\+Board}} (unsigned a\+\_\+num\+Rows=0, unsigned a\+\_\+num\+Cols=0, float a\+\_\+board\+SizeX=0.f, float a\+\_\+board\+SizeY=0.f, float a\+\_\+board\+PosX=0.f, float a\+\_\+board\+PosY=0.f)
+\begin{DoxyCompactList}\small\item\em sets up the board \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a2f1d8617460cca08e9366776d2312a40}{Initialize\+Board}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data}} \&a\+\_\+board\+Data)
+\begin{DoxyCompactList}\small\item\em sets up the board \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a773ce0494e1ff5674d14287a7222676d}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns board\+Data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a0d136b6ccddd62bf99acec12bbaf1e5e}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em saves the board and its path data to passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a95ceca2154766a045ce4125bb80ce924}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} $\ast$a\+\_\+deck\+Manger\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the board and its path data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a5a5b4c0d64aae4dbbc1833fde73b28c0}{Set\+Num\+Row}} (unsigned a\+\_\+num\+Rows, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$a\+\_\+deck\+Ptr)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the number of row in the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a7ba1062df55a9d04b71b72d6556b6651}{Set\+Num\+Col}} (unsigned a\+\_\+num\+Cols, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$a\+\_\+deck\+Ptr)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the number of col in the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a786e3cbd0a864c4b7f33beab7031fe80}{Set\+Board\+Size}} (sf\+::\+Vector2f a\+\_\+board\+Size)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the board size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a4b8fb9752b39725a9f83a73b71a8a424}{Set\+Board\+Size}} (float a\+\_\+board\+SizeX, float a\+\_\+board\+SizeY)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the board size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a93cddb3d18fc1107d0b2678d54c20d2e}{Set\+Board\+Pos}} (sf\+::\+Vector2f a\+\_\+board\+Pos)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the board position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ade23e66f95cbeeb263b215eb2c5753db}{Set\+Board\+Pos}} (float a\+\_\+board\+PosX, float a\+\_\+board\+PosY)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the board position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_aa2e437f2be3ccb237cd724a1e04c98e9}{Set\+Current\+Active\+Tile\+Ptr}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+new\+Active\+Path\+Ptr)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the current active path. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab6ab37f930d5e013da0f985e7d79a9d0}{Get\+Num\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the number of rows in the board. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a064d559412b280a7164008f70a061763}{Get\+Num\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the number of columns in the board. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a5342095fc18e3c5046ae32c15e27da82}{Get\+Board\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the board size. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a7f185bd235215889cf56244c32e49953}{Get\+Board\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the board position. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ $>$ $>$ \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a53ecf91d7a55f11dba1dea4fbeacbd22}{Get\+Board\+Path\+List}} () const
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the board path list by reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a5788fc0b0a9b4d5ba2a922e85819de75}{Get\+Current\+Active\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get the current active path pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab86e616a48213b272120611427118101}{Toggle\+Draw\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Toggles draw line variable for all the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab06072d56d535a78ad78d341e6c1f91b}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_abe2e2bfe830417ba33b3d06fb37ade09}{Increase\+Num\+Row}} (unsigned a\+\_\+num\+Rows, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$a\+\_\+deck\+Ptr)
+\begin{DoxyCompactList}\small\item\em Increases and populates the number of row in the board and updates the old tiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a6e8c9364582414cd92f3ff2aea9be217}{Decrease\+Num\+Row}} (unsigned a\+\_\+num\+Rows)
+\begin{DoxyCompactList}\small\item\em Decreases the number of row in the board and updates the old tiles and deallocates the removed row. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ac22c5bb097da89850c480989529d7f51}{Increase\+Num\+Col}} (unsigned a\+\_\+num\+Cols, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$a\+\_\+deck\+Ptr)
+\begin{DoxyCompactList}\small\item\em Increases and populates the number of columns in the board and updates the old tiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a61bad488f27934dbcf69bee7967c3070}{Decrease\+Num\+Col}} (unsigned a\+\_\+num\+Cols)
+\begin{DoxyCompactList}\small\item\em Decreases the number of columns in the board and updates the old tiles and deallocates the removed columns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_abf8de27a76b855adfb47dda96c2ac835}{Update\+Board\+Path}} (unsigned a\+\_\+row\+Begin, unsigned a\+\_\+row\+End, unsigned a\+\_\+col\+Begin, unsigned a\+\_\+col\+End, bool a\+\_\+create\+New=false, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$a\+\_\+deck\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em updates the path specified by passed param in board by using the member variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a14224eadafabbc27cd7d5a8ee0fbf037}{m\+\_\+board\+Body}}
+\begin{DoxyCompactList}\small\item\em main board \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_aeacb4751c8a8f693a6977e6dd6d7d42b}{m\+\_\+num\+Rows}}
+\begin{DoxyCompactList}\small\item\em number of cell rows in the board \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_adaabc7416997dd93bfcda91bef327b4d}{m\+\_\+num\+Cols}}
+\begin{DoxyCompactList}\small\item\em number of cell columns in the board \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ $>$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a192c778c00edb101a4ef5726db0b960d}{m\+\_\+board\+Paths}}
+\begin{DoxyCompactList}\small\item\em contains the board \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Path}} whic in turn contains tile \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a739bfaf1a984f5cdc9ccdb2505db1583}{m\+\_\+curr\+Active\+Path\+Ptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ab68d3d8229d4772282d3dfa594ea13a4}\label{class_brood_1_1_application_1_1_components_1_1_board_ab68d3d8229d4772282d3dfa594ea13a4}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!Board@{Board}}
+\index{Board@{Board}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Rows = {\ttfamily 1},  }\item[{unsigned}]{a\+\_\+num\+Cols = {\ttfamily 1},  }\item[{float}]{a\+\_\+board\+SizeX = {\ttfamily 50.f},  }\item[{float}]{a\+\_\+board\+SizeY = {\ttfamily 50.f},  }\item[{float}]{a\+\_\+board\+PosX = {\ttfamily 50.f},  }\item[{float}]{a\+\_\+board\+PosY = {\ttfamily 50.f} }\end{DoxyParamCaption})}
+
+
+
+default Constructor 
+
+It initializes the board as well as the tiles. \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Tiles}} are set up according to the
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Rows} & number of tile rows in a board -\/\texorpdfstring{$>$}{>} default 1 \\
+\hline
+{\em a\+\_\+num\+Cols} & number of tile columns in a board-\/\texorpdfstring{$>$}{>} default 1 \\
+\hline
+{\em a\+\_\+board\+SizeX} & board\textquotesingle{}s width -\/\texorpdfstring{$>$}{>} default 50.\+f \\
+\hline
+{\em a\+\_\+board\+SizeY} & board\textquotesingle{}s length -\/\texorpdfstring{$>$}{>} default 50.\+f \\
+\hline
+{\em a\+\_\+board\+PosX} & board\textquotesingle{}s x-\/position on screen; relative to the render window -\/\texorpdfstring{$>$}{>} default 50.\+f \\
+\hline
+{\em a\+\_\+board\+PosY} & board\textquotesingle{}s y-\/position on screen; realtive to the render window -\/\texorpdfstring{$>$}{>} default 50.\+f \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_af73f45730119a1fd8f6670f53f959e68}\label{class_brood_1_1_application_1_1_components_1_1_board_af73f45730119a1fd8f6670f53f959e68}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!````~Board@{$\sim$Board}}
+\index{````~Board@{$\sim$Board}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{$\sim$Board()}{~Board()}}
+{\footnotesize\ttfamily Board\+::$\sim$\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ab06072d56d535a78ad78d341e6c1f91b}\label{class_brood_1_1_application_1_1_components_1_1_board_ab06072d56d535a78ad78d341e6c1f91b}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Board\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draw funciton. 
+
+@virtual
+
+This function helps in debugging the UI elements. Called once at the end of Inialization. \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a61bad488f27934dbcf69bee7967c3070}\label{class_brood_1_1_application_1_1_components_1_1_board_a61bad488f27934dbcf69bee7967c3070}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!DecreaseNumCol@{DecreaseNumCol}}
+\index{DecreaseNumCol@{DecreaseNumCol}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{DecreaseNumCol()}{DecreaseNumCol()}}
+{\footnotesize\ttfamily void Board\+::\+Decrease\+Num\+Col (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Decreases the number of columns in the board and updates the old tiles and deallocates the removed columns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Cols} & number of tile columns to set in a board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a6e8c9364582414cd92f3ff2aea9be217}\label{class_brood_1_1_application_1_1_components_1_1_board_a6e8c9364582414cd92f3ff2aea9be217}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!DecreaseNumRow@{DecreaseNumRow}}
+\index{DecreaseNumRow@{DecreaseNumRow}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{DecreaseNumRow()}{DecreaseNumRow()}}
+{\footnotesize\ttfamily void Board\+::\+Decrease\+Num\+Row (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Rows }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Decreases the number of row in the board and updates the old tiles and deallocates the removed row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Rows} & number of tile rows to set in a board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ad200b074312b0ffb21a94fcbf782a685}\label{class_brood_1_1_application_1_1_components_1_1_board_ad200b074312b0ffb21a94fcbf782a685}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Board\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draw funciton draws the board to the screen. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000007}{Todo}}]add copy constuctor and copy assignment \end{DoxyRefDesc}
+
+
+It also envokes the tiles\textquotesingle{}, dice\textquotesingle{}s, and playermanger\textquotesingle{}s draw funcitons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a53ecf91d7a55f11dba1dea4fbeacbd22}\label{class_brood_1_1_application_1_1_components_1_1_board_a53ecf91d7a55f11dba1dea4fbeacbd22}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetBoardPathList@{GetBoardPathList}}
+\index{GetBoardPathList@{GetBoardPathList}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetBoardPathList()}{GetBoardPathList()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ $>$ $>$ \& Board\+::\+Get\+Board\+Path\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter funciton to get the board path list by reference. 
+
+\begin{DoxyReturn}{Returns}
+board path list by reference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a7f185bd235215889cf56244c32e49953}\label{class_brood_1_1_application_1_1_components_1_1_board_a7f185bd235215889cf56244c32e49953}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetBoardPos@{GetBoardPos}}
+\index{GetBoardPos@{GetBoardPos}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetBoardPos()}{GetBoardPos()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f Board\+::\+Get\+Board\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter funciton to get the board position. 
+
+\begin{DoxyReturn}{Returns}
+board position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a5342095fc18e3c5046ae32c15e27da82}\label{class_brood_1_1_application_1_1_components_1_1_board_a5342095fc18e3c5046ae32c15e27da82}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetBoardSize@{GetBoardSize}}
+\index{GetBoardSize@{GetBoardSize}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetBoardSize()}{GetBoardSize()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f Board\+::\+Get\+Board\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter funciton to get the board size. 
+
+\begin{DoxyReturn}{Returns}
+board size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a5788fc0b0a9b4d5ba2a922e85819de75}\label{class_brood_1_1_application_1_1_components_1_1_board_a5788fc0b0a9b4d5ba2a922e85819de75}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetCurrentActivePath@{GetCurrentActivePath}}
+\index{GetCurrentActivePath@{GetCurrentActivePath}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetCurrentActivePath()}{GetCurrentActivePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ Board\+::\+Get\+Current\+Active\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get the current active path pointer. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the current active path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a773ce0494e1ff5674d14287a7222676d}\label{class_brood_1_1_application_1_1_components_1_1_board_a773ce0494e1ff5674d14287a7222676d}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data}} Board\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns board\+Data struct 
+
+\begin{DoxyReturn}{Returns}
+board\+Data struct with the board data in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a064d559412b280a7164008f70a061763}\label{class_brood_1_1_application_1_1_components_1_1_board_a064d559412b280a7164008f70a061763}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetNumCol@{GetNumCol}}
+\index{GetNumCol@{GetNumCol}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetNumCol()}{GetNumCol()}}
+{\footnotesize\ttfamily const unsigned Board\+::\+Get\+Num\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter funciton to get the number of columns in the board. 
+
+\begin{DoxyReturn}{Returns}
+number of columns in the board 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ab6ab37f930d5e013da0f985e7d79a9d0}\label{class_brood_1_1_application_1_1_components_1_1_board_ab6ab37f930d5e013da0f985e7d79a9d0}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!GetNumRow@{GetNumRow}}
+\index{GetNumRow@{GetNumRow}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{GetNumRow()}{GetNumRow()}}
+{\footnotesize\ttfamily const unsigned Board\+::\+Get\+Num\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter funciton to get the number of rows in the board. 
+
+\begin{DoxyReturn}{Returns}
+number of rows in the board 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ac22c5bb097da89850c480989529d7f51}\label{class_brood_1_1_application_1_1_components_1_1_board_ac22c5bb097da89850c480989529d7f51}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!IncreaseNumCol@{IncreaseNumCol}}
+\index{IncreaseNumCol@{IncreaseNumCol}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{IncreaseNumCol()}{IncreaseNumCol()}}
+{\footnotesize\ttfamily void Board\+::\+Increase\+Num\+Col (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Cols,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$}]{a\+\_\+deck\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Increases and populates the number of columns in the board and updates the old tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Cols} & number of tile cols to set in a board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_abe2e2bfe830417ba33b3d06fb37ade09}\label{class_brood_1_1_application_1_1_components_1_1_board_abe2e2bfe830417ba33b3d06fb37ade09}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!IncreaseNumRow@{IncreaseNumRow}}
+\index{IncreaseNumRow@{IncreaseNumRow}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{IncreaseNumRow()}{IncreaseNumRow()}}
+{\footnotesize\ttfamily void Board\+::\+Increase\+Num\+Row (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Rows,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$}]{a\+\_\+deck\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Increases and populates the number of row in the board and updates the old tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Rows} & number of tile rows to set in a board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a2f1d8617460cca08e9366776d2312a40}\label{class_brood_1_1_application_1_1_components_1_1_board_a2f1d8617460cca08e9366776d2312a40}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!InitializeBoard@{InitializeBoard}}
+\index{InitializeBoard@{InitializeBoard}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{InitializeBoard()}{InitializeBoard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Board\+::\+Initialize\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data}} \&}]{a\+\_\+board\+Data }\end{DoxyParamCaption})}
+
+
+
+sets up the board 
+
+It initializes the board as well as the tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board\+Data} & struct containing all the board data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a96cd23a30daf98bd4f61e84f6387ac0a}\label{class_brood_1_1_application_1_1_components_1_1_board_a96cd23a30daf98bd4f61e84f6387ac0a}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!InitializeBoard@{InitializeBoard}}
+\index{InitializeBoard@{InitializeBoard}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{InitializeBoard()}{InitializeBoard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Board\+::\+Initialize\+Board (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Rows = {\ttfamily 0},  }\item[{unsigned}]{a\+\_\+num\+Cols = {\ttfamily 0},  }\item[{float}]{a\+\_\+board\+SizeX = {\ttfamily 0.f},  }\item[{float}]{a\+\_\+board\+SizeY = {\ttfamily 0.f},  }\item[{float}]{a\+\_\+board\+PosX = {\ttfamily 0.f},  }\item[{float}]{a\+\_\+board\+PosY = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
+
+
+sets up the board 
+
+It initializes the board as well as the tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Rows} & number of tile rows in a board -\/\texorpdfstring{$>$}{>} default 0 \\
+\hline
+{\em a\+\_\+num\+Cols} & number of tile columns in a board-\/\texorpdfstring{$>$}{>} default 0 \\
+\hline
+{\em a\+\_\+board\+SizeX} & board\textquotesingle{}s width -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+{\em a\+\_\+board\+SizeY} & board\textquotesingle{}s length -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+{\em a\+\_\+board\+PosX} & board\textquotesingle{}s x-\/position on screen; relative to the render window -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+{\em a\+\_\+board\+PosY} & board\textquotesingle{}s y-\/position on screen; realtive to the render window -\/\texorpdfstring{$>$}{>} default 0.\+f \\
+\hline
+\end{DoxyParams}
+assigning the path color\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a95ceca2154766a045ce4125bb80ce924}\label{class_brood_1_1_application_1_1_components_1_1_board_a95ceca2154766a045ce4125bb80ce924}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Board\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} $\ast$}]{a\+\_\+deck\+Manger\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the board and its path data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a0d136b6ccddd62bf99acec12bbaf1e5e}\label{class_brood_1_1_application_1_1_components_1_1_board_a0d136b6ccddd62bf99acec12bbaf1e5e}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Board\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+saves the board and its path data to passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ade23e66f95cbeeb263b215eb2c5753db}\label{class_brood_1_1_application_1_1_components_1_1_board_ade23e66f95cbeeb263b215eb2c5753db}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetBoardPos@{SetBoardPos}}
+\index{SetBoardPos@{SetBoardPos}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetBoardPos()}{SetBoardPos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Board\+Pos (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+board\+PosX,  }\item[{float}]{a\+\_\+board\+PosY }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the board position. 
+
+It also updates the tiles by moving it
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board\+PosX} & board\textquotesingle{}s width \\
+\hline
+{\em a\+\_\+board\+PosY} & board\textquotesingle{}s length \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a93cddb3d18fc1107d0b2678d54c20d2e}\label{class_brood_1_1_application_1_1_components_1_1_board_a93cddb3d18fc1107d0b2678d54c20d2e}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetBoardPos@{SetBoardPos}}
+\index{SetBoardPos@{SetBoardPos}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetBoardPos()}{SetBoardPos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Board\+Pos (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+board\+Pos }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the board position. 
+
+It also updates the tiles by moving it
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board\+Pos} & postition of the board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a4b8fb9752b39725a9f83a73b71a8a424}\label{class_brood_1_1_application_1_1_components_1_1_board_a4b8fb9752b39725a9f83a73b71a8a424}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetBoardSize@{SetBoardSize}}
+\index{SetBoardSize@{SetBoardSize}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetBoardSize()}{SetBoardSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Board\+Size (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+board\+SizeX,  }\item[{float}]{a\+\_\+board\+SizeY }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the board size. 
+
+It also updates the tiles by decreasing the size to keep the number of rows and number of columns constant
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board\+SizeX} & board\textquotesingle{}s width \\
+\hline
+{\em a\+\_\+board\+SizeY} & board\textquotesingle{}s length \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a786e3cbd0a864c4b7f33beab7031fe80}\label{class_brood_1_1_application_1_1_components_1_1_board_a786e3cbd0a864c4b7f33beab7031fe80}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetBoardSize@{SetBoardSize}}
+\index{SetBoardSize@{SetBoardSize}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetBoardSize()}{SetBoardSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Board\+Size (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+board\+Size }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the board size. 
+
+It also updates the tiles by decreasing the size to keep the number of rows and number of columns constant
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board\+Size} & size of the board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_aa2e437f2be3ccb237cd724a1e04c98e9}\label{class_brood_1_1_application_1_1_components_1_1_board_aa2e437f2be3ccb237cd724a1e04c98e9}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetCurrentActiveTilePtr@{SetCurrentActiveTilePtr}}
+\index{SetCurrentActiveTilePtr@{SetCurrentActiveTilePtr}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetCurrentActiveTilePtr()}{SetCurrentActiveTilePtr()}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Current\+Active\+Tile\+Ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+new\+Active\+Path\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the current active path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+new\+Active\+Tile\+Ptr} & pointer to the new active path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a7ba1062df55a9d04b71b72d6556b6651}\label{class_brood_1_1_application_1_1_components_1_1_board_a7ba1062df55a9d04b71b72d6556b6651}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetNumCol@{SetNumCol}}
+\index{SetNumCol@{SetNumCol}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetNumCol()}{SetNumCol()}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Num\+Col (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Cols,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$}]{a\+\_\+deck\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the number of col in the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Cols} & number of tile col to set in a board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a5a5b4c0d64aae4dbbc1833fde73b28c0}\label{class_brood_1_1_application_1_1_components_1_1_board_a5a5b4c0d64aae4dbbc1833fde73b28c0}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!SetNumRow@{SetNumRow}}
+\index{SetNumRow@{SetNumRow}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{SetNumRow()}{SetNumRow()}}
+{\footnotesize\ttfamily void Board\+::\+Set\+Num\+Row (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+num\+Rows,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$}]{a\+\_\+deck\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the number of row in the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+num\+Rows} & number of tile rows to set in a board \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_ab86e616a48213b272120611427118101}\label{class_brood_1_1_application_1_1_components_1_1_board_ab86e616a48213b272120611427118101}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!ToggleDrawLine@{ToggleDrawLine}}
+\index{ToggleDrawLine@{ToggleDrawLine}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{ToggleDrawLine()}{ToggleDrawLine()}}
+{\footnotesize\ttfamily void Board\+::\+Toggle\+Draw\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Toggles draw line variable for all the path. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_abf8de27a76b855adfb47dda96c2ac835}\label{class_brood_1_1_application_1_1_components_1_1_board_abf8de27a76b855adfb47dda96c2ac835}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!UpdateBoardPath@{UpdateBoardPath}}
+\index{UpdateBoardPath@{UpdateBoardPath}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardPath()}{UpdateBoardPath()}}
+{\footnotesize\ttfamily void Board\+::\+Update\+Board\+Path (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+row\+Begin,  }\item[{unsigned}]{a\+\_\+row\+End,  }\item[{unsigned}]{a\+\_\+col\+Begin,  }\item[{unsigned}]{a\+\_\+col\+End,  }\item[{bool}]{a\+\_\+create\+New = {\ttfamily false},  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood\+::\+Application\+::\+Components\+::\+Deck}} $\ast$}]{a\+\_\+deck\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the path specified by passed param in board by using the member variables. 
+
+It updates the tile starting form a\+\_\+row\+Begin to including a\+\_\+row\+End for the rows and for the column starting from a\+\_\+col\+Begin to including a\+\_\+col\+End. It calls \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles_a01d36ef1aac302d9b0f6afe8f3714ff4}{Brood\+::\+Application\+::\+Components\+::\+Tiles\+::\+Update\+Tile()}} on each tile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+row\+Begin} & index of row from where the tiles update should start \\
+\hline
+{\em a\+\_\+row\+End} & index of row from where the tiles update should end \\
+\hline
+{\em a\+\_\+col\+Begin} & index of column from where the tiles update should start \\
+\hline
+{\em a\+\_\+col\+End} & index of column from where the tiles update should end \\
+\hline
+{\em a\+\_\+create\+New} & true if new tiles should be created before updating the tiles -\/\texorpdfstring{$>$}{>} default false \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a14224eadafabbc27cd7d5a8ee0fbf037}\label{class_brood_1_1_application_1_1_components_1_1_board_a14224eadafabbc27cd7d5a8ee0fbf037}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!m\_boardBody@{m\_boardBody}}
+\index{m\_boardBody@{m\_boardBody}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{m\_boardBody}{m\_boardBody}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Brood\+::\+Application\+::\+Components\+::\+Board\+::m\+\_\+board\+Body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+main board 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a192c778c00edb101a4ef5726db0b960d}\label{class_brood_1_1_application_1_1_components_1_1_board_a192c778c00edb101a4ef5726db0b960d}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!m\_boardPaths@{m\_boardPaths}}
+\index{m\_boardPaths@{m\_boardPaths}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{m\_boardPaths}{m\_boardPaths}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}}$\ast$$>$ $>$ Brood\+::\+Application\+::\+Components\+::\+Board\+::m\+\_\+board\+Paths\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+contains the board \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Path}} whic in turn contains tile 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_a739bfaf1a984f5cdc9ccdb2505db1583}\label{class_brood_1_1_application_1_1_components_1_1_board_a739bfaf1a984f5cdc9ccdb2505db1583}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!m\_currActivePathPtr@{m\_currActivePathPtr}}
+\index{m\_currActivePathPtr@{m\_currActivePathPtr}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{m\_currActivePathPtr}{m\_currActivePathPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Board\+::m\+\_\+curr\+Active\+Path\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+holds the pointer ot the current active path used by the tile editor \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_adaabc7416997dd93bfcda91bef327b4d}\label{class_brood_1_1_application_1_1_components_1_1_board_adaabc7416997dd93bfcda91bef327b4d}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!m\_numCols@{m\_numCols}}
+\index{m\_numCols@{m\_numCols}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{m\_numCols}{m\_numCols}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Board\+::m\+\_\+num\+Cols\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of cell columns in the board 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_board_aeacb4751c8a8f693a6977e6dd6d7d42b}\label{class_brood_1_1_application_1_1_components_1_1_board_aeacb4751c8a8f693a6977e6dd6d7d42b}} 
+\index{Brood::Application::Components::Board@{Brood::Application::Components::Board}!m\_numRows@{m\_numRows}}
+\index{m\_numRows@{m\_numRows}!Brood::Application::Components::Board@{Brood::Application::Components::Board}}
+\doxysubsubsection{\texorpdfstring{m\_numRows}{m\_numRows}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Board\+::m\+\_\+num\+Rows\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of cell rows in the board 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_board_8h}{Board.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_board_8cpp}{Board.\+cpp}}\end{DoxyCompactItemize}

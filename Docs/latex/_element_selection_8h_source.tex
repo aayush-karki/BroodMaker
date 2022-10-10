@@ -1,0 +1,94 @@
+\hypertarget{_element_selection_8h_source}{}\doxysection{Element\+Selection.\+h}
+\label{_element_selection_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/ElementSelection.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/ElementSelection.h}}
+\mbox{\hyperlink{_element_selection_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{13 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{16 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{17 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_u_i___i_d_8h}{UI\_ID.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{24 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{25 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{namespace }BroodUI}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keyword}{class }\mbox{\hyperlink{class_element_selection}{ElementSelection}};}
+\DoxyCodeLine{30         \textcolor{keyword}{class }\mbox{\hyperlink{class_id}{Id}};}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ================= start of ElemnetSelection class ====================}}
+\DoxyCodeLine{39 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{62 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection}{Brood::BroodUI::ElementSelection}}}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     \textcolor{comment}{// ================= public member function =================  }}
+\DoxyCodeLine{65 \textcolor{keyword}{public}:}
+\DoxyCodeLine{66     \textcolor{comment}{// ========= setter functions ========}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// setter function to set the hot element Id pointer}}
+\DoxyCodeLine{69     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_ac6462d6b0efca86bd9463e631d1a6e80}{SetHotElementIdPtr}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* a\_idPtr );}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// setter function to set the almost active element Id pointer}}
+\DoxyCodeLine{72     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a2a6237a03d79f57564c776eb18647f31}{SetAlmostActiveElementIdPtr}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* a\_idPtr );}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// setter function to set the current active element Id pointer}}
+\DoxyCodeLine{75     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a05ba6ca5fff79ed2d045263ea75842f4}{SetCurrActiveElementIdPtr}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* a\_idPtr );}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{// setter function to set the last active element Id pointer}}
+\DoxyCodeLine{78     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a992733330efa03cb6edf0f14bc7d06db}{SetLastActiveElementIdPtr}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* a\_idPtr );}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{// setter function to set the hot element Id pointer Flag}}
+\DoxyCodeLine{81     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a6ac83112758d7891a5bbe1222ee14b13}{SetHotElementIdPtrFlag}}( \textcolor{keywordtype}{bool} a\_found );}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// ========= setter functions ========}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{// getter function to get the hot element Id pointer}}
+\DoxyCodeLine{86     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_aff82eef509bfe99870c001c66dfebea4}{GetHotElementIdPtr}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{// getter function to get the almost active element Id pointer}}
+\DoxyCodeLine{89     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a4dbc2afa022356bcb361b65bc83f5b9d}{GetAlmostActiveElementIdPtr}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// getter function to get  the current active element Id pointer}}
+\DoxyCodeLine{92     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a847392c09556c5ef5f9377f85ba88e43}{GetCurrActiveElementIdPtr}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// getter function to get the last active element Id pointer}}
+\DoxyCodeLine{95     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a07523d28d54a617f2fddb52b6172810d}{GetLastActiveElementIdPtr}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{// getter function to getthe hot element Id pointer Flag}}
+\DoxyCodeLine{98     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_ac1b6cc9a14bee8e00c4ad186dd7cbd13}{GetHotElementIdFlag}}();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// debugging}}
+\DoxyCodeLine{101     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_ac099a203319d940ad98f4604e3550bbd}{Debugger}}();}
+\DoxyCodeLine{102     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a3b30f3559eec6330f1e5e3de449369cb}{DebugPrintSelectedElementID}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// ================= private member variables =================  }}
+\DoxyCodeLine{105 \textcolor{keyword}{private}:}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{108     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_aaf1aa22faa28bf0c1bb82459f461ebd4}{m\_hotElementIdPtr}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{111     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_afc17ae1549efb26e08764a6865d1c4ca}{m\_hotElementFlag}};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_af1ecff91b30a64fb78ad765f3986282e}{m\_almostActiveElementIdPtr}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{119     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a70eb60aec1bbbc41a0eba1b48306fd8b}{m\_currActiveElementIdPtr}};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{122     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood::BroodUI::Id}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_element_selection_a14f4e4d2680310a4acc794aeb03d498c}{m\_lastActiveElementIdPtr}};}
+\DoxyCodeLine{123 \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{126 \textcolor{comment}{// ================ end of ElemnetSelection class =======================}}
+\DoxyCodeLine{127 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

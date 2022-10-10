@@ -1,0 +1,732 @@
+\hypertarget{class_brood_1_1_application_1_1_player_editor}{}\doxysection{Brood\+::Application\+::Player\+Editor Class Reference}
+\label{class_brood_1_1_application_1_1_player_editor}\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+
+
+{\ttfamily \#include $<$Player\+Editor.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Player\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_player_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a7f5c197b5163648428b9e75d989b4647}{Player\+Editor}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data, sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Ptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a421c7440bfecdd8fc75a05481c3eeefb}{$\sim$\+Player\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5b5597b2d7c20cdd808ccedb598c32d8}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the work space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab21a8fcdc1bde40ec4f3459cf3a60ebf}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afef71876bce00a1d1a839dd9246ee464}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em changes the displayed data on the panel for current active player \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a12c903538be91f69597926df7798de4e}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad3ac233cd4ef6967d6f7a14ba3b98a84}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a51ed7078379fb4b1fe39fd9f1e5050ae}{Update\+Start\+Row\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the start row panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a41cdb668db8766c930474a5bed6cb8a3}{Update\+Start\+Col\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the start column panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a974f943ca338f77d5c206609936f22a5}{Update\+Curr\+Selected\+Player\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the current selceted player index panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aa6d1e70f0711b194aef2b80ad7b617a7}{Update\+Curr\+Player\+SizeX}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player x size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a4df006673c9eb1033a89a409b9b63ce4}{Update\+Curr\+Player\+SizeY}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player y size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5a6b79c6b1c163722c6f8856a0593bd4}{Update\+Curr\+Player\+OffsetX}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player x Offset panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a1d5593c28eedc36a4223b0da63b589c6}{Update\+Curr\+Player\+OffsetY}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player Y Offset panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ac47a4f0244392a3a2a094b82fccb355f}{Update\+Curr\+Player\+File\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the laod player texture panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5f5ad51dfd331872344d7a1be502111e}{m\+\_\+panel\+Body\+Ptr}}
+\begin{DoxyCompactList}\small\item\em holds the panel body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_af795d3d954054c2deb89704175fe370c}{m\+\_\+board\+Ptr}}
+\begin{DoxyCompactList}\small\item\em board for the game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad7c1a4c68c966202fb19a5d66ebefeab}{m\+\_\+player\+Manager\+Ptr}}
+\begin{DoxyCompactList}\small\item\em pointer to the player manager \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afa65c1b7b0485cfdfae7703c5bc0c241}{m\+\_\+txt\+Setting\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a74767d4649d49836aea91634b3fb3f7c}{m\+\_\+txt\+Player\+Start\+Row\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text start row prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab6a4fb7b769b8029da55b2af2727d497}{m\+\_\+btn\+Player\+Dec\+Start\+Row\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the start row of player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_af205e436af3a6bf2c2d1c3a232975444}{m\+\_\+txt\+Player\+Start\+Row\+Num}}
+\begin{DoxyCompactList}\small\item\em displays the Current start row number of the player \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ac3436f7bd1d75ae7bc52c99556a414c3}{m\+\_\+btn\+Player\+Inc\+Start\+Row\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the start row of the player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aaa09205ea7205bb3bb15cce8c893f12f}{m\+\_\+txt\+Player\+Start\+Col\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text start column prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_adcc4766ff4c3b288d40db98da122a64f}{m\+\_\+btn\+Player\+Dec\+Start\+Col\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the start column of player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aeea15f6753f25072231809c71cd11d1c}{m\+\_\+txt\+Player\+Start\+Col\+Num}}
+\begin{DoxyCompactList}\small\item\em displays the Current start column number of the player \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ae0313e3ed653d964b806c31181c47b79}{m\+\_\+btn\+Player\+Inc\+Start\+Col\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the start column of the player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a8d611b211b228ff24d153f9ffaf547f7}{m\+\_\+txt\+Player\+Curr\+Idx\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text selected Index prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a40189fb25a32d393bf371822ab3a5951}{m\+\_\+btn\+Player\+Dec\+Curr\+Idx}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the current selected player Index number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5324541b9b7700ba5f78fb705d7f6db8}{m\+\_\+txt\+Player\+Curr\+Idx}}
+\begin{DoxyCompactList}\small\item\em displays the current selected player Index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_addb7bc0594152591097f84ec233178e3}{m\+\_\+btn\+Player\+Inc\+Curr\+Idx}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the current selected player Indexr number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a4b5f71519daaebf68a047bfcd691992d}{m\+\_\+txt\+Draw\+Player\+At\+Curr\+Idx\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text Current \mbox{\hyperlink{class_player}{Player}} Index prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a371dd0f6735b89c80a62f17f5d997f78}{m\+\_\+ddi\+Draw\+Player\+At\+Curr\+Idx}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a74dcf4fc236a540cfd35302fe8be7f3a}{m\+\_\+txt\+Player\+Curr\+Idx\+Size\+XPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_player}{Player}} X-\/\+Size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad4e956bedfe047374ab375553e45b9f1}{m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+SizeX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the current selected player x-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab6de870123e56c21fb5f3d671d330314}{m\+\_\+txt\+Player\+Curr\+Idx\+SizeX}}
+\begin{DoxyCompactList}\small\item\em displays the current selected player x-\/size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a61061e421cb7627d04a67c7d0b37fbad}{m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+SizeX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the current selected player x-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a7b8f97ddcde6448f10306d96d0a48f1e}{m\+\_\+txt\+Player\+Curr\+Idx\+Size\+YPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_player}{Player}} y-\/\+Size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a311dc4990c2fb3cc0b4c485be651b56e}{m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+SizeY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the current selected player y-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a9509a7f9d3b37210366d8876d137c17b}{m\+\_\+txt\+Player\+Curr\+Idx\+SizeY}}
+\begin{DoxyCompactList}\small\item\em displays the current selected player y-\/size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a3fa2efbe800c106b6a5356d07b2d109d}{m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+SizeY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the current selected player y-\/size number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a848a766914560a83cff722ec3fd03431}{m\+\_\+txt\+Player\+Curr\+Idx\+Offset\+XPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_player}{Player}} X-\/\+Offset \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aa5a184442abe2f875fbfd548459b2cbc}{m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+OffsetX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the current selected player X-\/\+Offset number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a8044303bf0e4f18c266aa6a0457b0dde}{m\+\_\+txt\+Player\+Curr\+Idx\+OffsetX}}
+\begin{DoxyCompactList}\small\item\em displays the current selected player X-\/\+Offset \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab1fb6ff0ff422d009765d622842a9851}{m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+OffsetX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the current selected player X-\/\+Offset number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a61400f7257691ac2d36378cf6b22e0dd}{m\+\_\+txt\+Player\+Curr\+Idx\+Offset\+YPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_player}{Player}} y-\/\+Offset prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_abc3b0240c673eebc22a2366aa77cdc23}{m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+OffsetY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the current selected player y-\/\+Offset number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a40178d099088366fe8cdeca41809611e}{m\+\_\+txt\+Player\+Curr\+Idx\+OffsetY}}
+\begin{DoxyCompactList}\small\item\em displays the current selected player y-\/\+Offset \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a867f7f1eb313f360d888579f33aa16c2}{m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+OffsetY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the current selected player y-\/\+Offset number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afc9991733c66b585455fb41458abfc9a}{m\+\_\+txtplayer\+File\+Name\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the \mbox{\hyperlink{class_player}{Player}} texture filename prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a847d99eb1a0e24b54d3258bf0a664717}{m\+\_\+txt\+Player\+File\+Input}}
+\begin{DoxyCompactList}\small\item\em holds the file name user enters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a3915cde214216e89a0ff1b9ca588ce1d}{m\+\_\+btn\+Player\+Open\+File}}
+\begin{DoxyCompactList}\small\item\em clicking it will load the player file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a7f5c197b5163648428b9e75d989b4647}\label{class_brood_1_1_application_1_1_player_editor_a7f5c197b5163648428b9e75d989b4647}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!PlayerEditor@{PlayerEditor}}
+\index{PlayerEditor@{PlayerEditor}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{PlayerEditor()}{PlayerEditor()}}
+{\footnotesize\ttfamily Player\+Editor\+::\+Player\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Ptr }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data} & pointer to the game data object \\
+\hline
+{\em a\+\_\+panel\+Ptr} & pointer to the panel body object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a421c7440bfecdd8fc75a05481c3eeefb}\label{class_brood_1_1_application_1_1_player_editor_a421c7440bfecdd8fc75a05481c3eeefb}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!````~PlayerEditor@{$\sim$PlayerEditor}}
+\index{````~PlayerEditor@{$\sim$PlayerEditor}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$PlayerEditor()}{~PlayerEditor()}}
+{\footnotesize\ttfamily Player\+Editor\+::$\sim$\+Player\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ad3ac233cd4ef6967d6f7a14ba3b98a84}\label{class_brood_1_1_application_1_1_player_editor_ad3ac233cd4ef6967d6f7a14ba3b98a84}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a12c903538be91f69597926df7798de4e}\label{class_brood_1_1_application_1_1_player_editor_a12c903538be91f69597926df7798de4e}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a5b5597b2d7c20cdd808ccedb598c32d8}\label{class_brood_1_1_application_1_1_player_editor_a5b5597b2d7c20cdd808ccedb598c32d8}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the work space. 
+
+@virtual
+
+It creates all the component of the workspace. It inializes the board, setting section Dropdown Input. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ab21a8fcdc1bde40ec4f3459cf3a60ebf}\label{class_brood_1_1_application_1_1_player_editor_ab21a8fcdc1bde40ec4f3459cf3a60ebf}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates function. 
+
+@virtual
+
+It Updates the folloing panel element \+: \mbox{\hyperlink{class_player}{Player}} start row, \mbox{\hyperlink{class_player}{Player}} start column, Current player index, Draw current player, Current player X-\/\+Size, current player Y-\/size, Current player X-\/offset, Current player Y-\/offset, and Current player texture file name 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_afef71876bce00a1d1a839dd9246ee464}\label{class_brood_1_1_application_1_1_player_editor_afef71876bce00a1d1a839dd9246ee464}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+changes the displayed data on the panel for current active player 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ac47a4f0244392a3a2a094b82fccb355f}\label{class_brood_1_1_application_1_1_player_editor_ac47a4f0244392a3a2a094b82fccb355f}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateCurrPlayerFileTexture@{UpdateCurrPlayerFileTexture}}
+\index{UpdateCurrPlayerFileTexture@{UpdateCurrPlayerFileTexture}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrPlayerFileTexture()}{UpdateCurrPlayerFileTexture()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Curr\+Player\+File\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the laod player texture panel 
+
+Load player texture file panel contains load player texture file promt textbox, textbox to enter the file name, and button to open and load the file.
+
+Only the textbox to enter the file name, and button to open and load the file are interactable
+
+If the interactable button was pressed then it opens the filename entered
+
+\begin{DoxyWarning}{Warning}
+the Texture for the file should be in \char`\"{}cwd\textbackslash{}\+Assets\textbackslash{}\+Textures\textbackslash{}\+Player\+Texture\textbackslash{}\char`\"{} as it loads them from there 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a5a6b79c6b1c163722c6f8856a0593bd4}\label{class_brood_1_1_application_1_1_player_editor_a5a6b79c6b1c163722c6f8856a0593bd4}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateCurrPlayerOffsetX@{UpdateCurrPlayerOffsetX}}
+\index{UpdateCurrPlayerOffsetX@{UpdateCurrPlayerOffsetX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrPlayerOffsetX()}{UpdateCurrPlayerOffsetX()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Curr\+Player\+OffsetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the player x Offset panel 
+
+\mbox{\hyperlink{class_player}{Player}} X Offset panel contains current player X Offset promt textbox, current player X Offset value text box, button to increase the current player X Offset, and button to decrease the current player X Offset.
+
+Only the button to increase the current player X Offset, and button to decrease the current player X Offset are interactable
+
+If the interactable button was pressed then the current player X Offset is increased or decresed by 1 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a1d5593c28eedc36a4223b0da63b589c6}\label{class_brood_1_1_application_1_1_player_editor_a1d5593c28eedc36a4223b0da63b589c6}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateCurrPlayerOffsetY@{UpdateCurrPlayerOffsetY}}
+\index{UpdateCurrPlayerOffsetY@{UpdateCurrPlayerOffsetY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrPlayerOffsetY()}{UpdateCurrPlayerOffsetY()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Curr\+Player\+OffsetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the player Y Offset panel 
+
+\mbox{\hyperlink{class_player}{Player}} Y Offset panel contains current player Y Offset promt textbox, current player Y Offset value text box, button to increase the current player Y Offset, and button to decrease the current player Y Offset.
+
+Only the button to increase the current player Y Offset, and button to decrease the current player Y Offset are interactable
+
+If the interactable button was pressed then the current player Y Offset is increased or decresed by 1 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_aa6d1e70f0711b194aef2b80ad7b617a7}\label{class_brood_1_1_application_1_1_player_editor_aa6d1e70f0711b194aef2b80ad7b617a7}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateCurrPlayerSizeX@{UpdateCurrPlayerSizeX}}
+\index{UpdateCurrPlayerSizeX@{UpdateCurrPlayerSizeX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrPlayerSizeX()}{UpdateCurrPlayerSizeX()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Curr\+Player\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the player x size panel 
+
+\mbox{\hyperlink{class_player}{Player}} X size panel contains current player X size promt textbox, current player X size value text box, button to increase the current player X size, and button to decrease the current player X size.
+
+Only the button to increase the current player X size, and button to decrease the current player X size are interactable
+
+If the interactable button was pressed then the current player X size is increased or decresed by 5 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a4df006673c9eb1033a89a409b9b63ce4}\label{class_brood_1_1_application_1_1_player_editor_a4df006673c9eb1033a89a409b9b63ce4}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateCurrPlayerSizeY@{UpdateCurrPlayerSizeY}}
+\index{UpdateCurrPlayerSizeY@{UpdateCurrPlayerSizeY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrPlayerSizeY()}{UpdateCurrPlayerSizeY()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Curr\+Player\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the player y size panel 
+
+\mbox{\hyperlink{class_player}{Player}} Y size panel contains current player y size promt textbox, current player y size value text box, button to increase the current player y size, and button to decrease the current player y size.
+
+Only the button to increase the current player y size, and button to decrease the current player y size are interactable
+
+If the interactable button was pressed then the current player y size is increased or decresed by 5 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a974f943ca338f77d5c206609936f22a5}\label{class_brood_1_1_application_1_1_player_editor_a974f943ca338f77d5c206609936f22a5}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateCurrSelectedPlayerIdx@{UpdateCurrSelectedPlayerIdx}}
+\index{UpdateCurrSelectedPlayerIdx@{UpdateCurrSelectedPlayerIdx}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrSelectedPlayerIdx()}{UpdateCurrSelectedPlayerIdx()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Curr\+Selected\+Player\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the current selceted player index panel 
+
+Current selceted player index panel contains current selceted player index promt textbox, current selceted player index value text box, button to increase the current selceted player index, and button to decrease the current selceted player index
+
+Only the button to increase the current selceted player index, and button to decrease the current selceted player index are interactable
+
+If the interactable button was pressed then the current selceted player index is increased or decresed by 1. current selceted player index should be more than or equal to 0 but less than minimum player number \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a41cdb668db8766c930474a5bed6cb8a3}\label{class_brood_1_1_application_1_1_player_editor_a41cdb668db8766c930474a5bed6cb8a3}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateStartColNumber@{UpdateStartColNumber}}
+\index{UpdateStartColNumber@{UpdateStartColNumber}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateStartColNumber()}{UpdateStartColNumber()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Start\+Col\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the start column panel 
+
+Start column panel contains the start column number promt textbox, start column number value text box, button to increase the start column number, and button to decrease the start column number
+
+Only the button to increase the start column number, and button to decrease the start column number are interactable
+
+If the interactable button was pressed then the start column is increased or decresed by 1. Start column number should be more than or equal to 0 but less than board column number \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a51ed7078379fb4b1fe39fd9f1e5050ae}\label{class_brood_1_1_application_1_1_player_editor_a51ed7078379fb4b1fe39fd9f1e5050ae}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!UpdateStartRowNumber@{UpdateStartRowNumber}}
+\index{UpdateStartRowNumber@{UpdateStartRowNumber}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateStartRowNumber()}{UpdateStartRowNumber()}}
+{\footnotesize\ttfamily void Player\+Editor\+::\+Update\+Start\+Row\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the start row panel 
+
+Start row panel contains the start row number promt textbox, start row number value text box, button to increase the start row number, and button to decrease the start row number
+
+Only the button to increase the start row number, and button to decrease the start row number are interactable
+
+If the interactable button was pressed then the start row is increased or decresed by 1. Start row number should be more than or equal to 0 but less than board row number 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_af795d3d954054c2deb89704175fe370c}\label{class_brood_1_1_application_1_1_player_editor_af795d3d954054c2deb89704175fe370c}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_boardPtr@{m\_boardPtr}}
+\index{m\_boardPtr@{m\_boardPtr}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_boardPtr}{m\_boardPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+board\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+board for the game 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a40189fb25a32d393bf371822ab3a5951}\label{class_brood_1_1_application_1_1_player_editor_a40189fb25a32d393bf371822ab3a5951}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecCurrIdx@{m\_btnPlayerDecCurrIdx}}
+\index{m\_btnPlayerDecCurrIdx@{m\_btnPlayerDecCurrIdx}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecCurrIdx}{m\_btnPlayerDecCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the current selected player Index number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_aa5a184442abe2f875fbfd548459b2cbc}\label{class_brood_1_1_application_1_1_player_editor_aa5a184442abe2f875fbfd548459b2cbc}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecCurrIdxOffsetX@{m\_btnPlayerDecCurrIdxOffsetX}}
+\index{m\_btnPlayerDecCurrIdxOffsetX@{m\_btnPlayerDecCurrIdxOffsetX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecCurrIdxOffsetX}{m\_btnPlayerDecCurrIdxOffsetX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+OffsetX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the current selected player X-\/\+Offset number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_abc3b0240c673eebc22a2366aa77cdc23}\label{class_brood_1_1_application_1_1_player_editor_abc3b0240c673eebc22a2366aa77cdc23}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecCurrIdxOffsetY@{m\_btnPlayerDecCurrIdxOffsetY}}
+\index{m\_btnPlayerDecCurrIdxOffsetY@{m\_btnPlayerDecCurrIdxOffsetY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecCurrIdxOffsetY}{m\_btnPlayerDecCurrIdxOffsetY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+OffsetY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the current selected player y-\/\+Offset number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ad4e956bedfe047374ab375553e45b9f1}\label{class_brood_1_1_application_1_1_player_editor_ad4e956bedfe047374ab375553e45b9f1}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecCurrIdxSizeX@{m\_btnPlayerDecCurrIdxSizeX}}
+\index{m\_btnPlayerDecCurrIdxSizeX@{m\_btnPlayerDecCurrIdxSizeX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecCurrIdxSizeX}{m\_btnPlayerDecCurrIdxSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the current selected player x-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a311dc4990c2fb3cc0b4c485be651b56e}\label{class_brood_1_1_application_1_1_player_editor_a311dc4990c2fb3cc0b4c485be651b56e}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecCurrIdxSizeY@{m\_btnPlayerDecCurrIdxSizeY}}
+\index{m\_btnPlayerDecCurrIdxSizeY@{m\_btnPlayerDecCurrIdxSizeY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecCurrIdxSizeY}{m\_btnPlayerDecCurrIdxSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Curr\+Idx\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the current selected player y-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_adcc4766ff4c3b288d40db98da122a64f}\label{class_brood_1_1_application_1_1_player_editor_adcc4766ff4c3b288d40db98da122a64f}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecStartColNum@{m\_btnPlayerDecStartColNum}}
+\index{m\_btnPlayerDecStartColNum@{m\_btnPlayerDecStartColNum}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecStartColNum}{m\_btnPlayerDecStartColNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Start\+Col\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the start column of player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ab6a4fb7b769b8029da55b2af2727d497}\label{class_brood_1_1_application_1_1_player_editor_ab6a4fb7b769b8029da55b2af2727d497}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerDecStartRowNum@{m\_btnPlayerDecStartRowNum}}
+\index{m\_btnPlayerDecStartRowNum@{m\_btnPlayerDecStartRowNum}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecStartRowNum}{m\_btnPlayerDecStartRowNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Dec\+Start\+Row\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the start row of player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_addb7bc0594152591097f84ec233178e3}\label{class_brood_1_1_application_1_1_player_editor_addb7bc0594152591097f84ec233178e3}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncCurrIdx@{m\_btnPlayerIncCurrIdx}}
+\index{m\_btnPlayerIncCurrIdx@{m\_btnPlayerIncCurrIdx}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncCurrIdx}{m\_btnPlayerIncCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the current selected player Indexr number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ab1fb6ff0ff422d009765d622842a9851}\label{class_brood_1_1_application_1_1_player_editor_ab1fb6ff0ff422d009765d622842a9851}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncCurrIdxOffsetX@{m\_btnPlayerIncCurrIdxOffsetX}}
+\index{m\_btnPlayerIncCurrIdxOffsetX@{m\_btnPlayerIncCurrIdxOffsetX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncCurrIdxOffsetX}{m\_btnPlayerIncCurrIdxOffsetX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+OffsetX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the current selected player X-\/\+Offset number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a867f7f1eb313f360d888579f33aa16c2}\label{class_brood_1_1_application_1_1_player_editor_a867f7f1eb313f360d888579f33aa16c2}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncCurrIdxOffsetY@{m\_btnPlayerIncCurrIdxOffsetY}}
+\index{m\_btnPlayerIncCurrIdxOffsetY@{m\_btnPlayerIncCurrIdxOffsetY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncCurrIdxOffsetY}{m\_btnPlayerIncCurrIdxOffsetY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+OffsetY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the current selected player y-\/\+Offset number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a61061e421cb7627d04a67c7d0b37fbad}\label{class_brood_1_1_application_1_1_player_editor_a61061e421cb7627d04a67c7d0b37fbad}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncCurrIdxSizeX@{m\_btnPlayerIncCurrIdxSizeX}}
+\index{m\_btnPlayerIncCurrIdxSizeX@{m\_btnPlayerIncCurrIdxSizeX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncCurrIdxSizeX}{m\_btnPlayerIncCurrIdxSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the current selected player x-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a3fa2efbe800c106b6a5356d07b2d109d}\label{class_brood_1_1_application_1_1_player_editor_a3fa2efbe800c106b6a5356d07b2d109d}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncCurrIdxSizeY@{m\_btnPlayerIncCurrIdxSizeY}}
+\index{m\_btnPlayerIncCurrIdxSizeY@{m\_btnPlayerIncCurrIdxSizeY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncCurrIdxSizeY}{m\_btnPlayerIncCurrIdxSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Curr\+Idx\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the current selected player y-\/size number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ae0313e3ed653d964b806c31181c47b79}\label{class_brood_1_1_application_1_1_player_editor_ae0313e3ed653d964b806c31181c47b79}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncStartColNum@{m\_btnPlayerIncStartColNum}}
+\index{m\_btnPlayerIncStartColNum@{m\_btnPlayerIncStartColNum}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncStartColNum}{m\_btnPlayerIncStartColNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Start\+Col\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the start column of the player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ac3436f7bd1d75ae7bc52c99556a414c3}\label{class_brood_1_1_application_1_1_player_editor_ac3436f7bd1d75ae7bc52c99556a414c3}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerIncStartRowNum@{m\_btnPlayerIncStartRowNum}}
+\index{m\_btnPlayerIncStartRowNum@{m\_btnPlayerIncStartRowNum}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncStartRowNum}{m\_btnPlayerIncStartRowNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Inc\+Start\+Row\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the start row of the player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a3915cde214216e89a0ff1b9ca588ce1d}\label{class_brood_1_1_application_1_1_player_editor_a3915cde214216e89a0ff1b9ca588ce1d}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_btnPlayerOpenFile@{m\_btnPlayerOpenFile}}
+\index{m\_btnPlayerOpenFile@{m\_btnPlayerOpenFile}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerOpenFile}{m\_btnPlayerOpenFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+btn\+Player\+Open\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will load the player file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a371dd0f6735b89c80a62f17f5d997f78}\label{class_brood_1_1_application_1_1_player_editor_a371dd0f6735b89c80a62f17f5d997f78}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_ddiDrawPlayerAtCurrIdx@{m\_ddiDrawPlayerAtCurrIdx}}
+\index{m\_ddiDrawPlayerAtCurrIdx@{m\_ddiDrawPlayerAtCurrIdx}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_ddiDrawPlayerAtCurrIdx}{m\_ddiDrawPlayerAtCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+ddi\+Draw\+Player\+At\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+holds if the player at current index is to be draw or not \mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a5f5ad51dfd331872344d7a1be502111e}\label{class_brood_1_1_application_1_1_player_editor_a5f5ad51dfd331872344d7a1be502111e}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_panelBodyPtr@{m\_panelBodyPtr}}
+\index{m\_panelBodyPtr@{m\_panelBodyPtr}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_panelBodyPtr}{m\_panelBodyPtr}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+panel\+Body\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the panel body 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ad7c1a4c68c966202fb19a5d66ebefeab}\label{class_brood_1_1_application_1_1_player_editor_ad7c1a4c68c966202fb19a5d66ebefeab}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_playerManagerPtr@{m\_playerManagerPtr}}
+\index{m\_playerManagerPtr@{m\_playerManagerPtr}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_playerManagerPtr}{m\_playerManagerPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+player\+Manager\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the player manager 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a4b5f71519daaebf68a047bfcd691992d}\label{class_brood_1_1_application_1_1_player_editor_a4b5f71519daaebf68a047bfcd691992d}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtDrawPlayerAtCurrIdxPromt@{m\_txtDrawPlayerAtCurrIdxPromt}}
+\index{m\_txtDrawPlayerAtCurrIdxPromt@{m\_txtDrawPlayerAtCurrIdxPromt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDrawPlayerAtCurrIdxPromt}{m\_txtDrawPlayerAtCurrIdxPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Draw\+Player\+At\+Curr\+Idx\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text Current \mbox{\hyperlink{class_player}{Player}} Index prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a5324541b9b7700ba5f78fb705d7f6db8}\label{class_brood_1_1_application_1_1_player_editor_a5324541b9b7700ba5f78fb705d7f6db8}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdx@{m\_txtPlayerCurrIdx}}
+\index{m\_txtPlayerCurrIdx@{m\_txtPlayerCurrIdx}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdx}{m\_txtPlayerCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current selected player Index 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a8044303bf0e4f18c266aa6a0457b0dde}\label{class_brood_1_1_application_1_1_player_editor_a8044303bf0e4f18c266aa6a0457b0dde}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxOffsetX@{m\_txtPlayerCurrIdxOffsetX}}
+\index{m\_txtPlayerCurrIdxOffsetX@{m\_txtPlayerCurrIdxOffsetX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxOffsetX}{m\_txtPlayerCurrIdxOffsetX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+OffsetX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current selected player X-\/\+Offset 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a848a766914560a83cff722ec3fd03431}\label{class_brood_1_1_application_1_1_player_editor_a848a766914560a83cff722ec3fd03431}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxOffsetXPrompt@{m\_txtPlayerCurrIdxOffsetXPrompt}}
+\index{m\_txtPlayerCurrIdxOffsetXPrompt@{m\_txtPlayerCurrIdxOffsetXPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxOffsetXPrompt}{m\_txtPlayerCurrIdxOffsetXPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+Offset\+XPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_player}{Player}} X-\/\+Offset 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a40178d099088366fe8cdeca41809611e}\label{class_brood_1_1_application_1_1_player_editor_a40178d099088366fe8cdeca41809611e}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxOffsetY@{m\_txtPlayerCurrIdxOffsetY}}
+\index{m\_txtPlayerCurrIdxOffsetY@{m\_txtPlayerCurrIdxOffsetY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxOffsetY}{m\_txtPlayerCurrIdxOffsetY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+OffsetY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current selected player y-\/\+Offset 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a61400f7257691ac2d36378cf6b22e0dd}\label{class_brood_1_1_application_1_1_player_editor_a61400f7257691ac2d36378cf6b22e0dd}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxOffsetYPrompt@{m\_txtPlayerCurrIdxOffsetYPrompt}}
+\index{m\_txtPlayerCurrIdxOffsetYPrompt@{m\_txtPlayerCurrIdxOffsetYPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxOffsetYPrompt}{m\_txtPlayerCurrIdxOffsetYPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+Offset\+YPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_player}{Player}} y-\/\+Offset prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a8d611b211b228ff24d153f9ffaf547f7}\label{class_brood_1_1_application_1_1_player_editor_a8d611b211b228ff24d153f9ffaf547f7}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxPrompt@{m\_txtPlayerCurrIdxPrompt}}
+\index{m\_txtPlayerCurrIdxPrompt@{m\_txtPlayerCurrIdxPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxPrompt}{m\_txtPlayerCurrIdxPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text selected Index prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_ab6de870123e56c21fb5f3d671d330314}\label{class_brood_1_1_application_1_1_player_editor_ab6de870123e56c21fb5f3d671d330314}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxSizeX@{m\_txtPlayerCurrIdxSizeX}}
+\index{m\_txtPlayerCurrIdxSizeX@{m\_txtPlayerCurrIdxSizeX}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxSizeX}{m\_txtPlayerCurrIdxSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current selected player x-\/size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a74dcf4fc236a540cfd35302fe8be7f3a}\label{class_brood_1_1_application_1_1_player_editor_a74dcf4fc236a540cfd35302fe8be7f3a}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxSizeXPrompt@{m\_txtPlayerCurrIdxSizeXPrompt}}
+\index{m\_txtPlayerCurrIdxSizeXPrompt@{m\_txtPlayerCurrIdxSizeXPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxSizeXPrompt}{m\_txtPlayerCurrIdxSizeXPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+Size\+XPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_player}{Player}} X-\/\+Size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a9509a7f9d3b37210366d8876d137c17b}\label{class_brood_1_1_application_1_1_player_editor_a9509a7f9d3b37210366d8876d137c17b}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxSizeY@{m\_txtPlayerCurrIdxSizeY}}
+\index{m\_txtPlayerCurrIdxSizeY@{m\_txtPlayerCurrIdxSizeY}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxSizeY}{m\_txtPlayerCurrIdxSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current selected player y-\/size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a7b8f97ddcde6448f10306d96d0a48f1e}\label{class_brood_1_1_application_1_1_player_editor_a7b8f97ddcde6448f10306d96d0a48f1e}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerCurrIdxSizeYPrompt@{m\_txtPlayerCurrIdxSizeYPrompt}}
+\index{m\_txtPlayerCurrIdxSizeYPrompt@{m\_txtPlayerCurrIdxSizeYPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerCurrIdxSizeYPrompt}{m\_txtPlayerCurrIdxSizeYPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Curr\+Idx\+Size\+YPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_player}{Player}} y-\/\+Size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a847d99eb1a0e24b54d3258bf0a664717}\label{class_brood_1_1_application_1_1_player_editor_a847d99eb1a0e24b54d3258bf0a664717}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerFileInput@{m\_txtPlayerFileInput}}
+\index{m\_txtPlayerFileInput@{m\_txtPlayerFileInput}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerFileInput}{m\_txtPlayerFileInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+File\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the file name user enters 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_afc9991733c66b585455fb41458abfc9a}\label{class_brood_1_1_application_1_1_player_editor_afc9991733c66b585455fb41458abfc9a}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtplayerFileNamePrompt@{m\_txtplayerFileNamePrompt}}
+\index{m\_txtplayerFileNamePrompt@{m\_txtplayerFileNamePrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtplayerFileNamePrompt}{m\_txtplayerFileNamePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txtplayer\+File\+Name\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the \mbox{\hyperlink{class_player}{Player}} texture filename prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_aeea15f6753f25072231809c71cd11d1c}\label{class_brood_1_1_application_1_1_player_editor_aeea15f6753f25072231809c71cd11d1c}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerStartColNum@{m\_txtPlayerStartColNum}}
+\index{m\_txtPlayerStartColNum@{m\_txtPlayerStartColNum}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerStartColNum}{m\_txtPlayerStartColNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Start\+Col\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the Current start column number of the player 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_aaa09205ea7205bb3bb15cce8c893f12f}\label{class_brood_1_1_application_1_1_player_editor_aaa09205ea7205bb3bb15cce8c893f12f}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerStartColPrompt@{m\_txtPlayerStartColPrompt}}
+\index{m\_txtPlayerStartColPrompt@{m\_txtPlayerStartColPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerStartColPrompt}{m\_txtPlayerStartColPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Start\+Col\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text start column prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_af205e436af3a6bf2c2d1c3a232975444}\label{class_brood_1_1_application_1_1_player_editor_af205e436af3a6bf2c2d1c3a232975444}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerStartRowNum@{m\_txtPlayerStartRowNum}}
+\index{m\_txtPlayerStartRowNum@{m\_txtPlayerStartRowNum}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerStartRowNum}{m\_txtPlayerStartRowNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Start\+Row\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the Current start row number of the player 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_a74767d4649d49836aea91634b3fb3f7c}\label{class_brood_1_1_application_1_1_player_editor_a74767d4649d49836aea91634b3fb3f7c}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtPlayerStartRowPrompt@{m\_txtPlayerStartRowPrompt}}
+\index{m\_txtPlayerStartRowPrompt@{m\_txtPlayerStartRowPrompt}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerStartRowPrompt}{m\_txtPlayerStartRowPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Player\+Start\+Row\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text start row prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_player_editor_afa65c1b7b0485cfdfae7703c5bc0c241}\label{class_brood_1_1_application_1_1_player_editor_afa65c1b7b0485cfdfae7703c5bc0c241}} 
+\index{Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}!m\_txtSettingTitle@{m\_txtSettingTitle}}
+\index{m\_txtSettingTitle@{m\_txtSettingTitle}!Brood::Application::PlayerEditor@{Brood::Application::PlayerEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtSettingTitle}{m\_txtSettingTitle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Player\+Editor\+::m\+\_\+txt\+Setting\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_player_editor_8h}{Player\+Editor.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_player_editor_8cpp}{Player\+Editor.\+cpp}}\end{DoxyCompactItemize}

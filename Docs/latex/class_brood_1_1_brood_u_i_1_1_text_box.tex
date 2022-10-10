@@ -1,0 +1,507 @@
+\hypertarget{class_brood_1_1_brood_u_i_1_1_text_box}{}\doxysection{Brood\+::Brood\+UI\+::Text\+Box Class Reference}
+\label{class_brood_1_1_brood_u_i_1_1_text_box}\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+
+
+{\ttfamily \#include $<$Text\+Box.\+h$>$}
+
+Inheritance diagram for Brood\+::Brood\+UI\+::Text\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_brood_u_i_1_1_text_box}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a3f2661d0020e5fd722c4aaf3b3d50dec}{Text\+Box}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr, \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} a\+\_\+enum\+Type=\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8a3b5a0c6cd8b6f37a40f8c831571c29ba}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType\+::\+UI\+\_\+text\+Box}})
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ac3cc88a3ac171658ebaf44b01f4adf80}{$\sim$\+Text\+Box}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a065e68a943eb9e6e6a3f6c27d31d9d7d}{Text\+Box}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Text\+Box}} \&a\+\_\+other\+Text\+Box)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a4f6d55f1cb008d2a1d74307686902576}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Text\+Box}} \&a\+\_\+other\+Text\+Box)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae0d0f2edb48f5d421fc69f4a228ef224}{Is\+Editable}} () const
+\begin{DoxyCompactList}\small\item\em getter funciton to get its editibility \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a4efc96c90bf81ace9e3e70e41ceb6965}{Is\+Selected}} () const
+\begin{DoxyCompactList}\small\item\em getter funciton to get if the element is curretly selected or not \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_afb7f921d1b1235dd8156984559bf7e1d}{Is\+Enter\+Pressed}} () const
+\begin{DoxyCompactList}\small\item\em getter funciton to get value stored in of enter button \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a62ab5114f43ce16c7d4d74fb0595bf89}{Set\+Text}} (std\+::string a\+\_\+text=\char`\"{}\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em setter function to set the text that is displayed in the button \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae3aabd19a2d89ab4614b570a402cd7c1}{Set\+Limit}} (bool a\+\_\+has\+Limit=false, int a\+\_\+limit=0)
+\begin{DoxyCompactList}\small\item\em setter funciton to set the limit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a612450895759c4f15d617377bee546f2}{Set\+Selected}} (bool a\+\_\+selected)
+\begin{DoxyCompactList}\small\item\em setter function to set the state of the element i.\+e. if it is seleected or not \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a57142be8e07878d710bcabd561e7b572}{Set\+Editable}} (bool a\+\_\+is\+Editable)
+\begin{DoxyCompactList}\small\item\em setter function to set if the element is edutable or not \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_af68938125e8ad72dff598448dfbe3cb3}{Set\+Enter\+Pressed\+False}} ()
+\begin{DoxyCompactList}\small\item\em setter function to set enter\+Pressed to false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a6d7a65db8dcdf4c6d2ae96de64647ab8}{Set\+Place\+Holder\+Text}} (std\+::string a\+\_\+place\+Holder\+Text)
+\begin{DoxyCompactList}\small\item\em setter function to set enter\+Pressed to false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a69ca852368c6f5b52e928bb3f5b4d5a4}{Type\+On}} (sf\+::\+Event a\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Called when a character is typed a. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae8c123d3939e823a265f7662ec5f5e44}{Do\+Element}} () override
+\begin{DoxyCompactList}\small\item\em checks if the logics of the element is to be executed or not \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a0f1e1537424cb73a4ef925eb0bc8961a}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window) override
+\begin{DoxyCompactList}\small\item\em Draws the body to the render window. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aae900d4b799a81935be0ddb8bc67086c}{Debugger}} () override
+\begin{DoxyCompactList}\small\item\em debugger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aa21ef6d22ff5cf1d4738c920ecfa79b3}{Dy\+Create\+Text\+Box}} (sf\+::\+Vector2f a\+\_\+size, sf\+::\+Vector2f a\+\_\+pos, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, bool a\+\_\+is\+Editable=false, std\+::string a\+\_\+placeholder\+Text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aecf399ebc468f0461b9b50eaf4cb9f62}{Dy\+Create\+Text\+Box}} (float a\+\_\+sizeX, float a\+\_\+sizeY, float a\+\_\+posX, float a\+\_\+posY, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, bool a\+\_\+is\+Editable=false, std\+::string a\+\_\+placeholder\+Text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a72ca364bd9b65b23adbf7d815a7a1bfa}{Input\+Logic}} (int char\+Typed)
+\begin{DoxyCompactList}\small\item\em logic of what happens when different keys are pressed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a055805959ba36a835b29cd1fae55062d}{Delete\+Last\+Char}} ()
+\begin{DoxyCompactList}\small\item\em delete the last char form the user enterd string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostringstream \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ad66b0aa3ed5a1a4aab580d63da8de312}{m\+\_\+oss\+Text}}
+\begin{DoxyCompactList}\small\item\em text buffer \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aef95d1974f29f849acfdfdb077f016c7}{m\+\_\+place\+Holder\+Text}}
+\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aa6686112c750f918cb814069e1a77461}{m\+\_\+is\+Editable}}
+\begin{DoxyCompactList}\small\item\em is true if the element\textquotesingle{}s text is editable \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae7b5e09173509f98058bd1cef14775dd}{m\+\_\+has\+Limit}}
+\begin{DoxyCompactList}\small\item\em is true if the element has number of character limit \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a88929904f005f3da4bbf10b76b6eb5b7}{m\+\_\+limit}}
+\begin{DoxyCompactList}\small\item\em max number of character \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a99c44faaeca1768c863b8c16df8e2842}{m\+\_\+enter\+Pressed}} = false
+\begin{DoxyCompactList}\small\item\em saves if enter was pressed or not \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a3f2661d0020e5fd722c4aaf3b3d50dec}\label{class_brood_1_1_brood_u_i_1_1_text_box_a3f2661d0020e5fd722c4aaf3b3d50dec}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!TextBox@{TextBox}}
+\index{TextBox@{TextBox}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{TextBox()}{TextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Text\+Box\+::\+Text\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}}}]{a\+\_\+enum\+Type = {\ttfamily \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8a3b5a0c6cd8b6f37a40f8c831571c29ba}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType\+::\+UI\+\_\+text\+Box}}} }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes the text\+Box object
+
+It alse sets the default value of is\+Editable, is\+Selected, and has\+Limit to false. It sets the limit to -\/1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_ac3cc88a3ac171658ebaf44b01f4adf80}\label{class_brood_1_1_brood_u_i_1_1_text_box_ac3cc88a3ac171658ebaf44b01f4adf80}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!````~TextBox@{$\sim$TextBox}}
+\index{````~TextBox@{$\sim$TextBox}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{$\sim$TextBox()}{~TextBox()}}
+{\footnotesize\ttfamily Text\+Box\+::$\sim$\+Text\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+default destructor 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a065e68a943eb9e6e6a3f6c27d31d9d7d}\label{class_brood_1_1_brood_u_i_1_1_text_box_a065e68a943eb9e6e6a3f6c27d31d9d7d}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!TextBox@{TextBox}}
+\index{TextBox@{TextBox}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{TextBox()}{TextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Text\+Box\+::\+Text\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Text\+Box}} \&}]{a\+\_\+other\+Text\+Box }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Text\+Box} & reference to the ui\+Element which is used to copy the data form \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_aae900d4b799a81935be0ddb8bc67086c}\label{class_brood_1_1_brood_u_i_1_1_text_box_aae900d4b799a81935be0ddb8bc67086c}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+debugger 
+
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5a2ed094c6d67350c2011b41ee931429}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a055805959ba36a835b29cd1fae55062d}\label{class_brood_1_1_brood_u_i_1_1_text_box_a055805959ba36a835b29cd1fae55062d}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!DeleteLastChar@{DeleteLastChar}}
+\index{DeleteLastChar@{DeleteLastChar}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{DeleteLastChar()}{DeleteLastChar()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Delete\+Last\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+delete the last char form the user enterd string 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_ae8c123d3939e823a265f7662ec5f5e44}\label{class_brood_1_1_brood_u_i_1_1_text_box_ae8c123d3939e823a265f7662ec5f5e44}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!DoElement@{DoElement}}
+\index{DoElement@{DoElement}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{DoElement()}{DoElement()}}
+{\footnotesize\ttfamily bool Text\+Box\+::\+Do\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+checks if the logics of the element is to be executed or not 
+
+In the process updates the element selector --that is current active and hot element. It also set the overlay
+
+\begin{DoxyReturn}{Returns}
+true if the element\textquotesingle{}s funciton is to be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ae13e9edc8d67e64a2d53d52a30af27fa}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a0f1e1537424cb73a4ef925eb0bc8961a}\label{class_brood_1_1_brood_u_i_1_1_text_box_a0f1e1537424cb73a4ef925eb0bc8961a}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draws the body to the render window. 
+
+@virtual
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_aecf399ebc468f0461b9b50eaf4cb9f62}\label{class_brood_1_1_brood_u_i_1_1_text_box_aecf399ebc468f0461b9b50eaf4cb9f62}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!DyCreateTextBox@{DyCreateTextBox}}
+\index{DyCreateTextBox@{DyCreateTextBox}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{DyCreateTextBox()}{DyCreateTextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Text\+Box\+::\+Dy\+Create\+Text\+Box (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY,  }\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{a\+\_\+is\+Editable = {\ttfamily false},  }\item[{std\+::string}]{a\+\_\+placeholder\+Text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the textbox element \\
+\hline
+{\em a\+\_\+sizeY} & width of the textbox element \\
+\hline
+{\em a\+\_\+posX} & x-\/postion of the textbox element \\
+\hline
+{\em a\+\_\+posY} & y-\/postion of the textbox element \\
+\hline
+{\em a\+\_\+text} & text to display in the textbox element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+is\+Editable} & true if the text box is editable; default false \\
+\hline
+{\em a\+\_\+color} & color of the textbox element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created textbox element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_aa21ef6d22ff5cf1d4738c920ecfa79b3}\label{class_brood_1_1_brood_u_i_1_1_text_box_aa21ef6d22ff5cf1d4738c920ecfa79b3}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!DyCreateTextBox@{DyCreateTextBox}}
+\index{DyCreateTextBox@{DyCreateTextBox}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{DyCreateTextBox()}{DyCreateTextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Text\+Box\+::\+Dy\+Create\+Text\+Box (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size,  }\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{a\+\_\+is\+Editable = {\ttfamily false},  }\item[{std\+::string}]{a\+\_\+placeholder\+Text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the textbox element \\
+\hline
+{\em a\+\_\+pos} & postion of the textbox element \\
+\hline
+{\em a\+\_\+text} & text to display in the textbox element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+is\+Editable} & true if the text box is editable; default false \\
+\hline
+{\em a\+\_\+color} & color of the textbox element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created textbox element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a72ca364bd9b65b23adbf7d815a7a1bfa}\label{class_brood_1_1_brood_u_i_1_1_text_box_a72ca364bd9b65b23adbf7d815a7a1bfa}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!InputLogic@{InputLogic}}
+\index{InputLogic@{InputLogic}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{InputLogic()}{InputLogic()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Input\+Logic (\begin{DoxyParamCaption}\item[{int}]{char\+Typed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+logic of what happens when different keys are pressed 
+
+@reparam char\+Typed ascii number that represent the char \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_ae0d0f2edb48f5d421fc69f4a228ef224}\label{class_brood_1_1_brood_u_i_1_1_text_box_ae0d0f2edb48f5d421fc69f4a228ef224}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!IsEditable@{IsEditable}}
+\index{IsEditable@{IsEditable}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{IsEditable()}{IsEditable()}}
+{\footnotesize\ttfamily const bool Text\+Box\+::\+Is\+Editable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter funciton to get its editibility 
+
+\begin{DoxyReturn}{Returns}
+true if the textbox is editable; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_afb7f921d1b1235dd8156984559bf7e1d}\label{class_brood_1_1_brood_u_i_1_1_text_box_afb7f921d1b1235dd8156984559bf7e1d}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!IsEnterPressed@{IsEnterPressed}}
+\index{IsEnterPressed@{IsEnterPressed}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{IsEnterPressed()}{IsEnterPressed()}}
+{\footnotesize\ttfamily const bool Text\+Box\+::\+Is\+Enter\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter funciton to get value stored in of enter button 
+
+\begin{DoxyReturn}{Returns}
+value stored in of enter button 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a4efc96c90bf81ace9e3e70e41ceb6965}\label{class_brood_1_1_brood_u_i_1_1_text_box_a4efc96c90bf81ace9e3e70e41ceb6965}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!IsSelected@{IsSelected}}
+\index{IsSelected@{IsSelected}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{IsSelected()}{IsSelected()}}
+{\footnotesize\ttfamily const bool Text\+Box\+::\+Is\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter funciton to get if the element is curretly selected or not 
+
+\begin{DoxyReturn}{Returns}
+true if it is currently selected; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a4f6d55f1cb008d2a1d74307686902576}\label{class_brood_1_1_brood_u_i_1_1_text_box_a4f6d55f1cb008d2a1d74307686902576}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} \& Text\+Box\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Text\+Box}} \&}]{a\+\_\+other\+Text\+Box }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Text\+Box} & reference to the text box which is used to copy the data form\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to this element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a57142be8e07878d710bcabd561e7b572}\label{class_brood_1_1_brood_u_i_1_1_text_box_a57142be8e07878d710bcabd561e7b572}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!SetEditable@{SetEditable}}
+\index{SetEditable@{SetEditable}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{SetEditable()}{SetEditable()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Set\+Editable (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+is\+Editable }\end{DoxyParamCaption})}
+
+
+
+setter function to set if the element is edutable or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+is\+Editable} & true if text box is editable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_af68938125e8ad72dff598448dfbe3cb3}\label{class_brood_1_1_brood_u_i_1_1_text_box_af68938125e8ad72dff598448dfbe3cb3}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!SetEnterPressedFalse@{SetEnterPressedFalse}}
+\index{SetEnterPressedFalse@{SetEnterPressedFalse}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{SetEnterPressedFalse()}{SetEnterPressedFalse()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Set\+Enter\+Pressed\+False (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+setter function to set enter\+Pressed to false 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_ae3aabd19a2d89ab4614b570a402cd7c1}\label{class_brood_1_1_brood_u_i_1_1_text_box_ae3aabd19a2d89ab4614b570a402cd7c1}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!SetLimit@{SetLimit}}
+\index{SetLimit@{SetLimit}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{SetLimit()}{SetLimit()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Set\+Limit (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+has\+Limit = {\ttfamily false},  }\item[{int}]{a\+\_\+limit = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+setter funciton to set the limit 
+
+\begin{DoxyNote}{Note}
+setting the limit to zero will have 1 char limit
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+has\+Limit} & true if the text box has a limit attached to it \\
+\hline
+{\em a\+\_\+limit} & max number of character allowed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a6d7a65db8dcdf4c6d2ae96de64647ab8}\label{class_brood_1_1_brood_u_i_1_1_text_box_a6d7a65db8dcdf4c6d2ae96de64647ab8}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!SetPlaceHolderText@{SetPlaceHolderText}}
+\index{SetPlaceHolderText@{SetPlaceHolderText}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{SetPlaceHolderText()}{SetPlaceHolderText()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Set\+Place\+Holder\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+place\+Holder\+Text }\end{DoxyParamCaption})}
+
+
+
+setter function to set enter\+Pressed to false 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a612450895759c4f15d617377bee546f2}\label{class_brood_1_1_brood_u_i_1_1_text_box_a612450895759c4f15d617377bee546f2}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!SetSelected@{SetSelected}}
+\index{SetSelected@{SetSelected}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{SetSelected()}{SetSelected()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the state of the element i.\+e. if it is seleected or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+selected} & true if current text box is selected or not \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a4f20356fd55746d4d27767a358021042}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a62ab5114f43ce16c7d4d74fb0595bf89}\label{class_brood_1_1_brood_u_i_1_1_text_box_a62ab5114f43ce16c7d4d74fb0595bf89}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!SetText@{SetText}}
+\index{SetText@{SetText}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+setter function to set the text that is displayed in the button 
+
+\begin{DoxyWarning}{Warning}
+It assumes that the font for the text is already set
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+text} & text to show on the buttom -\/\texorpdfstring{$>$}{>} default empty string \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac3680e4edb6fc25bd644fe69ce443367}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a69ca852368c6f5b52e928bb3f5b4d5a4}\label{class_brood_1_1_brood_u_i_1_1_text_box_a69ca852368c6f5b52e928bb3f5b4d5a4}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!TypeOn@{TypeOn}}
+\index{TypeOn@{TypeOn}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{TypeOn()}{TypeOn()}}
+{\footnotesize\ttfamily void Text\+Box\+::\+Type\+On (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{a\+\_\+input }\end{DoxyParamCaption})}
+
+
+
+Called when a character is typed a. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+input} & a copy of sf\+::\+Event\+::\+Text\+Entered \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a99c44faaeca1768c863b8c16df8e2842}\label{class_brood_1_1_brood_u_i_1_1_text_box_a99c44faaeca1768c863b8c16df8e2842}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!m\_enterPressed@{m\_enterPressed}}
+\index{m\_enterPressed@{m\_enterPressed}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{m\_enterPressed}{m\_enterPressed}}
+{\footnotesize\ttfamily bool Text\+Box\+::m\+\_\+enter\+Pressed = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+saves if enter was pressed or not 
+
+@\+TODO fix the limit bug
+
+allocating space and initializing the m\+\_\+enter\+Pressed \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_ae7b5e09173509f98058bd1cef14775dd}\label{class_brood_1_1_brood_u_i_1_1_text_box_ae7b5e09173509f98058bd1cef14775dd}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!m\_hasLimit@{m\_hasLimit}}
+\index{m\_hasLimit@{m\_hasLimit}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{m\_hasLimit}{m\_hasLimit}}
+{\footnotesize\ttfamily bool Brood\+::\+Brood\+UI\+::\+Text\+Box\+::m\+\_\+has\+Limit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is true if the element has number of character limit 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_aa6686112c750f918cb814069e1a77461}\label{class_brood_1_1_brood_u_i_1_1_text_box_aa6686112c750f918cb814069e1a77461}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!m\_isEditable@{m\_isEditable}}
+\index{m\_isEditable@{m\_isEditable}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{m\_isEditable}{m\_isEditable}}
+{\footnotesize\ttfamily bool Brood\+::\+Brood\+UI\+::\+Text\+Box\+::m\+\_\+is\+Editable\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+is true if the element\textquotesingle{}s text is editable 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_a88929904f005f3da4bbf10b76b6eb5b7}\label{class_brood_1_1_brood_u_i_1_1_text_box_a88929904f005f3da4bbf10b76b6eb5b7}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!m\_limit@{m\_limit}}
+\index{m\_limit@{m\_limit}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{m\_limit}{m\_limit}}
+{\footnotesize\ttfamily int Brood\+::\+Brood\+UI\+::\+Text\+Box\+::m\+\_\+limit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+max number of character 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_ad66b0aa3ed5a1a4aab580d63da8de312}\label{class_brood_1_1_brood_u_i_1_1_text_box_ad66b0aa3ed5a1a4aab580d63da8de312}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!m\_ossText@{m\_ossText}}
+\index{m\_ossText@{m\_ossText}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{m\_ossText}{m\_ossText}}
+{\footnotesize\ttfamily std\+::ostringstream Brood\+::\+Brood\+UI\+::\+Text\+Box\+::m\+\_\+oss\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+text buffer 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_text_box_aef95d1974f29f849acfdfdb077f016c7}\label{class_brood_1_1_brood_u_i_1_1_text_box_aef95d1974f29f849acfdfdb077f016c7}} 
+\index{Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}!m\_placeHolderText@{m\_placeHolderText}}
+\index{m\_placeHolderText@{m\_placeHolderText}!Brood::BroodUI::TextBox@{Brood::BroodUI::TextBox}}
+\doxysubsubsection{\texorpdfstring{m\_placeHolderText}{m\_placeHolderText}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Brood\+UI\+::\+Text\+Box\+::m\+\_\+place\+Holder\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+placeholder Text that gets displaced if the textbox is editable and has no text in the text buffer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_text_box_8h}{Text\+Box.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_text_box_8cpp}{Text\+Box.\+cpp}}\end{DoxyCompactItemize}

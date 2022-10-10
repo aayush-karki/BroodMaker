@@ -1,0 +1,832 @@
+\hypertarget{class_brood_1_1_application_1_1_tile_editor}{}\doxysection{Brood\+::Application\+::Tile\+Editor Class Reference}
+\label{class_brood_1_1_application_1_1_tile_editor}\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+
+
+{\ttfamily \#include $<$Tile\+Editor.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Tile\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_tile_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ab9e180e264ffb26cc7bd04bd5baaa0c9}{Tile\+Editor}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data, sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Ptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a01a95a6374179a3289e51a9018425af6}{$\sim$\+Tile\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2407d094d264d12f551525ce077a22dc}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the work space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a15339b1cbda21fb9c06a471269a51f30}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aa59a9b9756fe0b0d00899b5738d2a03b}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em updates the display element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_afb394ca92d0dc54071d0e1c4706fe897}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_acaf7c4cdd35a8044d8faa4232710c2dc}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a902c178510d298e05edd02766c538bcb}{Update\+Tile\+Row\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the tile row panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a08da41619c0ab7291c27d05f83c97ea0}{Update\+Tile\+Col\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the tile column panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a0093a80bb7ca0107bd47f1632b531c82}{Update\+Tile\+Type}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the tile type panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a8a7b4557919685577eb7c10a6b9ec15a}{Update\+Next\+Path\+Row\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Tile\+Next\+Path row panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad5c1b4be320868d87aa76f66e3365da1}{Update\+Next\+Path\+Col\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Tile\+Next\+Path col panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ab5fff35129443d3a5ca2cc9e6fe2cfaf}{Update\+End\+Bridge\+Row\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Tile\+End\+Bridge row panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aa92e3b4332ba79cd0870fa2fb913ac66}{Update\+End\+Bridge\+Col\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Tile\+End\+Bridge col panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a4ed0fd4462688b06fa4c320dc353f445}{Update\+Correct\+Card\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Correct card number \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ae622c4ac5cec6192843f768062b2b858}{Update\+Assined\+Deck\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Assigned deck number \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_acf4c5c47a74313094ca31db0d7e4a5ae}{Update\+Force\+Dice\+Roll}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the force dice roll panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad14197e4cb1023fa9d22090e25863e49}{Update\+Tile\+File\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the laod tile texture panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a70afb9d09f5108bbe17816828cda9b3a}{m\+\_\+panel\+Body\+Ptr}}
+\begin{DoxyCompactList}\small\item\em holds the panel body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a81fa7580816719ba647fca38a11a685b}{m\+\_\+txt\+Setting\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a27ee5b8879e83bc4acd8063f10514157}{m\+\_\+txt\+Tile\+Curr\+Row\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a7fa8ea1b24df64eb1ff567a1794b0635}{m\+\_\+btn\+Tile\+Dec\+Curr\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1cea002791383ffcae1e2daf258ed3a8}{m\+\_\+txt\+Tile\+Curr\+Row}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Row number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a5e90eff325859c6009446d0ec8951368}{m\+\_\+btn\+Tile\+Inc\+Curr\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a501dca534b2b0fea1c7e169212fb9441}{m\+\_\+txt\+Tile\+Curr\+Col\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Col number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a5a2539cdd231a21e61d897dfc5d0b8f5}{m\+\_\+btn\+Tile\+Dec\+Curr\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s Col by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a293256509c1fa5aad04a246eefd977f0}{m\+\_\+txt\+Tile\+Curr\+Col}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Col number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_af7f3dd7c6750d08adc99adede322681d}{m\+\_\+btn\+Tile\+Inc\+Curr\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s Col by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aae7d2e01809fa9088de0d2ed64948a40}{m\+\_\+txt\+Tile\+Type\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text Tile type prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a54e0956e7f52ba5f4be5e69f26aeab91}{m\+\_\+ddi\+Tile\+Type}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad30dc34784d96954f51d673f3f51f025}{m\+\_\+txt\+Tile\+Next\+Path\+Row\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1b02280c76f1f3b02f9ea5692bde12e4}{m\+\_\+btn\+Tile\+Dec\+Next\+Path\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ae688c119b83fe9e95578bee435dd6b57}{m\+\_\+txt\+Tile\+Next\+Path\+Row}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Row number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_afe4eb1e76597558d0d7abb8ce0047008}{m\+\_\+btn\+Tile\+Inc\+Next\+Path\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ab4236c871890c4683a887c2120e6d84d}{m\+\_\+txt\+Tile\+Next\+Path\+Col\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Col number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a3e4bfbb187e3521325b82fa9a5afab23}{m\+\_\+btn\+Tile\+Dec\+Next\+Path\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s Col by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ad6156b21c01913524d8753bf041dd451}{m\+\_\+txt\+Tile\+Next\+Path\+Col}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Col number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ace307099721069a45707b05e49c625f9}{m\+\_\+btn\+Tile\+Inc\+Next\+Path\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s Col by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a407e7da8f4a4a76dae3bca9cf9cc1a0e}{m\+\_\+txt\+Tile\+End\+Bridge\+Row\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a073d715e62186df73d312ab8ff2ae67d}{m\+\_\+btn\+Tile\+Dec\+End\+Bridge\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a959049207c47b3249bab8eacbe00c883}{m\+\_\+txt\+Tile\+End\+Bridge\+Row}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Row number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a895e48377dc0590a3cc15d99c17b1e3d}{m\+\_\+btn\+Tile\+Inc\+End\+Bridge\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a09aab8e80df6c9a73052f7035c188b61}{m\+\_\+txt\+Tile\+End\+Bridge\+Col\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Col number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_ac3ffe79103199d05f74f96ad8f141f93}{m\+\_\+btn\+Tile\+Dec\+End\+Bridge\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s Col by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a0fc26f4532b75b0ac113adb856fb8f5c}{m\+\_\+txt\+Tile\+End\+Bridge\+Col}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Col number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a14edd6642f485ad0cb338387e4cf1799}{m\+\_\+btn\+Tile\+Inc\+End\+Bridge\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s Col by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a7c1a9ba899b89ebf55c4c5dd5ac24f77}{m\+\_\+txt\+Tile\+Num\+Correct\+Card\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text tile\textquotesingle{}s Num\+Correct\+Card prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2718a82ebd17f7e1be16b343a9070b64}{m\+\_\+btn\+Tile\+Dec\+Num\+Correct\+Card}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the tile\textquotesingle{}s Num\+Correct\+Card by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aae349225708d82fa677e18c2c1715388}{m\+\_\+txt\+Tile\+Num\+Correct\+Card}}
+\begin{DoxyCompactList}\small\item\em displays the tile\textquotesingle{}s Num\+Correct\+Card number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1a34f62d322d4d1924bcbcd581f597d5}{m\+\_\+btn\+Tile\+Inc\+Num\+Correct\+Card}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the tile\textquotesingle{}s Num\+Correct\+Card by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2460ef2f3ad5fe5d061be550188ecfbd}{m\+\_\+txt\+Tile\+Assigned\+Deck\+Idx\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text tile\textquotesingle{}s assigned Deck\+Idx prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a42009c48c32288ce9b4152bdc93f92f7}{m\+\_\+btn\+Tile\+Dec\+Assigned\+Deck\+Idx}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the tile\textquotesingle{}s Deck\+Idx by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_adb0c068fad5418c19de0cfce35cbe7c8}{m\+\_\+txt\+Tile\+Assigned\+Deck\+Idx}}
+\begin{DoxyCompactList}\small\item\em displays the tile\textquotesingle{}s Deck\+Idx ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a35ef4e8e36a81bf9a12d1c43c2beabea}{m\+\_\+btn\+Tile\+Inc\+Assigned\+Deck\+Idx}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the tile\textquotesingle{}s Deck\+Idx by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a723cd1f8f44b33c6a4bbfe8627043806}{m\+\_\+txt\+Tile\+Force\+Dice\+Roll\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text Force dice prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a563f398236a2929a2adf0662e5857531}{m\+\_\+ddi\+Tile\+Force\+Dice\+Roll}}
+\begin{DoxyCompactList}\small\item\em holds yes or no \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a1d45222be1a9757a0a2994c6d5e2771f}{m\+\_\+txt\+Tile\+Bg\+File\+Name\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the Tile texture filename prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a07c41878e6b9573e5b5349cbfb76b0ac}{m\+\_\+txt\+Tile\+Bg\+File\+Input}}
+\begin{DoxyCompactList}\small\item\em holds the file name user enters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a5b1ef4445e50fdd1efa503f0dd4fc67b}{m\+\_\+btn\+Tile\+Bg\+Open\+File}}
+\begin{DoxyCompactList}\small\item\em clicking it will load the Tile file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ab9e180e264ffb26cc7bd04bd5baaa0c9}\label{class_brood_1_1_application_1_1_tile_editor_ab9e180e264ffb26cc7bd04bd5baaa0c9}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!TileEditor@{TileEditor}}
+\index{TileEditor@{TileEditor}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{TileEditor()}{TileEditor()}}
+{\footnotesize\ttfamily Tile\+Editor\+::\+Tile\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Ptr }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data} & pointer to the game data object \\
+\hline
+{\em a\+\_\+panel\+Ptr} & pointer to the panel body object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a01a95a6374179a3289e51a9018425af6}\label{class_brood_1_1_application_1_1_tile_editor_a01a95a6374179a3289e51a9018425af6}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!````~TileEditor@{$\sim$TileEditor}}
+\index{````~TileEditor@{$\sim$TileEditor}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$TileEditor()}{~TileEditor()}}
+{\footnotesize\ttfamily Tile\+Editor\+::$\sim$\+Tile\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_acaf7c4cdd35a8044d8faa4232710c2dc}\label{class_brood_1_1_application_1_1_tile_editor_acaf7c4cdd35a8044d8faa4232710c2dc}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_afb394ca92d0dc54071d0e1c4706fe897}\label{class_brood_1_1_application_1_1_tile_editor_afb394ca92d0dc54071d0e1c4706fe897}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a2407d094d264d12f551525ce077a22dc}\label{class_brood_1_1_application_1_1_tile_editor_a2407d094d264d12f551525ce077a22dc}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the work space. 
+
+@virtual
+
+It creates all the component of the workspace. It inializes the board, setting section Dropdown Input. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a15339b1cbda21fb9c06a471269a51f30}\label{class_brood_1_1_application_1_1_tile_editor_a15339b1cbda21fb9c06a471269a51f30}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates function. 
+
+@virtual
+
+Contains all the logic for the initial workspace 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_aa59a9b9756fe0b0d00899b5738d2a03b}\label{class_brood_1_1_application_1_1_tile_editor_aa59a9b9756fe0b0d00899b5738d2a03b}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+updates the display element 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ae622c4ac5cec6192843f768062b2b858}\label{class_brood_1_1_application_1_1_tile_editor_ae622c4ac5cec6192843f768062b2b858}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateAssinedDeckIdx@{UpdateAssinedDeckIdx}}
+\index{UpdateAssinedDeckIdx@{UpdateAssinedDeckIdx}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAssinedDeckIdx()}{UpdateAssinedDeckIdx()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Assined\+Deck\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Assigned deck number 
+
+Assigned deck number panel contains the Assigned deck number promt textbox, Assigned deck number value text box, button to increase the Assigned deck number number, and button to decrease the Assigned deck number number
+
+Only the button to increase the Assigned deck number, and button to decrease the Assigned deck number are interactable
+
+If the interactable button was pressed then the Assigned deck number is increased or decresed by 1.\+Assigned deck number should be more than or equal to 0 but less than number of cards in the assigned deck \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a4ed0fd4462688b06fa4c320dc353f445}\label{class_brood_1_1_application_1_1_tile_editor_a4ed0fd4462688b06fa4c320dc353f445}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateCorrectCardNumber@{UpdateCorrectCardNumber}}
+\index{UpdateCorrectCardNumber@{UpdateCorrectCardNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCorrectCardNumber()}{UpdateCorrectCardNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Correct\+Card\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Correct card number 
+
+Correct card number panel contains the Correct card number promt textbox, Correct card number value text box, button to increase the Correct card number number, and button to decrease the Correct card number number
+
+Only the button to increase the Correct card number, and button to decrease the Correct card number are interactable
+
+If the interactable button was pressed then the Correct card number is increased or decresed by 1.\+Correct card number should be more than or equal to 1 but less than number of cards in the assigned deck \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_aa92e3b4332ba79cd0870fa2fb913ac66}\label{class_brood_1_1_application_1_1_tile_editor_aa92e3b4332ba79cd0870fa2fb913ac66}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateEndBridgeColNumber@{UpdateEndBridgeColNumber}}
+\index{UpdateEndBridgeColNumber@{UpdateEndBridgeColNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateEndBridgeColNumber()}{UpdateEndBridgeColNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+End\+Bridge\+Col\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Tile\+End\+Bridge col panel 
+
+Tile\+End\+Bridge col panel contains the Tile\+End\+Bridge col number promt textbox, Tile\+End\+Bridge col number value text box, button to increase the Tile\+End\+Bridge col number, and button to decrease the Tile\+End\+Bridge col number
+
+Only the button to increase the Tile\+End\+Bridge col number, and button to decrease the Tile\+End\+Bridge col number are interactable
+
+If the interactable button was pressed then the Tile\+End\+Bridge col is increased or decresed by 1. Tile\+End\+Bridge col number should be more than or equal to 0 but less than board col number \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ab5fff35129443d3a5ca2cc9e6fe2cfaf}\label{class_brood_1_1_application_1_1_tile_editor_ab5fff35129443d3a5ca2cc9e6fe2cfaf}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateEndBridgeRowNumber@{UpdateEndBridgeRowNumber}}
+\index{UpdateEndBridgeRowNumber@{UpdateEndBridgeRowNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateEndBridgeRowNumber()}{UpdateEndBridgeRowNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+End\+Bridge\+Row\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Tile\+End\+Bridge row panel 
+
+Tile\+End\+Bridge row panel contains the Tile\+End\+Bridge row number promt textbox, Tile\+End\+Bridge row number value text box, button to increase the Tile\+End\+Bridge row number, and button to decrease the Tile\+End\+Bridge row number
+
+Only the button to increase the Tile\+End\+Bridge row number, and button to decrease the Tile\+End\+Bridge row number are interactable
+
+If the interactable button was pressed then the Tile\+End\+Bridge row is increased or decresed by 1. Tile\+End\+Bridge row number should be more than or equal to 0 but less than board row number \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_acf4c5c47a74313094ca31db0d7e4a5ae}\label{class_brood_1_1_application_1_1_tile_editor_acf4c5c47a74313094ca31db0d7e4a5ae}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateForceDiceRoll@{UpdateForceDiceRoll}}
+\index{UpdateForceDiceRoll@{UpdateForceDiceRoll}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateForceDiceRoll()}{UpdateForceDiceRoll()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Force\+Dice\+Roll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the force dice roll panel 
+
+Tile type panel contains force dice roll panel promt textbox, and drop down input to select a yes or no
+
+Only the drop down input to select the yes or no is interactable
+
+If the interactable drop down input was pressed then it expand to show the two option avialble yes and no \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ad5c1b4be320868d87aa76f66e3365da1}\label{class_brood_1_1_application_1_1_tile_editor_ad5c1b4be320868d87aa76f66e3365da1}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateNextPathColNumber@{UpdateNextPathColNumber}}
+\index{UpdateNextPathColNumber@{UpdateNextPathColNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateNextPathColNumber()}{UpdateNextPathColNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Next\+Path\+Col\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Tile\+Next\+Path col panel 
+
+Tile\+Next\+Path col panel contains the Tile\+Next\+Path col number promt textbox, Tile\+Next\+Path col number value text box, button to increase the Tile\+Next\+Path col number, and button to decrease the Tile\+Next\+Path col number
+
+Only the button to increase the Tile\+Next\+Path col number, and button to decrease the Tile\+Next\+Path col number are interactable
+
+If the interactable button was pressed then the Tile\+Next\+Path col is increased or decresed by 1. Tile\+Next\+Path col number should be more than or equal to 0 but less than board col number \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a8a7b4557919685577eb7c10a6b9ec15a}\label{class_brood_1_1_application_1_1_tile_editor_a8a7b4557919685577eb7c10a6b9ec15a}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateNextPathRowNumber@{UpdateNextPathRowNumber}}
+\index{UpdateNextPathRowNumber@{UpdateNextPathRowNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateNextPathRowNumber()}{UpdateNextPathRowNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Next\+Path\+Row\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Tile\+Next\+Path row panel 
+
+Tile\+Next\+Path row panel contains the Tile\+Next\+Path row number promt textbox, Tile\+Next\+Path row number value text box, button to increase the Tile\+Next\+Path row number, and button to decrease the Tile\+Next\+Path row number
+
+Only the button to increase the Tile\+Next\+Path row number, and button to decrease the Tile\+Next\+Path row number are interactable
+
+If the interactable button was pressed then the Tile\+Next\+Path row is increased or decresed by 1. Tile\+Next\+Path row number should be more than or equal to 0 and can only be smaller or bigger than current tile row by 1 \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a08da41619c0ab7291c27d05f83c97ea0}\label{class_brood_1_1_application_1_1_tile_editor_a08da41619c0ab7291c27d05f83c97ea0}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateTileColNumber@{UpdateTileColNumber}}
+\index{UpdateTileColNumber@{UpdateTileColNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateTileColNumber()}{UpdateTileColNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Tile\+Col\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the tile column panel 
+
+Tile column panel contains the tile column number promt textbox, tile column number value text box, button to increase the tile column number, and button to decrease the tile column number
+
+Only the button to increase the tile column number, and button to decrease the tile column number are interactable
+
+If the interactable button was pressed then the tile column is increased or decresed by 1. Tile column number should be more than or equal to 0 but less than board column number \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ad14197e4cb1023fa9d22090e25863e49}\label{class_brood_1_1_application_1_1_tile_editor_ad14197e4cb1023fa9d22090e25863e49}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateTileFileTexture@{UpdateTileFileTexture}}
+\index{UpdateTileFileTexture@{UpdateTileFileTexture}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateTileFileTexture()}{UpdateTileFileTexture()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Tile\+File\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the laod tile texture panel 
+
+Load tile texture file panel contains load tile texture file promt textbox, textbox to enter the file name, and button to open and load the file.
+
+Only the textbox to enter the file name, and button to open and load the file are interactable
+
+If the interactable button was pressed then it opens the filename entered
+
+\begin{DoxyWarning}{Warning}
+Texture should always be in .png form 
+
+the Texture for the file should be in \textbackslash{}\+Assets\textbackslash{}\+Textures\textbackslash{}\+Tile\+Texture\textbackslash{} as it loads them from there. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a902c178510d298e05edd02766c538bcb}\label{class_brood_1_1_application_1_1_tile_editor_a902c178510d298e05edd02766c538bcb}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateTileRowNumber@{UpdateTileRowNumber}}
+\index{UpdateTileRowNumber@{UpdateTileRowNumber}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateTileRowNumber()}{UpdateTileRowNumber()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Tile\+Row\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the tile row panel 
+
+Tile row panel contains the Tile row number promt textbox, Tile row number value text box, button to increase the Tile row number, and button to decrease the Tile row number
+
+Only the button to increase the Tile row number, and button to decrease the Tile row number are interactable
+
+If the interactable button was pressed then the Tile row is increased or decresed by 1. Tile row number should be more than or equal to 0 but less than board row number \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a0093a80bb7ca0107bd47f1632b531c82}\label{class_brood_1_1_application_1_1_tile_editor_a0093a80bb7ca0107bd47f1632b531c82}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!UpdateTileType@{UpdateTileType}}
+\index{UpdateTileType@{UpdateTileType}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateTileType()}{UpdateTileType()}}
+{\footnotesize\ttfamily void Tile\+Editor\+::\+Update\+Tile\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the tile type panel 
+
+Tile type panel contains \mbox{\hyperlink{class_board}{Board}} tile type promt textbox, and drop down input to select a tile type
+
+Only the drop down input to select the tile type is interactable
+
+If the interactable drop down input was pressed then it expand to show the five option avialble blank tile, tile tile, start tile, end tile, bridge tile 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a5b1ef4445e50fdd1efa503f0dd4fc67b}\label{class_brood_1_1_application_1_1_tile_editor_a5b1ef4445e50fdd1efa503f0dd4fc67b}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileBgOpenFile@{m\_btnTileBgOpenFile}}
+\index{m\_btnTileBgOpenFile@{m\_btnTileBgOpenFile}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileBgOpenFile}{m\_btnTileBgOpenFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Bg\+Open\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will load the Tile file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a42009c48c32288ce9b4152bdc93f92f7}\label{class_brood_1_1_application_1_1_tile_editor_a42009c48c32288ce9b4152bdc93f92f7}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecAssignedDeckIdx@{m\_btnTileDecAssignedDeckIdx}}
+\index{m\_btnTileDecAssignedDeckIdx@{m\_btnTileDecAssignedDeckIdx}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecAssignedDeckIdx}{m\_btnTileDecAssignedDeckIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+Assigned\+Deck\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the tile\textquotesingle{}s Deck\+Idx by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a5a2539cdd231a21e61d897dfc5d0b8f5}\label{class_brood_1_1_application_1_1_tile_editor_a5a2539cdd231a21e61d897dfc5d0b8f5}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecCurrCol@{m\_btnTileDecCurrCol}}
+\index{m\_btnTileDecCurrCol@{m\_btnTileDecCurrCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecCurrCol}{m\_btnTileDecCurrCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+Curr\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s Col by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a7fa8ea1b24df64eb1ff567a1794b0635}\label{class_brood_1_1_application_1_1_tile_editor_a7fa8ea1b24df64eb1ff567a1794b0635}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecCurrRow@{m\_btnTileDecCurrRow}}
+\index{m\_btnTileDecCurrRow@{m\_btnTileDecCurrRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecCurrRow}{m\_btnTileDecCurrRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+Curr\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ac3ffe79103199d05f74f96ad8f141f93}\label{class_brood_1_1_application_1_1_tile_editor_ac3ffe79103199d05f74f96ad8f141f93}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecEndBridgeCol@{m\_btnTileDecEndBridgeCol}}
+\index{m\_btnTileDecEndBridgeCol@{m\_btnTileDecEndBridgeCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecEndBridgeCol}{m\_btnTileDecEndBridgeCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+End\+Bridge\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s Col by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a073d715e62186df73d312ab8ff2ae67d}\label{class_brood_1_1_application_1_1_tile_editor_a073d715e62186df73d312ab8ff2ae67d}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecEndBridgeRow@{m\_btnTileDecEndBridgeRow}}
+\index{m\_btnTileDecEndBridgeRow@{m\_btnTileDecEndBridgeRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecEndBridgeRow}{m\_btnTileDecEndBridgeRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+End\+Bridge\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a3e4bfbb187e3521325b82fa9a5afab23}\label{class_brood_1_1_application_1_1_tile_editor_a3e4bfbb187e3521325b82fa9a5afab23}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecNextPathCol@{m\_btnTileDecNextPathCol}}
+\index{m\_btnTileDecNextPathCol@{m\_btnTileDecNextPathCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecNextPathCol}{m\_btnTileDecNextPathCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+Next\+Path\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s Col by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a1b02280c76f1f3b02f9ea5692bde12e4}\label{class_brood_1_1_application_1_1_tile_editor_a1b02280c76f1f3b02f9ea5692bde12e4}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecNextPathRow@{m\_btnTileDecNextPathRow}}
+\index{m\_btnTileDecNextPathRow@{m\_btnTileDecNextPathRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecNextPathRow}{m\_btnTileDecNextPathRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+Next\+Path\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a2718a82ebd17f7e1be16b343a9070b64}\label{class_brood_1_1_application_1_1_tile_editor_a2718a82ebd17f7e1be16b343a9070b64}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileDecNumCorrectCard@{m\_btnTileDecNumCorrectCard}}
+\index{m\_btnTileDecNumCorrectCard@{m\_btnTileDecNumCorrectCard}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileDecNumCorrectCard}{m\_btnTileDecNumCorrectCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Dec\+Num\+Correct\+Card\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the tile\textquotesingle{}s Num\+Correct\+Card by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a35ef4e8e36a81bf9a12d1c43c2beabea}\label{class_brood_1_1_application_1_1_tile_editor_a35ef4e8e36a81bf9a12d1c43c2beabea}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncAssignedDeckIdx@{m\_btnTileIncAssignedDeckIdx}}
+\index{m\_btnTileIncAssignedDeckIdx@{m\_btnTileIncAssignedDeckIdx}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncAssignedDeckIdx}{m\_btnTileIncAssignedDeckIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+Assigned\+Deck\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the tile\textquotesingle{}s Deck\+Idx by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_af7f3dd7c6750d08adc99adede322681d}\label{class_brood_1_1_application_1_1_tile_editor_af7f3dd7c6750d08adc99adede322681d}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncCurrCol@{m\_btnTileIncCurrCol}}
+\index{m\_btnTileIncCurrCol@{m\_btnTileIncCurrCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncCurrCol}{m\_btnTileIncCurrCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+Curr\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s Col by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a5e90eff325859c6009446d0ec8951368}\label{class_brood_1_1_application_1_1_tile_editor_a5e90eff325859c6009446d0ec8951368}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncCurrRow@{m\_btnTileIncCurrRow}}
+\index{m\_btnTileIncCurrRow@{m\_btnTileIncCurrRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncCurrRow}{m\_btnTileIncCurrRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+Curr\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a14edd6642f485ad0cb338387e4cf1799}\label{class_brood_1_1_application_1_1_tile_editor_a14edd6642f485ad0cb338387e4cf1799}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncEndBridgeCol@{m\_btnTileIncEndBridgeCol}}
+\index{m\_btnTileIncEndBridgeCol@{m\_btnTileIncEndBridgeCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncEndBridgeCol}{m\_btnTileIncEndBridgeCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+End\+Bridge\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s Col by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a895e48377dc0590a3cc15d99c17b1e3d}\label{class_brood_1_1_application_1_1_tile_editor_a895e48377dc0590a3cc15d99c17b1e3d}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncEndBridgeRow@{m\_btnTileIncEndBridgeRow}}
+\index{m\_btnTileIncEndBridgeRow@{m\_btnTileIncEndBridgeRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncEndBridgeRow}{m\_btnTileIncEndBridgeRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+End\+Bridge\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ace307099721069a45707b05e49c625f9}\label{class_brood_1_1_application_1_1_tile_editor_ace307099721069a45707b05e49c625f9}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncNextPathCol@{m\_btnTileIncNextPathCol}}
+\index{m\_btnTileIncNextPathCol@{m\_btnTileIncNextPathCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncNextPathCol}{m\_btnTileIncNextPathCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+Next\+Path\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s Col by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_afe4eb1e76597558d0d7abb8ce0047008}\label{class_brood_1_1_application_1_1_tile_editor_afe4eb1e76597558d0d7abb8ce0047008}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncNextPathRow@{m\_btnTileIncNextPathRow}}
+\index{m\_btnTileIncNextPathRow@{m\_btnTileIncNextPathRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncNextPathRow}{m\_btnTileIncNextPathRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+Next\+Path\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a1a34f62d322d4d1924bcbcd581f597d5}\label{class_brood_1_1_application_1_1_tile_editor_a1a34f62d322d4d1924bcbcd581f597d5}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_btnTileIncNumCorrectCard@{m\_btnTileIncNumCorrectCard}}
+\index{m\_btnTileIncNumCorrectCard@{m\_btnTileIncNumCorrectCard}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnTileIncNumCorrectCard}{m\_btnTileIncNumCorrectCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+btn\+Tile\+Inc\+Num\+Correct\+Card\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the tile\textquotesingle{}s Num\+Correct\+Card by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a563f398236a2929a2adf0662e5857531}\label{class_brood_1_1_application_1_1_tile_editor_a563f398236a2929a2adf0662e5857531}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_ddiTileForceDiceRoll@{m\_ddiTileForceDiceRoll}}
+\index{m\_ddiTileForceDiceRoll@{m\_ddiTileForceDiceRoll}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_ddiTileForceDiceRoll}{m\_ddiTileForceDiceRoll}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+ddi\+Tile\+Force\+Dice\+Roll\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds yes or no 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a54e0956e7f52ba5f4be5e69f26aeab91}\label{class_brood_1_1_application_1_1_tile_editor_a54e0956e7f52ba5f4be5e69f26aeab91}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_ddiTileType@{m\_ddiTileType}}
+\index{m\_ddiTileType@{m\_ddiTileType}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_ddiTileType}{m\_ddiTileType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+ddi\+Tile\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+type of the tiles\+: start tile, end tile, bridge Start tile, balnk tile \mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a70afb9d09f5108bbe17816828cda9b3a}\label{class_brood_1_1_application_1_1_tile_editor_a70afb9d09f5108bbe17816828cda9b3a}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_panelBodyPtr@{m\_panelBodyPtr}}
+\index{m\_panelBodyPtr@{m\_panelBodyPtr}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_panelBodyPtr}{m\_panelBodyPtr}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+panel\+Body\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the panel body 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a81fa7580816719ba647fca38a11a685b}\label{class_brood_1_1_application_1_1_tile_editor_a81fa7580816719ba647fca38a11a685b}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtSettingTitle@{m\_txtSettingTitle}}
+\index{m\_txtSettingTitle@{m\_txtSettingTitle}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtSettingTitle}{m\_txtSettingTitle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Setting\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_adb0c068fad5418c19de0cfce35cbe7c8}\label{class_brood_1_1_application_1_1_tile_editor_adb0c068fad5418c19de0cfce35cbe7c8}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileAssignedDeckIdx@{m\_txtTileAssignedDeckIdx}}
+\index{m\_txtTileAssignedDeckIdx@{m\_txtTileAssignedDeckIdx}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileAssignedDeckIdx}{m\_txtTileAssignedDeckIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Assigned\+Deck\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the tile\textquotesingle{}s Deck\+Idx ~\newline
+ 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a2460ef2f3ad5fe5d061be550188ecfbd}\label{class_brood_1_1_application_1_1_tile_editor_a2460ef2f3ad5fe5d061be550188ecfbd}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileAssignedDeckIdxPromt@{m\_txtTileAssignedDeckIdxPromt}}
+\index{m\_txtTileAssignedDeckIdxPromt@{m\_txtTileAssignedDeckIdxPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileAssignedDeckIdxPromt}{m\_txtTileAssignedDeckIdxPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Assigned\+Deck\+Idx\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text tile\textquotesingle{}s assigned Deck\+Idx prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a07c41878e6b9573e5b5349cbfb76b0ac}\label{class_brood_1_1_application_1_1_tile_editor_a07c41878e6b9573e5b5349cbfb76b0ac}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileBgFileInput@{m\_txtTileBgFileInput}}
+\index{m\_txtTileBgFileInput@{m\_txtTileBgFileInput}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileBgFileInput}{m\_txtTileBgFileInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Bg\+File\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the file name user enters 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a1d45222be1a9757a0a2994c6d5e2771f}\label{class_brood_1_1_application_1_1_tile_editor_a1d45222be1a9757a0a2994c6d5e2771f}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileBgFileNamePrompt@{m\_txtTileBgFileNamePrompt}}
+\index{m\_txtTileBgFileNamePrompt@{m\_txtTileBgFileNamePrompt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileBgFileNamePrompt}{m\_txtTileBgFileNamePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Bg\+File\+Name\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the Tile texture filename prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a293256509c1fa5aad04a246eefd977f0}\label{class_brood_1_1_application_1_1_tile_editor_a293256509c1fa5aad04a246eefd977f0}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileCurrCol@{m\_txtTileCurrCol}}
+\index{m\_txtTileCurrCol@{m\_txtTileCurrCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileCurrCol}{m\_txtTileCurrCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Curr\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Col number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a501dca534b2b0fea1c7e169212fb9441}\label{class_brood_1_1_application_1_1_tile_editor_a501dca534b2b0fea1c7e169212fb9441}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileCurrColPromt@{m\_txtTileCurrColPromt}}
+\index{m\_txtTileCurrColPromt@{m\_txtTileCurrColPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileCurrColPromt}{m\_txtTileCurrColPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Curr\+Col\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Col number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a1cea002791383ffcae1e2daf258ed3a8}\label{class_brood_1_1_application_1_1_tile_editor_a1cea002791383ffcae1e2daf258ed3a8}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileCurrRow@{m\_txtTileCurrRow}}
+\index{m\_txtTileCurrRow@{m\_txtTileCurrRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileCurrRow}{m\_txtTileCurrRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Curr\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Row number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a27ee5b8879e83bc4acd8063f10514157}\label{class_brood_1_1_application_1_1_tile_editor_a27ee5b8879e83bc4acd8063f10514157}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileCurrRowPromt@{m\_txtTileCurrRowPromt}}
+\index{m\_txtTileCurrRowPromt@{m\_txtTileCurrRowPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileCurrRowPromt}{m\_txtTileCurrRowPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Curr\+Row\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a0fc26f4532b75b0ac113adb856fb8f5c}\label{class_brood_1_1_application_1_1_tile_editor_a0fc26f4532b75b0ac113adb856fb8f5c}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileEndBridgeCol@{m\_txtTileEndBridgeCol}}
+\index{m\_txtTileEndBridgeCol@{m\_txtTileEndBridgeCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileEndBridgeCol}{m\_txtTileEndBridgeCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+End\+Bridge\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Col number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a09aab8e80df6c9a73052f7035c188b61}\label{class_brood_1_1_application_1_1_tile_editor_a09aab8e80df6c9a73052f7035c188b61}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileEndBridgeColPromt@{m\_txtTileEndBridgeColPromt}}
+\index{m\_txtTileEndBridgeColPromt@{m\_txtTileEndBridgeColPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileEndBridgeColPromt}{m\_txtTileEndBridgeColPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+End\+Bridge\+Col\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Col number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a959049207c47b3249bab8eacbe00c883}\label{class_brood_1_1_application_1_1_tile_editor_a959049207c47b3249bab8eacbe00c883}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileEndBridgeRow@{m\_txtTileEndBridgeRow}}
+\index{m\_txtTileEndBridgeRow@{m\_txtTileEndBridgeRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileEndBridgeRow}{m\_txtTileEndBridgeRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+End\+Bridge\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Row number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a407e7da8f4a4a76dae3bca9cf9cc1a0e}\label{class_brood_1_1_application_1_1_tile_editor_a407e7da8f4a4a76dae3bca9cf9cc1a0e}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileEndBridgeRowPromt@{m\_txtTileEndBridgeRowPromt}}
+\index{m\_txtTileEndBridgeRowPromt@{m\_txtTileEndBridgeRowPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileEndBridgeRowPromt}{m\_txtTileEndBridgeRowPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+End\+Bridge\+Row\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a723cd1f8f44b33c6a4bbfe8627043806}\label{class_brood_1_1_application_1_1_tile_editor_a723cd1f8f44b33c6a4bbfe8627043806}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileForceDiceRollPromt@{m\_txtTileForceDiceRollPromt}}
+\index{m\_txtTileForceDiceRollPromt@{m\_txtTileForceDiceRollPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileForceDiceRollPromt}{m\_txtTileForceDiceRollPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Force\+Dice\+Roll\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text Force dice prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ad6156b21c01913524d8753bf041dd451}\label{class_brood_1_1_application_1_1_tile_editor_ad6156b21c01913524d8753bf041dd451}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileNextPathCol@{m\_txtTileNextPathCol}}
+\index{m\_txtTileNextPathCol@{m\_txtTileNextPathCol}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileNextPathCol}{m\_txtTileNextPathCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Next\+Path\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Col number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ab4236c871890c4683a887c2120e6d84d}\label{class_brood_1_1_application_1_1_tile_editor_ab4236c871890c4683a887c2120e6d84d}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileNextPathColPromt@{m\_txtTileNextPathColPromt}}
+\index{m\_txtTileNextPathColPromt@{m\_txtTileNextPathColPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileNextPathColPromt}{m\_txtTileNextPathColPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Next\+Path\+Col\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Col number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ae688c119b83fe9e95578bee435dd6b57}\label{class_brood_1_1_application_1_1_tile_editor_ae688c119b83fe9e95578bee435dd6b57}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileNextPathRow@{m\_txtTileNextPathRow}}
+\index{m\_txtTileNextPathRow@{m\_txtTileNextPathRow}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileNextPathRow}{m\_txtTileNextPathRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Next\+Path\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Row number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_ad30dc34784d96954f51d673f3f51f025}\label{class_brood_1_1_application_1_1_tile_editor_ad30dc34784d96954f51d673f3f51f025}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileNextPathRowPromt@{m\_txtTileNextPathRowPromt}}
+\index{m\_txtTileNextPathRowPromt@{m\_txtTileNextPathRowPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileNextPathRowPromt}{m\_txtTileNextPathRowPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Next\+Path\+Row\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_aae349225708d82fa677e18c2c1715388}\label{class_brood_1_1_application_1_1_tile_editor_aae349225708d82fa677e18c2c1715388}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileNumCorrectCard@{m\_txtTileNumCorrectCard}}
+\index{m\_txtTileNumCorrectCard@{m\_txtTileNumCorrectCard}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileNumCorrectCard}{m\_txtTileNumCorrectCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Num\+Correct\+Card\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the tile\textquotesingle{}s Num\+Correct\+Card number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_a7c1a9ba899b89ebf55c4c5dd5ac24f77}\label{class_brood_1_1_application_1_1_tile_editor_a7c1a9ba899b89ebf55c4c5dd5ac24f77}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileNumCorrectCardPromt@{m\_txtTileNumCorrectCardPromt}}
+\index{m\_txtTileNumCorrectCardPromt@{m\_txtTileNumCorrectCardPromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileNumCorrectCardPromt}{m\_txtTileNumCorrectCardPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Num\+Correct\+Card\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text tile\textquotesingle{}s Num\+Correct\+Card prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_tile_editor_aae7d2e01809fa9088de0d2ed64948a40}\label{class_brood_1_1_application_1_1_tile_editor_aae7d2e01809fa9088de0d2ed64948a40}} 
+\index{Brood::Application::TileEditor@{Brood::Application::TileEditor}!m\_txtTileTypePromt@{m\_txtTileTypePromt}}
+\index{m\_txtTileTypePromt@{m\_txtTileTypePromt}!Brood::Application::TileEditor@{Brood::Application::TileEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtTileTypePromt}{m\_txtTileTypePromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Tile\+Editor\+::m\+\_\+txt\+Tile\+Type\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text Tile type prompt 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_tile_editor_8h}{Tile\+Editor.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_tile_editor_8cpp}{Tile\+Editor.\+cpp}}\end{DoxyCompactItemize}

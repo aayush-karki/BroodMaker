@@ -1,0 +1,454 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager}{}\doxysection{Brood\+::Application\+::Components\+::Player\+Manager Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_player_manager}\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+
+
+{\ttfamily \#include $<$Player\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae093e4e4e7eecdf5b46de72f5827d71d}{Player\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ab53de6b16914b7591fc2bd3038069ac7}{$\sim$\+Player\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_accc1800a92db81479e2ca94a0a696b04}{Player\+Manager}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} \&a\+\_\+other\+Player\+Manager)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Player\+Manager}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a51a6a2a5099e18b7ca32d74afb352236}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} \&a\+\_\+other\+Player\+Manager)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a54befa50aac89838b503c4ba2d22a1bd}{Initialize\+Player\+Manager}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+path\+Ptr)
+\begin{DoxyCompactList}\small\item\em Initializes the player manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a7b9b4e3b7464ec3ead6d8ccbcb82425e}{Initialize\+Player\+Manager}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Manager\+Data}} \&a\+\_\+player\+Data, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+player\+Curr\+Path)
+\begin{DoxyCompactList}\small\item\em initializes the player manager with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Manager\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a93f0a6c14374ab9b1153891c0d065ac4}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns player data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_aae27df1a3eeb4e391ef8fc00ea90acba}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Player\+Manager}} data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a5222121317f0a4fc4819a2ae749a3f1d}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$a\+\_\+game\+Board)
+\begin{DoxyCompactList}\small\item\em loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Player\+Manager}} and its path data from passed file \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a12988c188ecb298ca7a39d71dfed8d2d}{Get\+Max\+Player}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the maximum number of player. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a2dd90e94c3d87783290e9d77499c0490}{Get\+Min\+Player}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the minimum number of player. \end{DoxyCompactList}\item 
+const unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_afd2b4e7ce47e8a15e4f4875068a549ee}{Get\+Curr\+Active\+Player\+Idx}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the current \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} index. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a5c52cd35d63931d1035373ad49b0edfa}{Get\+Player\+Start\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the start row of player. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ $>$\+::iterator \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a8c7059e7ba2a546472c86f25f1f2ea88}{Get\+All\+Player\+Begin}} ()
+\begin{DoxyCompactList}\small\item\em Getter function; for begin of player list. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ $>$\+::iterator \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae690629f5cebd4520ea16c433a0c1f34}{Get\+All\+Player\+End}} ()
+\begin{DoxyCompactList}\small\item\em Getter function; for end of path list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a70a2f02fff667069d923396d2026d70c}{Set\+Max\+Player}} (unsigned a\+\_\+max\+Player)
+\begin{DoxyCompactList}\small\item\em Setter function to set the maximum number of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ad9eb0c5e917488cc3eaf94c081cdee6b}{Set\+Min\+Player}} (unsigned a\+\_\+min\+Player)
+\begin{DoxyCompactList}\small\item\em Setter function to set the minimum number of player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_aa5a1757a6bd8517a632bc62dd19c89e0}{Set\+Curr\+Active\+Player\+Idx}} (unsigned a\+\_\+curr\+Active\+Player\+Idx)
+\begin{DoxyCompactList}\small\item\em Setter function to set the current player Index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a991fd064f6eba9bad32cd606c87a2a4b}{Set\+Player\+Start\+Path}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+start\+Path\+Ptr)
+\begin{DoxyCompactList}\small\item\em Setter function to set the start path for new additional player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ad862bf288f28ce44260ac1b2de8ef9eb}{Set\+Path\+For\+Player\+At\+Curr\+Idx}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+path\+Ptr)
+\begin{DoxyCompactList}\small\item\em Setter function to set the path for current active player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a634bc0befa6dd10b48986c9dfac89d68}{Get\+Player\+At\+Curr\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the current active player from the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_afd5bb4c30a67a1cc1e462b54184a135d}{Get\+Next\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get next player in the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae679633de9c20237af923a463f64b917}{Replacae\+Player\+At}} (unsigned a\+\_\+index, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$a\+\_\+player\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em replaces the a new player at passed index with a copy of passed index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a16fc343baadf3985e07b6258b7bf62ab}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the player to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a66b71053bfd3506e9c369eff0b46094c}{m\+\_\+all\+Players}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a7f286bd6febfb8c65ea71a0551c10d39}{m\+\_\+curr\+Active\+Player\+Idx}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a38cc1c7299da486caab15179ac84df8f}{m\+\_\+max\+Player}}
+\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a4f06b4f482d041134076b052770fe81e}{m\+\_\+min\+Player}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a34bbaba7e4ca8f8184fe372b4396c3b1}{m\+\_\+start\+Path\+Ptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_ae093e4e4e7eecdf5b46de72f5827d71d}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_ae093e4e4e7eecdf5b46de72f5827d71d}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!PlayerManager@{PlayerManager}}
+\index{PlayerManager@{PlayerManager}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{PlayerManager()}{PlayerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Player\+Manager\+::\+Player\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_ab53de6b16914b7591fc2bd3038069ac7}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_ab53de6b16914b7591fc2bd3038069ac7}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!````~PlayerManager@{$\sim$PlayerManager}}
+\index{````~PlayerManager@{$\sim$PlayerManager}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$PlayerManager()}{~PlayerManager()}}
+{\footnotesize\ttfamily Player\+Manager\+::$\sim$\+Player\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_accc1800a92db81479e2ca94a0a696b04}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_accc1800a92db81479e2ca94a0a696b04}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!PlayerManager@{PlayerManager}}
+\index{PlayerManager@{PlayerManager}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{PlayerManager()}{PlayerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Player\+Manager\+::\+Player\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} \&}]{a\+\_\+other\+Player\+Manager }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Player\+Manager} & reference to the the other playermanager object that is being copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a16fc343baadf3985e07b6258b7bf62ab}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a16fc343baadf3985e07b6258b7bf62ab}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the player to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render screen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a8c7059e7ba2a546472c86f25f1f2ea88}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a8c7059e7ba2a546472c86f25f1f2ea88}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetAllPlayerBegin@{GetAllPlayerBegin}}
+\index{GetAllPlayerBegin@{GetAllPlayerBegin}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetAllPlayerBegin()}{GetAllPlayerBegin()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ $>$\+::iterator Player\+Manager\+::\+Get\+All\+Player\+Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function; for begin of player list. 
+
+\begin{DoxyReturn}{Returns}
+a iterator that points to the begining of the player list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_ae690629f5cebd4520ea16c433a0c1f34}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_ae690629f5cebd4520ea16c433a0c1f34}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetAllPlayerEnd@{GetAllPlayerEnd}}
+\index{GetAllPlayerEnd@{GetAllPlayerEnd}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetAllPlayerEnd()}{GetAllPlayerEnd()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ $>$\+::iterator Player\+Manager\+::\+Get\+All\+Player\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function; for end of path list. 
+
+\begin{DoxyReturn}{Returns}
+a iterator that points to the end of the path list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_afd2b4e7ce47e8a15e4f4875068a549ee}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_afd2b4e7ce47e8a15e4f4875068a549ee}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetCurrActivePlayerIdx@{GetCurrActivePlayerIdx}}
+\index{GetCurrActivePlayerIdx@{GetCurrActivePlayerIdx}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetCurrActivePlayerIdx()}{GetCurrActivePlayerIdx()}}
+{\footnotesize\ttfamily const unsigned Player\+Manager\+::\+Get\+Curr\+Active\+Player\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the current \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} index. 
+
+\begin{DoxyReturn}{Returns}
+maximum number of player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a93f0a6c14374ab9b1153891c0d065ac4}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a93f0a6c14374ab9b1153891c0d065ac4}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Manager\+Data}} Player\+Manager\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns player data struct 
+
+\begin{DoxyReturn}{Returns}
+player data struct with the dice data in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a12988c188ecb298ca7a39d71dfed8d2d}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a12988c188ecb298ca7a39d71dfed8d2d}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetMaxPlayer@{GetMaxPlayer}}
+\index{GetMaxPlayer@{GetMaxPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetMaxPlayer()}{GetMaxPlayer()}}
+{\footnotesize\ttfamily const unsigned Player\+Manager\+::\+Get\+Max\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the maximum number of player. 
+
+\begin{DoxyReturn}{Returns}
+maximum number of player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a2dd90e94c3d87783290e9d77499c0490}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a2dd90e94c3d87783290e9d77499c0490}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetMinPlayer@{GetMinPlayer}}
+\index{GetMinPlayer@{GetMinPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetMinPlayer()}{GetMinPlayer()}}
+{\footnotesize\ttfamily const unsigned Player\+Manager\+::\+Get\+Min\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the minimum number of player. 
+
+\begin{DoxyReturn}{Returns}
+minimum number of player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_afd5bb4c30a67a1cc1e462b54184a135d}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_afd5bb4c30a67a1cc1e462b54184a135d}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetNextPlayer@{GetNextPlayer}}
+\index{GetNextPlayer@{GetNextPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetNextPlayer()}{GetNextPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ Player\+Manager\+::\+Get\+Next\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get next player in the list. 
+
+\begin{DoxyReturn}{Returns}
+next player who is supposed to be players if list is not empty ; nullptr if the list is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a634bc0befa6dd10b48986c9dfac89d68}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a634bc0befa6dd10b48986c9dfac89d68}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetPlayerAtCurrIdx@{GetPlayerAtCurrIdx}}
+\index{GetPlayerAtCurrIdx@{GetPlayerAtCurrIdx}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetPlayerAtCurrIdx()}{GetPlayerAtCurrIdx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$ Player\+Manager\+::\+Get\+Player\+At\+Curr\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the current active player from the list. 
+
+\begin{DoxyReturn}{Returns}
+current\+Active player who is supposed to be players if list is not empty ; nullptr if the list is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a5c52cd35d63931d1035373ad49b0edfa}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a5c52cd35d63931d1035373ad49b0edfa}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!GetPlayerStartPath@{GetPlayerStartPath}}
+\index{GetPlayerStartPath@{GetPlayerStartPath}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{GetPlayerStartPath()}{GetPlayerStartPath()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ Player\+Manager\+::\+Get\+Player\+Start\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the start row of player. 
+
+\begin{DoxyReturn}{Returns}
+start row for the players 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a54befa50aac89838b503c4ba2d22a1bd}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a54befa50aac89838b503c4ba2d22a1bd}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!InitializePlayerManager@{InitializePlayerManager}}
+\index{InitializePlayerManager@{InitializePlayerManager}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{InitializePlayerManager()}{InitializePlayerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Initialize\+Player\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+path\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Initializes the player manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+path\+Ptr} & a iterator that holds to Brood\+::\+Application\+::\+Components\+::st\+\_\+path node which contains the start row and column number inside it \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a7b9b4e3b7464ec3ead6d8ccbcb82425e}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a7b9b4e3b7464ec3ead6d8ccbcb82425e}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!InitializePlayerManager@{InitializePlayerManager}}
+\index{InitializePlayerManager@{InitializePlayerManager}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{InitializePlayerManager()}{InitializePlayerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Initialize\+Player\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Manager\+Data}} \&}]{a\+\_\+player\+Manager\+Data,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+player\+Curr\+Path }\end{DoxyParamCaption})}
+
+
+
+initializes the player manager with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Data} & reference of the player manager data \\
+\hline
+{\em a\+\_\+player\+Curr\+Path} & path that the new player starts on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a5222121317f0a4fc4819a2ae749a3f1d}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a5222121317f0a4fc4819a2ae749a3f1d}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$}]{a\+\_\+game\+Board }\end{DoxyParamCaption})}
+
+
+
+loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Player\+Manager}} and its path data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a51a6a2a5099e18b7ca32d74afb352236}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a51a6a2a5099e18b7ca32d74afb352236}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} \& Player\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} \&}]{a\+\_\+other\+Player\+Manager }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Player\+Manager} & reference to the the other playermanager object that is being copied from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_ae679633de9c20237af923a463f64b917}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_ae679633de9c20237af923a463f64b917}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!ReplacaePlayerAt@{ReplacaePlayerAt}}
+\index{ReplacaePlayerAt@{ReplacaePlayerAt}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{ReplacaePlayerAt()}{ReplacaePlayerAt()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Replacae\+Player\+At (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+index,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} $\ast$}]{a\+\_\+player\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+replaces the a new player at passed index with a copy of passed index 
+
+\begin{DoxyNote}{Note}
+if the passed index does not exist then it does nothing to increase the index, increase the maximum number of player by
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+index} & index at which he player is to be replaced \\
+\hline
+{\em a\+\_\+player\+Ptr} & Pointer to the player whose data is used to make a copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_aae27df1a3eeb4e391ef8fc00ea90acba}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_aae27df1a3eeb4e391ef8fc00ea90acba}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Player\+Manager}} data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_aa5a1757a6bd8517a632bc62dd19c89e0}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_aa5a1757a6bd8517a632bc62dd19c89e0}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!SetCurrActivePlayerIdx@{SetCurrActivePlayerIdx}}
+\index{SetCurrActivePlayerIdx@{SetCurrActivePlayerIdx}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{SetCurrActivePlayerIdx()}{SetCurrActivePlayerIdx()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Set\+Curr\+Active\+Player\+Idx (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+curr\+Active\+Player\+Idx }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the current player Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+curr\+Active\+Player\+Idx} & minimum number of player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a70a2f02fff667069d923396d2026d70c}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a70a2f02fff667069d923396d2026d70c}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!SetMaxPlayer@{SetMaxPlayer}}
+\index{SetMaxPlayer@{SetMaxPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{SetMaxPlayer()}{SetMaxPlayer()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Set\+Max\+Player (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+max\+Player }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the maximum number of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+max\+Player} & maximum number of player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_ad9eb0c5e917488cc3eaf94c081cdee6b}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_ad9eb0c5e917488cc3eaf94c081cdee6b}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!SetMinPlayer@{SetMinPlayer}}
+\index{SetMinPlayer@{SetMinPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{SetMinPlayer()}{SetMinPlayer()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Set\+Min\+Player (\begin{DoxyParamCaption}\item[{unsigned}]{a\+\_\+min\+Player }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the minimum number of player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+min\+Player} & minimum number of player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_ad862bf288f28ce44260ac1b2de8ef9eb}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_ad862bf288f28ce44260ac1b2de8ef9eb}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!SetPathForPlayerAtCurrIdx@{SetPathForPlayerAtCurrIdx}}
+\index{SetPathForPlayerAtCurrIdx@{SetPathForPlayerAtCurrIdx}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{SetPathForPlayerAtCurrIdx()}{SetPathForPlayerAtCurrIdx()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Set\+Path\+For\+Player\+At\+Curr\+Idx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+path\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the path for current active player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+path\+Ptr} & pointer to the path the current active player is currently on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a991fd064f6eba9bad32cd606c87a2a4b}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a991fd064f6eba9bad32cd606c87a2a4b}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!SetPlayerStartPath@{SetPlayerStartPath}}
+\index{SetPlayerStartPath@{SetPlayerStartPath}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{SetPlayerStartPath()}{SetPlayerStartPath()}}
+{\footnotesize\ttfamily void Player\+Manager\+::\+Set\+Player\+Start\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+start\+Path\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the start path for new additional player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+start\+Path\+Ptr} & pointer to the start path for the player \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a66b71053bfd3506e9c369eff0b46094c}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a66b71053bfd3506e9c369eff0b46094c}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!m\_allPlayers@{m\_allPlayers}}
+\index{m\_allPlayers@{m\_allPlayers}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{m\_allPlayers}{m\_allPlayers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}}$\ast$$>$ Brood\+::\+Application\+::\+Components\+::\+Player\+Manager\+::m\+\_\+all\+Players\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a7f286bd6febfb8c65ea71a0551c10d39}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a7f286bd6febfb8c65ea71a0551c10d39}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!m\_currActivePlayerIdx@{m\_currActivePlayerIdx}}
+\index{m\_currActivePlayerIdx@{m\_currActivePlayerIdx}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{m\_currActivePlayerIdx}{m\_currActivePlayerIdx}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Player\+Manager\+::m\+\_\+curr\+Active\+Player\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a38cc1c7299da486caab15179ac84df8f}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a38cc1c7299da486caab15179ac84df8f}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!m\_maxPlayer@{m\_maxPlayer}}
+\index{m\_maxPlayer@{m\_maxPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{m\_maxPlayer}{m\_maxPlayer}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Player\+Manager\+::m\+\_\+max\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a4f06b4f482d041134076b052770fe81e}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a4f06b4f482d041134076b052770fe81e}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!m\_minPlayer@{m\_minPlayer}}
+\index{m\_minPlayer@{m\_minPlayer}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{m\_minPlayer}{m\_minPlayer}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Components\+::\+Player\+Manager\+::m\+\_\+min\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_manager_a34bbaba7e4ca8f8184fe372b4396c3b1}\label{class_brood_1_1_application_1_1_components_1_1_player_manager_a34bbaba7e4ca8f8184fe372b4396c3b1}} 
+\index{Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}!m\_startPathPtr@{m\_startPathPtr}}
+\index{m\_startPathPtr@{m\_startPathPtr}!Brood::Application::Components::PlayerManager@{Brood::Application::Components::PlayerManager}}
+\doxysubsubsection{\texorpdfstring{m\_startPathPtr}{m\_startPathPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Player\+Manager\+::m\+\_\+start\+Path\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_player_manager_8h}{Player\+Manager.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_player_manager_8cpp}{Player\+Manager.\+cpp}}\end{DoxyCompactItemize}

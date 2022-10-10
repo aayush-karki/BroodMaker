@@ -1,0 +1,115 @@
+\hypertarget{_card_info_8h_source}{}\doxysection{Card\+Info.\+h}
+\label{_card_info_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/CardInfo.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/CardInfo.h}}
+\mbox{\hyperlink{_card_info_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{2 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{11 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keyword}{class }CardInfo;}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{30 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ================= start of CardInfo class ============================}}
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood::Application::Components::CardInfo}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \textcolor{comment}{// ============== public memeber function =================}}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{49     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_aca9584a4364d0d23825ce4e802d64b57}{CardInfo}}( \textcolor{keywordtype}{unsigned} a\_time = 0, \textcolor{keywordtype}{unsigned} a\_correctNumSteps = 0,}
+\DoxyCodeLine{50                  \textcolor{keywordtype}{unsigned} a\_incorrectNumSteps = 0, std::string a\_question = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{51                  std::string a\_correctAnswer = \textcolor{stringliteral}{"{}"{}} );}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{53     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a814cbdbf154f4e39313cb5de80f97023}{\string~CardInfo}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_aca9584a4364d0d23825ce4e802d64b57}{CardInfo}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{CardInfo}}\& a\_other );}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{// assignment constructor}}
+\DoxyCodeLine{60     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{CardInfo}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a0584500853b97dafd08ce5a6722ac617}{operator = }}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{CardInfo}}\& a\_other );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{// initialize the card info}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_ac99c9582b55acd32823711c7f2dee11d}{InitializeCard}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data}{Brood::Application::Data::ST\_CardInfoPrefabData}}\& a\_cardinfoData );}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// returns the card Info data to save }}
+\DoxyCodeLine{66     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data}{Brood::Application::Data::ST\_CardInfoPrefabData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_af48c64531cb2a2bddb73101cb5357a3b}{GetDataToSave}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// ============ getter function ==============}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// getter funciton to get time}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a2e53494b3296fd58c0eaef023fb56bd2}{GetTime}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// getter funciton to get correct number of steps}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a298167cd3abfa915ac4c36fa34724f78}{GetCorrectNumSteps}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// getter funciton to get incorrect number of steps}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_aa2e57e663fc32d1dae5201342df4c8fd}{GetIncorrectNumSteps}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// getter funciton to get question}}
+\DoxyCodeLine{80     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_ab77a4342a8c419b650c8defe45353432}{GetQuestion}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// getter funciton to get correct answer}}
+\DoxyCodeLine{83     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_aef9fb4f9754bef5980046db6cfceb1ba}{GetCorrectAnswer}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{// ============ setter function ==============}}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{87     \textcolor{comment}{// setter funciton to get time}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_ae71c7287cf8fe878d9ca80a1a49f4937}{SetTime}}( \textcolor{keywordtype}{unsigned} a\_time );}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// setter funciton to get correct number of steps}}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a7eed175e5a21b34b951033c031a61055}{SetCorrectNumSteps}}( \textcolor{keywordtype}{unsigned} a\_correctNumSteps );}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{// setter funciton to get incorrect number of steps }}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a631c240f691060d10b4c36ee6ec0d2de}{SetIncorrectNumSteps}}( \textcolor{keywordtype}{unsigned} a\_incorrectNumSteps );}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// setter funciton to get question}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a693bd8ab6590eb52f084f744190a0331}{SetQuestion}}( std::string a\_question );}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// setter funciton to get correct anser}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a1c40069f206c06e271ded024fe209392}{SetCorrectAnswer}}( std::string a\_correctAnswer );}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// ============== private memeber variables =================}}
+\DoxyCodeLine{103 \textcolor{keyword}{private}:}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{// ============ following are in the front of the card =========}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{108     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_ae95881cc51e06ebc660fa3ee49636d03}{m\_time}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{111     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a5ab61218074d7d74720df6f5d5aa8553}{m\_correctNumSteps}};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_ada97f7b3b61ed279d984c8c595b547fe}{m\_incorrectNumSteps}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// ====== following are in the back of the card =======}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{119     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_a0b93b340886d223c8ff03e105e2bb7e6}{m\_question}};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{// stores the correct answer}}
+\DoxyCodeLine{122     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info_ae9930e8c5aef946071ec844520afff91}{m\_correctAnswer}};}
+\DoxyCodeLine{123 \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{126 \textcolor{comment}{// ================= end of CardInfo class ==============================}}
+\DoxyCodeLine{127 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

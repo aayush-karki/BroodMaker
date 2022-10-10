@@ -1,0 +1,159 @@
+\hypertarget{_game_editor_8h_source}{}\doxysection{Game\+Editor.\+h}
+\label{_game_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/GameEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/GameEditor.h}}
+\mbox{\hyperlink{_game_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{class }GameEditor;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= start of GameEditor class ==========================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor}{Brood::Application::GameEditor}} :}
+\DoxyCodeLine{52     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{55 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a40061ad7231a9cac67383fb44e962e6d}{GameEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{58                 sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{61     \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a245db701500e4db2fed7f73e884182bb}{\string~GameEditor}}();}
+\DoxyCodeLine{62     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a284d8b019bd34bf751d0ee2f1c8a7d54}{InitializeWorkSpace}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a8de8da59685f16f6c6c6092994805420}{Update}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ad4439d42921be6fd83690ee3e7eadde5}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// renders to the screen}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a692feb46029bb3f79b8a20315d5d5c0c}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a59282a4dba62d4cd9fe73f62f54fa160}{Debugger}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// ================= private member function ================== }}
+\DoxyCodeLine{80 \textcolor{keyword}{private}:}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{83     \textcolor{comment}{// =========== Update funcitons for general game setting =====}}
+\DoxyCodeLine{84     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// checks if the user interacted with the enter game}}
+\DoxyCodeLine{87     \textcolor{comment}{// name panel element}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a450f2936f413dbf64014cc9cdb8043df}{UpdateGameTitleInput}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// checks if the user interacted with the movement }}
+\DoxyCodeLine{91     \textcolor{comment}{// type panel Element}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a60c5ecdd5ac8d5c5b94620bac0e22ef9}{UpdateMovementTypePanelElement}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// checks if the user interacted with the incorrect }}
+\DoxyCodeLine{95     \textcolor{comment}{// penalty panel Element}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a39e9748dd7398d02c438fdb108452f94}{UpdateIncorrectPenaltyPanelElement}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// checks if the user interacted with the minumum }}
+\DoxyCodeLine{99     \textcolor{comment}{// player number panel Element}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a67e09c0f0ff9d4af25d4a78562b1addc}{UpdateMinimumPlayerNumber}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// checks if the user interacted with the maximum }}
+\DoxyCodeLine{103     \textcolor{comment}{// player number panel Element}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a73f789bf923da01889be041e8bb64787}{UpdateMaximumPlayerNumber}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// checks if the user interacted with the Deck }}
+\DoxyCodeLine{107     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_af29c215edcfc1ea4b45322bfe983d55b}{UpdateDeckNumber}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// ================= private member variable ================== }}
+\DoxyCodeLine{111 \textcolor{keyword}{private}:}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a11d4c7cfe74b06c934aea4fe624a8f59}{m\_panelBodyPtr}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ab10dddf5389183c35334686bf574814d}{m\_titleScreenBtn}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{120     \textcolor{comment}{// =========== member variables for general game setting =====}}
+\DoxyCodeLine{121     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// ==== UI elements to show setting title  ====}}
+\DoxyCodeLine{124     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_af938eff5abde014942db1f70094a17fa}{m\_txtSettingTitle}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// ==== UI elements to enter a game title name  ====}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a302ca9ec4fe6c49ab463db97357dc8da}{m\_txtGameNamePrompt}};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{132     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ad0e0a4bc0b7e8ebf01c3653bdc49c6f4}{m\_txtGameInput}};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{// ==== UI elements to change the board movement rule ====}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ae0edf0eb62fe748311cdf3d3c6bbcced}{m\_txtMovementTypePromt}};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{142     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a554c0af7318070ce0e6169ce2ed980f0}{m\_ddiMovementType}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{comment}{// ==== UI elements to change the board Penalty rule ====}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{147     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ae16ffabba51daaed31566fcd16cd1516}{m\_txtIncorectPenaltyPromt}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_af95cf72e6be31401b05317ca5900e178}{m\_ddiIncorectPenalty}};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{comment}{// ==== UI elements to change the minimum player ====}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{155     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_aceb21d30d2250cb7e6cd84a55957116b}{m\_txtPlayerMinNumPrompt}};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a617a0fb285a0e3deb2d4c74bb0f76fd9}{m\_btnPlayerDecMinNum}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a436aaee988cdcd78104acb195b1f8475}{m\_txtPlayerMinNum}};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{164     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_abf3e247f4e554a662a01db17637621a7}{m\_btnPlayerIncMinNum}};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{comment}{// ==== UI elements to change the maximum player ====}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{169     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a24f8ab19e33c0a69baaed6d8c12c294e}{m\_txtPlayerMaxNumPrompt}};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_adf32a390043326fb0760f488f53d43e0}{m\_btnPlayerDecMaxnNum}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{175     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a4e771c22c86b075945e6685a83aabcb4}{m\_txtPlayerMaxNum}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a07de94482de8c0996bdd36f1ea49ca63}{m\_btnPlayerIncMaxNum}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \textcolor{comment}{// ==== UI elements to change the number of decks ====}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{183     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a7a4e7e82560c3ef1b4c2829e36092a53}{m\_txtDeckNumPrompt}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_aa8c83361ddb890e70f13b2a7bbdb6162}{m\_btnDeckDecNum}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a5310348f407fbf33fb5b7e6087ed85a4}{m\_txtDeckNum}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a1b98f1f0ee76bee5508b0dd668b4666d}{m\_btnDeckIncNum}};}
+\DoxyCodeLine{193 \};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{196 \textcolor{comment}{// ================= start of GameEditor class ==========================}}
+\DoxyCodeLine{197 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

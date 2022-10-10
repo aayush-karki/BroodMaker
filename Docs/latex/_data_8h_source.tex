@@ -1,0 +1,493 @@
+\hypertarget{_data_8h_source}{}\doxysection{Data.\+h}
+\label{_data_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Data.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Data.h}}
+\mbox{\hyperlink{_data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{16 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{19 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{39 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{40 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{46     \textcolor{keyword}{namespace }Data}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{ST\_GameData}}; }
+\DoxyCodeLine{49         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{ST\_BoardData}}; }
+\DoxyCodeLine{50         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data}{ST\_CardInfoPrefabData}}; }
+\DoxyCodeLine{51         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{ST\_DeckPrefabData}}; }
+\DoxyCodeLine{52         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{ST\_DeckManagerData}}; }
+\DoxyCodeLine{53         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data}{ST\_DicePrefabData}}; }
+\DoxyCodeLine{54         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data}{ST\_DisplayCardData}}; }
+\DoxyCodeLine{55         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{ST\_PlayerPrefabData}}; }
+\DoxyCodeLine{56         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{ST\_PlayerManagerData}}; }
+\DoxyCodeLine{57         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data}{ST\_PathPrefabData}}; }
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{61 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{62 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{65 \textcolor{comment}{// ================= start of ST\_GameData struct defination =============}}
+\DoxyCodeLine{66 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{73 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood::Application::Data::ST\_GameData}}}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{76     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data_a348f76e8c53b61b6822145ab0b612ca8}{stm\_gameTitle}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data_a99630606fd324d209b26c0786f5a0859}{PopulateFromString}}(std::string a\_string);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{84     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{85     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data_a78718b70d06c9e3c198f60aa04d6f946}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{//int stm\_totalTileTypes; /// total number of tile prefabs}}
+\DoxyCodeLine{88     \textcolor{comment}{//int stm\_totalDeckTypes; /// total number of deck prefabs}}
+\DoxyCodeLine{89     \textcolor{comment}{//int stm\_totalDiceTypes; /// total number of dice prefabs}}
+\DoxyCodeLine{90     \textcolor{comment}{//int stm\_totalPLayerTypes;  /// total number of player prefabs}}
+\DoxyCodeLine{91     \textcolor{comment}{//int stm\_playerNum; /// number of player set}}
+\DoxyCodeLine{92     \textcolor{comment}{//int stm\_minPlayerNumer;  /// minimum number of player required to play the game}}
+\DoxyCodeLine{93     \textcolor{comment}{//int stm\_maxPlayerNumer; /// maximum number of player allowed for a game}}
+\DoxyCodeLine{94     \textcolor{comment}{//int stm\_currPlayerTurn; /// index of player whose turn it is currently}}
+\DoxyCodeLine{105 \textcolor{comment}{}\};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{108 \textcolor{comment}{// ================= end of ST\_GameData struct defination ===============}}
+\DoxyCodeLine{109 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{112 \textcolor{comment}{// ================= start of ST\_BoardData struct defination ============}}
+\DoxyCodeLine{113 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{120 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood::Application::Data::ST\_BoardData}}}
+\DoxyCodeLine{121 \{}
+\DoxyCodeLine{123     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_aebb91acdf28d0510dc094b8138bb06ff}{stm\_boardSizeX}} = 0;}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a9d2ad60e42331d41239f5110ca3c8845}{stm\_boardSizeY}} = 0;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a60b74aafa52a4501adaa3d1b29ebd38f}{stm\_boardPosX}} = 0;}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{132     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_ada713770f75f64cfad362787de9426fc}{stm\_boardPosY}} = 0;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{135     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a2a42fab1a8d068e3a2186945c0bc1e82}{stm\_numRow}} = 1;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{138     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a50ccd9f15c17dcf7269c6476e045d6f8}{stm\_numCol}} = 1;}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a7c454d763fa59878c78301918b69567f}{stm\_currActiveNumRow}} = 0;}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a3e51d4a7432732f26854d8147670e493}{stm\_currActiveNumCol}} = 0;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{149     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a1258cfc6e9c3f6cc103f3e8e72efeb18}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{152     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{153     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_af3bcfb6385a253d32f5b943273cb3c6a}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{154 \};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{157 \textcolor{comment}{// ================= end of ST\_BoardData struct defination ==============}}
+\DoxyCodeLine{158 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{161 \textcolor{comment}{// ================= start of ST\_CardInfoPrefabData struct defination =======}}
+\DoxyCodeLine{162 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{171 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data}{Brood::Application::Data::ST\_CardInfoPrefabData}}}
+\DoxyCodeLine{172 \{}
+\DoxyCodeLine{173     \textcolor{comment}{// ===== data in the front of the card =====}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{176     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_ab7559409242be6e63321827ba4795b75}{stm\_time}} = 0;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_a1e383980a10c241a3023bfb8af496f00}{stm\_correctNumSteps}} = 0;}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{182     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_a05682ea4873c8c019af127aa081acff1}{stm\_incorrectNumSteps}} = 0;}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{comment}{// ===== data in the back of the card =====}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{187     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_a47c80c7dc8f984071287fa98b3eae575}{stm\_question}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{190     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_add6fa709039ee0dff0bfa070c43a5286}{stm\_correctAnswer}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{195     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_ae613e21d811480f104e351cc4b763a6a}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{198     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{199     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___card_info_prefab_data_a7e6c6f9354154465866d530ee29ee1fd}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{200 \};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{203 \textcolor{comment}{// ================= end of ST\_CardInfoPrefabData struct defination =====}}
+\DoxyCodeLine{204 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{207 \textcolor{comment}{// ================= start of ST\_DeckPrefabData struct defination =======}}
+\DoxyCodeLine{208 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{218 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data}{Brood::Application::Data::ST\_DeckPrefabData}}}
+\DoxyCodeLine{219 \{}
+\DoxyCodeLine{221     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_afc6d04a6f8f4928abbe7ae261e836a03}{stm\_deckSizeX}}= 0;}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{224     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_af0e4165a7cbb4d2f18706412401f521d}{stm\_deckSizeY}}= 0;}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{227     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_aeb4a86e30b5a04f14c444c4e70bb1e80}{stm\_deckPosX}}= 0;}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{230     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a6e7acae4791692e70d59c5e540310231}{stm\_deckPosY}}= 0;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{233     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a82634e141cde136fd099fb4c88c5b13b}{stm\_textureFileName}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{236     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a0429e2e8a5d3a4bcd649369c827bec88}{stm\_cardInitFilename}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{239     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_addb2755143b1cdd65e20d7606c0b53f8}{stm\_numTotalCard}}= 1;}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{242     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a8e1d68d05937a6fefe0e5db22b489dc5}{stm\_undealtCardIdx}}= 0;}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{245     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a161ce546ca3eb465dca0986ca068e151}{stm\_currActiveCardIdx}}= 0;}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{250     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a57fe53889eac721e5eb6cfc2b4a95919}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{253     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{254     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_prefab_data_a130895c4448892b5b20cae546cfd6714}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{255 \};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{258 \textcolor{comment}{// ================= end of ST\_DeckPrefabData struct defination =========}}
+\DoxyCodeLine{259 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{262 \textcolor{comment}{// ================= start of ST\_DeckManagerData struct defination =======}}
+\DoxyCodeLine{263 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{270 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood::Application::Data::ST\_DeckManagerData}}}
+\DoxyCodeLine{271 \{}
+\DoxyCodeLine{274     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data_aa04486650e4a2d2131b309a9693e04c2}{stm\_movementType}}= 0;}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{277     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data_aa292066176aab0d6744d0b7d66975bb9}{stm\_incorrectPenalty}}= \textcolor{keyword}{false};}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{280     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data_af9665aea51421287dda2aa46b2bc2bfd}{stm\_numDecks}}= 1;}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{283     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data_a36a344de30f0da39aa020c6874198638}{stm\_currDecksIdx}}= 0;}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{288     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data_a152796648cd1cf0932b38a45dd5b2343}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{291     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{292     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data_afbf7f8cca59cf3193dae3bd0765a1b6f}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{293 \};}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{296 \textcolor{comment}{// ================= end of ST\_DeckManagerData struct defination =========}}
+\DoxyCodeLine{297 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{300 \textcolor{comment}{// ================= start of ST\_DicePrefabData struct defination =======}}
+\DoxyCodeLine{301 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{308 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data}{Brood::Application::Data::ST\_DicePrefabData}}}
+\DoxyCodeLine{309 \{}
+\DoxyCodeLine{311     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_a7e6afe0020321592006c74ac8f1f6b80}{stm\_numSides}}= 6;}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{314     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_ae446ccbba872f5f3b232df1ea501e5be}{stm\_diceSizeX}}= 0;}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{317     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_aa9e38d4629343cc847835400cbb97ae4}{stm\_diceSizeY}}= 0;}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{320     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_aa2e40366df87c2a13c80c54c978b97ba}{stm\_dicePosX}}= 0;}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{323     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_af5aa3a2f039b47298a1e15363cb1fae8}{stm\_dicePosY}}= 0;}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{326     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_addbd95afc54f00d63246d031c6a016e5}{stm\_textureFileName}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{331     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_a96ad1c1b7a5783439b0d306573be7e24}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{334     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{335     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___dice_prefab_data_a3313ac03480c490e43f22ef9dad1daf3}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{336 \};}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{339 \textcolor{comment}{// ================= end of ST\_DicePrefabData struct defination =========}}
+\DoxyCodeLine{340 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{343 \textcolor{comment}{// ================= start of ST\_DisplayCardData struct defination ======}}
+\DoxyCodeLine{344 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{351 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data}{Brood::Application::Data::ST\_DisplayCardData}}}
+\DoxyCodeLine{352 \{}
+\DoxyCodeLine{353     \textcolor{comment}{// ========== Display Card Setting ==============}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{356     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a0417bc0a67c76b43a857c60c9509dad7}{stm\_displayCardSizeX}}= 0;}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{359     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ad26c0a4891bc7a07308e12585f55543f}{stm\_displayCardSizeY}}= 0;}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{362     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a241df58b172916dd94821638a34f16d8}{stm\_displayCardPositionX}}= 0;}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{365     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a980ae37471ae564cd097756af454a58d}{stm\_displayCardPositionY}}= 0;}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{368     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_af0a4945162fb7b4d6b4422a40c32bd42}{stm\_displayCardFrontTextureFilename}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{371     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a80b3f16378ff523dd40f676d520010a3}{stm\_displayCardBackTextureFilename}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373     \textcolor{comment}{// ========= display Card front component setting ===========}}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{376     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ab0438130e894b2bc9054d4e1bc12edfe}{stm\_frontTimePromptSizeX}}= 0;}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{379     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a0e76f0157aec003a53dfa4872f9ef33a}{stm\_frontTimePromptSizeY}}= 0;}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{382     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_aebfa46a117a50a0e21ed64c67f1316a0}{stm\_frontTimePromptPositionX}}= 0;}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{385     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a51e35a27e61ffc32b952d74a118317e9}{stm\_frontTimePromptPositonY}}= 0;}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{388     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a2c370562f4bf7f3e0c28bde9da80edd1}{stm\_frontTimeValueSizeX}}= 0;}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{391     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a79ee0b966c317e89ed98e6ac713f227b}{stm\_frontTimeValueSizeY}}= 0;}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{394     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ace057ff1ed3f6468c47d6b92447640b6}{stm\_frontTimeValuePositionX}}= 0;}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{397     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a4acb744913b8eb803a85b4c9d0b1cdd3}{stm\_frontTimeValuePositonY}}= 0;}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{400     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a75653e4f1bc6aee7a9af1fef2027bd30}{stm\_upPromptSizeX}}= 0;}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{403     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a3dbec1939151f4e999e582fd463f3a78}{stm\_upPromptSizeY}}= 0;}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{406     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a900d8da3609414075db65d94ba3e2252}{stm\_upPromptPositionX}}= 0;}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{409     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a1aee572123ab5fa086021780dd39fc14}{stm\_upPromptPositonY}}= 0;}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{412     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a6b66decc1b1320b8c86217a4aaa3888b}{stm\_upValueSizeX}}= 0;}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{415     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a8702ce81153e4bc62d2597e137eac294}{stm\_upValueSizeY}}= 0;}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{418     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a30892c64b882d0129c040fc04f00c756}{stm\_upValuePositionX}}= 0;}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{421     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a1df5ed86ad8be19a13236ef336979c94}{stm\_upValuePositonY}}= 0;}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{424     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_adf57e052a6b15d4040f6efab2d8fa890}{stm\_downPromptSizeX}}= 0;}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{427     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_af2abeaf3406ba5c443b3ca011a4badd0}{stm\_downPromptSizeY}}= 0;}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{430     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a85e993aea086c2911c0bea3856d241e3}{stm\_downPromptPositionX}}= 0;}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{433     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ac126fb1e2efc8a82beca97313e151262}{stm\_downPromptPositonY}}= 0;}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{436     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a9d8676b96e4c4ced40d6cf4fa9df5c12}{stm\_downValueSizeX}}= 0;}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{439     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a838277179954b827c38ca4933e8f5b11}{stm\_downValueSizeY}}= 0;}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{442     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ac84561f76422a0e5e50927b19bc8bfee}{stm\_downValuePositionX}}= 0;}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{445     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a9133e44b75fbbb29fbd4dfc5f7d365fa}{stm\_downValuePositonY}}= 0;}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{448     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ace3b03a86ab8c804104b73ee0086d6fd}{stm\_turnCardPromptSizeX}}= 0;}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{451     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a87d4a7081ce0a792af597ae704f23ece}{stm\_turnCardPromptSizeY}}= 0;}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{454     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_aed33b400daf827e9ad2868df2a3157a0}{stm\_turnCardPromptPositionX}}= 0;}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{457     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a397fae2112c991748b70a31004c573fd}{stm\_turnCardPromptPositonY}}= 0;}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459     \textcolor{comment}{// ========== display Card back component setting ============}}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{462     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a79125a70465cddfdb9690a00fd73a6ba}{stm\_backTimePromptSizeX}}= 0;}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{465     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_abfc743494ce00ae5bb576bc81f11dfea}{stm\_backTimePromptSizeY}}= 0;}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{468     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ad8a8ecf972e234c1a6681e48f6a94d60}{stm\_backTimePromptPositionX}}= 0;}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{471     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ace8bf2c4b700ab2446eecc066579f597}{stm\_backTimePromptPositonY}}= 0;}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{474     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a932e1272430ad90b9e4182de040e4120}{stm\_backTimeValueSizeX}}= 0;}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{477     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a1053979d43fc717da0a436598851b026}{stm\_backTimeValueSizeY}}= 0;}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{480     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ae092bdd696638fa2e9c6ecf10d9f49a3}{stm\_backTimeValuePositionX}}= 0;}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{483     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a217b8e11604401313ca341b2acd9a214}{stm\_backTimeValuePositonY}}= 0;}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{486     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ae484ae4b0088a1ed8423a328e16cdd07}{stm\_questionPromptSizeX}}= 0;}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{489     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a5e09e159d50623390ac7638e4167fb84}{stm\_questionPromptSizeY}}= 0;}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{492     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ac8aed2e4210038ffb16e7eb5d9e211e3}{stm\_questionPromptPositionX}}= 0;}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{495     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_aab938dd987657ddd36aa060bd02b3d98}{stm\_questionPromptPositonY}}= 0;}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{498     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_afd70f9c45131a062530aac5ce3de5517}{stm\_questionValueSizeX}}= 0;}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{501     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ab1b1b54fedc33c9aef00e9c7fc62f817}{stm\_questionValueSizeY}}= 0;}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{504     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_abcdaa4241ba14023f25ed61d6e281930}{stm\_questionValuePositionX}}= 0;}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{507     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a0f66b7f8764f0c00c088eb400ce6601b}{stm\_questionValuePositonY}}= 0;}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{510     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_afbb49ee324f4d45d131c84ca148a0781}{stm\_answerPromptSizeX}}= 0;}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{513     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a03523d8bb96473e7235d8b45bf6bcd56}{stm\_answerPromptSizeY}}= 0;}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{516     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a1e27b73424684f02716950bdf59aef64}{stm\_answerPromptPositionX}}= 0;}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{519     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a7e39328edfeee6b03ae0d041f5b91616}{stm\_answerPromptPositonY}}= 0;}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{522     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_af8661d17259f40f9ec7227292398f15f}{stm\_answerValueSizeX}}= 0;}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{525     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a289265e14fb4003e3fc64da14bf7fdf8}{stm\_answerValueSizeY}}= 0;}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{528     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a7128b08b212144655b21437771c2e7f2}{stm\_answerValuePositionX}}= 0;}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{531     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a007140f30c721553b216ce5dfdf99eb0}{stm\_answerValuePositonY}}= 0;}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{534     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a943099196d1fe277b4d7e6f52239fe80}{stm\_submitButtonValueSizeX}}= 0;}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{537     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_ae8a197974ccdc33f9713ad26dba6306d}{stm\_submitButtonValueSizeY}}= 0;}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{540     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a39b73212d877e395faa756db6e67a7d8}{stm\_submitButtonValuePositionX}}= 0;}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{543     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a999ee103f72b5398930d4a920c8f39d4}{stm\_submitButtonValuePositonY}}= 0;}
+\DoxyCodeLine{544 }
+\DoxyCodeLine{545     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{546     }
+\DoxyCodeLine{547     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{548     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a8cb161ceb6dc494404c7ad42583786a2}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{551     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{552     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data_a836dd25e42fce8ccb93f4a7d3eba5175}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{553 \};}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{556 \textcolor{comment}{// ================= end of ST\_DisplayCardData struct defination ========}}
+\DoxyCodeLine{557 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{560 \textcolor{comment}{// ================= start of ST\_PlayerPrefabData struct defination =====}}
+\DoxyCodeLine{561 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{562 }
+\DoxyCodeLine{568 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood::Application::Data::ST\_PlayerPrefabData}}}
+\DoxyCodeLine{569 \{}
+\DoxyCodeLine{571     \textcolor{keywordtype}{float}  \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_a494db08285afa78e3662cae5fb57cfdb}{stm\_currRow}}= 0;}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{574     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_a012a7ae38b278055c6bc1d10b56763c6}{stm\_currCol}}= 0;}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{577     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_ad0b7619966d063ea890819c1ae494434}{stm\_playerSizeX}}= 0;}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{580     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_a7a2c02c88a50ddf5e83c5e5d407f0152}{stm\_playerSizeY}}= 0;}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{583     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_a7df3bb825a19f7fb6c744b94886fe8c1}{stm\_playerOffsetX}}= 0;}
+\DoxyCodeLine{584 }
+\DoxyCodeLine{586     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_a079e0d05d0497a3a886b663b57cdd36c}{stm\_playerOffsetY}}= 0;}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{589     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_adb430ae3fb59c3a389c54c94adb658a6}{stm\_textureFileName}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{594     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_aaff6fc92a8e386c6ddd98753312e2c6e}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{597     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{598     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data_a3ed3a8d38158d27bc9139b8881d099cf}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{599 \};}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{602 \textcolor{comment}{// ================= end of ST\_PlayerPrefabData struct defination =======}}
+\DoxyCodeLine{603 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{607 \textcolor{comment}{// ================= start of ST\_PlayerManagerData struct defination =====}}
+\DoxyCodeLine{608 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{615 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood::Application::Data::ST\_PlayerManagerData}}}
+\DoxyCodeLine{616 \{}
+\DoxyCodeLine{618     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data_a3fa00bd177e8059b6409cb3ad5506e2a}{stm\_minPlayer}}= 1;}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{621     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data_ae2c2ada28ead8217b3d49fa4641aabcd}{stm\_maxPlayer}}= 1;}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{624     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data_a39867d1d33e5401ab92041c7cfa6fe1f}{stm\_currPlayerIdx}}= 0;}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{626     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{627 }
+\DoxyCodeLine{628     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{629     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data_af166204c487e555244d1aeec0c945715}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{631     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{632     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{633     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data_a2d3eb8678a28608f90cb0013355c03d6}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{634 \};}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{637 \textcolor{comment}{// ================= end of ST\_PlayerManagerData struct defination =======}}
+\DoxyCodeLine{638 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{642 \textcolor{comment}{// ================= start of ST\_PathPrefabData struct defination =======}}
+\DoxyCodeLine{643 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{644 }
+\DoxyCodeLine{650 \textcolor{keyword}{struct  }\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data}{Brood::Application::Data::ST\_PathPrefabData}}}
+\DoxyCodeLine{651 \{}
+\DoxyCodeLine{654     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a1e84545d49fdf11a32d300d34f835667}{stm\_tileType}}= 0;}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{657     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_aee70f7abb60e7033d7e1097d2fc79b0a}{stm\_RowNum}}= 0;}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{660     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a4d283ae5bc639895f4a0537a040ed15a}{stm\_ColNum}}= 0;}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{663     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_ac7b62ff89071e9907cf67b62564f5f3c}{stm\_nextTileRowNum}}= 0;}
+\DoxyCodeLine{664 }
+\DoxyCodeLine{666     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a26d230915e46b8abd5d25a048883a5e8}{stm\_nextTileColNum}}= 0;}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{669     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a10721f15c7433b1611324121856493b2}{stm\_endBridgeTileRowNum}}= 0;}
+\DoxyCodeLine{670 }
+\DoxyCodeLine{672     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a0fdbd22b03060ca16948da079bed8b3c}{stm\_endBridgeTileColNum}}= 0;}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{675     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a8cef15ec033ae994ae66f0d1cd9f9e49}{stm\_numberCardDraw}}= 0;}
+\DoxyCodeLine{676 }
+\DoxyCodeLine{680     \textcolor{keywordtype}{unsigned}  \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a867b9777895a1f3f2d1c5f1c5f3a8605}{stm\_assignedDeckId}}= 0;}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{683     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a6d6ec9e4f2c54beb5d09b7db3aa0cf45}{stm\_forceDiceRoll}}= \textcolor{keyword}{false};}
+\DoxyCodeLine{684 }
+\DoxyCodeLine{686     std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_accde08117f80b98ea2e4192640532ce6}{stm\_textureFileName}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688     \textcolor{comment}{// =========== functions ============= }}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{690     \textcolor{comment}{// populates the struct from passed string}}
+\DoxyCodeLine{691     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a8fcd8876f183b192ec2cc592989cbdcf}{PopulateFromString}}( std::string a\_string );}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693     \textcolor{comment}{// creats a string and appends each data to its back}}
+\DoxyCodeLine{694     \textcolor{comment}{// seperated by ' '}}
+\DoxyCodeLine{695     \textcolor{keyword}{const} std::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data_a5b037a2cc7082669ffb792c17a1a4221}{GetString}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{696 \};}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{699 \textcolor{comment}{// ================= end of ST\_PathPrefabData struct defination =========}}
+\DoxyCodeLine{700 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

@@ -1,0 +1,165 @@
+\hypertarget{_board_editor_8h_source}{}\doxysection{Board\+Editor.\+h}
+\label{_board_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/BoardEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/BoardEditor.h}}
+\mbox{\hyperlink{_board_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}} \textcolor{comment}{// includes all the other uiElements}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{class }\mbox{\hyperlink{class_board_editor}{BoardEditor}};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= start of BoardEditor class =========================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{54 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor}{Brood::Application::BoardEditor}} :}
+\DoxyCodeLine{55     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{59     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{60     \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_acab87b92bfadc23c0746cbbccaca3376}{BoardEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{61                  sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a43203c2a91a10102b20dd2df66c8a1c5}{\string~BoardEditor}}();}
+\DoxyCodeLine{65     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a680781b3bf5bb133443d7f02d4acc97f}{InitializeWorkSpace}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac3012c56d8902f39e3e2b504fea33af1}{Update}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa9b28b53885704008b793a01581b8d50}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// renders to the screen}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a41c55f09d01714c972eb106588584851}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a026e88885577473f8bdf0a33bc23c4fc}{Debugger}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{83     \textcolor{comment}{// =========== update for General Board setting ==============}}
+\DoxyCodeLine{84     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// checks if the user interacted with the x size }}
+\DoxyCodeLine{87     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_abe128f4cbcf7ffad4d217553462d3593}{UpdateBoardXSizePanelElement}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// checks if the user interacted with the y size }}
+\DoxyCodeLine{91     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a24f82562345fe809cd38b2e122b4b78f}{UpdateBoardYSizePanelElement}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// checks if the user interacted with the x position}}
+\DoxyCodeLine{95     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_afc81531bec4cd2fdee1558f5dcb10b86}{UpdateBoardXPosPanelElement}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// checks if the user interacted with the y position}}
+\DoxyCodeLine{99     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a42a64fbd74ebd210fada0f94e095cdb1}{UpdateBoardYPosPanelElement}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// checks if the user interacted with the row }}
+\DoxyCodeLine{103     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac0a539bd82c79bfd131ec2fdfa215194}{UpdateBoardRowPanelElement}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// checks if the user interacted with the column}}
+\DoxyCodeLine{107     \textcolor{comment}{// panel Element}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a535e13bc830a5bb8a4b13b8f42c33fba}{UpdateBoardColPanelElement}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// ================= private data member ======================  }}
+\DoxyCodeLine{111 \textcolor{keyword}{private}:}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a0c07ad14496ce4d49a207bcff1f2d6cd}{m\_panelBodyPtr}};}
+\DoxyCodeLine{115 \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{116     \textcolor{comment}{// =========== member variables for General board setting ====}}
+\DoxyCodeLine{117     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// ==== UI elements to show setting title  ====}}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a2dd50c1fc28a06f04494138385e0c621}{m\_txtSettingTitle}};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{// ==== UI elements to change the board's x size ====}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{125     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa39a761e0565b54741e839f1874b81f3}{m\_txtBoardSizePromtX}};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{128     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a8fe711fa80aeecbf54549b4d5e3154f4}{m\_btnBoardSizeDecX}};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{131     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a79ef802086ea87874aa6d46d08945e19}{m\_txtBoardSizeX}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a47f8303a154791155bdd076278126a81}{m\_btnBoardSizeIncX}};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{// ==== UI elements to change the board's y size ====}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{139     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac70e5f5742700097e749312df4ad63e3}{m\_txtBoardSizePromtY}};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{142     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac254804c5c403cc726ece5c79012e6f8}{m\_btnBoardSizeDecY}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a9fb64620656c004f4385b69343f41a53}{m\_txtBoardSizeY}};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a81fbcf5b861831fba8280bcfa884eadc}{m\_btnBoardSizeIncY}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{comment}{// ==== UI elements to change the board's x position ====}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa6640233ef397d9e34d58e58bae9cc75}{m\_txtBoardPosPromtX}};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa4770d590533aaceb0aa5a27b6fcf824}{m\_btnBoardPosDecX}};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{159     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a745e73b70f9178ccf154ba7a389e4bf1}{m\_txtBoardPosX}};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{162     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ae169ab633405c694bb1cac7d68bad49c}{m\_btnBoardPosIncX}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{comment}{// ==== UI elements to change the board's y position ====}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a97fcab04023bdfe90af43a299de209cf}{m\_txtBoardPosPromtY}};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a69277fbf38170612e97e25ed21ca68e8}{m\_btnBoardPosDecY}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{173     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_af68a79718416ab2b5daaf8e075e5493d}{m\_txtBoardPosY}};}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{176     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa95aae4ff64c6419d424a9e21b4f1013}{m\_btnBoardPosIncY}};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{comment}{// ==== UI elements to change the board's Row ====}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a7614a4da24c57575c00c890f1b0087b6}{m\_txtBoardRowPromt}};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_abd7cedfbab9a1c7458b2bff3d745ba88}{m\_btnBoardDecRow}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{187     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a05dc9e903291f80f56479da189a77d19}{m\_txtBoardRow}};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{190     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a5bcfd7757fde774ff723c02052e1028a}{m\_btnBoardIncRow}};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{comment}{// ==== UI elements to change the board's Column ====}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{195     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a311b0b92f4834646bce4424fd543681c}{m\_txtBoardColPromt}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a07ad19da1bfeca1b9e72c188d5cfa779}{m\_btnBoardDecCol}};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{201     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a30ef87f80dc0c83ad77cc81f400df682}{m\_txtBoardCol}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{204     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a79115d72ea97ff076c136fad0f9fa933}{m\_btnBoardIncCol}};}
+\DoxyCodeLine{205 \};}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{208 \textcolor{comment}{// ================= end of BoardEditor class ===========================}}
+\DoxyCodeLine{209 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

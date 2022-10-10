@@ -1,0 +1,105 @@
+\hypertarget{_game_data_manager_8h_source}{}\doxysection{Game\+Data\+Manager.\+h}
+\label{_game_data_manager_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/GameDataManager.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/GameDataManager.h}}
+\mbox{\hyperlink{_game_data_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_board_8h}{Board.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_deck_manager_8h}{DeckManager.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_manager_8h}{PlayerManager.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_display_card_8h}{DisplayCard.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{24 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{25 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keyword}{class }\mbox{\hyperlink{class_game_data_manager}{GameDataManager}};}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 \}}
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= start of GameDataManager class =====================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{comment}{// ===================== public member function ===================}}
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{51     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab104aed7b7bf15d66295a31618f829e0}{GameDataManager}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a9e8d3fb37f1499fa243ae79943a0a9c2}{\string~GameDataManager}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// initializes the gameData}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a27bb378a66452e168c10a8bb569b7fbf}{InitializeGameDataManger}}();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae9d7fab5196c7b859c8bac432d298343}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_af3d3e3d4a7d9861641c2c6bf9a65bf8b}{Debugger}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// initialize the game Data Manager}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a817cae24ea72646b0618ebff9b44b17e}{InitializeGameDataManager}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood::Application::Data::ST\_GameData}}\& a\_gameDataManager);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// returns the game Data manager data to save }}
+\DoxyCodeLine{69     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood::Application::Data::ST\_GameData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae60ea1933d8eb90d3dba79b1470ed5db}{GetDataToSave}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// appends the the game data manager data to passed file }}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a7537909e68f385450ce648b0c947b566}{SaveDataToFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr );}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// appends the the game data manager data to passed file }}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37be536152390cb0d27f158b58f92888}{LoadDataFromFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{// =========== setter functions ==========}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a79ff9232201205761584f344cd936443}{SetGameTitle}}( std::string a\_gameTitle);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// =========== getter functions ==========}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a4ffa8a594d59b27da471a91d6a361b0f}{GetGameTitle}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a8c21e00936efe7ed60a92f16cb48a8a9}{GetBoardPtr}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{91     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood::Application::Components::Dice}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab34103b38c485fd7c09bc34ef7d46fbb}{GetDicePtr}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood::Application::Components::PlayerManager}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a199d2e162ac42df6aa9ca745b70bce9d}{GetPlayerManagerPtr}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood::Application::Components::DeckManager}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ac8340539494085672b8a73c8e19c8fa8}{GetDeckManagerPtr}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood::Application::Components::DisplayCard}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_aaed9318f5eb739ad04288381cb2c5950}{GetDisplayCardPtr}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// ===================== private member variables ===================}}
+\DoxyCodeLine{103 \textcolor{keyword}{private}:}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     std::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab8ea1b451ca91deb5af356e3b17f3497}{m\_gameTitle}};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{108     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a20ea4a72392224130802a1be69a33818}{m\_board}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{111     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood::Application::Components::Dice}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a16d316e92cd4668bfc4408ca7f9c3dcc}{m\_dice}};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood::Application::Components::PlayerManager}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a42fb7cb3b045140b7c8cc153cfb04f39}{m\_playerManager}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood::Application::Components::DeckManager}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a270b67639fdfc3a39738a3b3da525610}{m\_deckManager}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// cardinfo}}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood::Application::Components::DisplayCard}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37c4df344b6b4155a8d00c0e83a2467a}{m\_displayCard}};}
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{124 \textcolor{comment}{// ================= end of GameDataManager class =======================}}
+\DoxyCodeLine{125 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

@@ -1,0 +1,102 @@
+\hypertarget{class_menu_bar}{}\doxysection{Menu\+Bar Class Reference}
+\label{class_menu_bar}\index{MenuBar@{MenuBar}}
+
+
+A class that represents a menu bar.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Menu\+Bar.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+A class that represents a menu bar. 
+
+It is a class derived from \mbox{\hyperlink{class_u_i_element}{UIElement}} class. It acts a a container that bundels Drop\+Downmeus horizontoally.\hypertarget{class_menu_bar_autotoc_md3}{}\doxyparagraph{Example Case}\label{class_menu_bar_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// window object}}
+\DoxyCodeLine{sf::RenderWindow window( sf::VideoMode( 500, 500 ), \textcolor{stringliteral}{"{}BroodMaker"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// event object }}
+\DoxyCodeLine{sf::Event events;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// creating a MenuBar object}}
+\DoxyCodeLine{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar}{Brood::BroodUI::MenuBar}} myMenu;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting size and position}}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aef094f4b37ecea46ad9ca9926ed767dd}{SetBodySize}}( WINDOW\_WIDTH, 30 );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aec4d1f774197f4645d0a0b4cacd93d24}{SetBodyPosition}}( 0, 0 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting the font which is required to display the text}}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a4b7d9913f8f3186aace13fa28680ef04}{SetFont}}( \&font );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting the font size. It should be less than the body height by 2 units.}}
+\DoxyCodeLine{\textcolor{comment}{// @see Brood::BroodUI::UIElement::SetFontSize() for more information}}
+\DoxyCodeLine{myMenu.SetCharacterSize( 20 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting body color}}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_ac5426e6e442b44462c49e136c22b0673}{SetBodyColor}}( sf::Color::Magenta );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Adding 3 menu to the menubar }}
+\DoxyCodeLine{\textcolor{comment}{// and setting the menu title to "{}hello w"{}, "{}b"{}, and "{}c }}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a10bf65d08edee2d7e609cd86eb44d9c1}{AddMenuToMenuBar}}( \textcolor{stringliteral}{"{}hello w"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a10bf65d08edee2d7e609cd86eb44d9c1}{AddMenuToMenuBar}}( \textcolor{stringliteral}{"{}b"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a10bf65d08edee2d7e609cd86eb44d9c1}{AddMenuToMenuBar}}( \textcolor{stringliteral}{"{}c"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// adding 4 items to the first menu of the menu bar}}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 0 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}aa"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 0 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}ab"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 0 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}ac"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 0 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}ad"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// adding 4 items to the second menu of the menu bar}}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 1 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}ba"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 1 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}bb"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 1 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}bc"{}} );}
+\DoxyCodeLine{myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().at( 1 )-\/>AddItemToMenu( \textcolor{stringliteral}{"{}bd"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//app loop}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}( !exit )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// event loop}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// logic }}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( !myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}().empty() )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keyword}{auto} menus = myMenu.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a76939e339a325375a07a00ba129a8674}{GetMenuList}}();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{        \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < menus.size(); ++i )}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            menus.at( i )-\/>DoElement();}
+\DoxyCodeLine{            \textcolor{comment}{// checking if the logics of the element is to be executed or not}}
+\DoxyCodeLine{            \textcolor{keywordflow}{if}( menus.at( i )-\/>IsSelected() )}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                \textcolor{keyword}{auto} itemList = menus.at( i )-\/>GetItemList();}
+\DoxyCodeLine{                \textcolor{keywordflow}{if}( !itemList.empty() )}
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < itemList.size(); ++i )}
+\DoxyCodeLine{                    \{}
+\DoxyCodeLine{                        \textcolor{keywordflow}{if}( itemList.at( i )-\/>DoElement() )}
+\DoxyCodeLine{                        \{}
+\DoxyCodeLine{                            std::cout << \textcolor{stringliteral}{"{}menu at "{}} << i << \textcolor{stringliteral}{"{} Pressed"{}} << std::endl;}
+\DoxyCodeLine{                            std::cout << \textcolor{stringliteral}{"{}item at "{}} << j << \textcolor{stringliteral}{"{} Pressed"{}} << std::endl;}
+\DoxyCodeLine{                        \}}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// rendering}}
+\DoxyCodeLine{    myDropDown.Draw( window );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_menu_bar_8h}{Menu\+Bar.\+h}}\end{DoxyCompactItemize}

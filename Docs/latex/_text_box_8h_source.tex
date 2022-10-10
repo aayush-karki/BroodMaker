@@ -1,0 +1,145 @@
+\hypertarget{_text_box_8h_source}{}\doxysection{Text\+Box.\+h}
+\label{_text_box_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/TextBox.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/TextBox.h}}
+\mbox{\hyperlink{_text_box_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{11 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_u_i_element_8h}{UIElement.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{namespace }BroodUI}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{class }\mbox{\hyperlink{class_text_box}{TextBox}};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= start of TextBox class =============================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{155 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}}
+\DoxyCodeLine{156 \{}
+\DoxyCodeLine{157     \textcolor{comment}{// ============== private defines ================= }}
+\DoxyCodeLine{158 \textcolor{keyword}{private}:}
+\DoxyCodeLine{159     \textcolor{comment}{// defines for better code readibility}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define DELETE\_KEY 8}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define ENTER\_KEY 13}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define ESCAPE\_KEY 27}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{comment}{// ============ public member function =============== }}
+\DoxyCodeLine{165 \textcolor{keyword}{public}:}
+\DoxyCodeLine{166     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{167     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a3f2661d0020e5fd722c4aaf3b3d50dec}{TextBox}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_parentPtr = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{168              \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood::BroodUI::ENUM\_UIType}} a\_enumType = \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8a3b5a0c6cd8b6f37a40f8c831571c29ba}{Brood::BroodUI::ENUM\_UIType::UI\_textBox}});}
+\DoxyCodeLine{169     }
+\DoxyCodeLine{170     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{171     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ac3cc88a3ac171658ebaf44b01f4adf80}{\string~TextBox}}();}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{174     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a3f2661d0020e5fd722c4aaf3b3d50dec}{TextBox}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_text_box}{TextBox}}\& a\_otherTextBox );}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{177     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}\& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a4f6d55f1cb008d2a1d74307686902576}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_text_box}{TextBox}}\& a\_otherTextBox );}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     \textcolor{comment}{// Dynamically create a textbox, initializes it, and adds}}
+\DoxyCodeLine{180     \textcolor{comment}{// it to m\_unNameList}}
+\DoxyCodeLine{181     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aa21ef6d22ff5cf1d4738c920ecfa79b3}{DyCreateTextBox}}( sf::Vector2f a\_size,}
+\DoxyCodeLine{182                                               sf::Vector2f a\_pos,}
+\DoxyCodeLine{183                                               std::string a\_text = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{184                                               \textcolor{keywordtype}{bool} a\_isEditable = \textcolor{keyword}{false},}
+\DoxyCodeLine{185                                               std::string a\_placeholderText = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{186                                               sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{187     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aa21ef6d22ff5cf1d4738c920ecfa79b3}{DyCreateTextBox}}( \textcolor{keywordtype}{float} a\_sizeX, \textcolor{keywordtype}{float} a\_sizeY,}
+\DoxyCodeLine{188                                               \textcolor{keywordtype}{float} a\_posX, \textcolor{keywordtype}{float} a\_posY,}
+\DoxyCodeLine{189                                               std::string a\_text = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{190                                               \textcolor{keywordtype}{bool} a\_isEditable = \textcolor{keyword}{false},}
+\DoxyCodeLine{191                                               std::string a\_placeholderText = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{192                                               sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_AppPrimaryColor}} );}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{comment}{// ====== getter funcitons ======}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{comment}{// checks to see if the text box is editable or not }}
+\DoxyCodeLine{198     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae0d0f2edb48f5d421fc69f4a228ef224}{IsEditable}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \textcolor{comment}{// check to see if the text box is selected or not}}
+\DoxyCodeLine{201     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a4efc96c90bf81ace9e3e70e41ceb6965}{IsSelected}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{comment}{// check to see enter was pressed or not}}
+\DoxyCodeLine{204     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_afb7f921d1b1235dd8156984559bf7e1d}{IsEnterPressed}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{comment}{// ====== setter funcitons ======}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{comment}{// sets text}}
+\DoxyCodeLine{209     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a62ab5114f43ce16c7d4d74fb0595bf89}{SetText}}( std::string a\_text = \textcolor{stringliteral}{"{}"{}} ) \textcolor{keyword}{override}; }
+\DoxyCodeLine{210     }
+\DoxyCodeLine{211     \textcolor{comment}{// sets the limit to number of character }}
+\DoxyCodeLine{212     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae3aabd19a2d89ab4614b570a402cd7c1}{SetLimit}}( \textcolor{keywordtype}{bool} a\_hasLimit = \textcolor{keyword}{false}, \textcolor{keywordtype}{int} a\_limit = 0 ); }
+\DoxyCodeLine{213     }
+\DoxyCodeLine{214     \textcolor{comment}{// sets the state of the element.}}
+\DoxyCodeLine{215     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a612450895759c4f15d617377bee546f2}{SetSelected}}( \textcolor{keywordtype}{bool} a\_selected ); }
+\DoxyCodeLine{216     }
+\DoxyCodeLine{217     \textcolor{comment}{// sets if the textbox is editable or not}}
+\DoxyCodeLine{218     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a57142be8e07878d710bcabd561e7b572}{SetEditable}}( \textcolor{keywordtype}{bool} a\_isEditable ); }
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220     \textcolor{comment}{// sets enterPressed to false}}
+\DoxyCodeLine{221     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_af68938125e8ad72dff598448dfbe3cb3}{SetEnterPressedFalse}}();}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223     \textcolor{comment}{// sets a placeholder Text}}
+\DoxyCodeLine{224     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a6d7a65db8dcdf4c6d2ae96de64647ab8}{SetPlaceHolderText}}(std::string a\_placeHolderText);}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226     \textcolor{comment}{// called every time user enters a char}}
+\DoxyCodeLine{227     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a69ca852368c6f5b52e928bb3f5b4d5a4}{TypeOn}}( sf::Event a\_input );}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229     \textcolor{comment}{// checks to see if the logic for the element is to }}
+\DoxyCodeLine{230     \textcolor{comment}{// be excecuted or not }}
+\DoxyCodeLine{231     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae8c123d3939e823a265f7662ec5f5e44}{DoElement}}() \textcolor{keyword}{override}; }
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     \textcolor{comment}{// draw funciton}}
+\DoxyCodeLine{234     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a0f1e1537424cb73a4ef925eb0bc8961a}{Draw}}( sf::RenderWindow\& a\_window ) \textcolor{keyword}{override};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \textcolor{comment}{// debugger}}
+\DoxyCodeLine{237     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aae900d4b799a81935be0ddb8bc67086c}{Debugger}}( ) \textcolor{keyword}{override};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{comment}{// ============ private member function =============== }}
+\DoxyCodeLine{240 \textcolor{keyword}{private}:}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{comment}{// all of the logic; called on every key press}}
+\DoxyCodeLine{243     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a72ca364bd9b65b23adbf7d815a7a1bfa}{InputLogic}}( \textcolor{keywordtype}{int} charTyped ); }
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245     \textcolor{comment}{// delete last char}}
+\DoxyCodeLine{246     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a055805959ba36a835b29cd1fae55062d}{DeleteLastChar}}(); }
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{comment}{// ============ private member variables ===============}}
+\DoxyCodeLine{249 \textcolor{keyword}{private}:}
+\DoxyCodeLine{250     }
+\DoxyCodeLine{252     std::ostringstream \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ad66b0aa3ed5a1a4aab580d63da8de312}{m\_ossText}}; }
+\DoxyCodeLine{253 }
+\DoxyCodeLine{256     std::string \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aef95d1974f29f849acfdfdb077f016c7}{m\_placeHolderText}};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{259     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aa6686112c750f918cb814069e1a77461}{m\_isEditable}}; }
+\DoxyCodeLine{260     }
+\DoxyCodeLine{262     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae7b5e09173509f98058bd1cef14775dd}{m\_hasLimit}}; }
+\DoxyCodeLine{263     }
+\DoxyCodeLine{265     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a88929904f005f3da4bbf10b76b6eb5b7}{m\_limit}}; }
+\DoxyCodeLine{266 }
+\DoxyCodeLine{268     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a99c44faaeca1768c863b8c16df8e2842}{m\_enterPressed}};}
+\DoxyCodeLine{269 \};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{272 \textcolor{comment}{// ================= end of TextBox class ===============================}}
+\DoxyCodeLine{273 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

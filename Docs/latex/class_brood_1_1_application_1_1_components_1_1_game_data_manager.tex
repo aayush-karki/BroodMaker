@@ -1,0 +1,327 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{}\doxysection{Brood\+::Application\+::Components\+::Game\+Data\+Manager Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager}\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+
+
+{\ttfamily \#include $<$Game\+Data\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab104aed7b7bf15d66295a31618f829e0}{Game\+Data\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a9e8d3fb37f1499fa243ae79943a0a9c2}{$\sim$\+Game\+Data\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a27bb378a66452e168c10a8bb569b7fbf}{Initialize\+Game\+Data\+Manger}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the member variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae9d7fab5196c7b859c8bac432d298343}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws all the component to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_af3d3e3d4a7d9861641c2c6bf9a65bf8b}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a817cae24ea72646b0618ebff9b44b17e}{Initialize\+Game\+Data\+Manager}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Game\+Data}} \&a\+\_\+game\+Data\+Manager)
+\begin{DoxyCompactList}\small\item\em initializes the game data manager with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Game\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae60ea1933d8eb90d3dba79b1470ed5db}{Get\+Data\+To\+Save}} ()
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a7537909e68f385450ce648b0c947b566}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em saves the game data manager data to passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37be536152390cb0d27f158b58f92888}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the game data manager data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a79ff9232201205761584f344cd936443}{Set\+Game\+Title}} (std\+::string a\+\_\+game\+Title)
+\begin{DoxyCompactList}\small\item\em setter funciton to set the game title for the game \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a4ffa8a594d59b27da471a91d6a361b0f}{Get\+Game\+Title}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get a saved game title of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a8c21e00936efe7ed60a92f16cb48a8a9}{Get\+Board\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get a pointer to board of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab34103b38c485fd7c09bc34ef7d46fbb}{Get\+Dice\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get a pointer to dice of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a199d2e162ac42df6aa9ca745b70bce9d}{Get\+Player\+Manager\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get a pointer to player mangaer of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ac8340539494085672b8a73c8e19c8fa8}{Get\+Deck\+Manager\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get a pointer to \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}} mangaer of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_aaed9318f5eb739ad04288381cb2c5950}{Get\+Display\+Card\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter funciton to get a pointer to display card of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab8ea1b451ca91deb5af356e3b17f3497}{m\+\_\+game\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a20ea4a72392224130802a1be69a33818}{m\+\_\+board}}
+\begin{DoxyCompactList}\small\item\em board for the game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a16d316e92cd4668bfc4408ca7f9c3dcc}{m\+\_\+dice}}
+\begin{DoxyCompactList}\small\item\em dice for the game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a42fb7cb3b045140b7c8cc153cfb04f39}{m\+\_\+player\+Manager}}
+\begin{DoxyCompactList}\small\item\em player mangaer for the game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a270b67639fdfc3a39738a3b3da525610}{m\+\_\+deck\+Manager}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}} mangaer for the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37c4df344b6b4155a8d00c0e83a2467a}{m\+\_\+display\+Card}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab104aed7b7bf15d66295a31618f829e0}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab104aed7b7bf15d66295a31618f829e0}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GameDataManager@{GameDataManager}}
+\index{GameDataManager@{GameDataManager}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GameDataManager()}{GameDataManager()}}
+{\footnotesize\ttfamily Game\+Data\+Manager\+::\+Game\+Data\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a9e8d3fb37f1499fa243ae79943a0a9c2}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a9e8d3fb37f1499fa243ae79943a0a9c2}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!````~GameDataManager@{$\sim$GameDataManager}}
+\index{````~GameDataManager@{$\sim$GameDataManager}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameDataManager()}{~GameDataManager()}}
+{\footnotesize\ttfamily Game\+Data\+Manager\+::$\sim$\+Game\+Data\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_af3d3e3d4a7d9861641c2c6bf9a65bf8b}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_af3d3e3d4a7d9861641c2c6bf9a65bf8b}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+debugger 
+
+debugger funciton
+
+@virtual
+
+This function helps in debugging the UI elements. \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae9d7fab5196c7b859c8bac432d298343}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae9d7fab5196c7b859c8bac432d298343}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws all the component to the screen. 
+
+Draw funciton.
+
+@virtual
+
+Draws all the component to the screen \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a8c21e00936efe7ed60a92f16cb48a8a9}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a8c21e00936efe7ed60a92f16cb48a8a9}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetBoardPtr@{GetBoardPtr}}
+\index{GetBoardPtr@{GetBoardPtr}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetBoardPtr()}{GetBoardPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$ Game\+Data\+Manager\+::\+Get\+Board\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get a pointer to board of the game. 
+
+\begin{DoxyReturn}{Returns}
+pointer pointer to the board 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae60ea1933d8eb90d3dba79b1470ed5db}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ae60ea1933d8eb90d3dba79b1470ed5db}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Game\+Data}} Game\+Data\+Manager\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ac8340539494085672b8a73c8e19c8fa8}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ac8340539494085672b8a73c8e19c8fa8}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetDeckManagerPtr@{GetDeckManagerPtr}}
+\index{GetDeckManagerPtr@{GetDeckManagerPtr}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetDeckManagerPtr()}{GetDeckManagerPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} $\ast$ Game\+Data\+Manager\+::\+Get\+Deck\+Manager\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get a pointer to \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}} mangaer of the game. 
+
+Getter funciton to get a pointer to deck mangaer of the game.
+
+\begin{DoxyReturn}{Returns}
+pointer pointer to the deck mangaer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab34103b38c485fd7c09bc34ef7d46fbb}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab34103b38c485fd7c09bc34ef7d46fbb}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetDicePtr@{GetDicePtr}}
+\index{GetDicePtr@{GetDicePtr}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetDicePtr()}{GetDicePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} $\ast$ Game\+Data\+Manager\+::\+Get\+Dice\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get a pointer to dice of the game. 
+
+\begin{DoxyReturn}{Returns}
+pointer pointer to the dice 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_aaed9318f5eb739ad04288381cb2c5950}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_aaed9318f5eb739ad04288381cb2c5950}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetDisplayCardPtr@{GetDisplayCardPtr}}
+\index{GetDisplayCardPtr@{GetDisplayCardPtr}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetDisplayCardPtr()}{GetDisplayCardPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}} $\ast$ Game\+Data\+Manager\+::\+Get\+Display\+Card\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get a pointer to display card of the game. 
+
+\begin{DoxyReturn}{Returns}
+pointer pointer to the deck mangaer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a4ffa8a594d59b27da471a91d6a361b0f}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a4ffa8a594d59b27da471a91d6a361b0f}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetGameTitle@{GetGameTitle}}
+\index{GetGameTitle@{GetGameTitle}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetGameTitle()}{GetGameTitle()}}
+{\footnotesize\ttfamily std\+::string Game\+Data\+Manager\+::\+Get\+Game\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get a saved game title of the game. 
+
+\begin{DoxyReturn}{Returns}
+game title 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a199d2e162ac42df6aa9ca745b70bce9d}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a199d2e162ac42df6aa9ca745b70bce9d}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!GetPlayerManagerPtr@{GetPlayerManagerPtr}}
+\index{GetPlayerManagerPtr@{GetPlayerManagerPtr}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{GetPlayerManagerPtr()}{GetPlayerManagerPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} $\ast$ Game\+Data\+Manager\+::\+Get\+Player\+Manager\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter funciton to get a pointer to player mangaer of the game. 
+
+\begin{DoxyReturn}{Returns}
+pointer pointer to the player mangaer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a817cae24ea72646b0618ebff9b44b17e}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a817cae24ea72646b0618ebff9b44b17e}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!InitializeGameDataManager@{InitializeGameDataManager}}
+\index{InitializeGameDataManager@{InitializeGameDataManager}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{InitializeGameDataManager()}{InitializeGameDataManager()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Initialize\+Game\+Data\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___game_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Game\+Data}} \&}]{a\+\_\+game\+Data\+Manager }\end{DoxyParamCaption})}
+
+
+
+initializes the game data manager with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data\+Manager} & reference of the game data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a27bb378a66452e168c10a8bb569b7fbf}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a27bb378a66452e168c10a8bb569b7fbf}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!InitializeGameDataManger@{InitializeGameDataManger}}
+\index{InitializeGameDataManger@{InitializeGameDataManger}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{InitializeGameDataManger()}{InitializeGameDataManger()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Initialize\+Game\+Data\+Manger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the member variables. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37be536152390cb0d27f158b58f92888}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37be536152390cb0d27f158b58f92888}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the game data manager data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a7537909e68f385450ce648b0c947b566}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a7537909e68f385450ce648b0c947b566}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+saves the game data manager data to passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a79ff9232201205761584f344cd936443}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a79ff9232201205761584f344cd936443}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!SetGameTitle@{SetGameTitle}}
+\index{SetGameTitle@{SetGameTitle}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{SetGameTitle()}{SetGameTitle()}}
+{\footnotesize\ttfamily void Game\+Data\+Manager\+::\+Set\+Game\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+game\+Title }\end{DoxyParamCaption})}
+
+
+
+setter funciton to set the game title for the game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Title} & game title \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a20ea4a72392224130802a1be69a33818}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a20ea4a72392224130802a1be69a33818}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!m\_board@{m\_board}}
+\index{m\_board@{m\_board}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{m\_board}{m\_board}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager\+::m\+\_\+board\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+board for the game 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a270b67639fdfc3a39738a3b3da525610}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a270b67639fdfc3a39738a3b3da525610}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!m\_deckManager@{m\_deckManager}}
+\index{m\_deckManager@{m\_deckManager}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{m\_deckManager}{m\_deckManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood\+::\+Application\+::\+Components\+::\+Deck\+Manager}} Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager\+::m\+\_\+deck\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Deck}} mangaer for the game. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a16d316e92cd4668bfc4408ca7f9c3dcc}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a16d316e92cd4668bfc4408ca7f9c3dcc}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!m\_dice@{m\_dice}}
+\index{m\_dice@{m\_dice}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{m\_dice}{m\_dice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager\+::m\+\_\+dice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+dice for the game 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37c4df344b6b4155a8d00c0e83a2467a}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a37c4df344b6b4155a8d00c0e83a2467a}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!m\_displayCard@{m\_displayCard}}
+\index{m\_displayCard@{m\_displayCard}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{m\_displayCard}{m\_displayCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}} Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager\+::m\+\_\+display\+Card\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab8ea1b451ca91deb5af356e3b17f3497}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_ab8ea1b451ca91deb5af356e3b17f3497}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!m\_gameTitle@{m\_gameTitle}}
+\index{m\_gameTitle@{m\_gameTitle}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{m\_gameTitle}{m\_gameTitle}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager\+::m\+\_\+game\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a42fb7cb3b045140b7c8cc153cfb04f39}\label{class_brood_1_1_application_1_1_components_1_1_game_data_manager_a42fb7cb3b045140b7c8cc153cfb04f39}} 
+\index{Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}!m\_playerManager@{m\_playerManager}}
+\index{m\_playerManager@{m\_playerManager}!Brood::Application::Components::GameDataManager@{Brood::Application::Components::GameDataManager}}
+\doxysubsubsection{\texorpdfstring{m\_playerManager}{m\_playerManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood\+::\+Application\+::\+Components\+::\+Player\+Manager}} Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager\+::m\+\_\+player\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+player mangaer for the game 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_game_data_manager_8h}{Game\+Data\+Manager.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_game_data_manager_8cpp}{Game\+Data\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,372 @@
+\hypertarget{class_brood_1_1_brood_u_i_1_1_id}{}\doxysection{Brood\+::Brood\+UI\+::Id Class Reference}
+\label{class_brood_1_1_brood_u_i_1_1_id}\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+
+
+{\ttfamily \#include $<$UI\+\_\+\+ID.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a9d3fc65e34881983abaa697a12a2a1ef}{Id}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} $\ast$a\+\_\+parent\+IDPtr=nullptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a5bea3f99bc344c299d87a44d5ab7d42f}{$\sim$\+Id}} ()
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_afd563ffaf1737ea7be99a946870bd426}{Id}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} \&a\+\_\+other\+Id)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a838b260d4ae621c96a46b8c598df4019}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} \&a\+\_\+other\+Id)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a9739a66e5fdae7155a51759dfc5a9c4e}{Get\+Parent\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the parent\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a0cccf8660ecd5b6a872dd463783a6fab}{Get\+Parent\+IDPtr}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to its parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a97e5d8a0e9d64654bebe734d67bfeb7d}{Get\+Parent\+IDPtr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to its parent. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_abf1e43c9b8f200e76061f75349a0a1fb}{Get\+Element\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the element\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a0dd9d1a50f583d533aa78466055c5551}{Get\+Child\+Idx}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$a\+\_\+child\+IDPtr) const
+\begin{DoxyCompactList}\small\item\em Getter function to get its child element\textquotesingle{}s index in its list. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a940b6be2ffc0bac36308aaa340479d80}{Get\+Total\+Child\+Num}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get how many child the element has. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_ad204df66edd8518ea6b3d30dc5426028}{Get\+Child\+Id\+At\+Idx}} (const int a\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Getter function to get pointer of the passed child\textquotesingle{}s index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_af9967f94b9677fc6f3ea87bb4a9d1d89}{Has\+Child}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to check if the element has a child or not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_aee02dc9ca18a8af266707f3b71edbcf3}{Has\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to check if the element has a parent or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_af4f766ab00c18a1c0b84758be8719147}{Set\+Parent}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} $\ast$a\+\_\+parent\+ID=nullptr)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a347cf08144b4765c32b41f02f9170f69}{Add\+Child}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$a\+\_\+child\+Id\+Ptr)
+\begin{DoxyCompactList}\small\item\em adds the child to its child list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_ad23abdb9781e6c761a5612632836195e}{Delete\+Child\+Id\+At\+Idx}} (const int a\+\_\+index)
+\begin{DoxyCompactList}\small\item\em deletes the child at passed a\+\_\+index from the child list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a6eecb32b2d2ab0b9587e70bfd9f20752}{m\+\_\+parent\+IDPtr}}
+\begin{DoxyCompactList}\small\item\em stores the parents UI ID pointer \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a00a0c332a543937aaad88a40c3a0cbd3}{m\+\_\+parent\+ID}}
+\begin{DoxyCompactList}\small\item\em stores the parents UI ID \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_af1c5c6f15c5920ba351129f5a08e516d}{m\+\_\+element\+ID}}
+\begin{DoxyCompactList}\small\item\em stores its UI ID \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a00751b1e7d9edaee03a505a871b55b71}{m\+\_\+has\+Childs}}
+\begin{DoxyCompactList}\small\item\em stores if it has childs or not \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a67d29565ca77399f1ef78e840fa8b882}{m\+\_\+all\+Child\+Ptrs}}
+\begin{DoxyCompactList}\small\item\em stores all the pointer to its childs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id_a4110206d2c62324635aa5b7c4c6c6197}{GLOBAL\+\_\+\+ID\+\_\+\+NUM}} = 0
+\begin{DoxyCompactList}\small\item\em unique id is assigned based on this \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a9d3fc65e34881983abaa697a12a2a1ef}\label{class_brood_1_1_brood_u_i_1_1_id_a9d3fc65e34881983abaa697a12a2a1ef}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!Id@{Id}}
+\index{Id@{Id}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{Id()}{Id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Id\+::\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} $\ast$}]{a\+\_\+parent\+IDPtr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+Initializes the data member of the class.
+
+\begin{DoxyNote}{Note}
+If no parent is supplied, it initializes m\+\_\+parent\+Id to -\/1.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+parent\+ID} & pointer to the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} of the parent if any; default -\/\texorpdfstring{$>$}{>} null\+Ptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a5bea3f99bc344c299d87a44d5ab7d42f}\label{class_brood_1_1_brood_u_i_1_1_id_a5bea3f99bc344c299d87a44d5ab7d42f}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!````~Id@{$\sim$Id}}
+\index{````~Id@{$\sim$Id}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{$\sim$Id()}{~Id()}}
+{\footnotesize\ttfamily Id\+::$\sim$\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@breif default destructor \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_afd563ffaf1737ea7be99a946870bd426}\label{class_brood_1_1_brood_u_i_1_1_id_afd563ffaf1737ea7be99a946870bd426}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!Id@{Id}}
+\index{Id@{Id}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{Id()}{Id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Id\+::\+Id (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} \&}]{a\+\_\+other\+Id }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Id} & reference to the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} from which \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} is to be copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a347cf08144b4765c32b41f02f9170f69}\label{class_brood_1_1_brood_u_i_1_1_id_a347cf08144b4765c32b41f02f9170f69}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily void Id\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$}]{a\+\_\+child\+Id\+Ptr }\end{DoxyParamCaption})}
+
+
+
+adds the child to its child list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+child\+Id\+Ptr} & pointer to the child id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_ad23abdb9781e6c761a5612632836195e}\label{class_brood_1_1_brood_u_i_1_1_id_ad23abdb9781e6c761a5612632836195e}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!DeleteChildIdAtIdx@{DeleteChildIdAtIdx}}
+\index{DeleteChildIdAtIdx@{DeleteChildIdAtIdx}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{DeleteChildIdAtIdx()}{DeleteChildIdAtIdx()}}
+{\footnotesize\ttfamily void Id\+::\+Delete\+Child\+Id\+At\+Idx (\begin{DoxyParamCaption}\item[{const int}]{a\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+deletes the child at passed a\+\_\+index from the child list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+index} & index child\textquotesingle{}s pointer in the child list to be deleted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_ad204df66edd8518ea6b3d30dc5426028}\label{class_brood_1_1_brood_u_i_1_1_id_ad204df66edd8518ea6b3d30dc5426028}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetChildIdAtIdx@{GetChildIdAtIdx}}
+\index{GetChildIdAtIdx@{GetChildIdAtIdx}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetChildIdAtIdx()}{GetChildIdAtIdx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ Id\+::\+Get\+Child\+Id\+At\+Idx (\begin{DoxyParamCaption}\item[{const int}]{a\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get pointer of the passed child\textquotesingle{}s index. 
+
+\begin{DoxyNote}{Note}
+if there index suppied is out of bound then, it logs the error and returns nullptr
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+index} & index of the child in the elements\textquotesingle{}s child list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to child at the given index if present; else returns nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a0dd9d1a50f583d533aa78466055c5551}\label{class_brood_1_1_brood_u_i_1_1_id_a0dd9d1a50f583d533aa78466055c5551}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetChildIdx@{GetChildIdx}}
+\index{GetChildIdx@{GetChildIdx}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetChildIdx()}{GetChildIdx()}}
+{\footnotesize\ttfamily const int Id\+::\+Get\+Child\+Idx (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$}]{a\+\_\+child\+IDPtr }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get its child element\textquotesingle{}s index in its list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+child\+IDPtr} & pointer to the child whose index we are trying to find\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+child element\textquotesingle{}s index in its child list; if no such child exists return -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_abf1e43c9b8f200e76061f75349a0a1fb}\label{class_brood_1_1_brood_u_i_1_1_id_abf1e43c9b8f200e76061f75349a0a1fb}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetElementID@{GetElementID}}
+\index{GetElementID@{GetElementID}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetElementID()}{GetElementID()}}
+{\footnotesize\ttfamily const int Id\+::\+Get\+Element\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the element\textquotesingle{}s ID. 
+
+\begin{DoxyReturn}{Returns}
+element\textquotesingle{}s unique UI ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a9739a66e5fdae7155a51759dfc5a9c4e}\label{class_brood_1_1_brood_u_i_1_1_id_a9739a66e5fdae7155a51759dfc5a9c4e}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetParentID@{GetParentID}}
+\index{GetParentID@{GetParentID}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetParentID()}{GetParentID()}}
+{\footnotesize\ttfamily const int Id\+::\+Get\+Parent\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the parent\textquotesingle{}s ID. 
+
+\begin{DoxyReturn}{Returns}
+parent\textquotesingle{}s unique UI ID if presents, else returns -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a97e5d8a0e9d64654bebe734d67bfeb7d}\label{class_brood_1_1_brood_u_i_1_1_id_a97e5d8a0e9d64654bebe734d67bfeb7d}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetParentIDPtr@{GetParentIDPtr}}
+\index{GetParentIDPtr@{GetParentIDPtr}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetParentIDPtr()}{GetParentIDPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ Id\+::\+Get\+Parent\+IDPtr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to its parent. 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a0cccf8660ecd5b6a872dd463783a6fab}\label{class_brood_1_1_brood_u_i_1_1_id_a0cccf8660ecd5b6a872dd463783a6fab}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetParentIDPtr@{GetParentIDPtr}}
+\index{GetParentIDPtr@{GetParentIDPtr}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetParentIDPtr()}{GetParentIDPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ Id\+::\+Get\+Parent\+IDPtr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the pointer to its parent. 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a940b6be2ffc0bac36308aaa340479d80}\label{class_brood_1_1_brood_u_i_1_1_id_a940b6be2ffc0bac36308aaa340479d80}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GetTotalChildNum@{GetTotalChildNum}}
+\index{GetTotalChildNum@{GetTotalChildNum}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GetTotalChildNum()}{GetTotalChildNum()}}
+{\footnotesize\ttfamily const int Id\+::\+Get\+Total\+Child\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get how many child the element has. 
+
+\begin{DoxyReturn}{Returns}
+element\textquotesingle{}s child list size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_af9967f94b9677fc6f3ea87bb4a9d1d89}\label{class_brood_1_1_brood_u_i_1_1_id_af9967f94b9677fc6f3ea87bb4a9d1d89}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!HasChild@{HasChild}}
+\index{HasChild@{HasChild}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{HasChild()}{HasChild()}}
+{\footnotesize\ttfamily bool Id\+::\+Has\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to check if the element has a child or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the element has child/s; else returns false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_aee02dc9ca18a8af266707f3b71edbcf3}\label{class_brood_1_1_brood_u_i_1_1_id_aee02dc9ca18a8af266707f3b71edbcf3}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!HasParent@{HasParent}}
+\index{HasParent@{HasParent}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{HasParent()}{HasParent()}}
+{\footnotesize\ttfamily bool Id\+::\+Has\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to check if the element has a parent or not. 
+
+\begin{DoxyReturn}{Returns}
+true if the element has parent; else returns false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a838b260d4ae621c96a46b8c598df4019}\label{class_brood_1_1_brood_u_i_1_1_id_a838b260d4ae621c96a46b8c598df4019}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} \& Id\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} \&}]{a\+\_\+other\+Id }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Id} & reference to the \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} from which \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} is to be copied from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to itself 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_af4f766ab00c18a1c0b84758be8719147}\label{class_brood_1_1_brood_u_i_1_1_id_af4f766ab00c18a1c0b84758be8719147}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!SetParent@{SetParent}}
+\index{SetParent@{SetParent}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{SetParent()}{SetParent()}}
+{\footnotesize\ttfamily void Id\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} $\ast$}]{a\+\_\+parent\+ID = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Setter function to set the element\textquotesingle{}s parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+parent\+ID} & pointer to the parent element id object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a4110206d2c62324635aa5b7c4c6c6197}\label{class_brood_1_1_brood_u_i_1_1_id_a4110206d2c62324635aa5b7c4c6c6197}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!GLOBAL\_ID\_NUM@{GLOBAL\_ID\_NUM}}
+\index{GLOBAL\_ID\_NUM@{GLOBAL\_ID\_NUM}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{GLOBAL\_ID\_NUM}{GLOBAL\_ID\_NUM}}
+{\footnotesize\ttfamily unsigned Id\+::\+GLOBAL\+\_\+\+ID\+\_\+\+NUM = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+unique id is assigned based on this 
+
+assigning a location for global id.
+
+It starts with 0 and only goes up. \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a67d29565ca77399f1ef78e840fa8b882}\label{class_brood_1_1_brood_u_i_1_1_id_a67d29565ca77399f1ef78e840fa8b882}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!m\_allChildPtrs@{m\_allChildPtrs}}
+\index{m\_allChildPtrs@{m\_allChildPtrs}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{m\_allChildPtrs}{m\_allChildPtrs}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}}$\ast$$>$ Brood\+::\+Brood\+UI\+::\+Id\+::m\+\_\+all\+Child\+Ptrs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores all the pointer to its childs 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_af1c5c6f15c5920ba351129f5a08e516d}\label{class_brood_1_1_brood_u_i_1_1_id_af1c5c6f15c5920ba351129f5a08e516d}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!m\_elementID@{m\_elementID}}
+\index{m\_elementID@{m\_elementID}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{m\_elementID}{m\_elementID}}
+{\footnotesize\ttfamily int Brood\+::\+Brood\+UI\+::\+Id\+::m\+\_\+element\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores its UI ID 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a00751b1e7d9edaee03a505a871b55b71}\label{class_brood_1_1_brood_u_i_1_1_id_a00751b1e7d9edaee03a505a871b55b71}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!m\_hasChilds@{m\_hasChilds}}
+\index{m\_hasChilds@{m\_hasChilds}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{m\_hasChilds}{m\_hasChilds}}
+{\footnotesize\ttfamily bool Brood\+::\+Brood\+UI\+::\+Id\+::m\+\_\+has\+Childs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores if it has childs or not 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a00a0c332a543937aaad88a40c3a0cbd3}\label{class_brood_1_1_brood_u_i_1_1_id_a00a0c332a543937aaad88a40c3a0cbd3}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!m\_parentID@{m\_parentID}}
+\index{m\_parentID@{m\_parentID}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{m\_parentID}{m\_parentID}}
+{\footnotesize\ttfamily int Brood\+::\+Brood\+UI\+::\+Id\+::m\+\_\+parent\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores the parents UI ID 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_id_a6eecb32b2d2ab0b9587e70bfd9f20752}\label{class_brood_1_1_brood_u_i_1_1_id_a6eecb32b2d2ab0b9587e70bfd9f20752}} 
+\index{Brood::BroodUI::Id@{Brood::BroodUI::Id}!m\_parentIDPtr@{m\_parentIDPtr}}
+\index{m\_parentIDPtr@{m\_parentIDPtr}!Brood::BroodUI::Id@{Brood::BroodUI::Id}}
+\doxysubsubsection{\texorpdfstring{m\_parentIDPtr}{m\_parentIDPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}}$\ast$ Brood\+::\+Brood\+UI\+::\+Id\+::m\+\_\+parent\+IDPtr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores the parents UI ID pointer 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_u_i___i_d_8h}{UI\+\_\+\+ID.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_u_i___i_d_8cpp}{UI\+\_\+\+ID.\+cpp}}\end{DoxyCompactItemize}

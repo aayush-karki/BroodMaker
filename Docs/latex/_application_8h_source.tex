@@ -1,0 +1,87 @@
+\hypertarget{_application_8h_source}{}\doxysection{Application.\+h}
+\label{_application_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Application.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Application.h}}
+\mbox{\hyperlink{_application_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <filesystem>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_board_8h}{Board.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_card_info_8h}{CardInfo.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mouse_handler_8h}{MouseHandler.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_text_box_8h}{TextBox.h}}"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_drop_down_input_8h}{DropDownInput.h}}"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_home_work_space_8h}{HomeWorkSpace.h}}"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_path_8h}{Path.h}}"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_global_variables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{42     \textcolor{keyword}{namespace }\mbox{\hyperlink{class_brood_1_1_application_1_1_application}{Application}}}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_application}{Application}};}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 \}}
+\DoxyCodeLine{47 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{48 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{49 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{52 \textcolor{comment}{// ================= start of Application class =========================}}
+\DoxyCodeLine{53 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_application}{Brood::Application::Application}}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     \textcolor{comment}{// ================= public member function =================  }}
+\DoxyCodeLine{63 \textcolor{keyword}{public}:}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_brood_1_1_application_1_1_application_aabab7652b41709a5cfd9d69d8f238f77}{Application}}(); \textcolor{comment}{// default contructor}}
+\DoxyCodeLine{65     \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a4902b005ed4f6c27e58f68c3486f9348}{\string~Application}}(); \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_ad726c075f0c482b9c1980959b61c673d}{RunApplicaiton}}(); \textcolor{comment}{// main loop of the program}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{70     \textcolor{comment}{// ================= private member function =================  }}
+\DoxyCodeLine{71 \textcolor{keyword}{private}:}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a5d894c5dc1d004156a72bc38eb6a138e}{PollEvents}}();}
+\DoxyCodeLine{75     }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a975eb752937bbef880d09a1aa060e953}{Draw}}();}
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a112002e1a21954d9027a0a89cdea0734}{CreateWorkSpace}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a2bf3c85eb6d71e16e4624aa51696cf9d}{Debugger}}(); }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// ================= private member variables =================  }}
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{88     sf::RenderWindow \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a2b4c6e872f0e96757ee81aa3be5edff4}{m\_window}}; }
+\DoxyCodeLine{89     }
+\DoxyCodeLine{91     sf::Event \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a4f85bb8d805d3b9585e908192158d6bd}{m\_events}}; }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94     \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space}{Brood::Application::HomeWorkSpace}} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a1fd59aad264b805767444db4df74ae55}{m\_mainWorkspace}};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a62df68e806d14e0aeafe32d863ea8c06}{myBoard}};}
+\DoxyCodeLine{98     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood::Application::Components::Dice}} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a7af37c878c5faf143a12e5c01154f574}{myDice}};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{103 \textcolor{comment}{// ================= end of button class ================================}}
+\DoxyCodeLine{104 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

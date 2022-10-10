@@ -1,0 +1,137 @@
+\hypertarget{_drop_down_menu_8h_source}{}\doxysection{Drop\+Down\+Menu.\+h}
+\label{_drop_down_menu_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DropDownMenu.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DropDownMenu.h}}
+\mbox{\hyperlink{_drop_down_menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_button_8h}{Button.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{19 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{namespace }BroodUI}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \textcolor{keyword}{class }\mbox{\hyperlink{class_drop_down_menu}{DropDownMenu}};}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{29 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ================= start of DropDownMenu class ========================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{115 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood::BroodUI::DropDownMenu}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}}
+\DoxyCodeLine{116 \{}
+\DoxyCodeLine{117     \textcolor{comment}{// ============ public member function =============== }}
+\DoxyCodeLine{118 \textcolor{keyword}{public}:}
+\DoxyCodeLine{119     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acddd113970bc477a525ccb52c7963cfd}{DropDownMenu}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_parentPtr = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{121                   \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood::BroodUI::ENUM\_UIType}} a\_enumType = \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8a52aaabb503b8d47cd688c53697951815}{Brood::BroodUI::ENUM\_UIType::UI\_dropDownMenu}} );}
+\DoxyCodeLine{122     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{123     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a793d6b957dbc2c19745c490dee8e05f1}{\string~DropDownMenu}}();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{126     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acddd113970bc477a525ccb52c7963cfd}{DropDownMenu}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{DropDownMenu}}\& a\_otherElement );}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{129     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood::BroodUI::DropDownMenu}}\& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a7b4a8b7625e811a8ca89c4f97d0003f8}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{DropDownMenu}}\& a\_otherElement );}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{comment}{// getter funciton}}
+\DoxyCodeLine{132     std::vector<Brood::BroodUI::Button*>\& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acaebb3abcd3a62da25bbc88bffefc1fb}{GetItemList}}();}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{// ======== setter function =======}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{// sets body size}}
+\DoxyCodeLine{137     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a6ad33131e763adb5cc2367ff6a6c170b}{SetBodySize}}( sf::Vector2f a\_eachItemSize ) \textcolor{keyword}{override};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{// sets body size}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a6ad33131e763adb5cc2367ff6a6c170b}{SetBodySize}}( \textcolor{keywordtype}{float} a\_itemSizeX, \textcolor{keywordtype}{float} a\_itemSizeY ) \textcolor{keyword}{override};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// sets body position}}
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a0b68745b7d83aad2c66188753ebb2253}{SetBodyPosition}}( sf::Vector2f  a\_pos, \textcolor{keywordtype}{bool} a\_relativeToParent = \textcolor{keyword}{false} ) \textcolor{keyword}{override};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{// sets body position}}
+\DoxyCodeLine{146     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a0b68745b7d83aad2c66188753ebb2253}{SetBodyPosition}}( \textcolor{keywordtype}{float} a\_posX, \textcolor{keywordtype}{float} a\_posY, \textcolor{keywordtype}{bool} a\_relativeToParent = \textcolor{keyword}{false} ) \textcolor{keyword}{override};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// sets font for the menus}}
+\DoxyCodeLine{149     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a99550fad3c4eadd218e76bac4194de50}{SetFont}}( sf::Font* a\_font );}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{// sets font color}}
+\DoxyCodeLine{152     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acaaa64e9cc6f747f81797bd1d4117c9b}{SetFontColor}}( sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_White}} );}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{comment}{// sets fonts size}}
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a789aea0472533a55c62e255455481cf8}{SetFontSize}}( \textcolor{keywordtype}{unsigned} a\_fontSize = 12 );}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{comment}{// sets text of the title menu}}
+\DoxyCodeLine{158     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ac3b1803cbfe03abb9cd5250682d65523}{SetText}}( std::string a\_text = \textcolor{stringliteral}{"{}"{}} );}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// sets element body color}}
+\DoxyCodeLine{161     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acf54a49a033510ee37f3e9353513dfb6}{SetBodyColor}}( sf::Color a\_bodyColor );}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{comment}{// sets active overlay color}}
+\DoxyCodeLine{164     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a55037f3afbf1aca36dc145b1a344a4e9}{SetActiveOverlayColor}}( sf::Color a\_color );}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{comment}{// sets hot overlay color}}
+\DoxyCodeLine{167     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a29d3414d2b55bd2f735561f0ec6fec4c}{SetHotOverlayColor}}( sf::Color a\_color );}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{comment}{// adds item to menu}}
+\DoxyCodeLine{170     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_afc84ceba3072d2a8df9d92c62d151cea}{AddItemToMenu}}( std::string a\_menuName,}
+\DoxyCodeLine{171                                 sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_White}} );}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{// adds the passed button to dropdown menu if a\_createNew is true}}
+\DoxyCodeLine{174     \textcolor{comment}{// then create a new button using the passed item then adds }}
+\DoxyCodeLine{175     \textcolor{comment}{// the new button }}
+\DoxyCodeLine{176     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_afc84ceba3072d2a8df9d92c62d151cea}{AddItemToMenu}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_buttonPtrToAdd,}
+\DoxyCodeLine{177                                 \textcolor{keywordtype}{bool} a\_createNew = \textcolor{keyword}{true} );}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     \textcolor{comment}{// overrided funciton }}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \textcolor{comment}{// checks to see if the logic for the element is to }}
+\DoxyCodeLine{182     \textcolor{comment}{// be excecuted or not }}
+\DoxyCodeLine{183     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a1523cd65885636efa7e76703e2594a10}{DoElement}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{comment}{// draw funciton}}
+\DoxyCodeLine{186     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ae190f54affbff3a73666c6b845a8fb18}{Draw}}( sf::RenderWindow\& a\_window ) \textcolor{keyword}{override};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{comment}{// adds the element ID to the text}}
+\DoxyCodeLine{189     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_aee081882b4267fe5438239a649d87c95}{Debugger}}();}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     \textcolor{comment}{// ============ protected member function ===============}}
+\DoxyCodeLine{192 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{comment}{// ====== helper funcitons ========}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{comment}{// position menu item at given index correctly}}
+\DoxyCodeLine{197     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a5c6b6becd5b1abeb13a782497ebd2ff5}{SetItemPos}}( \textcolor{keywordtype}{int} a\_itemIndex );}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{comment}{// size the menu item at given index correctly}}
+\DoxyCodeLine{200     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_aad037f0bccd22b250ff38e2b055c05c4}{SetItemSize}}( \textcolor{keywordtype}{int} a\_itemIndex );}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{comment}{// size all the menu item correctly}}
+\DoxyCodeLine{203     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a430ae671c72c89bfe7467e394ce59742}{SetEachItemSize}}();}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     \textcolor{comment}{// position all the menu item correctly}}
+\DoxyCodeLine{206     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ad659df50731d4cdddceced2ab3b723d3}{SetEachItemPos}}();}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{comment}{// ============ protected member variables ===============}}
+\DoxyCodeLine{209 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212     std::vector<Brood::BroodUI::Button*> \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_afc78cca9fe668145419ccef1b6057059}{m\_items}};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{215     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_afc3a6b5cc18884c3707967700bbc15da}{m\_maxItemLength}};}
+\DoxyCodeLine{216 \};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{219 \textcolor{comment}{// ================= end of DropDownMenu class ==========================}}
+\DoxyCodeLine{220 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

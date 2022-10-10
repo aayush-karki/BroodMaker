@@ -1,0 +1,165 @@
+\hypertarget{_board_8h_source}{}\doxysection{Board.\+h}
+\label{_board_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Board.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Board.h}}
+\mbox{\hyperlink{_board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{12 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{16 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_global_variables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_deck_manager_8h}{DeckManager.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_path_8h}{Path.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_access_8h}{FileAccess.h}}"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{26 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{27 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Board}};}
+\DoxyCodeLine{33         \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Path}};}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{41 \textcolor{comment}{// ================= start of Board class ===============================}}
+\DoxyCodeLine{42 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{comment}{// ================== public member fuction =======================}}
+\DoxyCodeLine{55 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab68d3d8229d4772282d3dfa594ea13a4}{Board}}( \textcolor{keywordtype}{unsigned}  a\_numRows = 1, \textcolor{keywordtype}{unsigned} a\_numCols = 1,}
+\DoxyCodeLine{59            \textcolor{keywordtype}{float} a\_boardSizeX = 50.f, \textcolor{keywordtype}{float} a\_boardSizeY = 50.f,}
+\DoxyCodeLine{60            \textcolor{keywordtype}{float} a\_boardPosX = 50.f, \textcolor{keywordtype}{float} a\_boardPosY = 50.f );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{//Destructor}}
+\DoxyCodeLine{63     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_af73f45730119a1fd8f6670f53f959e68}{\string~Board}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ad200b074312b0ffb21a94fcbf782a685}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// initialize the board}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a96cd23a30daf98bd4f61e84f6387ac0a}{InitializeBoard}}( \textcolor{keywordtype}{unsigned}  a\_numRows = 0, \textcolor{keywordtype}{unsigned} a\_numCols = 0,}
+\DoxyCodeLine{70                           \textcolor{keywordtype}{float} a\_boardSizeX = 0.f, \textcolor{keywordtype}{float} a\_boardSizeY = 0.f,}
+\DoxyCodeLine{71                           \textcolor{keywordtype}{float} a\_boardPosX = 0.f, \textcolor{keywordtype}{float} a\_boardPosY = 0.f );}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// initialize the board}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a96cd23a30daf98bd4f61e84f6387ac0a}{InitializeBoard}}(\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood::Application::Data::ST\_BoardData}}\& a\_boardData);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// returns the baord data to save }}
+\DoxyCodeLine{77     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{Brood::Application::Data::ST\_BoardData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a773ce0494e1ff5674d14287a7222676d}{GetDataToSave}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// appends the the baord data to passed file }}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a0d136b6ccddd62bf99acec12bbaf1e5e}{SaveDataToFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// appends the the baord data to passed file }}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a95ceca2154766a045ce4125bb80ce924}{LoadDataFromFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr,}
+\DoxyCodeLine{84                            \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood::Application::Components::DeckManager}}* a\_deckMangerPtr );}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// ===== setter funcitons ==== }}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{// setter function to set the nubmer of rows in the board}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a5a5b4c0d64aae4dbbc1833fde73b28c0}{SetNumRow}}( \textcolor{keywordtype}{unsigned} a\_numRows, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr );}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// setter function to set the nubmer of coulumns in the board}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a7ba1062df55a9d04b71b72d6556b6651}{SetNumCol}}( \textcolor{keywordtype}{unsigned} a\_numCols, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr );}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// setter function to set the board size}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a786e3cbd0a864c4b7f33beab7031fe80}{SetBoardSize}}( sf::Vector2f a\_boardSize );}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{// setter function to set the board size}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a786e3cbd0a864c4b7f33beab7031fe80}{SetBoardSize}}( \textcolor{keywordtype}{float} a\_boardSizeX, \textcolor{keywordtype}{float} a\_boardSizeY );}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// setter function to set the board position}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a93cddb3d18fc1107d0b2678d54c20d2e}{SetBoardPos}}( sf::Vector2f a\_boardPos );}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// setter function to set the board position}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a93cddb3d18fc1107d0b2678d54c20d2e}{SetBoardPos}}( \textcolor{keywordtype}{float} a\_boardPosX, \textcolor{keywordtype}{float} a\_boardPosY );}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// getter function to get the currentActiveTile}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_aa2e437f2be3ccb237cd724a1e04c98e9}{SetCurrentActiveTilePtr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_newActivePathPtr );}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// ===== getter funcitons ==== }}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{// getter function to get the nubmer of rows in the board}}
+\DoxyCodeLine{112     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab6ab37f930d5e013da0f985e7d79a9d0}{GetNumRow}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{comment}{// getter function to get the nubmer of coulumns in the board}}
+\DoxyCodeLine{115     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a064d559412b280a7164008f70a061763}{GetNumCol}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{// getter function to get the board size}}
+\DoxyCodeLine{118     \textcolor{keyword}{const} sf::Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a5342095fc18e3c5046ae32c15e27da82}{GetBoardSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{comment}{// getter function to get the board position}}
+\DoxyCodeLine{121     \textcolor{keyword}{const} sf::Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a7f185bd235215889cf56244c32e49953}{GetBoardPos}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// getter function to get the board path list}}
+\DoxyCodeLine{124     \textcolor{keyword}{const} std::vector<std::vector<Brood::Application::Components::Path*>>\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a53ecf91d7a55f11dba1dea4fbeacbd22}{GetBoardPathList}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// getter function to get the currentActive path}}
+\DoxyCodeLine{127     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a5788fc0b0a9b4d5ba2a922e85819de75}{GetCurrentActivePath}}();}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// toggles the draw line for all the paths }}
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab86e616a48213b272120611427118101}{ToggleDrawLine}}();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ab06072d56d535a78ad78d341e6c1f91b}{Debugger}}(); \textcolor{comment}{// debugger}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{//Brood::Dice\& GetDice(); }}
+\DoxyCodeLine{135     \textcolor{comment}{//void Update();}}
+\DoxyCodeLine{136     \textcolor{comment}{//void PlayerRollAndMove( );}}
+\DoxyCodeLine{137     \textcolor{comment}{//void AddPlayer( float a\_playerSizeX = 0.f, float a\_playerSizeY = 0.f, int a\_playerStartRow = 0, int a\_playerStartCol = 0 );}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{// ========== private member functions ===============}}
+\DoxyCodeLine{141 \textcolor{keyword}{private}:}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{// increases the number of row and populates it}}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_abe2e2bfe830417ba33b3d06fb37ade09}{IncreaseNumRow}}( \textcolor{keywordtype}{unsigned} a\_numRows, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr );}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// decrease the number of row}}
+\DoxyCodeLine{147     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a6e8c9364582414cd92f3ff2aea9be217}{DecreaseNumRow}}( \textcolor{keywordtype}{unsigned} a\_numRows );}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{comment}{// increases the number of col and populates it}}
+\DoxyCodeLine{150     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_ac22c5bb097da89850c480989529d7f51}{IncreaseNumCol}}( \textcolor{keywordtype}{unsigned} a\_numCols, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr );}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{comment}{// decrease the number of col}}
+\DoxyCodeLine{153     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a61bad488f27934dbcf69bee7967c3070}{DecreaseNumCol}}( \textcolor{keywordtype}{unsigned} a\_numCols );}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{comment}{// updates the tile in board by using the member variables}}
+\DoxyCodeLine{156     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_abf8de27a76b855adfb47dda96c2ac835}{UpdateBoardPath}}( \textcolor{keywordtype}{unsigned} a\_rowBegin, \textcolor{keywordtype}{unsigned} a\_rowEnd,}
+\DoxyCodeLine{157                            \textcolor{keywordtype}{unsigned} a\_colBegin, \textcolor{keywordtype}{unsigned} a\_colEnd,}
+\DoxyCodeLine{158                            \textcolor{keywordtype}{bool} a\_createNew = \textcolor{keyword}{false},}
+\DoxyCodeLine{159                           \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{comment}{// ========== private member varibles ===============}}
+\DoxyCodeLine{162 \textcolor{keyword}{private}:}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{165     sf::RectangleShape \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a14224eadafabbc27cd7d5a8ee0fbf037}{m\_boardBody}};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{168     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_aeacb4751c8a8f693a6977e6dd6d7d42b}{m\_numRows}};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{171     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_adaabc7416997dd93bfcda91bef327b4d}{m\_numCols}};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{174     std::vector<std::vector<Brood::Application::Components::Path*>> \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a192c778c00edb101a4ef5726db0b960d}{m\_boardPaths}};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{178     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board_a739bfaf1a984f5cdc9ccdb2505db1583}{m\_currActivePathPtr}};}
+\DoxyCodeLine{179 \};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{182 \textcolor{comment}{// ================= end of Brood class =================================}}
+\DoxyCodeLine{183 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{184 }
+
+\end{DoxyCode}

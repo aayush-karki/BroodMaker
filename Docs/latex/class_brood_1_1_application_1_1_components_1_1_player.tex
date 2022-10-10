@@ -1,0 +1,404 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_player}{}\doxysection{Brood\+::Application\+::Components\+::Player Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_player}\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a025de802337d37fad5ed825c1098eaf2}{Player}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+path\+Ptr=nullptr, unsigned a\+\_\+position\+OffsetX=0, unsigned a\+\_\+position\+OffsetY=0)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Default Desturctor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a46850979b73f7993703737ffde04d2f4}{Player}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} \&a\+\_\+other\+Player)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a3a314704f72b364f70e0989e6c9a8975}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} \&a\+\_\+other\+Player)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a9655c91f740ab33963a2b14531633008}{Initialize\+Player}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Prefab\+Data}} \&a\+\_\+player\+Data, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+player\+Curr\+Path)
+\begin{DoxyCompactList}\small\item\em initializes the player with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Prefab\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ac9b5c1e8e165b0c2946ef9c37a415c2a}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns player data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a746034db33f7a17033b3b8d96df42cf9}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a17adb2c2fe3851c5cb57b0caa6c77ca7}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$a\+\_\+game\+Board)
+\begin{DoxyCompactList}\small\item\em loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} and its path data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a422b2f272433e810ab729dbb564de1b4}{Update\+Pathptr}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$a\+\_\+player\+New\+Path\+Ptr)
+\begin{DoxyCompactList}\small\item\em Funciton to update the pointer to the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a52be4216c120e54b706d279f34f2fcda}{Set\+Player\+SizeX}} (float a\+\_\+sizeX)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the x-\/size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_af6d495ea6b07380d65163882939aa59a}{Set\+Player\+SizeY}} (float a\+\_\+sizeY)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the x-\/size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_aa83ff66a346044023537f2cc8e8bfcae}{Set\+Position\+OffsetX}} (int a\+\_\+position\+OffsetX)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the x-\/offset for player positon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_afbcd6410bafffbdee237c94b3e72fa90}{Set\+Position\+OffsetY}} (int a\+\_\+position\+OffsetY)
+\begin{DoxyCompactList}\small\item\em Setter funciton to set the y-\/offset for player positon. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ad99acf563c5d7658bc0ef5d44baf04f4}{Get\+Curr\+Path\+Ptr}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the tile that the player is currently on. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a99e23bf8a2ee591785fc7086e7db353f}{Get\+Player\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get a reference to player body. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a073cd1ab0bbb5098275e8c64ec7379fa}{Get\+Player\+Sprite\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get a reference to the player sprite body. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a17b2b7fc8a3238c0e283d282794a5152}{Get\+Position\+OffsetX}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the x-\/offset. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a4064c297c8b23194237ab4ac0b1e6a2b}{Get\+Position\+OffsetY}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the y-\/offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a47ec1d618efadb76b2ac1a3acb810155}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton draws tiles to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_aa055a70690c66e3fd9949358fccadd5c}{Update\+Position}} ()
+\begin{DoxyCompactList}\small\item\em updates the player position with respect to tile \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ac49b5f5513591cb13350086299a54846}{m\+\_\+player\+Body}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a024055b1fcf51803fcd01ac1be81067d}{m\+\_\+sprite\+Body}}
+\item 
+int \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a645343e877c04a460e27b0107204d44e}{m\+\_\+position\+OffsetX}}
+\item 
+int \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a93e9270cba469e87fad760558c339cd4}{m\+\_\+position\+OffsetY}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ae510086f64136dbfa3c8d55eebb238e7}{m\+\_\+player\+Curr\+Path\+Ptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a025de802337d37fad5ed825c1098eaf2}\label{class_brood_1_1_application_1_1_components_1_1_player_a025de802337d37fad5ed825c1098eaf2}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!Player@{Player}}
+\index{Player@{Player}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+path\+Ptr = {\ttfamily nullptr},  }\item[{unsigned}]{a\+\_\+position\+OffsetX = {\ttfamily 0},  }\item[{unsigned}]{a\+\_\+position\+OffsetY = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+path\+Ite} & a iterator that holds to Brood\+::\+Application\+::\+Components\+::st\+\_\+path node which contains the start row and column number inside it \\
+\hline
+{\em a\+\_\+position\+OffsetX} & position offset of the path relative to tile\textquotesingle{}s x position \\
+\hline
+{\em a\+\_\+position\+OffsetY} & position offset of the path relative to tile\textquotesingle{}s Y position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a749d2c00e1fe0f5c2746f7505a58c062}\label{class_brood_1_1_application_1_1_components_1_1_player_a749d2c00e1fe0f5c2746f7505a58c062}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Desturctor. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a46850979b73f7993703737ffde04d2f4}\label{class_brood_1_1_application_1_1_components_1_1_player_a46850979b73f7993703737ffde04d2f4}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!Player@{Player}}
+\index{Player@{Player}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} \&}]{a\+\_\+other\+Player }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Player} & reference to the the other player object that is being copied from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a47ec1d618efadb76b2ac1a3acb810155}\label{class_brood_1_1_application_1_1_components_1_1_player_a47ec1d618efadb76b2ac1a3acb810155}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Player\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draw funciton draws tiles to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_ad99acf563c5d7658bc0ef5d44baf04f4}\label{class_brood_1_1_application_1_1_components_1_1_player_ad99acf563c5d7658bc0ef5d44baf04f4}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!GetCurrPathPtr@{GetCurrPathPtr}}
+\index{GetCurrPathPtr@{GetCurrPathPtr}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{GetCurrPathPtr()}{GetCurrPathPtr()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$ Player\+::\+Get\+Curr\+Path\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the pointer to the tile that the player is currently on. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the tile that the player is currently on 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_ac9b5c1e8e165b0c2946ef9c37a415c2a}\label{class_brood_1_1_application_1_1_components_1_1_player_ac9b5c1e8e165b0c2946ef9c37a415c2a}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Prefab\+Data}} Player\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns player data struct 
+
+\begin{DoxyReturn}{Returns}
+player data struct with the dice data in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a99e23bf8a2ee591785fc7086e7db353f}\label{class_brood_1_1_application_1_1_components_1_1_player_a99e23bf8a2ee591785fc7086e7db353f}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!GetPlayerBody@{GetPlayerBody}}
+\index{GetPlayerBody@{GetPlayerBody}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{GetPlayerBody()}{GetPlayerBody()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape \& Player\+::\+Get\+Player\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get a reference to player body. 
+
+\begin{DoxyReturn}{Returns}
+a reference to player body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a073cd1ab0bbb5098275e8c64ec7379fa}\label{class_brood_1_1_application_1_1_components_1_1_player_a073cd1ab0bbb5098275e8c64ec7379fa}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!GetPlayerSpriteBody@{GetPlayerSpriteBody}}
+\index{GetPlayerSpriteBody@{GetPlayerSpriteBody}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{GetPlayerSpriteBody()}{GetPlayerSpriteBody()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} \& Player\+::\+Get\+Player\+Sprite\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get a reference to the player sprite body. 
+
+\begin{DoxyReturn}{Returns}
+a reference to player body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a17b2b7fc8a3238c0e283d282794a5152}\label{class_brood_1_1_application_1_1_components_1_1_player_a17b2b7fc8a3238c0e283d282794a5152}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!GetPositionOffsetX@{GetPositionOffsetX}}
+\index{GetPositionOffsetX@{GetPositionOffsetX}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{GetPositionOffsetX()}{GetPositionOffsetX()}}
+{\footnotesize\ttfamily int Player\+::\+Get\+Position\+OffsetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the x-\/offset. 
+
+\begin{DoxyReturn}{Returns}
+a reference to player body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a4064c297c8b23194237ab4ac0b1e6a2b}\label{class_brood_1_1_application_1_1_components_1_1_player_a4064c297c8b23194237ab4ac0b1e6a2b}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!GetPositionOffsetY@{GetPositionOffsetY}}
+\index{GetPositionOffsetY@{GetPositionOffsetY}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{GetPositionOffsetY()}{GetPositionOffsetY()}}
+{\footnotesize\ttfamily int Player\+::\+Get\+Position\+OffsetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the y-\/offset. 
+
+\begin{DoxyReturn}{Returns}
+a reference to player body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a9655c91f740ab33963a2b14531633008}\label{class_brood_1_1_application_1_1_components_1_1_player_a9655c91f740ab33963a2b14531633008}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!InitializePlayer@{InitializePlayer}}
+\index{InitializePlayer@{InitializePlayer}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{InitializePlayer()}{InitializePlayer()}}
+{\footnotesize\ttfamily void Player\+::\+Initialize\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Player\+Prefab\+Data}} \&}]{a\+\_\+player\+Data,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+player\+Curr\+Path }\end{DoxyParamCaption})}
+
+
+
+initializes the player with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+deck\+Data} & reference of the player data \\
+\hline
+{\em a\+\_\+player\+Curr\+Path} & path that teh player is currently on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a17adb2c2fe3851c5cb57b0caa6c77ca7}\label{class_brood_1_1_application_1_1_components_1_1_player_a17adb2c2fe3851c5cb57b0caa6c77ca7}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Player\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} $\ast$}]{a\+\_\+game\+Board }\end{DoxyParamCaption})}
+
+
+
+loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} and its path data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a3a314704f72b364f70e0989e6c9a8975}\label{class_brood_1_1_application_1_1_components_1_1_player_a3a314704f72b364f70e0989e6c9a8975}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood\+::\+Application\+::\+Components\+::\+Player}} \& Player\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} \&}]{a\+\_\+other\+Player }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Player} & reference to the the other player object that is being copied from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a746034db33f7a17033b3b8d96df42cf9}\label{class_brood_1_1_application_1_1_components_1_1_player_a746034db33f7a17033b3b8d96df42cf9}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Player\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}} data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a52be4216c120e54b706d279f34f2fcda}\label{class_brood_1_1_application_1_1_components_1_1_player_a52be4216c120e54b706d279f34f2fcda}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!SetPlayerSizeX@{SetPlayerSizeX}}
+\index{SetPlayerSizeX@{SetPlayerSizeX}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{SetPlayerSizeX()}{SetPlayerSizeX()}}
+{\footnotesize\ttfamily void Player\+::\+Set\+Player\+SizeX (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the x-\/size. 
+
+The offset is relative to the tile the player is currently on. It also updates the players position
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & player\textquotesingle{}s x size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_af6d495ea6b07380d65163882939aa59a}\label{class_brood_1_1_application_1_1_components_1_1_player_af6d495ea6b07380d65163882939aa59a}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!SetPlayerSizeY@{SetPlayerSizeY}}
+\index{SetPlayerSizeY@{SetPlayerSizeY}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{SetPlayerSizeY()}{SetPlayerSizeY()}}
+{\footnotesize\ttfamily void Player\+::\+Set\+Player\+SizeY (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeY }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the x-\/size. 
+
+The offset is relative to the tile the player is currently on. It also updates the players position
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & player\textquotesingle{}s x size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_aa83ff66a346044023537f2cc8e8bfcae}\label{class_brood_1_1_application_1_1_components_1_1_player_aa83ff66a346044023537f2cc8e8bfcae}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!SetPositionOffsetX@{SetPositionOffsetX}}
+\index{SetPositionOffsetX@{SetPositionOffsetX}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{SetPositionOffsetX()}{SetPositionOffsetX()}}
+{\footnotesize\ttfamily void Player\+::\+Set\+Position\+OffsetX (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+position\+OffsetX }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the x-\/offset for player positon. 
+
+The offset is relative to the tile the player is currently on. It also updates the players position
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+position\+OffsetX} & position offset of the path relative to tile\textquotesingle{}s x position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_afbcd6410bafffbdee237c94b3e72fa90}\label{class_brood_1_1_application_1_1_components_1_1_player_afbcd6410bafffbdee237c94b3e72fa90}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!SetPositionOffsetY@{SetPositionOffsetY}}
+\index{SetPositionOffsetY@{SetPositionOffsetY}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{SetPositionOffsetY()}{SetPositionOffsetY()}}
+{\footnotesize\ttfamily void Player\+::\+Set\+Position\+OffsetY (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+position\+OffsetY }\end{DoxyParamCaption})}
+
+
+
+Setter funciton to set the y-\/offset for player positon. 
+
+The offset is relative to the tile the player is currently on. It also updates the players position
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+position\+OffsetY} & position offset of the path relative to tile\textquotesingle{}s Y position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a422b2f272433e810ab729dbb564de1b4}\label{class_brood_1_1_application_1_1_components_1_1_player_a422b2f272433e810ab729dbb564de1b4}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!UpdatePathptr@{UpdatePathptr}}
+\index{UpdatePathptr@{UpdatePathptr}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{UpdatePathptr()}{UpdatePathptr()}}
+{\footnotesize\ttfamily void Player\+::\+Update\+Pathptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}} $\ast$}]{a\+\_\+player\+New\+Path\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Funciton to update the pointer to the path. 
+
+It also updates the position of the player body. If there are already player in the tile space it offsets the player position by 3 px to the left and down
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+player\+New\+Path\+Ptr} & pointer to the new path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_aa055a70690c66e3fd9949358fccadd5c}\label{class_brood_1_1_application_1_1_components_1_1_player_aa055a70690c66e3fd9949358fccadd5c}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!UpdatePosition@{UpdatePosition}}
+\index{UpdatePosition@{UpdatePosition}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{UpdatePosition()}{UpdatePosition()}}
+{\footnotesize\ttfamily void Player\+::\+Update\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the player position with respect to tile 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_ac49b5f5513591cb13350086299a54846}\label{class_brood_1_1_application_1_1_components_1_1_player_ac49b5f5513591cb13350086299a54846}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!m\_playerBody@{m\_playerBody}}
+\index{m\_playerBody@{m\_playerBody}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{m\_playerBody}{m\_playerBody}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Brood\+::\+Application\+::\+Components\+::\+Player\+::m\+\_\+player\+Body\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_ae510086f64136dbfa3c8d55eebb238e7}\label{class_brood_1_1_application_1_1_components_1_1_player_ae510086f64136dbfa3c8d55eebb238e7}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!m\_playerCurrPathPtr@{m\_playerCurrPathPtr}}
+\index{m\_playerCurrPathPtr@{m\_playerCurrPathPtr}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{m\_playerCurrPathPtr}{m\_playerCurrPathPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood\+::\+Application\+::\+Components\+::\+Path}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Player\+::m\+\_\+player\+Curr\+Path\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a645343e877c04a460e27b0107204d44e}\label{class_brood_1_1_application_1_1_components_1_1_player_a645343e877c04a460e27b0107204d44e}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!m\_positionOffsetX@{m\_positionOffsetX}}
+\index{m\_positionOffsetX@{m\_positionOffsetX}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{m\_positionOffsetX}{m\_positionOffsetX}}
+{\footnotesize\ttfamily int Brood\+::\+Application\+::\+Components\+::\+Player\+::m\+\_\+position\+OffsetX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a93e9270cba469e87fad760558c339cd4}\label{class_brood_1_1_application_1_1_components_1_1_player_a93e9270cba469e87fad760558c339cd4}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!m\_positionOffsetY@{m\_positionOffsetY}}
+\index{m\_positionOffsetY@{m\_positionOffsetY}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{m\_positionOffsetY}{m\_positionOffsetY}}
+{\footnotesize\ttfamily int Brood\+::\+Application\+::\+Components\+::\+Player\+::m\+\_\+position\+OffsetY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_player_a024055b1fcf51803fcd01ac1be81067d}\label{class_brood_1_1_application_1_1_components_1_1_player_a024055b1fcf51803fcd01ac1be81067d}} 
+\index{Brood::Application::Components::Player@{Brood::Application::Components::Player}!m\_spriteBody@{m\_spriteBody}}
+\index{m\_spriteBody@{m\_spriteBody}!Brood::Application::Components::Player@{Brood::Application::Components::Player}}
+\doxysubsubsection{\texorpdfstring{m\_spriteBody}{m\_spriteBody}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood\+::\+Sprite\+Handler}} Brood\+::\+Application\+::\+Components\+::\+Player\+::m\+\_\+sprite\+Body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

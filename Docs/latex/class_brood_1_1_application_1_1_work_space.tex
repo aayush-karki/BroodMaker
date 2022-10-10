@@ -1,0 +1,670 @@
+\hypertarget{class_brood_1_1_application_1_1_work_space}{}\doxysection{Brood\+::Application\+::Work\+Space Class Reference}
+\label{class_brood_1_1_application_1_1_work_space}\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+
+
+{\ttfamily \#include $<$Work\+Space.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Work\+Space\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_brood_1_1_application_1_1_work_space}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a2006b83469ebe20060971ffc54e65c6e}{Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a810a685db430d3cd621a1f0cadb8d333}{$\sim$\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a704c59b12f33bec0586ac01c0cc15c47}{Set\+Font}} (sf\+::\+Font $\ast$a\+\_\+font)
+\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Initialize\+Work\+Space}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Update\+All\+Dispay\+Element}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)=0
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Debugger}} ()=0
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a2c7c568ac6c67fb2f73558a076dc42b1}{Set\+Game\+Data\+Manager}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data\+Manager\+Ptr)
+\begin{DoxyCompactList}\small\item\em setter function for game data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a92969455f3ae48bec2f94bd90030dcc8}{Dy\+Create\+Button}} (sf\+::\+Vector2f a\+\_\+size, sf\+::\+Vector2f a\+\_\+pos, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em @\+TODO\+: set the editor or game workspace varialbe here \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a9f3f745fa047f0624a3e9c08c5fda16b}{Dy\+Create\+Button}} (float a\+\_\+sizeX, float a\+\_\+sizeY, float a\+\_\+posX, float a\+\_\+posY, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a1dfec50931065c6410a6180f39f8dfef}{Dy\+Create\+Text\+Box}} (sf\+::\+Vector2f a\+\_\+size, sf\+::\+Vector2f a\+\_\+pos, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, bool a\+\_\+is\+Editable=false, std\+::string a\+\_\+placeholder\+Text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a885334827357b0cb594b53755585b261}{Dy\+Create\+Text\+Box}} (float a\+\_\+sizeX, float a\+\_\+sizeY, float a\+\_\+posX, float a\+\_\+posY, std\+::string a\+\_\+text=\char`\"{}\char`\"{}, bool a\+\_\+is\+Editable=false, std\+::string a\+\_\+placeholder\+Text=\char`\"{}\char`\"{}, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a977fbec0e2ec48b14ade5eefe68f8f8a}{Dy\+Create\+Drop\+Down\+Input}} (sf\+::\+Vector2f a\+\_\+size, sf\+::\+Vector2f a\+\_\+pos, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a2b06971c3931254bf0516023895fca30}{Dy\+Create\+Drop\+Down\+Input}} (float a\+\_\+sizeX, float a\+\_\+sizeY, float a\+\_\+posX, float a\+\_\+posY, sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}})
+\begin{DoxyCompactList}\small\item\em helper function to dynamically create a \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element initializes it, and adds it to m\+\_\+un\+Name\+List \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_ac15710913ecf0f0352fabe4e1a8776dd}{Dy\+Create\+Dropdown\+Input\+Pannel\+Element}} (sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Body\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+Prompt\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$$\ast$a\+\_\+ddi\+Ptr, std\+::string a\+\_\+prompt\+To\+Display, std\+::vector$<$ std\+::string $>$ a\+\_\+items\+To\+Add, unsigned a\+\_\+first\+Item\+Length=0, bool a\+\_\+create\+From\+Top=false)
+\begin{DoxyCompactList}\small\item\em Dynamically creates a dropdown input Panel Element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a5b3506094cded273a3ca56e5736994da}{Dy\+Create\+Dec\+Inc\+Pannel\+Element}} (sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Body\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+Prompt\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$$\ast$a\+\_\+btn\+Dec\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+Value\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$$\ast$a\+\_\+btn\+Inc\+Ptr, std\+::string a\+\_\+prompt\+To\+Display, std\+::string a\+\_\+value\+To\+Display, bool a\+\_\+create\+From\+Top=false)
+\begin{DoxyCompactList}\small\item\em Dynamically creates a Panel Element that can increase or decrease a parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a796747b84c5b4a79e118ab97e35b73e2}{Dy\+Create\+File\+Input\+Pannel\+Element}} (sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Body\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+Prompt\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+File\+Input\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$$\ast$a\+\_\+btn\+Open\+File\+Ptr, std\+::string a\+\_\+prompt\+To\+Display, std\+::string a\+\_\+value\+To\+Display, bool a\+\_\+create\+From\+Top=false)
+\begin{DoxyCompactList}\small\item\em Dynamically creates a Panel Element that user can enter a filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_af5c9a4ee6fa6c5d9dcaac6ea4f42013e}{Dy\+Create\+Text\+Input\+Pannel\+Element}} (sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Body\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+Prompt\+Ptr, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$a\+\_\+txt\+Text\+Inputt\+Ptr, std\+::string a\+\_\+prompt\+To\+Display, std\+::string a\+\_\+value\+To\+Display, std\+::string a\+\_\+place\+Holder\+Text, bool a\+\_\+create\+From\+Top=false)
+\begin{DoxyCompactList}\small\item\em Dynamically creates a Panel Element that user can enter a text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_ae885b1259e5d77e131a8acedcd0ce47d}{Update\+Dec\+Inc\+SizeX}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Dec\+SizeX, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$a\+\_\+txt\+SizeX, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Inc\+SizeX, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+elemnet\+To\+Change\+SizeX, unsigned a\+\_\+unit, unsigned a\+\_\+lower\+Limit, unsigned a\+\_\+upper\+Limit)
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the element SizeX panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a29ba281446bafc409bcbc6e5c3a5a864}{Update\+Dec\+Inc\+SizeY}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Dec\+SizeY, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$a\+\_\+txt\+SizeY, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Inc\+SizeY, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+elemnet\+To\+Change\+SizeY, unsigned a\+\_\+unit, unsigned a\+\_\+lower\+Limit, unsigned a\+\_\+upper\+Limit)
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the element SizeY panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aea9c5cc849be1d58cbe5f6b069262b7b}{Update\+Dec\+Inc\+PosX}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Dec\+PosX, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$a\+\_\+txt\+PosX, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Inc\+PosX, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+elemnet\+To\+Change\+PosX, unsigned a\+\_\+unit, unsigned a\+\_\+lower\+Limit, unsigned a\+\_\+upper\+Limit)
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the element PosX panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa0b11026799876e2aa0b27a1062746c5}{Update\+Dec\+Inc\+PosY}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Dec\+PosY, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$a\+\_\+txt\+PosY, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$a\+\_\+btn\+Inc\+PosY, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+elemnet\+To\+Change\+PosX, unsigned a\+\_\+unit, unsigned a\+\_\+lower\+Limit, unsigned a\+\_\+upper\+Limit)
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player Y Offset panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_acf292b0f1e5366338144ff4749e8bf43}{m\+\_\+font}}
+\begin{DoxyCompactList}\small\item\em font \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a598672ddf3a92cdbbaab46d213500e6e}{m\+\_\+un\+Named\+UIList}}
+\begin{DoxyCompactList}\small\item\em stores list of all UI Elements pointer \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a70800d911b625232a6f2191faa97e2f6}{m\+\_\+is\+Debugger}}
+\begin{DoxyCompactList}\small\item\em true if debugger is on \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_adf8b2b8db6aea0d19be393b5b472d5c0}{m\+\_\+game\+Data}} = nullptr
+\begin{DoxyCompactList}\small\item\em game data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a2006b83469ebe20060971ffc54e65c6e}\label{class_brood_1_1_application_1_1_work_space_a2006b83469ebe20060971ffc54e65c6e}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!WorkSpace@{WorkSpace}}
+\index{WorkSpace@{WorkSpace}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{WorkSpace()}{WorkSpace()}}
+{\footnotesize\ttfamily Work\+Space\+::\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a810a685db430d3cd621a1f0cadb8d333}\label{class_brood_1_1_application_1_1_work_space_a810a685db430d3cd621a1f0cadb8d333}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!````~WorkSpace@{$\sim$WorkSpace}}
+\index{````~WorkSpace@{$\sim$WorkSpace}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{$\sim$WorkSpace()}{~WorkSpace()}}
+{\footnotesize\ttfamily Work\+Space\+::$\sim$\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+default destructor 
+
+@virtual 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}\label{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a026e88885577473f8bdf0a33bc23c4fc}{Brood\+::\+Application\+::\+Board\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1b36c6f080b353551de8a7aeb30a148b}{Brood\+::\+Application\+::\+Card\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a6abcdf9a97bcf0ec3c424271f3109e0d}{Brood\+::\+Application\+::\+Deck\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a9a6c20dcbaa3aa574dc064509b5affe5}{Brood\+::\+Application\+::\+Dice\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a55c829ded1ed77a133b8c1ac57ac75d8}{Brood\+::\+Application\+::\+Editor\+Workspace}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a59282a4dba62d4cd9fe73f62f54fa160}{Brood\+::\+Application\+::\+Game\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a107a5845f330acc170c7abc458531e66}{Brood\+::\+Application\+::\+Home\+Work\+Space}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad3ac233cd4ef6967d6f7a14ba3b98a84}{Brood\+::\+Application\+::\+Player\+Editor}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_acaf7c4cdd35a8044d8faa4232710c2dc}{Brood\+::\+Application\+::\+Tile\+Editor}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}\label{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen 
+
+Implemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a41c55f09d01714c972eb106588584851}{Brood\+::\+Application\+::\+Board\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af33fbdd8c8db140275453d3a8b0795f3}{Brood\+::\+Application\+::\+Card\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a27a045c274b8cbe55690f318fda9dc4e}{Brood\+::\+Application\+::\+Deck\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a064e14551ec334cc2108c0724c1f7f9a}{Brood\+::\+Application\+::\+Dice\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_abf093d7c69ad7190537c9bf37ce8640a}{Brood\+::\+Application\+::\+Editor\+Workspace}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a692feb46029bb3f79b8a20315d5d5c0c}{Brood\+::\+Application\+::\+Game\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_ab0d8659bcabe456902bc0ae5661df41a}{Brood\+::\+Application\+::\+Home\+Work\+Space}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a12c903538be91f69597926df7798de4e}{Brood\+::\+Application\+::\+Player\+Editor}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_afb394ca92d0dc54071d0e1c4706fe897}{Brood\+::\+Application\+::\+Tile\+Editor}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a9f3f745fa047f0624a3e9c08c5fda16b}\label{class_brood_1_1_application_1_1_work_space_a9f3f745fa047f0624a3e9c08c5fda16b}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateButton@{DyCreateButton}}
+\index{DyCreateButton@{DyCreateButton}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateButton()}{DyCreateButton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ Work\+Space\+::\+Dy\+Create\+Button (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY,  }\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})}
+
+
+
+helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded \begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the button element \\
+\hline
+{\em a\+\_\+sizeY} & width of the button element \\
+\hline
+{\em a\+\_\+posX} & x-\/postion of the button element \\
+\hline
+{\em a\+\_\+posY} & y-\/postion of the button element \\
+\hline
+{\em a\+\_\+text} & text to display in the button element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+color} & color of the button element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created \mbox{\hyperlink{class_button}{Button}} element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a92969455f3ae48bec2f94bd90030dcc8}\label{class_brood_1_1_application_1_1_work_space_a92969455f3ae48bec2f94bd90030dcc8}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateButton@{DyCreateButton}}
+\index{DyCreateButton@{DyCreateButton}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateButton()}{DyCreateButton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ Work\+Space\+::\+Dy\+Create\+Button (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size,  }\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})}
+
+
+
+@\+TODO\+: set the editor or game workspace varialbe here 
+
+helper function to dynamically create a button element initializes it, and adds it to m\+\_\+un\+Name\+List
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the button element \\
+\hline
+{\em a\+\_\+pos} & postion of the button element \\
+\hline
+{\em a\+\_\+text} & text to display in the button element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+color} & color of the button element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created \mbox{\hyperlink{class_button}{Button}} element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a5b3506094cded273a3ca56e5736994da}\label{class_brood_1_1_application_1_1_work_space_a5b3506094cded273a3ca56e5736994da}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateDecIncPannelElement@{DyCreateDecIncPannelElement}}
+\index{DyCreateDecIncPannelElement@{DyCreateDecIncPannelElement}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateDecIncPannelElement()}{DyCreateDecIncPannelElement()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Dy\+Create\+Dec\+Inc\+Pannel\+Element (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Body\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+Prompt\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$$\ast$}]{a\+\_\+btn\+Dec\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+Value\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$$\ast$}]{a\+\_\+btn\+Inc\+Ptr,  }\item[{std\+::string}]{a\+\_\+prompt\+To\+Display,  }\item[{std\+::string}]{a\+\_\+value\+To\+Display,  }\item[{bool}]{a\+\_\+create\+From\+Top = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Dynamically creates a Panel Element that can increase or decrease a parameter. 
+
+It has 4 UI element and its layout is \texorpdfstring{$<$}{<} text\+Box prompt\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}button \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{}\texorpdfstring{$>$}{>} $<$textbox value$>$ \texorpdfstring{$<$}{<}button \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} \texorpdfstring{$>$}{>}
+
+For examaple\+: board\+Size X \texorpdfstring{$<$}{<} 20 \texorpdfstring{$>$}{>}.
+
+It alternates the color of the panel element. Color used are\+: \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_a4bb220821ff8324ade71f81d60d88080}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Secondary\+Color}} and \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+panel\+Body\+Ptr} & pointer to panel body. \\
+\hline
+{\em a\+\_\+txt\+Prompt\+Ptr} & pointer to textbox pointer where the dynamically created textbox to display the prompt is stored \\
+\hline
+{\em a\+\_\+btn\+Dec\+Ptr} & pointer to button pointer where the dynamically created button to display the \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} is stored \\
+\hline
+{\em a\+\_\+txt\+Value\+Ptr} & pointer to textbox pointer where the dynamically created textbox to display the value is stored \\
+\hline
+{\em a\+\_\+btn\+Inc\+Ptr} & pointer to button pointer where the dynamically created button to display the \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} is stored \\
+\hline
+{\em a\+\_\+prompt\+To\+Display} & text to display in the prompt textbox element \\
+\hline
+{\em a\+\_\+value\+To\+Display} & text to display in the value textbox element \\
+\hline
+{\em a\+\_\+create\+From\+Top} & is true if the created element should be positioned second element form the top \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a2b06971c3931254bf0516023895fca30}\label{class_brood_1_1_application_1_1_work_space_a2b06971c3931254bf0516023895fca30}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateDropDownInput@{DyCreateDropDownInput}}
+\index{DyCreateDropDownInput@{DyCreateDropDownInput}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateDropDownInput()}{DyCreateDropDownInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ Work\+Space\+::\+Dy\+Create\+Drop\+Down\+Input (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY,  }\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})}
+
+
+
+helper function to dynamically create a \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element \\
+\hline
+{\em a\+\_\+sizeY} & width of the \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element \\
+\hline
+{\em a\+\_\+posX} & x-\/postion of the \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element \\
+\hline
+{\em a\+\_\+posY} & y-\/postion of the \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element \\
+\hline
+{\em a\+\_\+color} & color of the textbox element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created textbox element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a977fbec0e2ec48b14ade5eefe68f8f8a}\label{class_brood_1_1_application_1_1_work_space_a977fbec0e2ec48b14ade5eefe68f8f8a}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateDropDownInput@{DyCreateDropDownInput}}
+\index{DyCreateDropDownInput@{DyCreateDropDownInput}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateDropDownInput()}{DyCreateDropDownInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ Work\+Space\+::\+Dy\+Create\+Drop\+Down\+Input (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size,  }\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})}
+
+
+
+helper function to dynamically create a \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element \\
+\hline
+{\em a\+\_\+pos} & postion of the \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element \\
+\hline
+{\em a\+\_\+color} & color of the textbox element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created \mbox{\hyperlink{class_drop_down_input}{Drop\+Down\+Input}} element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_ac15710913ecf0f0352fabe4e1a8776dd}\label{class_brood_1_1_application_1_1_work_space_ac15710913ecf0f0352fabe4e1a8776dd}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateDropdownInputPannelElement@{DyCreateDropdownInputPannelElement}}
+\index{DyCreateDropdownInputPannelElement@{DyCreateDropdownInputPannelElement}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateDropdownInputPannelElement()}{DyCreateDropdownInputPannelElement()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Dy\+Create\+Dropdown\+Input\+Pannel\+Element (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Body\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+Prompt\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$$\ast$}]{a\+\_\+ddi\+Ptr,  }\item[{std\+::string}]{a\+\_\+prompt\+To\+Display,  }\item[{std\+::vector$<$ std\+::string $>$}]{a\+\_\+items\+To\+Add,  }\item[{unsigned}]{a\+\_\+first\+Item\+Length = {\ttfamily 0},  }\item[{bool}]{a\+\_\+create\+From\+Top = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Dynamically creates a dropdown input Panel Element. 
+
+It occupies the whole pannel length.
+
+It can be position at the top of the panel if a\+\_\+top\+Element is true, as the second element if a\+\_\+create\+From\+Top is true, else below the last creasted UI element.
+
+\begin{DoxyNote}{Note}
+both a\+\_\+top\+Element and a\+\_\+create\+From\+Top can not be true at the same time.
+\end{DoxyNote}
+It alternates the color of the panel element. Color used are\+: \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_a4bb220821ff8324ade71f81d60d88080}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Secondary\+Color}} and \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+panel\+Body\+Ptr} & pointer to panel body. \\
+\hline
+{\em a\+\_\+txt\+Prompt\+Ptr} & pointer to textbox pointer where the dynamically created textbox to display the prompt is stored \\
+\hline
+{\em a\+\_\+ddi\+Ptr} & pointer to drop down input pointer where the dynamically created drop down input is stored \\
+\hline
+{\em a\+\_\+prompt\+To\+Display} & text to display in the prompt textbox element \\
+\hline
+{\em a\+\_\+items\+To\+Add} & list of item to add to the drop down input \\
+\hline
+{\em a\+\_\+first\+Item\+Length} & the length of the string to display on the as the selected element -\/\texorpdfstring{$>$}{>} default 0 do nothing \\
+\hline
+{\em a\+\_\+create\+From\+Top} & is true if the created element should be positioned second element form the top -\/\texorpdfstring{$>$}{>} default false \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a796747b84c5b4a79e118ab97e35b73e2}\label{class_brood_1_1_application_1_1_work_space_a796747b84c5b4a79e118ab97e35b73e2}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateFileInputPannelElement@{DyCreateFileInputPannelElement}}
+\index{DyCreateFileInputPannelElement@{DyCreateFileInputPannelElement}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateFileInputPannelElement()}{DyCreateFileInputPannelElement()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Dy\+Create\+File\+Input\+Pannel\+Element (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Body\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+Prompt\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+File\+Input\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$$\ast$}]{a\+\_\+btn\+Open\+File\+Ptr,  }\item[{std\+::string}]{a\+\_\+prompt\+To\+Display,  }\item[{std\+::string}]{a\+\_\+value\+To\+Display,  }\item[{bool}]{a\+\_\+create\+From\+Top = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Dynamically creates a Panel Element that user can enter a filename. 
+
+It has 3 UI element and its layout is \begin{DoxyVerb}<textBox prompt> 
+
+<textbox>  
+
+<open button>
+\end{DoxyVerb}
+ For examaple\+: \mbox{\hyperlink{class_player}{Player}} texture \begin{DoxyVerb}        (enter file name) <open>
+\end{DoxyVerb}
+ It alternates the color of the panel element. Color used are\+: \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_a4bb220821ff8324ade71f81d60d88080}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Secondary\+Color}} and \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+panel\+Body\+Ptr} & pointer to panel body. \\
+\hline
+{\em a\+\_\+txt\+Prompt\+Ptr} & pointer to textbox pointer where the dynamically created textbox to display the prompt is stored \\
+\hline
+{\em a\+\_\+txt\+File\+Input\+Ptr} & pointer to textbox pointer where the dynamically created textbox to enter file name is stored \\
+\hline
+{\em a\+\_\+btn\+Open\+File\+Ptr} & pointer to button pointer where the dynamically created button to display the \textquotesingle{}open\textquotesingle{} is stored \\
+\hline
+{\em a\+\_\+prompt\+To\+Display} & text to display in the prompt textbox element \\
+\hline
+{\em a\+\_\+value\+To\+Display} & text to display in the value textbox element \\
+\hline
+{\em a\+\_\+create\+From\+Top} & is true if the created element should be positioned second element form the top \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a885334827357b0cb594b53755585b261}\label{class_brood_1_1_application_1_1_work_space_a885334827357b0cb594b53755585b261}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateTextBox@{DyCreateTextBox}}
+\index{DyCreateTextBox@{DyCreateTextBox}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateTextBox()}{DyCreateTextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Work\+Space\+::\+Dy\+Create\+Text\+Box (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY,  }\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{a\+\_\+is\+Editable = {\ttfamily false},  }\item[{std\+::string}]{a\+\_\+placeholder\+Text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})}
+
+
+
+helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the textbox element \\
+\hline
+{\em a\+\_\+sizeY} & width of the textbox element \\
+\hline
+{\em a\+\_\+posX} & x-\/postion of the textbox element \\
+\hline
+{\em a\+\_\+posY} & y-\/postion of the textbox element \\
+\hline
+{\em a\+\_\+text} & text to display in the textbox element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+is\+Editable} & true if the text box is editable; default false \\
+\hline
+{\em a\+\_\+color} & color of the textbox element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created textbox element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a1dfec50931065c6410a6180f39f8dfef}\label{class_brood_1_1_application_1_1_work_space_a1dfec50931065c6410a6180f39f8dfef}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateTextBox@{DyCreateTextBox}}
+\index{DyCreateTextBox@{DyCreateTextBox}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateTextBox()}{DyCreateTextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Work\+Space\+::\+Dy\+Create\+Text\+Box (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size,  }\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{a\+\_\+is\+Editable = {\ttfamily false},  }\item[{std\+::string}]{a\+\_\+placeholder\+Text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}} }\end{DoxyParamCaption})}
+
+
+
+helper function to dynamically create a textbox element initializes it, and adds it to m\+\_\+un\+Name\+List 
+
+@overlaoded
+
+\begin{DoxyNote}{Note}
+assumes that m\+\_\+font is loaded
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the textbox element \\
+\hline
+{\em a\+\_\+pos} & postion of the textbox element \\
+\hline
+{\em a\+\_\+text} & text to display in the textbox element ; default \char`\"{}\char`\"{} \\
+\hline
+{\em a\+\_\+is\+Editable} & true if the text box is editable; default false \\
+\hline
+{\em a\+\_\+color} & color of the textbox element ; default \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dynamically created textbox element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_af5c9a4ee6fa6c5d9dcaac6ea4f42013e}\label{class_brood_1_1_application_1_1_work_space_af5c9a4ee6fa6c5d9dcaac6ea4f42013e}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!DyCreateTextInputPannelElement@{DyCreateTextInputPannelElement}}
+\index{DyCreateTextInputPannelElement@{DyCreateTextInputPannelElement}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{DyCreateTextInputPannelElement()}{DyCreateTextInputPannelElement()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Dy\+Create\+Text\+Input\+Pannel\+Element (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Body\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+Prompt\+Ptr,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$$\ast$}]{a\+\_\+txt\+Text\+Inputt\+Ptr,  }\item[{std\+::string}]{a\+\_\+prompt\+To\+Display,  }\item[{std\+::string}]{a\+\_\+value\+To\+Display,  }\item[{std\+::string}]{a\+\_\+place\+Holder\+Text,  }\item[{bool}]{a\+\_\+create\+From\+Top = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Dynamically creates a Panel Element that user can enter a text. 
+
+It has 2 UI element and its layout is \begin{DoxyVerb}<textBox prompt> <textbox>  
+\end{DoxyVerb}
+ For examaple\+: Game Name (enter file name)
+
+It alternates the color of the panel element. Color used are\+: \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_a4bb220821ff8324ade71f81d60d88080}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Secondary\+Color}} and \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_ad0257b55130a43080ccf356496fd0216}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+App\+Primary\+Color}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+panel\+Body\+Ptr} & pointer to panel body. \\
+\hline
+{\em a\+\_\+txt\+Prompt\+Ptr} & pointer to textbox pointer where the dynamically created textbox to display the prompt is stored \\
+\hline
+{\em a\+\_\+txt\+Text\+Inputt\+Ptr} & pointer to textbox pointer where the dynamically created textbox to enter the text is stored \\
+\hline
+{\em a\+\_\+prompt\+To\+Display} & text to display in the prompt textbox element \\
+\hline
+{\em a\+\_\+value\+To\+Display} & text to display in the value textbox element \\
+\hline
+{\em a\+\_\+place\+Holder\+Text} & text to display in the value textbox element \\
+\hline
+{\em a\+\_\+create\+From\+Top} & is true if the created element should be positioned second element form the top \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}\label{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily virtual void Brood\+::\+Application\+::\+Work\+Space\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a680781b3bf5bb133443d7f02d4acc97f}{Brood\+::\+Application\+::\+Board\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a75ea339d768f67acd187059d28e6b40d}{Brood\+::\+Application\+::\+Card\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adb109156626044f4dbab0e17fc3a58fa}{Brood\+::\+Application\+::\+Deck\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_aaf59b8843cb98cce5b8cd3ee1c5e3ce2}{Brood\+::\+Application\+::\+Dice\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a8b7dceac808bbb5ddfe5e8cc5081c70f}{Brood\+::\+Application\+::\+Editor\+Workspace}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a284d8b019bd34bf751d0ee2f1c8a7d54}{Brood\+::\+Application\+::\+Game\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5b5597b2d7c20cdd808ccedb598c32d8}{Brood\+::\+Application\+::\+Player\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a2407d094d264d12f551525ce077a22dc}{Brood\+::\+Application\+::\+Tile\+Editor}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a2a0cf1dc18a0513a78795b43ebc3b696}{Brood\+::\+Application\+::\+Home\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a704c59b12f33bec0586ac01c0cc15c47}\label{class_brood_1_1_application_1_1_work_space_a704c59b12f33bec0586ac01c0cc15c47}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!SetFont@{SetFont}}
+\index{SetFont@{SetFont}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{SetFont()}{SetFont()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Work\+Space\+::\+Set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font $\ast$}]{a\+\_\+font }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a2c7c568ac6c67fb2f73558a076dc42b1}\label{class_brood_1_1_application_1_1_work_space_a2c7c568ac6c67fb2f73558a076dc42b1}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!SetGameDataManager@{SetGameDataManager}}
+\index{SetGameDataManager@{SetGameDataManager}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{SetGameDataManager()}{SetGameDataManager()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Set\+Game\+Data\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data\+Manager\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function for game data 
+
+@virtual 
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_a2b04ba33533d30f64d03e6c36851d04e}{Brood\+::\+Application\+::\+Editor\+Workspace}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}\label{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Brood\+::\+Application\+::\+Work\+Space\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac3012c56d8902f39e3e2b504fea33af1}{Brood\+::\+Application\+::\+Board\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2b168c78887d982c07cb4fe233a86453}{Brood\+::\+Application\+::\+Card\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ad1c08b596ab8c032e2a80a92a0146498}{Brood\+::\+Application\+::\+Deck\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a441a2d147839326560719a96563f344e}{Brood\+::\+Application\+::\+Dice\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ac9db5e38b2fc2c30a2f07cf4042d374d}{Brood\+::\+Application\+::\+Editor\+Workspace}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a8de8da59685f16f6c6c6092994805420}{Brood\+::\+Application\+::\+Game\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a9d2d709055310b1d5ba484008633e135}{Brood\+::\+Application\+::\+Home\+Work\+Space}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab21a8fcdc1bde40ec4f3459cf3a60ebf}{Brood\+::\+Application\+::\+Player\+Editor}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_a15339b1cbda21fb9c06a471269a51f30}{Brood\+::\+Application\+::\+Tile\+Editor}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}\label{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily virtual void Brood\+::\+Application\+::\+Work\+Space\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa9b28b53885704008b793a01581b8d50}{Brood\+::\+Application\+::\+Board\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a50ae65017418f6edf4d7aa37c7fc1bdd}{Brood\+::\+Application\+::\+Card\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a22198153282178ebc940bcb5470555b8}{Brood\+::\+Application\+::\+Deck\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_dice_editor_a711bdab1aee6897d5943e99a948f86c9}{Brood\+::\+Application\+::\+Dice\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_editor_workspace_ad15c6e3c80044f5023f39b0e93a7e392}{Brood\+::\+Application\+::\+Editor\+Workspace}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ad4439d42921be6fd83690ee3e7eadde5}{Brood\+::\+Application\+::\+Game\+Editor}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space_a80fdd48119746afd787490fede05d1a7}{Brood\+::\+Application\+::\+Home\+Work\+Space}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afef71876bce00a1d1a839dd9246ee464}{Brood\+::\+Application\+::\+Player\+Editor}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_tile_editor_aa59a9b9756fe0b0d00899b5738d2a03b}{Brood\+::\+Application\+::\+Tile\+Editor}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_aea9c5cc849be1d58cbe5f6b069262b7b}\label{class_brood_1_1_application_1_1_work_space_aea9c5cc849be1d58cbe5f6b069262b7b}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!UpdateDecIncPosX@{UpdateDecIncPosX}}
+\index{UpdateDecIncPosX@{UpdateDecIncPosX}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{UpdateDecIncPosX()}{UpdateDecIncPosX()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Update\+Dec\+Inc\+PosX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Dec\+PosX,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$}]{a\+\_\+txt\+PosX,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Inc\+PosX,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+elemnet\+To\+Change\+PosX,  }\item[{unsigned}]{a\+\_\+unit,  }\item[{unsigned}]{a\+\_\+lower\+Limit,  }\item[{unsigned}]{a\+\_\+upper\+Limit }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the element PosX panel 
+
+PosX panel contains current element PosX promt textbox, current element PosX value text box, button to increase the current element PosX, and button to decrease the element PosX.
+
+Only the button to increase the PosX, and button to decrease PosX are interactable
+
+If the interactable button was pressed then the PosX is increased or decresed by specified units if the current element does not go outside the upper limit
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+btn\+Dec\+PosX} & pointer to the element\textquotesingle{}s panel dec\+PosX button \\
+\hline
+{\em a\+\_\+txt\+PosX} & pointer to the element\textquotesingle{}s panel PosX value textbox \\
+\hline
+{\em a\+\_\+btn\+Inc\+PosX} & pointer to the element\textquotesingle{}s panel inc\+PosX button \\
+\hline
+{\em a\+\_\+elemnet\+To\+Change\+PosX} & pointer to the element whose size being controlled \\
+\hline
+{\em a\+\_\+unit} & unit to increase or decrease \\
+\hline
+{\em a\+\_\+lower\+Limit} & the minimum PosX of the element \\
+\hline
+{\em a\+\_\+upper\+Limit} & the maximum PosX of the element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_aa0b11026799876e2aa0b27a1062746c5}\label{class_brood_1_1_application_1_1_work_space_aa0b11026799876e2aa0b27a1062746c5}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!UpdateDecIncPosY@{UpdateDecIncPosY}}
+\index{UpdateDecIncPosY@{UpdateDecIncPosY}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{UpdateDecIncPosY()}{UpdateDecIncPosY()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Update\+Dec\+Inc\+PosY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Dec\+PosY,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$}]{a\+\_\+txt\+PosY,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Inc\+PosY,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+elemnet\+To\+Change\+PosX,  }\item[{unsigned}]{a\+\_\+unit,  }\item[{unsigned}]{a\+\_\+lower\+Limit,  }\item[{unsigned}]{a\+\_\+upper\+Limit }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the player Y Offset panel 
+
+\mbox{\hyperlink{class_player}{Player}} Y Offset panel contains current player Y Offset promt textbox, current player Y Offset value text box, button to increase the current player Y Offset, and button to decrease the current player Y Offset.
+
+Only the button to increase the current player Y Offset, and button to decrease the current player Y Offset are interactable
+
+If the interactable button was pressed then the current player Y Offset is increased or decresed by 1 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_ae885b1259e5d77e131a8acedcd0ce47d}\label{class_brood_1_1_application_1_1_work_space_ae885b1259e5d77e131a8acedcd0ce47d}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!UpdateDecIncSizeX@{UpdateDecIncSizeX}}
+\index{UpdateDecIncSizeX@{UpdateDecIncSizeX}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{UpdateDecIncSizeX()}{UpdateDecIncSizeX()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Update\+Dec\+Inc\+SizeX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Dec\+SizeX,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$}]{a\+\_\+txt\+SizeX,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Inc\+SizeX,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+elemnet\+To\+Change\+SizeX,  }\item[{unsigned}]{a\+\_\+unit,  }\item[{unsigned}]{a\+\_\+lower\+Limit,  }\item[{unsigned}]{a\+\_\+upper\+Limit }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the element SizeX panel 
+
+SizeX panel contains current element SizeX promt textbox, current element SizeX value text box, button to increase the current element SizeX, and button to decrease the element SizeX.
+
+Only the button to increase the SizeX, and button to decrease SizeX are interactable
+
+If the interactable button was pressed then the SizeX is increased or decresed by specified units if the current element does not go outside the upper limit
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+btn\+Dec\+SizeX} & pointer to the element\textquotesingle{}s panel dec\+SizeX button \\
+\hline
+{\em a\+\_\+txt\+SizeX} & pointer to the element\textquotesingle{}s panel sizeX value textbox \\
+\hline
+{\em a\+\_\+btn\+Inc\+SizeX} & pointer to the element\textquotesingle{}s panel inc\+SizeX button \\
+\hline
+{\em a\+\_\+elemnet\+To\+Change\+SizeX} & pointer to the element whose size being controlled \\
+\hline
+{\em a\+\_\+unit} & unit to increase or decrease \\
+\hline
+{\em a\+\_\+lower\+Limit} & the minimum SizeX of the element \\
+\hline
+{\em a\+\_\+upper\+Limit} & the maximum SizeX of the element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a29ba281446bafc409bcbc6e5c3a5a864}\label{class_brood_1_1_application_1_1_work_space_a29ba281446bafc409bcbc6e5c3a5a864}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!UpdateDecIncSizeY@{UpdateDecIncSizeY}}
+\index{UpdateDecIncSizeY@{UpdateDecIncSizeY}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{UpdateDecIncSizeY()}{UpdateDecIncSizeY()}}
+{\footnotesize\ttfamily void Work\+Space\+::\+Update\+Dec\+Inc\+SizeY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Dec\+SizeY,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$}]{a\+\_\+txt\+SizeY,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$}]{a\+\_\+btn\+Inc\+SizeY,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+elemnet\+To\+Change\+SizeY,  }\item[{unsigned}]{a\+\_\+unit,  }\item[{unsigned}]{a\+\_\+lower\+Limit,  }\item[{unsigned}]{a\+\_\+upper\+Limit }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the element SizeY panel 
+
+SizeY panel contains current element SizeY promt textbox, current element SizeY value text box, button to increase the current element SizeY, and button to decrease the element SizeY.
+
+Only the button to increase the SizeY, and button to decrease SizeY are interactable
+
+If the interactable button was pressed then the SizeY is increased or decresed by specified units if the current element does not go outside the upper limit
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+btn\+Dec\+SizeY} & pointer to the element\textquotesingle{}s panel dec\+SizeY button \\
+\hline
+{\em a\+\_\+txt\+SizeY} & pointer to the element\textquotesingle{}s panel sizeY value textbox \\
+\hline
+{\em a\+\_\+btn\+Inc\+SizeY} & pointer to the element\textquotesingle{}s panel inc\+SizeY button \\
+\hline
+{\em a\+\_\+elemnet\+To\+Change\+SizeY} & pointer to the element whose size being controlled \\
+\hline
+{\em a\+\_\+unit} & unit to increase or decrease \\
+\hline
+{\em a\+\_\+lower\+Limit} & the minimum SizeY of the element \\
+\hline
+{\em a\+\_\+upper\+Limit} & the maximum SizeY of the element \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_acf292b0f1e5366338144ff4749e8bf43}\label{class_brood_1_1_application_1_1_work_space_acf292b0f1e5366338144ff4749e8bf43}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily sf\+::\+Font$\ast$ Brood\+::\+Application\+::\+Work\+Space\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+font 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_adf8b2b8db6aea0d19be393b5b472d5c0}\label{class_brood_1_1_application_1_1_work_space_adf8b2b8db6aea0d19be393b5b472d5c0}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!m\_gameData@{m\_gameData}}
+\index{m\_gameData@{m\_gameData}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{m\_gameData}{m\_gameData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$ Work\+Space\+::m\+\_\+game\+Data = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+game data 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a70800d911b625232a6f2191faa97e2f6}\label{class_brood_1_1_application_1_1_work_space_a70800d911b625232a6f2191faa97e2f6}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!m\_isDebugger@{m\_isDebugger}}
+\index{m\_isDebugger@{m\_isDebugger}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{m\_isDebugger}{m\_isDebugger}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Work\+Space\+::m\+\_\+is\+Debugger\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+true if debugger is on 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_work_space_a598672ddf3a92cdbbaab46d213500e6e}\label{class_brood_1_1_application_1_1_work_space_a598672ddf3a92cdbbaab46d213500e6e}} 
+\index{Brood::Application::WorkSpace@{Brood::Application::WorkSpace}!m\_unNamedUIList@{m\_unNamedUIList}}
+\index{m\_unNamedUIList@{m\_unNamedUIList}!Brood::Application::WorkSpace@{Brood::Application::WorkSpace}}
+\doxysubsubsection{\texorpdfstring{m\_unNamedUIList}{m\_unNamedUIList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}}$\ast$$>$ Brood\+::\+Application\+::\+Work\+Space\+::m\+\_\+un\+Named\+UIList\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+stores list of all UI Elements pointer 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_work_space_8h}{Work\+Space.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_work_space_8cpp}{Work\+Space.\+cpp}}\end{DoxyCompactItemize}

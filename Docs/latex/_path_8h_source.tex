@@ -1,0 +1,191 @@
+\hypertarget{_path_8h_source}{}\doxysection{Path.\+h}
+\label{_path_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Path.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Path.h}}
+\mbox{\hyperlink{_path_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{12 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{16 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tiles_8h}{Tiles.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_deck_8h}{Deck.h}}"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{24 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{25 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keyword}{class }\mbox{\hyperlink{class_path}{Path}};}
+\DoxyCodeLine{32         \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 \}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{40 \textcolor{comment}{// ================= start of path class ================================}}
+\DoxyCodeLine{41 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     \textcolor{comment}{// =============== public member function ===================}}
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55     \textcolor{comment}{//default constructor}}
+\DoxyCodeLine{56     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_abf6077b7854747ac86809a1f71ab40c4}{Path}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood::Application::Components::Tiles}}* a\_tilePtr = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{57           \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{58           \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bb}{Brood::Application::Components::ENUM\_TileType}} a\_tileType = \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bba9d0da57eee4ad160953cf36570cccc04}{Brood::Application::Components::ENUM\_TileType::TILE\_blank}} );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// destructor}}
+\DoxyCodeLine{61     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a141da9ff89c85e0ba410b5a73864c267}{\string~Path}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_abf6077b7854747ac86809a1f71ab40c4}{Path}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Path}}\& a\_otherPath );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{67     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Path}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ade211c4cb2ebd1a0808a67c615c7fa44}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Path}}\& a\_otherPath );}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// initialize the path}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a497b176f2258e73afee342783204ee7a}{InitializePath}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data}{Brood::Application::Data::ST\_PathPrefabData}}\& a\_pathData,}
+\DoxyCodeLine{71                          \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_nextPathPtr,}
+\DoxyCodeLine{72                          \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_bridgeEndPathPtr,}
+\DoxyCodeLine{73                          \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr );}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// returns the path data to save }}
+\DoxyCodeLine{76     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___path_prefab_data}{Brood::Application::Data::ST\_PathPrefabData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a4173f6c9f1de666b59c30a7efc3caab2}{GetDataToSave}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// ======= getter funciton ===========}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{// getter funciton to get the tile type of the tile}}
+\DoxyCodeLine{81     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bb}{Brood::Application::Components::ENUM\_TileType}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ad001a7ba86facd3afce504e051e0aef7}{GetTileType}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// Getter funciton to get the pointer to the tile}}
+\DoxyCodeLine{84     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood::Application::Components::Tiles}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a93375db1d5fd43ddf6ad3b28ad2a2ebc}{GetTilePtr}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// Getter funciton to get the pointer to the tile}}
+\DoxyCodeLine{87     \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood::Application::Components::Tiles}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a93375db1d5fd43ddf6ad3b28ad2a2ebc}{GetTilePtr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// getter funciton to get the pointer to the next path }}
+\DoxyCodeLine{90     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a769c988771e980a898c3c61fa644a90c}{GetNextPathPtr}}();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// getter funciton to get the pointer to the previous path }}
+\DoxyCodeLine{93     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a147a6f900dc447ba0858f94592203dfc}{GetPreviouPathPtr}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// getter funciton to get the pointer to the bridge end path }}
+\DoxyCodeLine{96     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_afe727122000220ec95736cc1b6e2c141}{GetBridgeEndPathPtr}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// getter function to get the player list pointer}}
+\DoxyCodeLine{99     \textcolor{keyword}{const} std::vector<Brood::Application::Components::Player*>\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a5d7dac2e62f7969a9789644580d838ad}{GetPlayerListPtr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// getter function to get the deck pointer}}
+\DoxyCodeLine{102     \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a1d71e8bab831ca2fcd75cbf9a3401745}{GetDeckPtr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// getter funciton to get the index of the assingned deck}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_abb05244dd234b3f650bd3678c1601565}{GetDeckIdx}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// Getter funciton to get the number of card to be drawn}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a0ce7f5b7de222bc6cc2e9f2bb18ee2c3}{GetNumCardDraw}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// getter funciton to get force dice roll}}
+\DoxyCodeLine{111     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a1cf5eb57a95a19b26d9bff4dbb3b00f1}{GetForceDiceRoll}}();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{// gets the center point of the tile}}
+\DoxyCodeLine{114     sf::Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ac99f32702a7f8e875d435faa086f47a7}{GetTileCenter}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// gets the draw line var}}
+\DoxyCodeLine{117     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ab43d84a5bba67a0a64a67647256118e4}{GetDrawLine}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// ======= setter funciton ===========}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{// Setter funciton to Set the tile type of the tile}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ab532406c03f8a4af05c7b79a5180cd52}{SetTileType}}( \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bb}{Brood::Application::Components::ENUM\_TileType}} a\_tileType );}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{comment}{// setter funciton to set the pointer to the tile}}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ae98199fd5aa99df44745cabbecd7e937}{SetTilePtr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood::Application::Components::Tiles}}* a\_tilePtr );}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{// Setter funciton to Set the pointer to the next path }}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a61d7d1b7f176abb9776775e725389994}{SetNextPathPtr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_nextPathPtr );}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// Setter funciton to Set the pointer to the previous path }}
+\DoxyCodeLine{131     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a655e38a50eab625da65d59c75799c532}{SetPreviouPathPtr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_previousPathPtr );}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{// Setter funciton to Set the pointer to the bridge end path }}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a0eebc9535d01459704f87cd06ca0cec2}{SetBridgeEndPathPtr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_bridgeEndPathPtr );}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{// setter funciton to set the pointer to the deck}}
+\DoxyCodeLine{137     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ad55bfe4ef87bf9c1785cd416970b3b28}{SetDeckPtr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* a\_deckPtr );}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{// Setter funciton to Set the index of the assingned deck}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a506c5202d5de66822d0fc52149c26ffd}{SetDeckIdx}}( \textcolor{keywordtype}{unsigned} a\_deckIdx );}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// Setter funciton to Set the number of card to be drawn}}
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ab41961702e929c22ce67be0e80c6a786}{SetNumCardDraw}}( \textcolor{keywordtype}{unsigned} a\_numCardDraw );}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{// Setter funciton to Set force dice roll}}
+\DoxyCodeLine{146     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_af84dcef12075ab8bd897b439f69b0585}{SetForceDiceRoll}}( \textcolor{keywordtype}{bool} a\_diceRoll );}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// toggles the the draw line var}}
+\DoxyCodeLine{149     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a0d1b3873a21409ee65f2831b255156ba}{ToggleDrawLine}}();}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{// add player to its list}}
+\DoxyCodeLine{152     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_afb4eac3b3c7f61f099cb57873ea2a026}{AddPlayerToList}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood::Application::Components::Player}}* a\_playerPtr );}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{comment}{// deletes the player from its player list}}
+\DoxyCodeLine{155     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_afe96db6ca9ba3093bd77f3a996b7d13b}{DeletePlayerFromList}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood::Application::Components::Player}}* a\_playerPtr );}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{comment}{// updates path line}}
+\DoxyCodeLine{158     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a3c874a80a31de9d91adb7f6a3b8ca2c9}{UpdatePathLines}}();}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// draws the tile}}
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a251ea3d503ea452960113ac9aa01a906}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{comment}{// draws the tile}}
+\DoxyCodeLine{164     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a8771903bc111e3fc73fa99933f7b4a04}{DrawPath}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{comment}{// =============== public member variable ===================}}
+\DoxyCodeLine{167 \textcolor{keyword}{private}:}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a60a1bfaf12923913aeb2c2a89147a8bb}{Brood::Application::Components::ENUM\_TileType}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a3867dd06b100b8954bddef07437ddfc1}{m\_tileType}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{173     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_tiles}{Brood::Application::Components::Tiles}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_af362701aedad541ab569de1dad5ba21d}{m\_tilePtr}};}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{177     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a96c5969314b81d233f3b6c718fecbb0f}{m\_nextPathPtr}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{180     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_ace9fdb59338eb703ff59f6d449d0ce60}{m\_previousPathPtr}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{183     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a58e6f6db1e10774a21486fc44b46ce1f}{m\_bridgeEndPathPtr}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186     std::vector<Brood::Application::Components::Player*> \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a9f21c3dcd674132c5055fac0247aa122}{m\_playerPtrList}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_aea18678754a28a6047abdbd74f450b9f}{m\_deckPtr}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_aa9cab9699531adae5dd7aee8ff509298}{m\_deckIdx}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{195     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a78b3c905f04f06f77189f44ea3b3bdc0}{m\_numCardDraw}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_afb03e92ca0927d46acbf69824ba68cff}{m\_forceDiceRoll}};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{201     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a85c1dfd12d9e4821527823ec8ccf21db}{m\_drawLine}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{207     sf::VertexArray \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_af10ec1a97d925a30c1470d9b8fcb51d4}{m\_nextPathLine}};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{213     sf::VertexArray \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path_a03dc0de6353723534c3aa3664c636197}{m\_bridgePathLine}};}
+\DoxyCodeLine{214 \};}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{217 \textcolor{comment}{// ================= end of path Class ==================================}}
+\DoxyCodeLine{218 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{comment}{// relation operators}}
+\DoxyCodeLine{221 \textcolor{comment}{// overloading == operator}}
+\DoxyCodeLine{222 \textcolor{keywordtype}{bool} \mbox{\hyperlink{_path_8h_a349654fe86dd36198383cb171a8d5554}{operator==}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}\& thisPath,}
+\DoxyCodeLine{223                  \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}\& otherPath );}
+
+\end{DoxyCode}

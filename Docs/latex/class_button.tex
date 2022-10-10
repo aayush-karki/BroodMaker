@@ -1,0 +1,63 @@
+\hypertarget{class_button}{}\doxysection{Button Class Reference}
+\label{class_button}\index{Button@{Button}}
+
+
+a uielemnt to work as a \mbox{\hyperlink{class_button}{Button}}.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Button.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+a uielemnt to work as a \mbox{\hyperlink{class_button}{Button}}. 
+
+A class derived from \mbox{\hyperlink{class_text_box}{Text\+Box}} class.\hypertarget{class_button_autotoc_md0}{}\doxyparagraph{Example Case}\label{class_button_autotoc_md0}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// window object}}
+\DoxyCodeLine{sf::RenderWindow window( sf::VideoMode( 500, 500 ), \textcolor{stringliteral}{"{}BroodMaker"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// event object }}
+\DoxyCodeLine{sf::Event events;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// creating a Button object}}
+\DoxyCodeLine{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}} myButton;}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}{SetBodySize}}( 100, 50 );}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa37f83be67b060565445cea7fd940d8c}{SetBodyPosition}}( 55, 0 );}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_afb64ef858e0e4bfdbd73ca4fa3639b78}{SetBodyColor}}( sf::Color::Red );}
+\DoxyCodeLine{}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b6fcad37e347bde0b955eed6fdb3ed4}{SetFont}}( font );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// if you want to set a text}}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac3680e4edb6fc25bd644fe69ce443367}{SetText}}( \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// if you want to set a texture}}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{GetSpriteBody}}().\mbox{\hyperlink{class_brood_1_1_sprite_handler_a257b9aa14240d469a5558f3cd1e2ded6}{SetSpriteLength}}( 50 );}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{GetSpriteBody}}().\mbox{\hyperlink{class_brood_1_1_sprite_handler_aa5b1f8a3bd4567a281a9e9ef0e3c883a}{SetSpriteHeight}}( 50 );}
+\DoxyCodeLine{\textcolor{comment}{// loading the texture}}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{GetSpriteBody}}().\mbox{\hyperlink{class_brood_1_1_sprite_handler_a2208776de455e333b5755335f678db02}{SetTextureFromFilePath}}( fileName );}
+\DoxyCodeLine{myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_ae190eba657db8d458b4105c1e7ce165d}{GetSpriteBody}}().\mbox{\hyperlink{class_brood_1_1_sprite_handler_a5ac5756649b5396c2e9a7bfd9bff49f8}{SetSpriteFromTexture}}( 0 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//app loop}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}( !exit )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// event loop}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// logic }}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_aca2ed0939aacd97a03a4ca455aa2c18c}{DoElement}}()) \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}myButton Pressed"{}} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// render}}
+\DoxyCodeLine{    myButton.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}{Draw}}( window );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_button_8h}{Button.\+h}}\end{DoxyCompactItemize}

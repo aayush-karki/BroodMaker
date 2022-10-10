@@ -1,0 +1,785 @@
+\hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card}{}\doxysection{Brood\+::Application\+::Components\+::Display\+Card Class Reference}
+\label{class_brood_1_1_application_1_1_components_1_1_display_card}\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+
+
+{\ttfamily \#include $<$Display\+Card.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Components\+::Display\+Card\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_brood_1_1_application_1_1_components_1_1_display_card}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a1adc86951df08119246586f5facc9381}{Display\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_ab2737ff8d5eaf6feec3cea04fcf14c4e}{$\sim$\+Display\+Card}} ()
+\begin{DoxyCompactList}\small\item\em default destrctor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a2df55879dce3d283ad887fd0db58a6b0}{Display\+Card}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} \&a\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} \& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a5de52189ff1bd8e7d34f926917b7b5c7}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} \&a\+\_\+other)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a165a04f7975066585bfe39fbde213e18}{Inialize\+Display\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the display card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a6006de931fd7b6acf5d9ee168a9ec2a5}{Initialize\+Display\+Card}} (\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Display\+Card\+Data}} \&a\+\_\+display\+Card\+Data)
+\begin{DoxyCompactList}\small\item\em initializes the display\+Card with the passed data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Display\+Card\+Data}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_af94bf62b6b78875dc09d1b1706055c81}{Get\+Data\+To\+Save}} ()
+\begin{DoxyCompactList}\small\item\em creates and returns display\+Card data struct \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a1febed4ac4be946b7f570d1a3eb2e895}{Save\+Data\+To\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} data from passed file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a9a283ebeb777ddc0140b99f0a074d641}{Load\+Data\+From\+File}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$a\+\_\+file\+Access\+Ptr)
+\begin{DoxyCompactList}\small\item\em loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} and its path data from passed file \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_abcea83d7ddb4d5505a93c458b30a70e5}{Get\+Front\+Bg\+File\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get a front background filename. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a5453662515c3858d630b5d9a9d366457}{Get\+Back\+Bg\+File\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get a back background filename. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_affa4b8c55621ff64b9e7b963637c765b}{Get\+Front\+Time\+Prompt\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the front\+Time prompt ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a9bea4ae1dfa2ad5edf6c54b75e4a1462}{Get\+Front\+Time\+Value\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the front\+Time value ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a744fb6ee0e528d668dd983e4d5d94f1c}{Get\+Up\+Prompt\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the up prompt ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a5446cd971f45e6574f26c0fd0c5777ad}{Get\+Up\+Value\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the up value ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aa94139fdffb80262db2ccfdaa3b00946}{Get\+Down\+Prompt\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the down prompt ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a7cbb88e334fb3dcf53317b23e01325ec}{Get\+Down\+Value\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the down value ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a6edea19bae4f15d69baf30273dc0e8ab}{Get\+Turn\+Card\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the turn card ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a9caf3bcf6b71324e25a6f0b44f68c8dc}{Get\+Back\+Time\+Prompt\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the back time prompt ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a5b83e547cc891080f7a3b5f6a8b38821}{Get\+Back\+Time\+Value\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the back time value ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_af8d6a1089242f0258f07364964f92809}{Get\+Question\+Prompt\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the answer prompt ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_ae9f0e439381ca115e11de91c6b3f10d8}{Get\+Question\+Value\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the answer value ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a8c5ac56c31abc5c2a361e2bb37903731}{Get\+Answer\+Prompt\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the user answer prompt ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a74e2ef9ca720c84d4d26860fb2f0487b}{Get\+Answer\+Value\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the user answer value ui element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_ad3401134fd24b9aa7993e59351a1a254}{Get\+Submit\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the submit ui element. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aa2476f7058ff162d15455d94313d48c7}{Get\+Furtherst\+Bottom\+Right\+Cordinate}} ()
+\begin{DoxyCompactList}\small\item\em gets the bottom right cordinate of the box that encloses all the child component \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_af2f24d08d360a003803b42edb26be19b}{Get\+Nearest\+Top\+Left\+Cordinate}} ()
+\begin{DoxyCompactList}\small\item\em gets top left cordinate of the box that encloses all the child component \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_abced6845034a379946207999931d61f8}{Set\+Front\+Bg\+File\+Name}} (std\+::string a\+\_\+front\+Bg\+Filename)
+\begin{DoxyCompactList}\small\item\em Setter function to set a front background filename. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a61df385085482bf08f39c29d5ccf4074}{Set\+Back\+Bg\+File\+Name}} (std\+::string a\+\_\+back\+Bg\+Filename)
+\begin{DoxyCompactList}\small\item\em Setter function to set a back background filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a9051db6b286910e0ccbc7d17eee35316}{Set\+Card\+Info\+To\+Display}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$a\+\_\+card\+Info\+To\+Display)
+\begin{DoxyCompactList}\small\item\em setter funciton to set the card info that will be used to display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aee83dc28daa4a0d452210978506e9461}{Toggle\+Card\+Face}} ()
+\begin{DoxyCompactList}\small\item\em toggles the background \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a37c3924ea45b7d3b123a1c7212d4390b}{Set\+Card\+Front}} (bool a\+\_\+curr\+Front)
+\begin{DoxyCompactList}\small\item\em sets m\+\_\+curr\+Front \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a43ed37f690361e622ccc16452f066335}{Update\+Displayed\+Text}} ()
+\begin{DoxyCompactList}\small\item\em updates the displayed text from the saved card\+Info \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a4b120d3523dcd532a5055fbd6900011d}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the body to the render window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a2719850df670711b691a64b13b2c8e46}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a172cb33767e5fd2897d630c6e5c6a44e}{Get\+Comp\+Upper\+Pos}} (\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+comp)
+\begin{DoxyCompactList}\small\item\em Getter function to get the bottom right coridinate of the passed component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_ad2bdcd47f6a7a5b9a47938e62c162f54}{Update\+Largest\+Upper\+Pos}} (sf\+::\+Vector2f \&a\+\_\+largest\+Upper\+Pos, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+comp)
+\begin{DoxyCompactList}\small\item\em updates the passed largest upper pos by comparaing it with the upper position of the passed component \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aada3e1c200d75be6b259c583e69e31d4}{Update\+Smallest\+Lower\+Pos}} (sf\+::\+Vector2f \&a\+\_\+smallest\+Lower\+Pos, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+comp)
+\begin{DoxyCompactList}\small\item\em updates the passed smallest lower pos by comparaing it with the lower position of the passed component \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a950e7efa59cbed27af09b480ae68a6a8}{m\+\_\+is\+Curr\+Front}}
+\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a1455eac43b9285f46ff972dd3eaa52ed}{m\+\_\+front\+Bg\+File\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a9e8ca6a34c1ebf97e241e8c3755b0d13}{m\+\_\+back\+Bg\+File\+Name}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_af8d25d653390de148061606c5e5c5721}{m\+\_\+card\+Info\+To\+Display}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_ac2e3f58d639ea2b8adf57380dc1df6c4}{m\+\_\+\+Txt\+Front\+Time\+Promt}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aa29800d7d6c8c529ecc48e90863c000f}{m\+\_\+\+Txt\+Front\+Time\+Value}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a07c1b1e6d715892abebd8e3a35405c7c}{m\+\_\+\+Txt\+Up\+Promt}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a6f63286c6276d5823eb610add4946bcc}{m\+\_\+\+Txt\+Up\+Value}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a4d190b53466d5849869f0b26deeb30d3}{m\+\_\+\+Txt\+Down\+Prompt}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_ae14e74a9daec4ccb6bd688235246466d}{m\+\_\+\+Txt\+Down\+Value}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aceaf0c8013132b3d93e90903895a2af4}{m\+\_\+\+Btn\+Turn\+Card}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a36101c279e7bcf26224ec4d648a6687e}{m\+\_\+\+Txt\+Back\+Time\+Promt}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a7beff87482160bc2fe9c529ac1855f82}{m\+\_\+\+Txt\+Back\+Time\+Value}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a7c5fe0ed2f70693122ff902c36854ec2}{m\+\_\+\+Txt\+Question\+Prompt}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a4e636fe518077d4a9f30f85386dd79f9}{m\+\_\+\+Txt\+Question\+Value}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a567c73126f44e0eae5a07eae461fed82}{m\+\_\+\+Txt\+User\+Answer\+Prompt}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_afa1d7d2536b93ee9fb9af59680002aa1}{m\+\_\+\+Txt\+User\+Answer\+Value}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_aea0f3513591bb9cde9fe8d8e9b99fded}{m\+\_\+\+Btn\+Submit}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a1adc86951df08119246586f5facc9381}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a1adc86951df08119246586f5facc9381}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!DisplayCard@{DisplayCard}}
+\index{DisplayCard@{DisplayCard}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{DisplayCard()}{DisplayCard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Display\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_ab2737ff8d5eaf6feec3cea04fcf14c4e}\label{class_brood_1_1_application_1_1_components_1_1_display_card_ab2737ff8d5eaf6feec3cea04fcf14c4e}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!````~DisplayCard@{$\sim$DisplayCard}}
+\index{````~DisplayCard@{$\sim$DisplayCard}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{$\sim$DisplayCard()}{~DisplayCard()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::$\sim$\+Display\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destrctor 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a2df55879dce3d283ad887fd0db58a6b0}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a2df55879dce3d283ad887fd0db58a6b0}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!DisplayCard@{DisplayCard}}
+\index{DisplayCard@{DisplayCard}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{DisplayCard()}{DisplayCard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Display\+Card (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} \&}]{a\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other} & reference to the other display card which is used to copy the data form \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a2719850df670711b691a64b13b2c8e46}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a2719850df670711b691a64b13b2c8e46}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger 
+
+@virtual 
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a08a2bc12d60d35ca91635b55965ca6fa}{Brood\+::\+Brood\+UI\+::\+Button}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a4b120d3523dcd532a5055fbd6900011d}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a4b120d3523dcd532a5055fbd6900011d}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the body to the render window. 
+
+@virtual
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}{Brood\+::\+Brood\+UI\+::\+UIElement}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a8c5ac56c31abc5c2a361e2bb37903731}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a8c5ac56c31abc5c2a361e2bb37903731}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetAnswerPromptPtr@{GetAnswerPromptPtr}}
+\index{GetAnswerPromptPtr@{GetAnswerPromptPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetAnswerPromptPtr()}{GetAnswerPromptPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Answer\+Prompt\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the user answer prompt ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the user answer prompt ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a74e2ef9ca720c84d4d26860fb2f0487b}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a74e2ef9ca720c84d4d26860fb2f0487b}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetAnswerValuePtr@{GetAnswerValuePtr}}
+\index{GetAnswerValuePtr@{GetAnswerValuePtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetAnswerValuePtr()}{GetAnswerValuePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Answer\+Value\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the user answer value ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the user answer value ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a5453662515c3858d630b5d9a9d366457}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a5453662515c3858d630b5d9a9d366457}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetBackBgFileName@{GetBackBgFileName}}
+\index{GetBackBgFileName@{GetBackBgFileName}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetBackBgFileName()}{GetBackBgFileName()}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Back\+Bg\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get a back background filename. 
+
+\begin{DoxyReturn}{Returns}
+back background filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a9caf3bcf6b71324e25a6f0b44f68c8dc}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a9caf3bcf6b71324e25a6f0b44f68c8dc}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetBackTimePromptPtr@{GetBackTimePromptPtr}}
+\index{GetBackTimePromptPtr@{GetBackTimePromptPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetBackTimePromptPtr()}{GetBackTimePromptPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Back\+Time\+Prompt\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the back time prompt ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the back time prompt ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a5b83e547cc891080f7a3b5f6a8b38821}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a5b83e547cc891080f7a3b5f6a8b38821}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetBackTimeValuePtr@{GetBackTimeValuePtr}}
+\index{GetBackTimeValuePtr@{GetBackTimeValuePtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetBackTimeValuePtr()}{GetBackTimeValuePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Back\+Time\+Value\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the back time value ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the back time value ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a172cb33767e5fd2897d630c6e5c6a44e}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a172cb33767e5fd2897d630c6e5c6a44e}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetCompUpperPos@{GetCompUpperPos}}
+\index{GetCompUpperPos@{GetCompUpperPos}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetCompUpperPos()}{GetCompUpperPos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Comp\+Upper\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Getter function to get the bottom right coridinate of the passed component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+comp} & component whose bottom right coridinate is to be found\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the bottom right coridinate of the passed component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_af94bf62b6b78875dc09d1b1706055c81}\label{class_brood_1_1_application_1_1_components_1_1_display_card_af94bf62b6b78875dc09d1b1706055c81}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetDataToSave@{GetDataToSave}}
+\index{GetDataToSave@{GetDataToSave}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetDataToSave()}{GetDataToSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Display\+Card\+Data}} Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Data\+To\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates and returns display\+Card data struct 
+
+\begin{DoxyReturn}{Returns}
+display\+Card data struct with the display\+Card data in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aa94139fdffb80262db2ccfdaa3b00946}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aa94139fdffb80262db2ccfdaa3b00946}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetDownPromptPtr@{GetDownPromptPtr}}
+\index{GetDownPromptPtr@{GetDownPromptPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetDownPromptPtr()}{GetDownPromptPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Down\+Prompt\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the down prompt ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the down prompt ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a7cbb88e334fb3dcf53317b23e01325ec}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a7cbb88e334fb3dcf53317b23e01325ec}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetDownValuePtr@{GetDownValuePtr}}
+\index{GetDownValuePtr@{GetDownValuePtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetDownValuePtr()}{GetDownValuePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Down\+Value\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the down value ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the down value ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_abcea83d7ddb4d5505a93c458b30a70e5}\label{class_brood_1_1_application_1_1_components_1_1_display_card_abcea83d7ddb4d5505a93c458b30a70e5}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetFrontBgFileName@{GetFrontBgFileName}}
+\index{GetFrontBgFileName@{GetFrontBgFileName}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetFrontBgFileName()}{GetFrontBgFileName()}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Front\+Bg\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get a front background filename. 
+
+\begin{DoxyReturn}{Returns}
+front background filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_affa4b8c55621ff64b9e7b963637c765b}\label{class_brood_1_1_application_1_1_components_1_1_display_card_affa4b8c55621ff64b9e7b963637c765b}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetFrontTimePromptPtr@{GetFrontTimePromptPtr}}
+\index{GetFrontTimePromptPtr@{GetFrontTimePromptPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetFrontTimePromptPtr()}{GetFrontTimePromptPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Front\+Time\+Prompt\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the front\+Time prompt ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the front\+Time prompt ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a9bea4ae1dfa2ad5edf6c54b75e4a1462}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a9bea4ae1dfa2ad5edf6c54b75e4a1462}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetFrontTimeValuePtr@{GetFrontTimeValuePtr}}
+\index{GetFrontTimeValuePtr@{GetFrontTimeValuePtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetFrontTimeValuePtr()}{GetFrontTimeValuePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Front\+Time\+Value\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the front\+Time value ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the front\+Time value ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aa2476f7058ff162d15455d94313d48c7}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aa2476f7058ff162d15455d94313d48c7}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetFurtherstBottomRightCordinate@{GetFurtherstBottomRightCordinate}}
+\index{GetFurtherstBottomRightCordinate@{GetFurtherstBottomRightCordinate}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetFurtherstBottomRightCordinate()}{GetFurtherstBottomRightCordinate()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Furtherst\+Bottom\+Right\+Cordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the bottom right cordinate of the box that encloses all the child component 
+
+\begin{DoxyReturn}{Returns}
+gets the bottom right cordinate of the box that encloses all the child component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_af2f24d08d360a003803b42edb26be19b}\label{class_brood_1_1_application_1_1_components_1_1_display_card_af2f24d08d360a003803b42edb26be19b}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetNearestTopLeftCordinate@{GetNearestTopLeftCordinate}}
+\index{GetNearestTopLeftCordinate@{GetNearestTopLeftCordinate}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetNearestTopLeftCordinate()}{GetNearestTopLeftCordinate()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Nearest\+Top\+Left\+Cordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets top left cordinate of the box that encloses all the child component 
+
+\begin{DoxyReturn}{Returns}
+gets top left cordinate of the box that encloses all the child component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_af8d6a1089242f0258f07364964f92809}\label{class_brood_1_1_application_1_1_components_1_1_display_card_af8d6a1089242f0258f07364964f92809}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetQuestionPromptPtr@{GetQuestionPromptPtr}}
+\index{GetQuestionPromptPtr@{GetQuestionPromptPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetQuestionPromptPtr()}{GetQuestionPromptPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Question\+Prompt\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the answer prompt ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the answer prompt ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_ae9f0e439381ca115e11de91c6b3f10d8}\label{class_brood_1_1_application_1_1_components_1_1_display_card_ae9f0e439381ca115e11de91c6b3f10d8}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetQuestionValuePtr@{GetQuestionValuePtr}}
+\index{GetQuestionValuePtr@{GetQuestionValuePtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetQuestionValuePtr()}{GetQuestionValuePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Question\+Value\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the answer value ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the answer value ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_ad3401134fd24b9aa7993e59351a1a254}\label{class_brood_1_1_application_1_1_components_1_1_display_card_ad3401134fd24b9aa7993e59351a1a254}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetSubmitPtr@{GetSubmitPtr}}
+\index{GetSubmitPtr@{GetSubmitPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetSubmitPtr()}{GetSubmitPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Submit\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the submit ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the submit ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a6edea19bae4f15d69baf30273dc0e8ab}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a6edea19bae4f15d69baf30273dc0e8ab}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetTurnCardPtr@{GetTurnCardPtr}}
+\index{GetTurnCardPtr@{GetTurnCardPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetTurnCardPtr()}{GetTurnCardPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Turn\+Card\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the turn card ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the turn card ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a744fb6ee0e528d668dd983e4d5d94f1c}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a744fb6ee0e528d668dd983e4d5d94f1c}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetUpPromptPtr@{GetUpPromptPtr}}
+\index{GetUpPromptPtr@{GetUpPromptPtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetUpPromptPtr()}{GetUpPromptPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Up\+Prompt\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the up prompt ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the up prompt ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a5446cd971f45e6574f26c0fd0c5777ad}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a5446cd971f45e6574f26c0fd0c5777ad}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!GetUpValuePtr@{GetUpValuePtr}}
+\index{GetUpValuePtr@{GetUpValuePtr}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{GetUpValuePtr()}{GetUpValuePtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Get\+Up\+Value\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the up value ui element. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the up value ui element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a165a04f7975066585bfe39fbde213e18}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a165a04f7975066585bfe39fbde213e18}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!InializeDisplayCard@{InializeDisplayCard}}
+\index{InializeDisplayCard@{InializeDisplayCard}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{InializeDisplayCard()}{InializeDisplayCard()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Inialize\+Display\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the display card. 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a6006de931fd7b6acf5d9ee168a9ec2a5}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a6006de931fd7b6acf5d9ee168a9ec2a5}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!InitializeDisplayCard@{InitializeDisplayCard}}
+\index{InitializeDisplayCard@{InitializeDisplayCard}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{InitializeDisplayCard()}{InitializeDisplayCard()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Initialize\+Display\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___display_card_data}{Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Display\+Card\+Data}} \&}]{a\+\_\+display\+Card\+Data }\end{DoxyParamCaption})}
+
+
+
+initializes the display\+Card with the passed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+display\+Card\+Data} & reference of the card info data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a9a283ebeb777ddc0140b99f0a074d641}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a9a283ebeb777ddc0140b99f0a074d641}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!LoadDataFromFile@{LoadDataFromFile}}
+\index{LoadDataFromFile@{LoadDataFromFile}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{LoadDataFromFile()}{LoadDataFromFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Load\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} and its path data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a5de52189ff1bd8e7d34f926917b7b5c7}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a5de52189ff1bd8e7d34f926917b7b5c7}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}} \& Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} \&}]{a\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other} & reference to the other display card which is used to copy the data form\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to this display card 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a1febed4ac4be946b7f570d1a3eb2e895}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a1febed4ac4be946b7f570d1a3eb2e895}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!SaveDataToFile@{SaveDataToFile}}
+\index{SaveDataToFile@{SaveDataToFile}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{SaveDataToFile()}{SaveDataToFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Save\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood\+::\+Application\+::\+File\+Access}} $\ast$}]{a\+\_\+file\+Access\+Ptr }\end{DoxyParamCaption})}
+
+
+
+loads the \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card}{Display\+Card}} data from passed file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file\+Access\+Ptr} & pointer to a file Access object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a61df385085482bf08f39c29d5ccf4074}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a61df385085482bf08f39c29d5ccf4074}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!SetBackBgFileName@{SetBackBgFileName}}
+\index{SetBackBgFileName@{SetBackBgFileName}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{SetBackBgFileName()}{SetBackBgFileName()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Set\+Back\+Bg\+File\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+back\+Bg\+Filename }\end{DoxyParamCaption})}
+
+
+
+Setter function to set a back background filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+back\+Bg\+Filename} & back background filename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if texture was successfully set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a37c3924ea45b7d3b123a1c7212d4390b}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a37c3924ea45b7d3b123a1c7212d4390b}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!SetCardFront@{SetCardFront}}
+\index{SetCardFront@{SetCardFront}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{SetCardFront()}{SetCardFront()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Set\+Card\+Front (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+curr\+Front }\end{DoxyParamCaption})}
+
+
+
+sets m\+\_\+curr\+Front 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+curr\+Front} & If current bg is using front then toggles it to use back \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a9051db6b286910e0ccbc7d17eee35316}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a9051db6b286910e0ccbc7d17eee35316}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!SetCardInfoToDisplay@{SetCardInfoToDisplay}}
+\index{SetCardInfoToDisplay@{SetCardInfoToDisplay}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{SetCardInfoToDisplay()}{SetCardInfoToDisplay()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Set\+Card\+Info\+To\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}} $\ast$}]{a\+\_\+card\+Info\+To\+Display }\end{DoxyParamCaption})}
+
+
+
+setter funciton to set the card info that will be used to display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+card\+Info\+To\+Display} & pointer to the card\+Info object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_abced6845034a379946207999931d61f8}\label{class_brood_1_1_application_1_1_components_1_1_display_card_abced6845034a379946207999931d61f8}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!SetFrontBgFileName@{SetFrontBgFileName}}
+\index{SetFrontBgFileName@{SetFrontBgFileName}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{SetFrontBgFileName()}{SetFrontBgFileName()}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Set\+Front\+Bg\+File\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+front\+Bg\+Filename }\end{DoxyParamCaption})}
+
+
+
+Setter function to set a front background filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+front\+Bg\+Filename} & front background filename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if texture was successfully set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aee83dc28daa4a0d452210978506e9461}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aee83dc28daa4a0d452210978506e9461}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!ToggleCardFace@{ToggleCardFace}}
+\index{ToggleCardFace@{ToggleCardFace}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{ToggleCardFace()}{ToggleCardFace()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Toggle\+Card\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+toggles the background 
+
+If current bg is using front then toggles it to use back \mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a43ed37f690361e622ccc16452f066335}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a43ed37f690361e622ccc16452f066335}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!UpdateDisplayedText@{UpdateDisplayedText}}
+\index{UpdateDisplayedText@{UpdateDisplayedText}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{UpdateDisplayedText()}{UpdateDisplayedText()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Update\+Displayed\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+updates the displayed text from the saved card\+Info 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_ad2bdcd47f6a7a5b9a47938e62c162f54}\label{class_brood_1_1_application_1_1_components_1_1_display_card_ad2bdcd47f6a7a5b9a47938e62c162f54}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!UpdateLargestUpperPos@{UpdateLargestUpperPos}}
+\index{UpdateLargestUpperPos@{UpdateLargestUpperPos}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{UpdateLargestUpperPos()}{UpdateLargestUpperPos()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Update\+Largest\+Upper\+Pos (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f \&}]{a\+\_\+largest\+Upper\+Pos,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the passed largest upper pos by comparaing it with the upper position of the passed component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+largest\+Upper\+Pos} & largest upper pos passed by reference \\
+\hline
+{\em a\+\_\+comp} & component whose upper\+Pos is to be compared to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aada3e1c200d75be6b259c583e69e31d4}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aada3e1c200d75be6b259c583e69e31d4}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!UpdateSmallestLowerPos@{UpdateSmallestLowerPos}}
+\index{UpdateSmallestLowerPos@{UpdateSmallestLowerPos}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{UpdateSmallestLowerPos()}{UpdateSmallestLowerPos()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::\+Update\+Smallest\+Lower\+Pos (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f \&}]{a\+\_\+smallest\+Lower\+Pos,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the passed smallest lower pos by comparaing it with the lower position of the passed component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+smallest\+Lower\+Pos} & smallest lower pos passed by reference \\
+\hline
+{\em a\+\_\+comp} & component whose lower\+Pos is to be compared to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a9e8ca6a34c1ebf97e241e8c3755b0d13}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a9e8ca6a34c1ebf97e241e8c3755b0d13}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_backBgFileName@{m\_backBgFileName}}
+\index{m\_backBgFileName@{m\_backBgFileName}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_backBgFileName}{m\_backBgFileName}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+back\+Bg\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aea0f3513591bb9cde9fe8d8e9b99fded}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aea0f3513591bb9cde9fe8d8e9b99fded}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_BtnSubmit@{m\_BtnSubmit}}
+\index{m\_BtnSubmit@{m\_BtnSubmit}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_BtnSubmit}{m\_BtnSubmit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Btn\+Submit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aceaf0c8013132b3d93e90903895a2af4}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aceaf0c8013132b3d93e90903895a2af4}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_BtnTurnCard@{m\_BtnTurnCard}}
+\index{m\_BtnTurnCard@{m\_BtnTurnCard}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_BtnTurnCard}{m\_BtnTurnCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Btn\+Turn\+Card\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_af8d25d653390de148061606c5e5c5721}\label{class_brood_1_1_application_1_1_components_1_1_display_card_af8d25d653390de148061606c5e5c5721}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_cardInfoToDisplay@{m\_cardInfoToDisplay}}
+\index{m\_cardInfoToDisplay@{m\_cardInfoToDisplay}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_cardInfoToDisplay}{m\_cardInfoToDisplay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood\+::\+Application\+::\+Components\+::\+Card\+Info}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+card\+Info\+To\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a1455eac43b9285f46ff972dd3eaa52ed}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a1455eac43b9285f46ff972dd3eaa52ed}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_frontBgFileName@{m\_frontBgFileName}}
+\index{m\_frontBgFileName@{m\_frontBgFileName}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_frontBgFileName}{m\_frontBgFileName}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+front\+Bg\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a950e7efa59cbed27af09b480ae68a6a8}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a950e7efa59cbed27af09b480ae68a6a8}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_isCurrFront@{m\_isCurrFront}}
+\index{m\_isCurrFront@{m\_isCurrFront}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_isCurrFront}{m\_isCurrFront}}
+{\footnotesize\ttfamily bool Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+is\+Curr\+Front\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a36101c279e7bcf26224ec4d648a6687e}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a36101c279e7bcf26224ec4d648a6687e}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtBackTimePromt@{m\_TxtBackTimePromt}}
+\index{m\_TxtBackTimePromt@{m\_TxtBackTimePromt}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtBackTimePromt}{m\_TxtBackTimePromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Back\+Time\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a7beff87482160bc2fe9c529ac1855f82}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a7beff87482160bc2fe9c529ac1855f82}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtBackTimeValue@{m\_TxtBackTimeValue}}
+\index{m\_TxtBackTimeValue@{m\_TxtBackTimeValue}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtBackTimeValue}{m\_TxtBackTimeValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Back\+Time\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a4d190b53466d5849869f0b26deeb30d3}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a4d190b53466d5849869f0b26deeb30d3}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtDownPrompt@{m\_TxtDownPrompt}}
+\index{m\_TxtDownPrompt@{m\_TxtDownPrompt}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtDownPrompt}{m\_TxtDownPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Down\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_ae14e74a9daec4ccb6bd688235246466d}\label{class_brood_1_1_application_1_1_components_1_1_display_card_ae14e74a9daec4ccb6bd688235246466d}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtDownValue@{m\_TxtDownValue}}
+\index{m\_TxtDownValue@{m\_TxtDownValue}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtDownValue}{m\_TxtDownValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Down\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_ac2e3f58d639ea2b8adf57380dc1df6c4}\label{class_brood_1_1_application_1_1_components_1_1_display_card_ac2e3f58d639ea2b8adf57380dc1df6c4}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtFrontTimePromt@{m\_TxtFrontTimePromt}}
+\index{m\_TxtFrontTimePromt@{m\_TxtFrontTimePromt}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtFrontTimePromt}{m\_TxtFrontTimePromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Front\+Time\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_aa29800d7d6c8c529ecc48e90863c000f}\label{class_brood_1_1_application_1_1_components_1_1_display_card_aa29800d7d6c8c529ecc48e90863c000f}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtFrontTimeValue@{m\_TxtFrontTimeValue}}
+\index{m\_TxtFrontTimeValue@{m\_TxtFrontTimeValue}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtFrontTimeValue}{m\_TxtFrontTimeValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Front\+Time\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a7c5fe0ed2f70693122ff902c36854ec2}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a7c5fe0ed2f70693122ff902c36854ec2}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtQuestionPrompt@{m\_TxtQuestionPrompt}}
+\index{m\_TxtQuestionPrompt@{m\_TxtQuestionPrompt}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtQuestionPrompt}{m\_TxtQuestionPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Question\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a4e636fe518077d4a9f30f85386dd79f9}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a4e636fe518077d4a9f30f85386dd79f9}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtQuestionValue@{m\_TxtQuestionValue}}
+\index{m\_TxtQuestionValue@{m\_TxtQuestionValue}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtQuestionValue}{m\_TxtQuestionValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Question\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a07c1b1e6d715892abebd8e3a35405c7c}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a07c1b1e6d715892abebd8e3a35405c7c}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtUpPromt@{m\_TxtUpPromt}}
+\index{m\_TxtUpPromt@{m\_TxtUpPromt}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtUpPromt}{m\_TxtUpPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Up\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a6f63286c6276d5823eb610add4946bcc}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a6f63286c6276d5823eb610add4946bcc}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtUpValue@{m\_TxtUpValue}}
+\index{m\_TxtUpValue@{m\_TxtUpValue}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtUpValue}{m\_TxtUpValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+Up\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_a567c73126f44e0eae5a07eae461fed82}\label{class_brood_1_1_application_1_1_components_1_1_display_card_a567c73126f44e0eae5a07eae461fed82}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtUserAnswerPrompt@{m\_TxtUserAnswerPrompt}}
+\index{m\_TxtUserAnswerPrompt@{m\_TxtUserAnswerPrompt}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtUserAnswerPrompt}{m\_TxtUserAnswerPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+User\+Answer\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_components_1_1_display_card_afa1d7d2536b93ee9fb9af59680002aa1}\label{class_brood_1_1_application_1_1_components_1_1_display_card_afa1d7d2536b93ee9fb9af59680002aa1}} 
+\index{Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}!m\_TxtUserAnswerValue@{m\_TxtUserAnswerValue}}
+\index{m\_TxtUserAnswerValue@{m\_TxtUserAnswerValue}!Brood::Application::Components::DisplayCard@{Brood::Application::Components::DisplayCard}}
+\doxysubsubsection{\texorpdfstring{m\_TxtUserAnswerValue}{m\_TxtUserAnswerValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Components\+::\+Display\+Card\+::m\+\_\+\+Txt\+User\+Answer\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_display_card_8h}{Display\+Card.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_display_card_8cpp}{Display\+Card.\+cpp}}\end{DoxyCompactItemize}

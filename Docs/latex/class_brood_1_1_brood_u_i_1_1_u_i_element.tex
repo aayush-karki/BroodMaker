@@ -1,0 +1,838 @@
+\hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element}{}\doxysection{Brood\+::Brood\+UI\+::UIElement Class Reference}
+\label{class_brood_1_1_brood_u_i_1_1_u_i_element}\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+
+
+{\ttfamily \#include $<$UIElement.\+h$>$}
+
+Inheritance diagram for Brood\+::Brood\+UI\+::UIElement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.635036cm]{class_brood_1_1_brood_u_i_1_1_u_i_element}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ab72ba0538a154f046ac4a91c705a496c}{UIElement}} (\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} a\+\_\+element\+Type, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+parent\+Ptr=nullptr)
+\begin{DoxyCompactList}\small\item\em default Constructor \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5accb6a8bb4fe2758d7739f0f47c2b7d}{$\sim$\+UIElement}} ()
+\begin{DoxyCompactList}\small\item\em virtual destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ad76d76571e788ec71a0974df92d54eed}{UIElement}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{UIElement}} \&a\+\_\+other\+Element)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aee93d1a04399d23cfbc9c0b7857a7e80}{operator=}} (const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{UIElement}} \&a\+\_\+other\+Element)
+\begin{DoxyCompactList}\small\item\em assignment operator \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac6a877e9b684cca9a373639be58c69d3}{Get\+Element\+Type}} () const
+\begin{DoxyCompactList}\small\item\em getter function to get the element type \end{DoxyCompactList}\item 
+const sf\+::\+Rectangle\+Shape \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ab82906f3a11efd18aaa01ffb9f38b430}{Get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get a reference to the element. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7ee7ac2da47ef8f501785891dd40a2f6}{Get\+Body\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the positon of the element. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a191a6ec0417ae53a12deeb93174ade5f}{Get\+Body\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Getter function to get the size of element. \end{DoxyCompactList}\item 
+const sf\+::\+Color \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa06c9d2664397365475e39a6aa10555f}{Get\+Body\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the element\textquotesingle{}s body color. \end{DoxyCompactList}\item 
+const sf\+::\+Color \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_af21f66fdab68cb8099acf584fdf6c6e4}{Get\+Active\+Overlay\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the element\textquotesingle{}s active overlay color. \end{DoxyCompactList}\item 
+const sf\+::\+Color \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ad4102abb5b257803ef3cbd7541b99a84}{Get\+Hot\+Overlay\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the element\textquotesingle{}s hot overlay color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a6ca8845bd90a89ec0ffe435ec30c0c02}{Get\+Element\+Id\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter function to get the pointer to the element \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} object. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aecd436471de0769b0bd80a5aab710f82}{Is\+Selected}} () const
+\begin{DoxyCompactList}\small\item\em getter funciton to get if the element is curretly selected or not \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a4ef4280197f07d1cf7f6c601cb945f78}{Get\+Text}} () const
+\begin{DoxyCompactList}\small\item\em getter funciton to get the user typed text that is stored in the element \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a98e8505fbe96923742d1551f50f847c2}{Get\+Font\+Size}} () const
+\begin{DoxyCompactList}\small\item\em getter funciton to get the font size \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}{Set\+Body\+Size}} (sf\+::\+Vector2f a\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s Size. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a1d06f2c992d2e68f82c172e6506cb79e}{Set\+Body\+Size}} (float a\+\_\+sizeX, float a\+\_\+sizeY)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s Size. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa37f83be67b060565445cea7fd940d8c}{Set\+Body\+Position}} (sf\+::\+Vector2f a\+\_\+pos, bool a\+\_\+relative\+To\+Parent=false)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s Position. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a6b25e6274568034173591d614bf7401c}{Set\+Body\+Position}} (float a\+\_\+posX, float a\+\_\+posY, bool a\+\_\+relative\+To\+Parent=false)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s Position. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b6fcad37e347bde0b955eed6fdb3ed4}{Set\+Font}} (sf\+::\+Font \&a\+\_\+font)
+\begin{DoxyCompactList}\small\item\em setter function to set the font size \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5d80523467040d5d75d0742d26c077e8}{Set\+Font\+Color}} (sf\+::\+Color a\+\_\+color=\mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+White}})
+\begin{DoxyCompactList}\small\item\em setter function to set the Font color \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ab3a008f9cb9ce8c6bf338515e3767506}{Set\+Font\+Size}} (int a\+\_\+font\+Size=12)
+\begin{DoxyCompactList}\small\item\em setter function to set the Font size \end{DoxyCompactList}\item 
+virtual virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac3680e4edb6fc25bd644fe69ce443367}{Set\+Text}} (std\+::string a\+\_\+text=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em setter function to set the text that is displayed in the button \end{DoxyCompactList}\item 
+virtual virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a4f20356fd55746d4d27767a358021042}{Set\+Selected}} (bool a\+\_\+selected)
+\begin{DoxyCompactList}\small\item\em setter function to set the state of the element i.\+e. if it is seleected or not \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_afb64ef858e0e4bfdbd73ca4fa3639b78}{Set\+Body\+Color}} (sf\+::\+Color a\+\_\+body\+Color)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element body color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a8b6fc7a31add16161734d34bd1dbd8e9}{Set\+Active\+Overlay\+Color}} (sf\+::\+Color a\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s active color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ac97cdc5598f5902a63e4298d2fabf7c5}{Set\+Hot\+Overlay\+Color}} (sf\+::\+Color a\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Setter function to set the element\textquotesingle{}s hot color. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_abdbc0f8839a80bd8b533c009fa9ada98}{Is\+Mouse\+Over\+Element}} ()
+\begin{DoxyCompactList}\small\item\em Check if the mouse is hovering over the element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a40f3ca769e75cecc36836977817b5604}{Is\+Almost\+Active\+Element}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the element is the active element or not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa11b02db6e79d0910b957a512c6aa452}{Is\+Curr\+Active\+Element}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the element is the current active element or not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a4e93e8bf02486255feba18293aa1c9b0}{Is\+Hot\+Element}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the element is the hot element or not. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ae13e9edc8d67e64a2d53d52a30af27fa}{Do\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the logics of the element is to be executed or not \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the body to the render window. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5a2ed094c6d67350c2011b41ee931429}{Debugger}} ()=0
+\begin{DoxyCompactList}\small\item\em changes the text of the element to its the element ID when debug is on and changes it back to the text it had before debugging when debug is off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b822cfaaf70ec6e5ce703406b7a5c6f}{Set\+Text\+Position}} ()
+\begin{DoxyCompactList}\small\item\em setter funciton to set the position of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a045beb494978b9b4fcfc10c7cbf7d75f}{Set\+Draw\+Overlay}} ()
+\begin{DoxyCompactList}\small\item\em Setter function to set if the overlay is to be drawn or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a3ab5092a74a62aecb832fe6ca3105cd1}{m\+\_\+element\+Type}}
+\begin{DoxyCompactList}\small\item\em stores the type of element stored \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a6dd20d14c39f7a65d2de5776d5dfaf38}{m\+\_\+element\+Id}}
+\begin{DoxyCompactList}\small\item\em uniqie id of the element \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ab416c4f6401ce0f5f74c76d4532af8c8}{m\+\_\+body}}
+\begin{DoxyCompactList}\small\item\em element body \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a2a2fe3478d54cb35a55ed5fd664f8ce9}{m\+\_\+body\+Over\+Lay}}
+\begin{DoxyCompactList}\small\item\em element body \end{DoxyCompactList}\item 
+sf\+::\+Color \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a61585402254f61b163f6fb498b892353}{m\+\_\+hot\+Overlay\+Color}}
+\begin{DoxyCompactList}\small\item\em color when mouse is over it \end{DoxyCompactList}\item 
+sf\+::\+Color \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a5fd2f0bce01e881cf459d9c72c7dd168}{m\+\_\+active\+Overlay\+Color}}
+\begin{DoxyCompactList}\small\item\em color when it is active element \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_ad287fc3829729dc24a4f26f38a4d0afb}{m\+\_\+draw\+Overlay}}
+\begin{DoxyCompactList}\small\item\em true if overlay is to be drawn \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a009e751261dcf070e119c4820858dfbb}{m\+\_\+is\+Selected}}
+\begin{DoxyCompactList}\small\item\em is true if the element is selected \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a61842be8d38e3ec6fe374e5f53ad1d61}{m\+\_\+text}}
+\begin{DoxyCompactList}\small\item\em text content \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aa4e22676cae01bd10629e6d76802892a}{m\+\_\+text\+Content}}
+\begin{DoxyCompactList}\small\item\em saves the text content \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a79709b92ae61029cbeb238dda7f7beaa}{m\+\_\+debug\+Text\+Save}}
+\begin{DoxyCompactList}\small\item\em saves the text content before replacing by uiid \end{DoxyCompactList}\item 
+sf\+::\+Font $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a53da24265ba209436e406e91a0b3491a}{m\+\_\+font}}
+\begin{DoxyCompactList}\small\item\em element\textquotesingle{}s font \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a1a29859a9853af52cf77d5e0bfd7313e}{m\+\_\+font\+Size}}
+\begin{DoxyCompactList}\small\item\em font size \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_a32efc1ded89aec9f013dca7fb782916d}{m\+\_\+draw\+Text}}
+\begin{DoxyCompactList}\small\item\em is true if text is set and hence draw to screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ab72ba0538a154f046ac4a91c705a496c}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ab72ba0538a154f046ac4a91c705a496c}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!UIElement@{UIElement}}
+\index{UIElement@{UIElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{UIElement()}{UIElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily UIElement\+::\+UIElement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}}}]{a\+\_\+element\+Type,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+parent\+Ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+default Constructor 
+
+Inializes the member variables and adds it to the id to element map.
+
+Sets hotelement overlay color to lighter overlay and sets active\+Ovelay to a darker overlay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+element\+Type} & Type of UI element \\
+\hline
+{\em m\+\_\+parent\+Ptr} & pointer to the parent element; if parent does not exist then nullptr -\/\texorpdfstring{$>$}{>} default value nullptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a5accb6a8bb4fe2758d7739f0f47c2b7d}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a5accb6a8bb4fe2758d7739f0f47c2b7d}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!````~UIElement@{$\sim$UIElement}}
+\index{````~UIElement@{$\sim$UIElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{$\sim$UIElement()}{~UIElement()}}
+{\footnotesize\ttfamily UIElement\+::$\sim$\+UIElement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+virtual destructor 
+
+@virtual
+
+Deletes element form the parent\textquotesingle{}s child list if parent exist and assigns the its child element to the parent element if parent exist. And finally deletes its id from the id to element map. \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ad76d76571e788ec71a0974df92d54eed}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ad76d76571e788ec71a0974df92d54eed}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!UIElement@{UIElement}}
+\index{UIElement@{UIElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{UIElement()}{UIElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily UIElement\+::\+UIElement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{UIElement}} \&}]{a\+\_\+other\+Element }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Element} & reference to the ui\+Element which is used to copy the data form \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a5a2ed094c6d67350c2011b41ee931429}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a5a2ed094c6d67350c2011b41ee931429}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void UIElement\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+changes the text of the element to its the element ID when debug is on and changes it back to the text it had before debugging when debug is off. 
+
+
+
+Implemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a08a2bc12d60d35ca91635b55965ca6fa}{Brood\+::\+Brood\+UI\+::\+Button}}, \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a2719850df670711b691a64b13b2c8e46}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_aee081882b4267fe5438239a649d87c95}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a490e7a1893546d5389e78702f0036ccf}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_aae900d4b799a81935be0ddb8bc67086c}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ae13e9edc8d67e64a2d53d52a30af27fa}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ae13e9edc8d67e64a2d53d52a30af27fa}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!DoElement@{DoElement}}
+\index{DoElement@{DoElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{DoElement()}{DoElement()}}
+{\footnotesize\ttfamily bool UIElement\+::\+Do\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+checks if the logics of the element is to be executed or not 
+
+It checks the mouse position and button state to determine if to execute the elements logic or not. It does this by manupulating the element selection class. It also set the overlay
+
+\begin{DoxyReturn}{Returns}
+true if the element\textquotesingle{}s funciton is to be executed; else false 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_aca2ed0939aacd97a03a4ca455aa2c18c}{Brood\+::\+Brood\+UI\+::\+Button}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a1523cd65885636efa7e76703e2594a10}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_ae8c123d3939e823a265f7662ec5f5e44}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a42f683068ad03611c90e41334df87ba8}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void UIElement\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draws the body to the render window. 
+
+@virtual
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_display_card_a4b120d3523dcd532a5055fbd6900011d}{Brood\+::\+Application\+::\+Components\+::\+Display\+Card}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ae190f54affbff3a73666c6b845a8fb18}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a5163e101ea44d7f88d9bbff09dad4496}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a0f1e1537424cb73a4ef925eb0bc8961a}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_af21f66fdab68cb8099acf584fdf6c6e4}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_af21f66fdab68cb8099acf584fdf6c6e4}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetActiveOverlayColor@{GetActiveOverlayColor}}
+\index{GetActiveOverlayColor@{GetActiveOverlayColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetActiveOverlayColor()}{GetActiveOverlayColor()}}
+{\footnotesize\ttfamily const sf\+::\+Color UIElement\+::\+Get\+Active\+Overlay\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the element\textquotesingle{}s active overlay color. 
+
+@reutrn color of the body when it is active \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ab82906f3a11efd18aaa01ffb9f38b430}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ab82906f3a11efd18aaa01ffb9f38b430}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetBody@{GetBody}}
+\index{GetBody@{GetBody}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetBody()}{GetBody()}}
+{\footnotesize\ttfamily const sf\+::\+Rectangle\+Shape \& UIElement\+::\+Get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get a reference to the element. 
+
+\begin{DoxyReturn}{Returns}
+constant reference to the element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_aa06c9d2664397365475e39a6aa10555f}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_aa06c9d2664397365475e39a6aa10555f}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetBodyColor@{GetBodyColor}}
+\index{GetBodyColor@{GetBodyColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetBodyColor()}{GetBodyColor()}}
+{\footnotesize\ttfamily const sf\+::\+Color UIElement\+::\+Get\+Body\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the element\textquotesingle{}s body color. 
+
+@reutrn color of the body \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a7ee7ac2da47ef8f501785891dd40a2f6}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a7ee7ac2da47ef8f501785891dd40a2f6}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetBodyPosition@{GetBodyPosition}}
+\index{GetBodyPosition@{GetBodyPosition}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetBodyPosition()}{GetBodyPosition()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f UIElement\+::\+Get\+Body\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the positon of the element. 
+
+\begin{DoxyReturn}{Returns}
+postion of the element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a191a6ec0417ae53a12deeb93174ade5f}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a191a6ec0417ae53a12deeb93174ade5f}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetBodySize@{GetBodySize}}
+\index{GetBodySize@{GetBodySize}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetBodySize()}{GetBodySize()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f UIElement\+::\+Get\+Body\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function to get the size of element. 
+
+\begin{DoxyReturn}{Returns}
+size of the body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a6ca8845bd90a89ec0ffe435ec30c0c02}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a6ca8845bd90a89ec0ffe435ec30c0c02}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetElementIdPtr@{GetElementIdPtr}}
+\index{GetElementIdPtr@{GetElementIdPtr}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetElementIdPtr()}{GetElementIdPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} $\ast$ UIElement\+::\+Get\+Element\+Id\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the pointer to the element \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} object. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the element \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Id}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ac6a877e9b684cca9a373639be58c69d3}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ac6a877e9b684cca9a373639be58c69d3}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetElementType@{GetElementType}}
+\index{GetElementType@{GetElementType}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetElementType()}{GetElementType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} UIElement\+::\+Get\+Element\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter function to get the element type 
+
+\begin{DoxyReturn}{Returns}
+the element type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a98e8505fbe96923742d1551f50f847c2}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a98e8505fbe96923742d1551f50f847c2}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetFontSize@{GetFontSize}}
+\index{GetFontSize@{GetFontSize}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetFontSize()}{GetFontSize()}}
+{\footnotesize\ttfamily unsigned int UIElement\+::\+Get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter funciton to get the font size 
+
+\begin{DoxyReturn}{Returns}
+size of the font 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ad4102abb5b257803ef3cbd7541b99a84}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ad4102abb5b257803ef3cbd7541b99a84}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetHotOverlayColor@{GetHotOverlayColor}}
+\index{GetHotOverlayColor@{GetHotOverlayColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetHotOverlayColor()}{GetHotOverlayColor()}}
+{\footnotesize\ttfamily const sf\+::\+Color UIElement\+::\+Get\+Hot\+Overlay\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function to get the element\textquotesingle{}s hot overlay color. 
+
+@reutrn color of the body when it is hot \mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a4ef4280197f07d1cf7f6c601cb945f78}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a4ef4280197f07d1cf7f6c601cb945f78}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!GetText@{GetText}}
+\index{GetText@{GetText}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}}
+{\footnotesize\ttfamily std\+::string UIElement\+::\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter funciton to get the user typed text that is stored in the element 
+
+\begin{DoxyReturn}{Returns}
+all the user typed text that is stored in the element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a40f3ca769e75cecc36836977817b5604}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a40f3ca769e75cecc36836977817b5604}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!IsAlmostActiveElement@{IsAlmostActiveElement}}
+\index{IsAlmostActiveElement@{IsAlmostActiveElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{IsAlmostActiveElement()}{IsAlmostActiveElement()}}
+{\footnotesize\ttfamily bool UIElement\+::\+Is\+Almost\+Active\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the element is the active element or not. 
+
+\begin{DoxyReturn}{Returns}
+true if it is the active element; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_aa11b02db6e79d0910b957a512c6aa452}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_aa11b02db6e79d0910b957a512c6aa452}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!IsCurrActiveElement@{IsCurrActiveElement}}
+\index{IsCurrActiveElement@{IsCurrActiveElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{IsCurrActiveElement()}{IsCurrActiveElement()}}
+{\footnotesize\ttfamily bool UIElement\+::\+Is\+Curr\+Active\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the element is the current active element or not. 
+
+\begin{DoxyReturn}{Returns}
+true if it is the curr active element; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a4e93e8bf02486255feba18293aa1c9b0}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a4e93e8bf02486255feba18293aa1c9b0}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!IsHotElement@{IsHotElement}}
+\index{IsHotElement@{IsHotElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{IsHotElement()}{IsHotElement()}}
+{\footnotesize\ttfamily bool UIElement\+::\+Is\+Hot\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the element is the hot element or not. 
+
+\begin{DoxyReturn}{Returns}
+true if it is the hot element; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_abdbc0f8839a80bd8b533c009fa9ada98}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_abdbc0f8839a80bd8b533c009fa9ada98}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!IsMouseOverElement@{IsMouseOverElement}}
+\index{IsMouseOverElement@{IsMouseOverElement}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{IsMouseOverElement()}{IsMouseOverElement()}}
+{\footnotesize\ttfamily bool UIElement\+::\+Is\+Mouse\+Over\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the mouse is hovering over the element. 
+
+\begin{DoxyReturn}{Returns}
+true if the mouse is over the element; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_aecd436471de0769b0bd80a5aab710f82}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_aecd436471de0769b0bd80a5aab710f82}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!IsSelected@{IsSelected}}
+\index{IsSelected@{IsSelected}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{IsSelected()}{IsSelected()}}
+{\footnotesize\ttfamily const bool UIElement\+::\+Is\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter funciton to get if the element is curretly selected or not 
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+\begin{DoxyReturn}{Returns}
+true if it is currently selected; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_aee93d1a04399d23cfbc9c0b7857a7e80}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_aee93d1a04399d23cfbc9c0b7857a7e80}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!operator=@{operator=}}
+\index{operator=@{operator=}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} \& UIElement\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{UIElement}} \&}]{a\+\_\+other\+Element }\end{DoxyParamCaption})}
+
+
+
+assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+other\+Element} & reference to the ui\+Element which is used to copy the data form\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to this element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a8b6fc7a31add16161734d34bd1dbd8e9}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a8b6fc7a31add16161734d34bd1dbd8e9}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetActiveOverlayColor@{SetActiveOverlayColor}}
+\index{SetActiveOverlayColor@{SetActiveOverlayColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetActiveOverlayColor()}{SetActiveOverlayColor()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Active\+Overlay\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s active color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+color} & color of the body when it is active \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a55037f3afbf1aca36dc145b1a344a4e9}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a30b18842ced7f9f9208d583d78f6ab6a}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_afb64ef858e0e4bfdbd73ca4fa3639b78}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_afb64ef858e0e4bfdbd73ca4fa3639b78}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetBodyColor@{SetBodyColor}}
+\index{SetBodyColor@{SetBodyColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetBodyColor()}{SetBodyColor()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Body\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+body\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element body color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+body\+Color} & color of the body \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acf54a49a033510ee37f3e9353513dfb6}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_ac5426e6e442b44462c49e136c22b0673}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a6b25e6274568034173591d614bf7401c}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a6b25e6274568034173591d614bf7401c}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetBodyPosition@{SetBodyPosition}}
+\index{SetBodyPosition@{SetBodyPosition}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetBodyPosition()}{SetBodyPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Body\+Position (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+posX,  }\item[{float}]{a\+\_\+posY,  }\item[{bool}]{a\+\_\+relative\+To\+Parent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s Position. 
+
+@virtual This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+posX} & x-\/position of the element \\
+\hline
+{\em a\+\_\+posY} & y-\/position of the element \\
+\hline
+{\em a\+\_\+relative\+To\+Parent} & is true if the passed position is relative to its parent; default -\/\texorpdfstring{$>$}{>} false. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a334fabbd9728928d192519e51b151b9b}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a6a2c5173d84c6d1ebfedd8ef2d3aafe3}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_aa37f83be67b060565445cea7fd940d8c}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_aa37f83be67b060565445cea7fd940d8c}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetBodyPosition@{SetBodyPosition}}
+\index{SetBodyPosition@{SetBodyPosition}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetBodyPosition()}{SetBodyPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Body\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+pos,  }\item[{bool}]{a\+\_\+relative\+To\+Parent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s Position. 
+
+@virtual
+
+It can also set the position relative to its parent if exist by passing a second parameter to true. If second parameter is pass as true and na parent does not exist then it sets the position as it is
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+pos} & position of the element \\
+\hline
+{\em a\+\_\+relative\+To\+Parent} & is true if the passed position is relative to its parent; default -\/\texorpdfstring{$>$}{>} false. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a0b68745b7d83aad2c66188753ebb2253}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aec4d1f774197f4645d0a0b4cacd93d24}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a1d06f2c992d2e68f82c172e6506cb79e}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a1d06f2c992d2e68f82c172e6506cb79e}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetBodySize@{SetBodySize}}
+\index{SetBodySize@{SetBodySize}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetBodySize()}{SetBodySize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Body\+Size (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+sizeX,  }\item[{float}]{a\+\_\+sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s Size. 
+
+@virtual This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+sizeX} & length of the element \\
+\hline
+{\em a\+\_\+sizeY} & width of the element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_aae36fc9d15480d004fac35af197c8eb7}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a362aedc3a8bebff33dbc07b9ce5b1760}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_ac8482fdd6f8c6d4190fc18b0c7a794c3}{Brood\+::\+Application\+::\+Components\+::\+Dice}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a7bc0f1936ad34287a926da7484d777ab}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetBodySize@{SetBodySize}}
+\index{SetBodySize@{SetBodySize}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetBodySize()}{SetBodySize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Body\+Size (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{a\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s Size. 
+
+@virtual
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & size of the element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a6ad33131e763adb5cc2367ff6a6c170b}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_aef094f4b37ecea46ad9ca9926ed767dd}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}, and \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice_a6bdaa8d7c77282e863ec013192787be5}{Brood\+::\+Application\+::\+Components\+::\+Dice}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a045beb494978b9b4fcfc10c7cbf7d75f}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a045beb494978b9b4fcfc10c7cbf7d75f}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetDrawOverlay@{SetDrawOverlay}}
+\index{SetDrawOverlay@{SetDrawOverlay}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetDrawOverlay()}{SetDrawOverlay()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Draw\+Overlay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Setter function to set if the overlay is to be drawn or not. 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b6fcad37e347bde0b955eed6fdb3ed4}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b6fcad37e347bde0b955eed6fdb3ed4}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetFont@{SetFont}}
+\index{SetFont@{SetFont}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetFont()}{SetFont()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Font (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{a\+\_\+font }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the font size 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a5d80523467040d5d75d0742d26c077e8}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a5d80523467040d5d75d0742d26c077e8}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetFontColor@{SetFontColor}}
+\index{SetFontColor@{SetFontColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetFontColor()}{SetFontColor()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Font\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+color = {\ttfamily \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood\+::\+Application\+::\+Static\+Variables\+::\+ST\+\_\+\+Color\+Variables\+::stm\+\_\+\+White}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the Font color 
+
+param a\+\_\+color font color -\/\texorpdfstring{$>$}{>} default sf\+::\+Color\+::\+White 
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acaaa64e9cc6f747f81797bd1d4117c9b}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a74dc0c8e167a1887dba8712476ec413a}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ab3a008f9cb9ce8c6bf338515e3767506}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ab3a008f9cb9ce8c6bf338515e3767506}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetFontSize@{SetFontSize}}
+\index{SetFontSize@{SetFontSize}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetFontSize()}{SetFontSize()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+font\+Size = {\ttfamily 12} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the Font size 
+
+\begin{DoxyNote}{Note}
+If the font size is more than body height by
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+char\+Size} & -\/\texorpdfstring{$>$}{>} size of indivisual character in the Set\+Editabletext -\/\texorpdfstring{$>$}{>} deafult 12 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ac97cdc5598f5902a63e4298d2fabf7c5}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ac97cdc5598f5902a63e4298d2fabf7c5}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetHotOverlayColor@{SetHotOverlayColor}}
+\index{SetHotOverlayColor@{SetHotOverlayColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetHotOverlayColor()}{SetHotOverlayColor()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Hot\+Overlay\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{a\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter function to set the element\textquotesingle{}s hot color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+color} & color of the body when it is hot \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a29d3414d2b55bd2f735561f0ec6fec4c}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_menu_bar_a2459fafbd1bea356c095707d95b5178b}{Brood\+::\+Brood\+UI\+::\+Menu\+Bar}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a4f20356fd55746d4d27767a358021042}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a4f20356fd55746d4d27767a358021042}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetSelected@{SetSelected}}
+\index{SetSelected@{SetSelected}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetSelected()}{SetSelected()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the state of the element i.\+e. if it is seleected or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+selected} & true if current text box is selected or not \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button_a06d63a517d4250e9e596229e8ad0fea9}{Brood\+::\+Brood\+UI\+::\+Button}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a612450895759c4f15d617377bee546f2}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ac3680e4edb6fc25bd644fe69ce443367}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ac3680e4edb6fc25bd644fe69ce443367}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetText@{SetText}}
+\index{SetText@{SetText}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+text = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+setter function to set the text that is displayed in the button 
+
+\begin{DoxyWarning}{Warning}
+It assumes that the font for the text is already set
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+text} & text to show on the buttom -\/\texorpdfstring{$>$}{>} default empty string \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ac3b1803cbfe03abb9cd5250682d65523}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Menu}}, and \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box_a62ab5114f43ce16c7d4d74fb0595bf89}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}.
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b822cfaaf70ec6e5ce703406b7a5c6f}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a7b822cfaaf70ec6e5ce703406b7a5c6f}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!SetTextPosition@{SetTextPosition}}
+\index{SetTextPosition@{SetTextPosition}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{SetTextPosition()}{SetTextPosition()}}
+{\footnotesize\ttfamily void UIElement\+::\+Set\+Text\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+setter funciton to set the position of the text. 
+
+Sets the position of the text such that it is always centered 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a5fd2f0bce01e881cf459d9c72c7dd168}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a5fd2f0bce01e881cf459d9c72c7dd168}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_activeOverlayColor@{m\_activeOverlayColor}}
+\index{m\_activeOverlayColor@{m\_activeOverlayColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_activeOverlayColor}{m\_activeOverlayColor}}
+{\footnotesize\ttfamily sf\+::\+Color Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+active\+Overlay\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+color when it is active element 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ab416c4f6401ce0f5f74c76d4532af8c8}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ab416c4f6401ce0f5f74c76d4532af8c8}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_body@{m\_body}}
+\index{m\_body@{m\_body}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_body}{m\_body}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+body\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+element body 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a2a2fe3478d54cb35a55ed5fd664f8ce9}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a2a2fe3478d54cb35a55ed5fd664f8ce9}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_bodyOverLay@{m\_bodyOverLay}}
+\index{m\_bodyOverLay@{m\_bodyOverLay}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_bodyOverLay}{m\_bodyOverLay}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+body\+Over\+Lay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+element body 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a79709b92ae61029cbeb238dda7f7beaa}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a79709b92ae61029cbeb238dda7f7beaa}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_debugTextSave@{m\_debugTextSave}}
+\index{m\_debugTextSave@{m\_debugTextSave}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_debugTextSave}{m\_debugTextSave}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+debug\+Text\+Save\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+saves the text content before replacing by uiid 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_ad287fc3829729dc24a4f26f38a4d0afb}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_ad287fc3829729dc24a4f26f38a4d0afb}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_drawOverlay@{m\_drawOverlay}}
+\index{m\_drawOverlay@{m\_drawOverlay}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_drawOverlay}{m\_drawOverlay}}
+{\footnotesize\ttfamily bool Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+draw\+Overlay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+true if overlay is to be drawn 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a32efc1ded89aec9f013dca7fb782916d}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a32efc1ded89aec9f013dca7fb782916d}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_drawText@{m\_drawText}}
+\index{m\_drawText@{m\_drawText}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_drawText}{m\_drawText}}
+{\footnotesize\ttfamily bool Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+draw\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+is true if text is set and hence draw to screen 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a6dd20d14c39f7a65d2de5776d5dfaf38}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a6dd20d14c39f7a65d2de5776d5dfaf38}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_elementId@{m\_elementId}}
+\index{m\_elementId@{m\_elementId}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_elementId}{m\_elementId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_id}{Brood\+::\+Brood\+UI\+::\+Id}} Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+element\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+uniqie id of the element 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a3ab5092a74a62aecb832fe6ca3105cd1}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a3ab5092a74a62aecb832fe6ca3105cd1}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_elementType@{m\_elementType}}
+\index{m\_elementType@{m\_elementType}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_elementType}{m\_elementType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood\+::\+Brood\+UI\+::\+ENUM\+\_\+\+UIType}} Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+element\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+stores the type of element stored 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a53da24265ba209436e406e91a0b3491a}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a53da24265ba209436e406e91a0b3491a}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily sf\+::\+Font$\ast$ Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+element\textquotesingle{}s font 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a1a29859a9853af52cf77d5e0bfd7313e}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a1a29859a9853af52cf77d5e0bfd7313e}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_fontSize@{m\_fontSize}}
+\index{m\_fontSize@{m\_fontSize}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_fontSize}{m\_fontSize}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+font\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+font size 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a61585402254f61b163f6fb498b892353}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a61585402254f61b163f6fb498b892353}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_hotOverlayColor@{m\_hotOverlayColor}}
+\index{m\_hotOverlayColor@{m\_hotOverlayColor}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_hotOverlayColor}{m\_hotOverlayColor}}
+{\footnotesize\ttfamily sf\+::\+Color Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+hot\+Overlay\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+color when mouse is over it 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a009e751261dcf070e119c4820858dfbb}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a009e751261dcf070e119c4820858dfbb}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_isSelected@{m\_isSelected}}
+\index{m\_isSelected@{m\_isSelected}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_isSelected}{m\_isSelected}}
+{\footnotesize\ttfamily bool Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+is\+Selected\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+is true if the element is selected 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_a61842be8d38e3ec6fe374e5f53ad1d61}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_a61842be8d38e3ec6fe374e5f53ad1d61}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_text@{m\_text}}
+\index{m\_text@{m\_text}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_text}{m\_text}}
+{\footnotesize\ttfamily sf\+::\+Text Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+text content 
+
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_u_i_element_aa4e22676cae01bd10629e6d76802892a}\label{class_brood_1_1_brood_u_i_1_1_u_i_element_aa4e22676cae01bd10629e6d76802892a}} 
+\index{Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}!m\_textContent@{m\_textContent}}
+\index{m\_textContent@{m\_textContent}!Brood::BroodUI::UIElement@{Brood::BroodUI::UIElement}}
+\doxysubsubsection{\texorpdfstring{m\_textContent}{m\_textContent}}
+{\footnotesize\ttfamily std\+::string Brood\+::\+Brood\+UI\+::\+UIElement\+::m\+\_\+text\+Content\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+saves the text content 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_u_i_element_8h}{UIElement.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_u_i_element_8cpp}{UIElement.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,152 @@
+\hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}{}\doxysection{Brood\+::Application\+::Data\+::ST\+\_\+\+Board\+Data Struct Reference}
+\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data}\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+
+
+{\ttfamily \#include $<$Data.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a1258cfc6e9c3f6cc103f3e8e72efeb18}{Populate\+From\+String}} (std\+::string a\+\_\+string)
+\begin{DoxyCompactList}\small\item\em populates the struct from passed string \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_af3bcfb6385a253d32f5b943273cb3c6a}{Get\+String}} () const
+\begin{DoxyCompactList}\small\item\em creats a string and appends each data to its back seperated by \textquotesingle{} \textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_aebb91acdf28d0510dc094b8138bb06ff}{stm\+\_\+board\+SizeX}} = 0
+\begin{DoxyCompactList}\small\item\em length of board \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a9d2ad60e42331d41239f5110ca3c8845}{stm\+\_\+board\+SizeY}} = 0
+\begin{DoxyCompactList}\small\item\em height of board \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a60b74aafa52a4501adaa3d1b29ebd38f}{stm\+\_\+board\+PosX}} = 0
+\begin{DoxyCompactList}\small\item\em x-\/cordinate of board\textquotesingle{}s upper left corner \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_ada713770f75f64cfad362787de9426fc}{stm\+\_\+board\+PosY}} = 0
+\begin{DoxyCompactList}\small\item\em y-\/cordinate of board\textquotesingle{}s upper left corner \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a2a42fab1a8d068e3a2186945c0bc1e82}{stm\+\_\+num\+Row}} = 1
+\begin{DoxyCompactList}\small\item\em number of tile Row in the board \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a50ccd9f15c17dcf7269c6476e045d6f8}{stm\+\_\+num\+Col}} = 1
+\begin{DoxyCompactList}\small\item\em number of tile column in the board \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a7c454d763fa59878c78301918b69567f}{stm\+\_\+curr\+Active\+Num\+Row}} = 0
+\begin{DoxyCompactList}\small\item\em tile row number of the active tile \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a3e51d4a7432732f26854d8147670e493}{stm\+\_\+curr\+Active\+Num\+Col}} = 0
+\begin{DoxyCompactList}\small\item\em tile column number of the active tile \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_af3bcfb6385a253d32f5b943273cb3c6a}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_af3bcfb6385a253d32f5b943273cb3c6a}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!GetString@{GetString}}
+\index{GetString@{GetString}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}}
+{\footnotesize\ttfamily const std\+::string ST\+\_\+\+Board\+Data\+::\+Get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+creats a string and appends each data to its back seperated by \textquotesingle{} \textquotesingle{} 
+
+\begin{DoxyReturn}{Returns}
+string containg all the data appended to it seperated by \textquotesingle{} \textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a1258cfc6e9c3f6cc103f3e8e72efeb18}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a1258cfc6e9c3f6cc103f3e8e72efeb18}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!PopulateFromString@{PopulateFromString}}
+\index{PopulateFromString@{PopulateFromString}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{PopulateFromString()}{PopulateFromString()}}
+{\footnotesize\ttfamily void ST\+\_\+\+Board\+Data\+::\+Populate\+From\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{a\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+populates the struct from passed string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+string} & string containing all of the data seperated by \textquotesingle{} \textquotesingle{} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a60b74aafa52a4501adaa3d1b29ebd38f}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a60b74aafa52a4501adaa3d1b29ebd38f}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_boardPosX@{stm\_boardPosX}}
+\index{stm\_boardPosX@{stm\_boardPosX}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_boardPosX}{stm\_boardPosX}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+board\+PosX = 0}
+
+
+
+x-\/cordinate of board\textquotesingle{}s upper left corner 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_ada713770f75f64cfad362787de9426fc}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_ada713770f75f64cfad362787de9426fc}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_boardPosY@{stm\_boardPosY}}
+\index{stm\_boardPosY@{stm\_boardPosY}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_boardPosY}{stm\_boardPosY}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+board\+PosY = 0}
+
+
+
+y-\/cordinate of board\textquotesingle{}s upper left corner 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_aebb91acdf28d0510dc094b8138bb06ff}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_aebb91acdf28d0510dc094b8138bb06ff}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_boardSizeX@{stm\_boardSizeX}}
+\index{stm\_boardSizeX@{stm\_boardSizeX}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_boardSizeX}{stm\_boardSizeX}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+board\+SizeX = 0}
+
+
+
+length of board 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a9d2ad60e42331d41239f5110ca3c8845}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a9d2ad60e42331d41239f5110ca3c8845}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_boardSizeY@{stm\_boardSizeY}}
+\index{stm\_boardSizeY@{stm\_boardSizeY}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_boardSizeY}{stm\_boardSizeY}}
+{\footnotesize\ttfamily float Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+board\+SizeY = 0}
+
+
+
+height of board 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a3e51d4a7432732f26854d8147670e493}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a3e51d4a7432732f26854d8147670e493}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_currActiveNumCol@{stm\_currActiveNumCol}}
+\index{stm\_currActiveNumCol@{stm\_currActiveNumCol}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_currActiveNumCol}{stm\_currActiveNumCol}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+curr\+Active\+Num\+Col = 0}
+
+
+
+tile column number of the active tile 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a7c454d763fa59878c78301918b69567f}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a7c454d763fa59878c78301918b69567f}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_currActiveNumRow@{stm\_currActiveNumRow}}
+\index{stm\_currActiveNumRow@{stm\_currActiveNumRow}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_currActiveNumRow}{stm\_currActiveNumRow}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+curr\+Active\+Num\+Row = 0}
+
+
+
+tile row number of the active tile 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a50ccd9f15c17dcf7269c6476e045d6f8}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a50ccd9f15c17dcf7269c6476e045d6f8}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_numCol@{stm\_numCol}}
+\index{stm\_numCol@{stm\_numCol}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_numCol}{stm\_numCol}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+num\+Col = 1}
+
+
+
+number of tile column in the board 
+
+\mbox{\Hypertarget{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a2a42fab1a8d068e3a2186945c0bc1e82}\label{struct_brood_1_1_application_1_1_data_1_1_s_t___board_data_a2a42fab1a8d068e3a2186945c0bc1e82}} 
+\index{Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}!stm\_numRow@{stm\_numRow}}
+\index{stm\_numRow@{stm\_numRow}!Brood::Application::Data::ST\_BoardData@{Brood::Application::Data::ST\_BoardData}}
+\doxysubsubsection{\texorpdfstring{stm\_numRow}{stm\_numRow}}
+{\footnotesize\ttfamily unsigned Brood\+::\+Application\+::\+Data\+::\+ST\+\_\+\+Board\+Data\+::stm\+\_\+num\+Row = 1}
+
+
+
+number of tile Row in the board 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_data_8h}{Data.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_data_8cpp}{Data.\+cpp}}\end{DoxyCompactItemize}

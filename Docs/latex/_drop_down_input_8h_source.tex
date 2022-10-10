@@ -1,0 +1,60 @@
+\hypertarget{_drop_down_input_8h_source}{}\doxysection{Drop\+Down\+Input.\+h}
+\label{_drop_down_input_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DropDownInput.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DropDownInput.h}}
+\mbox{\hyperlink{_drop_down_input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_drop_down_menu_8h}{DropDownMenu.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{19 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{namespace }BroodUI}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \textcolor{keyword}{class }\mbox{\hyperlink{class_drop_down_input}{DropDownInput}};}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{29 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ================= start of DropDownInput class ========================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{127 \textcolor{keyword}{class  }\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood::BroodUI::DropDownMenu}}}
+\DoxyCodeLine{128 \{}
+\DoxyCodeLine{129     \textcolor{comment}{// ============ public member function =============== }}
+\DoxyCodeLine{130 \textcolor{keyword}{public}:}
+\DoxyCodeLine{131     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{132     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input_a3682baf48d4e635cb13807055fc2ff4a}{DropDownInput}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_parentPtr = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{133                    \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8}{Brood::BroodUI::ENUM\_UIType}} a\_enumType = \mbox{\hyperlink{namespace_brood_1_1_brood_u_i_a21474c7f42b5df5f076e0f2e1d37eed8aea07f70fa6ab3c792387ad10b60228ea}{Brood::BroodUI::ENUM\_UIType::UI\_dropDownInput}} );}
+\DoxyCodeLine{134     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{135     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input_a0bd939a5030a23e0c2da99e301b36745}{\string~DropDownInput}}();}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{138     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input_a3682baf48d4e635cb13807055fc2ff4a}{DropDownInput}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{DropDownInput}}\& a\_otherElement );}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{141     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}\& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input_a43322c9e0a38200ac0f8bba7dda51214}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{DropDownInput}}\& a\_otherButton );}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{// adds item to menu}}
+\DoxyCodeLine{144     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input_aa0a35f7d0a83a2f5ce9254ed1e867b53}{AddItemToMenu}}( std::string a\_menuName,}
+\DoxyCodeLine{145                                 sf::Color a\_color = \mbox{\hyperlink{struct_brood_1_1_application_1_1_static_variables_1_1_s_t___color_variables_aef529c24e621c5ddd27f193b7341e187}{Brood::Application::StaticVariables::ST\_ColorVariables::stm\_White}} );}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{comment}{// adds the passed button to dropdown menu if a\_createNew is true}}
+\DoxyCodeLine{148     \textcolor{comment}{// then create a new button using the passed item then adds }}
+\DoxyCodeLine{149     \textcolor{comment}{// the new button }}
+\DoxyCodeLine{150     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input_aa0a35f7d0a83a2f5ce9254ed1e867b53}{AddItemToMenu}}( \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* a\_buttonPtrToAdd,}
+\DoxyCodeLine{151                                 \textcolor{keywordtype}{bool} a\_createNew = \textcolor{keyword}{true} );}
+\DoxyCodeLine{152 \};}
+\DoxyCodeLine{153 }
+
+\end{DoxyCode}

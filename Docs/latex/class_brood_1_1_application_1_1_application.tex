@@ -1,0 +1,224 @@
+\hypertarget{class_brood_1_1_application_1_1_application}{}\doxysection{Brood\+::Application\+::Application Class Reference}
+\label{class_brood_1_1_application_1_1_application}\index{Brood::Application::Application@{Brood::Application::Application}}
+
+
+Applicaiton class provides the interface for the applicaiton.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_application_aabab7652b41709a5cfd9d69d8f238f77}{Application}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_application_a4902b005ed4f6c27e58f68c3486f9348}{$\sim$\+Application}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_application_ad726c075f0c482b9c1980959b61c673d}{Run\+Applicaiton}} ()
+\begin{DoxyCompactList}\small\item\em Contains the main loop for the applicaiton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a5d894c5dc1d004156a72bc38eb6a138e}{Poll\+Events}} ()
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+polls for any event \end{quote}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a975eb752937bbef880d09a1aa060e953}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+draws to screen \end{quote}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a112002e1a21954d9027a0a89cdea0734}{Create\+Work\+Space}} ()
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a2bf3c85eb6d71e16e4624aa51696cf9d}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+calls the UI ELement Debugger \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a2b4c6e872f0e96757ee81aa3be5edff4}{m\+\_\+window}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+window obj \end{quote}
+\end{DoxyCompactList}\item 
+sf\+::\+Event \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a4f85bb8d805d3b9585e908192158d6bd}{m\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+event object \end{quote}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space}{Brood\+::\+Application\+::\+Home\+Work\+Space}} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a1fd59aad264b805767444db4df74ae55}{m\+\_\+main\+Workspace}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+initial workspace object \end{quote}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a62df68e806d14e0aeafe32d863ea8c06}{my\+Board}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} \mbox{\hyperlink{class_brood_1_1_application_1_1_application_a7af37c878c5faf143a12e5c01154f574}{my\+Dice}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applicaiton class provides the interface for the applicaiton. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_aabab7652b41709a5cfd9d69d8f238f77}\label{class_brood_1_1_application_1_1_application_aabab7652b41709a5cfd9d69d8f238f77}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!Application@{Application}}
+\index{Application@{Application}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Application\+::\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+Inializes the application and sets it up \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]\+: delete me \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]delete me \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a4902b005ed4f6c27e58f68c3486f9348}\label{class_brood_1_1_application_1_1_application_a4902b005ed4f6c27e58f68c3486f9348}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!````~Application@{$\sim$Application}}
+\index{````~Application@{$\sim$Application}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+cleans up after the applicaiton 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a112002e1a21954d9027a0a89cdea0734}\label{class_brood_1_1_application_1_1_application_a112002e1a21954d9027a0a89cdea0734}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!CreateWorkSpace@{CreateWorkSpace}}
+\index{CreateWorkSpace@{CreateWorkSpace}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{CreateWorkSpace()}{CreateWorkSpace()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Application\+::\+Create\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a2bf3c85eb6d71e16e4624aa51696cf9d}\label{class_brood_1_1_application_1_1_application_a2bf3c85eb6d71e16e4624aa51696cf9d}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Application\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+calls the UI ELement Debugger \end{quote}
+
+
+changes the text of the element to its the element ID
+
+This function helps in debugging the UI elements. Called once at the end of Inialization. \mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a975eb752937bbef880d09a1aa060e953}\label{class_brood_1_1_application_1_1_application_a975eb752937bbef880d09a1aa060e953}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Application\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+draws to screen \end{quote}
+
+
+Draws object to screen.
+
+@protecteed
+
+\begin{DoxyNote}{Note}
+the elements should be drawn form bottom to top, right to left. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} class for more explation. 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]delete me \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]delete me \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a5d894c5dc1d004156a72bc38eb6a138e}\label{class_brood_1_1_application_1_1_application_a5d894c5dc1d004156a72bc38eb6a138e}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!PollEvents@{PollEvents}}
+\index{PollEvents@{PollEvents}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{PollEvents()}{PollEvents()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Application\+::\+Poll\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+polls for any event \end{quote}
+
+
+This function polls the event object for any event.
+
+@protecteed \mbox{\Hypertarget{class_brood_1_1_application_1_1_application_ad726c075f0c482b9c1980959b61c673d}\label{class_brood_1_1_application_1_1_application_ad726c075f0c482b9c1980959b61c673d}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!RunApplicaiton@{RunApplicaiton}}
+\index{RunApplicaiton@{RunApplicaiton}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{RunApplicaiton()}{RunApplicaiton()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Application\+::\+Run\+Applicaiton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Contains the main loop for the applicaiton. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]delete me \end{DoxyRefDesc}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a4f85bb8d805d3b9585e908192158d6bd}\label{class_brood_1_1_application_1_1_application_a4f85bb8d805d3b9585e908192158d6bd}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!m\_events@{m\_events}}
+\index{m\_events@{m\_events}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{m\_events}{m\_events}}
+{\footnotesize\ttfamily sf\+::\+Event Brood\+::\+Application\+::\+Application\+::m\+\_\+events\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+event object \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a1fd59aad264b805767444db4df74ae55}\label{class_brood_1_1_application_1_1_application_a1fd59aad264b805767444db4df74ae55}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!m\_mainWorkspace@{m\_mainWorkspace}}
+\index{m\_mainWorkspace@{m\_mainWorkspace}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{m\_mainWorkspace}{m\_mainWorkspace}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_home_work_space}{Brood\+::\+Application\+::\+Home\+Work\+Space}} Brood\+::\+Application\+::\+Application\+::m\+\_\+main\+Workspace\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+initial workspace object \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a2b4c6e872f0e96757ee81aa3be5edff4}\label{class_brood_1_1_application_1_1_application_a2b4c6e872f0e96757ee81aa3be5edff4}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!m\_window@{m\_window}}
+\index{m\_window@{m\_window}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{m\_window}{m\_window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window Brood\+::\+Application\+::\+Application\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+window obj \end{quote}
+
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a62df68e806d14e0aeafe32d863ea8c06}\label{class_brood_1_1_application_1_1_application_a62df68e806d14e0aeafe32d863ea8c06}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!myBoard@{myBoard}}
+\index{myBoard@{myBoard}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{myBoard}{myBoard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood\+::\+Application\+::\+Components\+::\+Board}} Brood\+::\+Application\+::\+Application\+::my\+Board\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]delete me \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_application_a7af37c878c5faf143a12e5c01154f574}\label{class_brood_1_1_application_1_1_application_a7af37c878c5faf143a12e5c01154f574}} 
+\index{Brood::Application::Application@{Brood::Application::Application}!myDice@{myDice}}
+\index{myDice@{myDice}!Brood::Application::Application@{Brood::Application::Application}}
+\doxysubsubsection{\texorpdfstring{myDice}{myDice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_dice}{Brood\+::\+Application\+::\+Components\+::\+Dice}} Brood\+::\+Application\+::\+Application\+::my\+Dice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_application_8h}{Application.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

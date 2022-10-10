@@ -1,0 +1,210 @@
+\hypertarget{_player_editor_8h_source}{}\doxysection{Player\+Editor.\+h}
+\label{_player_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/PlayerEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/PlayerEditor.h}}
+\mbox{\hyperlink{_player_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}} \textcolor{comment}{// includes all the other uiElements}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{24 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{25 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keyword}{class }\mbox{\hyperlink{class_player_editor}{PlayerEditor}};}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 \}}
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= start of PlayerEditor class ========================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor}{Brood::Application::PlayerEditor}} :}
+\DoxyCodeLine{58     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{63     \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a7f5c197b5163648428b9e75d989b4647}{PlayerEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{64                   sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{67     \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a421c7440bfecdd8fc75a05481c3eeefb}{\string~PlayerEditor}}();}
+\DoxyCodeLine{68     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5b5597b2d7c20cdd808ccedb598c32d8}{InitializeWorkSpace}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab21a8fcdc1bde40ec4f3459cf3a60ebf}{Update}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afef71876bce00a1d1a839dd9246ee464}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// reners to the screen}}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a12c903538be91f69597926df7798de4e}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad3ac233cd4ef6967d6f7a14ba3b98a84}{Debugger}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{// ================= private member function ==================     }}
+\DoxyCodeLine{86 \textcolor{keyword}{private}:}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{89     \textcolor{comment}{// =========== update for Player setting =====================}}
+\DoxyCodeLine{90     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// checks if the user interacted with the start row}}
+\DoxyCodeLine{93     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a51ed7078379fb4b1fe39fd9f1e5050ae}{UpdateStartRowNumber}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// checks if the user interacted with the start column}}
+\DoxyCodeLine{97     \textcolor{comment}{// number panel Element}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a41cdb668db8766c930474a5bed6cb8a3}{UpdateStartColNumber}}();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// checks if the user interacted with the current}}
+\DoxyCodeLine{101     \textcolor{comment}{// selceted player index panel Element}}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a974f943ca338f77d5c206609936f22a5}{UpdateCurrSelectedPlayerIdx}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// checks if the user interacted with the player }}
+\DoxyCodeLine{105     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aa6d1e70f0711b194aef2b80ad7b617a7}{UpdateCurrPlayerSizeX}}();}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{comment}{// checks if the user interacted with the player }}
+\DoxyCodeLine{109     \textcolor{comment}{// y Offset panel Element}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a4df006673c9eb1033a89a409b9b63ce4}{UpdateCurrPlayerSizeY}}();}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// checks if the user interacted with the player }}
+\DoxyCodeLine{113     \textcolor{comment}{// x size panel Element}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5a6b79c6b1c163722c6f8856a0593bd4}{UpdateCurrPlayerOffsetX}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// checks if the user interacted with the player }}
+\DoxyCodeLine{117     \textcolor{comment}{// y Offset panel Element}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a1d5593c28eedc36a4223b0da63b589c6}{UpdateCurrPlayerOffsetY}}();}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{121     \textcolor{comment}{// player texture panel Element}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ac47a4f0244392a3a2a094b82fccb355f}{UpdateCurrPlayerFileTexture}}();}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{comment}{// ================= private member variable ==================  }}
+\DoxyCodeLine{125 \textcolor{keyword}{private}:}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{128     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5f5ad51dfd331872344d7a1be502111e}{m\_panelBodyPtr}};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{131     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_af795d3d954054c2deb89704175fe370c}{m\_boardPtr}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood::Application::Components::PlayerManager}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad7c1a4c68c966202fb19a5d66ebefeab}{m\_playerManagerPtr}};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{138     \textcolor{comment}{// =========== member variables for player setting ===========}}
+\DoxyCodeLine{139     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{comment}{// ==== UI elements to change the start row for player ====}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{// ==== UI elements to show setting title  ====}}
+\DoxyCodeLine{144     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afa65c1b7b0485cfdfae7703c5bc0c241}{m\_txtSettingTitle}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{147     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a74767d4649d49836aea91634b3fb3f7c}{m\_txtPlayerStartRowPrompt}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab6a4fb7b769b8029da55b2af2727d497}{m\_btnPlayerDecStartRowNum}};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_af205e436af3a6bf2c2d1c3a232975444}{m\_txtPlayerStartRowNum}};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ac3436f7bd1d75ae7bc52c99556a414c3}{m\_btnPlayerIncStartRowNum}};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{comment}{// ==== UI elements to change the start column for player ====}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aaa09205ea7205bb3bb15cce8c893f12f}{m\_txtPlayerStartColPrompt}};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{164     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_adcc4766ff4c3b288d40db98da122a64f}{m\_btnPlayerDecStartColNum}};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aeea15f6753f25072231809c71cd11d1c}{m\_txtPlayerStartColNum}};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ae0313e3ed653d964b806c31181c47b79}{m\_btnPlayerIncStartColNum}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{comment}{// ============ UI elements to change current selected player Index ============}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{175     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a8d611b211b228ff24d153f9ffaf547f7}{m\_txtPlayerCurrIdxPrompt}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a40189fb25a32d393bf371822ab3a5951}{m\_btnPlayerDecCurrIdx}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a5324541b9b7700ba5f78fb705d7f6db8}{m\_txtPlayerCurrIdx}};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_addb7bc0594152591097f84ec233178e3}{m\_btnPlayerIncCurrIdx}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{comment}{// ==== UI elements toggle draw player at current index ====}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a4b5f71519daaebf68a047bfcd691992d}{m\_txtDrawPlayerAtCurrIdxPromt}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{193     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a371dd0f6735b89c80a62f17f5d997f78}{m\_ddiDrawPlayerAtCurrIdx}};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{comment}{// ==== UI elements to change x-\/size of current selected player Index ====}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a74dcf4fc236a540cfd35302fe8be7f3a}{m\_txtPlayerCurrIdxSizeXPrompt}};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{201     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ad4e956bedfe047374ab375553e45b9f1}{m\_btnPlayerDecCurrIdxSizeX}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{204     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab6de870123e56c21fb5f3d671d330314}{m\_txtPlayerCurrIdxSizeX}};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{207     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a61061e421cb7627d04a67c7d0b37fbad}{m\_btnPlayerIncCurrIdxSizeX}};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{comment}{// ==== UI elements to change y-\/size of current selected y-\/size Index ====}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a7b8f97ddcde6448f10306d96d0a48f1e}{m\_txtPlayerCurrIdxSizeYPrompt}};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{215     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a311dc4990c2fb3cc0b4c485be651b56e}{m\_btnPlayerDecCurrIdxSizeY}};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{218     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a9509a7f9d3b37210366d8876d137c17b}{m\_txtPlayerCurrIdxSizeY}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{221     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a3fa2efbe800c106b6a5356d07b2d109d}{m\_btnPlayerIncCurrIdxSizeY}};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223     \textcolor{comment}{// ==== UI elements to change x-\/offset of current selected player Index ====}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{226     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a848a766914560a83cff722ec3fd03431}{m\_txtPlayerCurrIdxOffsetXPrompt}};}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{229     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_aa5a184442abe2f875fbfd548459b2cbc}{m\_btnPlayerDecCurrIdxOffsetX}};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{232     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a8044303bf0e4f18c266aa6a0457b0dde}{m\_txtPlayerCurrIdxOffsetX}};}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{235     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_ab1fb6ff0ff422d009765d622842a9851}{m\_btnPlayerIncCurrIdxOffsetX}};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{comment}{// ==== UI elements to change y-\/offset of current selected player Index ====}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{240     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a61400f7257691ac2d36378cf6b22e0dd}{m\_txtPlayerCurrIdxOffsetYPrompt}};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{243     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_abc3b0240c673eebc22a2366aa77cdc23}{m\_btnPlayerDecCurrIdxOffsetY}};}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{246     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a40178d099088366fe8cdeca41809611e}{m\_txtPlayerCurrIdxOffsetY}};}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{249     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a867f7f1eb313f360d888579f33aa16c2}{m\_btnPlayerIncCurrIdxOffsetY}};}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251     \textcolor{comment}{// ==== UI elements to enter a filename texture  ====}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{254     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_afc9991733c66b585455fb41458abfc9a}{m\_txtplayerFileNamePrompt}};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{257     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a847d99eb1a0e24b54d3258bf0a664717}{m\_txtPlayerFileInput}};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{260     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_player_editor_a3915cde214216e89a0ff1b9ca588ce1d}{m\_btnPlayerOpenFile}};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \};}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{265 \textcolor{comment}{// ================= end of PlayerEditor class ==========================}}
+\DoxyCodeLine{266 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

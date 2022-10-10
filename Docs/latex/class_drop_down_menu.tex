@@ -1,0 +1,88 @@
+\hypertarget{class_drop_down_menu}{}\doxysection{Drop\+Down\+Menu Class Reference}
+\label{class_drop_down_menu}\index{DropDownMenu@{DropDownMenu}}
+
+
+A UI elemnt that represent a drop down menu.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Drop\+Down\+Menu.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+A UI elemnt that represent a drop down menu. 
+
+A class derived from \mbox{\hyperlink{class_button}{Button}} class. It contains a list of menus inside a single element. The list of items are left aligned and below the menu title. the size of the items is depended on the longest item name.\hypertarget{class_drop_down_menu_autotoc_md2}{}\doxyparagraph{Example Case}\label{class_drop_down_menu_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// window object}}
+\DoxyCodeLine{sf::RenderWindow window( sf::VideoMode( 500, 500 ), \textcolor{stringliteral}{"{}BroodMaker"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// event object }}
+\DoxyCodeLine{sf::Event events;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// creating a dropdown object}}
+\DoxyCodeLine{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu}{Brood::BroodUI::DropDownMenu}} myDropDown; }
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting size and position}}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a6ad33131e763adb5cc2367ff6a6c170b}{SetBodySize}}( 20, 50 );}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a0b68745b7d83aad2c66188753ebb2253}{SetBodyPosition}}( 265, 0 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting the font which is required to display the text}}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a99550fad3c4eadd218e76bac4194de50}{SetFont}}( \&font );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting the font size. It should be less than the body height by 2 units.}}
+\DoxyCodeLine{\textcolor{comment}{// @see Brood::BroodUI::Textbox::SetFontSize() for more information}}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a789aea0472533a55c62e255455481cf8}{SetFontSize}}( 20 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting the menu title to "{}a"{}}}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ac3b1803cbfe03abb9cd5250682d65523}{SetText}}( \textcolor{stringliteral}{"{}a"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// setting body color}}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acf54a49a033510ee37f3e9353513dfb6}{SetBodyColor}}( sf::Color::Green );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// adding 2 items to the menu}}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_afc84ceba3072d2a8df9d92c62d151cea}{AddItemToMenu}}( \textcolor{stringliteral}{"{}1st item"{}} );}
+\DoxyCodeLine{myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_afc84ceba3072d2a8df9d92c62d151cea}{AddItemToMenu}}( \textcolor{stringliteral}{"{}2st item"{}} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//app loop}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}( !exit )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// event loop}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// logic }}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// checking if the logics of the element is to be executed or not}}
+\DoxyCodeLine{    myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_a1523cd65885636efa7e76703e2594a10}{DoElement}}();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// checking its item if the dropdown menu was selcted}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element_aecd436471de0769b0bd80a5aab710f82}{IsSelected}}() )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keyword}{auto} itemList = myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_acaebb3abcd3a62da25bbc88bffefc1fb}{GetItemList}}();}
+\DoxyCodeLine{        \textcolor{comment}{// draw its items}}
+\DoxyCodeLine{        \textcolor{comment}{// positining the itemes}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}( !itemList.empty() )}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{comment}{// checking if the logics of the items is to be executed or not}}
+\DoxyCodeLine{            \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < itemList.size(); ++i )}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} (itemList.at( i )-\/>DoElement() ) }
+\DoxyCodeLine{                \{}
+\DoxyCodeLine{                    std::cout << \textcolor{stringliteral}{"{}item at "{}} << i << \textcolor{stringliteral}{"{} Pressed"{}} << std::endl;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// rendering}}
+\DoxyCodeLine{    myDropDown.\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_menu_ae190f54affbff3a73666c6b845a8fb18}{Draw}}( window );}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_drop_down_menu_8h}{Drop\+Down\+Menu.\+h}}\end{DoxyCompactItemize}

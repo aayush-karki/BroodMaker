@@ -1,0 +1,118 @@
+\hypertarget{class_brood_1_1_brood_u_i_1_1_map_id_to_element}{}\doxysection{Brood\+::Brood\+UI\+::Map\+Id\+To\+Element Class Reference}
+\label{class_brood_1_1_brood_u_i_1_1_map_id_to_element}\index{Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}}
+
+
+{\ttfamily \#include $<$Map\+Id\+To\+Element.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ const int, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ $>$ \& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3ee3a528a8951fc147b8e3f5a42b6dfc}{Get\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Getter Funciton to get a reference to the map. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_aa81cbf475fc698c5dfcd5ec581496f36}{Get\+Element\+Ptr\+From\+Map}} (int a\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Getter Function to get the element that is mapped to from ui id. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3f6d29bf89663c2f6d7678289114ddda}{Add\+To\+Map}} (int a\+\_\+id, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$a\+\_\+element\+Ptr)
+\begin{DoxyCompactList}\small\item\em adds the id and element to the map \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_afa174a59f0534d84c3a83935253840f6}{Reomve\+From\+Map}} (int a\+\_\+id)
+\begin{DoxyCompactList}\small\item\em removes a entry with the id as a key from the map \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ const int, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ $>$ \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a73726eaca05832466d1194ddb0a862c8}{stm\+\_\+mapper}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+maps the unique UI ID to the element \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3f6d29bf89663c2f6d7678289114ddda}\label{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3f6d29bf89663c2f6d7678289114ddda}} 
+\index{Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}!AddToMap@{AddToMap}}
+\index{AddToMap@{AddToMap}!Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}}
+\doxysubsubsection{\texorpdfstring{AddToMap()}{AddToMap()}}
+{\footnotesize\ttfamily bool Map\+Id\+To\+Element\+::\+Add\+To\+Map (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+id,  }\item[{\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$}]{a\+\_\+element\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+adds the id and element to the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+id} & unique id of the element that is mapped to its element pointer \\
+\hline
+{\em a\+\_\+element\+Ptr} & pointer to the element that has the passed uniquie UI\+\_\+\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if adding was successfull; else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_map_id_to_element_aa81cbf475fc698c5dfcd5ec581496f36}\label{class_brood_1_1_brood_u_i_1_1_map_id_to_element_aa81cbf475fc698c5dfcd5ec581496f36}} 
+\index{Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}!GetElementPtrFromMap@{GetElementPtrFromMap}}
+\index{GetElementPtrFromMap@{GetElementPtrFromMap}!Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}}
+\doxysubsubsection{\texorpdfstring{GetElementPtrFromMap()}{GetElementPtrFromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ Map\+Id\+To\+Element\+::\+Get\+Element\+Ptr\+From\+Map (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter Function to get the element that is mapped to from ui id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+id} & unique id of the element that maps to its element pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the element whose unique id was mapped to; else returns nullptr if not matched 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3ee3a528a8951fc147b8e3f5a42b6dfc}\label{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3ee3a528a8951fc147b8e3f5a42b6dfc}} 
+\index{Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}!GetMap@{GetMap}}
+\index{GetMap@{GetMap}!Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}}
+\doxysubsubsection{\texorpdfstring{GetMap()}{GetMap()}}
+{\footnotesize\ttfamily std\+::map$<$ const int, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ $>$ \& Map\+Id\+To\+Element\+::\+Get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter Funciton to get a reference to the map. 
+
+\begin{DoxyReturn}{Returns}
+reference to the map 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_map_id_to_element_afa174a59f0534d84c3a83935253840f6}\label{class_brood_1_1_brood_u_i_1_1_map_id_to_element_afa174a59f0534d84c3a83935253840f6}} 
+\index{Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}!ReomveFromMap@{ReomveFromMap}}
+\index{ReomveFromMap@{ReomveFromMap}!Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}}
+\doxysubsubsection{\texorpdfstring{ReomveFromMap()}{ReomveFromMap()}}
+{\footnotesize\ttfamily bool Map\+Id\+To\+Element\+::\+Reomve\+From\+Map (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+removes a entry with the id as a key from the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+id} & unique id of the element that is mapped to its element pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if removal was successfull; else false 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a73726eaca05832466d1194ddb0a862c8}\label{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a73726eaca05832466d1194ddb0a862c8}} 
+\index{Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}!stm\_mapper@{stm\_mapper}}
+\index{stm\_mapper@{stm\_mapper}!Brood::BroodUI::MapIdToElement@{Brood::BroodUI::MapIdToElement}}
+\doxysubsubsection{\texorpdfstring{stm\_mapper}{stm\_mapper}}
+{\footnotesize\ttfamily std\+::map$<$ const int, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood\+::\+Brood\+UI\+::\+UIElement}} $\ast$ $>$ Map\+Id\+To\+Element\+::stm\+\_\+mapper\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\begin{quote}
+maps the unique UI ID to the element \end{quote}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_map_id_to_element_8h}{Map\+Id\+To\+Element.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_map_id_to_element_8cpp}{Map\+Id\+To\+Element.\+cpp}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_u_i_element_8cpp}{UIElement.\+cpp}}\end{DoxyCompactItemize}

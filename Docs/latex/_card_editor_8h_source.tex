@@ -1,0 +1,868 @@
+\hypertarget{_card_editor_8h_source}{}\doxysection{Card\+Editor.\+h}
+\label{_card_editor_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/CardEditor.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/CardEditor.h}}
+\mbox{\hyperlink{_card_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_bar_8h}{MenuBar.h}}"{}} \textcolor{comment}{// includes all the other uiElements}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_work_space_8h}{WorkSpace.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{20 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{namespace }Application}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{class }\mbox{\hyperlink{class_card_editor}{CardEditor}};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{30 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ================= start of CardEditor class ==========================}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{47 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor}{Brood::Application::CardEditor}} :}
+\DoxyCodeLine{48     \textcolor{keyword}{public} \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space}{Brood::Application::WorkSpace}}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{51 \textcolor{keyword}{public}:}
+\DoxyCodeLine{52     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a987bf74cfe6eabe0cee52d07fe9f73e8}{CardEditor}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood::Application::Components::GameDataManager}}* a\_gameData,}
+\DoxyCodeLine{54                 sf::RectangleShape* a\_panelPtr );}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a64ccdb3c9dad5c012c7f30f152f77177}{\string~CardEditor}}();}
+\DoxyCodeLine{58     \textcolor{comment}{// ===== virtual funcitons ====}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// initializes the component of a workspace}}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a75ea339d768f67acd187059d28e6b40d}{InitializeWorkSpace}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{// all the logic for the workspace is here}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2b168c78887d982c07cb4fe233a86453}{Update}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{comment}{// updates all the display elment}}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a50ae65017418f6edf4d7aa37c7fc1bdd}{UpdateAllDispayElement}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// reners to the screen}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af33fbdd8c8db140275453d3a8b0795f3}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// Calls Debugger for all UI elements in this class}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1b36c6f080b353551de8a7aeb30a148b}{Debugger}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// ================= private member function ==================     }}
+\DoxyCodeLine{76 \textcolor{keyword}{private}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// initializes the setting DDM}}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab4e691137b7f169038f2da2271a9cb0f}{InitailizeSettingSelectionDDI}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// updates the setting DDM}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6b647858b13cb6f3163cebd0479db9eb}{UpdateSettingSelectionDDI}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// initializes the card display panel element}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a817e7bb1d63594032642eaa7452afa85}{InializeCardDisplayPanel}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// Update the card display panel element}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae4418b9a9354086dad60e0dc845daac7}{UpdateCardDisplayPanel}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// Draw the card display panel element}}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad7cd69245ba990440cca6c48d075f64e}{DrawCardDisplayPanel}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{// initializes the card display front component panel element}}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0b83d32b2fa1178d3c9b1c2ba6ccfd97}{InializeCardDisplayFcompPanel}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// Update the card display front component panel element}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afb3bf83922114e3ffe1c3979356bde7d}{UpdateCardDisplayFcompPanel}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// Draw the card display front component panel element}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a3f6aef10b6260af4632e820f05e418d6}{DrawCardDisplayFcompPanel}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// initializes the card display back component panel element}}
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7a8dda05300d31f8f2ba50830bb5c7e1}{InializeCardDisplayBcompPanel}}();}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{// Update the card display back component panel element}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7f889ccf8d2b2235f839a43fab13c9d5}{UpdateCardDisplayBcompPanel}}();}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{comment}{// Draw the card display back component panel element}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab30b54e7752e12f300b16b967821c7cd}{DrawCardDisplayBcompPanel}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{// initializes the card info panel element}}
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aafd4de175a2eab2cc853d540cf23176b}{InializeCardInfoPanel}}();}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{comment}{// Update the card info panel element}}
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1f6152c26d9ff211caac58890542e75b}{UpdateCardInfoPanel}}();}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{// Draw the card info panel element}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a505ba4bd61395a1f235babb1c00dda2a}{DrawCardInfoPanel}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     }
+\DoxyCodeLine{121     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{122     \textcolor{comment}{// =========== update functions for card display setting ======}}
+\DoxyCodeLine{123     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{127     \textcolor{comment}{// Card texture panel Element}}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a59c7f1e419cd40cf6b5994d1662493ba}{UpdateCardFrontFileTexture}}();}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// checks if the user interacted with the load }}
+\DoxyCodeLine{131     \textcolor{comment}{// Card texture panel Element}}
+\DoxyCodeLine{132     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a99df2b6782ce72bccc9f73fd537cd520}{UpdateCardBackFileTexture}}();}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{135     \textcolor{comment}{// current selceted deck index panel}}
+\DoxyCodeLine{136     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a104af2c568993df9fc596471c0350ae8}{UpdateCurrSelectedDeckIdx}}();}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{139     \textcolor{comment}{// current selceted Card index panel}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a846ae03bbb75f62cbaa66afabf38903f}{UpdateCurrSelectedCardIdx}}();}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{143     \textcolor{comment}{// time panel}}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a558bdcedb770dd3222239c4975f98441}{UpdateCurrCardInfoTime}}();}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{147     \textcolor{comment}{// Up panel}}
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a71003364db4d5d03b6a927c4abf286e7}{UpdateCurrCardInfoUp}}();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{comment}{// checks if the user interacted with the }}
+\DoxyCodeLine{151     \textcolor{comment}{// Down panel}}
+\DoxyCodeLine{152     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ade08ca4451191829606c593f91f0c82c}{UpdateCurrCardInfoDown}}();}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{comment}{// checks if the user interacted with the}}
+\DoxyCodeLine{155     \textcolor{comment}{// enter curr card question panel element}}
+\DoxyCodeLine{156     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_adfc6a7984b22ae39936d6b0070db7b50}{UpdateCurrCardQuestionInput}}();}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{comment}{// checks if the user interacted with the}}
+\DoxyCodeLine{159     \textcolor{comment}{// enter curr card answer panel element}}
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad3345481336b361b36f0e93c0222478d}{UpdateCurrCardAnswerInput}}();}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{comment}{// checks if the user interacted with the}}
+\DoxyCodeLine{163     \textcolor{comment}{// turn card panel element}}
+\DoxyCodeLine{164     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9531931c235ac71fbaac53f50026e804}{UpdateTurnCard}}();}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{comment}{// ================= private member variable ==================  }}
+\DoxyCodeLine{167 \textcolor{keyword}{private}:}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170     sf::RectangleShape* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9dba400338b7a71dd43892f29467e7cf}{m\_panelBodyPtr}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{comment}{// holds which setting it is displaying}}
+\DoxyCodeLine{173     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a53300357c29771057cfa27318e4d2881}{m\_selectedSettingIdx}};}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{180     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood::BroodUI::DropDownInput}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abcbbe0425e39066c942f085eb1b86b22}{m\_ddiSettingSelection}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{183     \textcolor{comment}{// =========== member variables for card display setting =====}}
+\DoxyCodeLine{184     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{comment}{// ==== UI elements to change CardFrontTimePrompt size x ====}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a00af0b85a28fae1f283c646f9ba87f2e}{m\_txtCardSizeXPrompt}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0f131358225c309acbd13a1ad0f07e7a}{m\_btnCardDecSizeX}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{195     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af60545689cf522b77a31624e16b8a0ee}{m\_txtCardSizeX}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aef797b8818109145691d7fbbdb6c528b}{m\_btnCardIncSizeX}};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \textcolor{comment}{// ==== UI elements to change Card size y ====}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{203     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae6f54e73fae1fc1c67c11235b4e4f730}{m\_txtCardSizeYPrompt}};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{206     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa84c0c21c97985664c1c8046998d1567}{m\_btnCardDecSizeY}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{209     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa7274a401c9c56b2c019732637f3dbaf}{m\_txtCardSizeY}};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a981687d6cabc38b8e85a2fb78b074b0c}{m\_btnCardIncSizeY}};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{comment}{// ==== UI elements to change Card position x ====}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{217     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab5be42358db569a542728dec7f4f133d}{m\_txtCardPosXPrompt}};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{220     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4f6024e1b1fafbeb38734e303615ce7d}{m\_btnCardDecPosX}};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{223     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afeb81effd5023eb5930a31ac594fd850}{m\_txtCardPosX}};}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{226     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae8ed3a681fb9ff2fdc0fd9ac475bf7e6}{m\_btnCardIncPosX}};}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228     \textcolor{comment}{// ==== UI elements to change Card Position y ====}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{231     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a18b5709ba7b4c65c6a058d324ad73e6e}{m\_txtCardPosYPrompt}};}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{234     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a414e8b71814e36cee60b835e498c9ed0}{m\_btnCardDecPosY}};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{237     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9ce64f2eac5f5dbb3865d769785e8da8}{m\_txtCardPosY}};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{240     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a27f829ee0cbf1e2a573756bd218d4464}{m\_btnCardIncPosY}};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{comment}{// ==== UI elements to enter a CardFrontBg filename texture  ====}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{245     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa3f50ea92539476494dd40c0a9e070ba}{m\_txtCardFrontBgFileNamePrompt}};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{248     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad4b1ea47bf0577eff56f961644d57098}{m\_txtCardFrontBgFileInput}};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{251     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aacc8ccab73e190845d2d80ba6fbb3c6f}{m\_btnCardFrontBgOpenFile}};}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \textcolor{comment}{// ==== UI elements to enter a CardBrontBg filename textur  ====}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{256     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a97887a13b9f78b06996f2d51b9468662}{m\_txtCardBackBgFileNamePrompt}};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{259     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7ed151be51bddcb6e70f470f6c76a7f2}{m\_txtCardBackBgFileInput}};}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{262     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afa4fc95aba2c347aca16e75e95285608}{m\_btnCardBackBgOpenFile}};}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{265     \textcolor{comment}{// =========== member variables for front of the card ========}}
+\DoxyCodeLine{266     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \textcolor{comment}{// ==== UI elements to change CardFrontTimePrompt position x ====}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{271     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa1ca07921031a87bf6afe531c864b864}{m\_txtCardFrontTimePromptPosXPrompt}};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{274     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af5e7684ad997f8f1a2272d2dc0a388e8}{m\_btnCardFrontTimePromptDecPosX}};}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{277     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa670d5abea0dc8eabe6f435232626e38}{m\_txtCardFrontTimePromptPosX}};}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{280     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a905b4247a77b6f6c96bd862359e1576b}{m\_btnCardFrontTimePromptIncPosX}};}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282     \textcolor{comment}{// ==== UI elements to change CardFrontTimePrompt Position y ====}}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{285     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a90b1dfc62b57e92fe8e6ee5e5844b9ce}{m\_txtCardFrontTimePromptPosYPrompt}};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{288     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a261c1b32fc0d96ac336b91e493928c52}{m\_btnCardFrontTimePromptDecPosY}};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{291     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aed8279366196ecd8ffeca196a2627725}{m\_txtCardFrontTimePromptPosY}};}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{294     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a67e6216f734e5c6b6bbdd1cc477d9424}{m\_btnCardFrontTimePromptIncPosY}};}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     \textcolor{comment}{// ==== UI elements to change CardFrontTimeValue position x ====}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{299     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af574c94fc9536ebe07ffbfe52a69f1bd}{m\_txtCardFrontTimeValuePosXPrompt}};}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{302     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a75e2f68297789e1844853b68d56e706d}{m\_btnCardFrontTimeValueDecPosX}};}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{305     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9bf03ec6deecb44e8dc9f07dff172bc3}{m\_txtCardFrontTimeValuePosX}};}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{308     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8eeb7fca24df6d825c2dd679e135531d}{m\_btnCardFrontTimeValueIncPosX}};}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310     \textcolor{comment}{// ==== UI elements to change CardFrontTimeValue Position y ====}}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{313     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abacaca113e352cfec44b92f7a730ebe0}{m\_txtCardFrontTimeValuePosYPrompt}};}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{316     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5b71d2b8695c6f2723d4ae272fe295f4}{m\_btnCardFrontTimeValueDecPosY}};}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{319     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a44e3ae8daf0e2407ee9c063403279f13}{m\_txtCardFrontTimeValuePosY}};}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{322     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8468fd0fcb34d679fb0be5e0615d186e}{m\_btnCardFrontTimeValueIncPosY}};}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324     \textcolor{comment}{// ==== UI elements to change CardUpPrompt position x ====}}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{327     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abf7caf16913cecdb6837d0b0e3d0a822}{m\_txtCardUpPromptPosXPrompt}};}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{330     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0cb221b50bea02126719dbbfdb54419c}{m\_btnCardUpPromptDecPosX}};}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{333     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0c33cd112701ae314db388e29ca26795}{m\_txtCardUpPromptPosX}};}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{336     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afd7702d50444dc04c86b338d2161bee3}{m\_btnCardUpPromptIncPosX}};}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     \textcolor{comment}{// ==== UI elements to change CardUpPrompt Position y ====}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{341     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6ae3ab25dadf6cc18cdab32a8593a586}{m\_txtCardUpPromptPosYPrompt}};}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{344     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8137f4fc9f57c55a6002875eabc3886d}{m\_btnCardUpPromptDecPosY}};}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{347     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae5a55b39d32e146cf5da5bd2e52623de}{m\_txtCardUpPromptPosY}};}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{350     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a3e62e7a0fac98ab413a3f65529117772}{m\_btnCardUpPromptIncPosY}};}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352     \textcolor{comment}{// ==== UI elements to change CardUpValue position x ====}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{355     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aae0afd88e33c2a223f6a706d8226737a}{m\_txtCardUpValuePosXPrompt}};}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{358     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4d0b5cc5e906d1d90069b88d4b0fdf51}{m\_btnCardUpValueDecPosX}};}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{361     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae84270deb537d8727e13d4a05a540554}{m\_txtCardUpValuePosX}};}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{364     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac4e0467d6dd87e17a37e7f7f04557a9a}{m\_btnCardUpValueIncPosX}};}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366     \textcolor{comment}{// ==== UI elements to change CardUpValue Position y ====}}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{369     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5e4f2c16cee915c94b36519cb1fb7150}{m\_txtCardUpValuePosYPrompt}};}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{372     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a77882187baad7607347b832d9c8232c7}{m\_btnCardUpValueDecPosY}};}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{375     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a957c26c043f80076631a9c5f2cae6bb4}{m\_txtCardUpValuePosY}};}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{378     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5a4b7668d54ba48eb1d3a2d1ea6a2cc3}{m\_btnCardUpValueIncPosY}};}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380     \textcolor{comment}{// ==== UI elements to change CardDownPrompt position x ====}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{383     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab07f578a613499c289809572e2f81d5a}{m\_txtCardDownPromptPosXPrompt}};}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{386     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7e7e978f7d580e5cdc1f32d93d38151b}{m\_btnCardDownPromptDecPosX}};}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{389     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a07208a6880f4682d0f8c09ddcb5ef6f5}{m\_txtCardDownPromptPosX}};}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{392     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abef16e7223f8f9c6b4aa67415ec971e1}{m\_btnCardDownPromptIncPosX}};}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394     \textcolor{comment}{// ==== UI elements to change CardDownPrompt Position y ====}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{397     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae0db9603d3067d37536c44ce276c6ffc}{m\_txtCardDownPromptPosYPrompt}};}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{400     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac54e499d7bf41c8c2b35d416fd6b17cf}{m\_btnCardDownPromptDecPosY}};}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{403     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a11593e2e487a4c7731542d4ef210f0f5}{m\_txtCardDownPromptPosY}};}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{406     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac0123fc729fc2ee2e494834a39b5f396}{m\_btnCardDownPromptIncPosY}};}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     \textcolor{comment}{// ==== UI elements to change CardDownValue position x ====}}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{411     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8ea7aac1274ce357685a36a066c4c47d}{m\_txtCardDownValuePosXPrompt}};}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{414     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af450f4fede960fbdc727f72048c649e6}{m\_btnCardDownValueDecPosX}};}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{417     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a29ef5ff0f079b1b3bb70b2c9255badde}{m\_txtCardDownValuePosX}};}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{420     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae5c8632f9e2b5f2e6d2c52143ca5c932}{m\_btnCardDownValueIncPosX}};}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422     \textcolor{comment}{// ==== UI elements to change CardDownValue Position y ====}}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{425     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a171674848b5506d657a7042dd87b0aa2}{m\_txtCardDownValuePosYPrompt}};}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{428     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4e6cb58a0cb9ffd55d34cba76d21b2c1}{m\_btnCardDownValueDecPosY}};}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{431     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a973ab7019d1137a380b507a0a989ce27}{m\_txtCardDownValuePosY}};}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{434     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab6e1de7e95f6ed7880d5122440031f6c}{m\_btnCardDownValueIncPosY}};}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436     \textcolor{comment}{// ==== UI elements to change CardTurnCard position x ====}}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{439     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa2f693153455ff3e7a45a4e86b28fed4}{m\_txtCardTurnCardPosXPrompt}};}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{442     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8e36ef65f38e12fae70e44531580bef9}{m\_btnCardTurnCardDecPosX}};}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{445     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8793f1f6ccea6773c643c5ac363531bf}{m\_txtCardTurnCardPosX}};}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{448     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afb0b7f1322ae03467b52e64efcfc510d}{m\_btnCardTurnCardIncPosX}};}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450     \textcolor{comment}{// ==== UI elements to change CardTurnCard Position y ====}}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{453     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9391f4a9593f2150dda1b6b40ec21fd8}{m\_txtCardTurnCardPosYPrompt}};}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{456     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a79af1900d8eee81634e4dd66b9a290c1}{m\_btnCardTurnCardDecPosY}};}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{459     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8c374ecd720a98df24f0c12654831522}{m\_txtCardTurnCardPosY}};}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{462     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af2489acd0bd7a3f10f0898c4403304dc}{m\_btnCardTurnCardIncPosY}};}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     \textcolor{comment}{// ==== UI elements to change CardFrontTimePrompt size x ====}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{467     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a34a4c60fd1bbd75eaf528240b53f4f71}{m\_txtCardFrontTimePromptSizeXPrompt}};}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{470     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aebb43e64910ef680fd58e53ce1469298}{m\_btnCardFrontTimePromptDecSizeX}};}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{473     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a564b457dee7e05904164c62a50fce9dc}{m\_txtCardFrontTimePromptSizeX}};}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{476     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8021569e1819bf95b9c41f72d9a09c6f}{m\_btnCardFrontTimePromptIncSizeX}};}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478     \textcolor{comment}{// ==== UI elements to change CardFrontTimePrompt size y ====}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{481     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9fd903c5579e9df8ce5ec218e63e57cf}{m\_txtCardFrontTimePromptSizeYPrompt}};}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{484     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad165400c725ab0650cbcd21cca68861c}{m\_btnCardFrontTimePromptDecSizeY}};}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{487     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2202a8e7fb5d0b91cab47ff4cebfe081}{m\_txtCardFrontTimePromptSizeY}};}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{490     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1497a88b0030d426c4c615d847f6eac5}{m\_btnCardFrontTimePromptIncSizeY}};}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492     \textcolor{comment}{// ==== UI elements to change CardFrontTimeValue size x ====}}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{495     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa6e3f601c4af9f2b9a24ea3f42b3eabb}{m\_txtCardFrontTimeValueSizeXPrompt}};}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{498     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae0a623b23172e7eecd4b32077737bfea}{m\_btnCardFrontTimeValueDecSizeX}};}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{501     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4e52abd091b23f8a024fe950a3647d74}{m\_txtCardFrontTimeValueSizeX}};}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{504     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a508ad088b258c2f9ab478b03fd2fa7d9}{m\_btnCardFrontTimeValueIncSizeX}};}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506     \textcolor{comment}{// ==== UI elements to change CardFrontTimeValue size y ====}}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{509     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a73b40cd7df5231ee2edabe1898819def}{m\_txtCardFrontTimeValueSizeYPrompt}};}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{512     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4c87773b1096490fdb6ecc6b3c68fae5}{m\_btnCardFrontTimeValueDecSizeY}};}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{515     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aae1701862d2e4d31991123e33237f2a4}{m\_txtCardFrontTimeValueSizeY}};}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{518     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a11fa25b931e49451d89a1588c31895c3}{m\_btnCardFrontTimeValueIncSizeY}};}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520     \textcolor{comment}{// ==== UI elements to change CardUpPrompt size x ====}}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{523     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af6c5dfabae411fa13585d1930abeeff9}{m\_txtCardUpPromptSizeXPrompt}};}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{526     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a950aa19759d3e3b2288a7eff169b900f}{m\_btnCardUpPromptDecSizeX}};}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{529     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a519b499d462536d3d3b7dba6e6528d45}{m\_txtCardUpPromptSizeX}};}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{532     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa1d9f8b3a2ea4f5fea7d32df535ae856}{m\_btnCardUpPromptIncSizeX}};}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534     \textcolor{comment}{// ==== UI elements to change CardUpPrompt size y ====}}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{537     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a756d6212c0751e144f0632f71ea2627b}{m\_txtCardUpPromptSizeYPrompt}};}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{540     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab1604f85d5bd3f902c063cbde8eeb39b}{m\_btnCardUpPromptDecSizeY}};}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{543     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0624ee7b7ee2b23de378f78808fc4ae6}{m\_txtCardUpPromptSizeY}};}
+\DoxyCodeLine{544 }
+\DoxyCodeLine{546     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa794b5817ab598084739351a59872864}{m\_btnCardUpPromptIncSizeY}};}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548     \textcolor{comment}{// ==== UI elements to change CardUpValue size x ====}}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{551     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a20696e00f78fa0275f0e7cf3e6717a8d}{m\_txtCardUpValueSizeXPrompt}};}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{554     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_acf7b045113f25d10123c0641d3324c49}{m\_btnCardUpValueDecSizeX}};}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{557     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a62481c35e6c3f1483501fc4b0b8f63d2}{m\_txtCardUpValueSizeX}};}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{560     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a62c8171f237f830ccb7fe3a4cd651229}{m\_btnCardUpValueIncSizeX}};}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562     \textcolor{comment}{// ==== UI elements to change CardUpValue size y ====}}
+\DoxyCodeLine{563 }
+\DoxyCodeLine{565     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a432f78949a0faa2b01ad131589a57518}{m\_txtCardUpValueSizeYPrompt}};}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{568     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af04673a9c8761387a6e3b7d00ec9ba2a}{m\_btnCardUpValueDecSizeY}};}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{571     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac68c64bd02ce923bfe8859b8c1ec8e2a}{m\_txtCardUpValueSizeY}};}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{574     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6cf12f8161d0e70e829685354b7499ec}{m\_btnCardUpValueIncSizeY}};}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576     \textcolor{comment}{// ==== UI elements to change CardDownPrompt size x ====}}
+\DoxyCodeLine{577 }
+\DoxyCodeLine{579     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6426fc88ea0c4f8eb5038fb4cb8c462d}{m\_txtCardDownPromptSizeXPrompt}};}
+\DoxyCodeLine{580 }
+\DoxyCodeLine{582     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a3c12d1f7fe721ce974541389551a60cb}{m\_btnCardDownPromptDecSizeX}};}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{585     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a348e46a5df26bbb7c90f48f043881dcf}{m\_txtCardDownPromptSizeX}};}
+\DoxyCodeLine{586 }
+\DoxyCodeLine{588     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9c6cfe55cf2c9457dc1c64e8e2b9ca7a}{m\_btnCardDownPromptIncSizeX}};}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590     \textcolor{comment}{// ==== UI elements to change CardDownPrompt size y ====}}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{593     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a130352105d600e8ee5b70ffbca70ae1c}{m\_txtCardDownPromptSizeYPrompt}};}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{596     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2eba11a7b7204f36f42fdcb07a433613}{m\_btnCardDownPromptDecSizeY}};}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{599     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8a2f933e34015c25f3eefb6241c92880}{m\_txtCardDownPromptSizeY}};}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{602     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afec9aa67c432481fedb2b72459c7dd83}{m\_btnCardDownPromptIncSizeY}};}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604     \textcolor{comment}{// ==== UI elements to change CardDownValue size x ====}}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{607     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae310c355ece79b288a0d04a14e68eca8}{m\_txtCardDownValueSizeXPrompt}};}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{610     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa20e91a559947e60023cbc05675e49e6}{m\_btnCardDownValueDecSizeX}};}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{613     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab18907c2a40e3a42a10d625e7bc59567}{m\_txtCardDownValueSizeX}};}
+\DoxyCodeLine{614 }
+\DoxyCodeLine{616     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afa2f837e3aadda1e37e583e7ab2385cf}{m\_btnCardDownValueIncSizeX}};}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618     \textcolor{comment}{// ==== UI elements to change CardDownValue size y ====}}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{621     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1a52ebe766a982d3ce4d51036b181823}{m\_txtCardDownValueSizeYPrompt}};}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{624     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afdbe8aaebe694061f9e9b3d38a89a137}{m\_btnCardDownValueDecSizeY}};}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{627     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a60e28d1fde8e1a235efc5d8b4ddd40e6}{m\_txtCardDownValueSizeY}};}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{630     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9d9188bafb89401cc1f041d57aa8c937}{m\_btnCardDownValueIncSizeY}};}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632     \textcolor{comment}{// ==== UI elements to change CardTurnCard size x ====}}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{635     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af92944e545e0d4a8f087c2e1af11ff7d}{m\_txtCardTurnCardSizeXPrompt}};}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{638     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7c9c6cdf09069811c9028b6280a617d1}{m\_btnCardTurnCardDecSizeX}};}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{641     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5fb097a6f7488e16c445d0377e07060d}{m\_txtCardTurnCardSizeX}};}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{644     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1a4e14a67c7763e83f98196070176973}{m\_btnCardTurnCardIncSizeX}};}
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646     \textcolor{comment}{// ==== UI elements to change CardTurnCard size y ====}}
+\DoxyCodeLine{647 }
+\DoxyCodeLine{649     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a10a4c78964fe8171ec768097add98341}{m\_txtCardTurnCardSizeYPrompt}};}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{652     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a085ba9cc5739f9f8c83d3caeecf0dd1c}{m\_btnCardTurnCardDecSizeY}};}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{655     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa9c6e2441b9465b1fdffd139b6ad9c9b}{m\_txtCardTurnCardSizeY}};}
+\DoxyCodeLine{656 }
+\DoxyCodeLine{658     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a3ae2508fe8bfc4c9eb2f6c0f81474e4a}{m\_btnCardTurnCardIncSizeY}};}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{660     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{661     \textcolor{comment}{// =========== member variables for back of the card =========}}
+\DoxyCodeLine{662     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664     \textcolor{comment}{// ==== UI elements to change CardBackTimePrompt position x ====}}
+\DoxyCodeLine{665 }
+\DoxyCodeLine{667     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6df458a7dffbf9f6129bfe2a5386091c}{m\_txtCardBackTimePromptPosXPrompt}};}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{670     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4574f3734bd8b0ca2be4f769c80c0fb5}{m\_btnCardBackTimePromptDecPosX}};}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{673     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aed08d69b3e76193492d9b27c2003aae2}{m\_txtCardBackTimePromptPosX}};}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{676     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a899bbba548946c9402260e86f80eba0c}{m\_btnCardBackTimePromptIncPosX}};}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678     \textcolor{comment}{// ==== UI elements to change CardBackTimePrompt Position y ====}}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{681     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af8e1437323fec7d5a90c8ff8e7f5d0c0}{m\_txtCardBackTimePromptPosYPrompt}};}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{684     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af12a47a901cc4bc9aec538932eb54173}{m\_btnCardBackTimePromptDecPosY}};}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{687     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a74dcba21b5438f02ce7e6bf6d393edb6}{m\_txtCardBackTimePromptPosY}};}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{690     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9e04c1bf272bfb50ae10dda3ba8cf33c}{m\_btnCardBackTimePromptIncPosY}};}
+\DoxyCodeLine{691 }
+\DoxyCodeLine{692     \textcolor{comment}{// ==== UI elements to change CardBackTimeValue position x ====}}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{695     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aaf89a4dddcf087e3e9987cbf9f0eb14c}{m\_txtCardBackTimeValuePosXPrompt}};}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{698     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a344220bc44d99a0d39778ef3e89bfde8}{m\_btnCardBackTimeValueDecPosX}};}
+\DoxyCodeLine{699 }
+\DoxyCodeLine{701     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abbf223a00a88bd7e87e599caac8b1627}{m\_txtCardBackTimeValuePosX}};}
+\DoxyCodeLine{702 }
+\DoxyCodeLine{704     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad01ad5f3ec1cb4bfc703e8b6bb883482}{m\_btnCardBackTimeValueIncPosX}};}
+\DoxyCodeLine{705 }
+\DoxyCodeLine{706     \textcolor{comment}{// ==== UI elements to change CardBackTimeValue Position y ====}}
+\DoxyCodeLine{707 }
+\DoxyCodeLine{709     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae2a1952248e4582907f059805d4316b1}{m\_txtCardBackTimeValuePosYPrompt}};}
+\DoxyCodeLine{710 }
+\DoxyCodeLine{712     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4dd44e91d487f4fcc7bcbed74b16b030}{m\_btnCardBackTimeValueDecPosY}};}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{715     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abb8f5c3d33d308bca3e5c142857c44d4}{m\_txtCardBackTimeValuePosY}};}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{718     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a23ca8a7cb501f16022ef18c9b50752f1}{m\_btnCardBackTimeValueIncPosY}};}
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720     \textcolor{comment}{// ==== UI elements to change CardQuestionPrompt position x ====}}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{723     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac7a404a7714bbfb82355b881935d1a32}{m\_txtCardQuestionPromptPosXPrompt}};}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{726     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a115c0483f465f1f997ad2c3f1068ae61}{m\_btnCardQuestionPromptDecPosX}};}
+\DoxyCodeLine{727 }
+\DoxyCodeLine{729     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af4bc0c306db528ef02d44e1a43325c48}{m\_txtCardQuestionPromptPosX}};}
+\DoxyCodeLine{730 }
+\DoxyCodeLine{732     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0913c74c40d0c06ae8aa7f0543fa07a9}{m\_btnCardQuestionPromptIncPosX}};}
+\DoxyCodeLine{733 }
+\DoxyCodeLine{734     \textcolor{comment}{// ==== UI elements to change CardQuestionPrompt Position y ====}}
+\DoxyCodeLine{735 }
+\DoxyCodeLine{737     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_adbdfa7a90786ac39fc28124028374935}{m\_txtCardQuestionPromptPosYPrompt}};}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{740     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a93c5193cd96d3b46eb870910ecb1bc32}{m\_btnCardQuestionPromptDecPosY}};}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{743     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac76fe5b6ed8cec3e646da1730413590c}{m\_txtCardQuestionPromptPosY}};}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{746     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8a4848d36fac639d71620c8da0fbcd70}{m\_btnCardQuestionPromptIncPosY}};}
+\DoxyCodeLine{747 }
+\DoxyCodeLine{748     \textcolor{comment}{// ==== UI elements to change CardQuestionValue position x ====}}
+\DoxyCodeLine{749 }
+\DoxyCodeLine{751     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a89525176c0664e87927fe99942bc2c85}{m\_txtCardQuestionValuePosXPrompt}};}
+\DoxyCodeLine{752 }
+\DoxyCodeLine{754     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6f4e820117f8154b3f8c4f2febdce15f}{m\_btnCardQuestionValueDecPosX}};}
+\DoxyCodeLine{755 }
+\DoxyCodeLine{757     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae75328104ec29039ff1f5ba72f6a19f4}{m\_txtCardQuestionValuePosX}};}
+\DoxyCodeLine{758 }
+\DoxyCodeLine{760     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9eef5e5a0274635a3f863990a813b198}{m\_btnCardQuestionValueIncPosX}};}
+\DoxyCodeLine{761 }
+\DoxyCodeLine{762     \textcolor{comment}{// ==== UI elements to change CardQuestionValue Position y ====}}
+\DoxyCodeLine{763 }
+\DoxyCodeLine{765     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aadeaab31ec313ebee2d4f02e4d8ba0d4}{m\_txtCardQuestionValuePosYPrompt}};}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{768     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa7045a74e5559356ec84738acfec08c9}{m\_btnCardQuestionValueDecPosY}};}
+\DoxyCodeLine{769 }
+\DoxyCodeLine{771     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac35400786d606005919f2ed2f7388328}{m\_txtCardQuestionValuePosY}};}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{774     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a54b15116114fcad447af9fdb7e1f053e}{m\_btnCardQuestionValueIncPosY}};}
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776     \textcolor{comment}{// ==== UI elements to change CardAnswerPrompt position x ====}}
+\DoxyCodeLine{777 }
+\DoxyCodeLine{779     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af2153583409c03df8f188922675e0dd6}{m\_txtCardAnswerPromptPosXPrompt}};}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{782     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a45ffe5b18799c2df140d92ecce6c7873}{m\_btnCardAnswerPromptDecPosX}};}
+\DoxyCodeLine{783 }
+\DoxyCodeLine{785     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abe8c3a6f90f5d51d3b7870a56c1219c7}{m\_txtCardAnswerPromptPosX}};}
+\DoxyCodeLine{786 }
+\DoxyCodeLine{788     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a412dcaf912e55b4b5883f6020cf53095}{m\_btnCardAnswerPromptIncPosX}};}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790     \textcolor{comment}{// ==== UI elements to change CardAnswerPrompt Position y ====}}
+\DoxyCodeLine{791 }
+\DoxyCodeLine{793     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_acc92e59238abfa181c978f4ed5495ed9}{m\_txtCardAnswerPromptPosYPrompt}};}
+\DoxyCodeLine{794 }
+\DoxyCodeLine{796     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2238ee40f2247ed01b9ed87d71196664}{m\_btnCardAnswerPromptDecPosY}};}
+\DoxyCodeLine{797 }
+\DoxyCodeLine{799     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a11cd286c923ef1c21b7ecdaeefb43e7c}{m\_txtCardAnswerPromptPosY}};}
+\DoxyCodeLine{800 }
+\DoxyCodeLine{802     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6ac4b9130ed72fcbec7d9b71b596c4fb}{m\_btnCardAnswerPromptIncPosY}};}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804     \textcolor{comment}{// ==== UI elements to change CardAnswerValue position x ====}}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{807     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1a71164cceb9bb417e3b8813115e2988}{m\_txtCardAnswerValuePosXPrompt}};}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{810     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a675bfa03a8751a33149f008a2b986eff}{m\_btnCardAnswerValueDecPosX}};}
+\DoxyCodeLine{811 }
+\DoxyCodeLine{813     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_adb58bcb7f0500594de67bac274cb8d94}{m\_txtCardAnswerValuePosX}};}
+\DoxyCodeLine{814 }
+\DoxyCodeLine{816     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a3ba944cbaddfc5301b378e38587a7b49}{m\_btnCardAnswerValueIncPosX}};}
+\DoxyCodeLine{817 }
+\DoxyCodeLine{818     \textcolor{comment}{// ==== UI elements to change CardAnswerValue Position y ====}}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{821     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ace890550575f5b44cf7077cf52d75378}{m\_txtCardAnswerValuePosYPrompt}};}
+\DoxyCodeLine{822 }
+\DoxyCodeLine{824     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab327a78134681e82fe0a2d620b6d7a60}{m\_btnCardAnswerValueDecPosY}};}
+\DoxyCodeLine{825 }
+\DoxyCodeLine{827     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0fe0fc87bce7d7092597b68402033ef3}{m\_txtCardAnswerValuePosY}};}
+\DoxyCodeLine{828 }
+\DoxyCodeLine{830     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7c1e307eb9f8a020ce6a41039a574739}{m\_btnCardAnswerValueIncPosY}};}
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832     \textcolor{comment}{// ==== UI elements to change CardSubmit position x ====}}
+\DoxyCodeLine{833 }
+\DoxyCodeLine{835     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9e9aa214a66bc1bdc5dffe83b9521e68}{m\_txtCardSubmitPosXPrompt}};}
+\DoxyCodeLine{836 }
+\DoxyCodeLine{838     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a78972a62af06657d318e9537e007e300}{m\_btnCardSubmitDecPosX}};}
+\DoxyCodeLine{839 }
+\DoxyCodeLine{841     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a828945f87aa650f1fc725e56ff9312cf}{m\_txtCardSubmitPosX}};}
+\DoxyCodeLine{842 }
+\DoxyCodeLine{844     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6150f8b6f7c03fcd0445a6d2b2e44623}{m\_btnCardSubmitIncPosX}};}
+\DoxyCodeLine{845 }
+\DoxyCodeLine{846     \textcolor{comment}{// ==== UI elements to change CardSubmit Position y ====}}
+\DoxyCodeLine{847 }
+\DoxyCodeLine{849     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a51d03d068f8e3715cb96eb790e1e48c8}{m\_txtCardSubmitPosYPrompt}};}
+\DoxyCodeLine{850 }
+\DoxyCodeLine{852     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a34591501e718165216923a78337a9f07}{m\_btnCardSubmitDecPosY}};}
+\DoxyCodeLine{853 }
+\DoxyCodeLine{855     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae2072cfb8c187d5654124e7311d589f3}{m\_txtCardSubmitPosY}};}
+\DoxyCodeLine{856 }
+\DoxyCodeLine{858     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a22b626df4075d7206dbad390fbe3aa6d}{m\_btnCardSubmitIncPosY}};}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860     \textcolor{comment}{// ==== UI elements to change CardBackTimePrompt position x ====}}
+\DoxyCodeLine{861 }
+\DoxyCodeLine{863     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a336d9f37ba3b53eea3b3f0073fcd57c9}{m\_txtCardBackTimePromptSizeXPrompt}};}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{866     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4847140ddc1cfe2e70dbaed2bd432e51}{m\_btnCardBackTimePromptDecSizeX}};}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{869     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad2ce8a1d99e14c8cdb025be77886dc46}{m\_txtCardBackTimePromptSizeX}};}
+\DoxyCodeLine{870 }
+\DoxyCodeLine{872     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_adeb0928c8617b9b39c5240d56d10a7cc}{m\_btnCardBackTimePromptIncSizeX}};}
+\DoxyCodeLine{873 }
+\DoxyCodeLine{874     \textcolor{comment}{// ==== UI elements to change CardBackTimePrompt Size y ====}}
+\DoxyCodeLine{875 }
+\DoxyCodeLine{877     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae6bfc763120da3c2f10f6146f843c827}{m\_txtCardBackTimePromptSizeYPrompt}};}
+\DoxyCodeLine{878 }
+\DoxyCodeLine{880     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ad768eff71e5ea126841bafdae253d238}{m\_btnCardBackTimePromptDecSizeY}};}
+\DoxyCodeLine{881 }
+\DoxyCodeLine{883     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2220d228f9d11650ed588284b0cef85e}{m\_txtCardBackTimePromptSizeY}};}
+\DoxyCodeLine{884 }
+\DoxyCodeLine{886     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7c322ad97d13e3a54e31314ad0cd3dec}{m\_btnCardBackTimePromptIncSizeY}};}
+\DoxyCodeLine{887 }
+\DoxyCodeLine{888     \textcolor{comment}{// ==== UI elements to change CardBackTimeValue position x ====}}
+\DoxyCodeLine{889 }
+\DoxyCodeLine{891     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a22195af6be2fefbf35a13f244e8103b4}{m\_txtCardBackTimeValueSizeXPrompt}};}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{894     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af51a26eecd744de6250a6b24ef2605f3}{m\_btnCardBackTimeValueDecSizeX}};}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{897     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa16ee78834d803d2fa2767e342adb73b}{m\_txtCardBackTimeValueSizeX}};}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{900     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a909934553ffa22421cb5ab1af5d3e1f6}{m\_btnCardBackTimeValueIncSizeX}};}
+\DoxyCodeLine{901 }
+\DoxyCodeLine{902     \textcolor{comment}{// ==== UI elements to change CardBackTimeValue Size y ====}}
+\DoxyCodeLine{903 }
+\DoxyCodeLine{905     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8bd0b76374feb3394d7cd24a2b455b97}{m\_txtCardBackTimeValueSizeYPrompt}};}
+\DoxyCodeLine{906 }
+\DoxyCodeLine{908     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a114398fd01ae0198bcf6beb23f17dd37}{m\_btnCardBackTimeValueDecSizeY}};}
+\DoxyCodeLine{909 }
+\DoxyCodeLine{911     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa851bdd440c21280f27775639fd7c93f}{m\_txtCardBackTimeValueSizeY}};}
+\DoxyCodeLine{912 }
+\DoxyCodeLine{914     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab8ea3926eca7806ceae9400bf8434afd}{m\_btnCardBackTimeValueIncSizeY}};}
+\DoxyCodeLine{915 }
+\DoxyCodeLine{916     \textcolor{comment}{// ==== UI elements to change CardQuestionPrompt position x ====}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{919     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8c09e805d06d88304795eda2f2401314}{m\_txtCardQuestionPromptSizeXPrompt}};}
+\DoxyCodeLine{920 }
+\DoxyCodeLine{922     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a2892824f8a8c11ede9cd94e15b28167b}{m\_btnCardQuestionPromptDecSizeX}};}
+\DoxyCodeLine{923 }
+\DoxyCodeLine{925     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa2c2a277f3659655e002ff975d16d9c3}{m\_txtCardQuestionPromptSizeX}};}
+\DoxyCodeLine{926 }
+\DoxyCodeLine{928     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a7ef750973e24ce266d9154d66bdd7735}{m\_btnCardQuestionPromptIncSizeX}};}
+\DoxyCodeLine{929 }
+\DoxyCodeLine{930     \textcolor{comment}{// ==== UI elements to change CardQuestionPrompt Size y ====}}
+\DoxyCodeLine{931 }
+\DoxyCodeLine{933     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab5245ce372a449bb2cdb7d7d9283eede}{m\_txtCardQuestionPromptSizeYPrompt}};}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{936     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a872e084f8f76b0b7cffc6a55c1c15ec5}{m\_btnCardQuestionPromptDecSizeY}};}
+\DoxyCodeLine{937 }
+\DoxyCodeLine{939     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6db1cdee2d23f3af319f80b34b10e35d}{m\_txtCardQuestionPromptSizeY}};}
+\DoxyCodeLine{940 }
+\DoxyCodeLine{942     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a50edba486b156268eda3235cd834199e}{m\_btnCardQuestionPromptIncSizeY}};}
+\DoxyCodeLine{943 }
+\DoxyCodeLine{944     \textcolor{comment}{// ==== UI elements to change CardQuestionValue position x ====}}
+\DoxyCodeLine{945 }
+\DoxyCodeLine{947     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aab77b5fd93fcf2d35279cc76a79a7704}{m\_txtCardQuestionValueSizeXPrompt}};}
+\DoxyCodeLine{948 }
+\DoxyCodeLine{950     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a44f653ff22865e24d437941a52245bbc}{m\_btnCardQuestionValueDecSizeX}};}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{953     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afb4848c6d0ee10d8631b8031a8e09201}{m\_txtCardQuestionValueSizeX}};}
+\DoxyCodeLine{954 }
+\DoxyCodeLine{956     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aaaa3fd6c5390dde3d697cf34684b4e62}{m\_btnCardQuestionValueIncSizeX}};}
+\DoxyCodeLine{957 }
+\DoxyCodeLine{958     \textcolor{comment}{// ==== UI elements to change CardQuestionValue Size y ====}}
+\DoxyCodeLine{959 }
+\DoxyCodeLine{961     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a00098f59831859ea8e6e27e6d1b60720}{m\_txtCardQuestionValueSizeYPrompt}};}
+\DoxyCodeLine{962 }
+\DoxyCodeLine{964     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a630d6bc47cf3b27ab20027ab4b2031ef}{m\_btnCardQuestionValueDecSizeY}};}
+\DoxyCodeLine{965 }
+\DoxyCodeLine{967     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_abe78b4912bb2b4d6fd6c5497eddbede9}{m\_txtCardQuestionValueSizeY}};}
+\DoxyCodeLine{968 }
+\DoxyCodeLine{970     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac5e6eca22ac4c2b71bc886fa14d7e693}{m\_btnCardQuestionValueIncSizeY}};}
+\DoxyCodeLine{971 }
+\DoxyCodeLine{972     \textcolor{comment}{// ==== UI elements to change CardAnswerPrompt position x ====}}
+\DoxyCodeLine{973 }
+\DoxyCodeLine{975     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5ca303d956eae1dcf11fb36a6f41951e}{m\_txtCardAnswerPromptSizeXPrompt}};}
+\DoxyCodeLine{976 }
+\DoxyCodeLine{978     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac883ee2ce648e8055693fa30b5a04f23}{m\_btnCardAnswerPromptDecSizeX}};}
+\DoxyCodeLine{979 }
+\DoxyCodeLine{981     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4341aa386b626acf4f0a2cbac987a885}{m\_txtCardAnswerPromptSizeX}};}
+\DoxyCodeLine{982 }
+\DoxyCodeLine{984     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a82cfc06c55879a84defb71ad546183fc}{m\_btnCardAnswerPromptIncSizeX}};}
+\DoxyCodeLine{985 }
+\DoxyCodeLine{986     \textcolor{comment}{// ==== UI elements to change CardAnswerPrompt Size y ====}}
+\DoxyCodeLine{987 }
+\DoxyCodeLine{989     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab956af6f83357af218bf91adbc3bf99f}{m\_txtCardAnswerPromptSizeYPrompt}};}
+\DoxyCodeLine{990 }
+\DoxyCodeLine{992     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a4c669cea7b96dd8753186777e212517a}{m\_btnCardAnswerPromptDecSizeY}};}
+\DoxyCodeLine{993 }
+\DoxyCodeLine{995     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab84c58acebd529b51c8ee60b55f669c8}{m\_txtCardAnswerPromptSizeY}};}
+\DoxyCodeLine{996 }
+\DoxyCodeLine{998     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a464f27f03e8415f27ced9abb3af7a7fb}{m\_btnCardAnswerPromptIncSizeY}};}
+\DoxyCodeLine{999 }
+\DoxyCodeLine{1000     \textcolor{comment}{// ==== UI elements to change CardAnswerValue position x ====}}
+\DoxyCodeLine{1001 }
+\DoxyCodeLine{1003     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6ca3b26561eade1ba605f96d6e0a158d}{m\_txtCardAnswerValueSizeXPrompt}};}
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1006     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a71344d076cca02fc1370e20c568e363a}{m\_btnCardAnswerValueDecSizeX}};}
+\DoxyCodeLine{1007 }
+\DoxyCodeLine{1009     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af4e78f8d5e1de60a843115ff98e4bfa1}{m\_txtCardAnswerValueSizeX}};}
+\DoxyCodeLine{1010 }
+\DoxyCodeLine{1012     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aaad18e82f71983464c1bc24b753d3c2f}{m\_btnCardAnswerValueIncSizeX}};}
+\DoxyCodeLine{1013 }
+\DoxyCodeLine{1014     \textcolor{comment}{// ==== UI elements to change CardAnswerValue Size y ====}}
+\DoxyCodeLine{1015 }
+\DoxyCodeLine{1017     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a997fbb5c371fb096033a8d2857e204e1}{m\_txtCardAnswerValueSizeYPrompt}};}
+\DoxyCodeLine{1018 }
+\DoxyCodeLine{1020     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a400c1169bcf6bc8231c6ad7e4346dd15}{m\_btnCardAnswerValueDecSizeY}};}
+\DoxyCodeLine{1021 }
+\DoxyCodeLine{1023     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a08a54f6b4c3639df7f926a06b4210327}{m\_txtCardAnswerValueSizeY}};}
+\DoxyCodeLine{1024 }
+\DoxyCodeLine{1026     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aba10d7a7e6f8ec04e826373db70f9ccf}{m\_btnCardAnswerValueIncSizeY}};}
+\DoxyCodeLine{1027 }
+\DoxyCodeLine{1028     \textcolor{comment}{// ==== UI elements to change CardSubmit position x ====}}
+\DoxyCodeLine{1029 }
+\DoxyCodeLine{1031     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6fd58ffe263f702509720fbccaf31880}{m\_txtCardSubmitSizeXPrompt}};}
+\DoxyCodeLine{1032 }
+\DoxyCodeLine{1034     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8409e93ac08a659a2c7203249c0ecdfb}{m\_btnCardSubmitDecSizeX}};}
+\DoxyCodeLine{1035 }
+\DoxyCodeLine{1037     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a31322c65462a799db5200dcfd37e6a87}{m\_txtCardSubmitSizeX}};}
+\DoxyCodeLine{1038 }
+\DoxyCodeLine{1040     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa307409ed7d95aaf183efc30d8f5ea54}{m\_btnCardSubmitIncSizeX}};}
+\DoxyCodeLine{1041 }
+\DoxyCodeLine{1042     \textcolor{comment}{// ==== UI elements to change CardSubmit Size y ====}}
+\DoxyCodeLine{1043 }
+\DoxyCodeLine{1045     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aa3249e351cd242045b509a9cf2a2afa9}{m\_txtCardSubmitSizeYPrompt}};}
+\DoxyCodeLine{1046 }
+\DoxyCodeLine{1048     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af956f71e698a526e1e7e7e05fcfdac97}{m\_btnCardSubmitDecSizeY}};}
+\DoxyCodeLine{1049 }
+\DoxyCodeLine{1051     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a29799705f3a7e4f04dbd97ce58261c8f}{m\_txtCardSubmitSizeY}};}
+\DoxyCodeLine{1052 }
+\DoxyCodeLine{1054     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0cd1c360868abb75551da3515e60ae20}{m\_btnCardSubmitIncSizeY}};}
+\DoxyCodeLine{1055 }
+\DoxyCodeLine{1056     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{1057     \textcolor{comment}{// =========== member variables for card info setting ========}}
+\DoxyCodeLine{1058     \textcolor{comment}{// ===========================================================}}
+\DoxyCodeLine{1059 }
+\DoxyCodeLine{1060     \textcolor{comment}{// ==== UI elements to change current Deck number ====}}
+\DoxyCodeLine{1061 }
+\DoxyCodeLine{1063     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a0147fcd215cd201389f3da092b56b9f6}{m\_txtDeckNumPrompt}};}
+\DoxyCodeLine{1064 }
+\DoxyCodeLine{1066     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a72e65d76b4e1f8cbf709b1a30802dbc3}{m\_btnDecDeckNum}};}
+\DoxyCodeLine{1067 }
+\DoxyCodeLine{1069     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a51faa46ad98cf8a2b096c3f39498b4ac}{m\_txtDeckNum}};}
+\DoxyCodeLine{1070 }
+\DoxyCodeLine{1072     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ae267296755ec9e49b1295ec204224d93}{m\_btnIncDeckNum}};}
+\DoxyCodeLine{1073 }
+\DoxyCodeLine{1074     \textcolor{comment}{// ==== UI elements to change current Card number ====}}
+\DoxyCodeLine{1075 }
+\DoxyCodeLine{1077     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6a3a0b91af258b1ef16e4562d603760e}{m\_txtCurrCardNumPrompt}};}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1080     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_adcb9bcdf37f667c32c546ba2ab946fb2}{m\_btnDecCurrCardNum}};}
+\DoxyCodeLine{1081 }
+\DoxyCodeLine{1083     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8d10f938d1a94b3950b4f5de40ff0244}{m\_txtCurrCardNum}};}
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1086     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8bc154b25c8d30099106f7222a2ac910}{m\_btnIncCurrCardNum}};}
+\DoxyCodeLine{1087 }
+\DoxyCodeLine{1088     \textcolor{comment}{// ==== UI elements to change current Card Time ====}}
+\DoxyCodeLine{1089 }
+\DoxyCodeLine{1091     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_aaa8a267ff537eb9891f7f74745d7000d}{m\_txtCurrCardTimePrompt}};}
+\DoxyCodeLine{1092 }
+\DoxyCodeLine{1094     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a1963335f83f7eba6d7ccb4ab4b381655}{m\_btnDecCurrCardTime}};}
+\DoxyCodeLine{1095 }
+\DoxyCodeLine{1097     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a6764a68bde2937d4bf08dbff0fa9d728}{m\_txtCurrCardTime}};}
+\DoxyCodeLine{1098 }
+\DoxyCodeLine{1100     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a29595ec83aa377a45c4f96c260238683}{m\_btnIncCurrCardTime}};}
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102     \textcolor{comment}{// ==== UI elements to change current Card Up ====}}
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1105     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a8d7a8f57d492bdcaf2e5f6c39b0c7c76}{m\_txtCurrCardUpPrompt}};}
+\DoxyCodeLine{1106 }
+\DoxyCodeLine{1108     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af4161f6e2cc36461c9b985662d986a25}{m\_btnDecCurrCardUp}};}
+\DoxyCodeLine{1109 }
+\DoxyCodeLine{1111     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5de2f4ab4b9877b724bf31e3b946cb1c}{m\_txtCurrCardUp}};}
+\DoxyCodeLine{1112 }
+\DoxyCodeLine{1114     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a9aac2365527862c7aeaa6761e5e2e963}{m\_btnIncCurrCardUp}};}
+\DoxyCodeLine{1115 }
+\DoxyCodeLine{1116     \textcolor{comment}{// ==== UI elements to change current Card Down ====}}
+\DoxyCodeLine{1117 }
+\DoxyCodeLine{1119     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac8be8236b62cadc14765dfeeabd7bd8c}{m\_txtCurrCardDownPrompt}};}
+\DoxyCodeLine{1120 }
+\DoxyCodeLine{1122     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a5512368ddc34c66814073fc251b17b83}{m\_btnDecCurrCardDown}};}
+\DoxyCodeLine{1123 }
+\DoxyCodeLine{1125     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_adacbc314d757c2925c64369709bd598a}{m\_txtCurrCardDown}};}
+\DoxyCodeLine{1126 }
+\DoxyCodeLine{1128     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_a030293038866b8ec52c75afa01408f19}{m\_btnIncCurrCardDown}};}
+\DoxyCodeLine{1129 }
+\DoxyCodeLine{1130     \textcolor{comment}{// ==== UI elements to enter a curr Card Question  ====}}
+\DoxyCodeLine{1131 }
+\DoxyCodeLine{1133     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_af0e2b8b1700171a95498765d23f73bdf}{m\_txtCurrCardQuestionPrompt}};}
+\DoxyCodeLine{1134 }
+\DoxyCodeLine{1136     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ac9aea64599b9c9e8cdbdac03c544dd98}{m\_txtCurrCardQuestionInput}};}
+\DoxyCodeLine{1137 }
+\DoxyCodeLine{1138     \textcolor{comment}{// ==== UI elements to enter a curr Card Answer  ====}}
+\DoxyCodeLine{1139 }
+\DoxyCodeLine{1141     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_afc82814743a3f0628c2b8b804bc782eb}{m\_txtCurrCardAnswerPrompt}};}
+\DoxyCodeLine{1142 }
+\DoxyCodeLine{1144     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood::BroodUI::TextBox}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_ab2e1720ea08a93243a4db1011f7eda1d}{m\_txtCurrCardAnswerInput}};}
+\DoxyCodeLine{1145 }
+\DoxyCodeLine{1146     \textcolor{comment}{// ==== UI elements to turn the card  ====}}
+\DoxyCodeLine{1147 }
+\DoxyCodeLine{1148     \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood::BroodUI::Button}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_card_editor_acbbde0400929aec33f407accf903633f}{m\_btnTurnCardAround}};}
+\DoxyCodeLine{1149 \};}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1151 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{1152 \textcolor{comment}{// ================= end of CardEditor class ============================}}
+\DoxyCodeLine{1153 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{1154 }
+\DoxyCodeLine{1155 }
+\DoxyCodeLine{1156 }
+
+\end{DoxyCode}

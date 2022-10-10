@@ -1,0 +1,149 @@
+\hypertarget{_player_manager_8h_source}{}\doxysection{Player\+Manager.\+h}
+\label{_player_manager_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/PlayerManager.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/PlayerManager.h}}
+\mbox{\hyperlink{_player_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{stdafx_8h}{stdafx.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_board_8h}{Board.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_path_8h}{Path.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_access_8h}{FileAccess.h}}"{}} }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{24 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{25 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keyword}{class }\mbox{\hyperlink{class_player_manager}{PlayerManager}};}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 \}}
+\DoxyCodeLine{32 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{34 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= start of PlayerManager class =======================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{46 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood::Application::Components::PlayerManager}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48     \textcolor{comment}{// ===================== public member function ===================}}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae093e4e4e7eecdf5b46de72f5827d71d}{PlayerManager}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{// destructor}}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ab53de6b16914b7591fc2bd3038069ac7}{\string~PlayerManager}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae093e4e4e7eecdf5b46de72f5827d71d}{PlayerManager}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood::Application::Components::PlayerManager}}\& a\_otherPlayerManager );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{61     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{PlayerManager}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a51a6a2a5099e18b7ca32d74afb352236}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager}{Brood::Application::Components::PlayerManager}}\& a\_otherPlayerManager );}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{// initializes the player Manger}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a54befa50aac89838b503c4ba2d22a1bd}{InitializePlayerManager}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_pathPtr );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{// initialize the player manager}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a54befa50aac89838b503c4ba2d22a1bd}{InitializePlayerManager}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood::Application::Data::ST\_PlayerManagerData}}\& a\_playerData,}
+\DoxyCodeLine{69                                   \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_playerCurrPath );}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// returns the PlayerManager data to save }}
+\DoxyCodeLine{72     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_manager_data}{Brood::Application::Data::ST\_PlayerManagerData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a93f0a6c14374ab9b1153891c0d065ac4}{GetDataToSave}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// appends the the PlayerManager data to passed file }}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_aae27df1a3eeb4e391ef8fc00ea90acba}{SaveDataToFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr );}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{// appends the the PlayerManager data to passed file }}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a5222121317f0a4fc4819a2ae749a3f1d}{LoadDataFromFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr,}
+\DoxyCodeLine{79                            \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}}* a\_gameBoard );}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// =========== getter function ===========}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// getter funciton to get the maximum player }}
+\DoxyCodeLine{84     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a12988c188ecb298ca7a39d71dfed8d2d}{GetMaxPlayer}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// getter funciton to get the minimum player }}
+\DoxyCodeLine{87     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a2dd90e94c3d87783290e9d77499c0490}{GetMinPlayer}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// Getter function to Get the curr Active Player}}
+\DoxyCodeLine{90     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_afd2b4e7ce47e8a15e4f4875068a549ee}{GetCurrActivePlayerIdx}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// Getter funciton to Get the start path for new additional player}}
+\DoxyCodeLine{93     \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a5c52cd35d63931d1035373ad49b0edfa}{GetPlayerStartPath}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// getter funciton to get the Iterator to the start of allplayer vector}}
+\DoxyCodeLine{96     std::vector<Brood::Application::Components::Player*>::iterator \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a8c7059e7ba2a546472c86f25f1f2ea88}{GetAllPlayerBegin}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// getter funciton to get the Iterator to the end of allplayer vector}}
+\DoxyCodeLine{99     std::vector<Brood::Application::Components::Player*>::iterator \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae690629f5cebd4520ea16c433a0c1f34}{GetAllPlayerEnd}}();}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// =========== setter functions ==========}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// setter funciton to set the maximum player }}
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a70a2f02fff667069d923396d2026d70c}{SetMaxPlayer}}( \textcolor{keywordtype}{unsigned} a\_maxPlayer );}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// setter funciton to set the minimum player }}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ad9eb0c5e917488cc3eaf94c081cdee6b}{SetMinPlayer}}( \textcolor{keywordtype}{unsigned} a\_minPlayer );}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// setter function to set the curr Active Player}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_aa5a1757a6bd8517a632bc62dd19c89e0}{SetCurrActivePlayerIdx}}( \textcolor{keywordtype}{unsigned} a\_currActivePlayerIdx );}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// setter funciton to set the start path for new additional player}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a991fd064f6eba9bad32cd606c87a2a4b}{SetPlayerStartPath}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_startPathPtr );}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// sets the path for the current active player}}
+\DoxyCodeLine{116     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ad862bf288f28ce44260ac1b2de8ef9eb}{SetPathForPlayerAtCurrIdx}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_pathPtr );}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{// Get the current active player}}
+\DoxyCodeLine{119     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood::Application::Components::Player}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a634bc0befa6dd10b48986c9dfac89d68}{GetPlayerAtCurrIdx}}();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{// Increases the currentPlayer index by 1 andreturns the player }}
+\DoxyCodeLine{122     \textcolor{comment}{//  at that index}}
+\DoxyCodeLine{123     \textcolor{comment}{//  if currentPlayer index points to the last player, then it loops}}
+\DoxyCodeLine{124     \textcolor{comment}{// back to the first element}}
+\DoxyCodeLine{125     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood::Application::Components::Player}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_afd5bb4c30a67a1cc1e462b54184a135d}{GetNextPlayer}}(); \textcolor{comment}{// returns next player in the list}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{// replaces the a new player at passed index with a copy of passed index}}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_ae679633de9c20237af923a463f64b917}{ReplacaePlayerAt}}( \textcolor{keywordtype}{unsigned} a\_index,}
+\DoxyCodeLine{129                            \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood::Application::Components::Player}}* a\_playerPtr = \textcolor{keyword}{nullptr} );}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{comment}{// draws the players}}
+\DoxyCodeLine{132     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a16fc343baadf3985e07b6258b7bf62ab}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{// ===================== private member variables ===================}}
+\DoxyCodeLine{135 \textcolor{keyword}{private}:}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{comment}{// contains all the player currently playing the game}}
+\DoxyCodeLine{138     std::vector<Brood::Application::Components::Player*> \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a66b71053bfd3506e9c369eff0b46094c}{m\_allPlayers}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{// index of current playing player}}
+\DoxyCodeLine{141     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a7f286bd6febfb8c65ea71a0551c10d39}{m\_currActivePlayerIdx}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{// maximum number of player}}
+\DoxyCodeLine{144     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a38cc1c7299da486caab15179ac84df8f}{m\_maxPlayer}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// minimum number of player}}
+\DoxyCodeLine{147     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a4f06b4f482d041134076b052770fe81e}{m\_minPlayer}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{comment}{// stores the pointer to the path at which the players}}
+\DoxyCodeLine{150     \textcolor{comment}{// are going to start}}
+\DoxyCodeLine{151     \textcolor{comment}{// this is going to be used to create any new player}}
+\DoxyCodeLine{152     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_manager_a34bbaba7e4ca8f8184fe372b4396c3b1}{m\_startPathPtr}};}
+\DoxyCodeLine{153 \};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{156 \textcolor{comment}{// ================= end of PlayerManager class =========================}}
+\DoxyCodeLine{157 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

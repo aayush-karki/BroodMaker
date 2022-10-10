@@ -1,0 +1,141 @@
+\hypertarget{_deck_manager_8h_source}{}\doxysection{Deck\+Manager.\+h}
+\label{_deck_manager_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DeckManager.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/DeckManager.h}}
+\mbox{\hyperlink{_deck_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{10 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{13 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_deck_8h}{Deck.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_access_8h}{FileAccess.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{21 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{22 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{ENUM\_MovementType}};}
+\DoxyCodeLine{28         \textcolor{keyword}{class }DeckManager;}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
+\DoxyCodeLine{31 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{32 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{33 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= start of ENUM\_MovementType Enum class defination ===}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45 \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood::Application::Components::ENUM\_MovementType}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9a4b1de9004824604483b04faaa74f4f37}{MOVEMENT\_diceThenCard}}, }
+\DoxyCodeLine{48     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9a85c36ba156f2687a7cbd0b21c186065e}{MOVEMENT\_diceOnly}}, }
+\DoxyCodeLine{49     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9a12effd5dc6aa9458a3b28a7e019f2a5a}{MOVEMENT\_cardOnly}}, }
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{53 \textcolor{comment}{// ================= end of ENUM\_UIType Enum class defination ===========}}
+\DoxyCodeLine{54 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{55 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{56 \textcolor{comment}{// ================= start of DeckManager class =========================}}
+\DoxyCodeLine{57 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{65 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood::Application::Components::DeckManager}}}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67     \textcolor{comment}{// ===================== private member function ===================}}
+\DoxyCodeLine{68 \textcolor{keyword}{public}:}
+\DoxyCodeLine{69     \textcolor{comment}{// default constructor}}
+\DoxyCodeLine{70     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3d155ed79184606cb58eb35a8feafe87}{DeckManager}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// destructor}}
+\DoxyCodeLine{73     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a9460cb6b44f9c4f0c9eabe2239dd4257}{\string~DeckManager}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{76     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3d155ed79184606cb58eb35a8feafe87}{DeckManager}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood::Application::Components::DeckManager}}\& a\_otherDeckManager );}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{79     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{DeckManager}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_aab213c5fcb7d0c9bd05c6fea88eeb289}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager}{Brood::Application::Components::DeckManager}}\& a\_otherDeckManager );}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// initialize the Deck Manager}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad370d5c3353f24733ba7388849e94878}{InitializeDeckManager}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood::Application::Data::ST\_DeckManagerData}}\& a\_deckManagerData );}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// returns the deck manager data to save }}
+\DoxyCodeLine{85     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___deck_manager_data}{Brood::Application::Data::ST\_DeckManagerData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a6da8d9451ba38ec83a5d71195bf71190}{GetDataToSave}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{comment}{// appends the the deck manager data to passed file }}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_af7903c863c284f88d78817871847a850}{SaveDataToFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr, std::string a\_gameTile );}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{// appends the the deck manager data to passed file }}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a40f23b5cc2adc1424703b078e3004aa1}{LoadDataFromFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{// ============= getter functions ========}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// getter funciton to get the current deck index}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae26b5875ef59b411f63cfae39ac3732c}{GetCurrActiveDeckIdx}}( );}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// getter funciton to get the deck at the passed index}}
+\DoxyCodeLine{99     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_abbc0ac495a5c36636ed97a8e901e42cf}{GetDeckAtIdx}}( \textcolor{keywordtype}{unsigned} a\_deckIdx );}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// getter function to get the decklist}}
+\DoxyCodeLine{102     std::vector<Brood::Application::Components::Deck*>\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_aed10b8ae9a08b811352dd3b836a89ec0}{GetDeckList}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// getter function to get the current active deck}}
+\DoxyCodeLine{105     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck}{Brood::Application::Components::Deck}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a2fd090108900edf6ab37074edf83f08f}{GetCurrActiveDeck}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// getter funciton to get incorrect penalty }}
+\DoxyCodeLine{108     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a451815e9606dcfd193987d7d20bed61f}{GetIncorrectPenalty}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// getter funciton to get movement type}}
+\DoxyCodeLine{111     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood::Application::Components::ENUM\_MovementType}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a4a5c19df815f064470d676ee3f3ab255}{GetMovementType}}();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{// ============= setter functions ========}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// getter funciton to get incorrect penalty }}
+\DoxyCodeLine{116     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a13793ccdfeb3e785981c2252874ba33d}{SetIncorrectPenalty}}( \textcolor{keywordtype}{bool}  a\_incorrectPenatly );}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{// getter funciton to get movement type}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ade0ff6284facac6e5a2fbdd4851de90a}{SetMovementType}}( \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood::Application::Components::ENUM\_MovementType}} a\_movementType);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{// sets deck size}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a416fde6e5785a9e52d560a495cd275bd}{SetDeckSize}}( \textcolor{keywordtype}{unsigned} a\_deckSize );}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{comment}{// sets current deck index}}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_abab6687090f6808adb4eaa58607a5ed6}{SetCurrActiveDeckIdx}}( \textcolor{keywordtype}{unsigned} a\_currDeckIdx );}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{// adds card to the back of current selected deck}}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a467c20d68ada6123fc1e1401279bc3f3}{AddCardToDeckAtCurrIdx}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_card_info}{Brood::Application::Components::CardInfo}} a\_cardToAdd );}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// draws all the deck to the screen}}
+\DoxyCodeLine{131     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a64f34064f837873c22504de98f99610c}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{// debugger}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_af05cc1469341e6fe42a60757d0b503a8}{Debugger}}();}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{// ===================== private member variables ===================}}
+\DoxyCodeLine{137 \textcolor{keyword}{private}:}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{// ture if the incorrect penalty rule should be enforced or not}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_a3bc87a72a9b8791688e81fbc8b3a3aeb}{m\_incorrectPenalty}};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// stores the movement type used}}
+\DoxyCodeLine{143     \mbox{\hyperlink{namespace_brood_1_1_application_1_1_components_a465f7dfa1cfe8a0bb22cded141fbcac9}{Brood::Application::Components::ENUM\_MovementType}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ad51e1b6d76d3f4b4e1e55c20778a12a0}{m\_movementType}};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{// current deck index }}
+\DoxyCodeLine{146     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae4770d64f6db48aba3c5746fd3ef3ab8}{m\_currDeckIdx}};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// deck list}}
+\DoxyCodeLine{149     std::vector<Brood::Application::Components::Deck*> \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_deck_manager_ae6e90e6d137c600a1aec59919cec8e32}{m\_deckList}};}
+\DoxyCodeLine{150 \};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{153 \textcolor{comment}{// ================= end of DeckManager class ===========================}}
+\DoxyCodeLine{154 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

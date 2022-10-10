@@ -1,0 +1,25 @@
+\hypertarget{class_element_selection}{}\doxysection{Element\+Selection Class Reference}
+\label{class_element_selection}\index{ElementSelection@{ElementSelection}}
+
+
+A static class to store which element is selected and what could be selected next.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Element\+Selection.\+h\char`\"{}}
+
+
+
+\doxysubsection{Detailed Description}
+A static class to store which element is selected and what could be selected next. 
+
+It is a static class and can be accessed for anywere in the code base. It keeps stores the currently active element--m\+\_\+curr\+Active\+Element, which element is in the verge of being active--m\+\_\+active\+Element, and which element is the mouse cursor over--m\+\_\+hot\+Element.
+
+The main difference between curr\+Active\+Element and almost\+Active\+Element is that a element can be set as curr\+Active\+Element only when the left mouse button is released on top the element, an almost\+Active\+Element is set when the left mouse button is pressed but has not be released yet.
+
+To prevent multiple element slection--which can happen when more than one element overlaps, for example open menubar may cover other elements below it--it has a m\+\_\+hot\+Element\+Flag member variable which gets set to true as soon as the first element under the mouse cursor is found. So it is suggested to check for elements starting from the top to bottom and going form left to right. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_element_selection_8h}{Element\+Selection.\+h}}\end{DoxyCompactItemize}

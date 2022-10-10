@@ -1,0 +1,496 @@
+\hypertarget{class_brood_1_1_application_1_1_game_editor}{}\doxysection{Brood\+::Application\+::Game\+Editor Class Reference}
+\label{class_brood_1_1_application_1_1_game_editor}\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+
+
+{\ttfamily \#include $<$Game\+Editor.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Game\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_game_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a40061ad7231a9cac67383fb44e962e6d}{Game\+Editor}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data, sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Ptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a245db701500e4db2fed7f73e884182bb}{$\sim$\+Game\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a284d8b019bd34bf751d0ee2f1c8a7d54}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the work space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a8de8da59685f16f6c6c6092994805420}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ad4439d42921be6fd83690ee3e7eadde5}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em updates the display element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a692feb46029bb3f79b8a20315d5d5c0c}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a59282a4dba62d4cd9fe73f62f54fa160}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a450f2936f413dbf64014cc9cdb8043df}{Update\+Game\+Title\+Input}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the set Game Title name panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a60c5ecdd5ac8d5c5b94620bac0e22ef9}{Update\+Movement\+Type\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the movement type panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a39e9748dd7398d02c438fdb108452f94}{Update\+Incorrect\+Penalty\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the incorrect penalty panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a67e09c0f0ff9d4af25d4a78562b1addc}{Update\+Minimum\+Player\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the minumum player panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a73f789bf923da01889be041e8bb64787}{Update\+Maximum\+Player\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the deck panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_af29c215edcfc1ea4b45322bfe983d55b}{Update\+Deck\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the deck number panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a11d4c7cfe74b06c934aea4fe624a8f59}{m\+\_\+panel\+Body\+Ptr}}
+\begin{DoxyCompactList}\small\item\em holds the panel body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ab10dddf5389183c35334686bf574814d}{m\+\_\+title\+Screen\+Btn}}
+\begin{DoxyCompactList}\small\item\em shows the tile screen of game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_af938eff5abde014942db1f70094a17fa}{m\+\_\+txt\+Setting\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a302ca9ec4fe6c49ab463db97357dc8da}{m\+\_\+txt\+Game\+Name\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the Game name prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ad0e0a4bc0b7e8ebf01c3653bdc49c6f4}{m\+\_\+txt\+Game\+Input}}
+\begin{DoxyCompactList}\small\item\em holds the Game name user enters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ae0edf0eb62fe748311cdf3d3c6bbcced}{m\+\_\+txt\+Movement\+Type\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text Movement type prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a554c0af7318070ce0e6169ce2ed980f0}{m\+\_\+ddi\+Movement\+Type}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_ae16ffabba51daaed31566fcd16cd1516}{m\+\_\+txt\+Incorect\+Penalty\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text Movement type prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_af95cf72e6be31401b05317ca5900e178}{m\+\_\+ddi\+Incorect\+Penalty}}
+\begin{DoxyCompactList}\small\item\em holds yes or no \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_aceb21d30d2250cb7e6cd84a55957116b}{m\+\_\+txt\+Player\+Min\+Num\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text minimum player prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a617a0fb285a0e3deb2d4c74bb0f76fd9}{m\+\_\+btn\+Player\+Dec\+Min\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the minium required player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a436aaee988cdcd78104acb195b1f8475}{m\+\_\+txt\+Player\+Min\+Num}}
+\begin{DoxyCompactList}\small\item\em displays the Current minium required player number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_abf3e247f4e554a662a01db17637621a7}{m\+\_\+btn\+Player\+Inc\+Min\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the minium required player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a24f8ab19e33c0a69baaed6d8c12c294e}{m\+\_\+txt\+Player\+Max\+Num\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text maximum player prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_adf32a390043326fb0760f488f53d43e0}{m\+\_\+btn\+Player\+Dec\+Maxn\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the maximum required player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a4e771c22c86b075945e6685a83aabcb4}{m\+\_\+txt\+Player\+Max\+Num}}
+\begin{DoxyCompactList}\small\item\em displays the Current maximum required player number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a07de94482de8c0996bdd36f1ea49ca63}{m\+\_\+btn\+Player\+Inc\+Max\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the maximum required player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a7a4e7e82560c3ef1b4c2829e36092a53}{m\+\_\+txt\+Deck\+Num\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text number of deck prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_aa8c83361ddb890e70f13b2a7bbdb6162}{m\+\_\+btn\+Deck\+Dec\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the maximum required player number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a5310348f407fbf33fb5b7e6087ed85a4}{m\+\_\+txt\+Deck\+Num}}
+\begin{DoxyCompactList}\small\item\em displays the Current maximum required player number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_game_editor_a1b98f1f0ee76bee5508b0dd668b4666d}{m\+\_\+btn\+Deck\+Inc\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the maximum required player number by 1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a40061ad7231a9cac67383fb44e962e6d}\label{class_brood_1_1_application_1_1_game_editor_a40061ad7231a9cac67383fb44e962e6d}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!GameEditor@{GameEditor}}
+\index{GameEditor@{GameEditor}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{GameEditor()}{GameEditor()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Game\+Editor\+::\+Game\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Ptr }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data} & pointer to the game data object \\
+\hline
+{\em a\+\_\+panel\+Ptr} & pointer to the panel body object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a245db701500e4db2fed7f73e884182bb}\label{class_brood_1_1_application_1_1_game_editor_a245db701500e4db2fed7f73e884182bb}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!````~GameEditor@{$\sim$GameEditor}}
+\index{````~GameEditor@{$\sim$GameEditor}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameEditor()}{~GameEditor()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Game\+Editor\+::$\sim$\+Game\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a59282a4dba62d4cd9fe73f62f54fa160}\label{class_brood_1_1_application_1_1_game_editor_a59282a4dba62d4cd9fe73f62f54fa160}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a692feb46029bb3f79b8a20315d5d5c0c}\label{class_brood_1_1_application_1_1_game_editor_a692feb46029bb3f79b8a20315d5d5c0c}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a284d8b019bd34bf751d0ee2f1c8a7d54}\label{class_brood_1_1_application_1_1_game_editor_a284d8b019bd34bf751d0ee2f1c8a7d54}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the work space. 
+
+@virtual
+
+It creates all the component of the workspace. It initializes the Edit\+MOde tabs and the editor workspaces 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a8de8da59685f16f6c6c6092994805420}\label{class_brood_1_1_application_1_1_game_editor_a8de8da59685f16f6c6c6092994805420}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates function. 
+
+@virtual
+
+Contains all the logic for the initial workspace 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_ad4439d42921be6fd83690ee3e7eadde5}\label{class_brood_1_1_application_1_1_game_editor_ad4439d42921be6fd83690ee3e7eadde5}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+updates the display element 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_af29c215edcfc1ea4b45322bfe983d55b}\label{class_brood_1_1_application_1_1_game_editor_af29c215edcfc1ea4b45322bfe983d55b}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateDeckNumber@{UpdateDeckNumber}}
+\index{UpdateDeckNumber@{UpdateDeckNumber}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDeckNumber()}{UpdateDeckNumber()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+Deck\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the deck number panel 
+
+Deck number panel contains deck number promt textbox, deck number number value text box, button to increase the deck number number, and button to decrease the deck number
+
+Only the button to increase the deck number, and button to decrease the deck number are interactable
+
+If the interactable button was pressed then the deck number is increased or decresed by 1. deck number should be more than or equal to 1 but less than 10 \mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a450f2936f413dbf64014cc9cdb8043df}\label{class_brood_1_1_application_1_1_game_editor_a450f2936f413dbf64014cc9cdb8043df}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateGameTitleInput@{UpdateGameTitleInput}}
+\index{UpdateGameTitleInput@{UpdateGameTitleInput}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateGameTitleInput()}{UpdateGameTitleInput()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+Game\+Title\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the set Game Title name panel 
+
+Game title panel contains game title promt textbox, and textbox to enter the game title.
+
+Only the textbox to enter the game title is interactable
+
+If the interactable textbox was pressed then it allows the user to set the game title \mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a39e9748dd7398d02c438fdb108452f94}\label{class_brood_1_1_application_1_1_game_editor_a39e9748dd7398d02c438fdb108452f94}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateIncorrectPenaltyPanelElement@{UpdateIncorrectPenaltyPanelElement}}
+\index{UpdateIncorrectPenaltyPanelElement@{UpdateIncorrectPenaltyPanelElement}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateIncorrectPenaltyPanelElement()}{UpdateIncorrectPenaltyPanelElement()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+Incorrect\+Penalty\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the incorrect penalty panel 
+
+Incorrect penalty panel contains \mbox{\hyperlink{class_board}{Board}} incorrect penalty promt textbox, and drop down input to select a yes or no for incorrect penalty
+
+Only the drop down input to select the incorrect penalty is interactable
+
+If the interactable drop down input was pressed then it expand to show the two option avialble Yes and No \mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a73f789bf923da01889be041e8bb64787}\label{class_brood_1_1_application_1_1_game_editor_a73f789bf923da01889be041e8bb64787}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateMaximumPlayerNumber@{UpdateMaximumPlayerNumber}}
+\index{UpdateMaximumPlayerNumber@{UpdateMaximumPlayerNumber}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateMaximumPlayerNumber()}{UpdateMaximumPlayerNumber()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+Maximum\+Player\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the deck panel 
+
+Minumum player panel contains deck number promt textbox, deck number value text box, button to increase the deck number, and button to decrease the maximum player number
+
+Only the button to increase the deck number, and button to decrease the deck number are interactable
+
+If the interactable button was pressed then the deck number is increased or decresed by 1. Maximum player number should be more than or equal to minimum player number but less than 10 \mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a67e09c0f0ff9d4af25d4a78562b1addc}\label{class_brood_1_1_application_1_1_game_editor_a67e09c0f0ff9d4af25d4a78562b1addc}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateMinimumPlayerNumber@{UpdateMinimumPlayerNumber}}
+\index{UpdateMinimumPlayerNumber@{UpdateMinimumPlayerNumber}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateMinimumPlayerNumber()}{UpdateMinimumPlayerNumber()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+Minimum\+Player\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the minumum player panel 
+
+Minumum player panel contains minimum player number promt textbox, minimum player number value text box, button to increase the minimum player number, and button to decrease the minimum player number
+
+Only the button to increase the minimum player number, and button to decrease the minimum player number are interactable
+
+If the interactable button was pressed then the minimum player number is increased or decresed by 1. Minimum player number should be more than or equal to 0 but less than Maximum player number \mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a60c5ecdd5ac8d5c5b94620bac0e22ef9}\label{class_brood_1_1_application_1_1_game_editor_a60c5ecdd5ac8d5c5b94620bac0e22ef9}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!UpdateMovementTypePanelElement@{UpdateMovementTypePanelElement}}
+\index{UpdateMovementTypePanelElement@{UpdateMovementTypePanelElement}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateMovementTypePanelElement()}{UpdateMovementTypePanelElement()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Game\+Editor\+::\+Update\+Movement\+Type\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the movement type panel 
+
+Movement type panel contains \mbox{\hyperlink{class_board}{Board}} movement type promt textbox, and drop down input to select a movement type
+
+Only the drop down input to select the movement type is interactable
+
+If the interactable drop down input was pressed then it expand to show the three option avialble dice, start with dice and then card, and card no dice 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_aa8c83361ddb890e70f13b2a7bbdb6162}\label{class_brood_1_1_application_1_1_game_editor_aa8c83361ddb890e70f13b2a7bbdb6162}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_btnDeckDecNum@{m\_btnDeckDecNum}}
+\index{m\_btnDeckDecNum@{m\_btnDeckDecNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckDecNum}{m\_btnDeckDecNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+btn\+Deck\+Dec\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the maximum required player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a1b98f1f0ee76bee5508b0dd668b4666d}\label{class_brood_1_1_application_1_1_game_editor_a1b98f1f0ee76bee5508b0dd668b4666d}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_btnDeckIncNum@{m\_btnDeckIncNum}}
+\index{m\_btnDeckIncNum@{m\_btnDeckIncNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckIncNum}{m\_btnDeckIncNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+btn\+Deck\+Inc\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the maximum required player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_adf32a390043326fb0760f488f53d43e0}\label{class_brood_1_1_application_1_1_game_editor_adf32a390043326fb0760f488f53d43e0}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_btnPlayerDecMaxnNum@{m\_btnPlayerDecMaxnNum}}
+\index{m\_btnPlayerDecMaxnNum@{m\_btnPlayerDecMaxnNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecMaxnNum}{m\_btnPlayerDecMaxnNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+btn\+Player\+Dec\+Maxn\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the maximum required player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a617a0fb285a0e3deb2d4c74bb0f76fd9}\label{class_brood_1_1_application_1_1_game_editor_a617a0fb285a0e3deb2d4c74bb0f76fd9}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_btnPlayerDecMinNum@{m\_btnPlayerDecMinNum}}
+\index{m\_btnPlayerDecMinNum@{m\_btnPlayerDecMinNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerDecMinNum}{m\_btnPlayerDecMinNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+btn\+Player\+Dec\+Min\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the minium required player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a07de94482de8c0996bdd36f1ea49ca63}\label{class_brood_1_1_application_1_1_game_editor_a07de94482de8c0996bdd36f1ea49ca63}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_btnPlayerIncMaxNum@{m\_btnPlayerIncMaxNum}}
+\index{m\_btnPlayerIncMaxNum@{m\_btnPlayerIncMaxNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncMaxNum}{m\_btnPlayerIncMaxNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+btn\+Player\+Inc\+Max\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the maximum required player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_abf3e247f4e554a662a01db17637621a7}\label{class_brood_1_1_application_1_1_game_editor_abf3e247f4e554a662a01db17637621a7}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_btnPlayerIncMinNum@{m\_btnPlayerIncMinNum}}
+\index{m\_btnPlayerIncMinNum@{m\_btnPlayerIncMinNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnPlayerIncMinNum}{m\_btnPlayerIncMinNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+btn\+Player\+Inc\+Min\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the minium required player number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_af95cf72e6be31401b05317ca5900e178}\label{class_brood_1_1_application_1_1_game_editor_af95cf72e6be31401b05317ca5900e178}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_ddiIncorectPenalty@{m\_ddiIncorectPenalty}}
+\index{m\_ddiIncorectPenalty@{m\_ddiIncorectPenalty}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_ddiIncorectPenalty}{m\_ddiIncorectPenalty}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+ddi\+Incorect\+Penalty\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds yes or no 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a554c0af7318070ce0e6169ce2ed980f0}\label{class_brood_1_1_application_1_1_game_editor_a554c0af7318070ce0e6169ce2ed980f0}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_ddiMovementType@{m\_ddiMovementType}}
+\index{m\_ddiMovementType@{m\_ddiMovementType}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_ddiMovementType}{m\_ddiMovementType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_drop_down_input}{Brood\+::\+Brood\+UI\+::\+Drop\+Down\+Input}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+ddi\+Movement\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+holds how the player can move\+: dice, start with dice and then card, and card no dice \mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a11d4c7cfe74b06c934aea4fe624a8f59}\label{class_brood_1_1_application_1_1_game_editor_a11d4c7cfe74b06c934aea4fe624a8f59}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_panelBodyPtr@{m\_panelBodyPtr}}
+\index{m\_panelBodyPtr@{m\_panelBodyPtr}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_panelBodyPtr}{m\_panelBodyPtr}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+panel\+Body\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the panel body 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_ab10dddf5389183c35334686bf574814d}\label{class_brood_1_1_application_1_1_game_editor_ab10dddf5389183c35334686bf574814d}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_titleScreenBtn@{m\_titleScreenBtn}}
+\index{m\_titleScreenBtn@{m\_titleScreenBtn}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_titleScreenBtn}{m\_titleScreenBtn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+title\+Screen\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+shows the tile screen of game 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a5310348f407fbf33fb5b7e6087ed85a4}\label{class_brood_1_1_application_1_1_game_editor_a5310348f407fbf33fb5b7e6087ed85a4}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtDeckNum@{m\_txtDeckNum}}
+\index{m\_txtDeckNum@{m\_txtDeckNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckNum}{m\_txtDeckNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Deck\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the Current maximum required player number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a7a4e7e82560c3ef1b4c2829e36092a53}\label{class_brood_1_1_application_1_1_game_editor_a7a4e7e82560c3ef1b4c2829e36092a53}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtDeckNumPrompt@{m\_txtDeckNumPrompt}}
+\index{m\_txtDeckNumPrompt@{m\_txtDeckNumPrompt}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckNumPrompt}{m\_txtDeckNumPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Deck\+Num\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text number of deck prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_ad0e0a4bc0b7e8ebf01c3653bdc49c6f4}\label{class_brood_1_1_application_1_1_game_editor_ad0e0a4bc0b7e8ebf01c3653bdc49c6f4}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtGameInput@{m\_txtGameInput}}
+\index{m\_txtGameInput@{m\_txtGameInput}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtGameInput}{m\_txtGameInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Game\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the Game name user enters 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a302ca9ec4fe6c49ab463db97357dc8da}\label{class_brood_1_1_application_1_1_game_editor_a302ca9ec4fe6c49ab463db97357dc8da}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtGameNamePrompt@{m\_txtGameNamePrompt}}
+\index{m\_txtGameNamePrompt@{m\_txtGameNamePrompt}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtGameNamePrompt}{m\_txtGameNamePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Game\+Name\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the Game name prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_ae16ffabba51daaed31566fcd16cd1516}\label{class_brood_1_1_application_1_1_game_editor_ae16ffabba51daaed31566fcd16cd1516}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtIncorectPenaltyPromt@{m\_txtIncorectPenaltyPromt}}
+\index{m\_txtIncorectPenaltyPromt@{m\_txtIncorectPenaltyPromt}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtIncorectPenaltyPromt}{m\_txtIncorectPenaltyPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Incorect\+Penalty\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text Movement type prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_ae0edf0eb62fe748311cdf3d3c6bbcced}\label{class_brood_1_1_application_1_1_game_editor_ae0edf0eb62fe748311cdf3d3c6bbcced}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtMovementTypePromt@{m\_txtMovementTypePromt}}
+\index{m\_txtMovementTypePromt@{m\_txtMovementTypePromt}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtMovementTypePromt}{m\_txtMovementTypePromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Movement\+Type\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text Movement type prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a4e771c22c86b075945e6685a83aabcb4}\label{class_brood_1_1_application_1_1_game_editor_a4e771c22c86b075945e6685a83aabcb4}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtPlayerMaxNum@{m\_txtPlayerMaxNum}}
+\index{m\_txtPlayerMaxNum@{m\_txtPlayerMaxNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerMaxNum}{m\_txtPlayerMaxNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Player\+Max\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the Current maximum required player number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a24f8ab19e33c0a69baaed6d8c12c294e}\label{class_brood_1_1_application_1_1_game_editor_a24f8ab19e33c0a69baaed6d8c12c294e}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtPlayerMaxNumPrompt@{m\_txtPlayerMaxNumPrompt}}
+\index{m\_txtPlayerMaxNumPrompt@{m\_txtPlayerMaxNumPrompt}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerMaxNumPrompt}{m\_txtPlayerMaxNumPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Player\+Max\+Num\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text maximum player prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_a436aaee988cdcd78104acb195b1f8475}\label{class_brood_1_1_application_1_1_game_editor_a436aaee988cdcd78104acb195b1f8475}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtPlayerMinNum@{m\_txtPlayerMinNum}}
+\index{m\_txtPlayerMinNum@{m\_txtPlayerMinNum}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerMinNum}{m\_txtPlayerMinNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Player\+Min\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the Current minium required player number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_aceb21d30d2250cb7e6cd84a55957116b}\label{class_brood_1_1_application_1_1_game_editor_aceb21d30d2250cb7e6cd84a55957116b}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtPlayerMinNumPrompt@{m\_txtPlayerMinNumPrompt}}
+\index{m\_txtPlayerMinNumPrompt@{m\_txtPlayerMinNumPrompt}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtPlayerMinNumPrompt}{m\_txtPlayerMinNumPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Player\+Min\+Num\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text minimum player prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_game_editor_af938eff5abde014942db1f70094a17fa}\label{class_brood_1_1_application_1_1_game_editor_af938eff5abde014942db1f70094a17fa}} 
+\index{Brood::Application::GameEditor@{Brood::Application::GameEditor}!m\_txtSettingTitle@{m\_txtSettingTitle}}
+\index{m\_txtSettingTitle@{m\_txtSettingTitle}!Brood::Application::GameEditor@{Brood::Application::GameEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtSettingTitle}{m\_txtSettingTitle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Game\+Editor\+::m\+\_\+txt\+Setting\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_game_editor_8h}{Game\+Editor.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_game_editor_8cpp}{Game\+Editor.\+cpp}}\end{DoxyCompactItemize}

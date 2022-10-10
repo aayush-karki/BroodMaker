@@ -1,0 +1,130 @@
+\hypertarget{_player_8h_source}{}\doxysection{Player.\+h}
+\label{_player_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Player.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/Player.h}}
+\mbox{\hyperlink{_player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{12 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{15 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{16 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{stdafx_8h}{stdafx.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_board_8h}{Board.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_path_8h}{Path.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{25 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{26 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood_1_1_application}{Brood::Application}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{32         \textcolor{keyword}{class }\mbox{\hyperlink{class_board}{Board}};}
+\DoxyCodeLine{33         \textcolor{keyword}{class }\mbox{\hyperlink{class_path}{Path}};}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{38 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{41 \textcolor{comment}{// ================= start of Player class ==============================}}
+\DoxyCodeLine{42 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Brood::Application::Components::Player}}}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     \textcolor{comment}{// ================== public member fuction =======================}}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62     \textcolor{comment}{// Default Constructor when path is provided}}
+\DoxyCodeLine{63     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a025de802337d37fad5ed825c1098eaf2}{Player}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_pathPtr = \textcolor{keyword}{nullptr}, \textcolor{keywordtype}{unsigned} a\_positionOffsetX = 0,}
+\DoxyCodeLine{64             \textcolor{keywordtype}{unsigned} a\_positionOffsetY = 0 );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{comment}{// default destructor}}
+\DoxyCodeLine{67     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a749d2c00e1fe0f5c2746f7505a58c062}{\string~Player}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{70     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a025de802337d37fad5ed825c1098eaf2}{Player}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}}\& a\_otherPlayer );}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// assignment operator}}
+\DoxyCodeLine{73     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a3a314704f72b364f70e0989e6c9a8975}{operator=}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player}{Player}}\& a\_otherPlayer );}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// initialize the player}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a9655c91f740ab33963a2b14531633008}{InitializePlayer}}( \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood::Application::Data::ST\_PlayerPrefabData}}\& a\_playerData,}
+\DoxyCodeLine{77                            \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_playerCurrPath );}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{// returns the player data to save }}
+\DoxyCodeLine{80     \mbox{\hyperlink{struct_brood_1_1_application_1_1_data_1_1_s_t___player_prefab_data}{Brood::Application::Data::ST\_PlayerPrefabData}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ac9b5c1e8e165b0c2946ef9c37a415c2a}{GetDataToSave}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// appends the the player data to passed file }}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a746034db33f7a17033b3b8d96df42cf9}{SaveDataToFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr );}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{// appends the the player data to passed file }}
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a17adb2c2fe3851c5cb57b0caa6c77ca7}{LoadDataFromFile}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_file_access}{Brood::Application::FileAccess}}* a\_fileAccessPtr,}
+\DoxyCodeLine{87                            \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_board}{Brood::Application::Components::Board}}* a\_gameBoard );}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// function to update the path iterator}}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a422b2f272433e810ab729dbb564de1b4}{UpdatePathptr}}( \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* a\_playerNewPathPtr );}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// setter funciton to set the player's x-\/size}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a52be4216c120e54b706d279f34f2fcda}{SetPlayerSizeX}}( \textcolor{keywordtype}{float} a\_sizeX );}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{// setter funciton to set the player's y-\/size}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_af6d495ea6b07380d65163882939aa59a}{SetPlayerSizeY}}( \textcolor{keywordtype}{float} a\_sizeY );}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// setter funciton to set the player's x-\/offset}}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_aa83ff66a346044023537f2cc8e8bfcae}{SetPositionOffsetX}}( \textcolor{keywordtype}{int} a\_positionOffsetX );}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// setter funciton to set the player's y-\/offset}}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_afbcd6410bafffbdee237c94b3e72fa90}{SetPositionOffsetY}}( \textcolor{keywordtype}{int} a\_positionOffsetY );}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// getter funciton to get the pointer to the tile}}
+\DoxyCodeLine{105     \textcolor{keyword}{const} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ad99acf563c5d7658bc0ef5d44baf04f4}{GetCurrPathPtr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// getter funciton to get a reference to the player body}}
+\DoxyCodeLine{108     sf::RectangleShape\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a99e23bf8a2ee591785fc7086e7db353f}{GetPlayerBody}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// getter funciton to get a reference to the player sprite body}}
+\DoxyCodeLine{111     \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood::SpriteHandler}}\& \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a073cd1ab0bbb5098275e8c64ec7379fa}{GetPlayerSpriteBody}}();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{// setter funciton to set the player's x-\/offset}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a17b2b7fc8a3238c0e283d282794a5152}{GetPositionOffsetX}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// setter funciton to set the player's y-\/offset}}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a4064c297c8b23194237ab4ac0b1e6a2b}{GetPositionOffsetY}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// draw to screen}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a47ec1d618efadb76b2ac1a3acb810155}{Draw}}( sf::RenderWindow\& a\_window );}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{// ===== private member function =====}}
+\DoxyCodeLine{123 \textcolor{keyword}{private}:}
+\DoxyCodeLine{124     \textcolor{comment}{// updates the player position with respect to tile }}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_aa055a70690c66e3fd9949358fccadd5c}{UpdatePosition}}();}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{// ===== private member variable =====}}
+\DoxyCodeLine{128 \textcolor{keyword}{private}:}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// player body}}
+\DoxyCodeLine{131     sf::RectangleShape \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ac49b5f5513591cb13350086299a54846}{m\_playerBody}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \mbox{\hyperlink{class_brood_1_1_sprite_handler}{Brood::SpriteHandler}} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a024055b1fcf51803fcd01ac1be81067d}{m\_spriteBody}};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{comment}{// holds the x-\/offset relative to the tile's x position}}
+\DoxyCodeLine{136     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a645343e877c04a460e27b0107204d44e}{m\_positionOffsetX}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{// holds the x-\/offset relative to the tile's y position}}
+\DoxyCodeLine{139     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_a93e9270cba469e87fad760558c339cd4}{m\_positionOffsetY}};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{comment}{// pointer that points to the current path node;}}
+\DoxyCodeLine{142     \textcolor{comment}{// it hoolds all tile that the player is on}}
+\DoxyCodeLine{143     \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_path}{Brood::Application::Components::Path}}* \mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_player_ae510086f64136dbfa3c8d55eebb238e7}{m\_playerCurrPathPtr}};}
+\DoxyCodeLine{144 \};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{147 \textcolor{comment}{// ================= end of Player class ================================}}
+\DoxyCodeLine{148 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}

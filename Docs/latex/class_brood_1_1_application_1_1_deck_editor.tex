@@ -1,0 +1,685 @@
+\hypertarget{class_brood_1_1_application_1_1_deck_editor}{}\doxysection{Brood\+::Application\+::Deck\+Editor Class Reference}
+\label{class_brood_1_1_application_1_1_deck_editor}\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+
+
+{\ttfamily \#include $<$Deck\+Editor.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Deck\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_deck_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ae8fb00d292c8786be20ba6508806a5d2}{Deck\+Editor}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data, sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Ptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_af5497c18d524a01d28330bc6f5994fd0}{$\sim$\+Deck\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adb109156626044f4dbab0e17fc3a58fa}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the work space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ad1c08b596ab8c032e2a80a92a0146498}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a22198153282178ebc940bcb5470555b8}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em updates the display element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a27a045c274b8cbe55690f318fda9dc4e}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a6abcdf9a97bcf0ec3c424271f3109e0d}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ab0b632e95cd71509a5c38569f4af918c}{Update\+Curr\+Selected\+Deck\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the current selceted deck index panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adda6625be86f2631001eec118310fc98}{Update\+Deck\+SizeX}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Deck x size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a845b7dd5506b14d18f53c66a5b1bef8a}{Update\+Deck\+SizeY}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Deck y size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a5d5626b536669e1879394139d1e541e3}{Update\+Deck\+PosX}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Deck x position panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ad7c292a0d3d05aac299a3b8d2ba63b93}{Update\+Deck\+PosY}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the player Y Offset panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a81bba2d08ff8680f2847216231b9af66}{Update\+Deck\+File\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the laod Deck texture panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a847162aba3e1f4a3b054b82969ce2912}{Update\+Card\+Init\+File}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the laod card init panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a1fd0e953fce5c8ecfb00b3622f7023ff}{Update\+Card\+Number}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the Card number panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a0e288b394f38ed69fead6caaa35dba87}{m\+\_\+panel\+Body\+Ptr}}
+\begin{DoxyCompactList}\small\item\em holds the panel body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a1fdc96bbd1053af7112e73d61172f62a}{m\+\_\+txt\+Setting\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a7d4fe17aa52f7e3f138f4bc85f1c859e}{m\+\_\+txt\+Deck\+Curr\+Idx\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text deck current index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac50ed7e1509671d2d8a57a9dab81b810}{m\+\_\+btn\+Deck\+Dec\+Curr\+Idx}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the deck current index number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a89c8d2f8421071a9dd17eb6852e0696b}{m\+\_\+txt\+Deck\+Curr\+Idx}}
+\begin{DoxyCompactList}\small\item\em displays the current deck current index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac4f958d33d930fdc6a6d1aea19bea6ba}{m\+\_\+btn\+Deck\+Inc\+Curr\+Idx}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the deck current index number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a394c14e1b1cbfa4f3e66703a019f19e7}{m\+\_\+txt\+Deck\+Size\+XPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text deck size x \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a9888801d1eede8060ba11811f76754a4}{m\+\_\+btn\+Deck\+Dec\+SizeX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the deck size x number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a599abae8a900fa73ad15b1e706063312}{m\+\_\+txt\+Deck\+SizeX}}
+\begin{DoxyCompactList}\small\item\em displays the current deck size X \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_acbc590e1818d1cb4a4cb376dbe379089}{m\+\_\+btn\+Deck\+Inc\+SizeX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the deck size x number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_aced0d688385d86d85401dd8dc28ae26d}{m\+\_\+txt\+Deck\+Size\+YPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text deck size y \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_adc3cd1f0fdee74c711f1d8fb09fbac6b}{m\+\_\+btn\+Deck\+Dec\+SizeY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the deck size y number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a10dd53f8c39d31ebe49d7cb180f0ccd3}{m\+\_\+txt\+Deck\+SizeY}}
+\begin{DoxyCompactList}\small\item\em displays the current deck size y \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ab62c5643bb6e08a728397182210326e6}{m\+\_\+btn\+Deck\+Inc\+SizeY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the deck size y number by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a67492fbd105638d68d130f68712de941}{m\+\_\+txt\+Deck\+Pos\+XPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text deck position x \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a6566bae94c1de63f92d65b0016925714}{m\+\_\+btn\+Deck\+Dec\+PosX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the deck Position x number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_af26fb5ecdeb81e3c22e4c0552a0eaf25}{m\+\_\+txt\+Deck\+PosX}}
+\begin{DoxyCompactList}\small\item\em displays the current deck Position X \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ae4b70c314193818c5d2081c311617401}{m\+\_\+btn\+Deck\+Inc\+PosX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the deck Position x number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a5da3ca06189902068bfe050e8b7d0df7}{m\+\_\+txt\+Deck\+Pos\+YPrompt}}
+\begin{DoxyCompactList}\small\item\em holds the text deck Position y \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a77910914a6d4fee5703b3a1cd5c5faa3}{m\+\_\+btn\+Deck\+Dec\+PosY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the deck Position y number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_af039e060b9d4684f6ff14eb69f3c0623}{m\+\_\+txt\+Deck\+PosY}}
+\begin{DoxyCompactList}\small\item\em displays the current deck Position y \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac692e786406843eaea42358f0caa8cfe}{m\+\_\+btn\+Deck\+Inc\+PosY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the deck Position y number by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_afe07fe25df2c81e84496bcefc9e230ce}{m\+\_\+txt\+Deck\+Bg\+File\+Name\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the Deck texture filename prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a3cee3467cb6cdf6c6a6c5f0162bf72dc}{m\+\_\+txt\+Deck\+Bg\+File\+Input}}
+\begin{DoxyCompactList}\small\item\em holds the file name user enters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a5553fd4327671a3c2dd33232e474ed72}{m\+\_\+btn\+Deck\+Bg\+Open\+File}}
+\begin{DoxyCompactList}\small\item\em clicking it will load the Deck file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a4e501851334866213c7eca5bb94f7f6d}{m\+\_\+txt\+Card\+Init\+File\+Name\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the Card\+Init texture filename prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a8e1798a461610a06851dcbe1beb0ca5c}{m\+\_\+txt\+Card\+Init\+File\+Input}}
+\begin{DoxyCompactList}\small\item\em holds the file name user enters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_ac75753c4482b9282b4c296a4cad78e69}{m\+\_\+btn\+Card\+Init\+Open\+File}}
+\begin{DoxyCompactList}\small\item\em clicking it will load the Card\+Init file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a3c0d5ffdaec1e49396ced5c8867279d3}{m\+\_\+txt\+Card\+Num\+Prompt}}
+\begin{DoxyCompactList}\small\item\em holds the text number of cards \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a598077a9f47f0fc7c1d0b555f4872cc0}{m\+\_\+btn\+Dec\+Card\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the number of cards by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a421c61bbba5bc31e757dd31784d9550e}{m\+\_\+txt\+Card\+Num}}
+\begin{DoxyCompactList}\small\item\em displays the current number of cards in the deck \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_deck_editor_a73472d0ceb460058cd7cee7bfda8450e}{m\+\_\+btn\+Inc\+Card\+Num}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the number of cards by 1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ae8fb00d292c8786be20ba6508806a5d2}\label{class_brood_1_1_application_1_1_deck_editor_ae8fb00d292c8786be20ba6508806a5d2}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!DeckEditor@{DeckEditor}}
+\index{DeckEditor@{DeckEditor}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{DeckEditor()}{DeckEditor()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Deck\+Editor\+::\+Deck\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Ptr }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data} & pointer to the game data object \\
+\hline
+{\em a\+\_\+panel\+Ptr} & pointer to the panel body object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_af5497c18d524a01d28330bc6f5994fd0}\label{class_brood_1_1_application_1_1_deck_editor_af5497c18d524a01d28330bc6f5994fd0}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!````~DeckEditor@{$\sim$DeckEditor}}
+\index{````~DeckEditor@{$\sim$DeckEditor}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$DeckEditor()}{~DeckEditor()}}
+{\footnotesize\ttfamily Brood\+::\+Application\+::\+Deck\+Editor\+::$\sim$\+Deck\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a6abcdf9a97bcf0ec3c424271f3109e0d}\label{class_brood_1_1_application_1_1_deck_editor_a6abcdf9a97bcf0ec3c424271f3109e0d}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a27a045c274b8cbe55690f318fda9dc4e}\label{class_brood_1_1_application_1_1_deck_editor_a27a045c274b8cbe55690f318fda9dc4e}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_adb109156626044f4dbab0e17fc3a58fa}\label{class_brood_1_1_application_1_1_deck_editor_adb109156626044f4dbab0e17fc3a58fa}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the work space. 
+
+@virtual
+
+It creates all the component of the workspace. It inializes the board, setting section Dropdown Input. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ad1c08b596ab8c032e2a80a92a0146498}\label{class_brood_1_1_application_1_1_deck_editor_ad1c08b596ab8c032e2a80a92a0146498}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates function. 
+
+@virtual
+
+Contains all the logic for the initial workspace 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a22198153282178ebc940bcb5470555b8}\label{class_brood_1_1_application_1_1_deck_editor_a22198153282178ebc940bcb5470555b8}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+updates the display element 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a847162aba3e1f4a3b054b82969ce2912}\label{class_brood_1_1_application_1_1_deck_editor_a847162aba3e1f4a3b054b82969ce2912}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateCardInitFile@{UpdateCardInitFile}}
+\index{UpdateCardInitFile@{UpdateCardInitFile}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCardInitFile()}{UpdateCardInitFile()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Card\+Init\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the laod card init panel 
+
+Load card init file panel contains load card init file promt textbox, textbox to enter the file name, and button to open and load the file.
+
+Only the textbox to enter the file name, and button to open and load the file are interactable
+
+If the interactable button was pressed then it opens the filename entered
+
+\begin{DoxyWarning}{Warning}
+Texture should always be in .png form 
+
+the Texture for the file should be in \textbackslash{}data\textbackslash{} as it loads them from there. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a1fd0e953fce5c8ecfb00b3622f7023ff}\label{class_brood_1_1_application_1_1_deck_editor_a1fd0e953fce5c8ecfb00b3622f7023ff}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateCardNumber@{UpdateCardNumber}}
+\index{UpdateCardNumber@{UpdateCardNumber}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCardNumber()}{UpdateCardNumber()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Card\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Card number panel 
+
+Card number panel contains Card number promt textbox, Card number number value text box, button to increase the Card number number, and button to decrease the Card number
+
+Only the button to increase the Card number, and button to decrease the Card number are interactable
+
+If the interactable button was pressed then the Card number is increased or decresed by 1. Card number should be more than or equal to 1 \mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ab0b632e95cd71509a5c38569f4af918c}\label{class_brood_1_1_application_1_1_deck_editor_ab0b632e95cd71509a5c38569f4af918c}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateCurrSelectedDeckIdx@{UpdateCurrSelectedDeckIdx}}
+\index{UpdateCurrSelectedDeckIdx@{UpdateCurrSelectedDeckIdx}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateCurrSelectedDeckIdx()}{UpdateCurrSelectedDeckIdx()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Curr\+Selected\+Deck\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the current selceted deck index panel 
+
+Current selceted deck index panel contains current selceted Deck index promt textbox, current selceted Deck index value text box, button to increase the current selceted Deck index, and button to decrease the current selceted Deck index
+
+Only the button to increase the current selceted Deck index, and button to decrease the current selceted Deck index are interactable
+
+If the interactable button was pressed then the current selceted Deck index is increased or decresed by 1. current selceted Deck index should be more than or equal to 1 but less than Deck number \mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a81bba2d08ff8680f2847216231b9af66}\label{class_brood_1_1_application_1_1_deck_editor_a81bba2d08ff8680f2847216231b9af66}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateDeckFileTexture@{UpdateDeckFileTexture}}
+\index{UpdateDeckFileTexture@{UpdateDeckFileTexture}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDeckFileTexture()}{UpdateDeckFileTexture()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Deck\+File\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the laod Deck texture panel 
+
+Load Deck texture file panel contains load Deck texture file promt textbox, textbox to enter the file name, and button to open and load the file.
+
+Only the textbox to enter the file name, and button to open and load the file are interactable
+
+If the interactable button was pressed then it opens the filename entered
+
+\begin{DoxyWarning}{Warning}
+Texture should always be in .png form 
+
+the Texture for the file should be in \textbackslash{}\+Assets\textbackslash{}\+Textures\textbackslash{}\+Deck\+Texture\textbackslash{} as it loads them from there. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a5d5626b536669e1879394139d1e541e3}\label{class_brood_1_1_application_1_1_deck_editor_a5d5626b536669e1879394139d1e541e3}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateDeckPosX@{UpdateDeckPosX}}
+\index{UpdateDeckPosX@{UpdateDeckPosX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDeckPosX()}{UpdateDeckPosX()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Deck\+PosX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Deck x position panel 
+
+Deck X position panel contains current Deck X position promt textbox, current Deck X position value text box, button to increase the current Deck X position, and button to decrease the current Deck X position.
+
+Only the button to increase the current Deck X position, and button to decrease the current Deck X position are interactable
+
+If the interactable button was pressed then the current Deck X position is increased or decresed by 1 if the current Deck does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ad7c292a0d3d05aac299a3b8d2ba63b93}\label{class_brood_1_1_application_1_1_deck_editor_ad7c292a0d3d05aac299a3b8d2ba63b93}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateDeckPosY@{UpdateDeckPosY}}
+\index{UpdateDeckPosY@{UpdateDeckPosY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDeckPosY()}{UpdateDeckPosY()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Deck\+PosY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the player Y Offset panel 
+
+\mbox{\hyperlink{class_player}{Player}} Y Offset panel contains current player Y Offset promt textbox, current player Y Offset value text box, button to increase the current player Y Offset, and button to decrease the current player Y Offset.
+
+Only the button to increase the current player Y Offset, and button to decrease the current player Y Offset are interactable
+
+If the interactable button was pressed then the current player Y Offset is increased or decresed by 1 if the current player does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_adda6625be86f2631001eec118310fc98}\label{class_brood_1_1_application_1_1_deck_editor_adda6625be86f2631001eec118310fc98}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateDeckSizeX@{UpdateDeckSizeX}}
+\index{UpdateDeckSizeX@{UpdateDeckSizeX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDeckSizeX()}{UpdateDeckSizeX()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Deck\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Deck x size panel 
+
+Deck X size panel contains current Deck X size promt textbox, current Deck X size value text box, button to increase the current Deck X size, and button to decrease the current Deck X size.
+
+Only the button to increase the current Deck X size, and button to decrease the current Deck X size are interactable
+
+If the interactable button was pressed then the current Deck X size is increased or decresed by 5 if the current Deck does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a845b7dd5506b14d18f53c66a5b1bef8a}\label{class_brood_1_1_application_1_1_deck_editor_a845b7dd5506b14d18f53c66a5b1bef8a}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!UpdateDeckSizeY@{UpdateDeckSizeY}}
+\index{UpdateDeckSizeY@{UpdateDeckSizeY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateDeckSizeY()}{UpdateDeckSizeY()}}
+{\footnotesize\ttfamily void Brood\+::\+Application\+::\+Deck\+Editor\+::\+Update\+Deck\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if the user interacted with the Deck y size panel 
+
+Deck Y size panel contains current Deck y size promt textbox, current Deck y size value text box, button to increase the current Deck y size, and button to decrease the current Deck y size.
+
+Only the button to increase the current Deck y size, and button to decrease the current Deck y size are interactable
+
+If the interactable button was pressed then the current Deck y size is increased or decresed by 5 if the current Deck does not go outside the board window 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ac75753c4482b9282b4c296a4cad78e69}\label{class_brood_1_1_application_1_1_deck_editor_ac75753c4482b9282b4c296a4cad78e69}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnCardInitOpenFile@{m\_btnCardInitOpenFile}}
+\index{m\_btnCardInitOpenFile@{m\_btnCardInitOpenFile}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnCardInitOpenFile}{m\_btnCardInitOpenFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Card\+Init\+Open\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will load the Card\+Init file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a598077a9f47f0fc7c1d0b555f4872cc0}\label{class_brood_1_1_application_1_1_deck_editor_a598077a9f47f0fc7c1d0b555f4872cc0}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDecCardNum@{m\_btnDecCardNum}}
+\index{m\_btnDecCardNum@{m\_btnDecCardNum}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDecCardNum}{m\_btnDecCardNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Dec\+Card\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the number of cards by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a5553fd4327671a3c2dd33232e474ed72}\label{class_brood_1_1_application_1_1_deck_editor_a5553fd4327671a3c2dd33232e474ed72}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckBgOpenFile@{m\_btnDeckBgOpenFile}}
+\index{m\_btnDeckBgOpenFile@{m\_btnDeckBgOpenFile}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckBgOpenFile}{m\_btnDeckBgOpenFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Bg\+Open\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will load the Deck file 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ac50ed7e1509671d2d8a57a9dab81b810}\label{class_brood_1_1_application_1_1_deck_editor_ac50ed7e1509671d2d8a57a9dab81b810}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckDecCurrIdx@{m\_btnDeckDecCurrIdx}}
+\index{m\_btnDeckDecCurrIdx@{m\_btnDeckDecCurrIdx}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckDecCurrIdx}{m\_btnDeckDecCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Dec\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the deck current index number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a6566bae94c1de63f92d65b0016925714}\label{class_brood_1_1_application_1_1_deck_editor_a6566bae94c1de63f92d65b0016925714}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckDecPosX@{m\_btnDeckDecPosX}}
+\index{m\_btnDeckDecPosX@{m\_btnDeckDecPosX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckDecPosX}{m\_btnDeckDecPosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Dec\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the deck Position x number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a77910914a6d4fee5703b3a1cd5c5faa3}\label{class_brood_1_1_application_1_1_deck_editor_a77910914a6d4fee5703b3a1cd5c5faa3}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckDecPosY@{m\_btnDeckDecPosY}}
+\index{m\_btnDeckDecPosY@{m\_btnDeckDecPosY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckDecPosY}{m\_btnDeckDecPosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Dec\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the deck Position y number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a9888801d1eede8060ba11811f76754a4}\label{class_brood_1_1_application_1_1_deck_editor_a9888801d1eede8060ba11811f76754a4}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckDecSizeX@{m\_btnDeckDecSizeX}}
+\index{m\_btnDeckDecSizeX@{m\_btnDeckDecSizeX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckDecSizeX}{m\_btnDeckDecSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Dec\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the deck size x number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_adc3cd1f0fdee74c711f1d8fb09fbac6b}\label{class_brood_1_1_application_1_1_deck_editor_adc3cd1f0fdee74c711f1d8fb09fbac6b}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckDecSizeY@{m\_btnDeckDecSizeY}}
+\index{m\_btnDeckDecSizeY@{m\_btnDeckDecSizeY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckDecSizeY}{m\_btnDeckDecSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Dec\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the deck size y number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ac4f958d33d930fdc6a6d1aea19bea6ba}\label{class_brood_1_1_application_1_1_deck_editor_ac4f958d33d930fdc6a6d1aea19bea6ba}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckIncCurrIdx@{m\_btnDeckIncCurrIdx}}
+\index{m\_btnDeckIncCurrIdx@{m\_btnDeckIncCurrIdx}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckIncCurrIdx}{m\_btnDeckIncCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Inc\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the deck current index number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ae4b70c314193818c5d2081c311617401}\label{class_brood_1_1_application_1_1_deck_editor_ae4b70c314193818c5d2081c311617401}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckIncPosX@{m\_btnDeckIncPosX}}
+\index{m\_btnDeckIncPosX@{m\_btnDeckIncPosX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckIncPosX}{m\_btnDeckIncPosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Inc\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the deck Position x number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ac692e786406843eaea42358f0caa8cfe}\label{class_brood_1_1_application_1_1_deck_editor_ac692e786406843eaea42358f0caa8cfe}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckIncPosY@{m\_btnDeckIncPosY}}
+\index{m\_btnDeckIncPosY@{m\_btnDeckIncPosY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckIncPosY}{m\_btnDeckIncPosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Inc\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the deck Position y number by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_acbc590e1818d1cb4a4cb376dbe379089}\label{class_brood_1_1_application_1_1_deck_editor_acbc590e1818d1cb4a4cb376dbe379089}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckIncSizeX@{m\_btnDeckIncSizeX}}
+\index{m\_btnDeckIncSizeX@{m\_btnDeckIncSizeX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckIncSizeX}{m\_btnDeckIncSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Inc\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the deck size x number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_ab62c5643bb6e08a728397182210326e6}\label{class_brood_1_1_application_1_1_deck_editor_ab62c5643bb6e08a728397182210326e6}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnDeckIncSizeY@{m\_btnDeckIncSizeY}}
+\index{m\_btnDeckIncSizeY@{m\_btnDeckIncSizeY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnDeckIncSizeY}{m\_btnDeckIncSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Deck\+Inc\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the deck size y number by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a73472d0ceb460058cd7cee7bfda8450e}\label{class_brood_1_1_application_1_1_deck_editor_a73472d0ceb460058cd7cee7bfda8450e}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_btnIncCardNum@{m\_btnIncCardNum}}
+\index{m\_btnIncCardNum@{m\_btnIncCardNum}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnIncCardNum}{m\_btnIncCardNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+btn\+Inc\+Card\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the number of cards by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a0e288b394f38ed69fead6caaa35dba87}\label{class_brood_1_1_application_1_1_deck_editor_a0e288b394f38ed69fead6caaa35dba87}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_panelBodyPtr@{m\_panelBodyPtr}}
+\index{m\_panelBodyPtr@{m\_panelBodyPtr}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_panelBodyPtr}{m\_panelBodyPtr}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+panel\+Body\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the panel body 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a8e1798a461610a06851dcbe1beb0ca5c}\label{class_brood_1_1_application_1_1_deck_editor_a8e1798a461610a06851dcbe1beb0ca5c}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtCardInitFileInput@{m\_txtCardInitFileInput}}
+\index{m\_txtCardInitFileInput@{m\_txtCardInitFileInput}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtCardInitFileInput}{m\_txtCardInitFileInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Card\+Init\+File\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the file name user enters 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a4e501851334866213c7eca5bb94f7f6d}\label{class_brood_1_1_application_1_1_deck_editor_a4e501851334866213c7eca5bb94f7f6d}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtCardInitFileNamePrompt@{m\_txtCardInitFileNamePrompt}}
+\index{m\_txtCardInitFileNamePrompt@{m\_txtCardInitFileNamePrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtCardInitFileNamePrompt}{m\_txtCardInitFileNamePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Card\+Init\+File\+Name\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the Card\+Init texture filename prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a421c61bbba5bc31e757dd31784d9550e}\label{class_brood_1_1_application_1_1_deck_editor_a421c61bbba5bc31e757dd31784d9550e}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtCardNum@{m\_txtCardNum}}
+\index{m\_txtCardNum@{m\_txtCardNum}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtCardNum}{m\_txtCardNum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Card\+Num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current number of cards in the deck 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a3c0d5ffdaec1e49396ced5c8867279d3}\label{class_brood_1_1_application_1_1_deck_editor_a3c0d5ffdaec1e49396ced5c8867279d3}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtCardNumPrompt@{m\_txtCardNumPrompt}}
+\index{m\_txtCardNumPrompt@{m\_txtCardNumPrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtCardNumPrompt}{m\_txtCardNumPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Card\+Num\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text number of cards 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a3cee3467cb6cdf6c6a6c5f0162bf72dc}\label{class_brood_1_1_application_1_1_deck_editor_a3cee3467cb6cdf6c6a6c5f0162bf72dc}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckBgFileInput@{m\_txtDeckBgFileInput}}
+\index{m\_txtDeckBgFileInput@{m\_txtDeckBgFileInput}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckBgFileInput}{m\_txtDeckBgFileInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Bg\+File\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the file name user enters 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_afe07fe25df2c81e84496bcefc9e230ce}\label{class_brood_1_1_application_1_1_deck_editor_afe07fe25df2c81e84496bcefc9e230ce}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckBgFileNamePrompt@{m\_txtDeckBgFileNamePrompt}}
+\index{m\_txtDeckBgFileNamePrompt@{m\_txtDeckBgFileNamePrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckBgFileNamePrompt}{m\_txtDeckBgFileNamePrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Bg\+File\+Name\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the Deck texture filename prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a89c8d2f8421071a9dd17eb6852e0696b}\label{class_brood_1_1_application_1_1_deck_editor_a89c8d2f8421071a9dd17eb6852e0696b}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckCurrIdx@{m\_txtDeckCurrIdx}}
+\index{m\_txtDeckCurrIdx@{m\_txtDeckCurrIdx}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckCurrIdx}{m\_txtDeckCurrIdx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Curr\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current deck current index 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a7d4fe17aa52f7e3f138f4bc85f1c859e}\label{class_brood_1_1_application_1_1_deck_editor_a7d4fe17aa52f7e3f138f4bc85f1c859e}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckCurrIdxPrompt@{m\_txtDeckCurrIdxPrompt}}
+\index{m\_txtDeckCurrIdxPrompt@{m\_txtDeckCurrIdxPrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckCurrIdxPrompt}{m\_txtDeckCurrIdxPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Curr\+Idx\+Prompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text deck current index 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_af26fb5ecdeb81e3c22e4c0552a0eaf25}\label{class_brood_1_1_application_1_1_deck_editor_af26fb5ecdeb81e3c22e4c0552a0eaf25}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckPosX@{m\_txtDeckPosX}}
+\index{m\_txtDeckPosX@{m\_txtDeckPosX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckPosX}{m\_txtDeckPosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current deck Position X 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a67492fbd105638d68d130f68712de941}\label{class_brood_1_1_application_1_1_deck_editor_a67492fbd105638d68d130f68712de941}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckPosXPrompt@{m\_txtDeckPosXPrompt}}
+\index{m\_txtDeckPosXPrompt@{m\_txtDeckPosXPrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckPosXPrompt}{m\_txtDeckPosXPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Pos\+XPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text deck position x 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_af039e060b9d4684f6ff14eb69f3c0623}\label{class_brood_1_1_application_1_1_deck_editor_af039e060b9d4684f6ff14eb69f3c0623}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckPosY@{m\_txtDeckPosY}}
+\index{m\_txtDeckPosY@{m\_txtDeckPosY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckPosY}{m\_txtDeckPosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current deck Position y 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a5da3ca06189902068bfe050e8b7d0df7}\label{class_brood_1_1_application_1_1_deck_editor_a5da3ca06189902068bfe050e8b7d0df7}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckPosYPrompt@{m\_txtDeckPosYPrompt}}
+\index{m\_txtDeckPosYPrompt@{m\_txtDeckPosYPrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckPosYPrompt}{m\_txtDeckPosYPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Pos\+YPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text deck Position y 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a599abae8a900fa73ad15b1e706063312}\label{class_brood_1_1_application_1_1_deck_editor_a599abae8a900fa73ad15b1e706063312}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckSizeX@{m\_txtDeckSizeX}}
+\index{m\_txtDeckSizeX@{m\_txtDeckSizeX}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckSizeX}{m\_txtDeckSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current deck size X 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a394c14e1b1cbfa4f3e66703a019f19e7}\label{class_brood_1_1_application_1_1_deck_editor_a394c14e1b1cbfa4f3e66703a019f19e7}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckSizeXPrompt@{m\_txtDeckSizeXPrompt}}
+\index{m\_txtDeckSizeXPrompt@{m\_txtDeckSizeXPrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckSizeXPrompt}{m\_txtDeckSizeXPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Size\+XPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text deck size x 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a10dd53f8c39d31ebe49d7cb180f0ccd3}\label{class_brood_1_1_application_1_1_deck_editor_a10dd53f8c39d31ebe49d7cb180f0ccd3}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckSizeY@{m\_txtDeckSizeY}}
+\index{m\_txtDeckSizeY@{m\_txtDeckSizeY}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckSizeY}{m\_txtDeckSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the current deck size y 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_aced0d688385d86d85401dd8dc28ae26d}\label{class_brood_1_1_application_1_1_deck_editor_aced0d688385d86d85401dd8dc28ae26d}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtDeckSizeYPrompt@{m\_txtDeckSizeYPrompt}}
+\index{m\_txtDeckSizeYPrompt@{m\_txtDeckSizeYPrompt}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtDeckSizeYPrompt}{m\_txtDeckSizeYPrompt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Deck\+Size\+YPrompt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text deck size y 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_deck_editor_a1fdc96bbd1053af7112e73d61172f62a}\label{class_brood_1_1_application_1_1_deck_editor_a1fdc96bbd1053af7112e73d61172f62a}} 
+\index{Brood::Application::DeckEditor@{Brood::Application::DeckEditor}!m\_txtSettingTitle@{m\_txtSettingTitle}}
+\index{m\_txtSettingTitle@{m\_txtSettingTitle}!Brood::Application::DeckEditor@{Brood::Application::DeckEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtSettingTitle}{m\_txtSettingTitle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Deck\+Editor\+::m\+\_\+txt\+Setting\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_deck_editor_8h}{Deck\+Editor.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_deck_editor_8cpp}{Deck\+Editor.\+cpp}}\end{DoxyCompactItemize}

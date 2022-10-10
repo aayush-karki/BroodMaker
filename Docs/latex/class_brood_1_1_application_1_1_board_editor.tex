@@ -1,0 +1,564 @@
+\hypertarget{class_brood_1_1_application_1_1_board_editor}{}\doxysection{Brood\+::Application\+::Board\+Editor Class Reference}
+\label{class_brood_1_1_application_1_1_board_editor}\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+
+
+{\ttfamily \#include $<$Board\+Editor.\+h$>$}
+
+Inheritance diagram for Brood\+::Application\+::Board\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brood_1_1_application_1_1_board_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_acab87b92bfadc23c0746cbbccaca3376}{Board\+Editor}} (\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$a\+\_\+game\+Data, sf\+::\+Rectangle\+Shape $\ast$a\+\_\+panel\+Ptr)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a43203c2a91a10102b20dd2df66c8a1c5}{$\sim$\+Board\+Editor}} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a680781b3bf5bb133443d7f02d4acc97f}{Initialize\+Work\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the work space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac3012c56d8902f39e3e2b504fea33af1}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa9b28b53885704008b793a01581b8d50}{Update\+All\+Dispay\+Element}} ()
+\begin{DoxyCompactList}\small\item\em calls the updates all the display element for the current active editor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a41c55f09d01714c972eb106588584851}{Draw}} (sf\+::\+Render\+Window \&a\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw funciton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a026e88885577473f8bdf0a33bc23c4fc}{Debugger}} ()
+\begin{DoxyCompactList}\small\item\em debugger funciton \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_abe128f4cbcf7ffad4d217553462d3593}{Update\+Board\+XSize\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the x size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a24f82562345fe809cd38b2e122b4b78f}{Update\+Board\+YSize\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the y size panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_afc81531bec4cd2fdee1558f5dcb10b86}{Update\+Board\+XPos\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the x position panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a42a64fbd74ebd210fada0f94e095cdb1}{Update\+Board\+YPos\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the y position panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac0a539bd82c79bfd131ec2fdfa215194}{Update\+Board\+Row\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the row panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a535e13bc830a5bb8a4b13b8f42c33fba}{Update\+Board\+Col\+Panel\+Element}} ()
+\begin{DoxyCompactList}\small\item\em checks if the user interacted with the column panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a0c07ad14496ce4d49a207bcff1f2d6cd}{m\+\_\+panel\+Body\+Ptr}}
+\begin{DoxyCompactList}\small\item\em holds the panel body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a2dd50c1fc28a06f04494138385e0c621}{m\+\_\+txt\+Setting\+Title}}
+\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa39a761e0565b54741e839f1874b81f3}{m\+\_\+txt\+Board\+Size\+PromtX}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} X size prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a8fe711fa80aeecbf54549b4d5e3154f4}{m\+\_\+btn\+Board\+Size\+DecX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board x size by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a79ef802086ea87874aa6d46d08945e19}{m\+\_\+txt\+Board\+SizeX}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s x size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a47f8303a154791155bdd076278126a81}{m\+\_\+btn\+Board\+Size\+IncX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board x size by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac70e5f5742700097e749312df4ad63e3}{m\+\_\+txt\+Board\+Size\+PromtY}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} y size prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ac254804c5c403cc726ece5c79012e6f8}{m\+\_\+btn\+Board\+Size\+DecY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board y size by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a9fb64620656c004f4385b69343f41a53}{m\+\_\+txt\+Board\+SizeY}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s y size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a81fbcf5b861831fba8280bcfa884eadc}{m\+\_\+btn\+Board\+Size\+IncY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board x size by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa6640233ef397d9e34d58e58bae9cc75}{m\+\_\+txt\+Board\+Pos\+PromtX}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} X position prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa4770d590533aaceb0aa5a27b6fcf824}{m\+\_\+btn\+Board\+Pos\+DecX}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board x position by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a745e73b70f9178ccf154ba7a389e4bf1}{m\+\_\+txt\+Board\+PosX}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s x position \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_ae169ab633405c694bb1cac7d68bad49c}{m\+\_\+btn\+Board\+Pos\+IncX}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board x position by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a97fcab04023bdfe90af43a299de209cf}{m\+\_\+txt\+Board\+Pos\+PromtY}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} y position prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a69277fbf38170612e97e25ed21ca68e8}{m\+\_\+btn\+Board\+Pos\+DecY}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board y position by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_af68a79718416ab2b5daaf8e075e5493d}{m\+\_\+txt\+Board\+PosY}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s y position \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_aa95aae4ff64c6419d424a9e21b4f1013}{m\+\_\+btn\+Board\+Pos\+IncY}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board y position by 5 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a7614a4da24c57575c00c890f1b0087b6}{m\+\_\+txt\+Board\+Row\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_abd7cedfbab9a1c7458b2bff3d745ba88}{m\+\_\+btn\+Board\+Dec\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a05dc9e903291f80f56479da189a77d19}{m\+\_\+txt\+Board\+Row}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Row number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a5bcfd7757fde774ff723c02052e1028a}{m\+\_\+btn\+Board\+Inc\+Row}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s row by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a311b0b92f4834646bce4424fd543681c}{m\+\_\+txt\+Board\+Col\+Promt}}
+\begin{DoxyCompactList}\small\item\em holds the text \mbox{\hyperlink{class_board}{Board}} Column number prompt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a07ad19da1bfeca1b9e72c188d5cfa779}{m\+\_\+btn\+Board\+Dec\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will decrease the board\textquotesingle{}s Column by 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a30ef87f80dc0c83ad77cc81f400df682}{m\+\_\+txt\+Board\+Col}}
+\begin{DoxyCompactList}\small\item\em displays the board\textquotesingle{}s Column number \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}} $\ast$ \mbox{\hyperlink{class_brood_1_1_application_1_1_board_editor_a79115d72ea97ff076c136fad0f9fa933}{m\+\_\+btn\+Board\+Inc\+Col}}
+\begin{DoxyCompactList}\small\item\em clicking it will increase the board\textquotesingle{}s Column by 1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_acab87b92bfadc23c0746cbbccaca3376}\label{class_brood_1_1_application_1_1_board_editor_acab87b92bfadc23c0746cbbccaca3376}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!BoardEditor@{BoardEditor}}
+\index{BoardEditor@{BoardEditor}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{BoardEditor()}{BoardEditor()}}
+{\footnotesize\ttfamily Board\+Editor\+::\+Board\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brood_1_1_application_1_1_components_1_1_game_data_manager}{Brood\+::\+Application\+::\+Components\+::\+Game\+Data\+Manager}} $\ast$}]{a\+\_\+game\+Data,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{a\+\_\+panel\+Ptr }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+game\+Data} & pointer to the game data object \\
+\hline
+{\em a\+\_\+panel\+Ptr} & pointer to the panel body object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a43203c2a91a10102b20dd2df66c8a1c5}\label{class_brood_1_1_application_1_1_board_editor_a43203c2a91a10102b20dd2df66c8a1c5}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!````~BoardEditor@{$\sim$BoardEditor}}
+\index{````~BoardEditor@{$\sim$BoardEditor}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$BoardEditor()}{~BoardEditor()}}
+{\footnotesize\ttfamily Board\+Editor\+::$\sim$\+Board\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a026e88885577473f8bdf0a33bc23c4fc}\label{class_brood_1_1_application_1_1_board_editor_a026e88885577473f8bdf0a33bc23c4fc}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!Debugger@{Debugger}}
+\index{Debugger@{Debugger}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{Debugger()}{Debugger()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Debugger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+debugger funciton 
+
+@virtual
+
+This function helps in debugging the UI elements. 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a53670ecdfaba9e478b4b03a17ce20419}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a41c55f09d01714c972eb106588584851}\label{class_brood_1_1_application_1_1_board_editor_a41c55f09d01714c972eb106588584851}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!Draw@{Draw}}
+\index{Draw@{Draw}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{a\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw funciton. 
+
+@virtual
+
+Draws all the component to the screen
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+window} & reference to the render window \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7c072aa68ec8982a9e6221b50e6c34d}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a680781b3bf5bb133443d7f02d4acc97f}\label{class_brood_1_1_application_1_1_board_editor_a680781b3bf5bb133443d7f02d4acc97f}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!InitializeWorkSpace@{InitializeWorkSpace}}
+\index{InitializeWorkSpace@{InitializeWorkSpace}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{InitializeWorkSpace()}{InitializeWorkSpace()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Initialize\+Work\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the work space. 
+
+@virtual
+
+It creates all the component of the workspace. It initializes the folloing panel element\+: board X-\/postion, board Y-\/position, board\+X-\/size, board Y-\/\+Size, board row, board column 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_a466021a2db2f4c54c97285482d1ed42a}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_ac3012c56d8902f39e3e2b504fea33af1}\label{class_brood_1_1_application_1_1_board_editor_ac3012c56d8902f39e3e2b504fea33af1}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!Update@{Update}}
+\index{Update@{Update}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates function. 
+
+@virtual
+
+Contains all the logic for the initial workspace. It Update the folloing panel element\+: board X-\/postion, board Y-\/position, board\+X-\/size, board Y-\/\+Size, board row, board column 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_afa219a868ca124aea256abd7c2bf7444}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_aa9b28b53885704008b793a01581b8d50}\label{class_brood_1_1_application_1_1_board_editor_aa9b28b53885704008b793a01581b8d50}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateAllDispayElement@{UpdateAllDispayElement}}
+\index{UpdateAllDispayElement@{UpdateAllDispayElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateAllDispayElement()}{UpdateAllDispayElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+All\+Dispay\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+calls the updates all the display element for the current active editor 
+
+@virtual 
+
+Implements \mbox{\hyperlink{class_brood_1_1_application_1_1_work_space_aa7ba35e775940cec0ee66668ee3ab0c1}{Brood\+::\+Application\+::\+Work\+Space}}.
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a535e13bc830a5bb8a4b13b8f42c33fba}\label{class_brood_1_1_application_1_1_board_editor_a535e13bc830a5bb8a4b13b8f42c33fba}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateBoardColPanelElement@{UpdateBoardColPanelElement}}
+\index{UpdateBoardColPanelElement@{UpdateBoardColPanelElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardColPanelElement()}{UpdateBoardColPanelElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+Board\+Col\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the column panel 
+
+Column panel contains \mbox{\hyperlink{class_board}{Board}} column number promt textbox, \mbox{\hyperlink{class_board}{Board}} column number value text box, button to increase the \mbox{\hyperlink{class_board}{Board}} column number, and button to decrease the \mbox{\hyperlink{class_board}{Board}} column number.
+
+Only the button to increase the \mbox{\hyperlink{class_board}{Board}} column number, and button to decrease the \mbox{\hyperlink{class_board}{Board}} column number are interactable
+
+If the interactable button was pressed then the \mbox{\hyperlink{class_board}{Board}} column number is increased or decresed by 1. Column number should be more than 1 but less than 100 \mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_ac0a539bd82c79bfd131ec2fdfa215194}\label{class_brood_1_1_application_1_1_board_editor_ac0a539bd82c79bfd131ec2fdfa215194}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateBoardRowPanelElement@{UpdateBoardRowPanelElement}}
+\index{UpdateBoardRowPanelElement@{UpdateBoardRowPanelElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardRowPanelElement()}{UpdateBoardRowPanelElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+Board\+Row\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the row panel 
+
+Row panel contains \mbox{\hyperlink{class_board}{Board}} row number promt textbox, \mbox{\hyperlink{class_board}{Board}} row number value text box, button to increase the \mbox{\hyperlink{class_board}{Board}} row number, and button to decrease the \mbox{\hyperlink{class_board}{Board}} row number.
+
+Only the button to increase the \mbox{\hyperlink{class_board}{Board}} row number, and button to decrease the \mbox{\hyperlink{class_board}{Board}} row number are interactable
+
+If the interactable button was pressed then the \mbox{\hyperlink{class_board}{Board}} row number is increased or decresed by 1. Row number should be more than 1 but less than 100 \mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_afc81531bec4cd2fdee1558f5dcb10b86}\label{class_brood_1_1_application_1_1_board_editor_afc81531bec4cd2fdee1558f5dcb10b86}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateBoardXPosPanelElement@{UpdateBoardXPosPanelElement}}
+\index{UpdateBoardXPosPanelElement@{UpdateBoardXPosPanelElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardXPosPanelElement()}{UpdateBoardXPosPanelElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+Board\+XPos\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the x position panel 
+
+X position panel contains \mbox{\hyperlink{class_board}{Board}} X position promt textbox, \mbox{\hyperlink{class_board}{Board}} X postion value text box, button to increase the \mbox{\hyperlink{class_board}{Board}} X position, and button to decrease the \mbox{\hyperlink{class_board}{Board}} X postion.
+
+Only the button to increase the \mbox{\hyperlink{class_board}{Board}} X position, and button to decrease the \mbox{\hyperlink{class_board}{Board}} X postion are interactable
+
+If the interactable button was pressed then the X pos is increased or decresed by 5 if the board does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_abe128f4cbcf7ffad4d217553462d3593}\label{class_brood_1_1_application_1_1_board_editor_abe128f4cbcf7ffad4d217553462d3593}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateBoardXSizePanelElement@{UpdateBoardXSizePanelElement}}
+\index{UpdateBoardXSizePanelElement@{UpdateBoardXSizePanelElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardXSizePanelElement()}{UpdateBoardXSizePanelElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+Board\+XSize\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the x size panel 
+
+X size panel contains \mbox{\hyperlink{class_board}{Board}} X size promt textbox, \mbox{\hyperlink{class_board}{Board}} X size value text box, button to increase the \mbox{\hyperlink{class_board}{Board}} X size, and button to decrease the \mbox{\hyperlink{class_board}{Board}} X size.
+
+Only the button to increase the \mbox{\hyperlink{class_board}{Board}} X size, and button to decrease the \mbox{\hyperlink{class_board}{Board}} X size are interactable
+
+If the interactable button was pressed then the X size is increased or decresed by 5 if the board does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a42a64fbd74ebd210fada0f94e095cdb1}\label{class_brood_1_1_application_1_1_board_editor_a42a64fbd74ebd210fada0f94e095cdb1}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateBoardYPosPanelElement@{UpdateBoardYPosPanelElement}}
+\index{UpdateBoardYPosPanelElement@{UpdateBoardYPosPanelElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardYPosPanelElement()}{UpdateBoardYPosPanelElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+Board\+YPos\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the y position panel 
+
+Y position panel contains \mbox{\hyperlink{class_board}{Board}} Y position promt textbox, \mbox{\hyperlink{class_board}{Board}} Y postion value text box, button to increase the \mbox{\hyperlink{class_board}{Board}} Y position, and button to decrease the \mbox{\hyperlink{class_board}{Board}} Y postion.
+
+Only the button to increase the \mbox{\hyperlink{class_board}{Board}} Y position, and button to decrease the \mbox{\hyperlink{class_board}{Board}} Y postion are interactable
+
+If the interactable button was pressed then the Y pos is increased or decresed by 5 if the board does not go outside the board window \mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a24f82562345fe809cd38b2e122b4b78f}\label{class_brood_1_1_application_1_1_board_editor_a24f82562345fe809cd38b2e122b4b78f}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!UpdateBoardYSizePanelElement@{UpdateBoardYSizePanelElement}}
+\index{UpdateBoardYSizePanelElement@{UpdateBoardYSizePanelElement}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateBoardYSizePanelElement()}{UpdateBoardYSizePanelElement()}}
+{\footnotesize\ttfamily void Board\+Editor\+::\+Update\+Board\+YSize\+Panel\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the user interacted with the y size panel 
+
+Y Size panel contains \mbox{\hyperlink{class_board}{Board}} Y size promt textbox, \mbox{\hyperlink{class_board}{Board}} Y size value text box, button to increase the \mbox{\hyperlink{class_board}{Board}} Y size, and button to decrease the \mbox{\hyperlink{class_board}{Board}} Y size.
+
+Only the button to increase the \mbox{\hyperlink{class_board}{Board}} Y size, and button to decrease the \mbox{\hyperlink{class_board}{Board}} Y size are interactable
+
+If the interactable button was pressed then the Y size is increased or decresed by 5 if the board does not go outside the board window 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a07ad19da1bfeca1b9e72c188d5cfa779}\label{class_brood_1_1_application_1_1_board_editor_a07ad19da1bfeca1b9e72c188d5cfa779}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardDecCol@{m\_btnBoardDecCol}}
+\index{m\_btnBoardDecCol@{m\_btnBoardDecCol}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardDecCol}{m\_btnBoardDecCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Dec\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s Column by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_abd7cedfbab9a1c7458b2bff3d745ba88}\label{class_brood_1_1_application_1_1_board_editor_abd7cedfbab9a1c7458b2bff3d745ba88}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardDecRow@{m\_btnBoardDecRow}}
+\index{m\_btnBoardDecRow@{m\_btnBoardDecRow}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardDecRow}{m\_btnBoardDecRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Dec\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a79115d72ea97ff076c136fad0f9fa933}\label{class_brood_1_1_application_1_1_board_editor_a79115d72ea97ff076c136fad0f9fa933}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardIncCol@{m\_btnBoardIncCol}}
+\index{m\_btnBoardIncCol@{m\_btnBoardIncCol}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardIncCol}{m\_btnBoardIncCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Inc\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s Column by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a5bcfd7757fde774ff723c02052e1028a}\label{class_brood_1_1_application_1_1_board_editor_a5bcfd7757fde774ff723c02052e1028a}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardIncRow@{m\_btnBoardIncRow}}
+\index{m\_btnBoardIncRow@{m\_btnBoardIncRow}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardIncRow}{m\_btnBoardIncRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Inc\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board\textquotesingle{}s row by 1 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_aa4770d590533aaceb0aa5a27b6fcf824}\label{class_brood_1_1_application_1_1_board_editor_aa4770d590533aaceb0aa5a27b6fcf824}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardPosDecX@{m\_btnBoardPosDecX}}
+\index{m\_btnBoardPosDecX@{m\_btnBoardPosDecX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardPosDecX}{m\_btnBoardPosDecX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Pos\+DecX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board x position by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a69277fbf38170612e97e25ed21ca68e8}\label{class_brood_1_1_application_1_1_board_editor_a69277fbf38170612e97e25ed21ca68e8}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardPosDecY@{m\_btnBoardPosDecY}}
+\index{m\_btnBoardPosDecY@{m\_btnBoardPosDecY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardPosDecY}{m\_btnBoardPosDecY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Pos\+DecY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board y position by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_ae169ab633405c694bb1cac7d68bad49c}\label{class_brood_1_1_application_1_1_board_editor_ae169ab633405c694bb1cac7d68bad49c}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardPosIncX@{m\_btnBoardPosIncX}}
+\index{m\_btnBoardPosIncX@{m\_btnBoardPosIncX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardPosIncX}{m\_btnBoardPosIncX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Pos\+IncX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board x position by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_aa95aae4ff64c6419d424a9e21b4f1013}\label{class_brood_1_1_application_1_1_board_editor_aa95aae4ff64c6419d424a9e21b4f1013}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardPosIncY@{m\_btnBoardPosIncY}}
+\index{m\_btnBoardPosIncY@{m\_btnBoardPosIncY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardPosIncY}{m\_btnBoardPosIncY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Pos\+IncY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board y position by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a8fe711fa80aeecbf54549b4d5e3154f4}\label{class_brood_1_1_application_1_1_board_editor_a8fe711fa80aeecbf54549b4d5e3154f4}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardSizeDecX@{m\_btnBoardSizeDecX}}
+\index{m\_btnBoardSizeDecX@{m\_btnBoardSizeDecX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardSizeDecX}{m\_btnBoardSizeDecX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Size\+DecX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board x size by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_ac254804c5c403cc726ece5c79012e6f8}\label{class_brood_1_1_application_1_1_board_editor_ac254804c5c403cc726ece5c79012e6f8}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardSizeDecY@{m\_btnBoardSizeDecY}}
+\index{m\_btnBoardSizeDecY@{m\_btnBoardSizeDecY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardSizeDecY}{m\_btnBoardSizeDecY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Size\+DecY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will decrease the board y size by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a47f8303a154791155bdd076278126a81}\label{class_brood_1_1_application_1_1_board_editor_a47f8303a154791155bdd076278126a81}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardSizeIncX@{m\_btnBoardSizeIncX}}
+\index{m\_btnBoardSizeIncX@{m\_btnBoardSizeIncX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardSizeIncX}{m\_btnBoardSizeIncX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Size\+IncX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board x size by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a81fbcf5b861831fba8280bcfa884eadc}\label{class_brood_1_1_application_1_1_board_editor_a81fbcf5b861831fba8280bcfa884eadc}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_btnBoardSizeIncY@{m\_btnBoardSizeIncY}}
+\index{m\_btnBoardSizeIncY@{m\_btnBoardSizeIncY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_btnBoardSizeIncY}{m\_btnBoardSizeIncY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_button}{Brood\+::\+Brood\+UI\+::\+Button}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+btn\+Board\+Size\+IncY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clicking it will increase the board x size by 5 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a0c07ad14496ce4d49a207bcff1f2d6cd}\label{class_brood_1_1_application_1_1_board_editor_a0c07ad14496ce4d49a207bcff1f2d6cd}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_panelBodyPtr@{m\_panelBodyPtr}}
+\index{m\_panelBodyPtr@{m\_panelBodyPtr}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_panelBodyPtr}{m\_panelBodyPtr}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+panel\+Body\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the panel body 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a30ef87f80dc0c83ad77cc81f400df682}\label{class_brood_1_1_application_1_1_board_editor_a30ef87f80dc0c83ad77cc81f400df682}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardCol@{m\_txtBoardCol}}
+\index{m\_txtBoardCol@{m\_txtBoardCol}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardCol}{m\_txtBoardCol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Column number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a311b0b92f4834646bce4424fd543681c}\label{class_brood_1_1_application_1_1_board_editor_a311b0b92f4834646bce4424fd543681c}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardColPromt@{m\_txtBoardColPromt}}
+\index{m\_txtBoardColPromt@{m\_txtBoardColPromt}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardColPromt}{m\_txtBoardColPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Col\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Column number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_aa6640233ef397d9e34d58e58bae9cc75}\label{class_brood_1_1_application_1_1_board_editor_aa6640233ef397d9e34d58e58bae9cc75}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardPosPromtX@{m\_txtBoardPosPromtX}}
+\index{m\_txtBoardPosPromtX@{m\_txtBoardPosPromtX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardPosPromtX}{m\_txtBoardPosPromtX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Pos\+PromtX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} X position prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a97fcab04023bdfe90af43a299de209cf}\label{class_brood_1_1_application_1_1_board_editor_a97fcab04023bdfe90af43a299de209cf}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardPosPromtY@{m\_txtBoardPosPromtY}}
+\index{m\_txtBoardPosPromtY@{m\_txtBoardPosPromtY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardPosPromtY}{m\_txtBoardPosPromtY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Pos\+PromtY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} y position prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a745e73b70f9178ccf154ba7a389e4bf1}\label{class_brood_1_1_application_1_1_board_editor_a745e73b70f9178ccf154ba7a389e4bf1}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardPosX@{m\_txtBoardPosX}}
+\index{m\_txtBoardPosX@{m\_txtBoardPosX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardPosX}{m\_txtBoardPosX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+PosX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s x position 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_af68a79718416ab2b5daaf8e075e5493d}\label{class_brood_1_1_application_1_1_board_editor_af68a79718416ab2b5daaf8e075e5493d}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardPosY@{m\_txtBoardPosY}}
+\index{m\_txtBoardPosY@{m\_txtBoardPosY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardPosY}{m\_txtBoardPosY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+PosY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s y position 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a05dc9e903291f80f56479da189a77d19}\label{class_brood_1_1_application_1_1_board_editor_a05dc9e903291f80f56479da189a77d19}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardRow@{m\_txtBoardRow}}
+\index{m\_txtBoardRow@{m\_txtBoardRow}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardRow}{m\_txtBoardRow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s Row number 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a7614a4da24c57575c00c890f1b0087b6}\label{class_brood_1_1_application_1_1_board_editor_a7614a4da24c57575c00c890f1b0087b6}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardRowPromt@{m\_txtBoardRowPromt}}
+\index{m\_txtBoardRowPromt@{m\_txtBoardRowPromt}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardRowPromt}{m\_txtBoardRowPromt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Row\+Promt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} Row number prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_aa39a761e0565b54741e839f1874b81f3}\label{class_brood_1_1_application_1_1_board_editor_aa39a761e0565b54741e839f1874b81f3}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardSizePromtX@{m\_txtBoardSizePromtX}}
+\index{m\_txtBoardSizePromtX@{m\_txtBoardSizePromtX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardSizePromtX}{m\_txtBoardSizePromtX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Size\+PromtX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} X size prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_ac70e5f5742700097e749312df4ad63e3}\label{class_brood_1_1_application_1_1_board_editor_ac70e5f5742700097e749312df4ad63e3}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardSizePromtY@{m\_txtBoardSizePromtY}}
+\index{m\_txtBoardSizePromtY@{m\_txtBoardSizePromtY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardSizePromtY}{m\_txtBoardSizePromtY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+Size\+PromtY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+holds the text \mbox{\hyperlink{class_board}{Board}} y size prompt 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a79ef802086ea87874aa6d46d08945e19}\label{class_brood_1_1_application_1_1_board_editor_a79ef802086ea87874aa6d46d08945e19}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardSizeX@{m\_txtBoardSizeX}}
+\index{m\_txtBoardSizeX@{m\_txtBoardSizeX}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardSizeX}{m\_txtBoardSizeX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+SizeX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s x size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a9fb64620656c004f4385b69343f41a53}\label{class_brood_1_1_application_1_1_board_editor_a9fb64620656c004f4385b69343f41a53}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtBoardSizeY@{m\_txtBoardSizeY}}
+\index{m\_txtBoardSizeY@{m\_txtBoardSizeY}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtBoardSizeY}{m\_txtBoardSizeY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Board\+SizeY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+displays the board\textquotesingle{}s y size 
+
+\mbox{\Hypertarget{class_brood_1_1_application_1_1_board_editor_a2dd50c1fc28a06f04494138385e0c621}\label{class_brood_1_1_application_1_1_board_editor_a2dd50c1fc28a06f04494138385e0c621}} 
+\index{Brood::Application::BoardEditor@{Brood::Application::BoardEditor}!m\_txtSettingTitle@{m\_txtSettingTitle}}
+\index{m\_txtSettingTitle@{m\_txtSettingTitle}!Brood::Application::BoardEditor@{Brood::Application::BoardEditor}}
+\doxysubsubsection{\texorpdfstring{m\_txtSettingTitle}{m\_txtSettingTitle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_text_box}{Brood\+::\+Brood\+UI\+::\+Text\+Box}}$\ast$ Brood\+::\+Application\+::\+Board\+Editor\+::m\+\_\+txt\+Setting\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_board_editor_8h}{Board\+Editor.\+h}}\item 
+C\+:/data/\+One\+Drive -\/ RCNJ/data/\+Programming/vs/\+Brood\+Maker/\+Brood\+Maker/\mbox{\hyperlink{_board_editor_8cpp}{Board\+Editor.\+cpp}}\end{DoxyCompactItemize}

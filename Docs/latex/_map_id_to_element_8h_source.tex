@@ -1,0 +1,65 @@
+\hypertarget{_map_id_to_element_8h_source}{}\doxysection{Map\+Id\+To\+Element.\+h}
+\label{_map_id_to_element_8h_source}\index{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/MapIdToElement.h@{C:/data/OneDrive -\/ RCNJ/data/Programming/vs/BroodMaker/BroodMaker/MapIdToElement.h}}
+\mbox{\hyperlink{_map_id_to_element_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************/}}
+\DoxyCodeLine{14 \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{17 \textcolor{comment}{// ===================== included files =================================}}
+\DoxyCodeLine{18 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_u_i___i_d_8h}{UI\_ID.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_u_i_element_8h}{UIElement.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{25 \textcolor{comment}{// ================= defining namespace =================================}}
+\DoxyCodeLine{26 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_brood}{Brood}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     \textcolor{keyword}{namespace }BroodUI}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keyword}{class }\mbox{\hyperlink{class_map_id_to_element}{MapIdToElement}};}
+\DoxyCodeLine{32         \textcolor{keyword}{class }\mbox{\hyperlink{class_u_i_element}{UIElement}};}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 \}}
+\DoxyCodeLine{35 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{36 \textcolor{comment}{// ================= end of namespace defination ========================}}
+\DoxyCodeLine{37 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{40 \textcolor{comment}{// ================= start of MapIdToElement class ======================}}
+\DoxyCodeLine{41 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{49 \textcolor{keyword}{class }\mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element}{Brood::BroodUI::MapIdToElement}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \textcolor{comment}{// ================= public member function ===================  }}
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \textcolor{comment}{// ====== Getter functions ======}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{comment}{// Gets a reference to the map}}
+\DoxyCodeLine{56     \textcolor{keyword}{static} std::map<const int, Brood::BroodUI::UIElement*>\& \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3ee3a528a8951fc147b8e3f5a42b6dfc}{GetMap}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{// Gets a pointer to the UIELement from the map }}
+\DoxyCodeLine{59     \textcolor{comment}{// using the passed UI Id}}
+\DoxyCodeLine{60     \textcolor{keyword}{static} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_aa81cbf475fc698c5dfcd5ec581496f36}{GetElementPtrFromMap}}( \textcolor{keywordtype}{int} a\_id );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{// Adds a pointer to the UIELement to the map using }}
+\DoxyCodeLine{63     \textcolor{comment}{// the passed UI Id as the key}}
+\DoxyCodeLine{64     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a3f6d29bf89663c2f6d7678289114ddda}{AddToMap}}( \textcolor{keywordtype}{int} a\_id, \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_u_i_element}{Brood::BroodUI::UIElement}}* a\_elementPtr );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{comment}{// Removes the a pointer to the UIELement from the map using}}
+\DoxyCodeLine{67     \textcolor{comment}{// the passed UI Id as the key}}
+\DoxyCodeLine{68     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_afa174a59f0534d84c3a83935253840f6}{ReomveFromMap}}( \textcolor{keywordtype}{int} a\_id );}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{// ================= private member variables =================  }}
+\DoxyCodeLine{71 \textcolor{keyword}{private}:}
+\DoxyCodeLine{73     \textcolor{keyword}{static} std::map<const int, Brood::BroodUI::UIElement*> \mbox{\hyperlink{class_brood_1_1_brood_u_i_1_1_map_id_to_element_a73726eaca05832466d1194ddb0a862c8}{stm\_mapper}};}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{77 \textcolor{comment}{// ================= end of MapIdToElement calss ====================}}
+\DoxyCodeLine{78 \textcolor{comment}{// ======================================================================}}
+
+\end{DoxyCode}
