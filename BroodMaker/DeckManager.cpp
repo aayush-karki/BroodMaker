@@ -87,10 +87,10 @@ Brood::Application::Components::DeckManager& Brood::Application::Components::Dec
 /// 
 void Brood::Application::Components::DeckManager::InitializeDeckManager( Brood::Application::Data::ST_DeckManagerData& a_deckManagerData )
 {
-	m_incorrectPenalty =  a_deckManagerData.stm_incorrectPenalty ;
+	m_incorrectPenalty = a_deckManagerData.stm_incorrectPenalty;
 	m_movementType = static_cast< Brood::Application::Components::ENUM_MovementType >( a_deckManagerData.stm_movementType );
 	m_currDeckIdx = a_deckManagerData.stm_currDecksIdx;
-	m_deckList.resize(a_deckManagerData.stm_numDecks);
+	SetDeckSize( a_deckManagerData.stm_numDecks );
 }
 
 /// @public
@@ -101,13 +101,58 @@ void Brood::Application::Components::DeckManager::InitializeDeckManager( Brood::
 Brood::Application::Data::ST_DeckManagerData Brood::Application::Components::DeckManager::GetDataToSave()
 {
 	Brood::Application::Data::ST_DeckManagerData deckManagerData;
-	
+
 	deckManagerData.stm_incorrectPenalty = m_incorrectPenalty;
 	deckManagerData.stm_movementType = ( unsigned )m_movementType;
 	deckManagerData.stm_currDecksIdx = m_currDeckIdx;
-	deckManagerData.stm_numDecks= m_deckList.size();
+	deckManagerData.stm_numDecks = m_deckList.size();
 
 	return deckManagerData;
+}
+/// 
+/// @public
+/// @brief saves the deck manager and its path data to passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// @param a_gameTitle title of the game
+/// 
+void Brood::Application::Components::DeckManager::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr,
+																  std::string a_gameTile )
+{
+	// saving the deck manger data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+
+	// saving the deck's data
+	for( unsigned numDecks = 0; numDecks < m_deckList.size(); ++numDecks )
+	{
+		m_deckList.at( numDecks )->SaveDataToFile( a_fileAccessPtr, a_gameTile, numDecks );
+	}
+}
+
+/// 
+/// @public
+/// @brief loads the deck manager  from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+///
+void Brood::Application::Components::DeckManager::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// loading the deck manager data
+	Brood::Application::Data::ST_DeckManagerData deckManagerData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	deckManagerData.PopulateFromString( dataFromFile );
+	InitializeDeckManager( deckManagerData );
+
+	// initialing the decs
+	for( unsigned numDecks = 0; numDecks < m_deckList.size(); ++numDecks )
+	{
+		m_deckList.at( numDecks )->LoadDataFromFile( a_fileAccessPtr );
+	}
+
+
 }
 
 /// 
@@ -216,9 +261,15 @@ void Brood::Application::Components::DeckManager::SetDeckSize( unsigned a_deckSi
 		{
 			delete m_deckList.at( idx );
 		}
+		m_deckList.resize( a_deckSize );
 	}
-
-	m_deckList.resize( a_deckSize, new Deck() );
+	else
+	{
+		for( int idx = m_deckList.size() ; idx < a_deckSize; ++idx )
+		{
+			m_deckList.push_back(new Brood::Application::Components::Deck());
+		}
+	}
 
 	// positioning all the newly created decks
 	for( prelastIdx; prelastIdx < m_deckList.size(); ++prelastIdx )
@@ -282,7 +333,7 @@ void Brood::Application::Components::DeckManager::Debugger()
 	while( deckListIte != m_deckList.end() )
 	{
 		//( *deckListIte ).Debugger();
-		(*deckListIte)->Debugger();
+		( *deckListIte )->Debugger();
 		++deckListIte;
 	}
 }

@@ -109,7 +109,12 @@ Brood::BroodUI::TextBox& Brood::BroodUI::TextBox::operator=( const Brood::BroodU
 /// 
 /// @return pointer to dynamically created textbox element
 ///  
-Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( sf::Vector2f a_size, sf::Vector2f a_pos, std::string a_text, bool a_isEditable, std::string a_placeholderText, sf::Color a_color )
+Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( sf::Vector2f a_size,
+																   sf::Vector2f a_pos,
+																   std::string a_text,
+																   bool a_isEditable,
+																   std::string a_placeholderText,
+																   sf::Color a_color )
 {
 	Brood::BroodUI::TextBox* textBoxElement = new Brood::BroodUI::TextBox;
 	textBoxElement->SetBodySize( a_size );
@@ -146,10 +151,15 @@ Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( sf::Vector2f 
 /// @return pointer to dynamically created textbox element
 ///
 
-Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( float a_sizeX, float a_sizeY, float a_posX, float a_posY, std::string a_text, bool a_isEditable, std::string a_placeholderText, sf::Color a_color )
+Brood::BroodUI::TextBox* Brood::BroodUI::TextBox::DyCreateTextBox( float a_sizeX, float a_sizeY,
+																   float a_posX, float a_posY,
+																   std::string a_text,
+																   bool a_isEditable,
+																   std::string a_placeholderText,
+																   sf::Color a_color )
 {
 	return Brood::BroodUI::TextBox::DyCreateTextBox( { a_sizeX, a_sizeY }, { a_posX, a_posY },
-														   a_text, a_isEditable, a_placeholderText, a_color );
+													 a_text, a_isEditable, a_placeholderText, a_color );
 }
 
 /// 
@@ -381,12 +391,12 @@ void Brood::BroodUI::TextBox::Draw( sf::RenderWindow& a_window )
 	{
 		// saving it to restore the font color
 		sf::Color currentFontColor = m_text.getFillColor();
-		
+
 		sf::Color placeHolderFontColor = currentFontColor;
 		placeHolderFontColor.a = placeHolderFontColor.a / 2;
 		SetFontColor( placeHolderFontColor );
 
-		SetText(m_placeHolderText);
+		SetText( m_placeHolderText );
 		a_window.draw( m_text );
 
 		// restoring it back to how it used to be

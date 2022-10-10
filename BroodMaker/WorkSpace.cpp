@@ -19,6 +19,8 @@
 // ================= start of WorkSpace class ===========================
 // ======================================================================
 
+Brood::Application::Components::GameDataManager* Brood::Application::WorkSpace::m_gameData = nullptr;
+
 /// 
 /// @public
 /// @brief default constructor
@@ -80,6 +82,16 @@ void Brood::Application::WorkSpace::Debugger()
 	}
 }
 
+/// 
+/// @public
+/// @virtual
+/// @brief setter function for game data
+/// 
+void Brood::Application::WorkSpace::SetGameDataManager( Brood::Application::Components::GameDataManager* a_gameDataManagerPtr )
+{
+	this->m_gameData = a_gameDataManagerPtr;
+
+}
 /// 
 /// @protected
 /// @overlaoded

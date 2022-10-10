@@ -85,7 +85,7 @@ Brood::Application::Components::PlayerManager& Brood::Application::Components::P
 ///		Brood::Application::Components::st_path node which 
 ///		contains the start row and column number inside it
 /// 
-void Brood::Application::Components::PlayerManager::InitializePlayerManger( Brood::Application::Components::Path* a_pathPtr )
+void Brood::Application::Components::PlayerManager::InitializePlayerManager( Brood::Application::Components::Path* a_pathPtr )
 {
 	m_startPathPtr = a_pathPtr;
 	SetMaxPlayer( 1 );
@@ -118,7 +118,7 @@ void Brood::Application::Components::PlayerManager::InitializePlayerManager( Bro
 Brood::Application::Data::ST_PlayerManagerData Brood::Application::Components::PlayerManager::GetDataToSave()
 {
 	Brood::Application::Data::ST_PlayerManagerData playerManagerData;
-	
+
 	playerManagerData.stm_maxPlayer = m_maxPlayer;
 	playerManagerData.stm_minPlayer = m_minPlayer;
 	playerManagerData.stm_currPlayerIdx = m_currActivePlayerIdx;
@@ -126,6 +126,52 @@ Brood::Application::Data::ST_PlayerManagerData Brood::Application::Components::P
 	return playerManagerData;
 }
 
+/// 
+/// @public
+/// @brief loads the PlayerManager data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::PlayerManager::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// saving the PlayerManager data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+
+	// saving the players
+	std::vector<Brood::Application::Components::Player*>::iterator currPlayer = m_allPlayers.begin();
+	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
+	{
+		( *currPlayer )->SaveDataToFile( a_fileAccessPtr );
+	}
+}
+
+/// 
+/// @public
+/// @brief loads the PlayerManager and its path data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::PlayerManager::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr,
+																	  Brood::Application::Components::Board* a_gameBoard )
+{
+	// loading the PlayerManager data
+	Brood::Application::Data::ST_PlayerManagerData playerManagerData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	playerManagerData.PopulateFromString( dataFromFile );
+
+	// todo hardcored values
+	InitializePlayerManager( playerManagerData, a_gameBoard->GetBoardPathList().at( 0 ).at( 0 ) );
+
+	// loading the players
+	std::vector<Brood::Application::Components::Player*>::iterator currPlayer = m_allPlayers.begin();
+	for( ; currPlayer != m_allPlayers.end(); ++currPlayer )
+	{
+		( *currPlayer )->LoadDataFromFile( a_fileAccessPtr, a_gameBoard );
+	}
+}
 
 /// 
 /// @public
@@ -203,9 +249,30 @@ std::vector<Brood::Application::Components::Player*>::iterator Brood::Applicatio
 /// 
 void Brood::Application::Components::PlayerManager::SetMaxPlayer( unsigned a_maxPlayer )
 {
-	m_maxPlayer = a_maxPlayer;
 
 	m_allPlayers.resize( a_maxPlayer, new Player( m_startPathPtr ) );
+
+	unsigned prelastIdx = m_allPlayers.size();
+
+	// dynamically removing the extra deck
+	if( a_maxPlayer < m_allPlayers.size() )
+	{
+		for( int idx = a_maxPlayer - 1; idx < m_allPlayers.size(); ++idx )
+		{
+			delete m_allPlayers.at( idx );
+		}
+		m_allPlayers.resize( a_maxPlayer );
+	}
+	else
+	{
+		for( int idx = m_allPlayers.size(); idx < a_maxPlayer; ++idx )
+		{
+			m_allPlayers.push_back( new Brood::Application::Components::Player() );
+		}
+	}
+
+	m_maxPlayer = a_maxPlayer;
+
 }
 
 /// 
@@ -243,6 +310,7 @@ void Brood::Application::Components::PlayerManager::SetPlayerStartPath( Brood::A
 {
 	m_startPathPtr = a_startPathPtr;
 }
+
 
 /// 
 /// @public

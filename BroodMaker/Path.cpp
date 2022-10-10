@@ -141,7 +141,7 @@ void Brood::Application::Components::Path::InitializePath( Brood::Application::D
 														   Brood::Application::Components::Deck* a_deckPtr )
 {
 	SetNextPathPtr( a_nextPathPtr );
-	SetBridgeEndPathPtr( a_nextPathPtr );
+	SetBridgeEndPathPtr( a_bridgeEndPathPtr );
 	SetDeckPtr( a_deckPtr );
 
 	m_tileType = static_cast< Brood::Application::Components::ENUM_TileType >( a_pathData.stm_tileType );

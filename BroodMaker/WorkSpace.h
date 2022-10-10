@@ -71,6 +71,9 @@ public:
 	// debugger
 	virtual void Debugger() = 0;
 
+	// setter function for game data
+	virtual void SetGameDataManager( Brood::Application::Components::GameDataManager* a_gameDataManagerPtr);
+
 	/// @TODO: set the editor or game workspace varialbe here
 
 	// ================= protected member function ==============
@@ -218,6 +221,9 @@ protected:
 
 	/// font
 	sf::Font* m_font;
+
+	/// game data
+	static Brood::Application::Components::GameDataManager* m_gameData;
 
 	/// stores list of all UI Elements pointer
 	std::vector<Brood::BroodUI::UIElement*> m_unNamedUIList;

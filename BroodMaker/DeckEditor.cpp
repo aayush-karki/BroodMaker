@@ -29,8 +29,9 @@
 ///
 Brood::Application::DeckEditor::DeckEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											sf::RectangleShape* a_panelPtr ) :
-	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
+	m_panelBodyPtr( a_panelPtr )
 {
+	this->m_gameData = a_gameData;
 	InitializeWorkSpace();
 }
 
@@ -605,9 +606,14 @@ void Brood::Application::DeckEditor::UpdateDeckFileTexture()
 /// @warning Texture should always be in .png form
 /// @warning the Texture for the file should be in \data\
 ///		as it loads them from there. 
-///
+/// 
 void Brood::Application::DeckEditor::UpdateCardInitFile()
 {
+	// TODO fix displayt card not showing properly
+	// when you load a init file and go to card editor,
+	// it does not show the correct vallue in quesiton feild for the displayed card
+	// and all the other intactable for the values are also defaulted
+
 	if( m_txtCardInitFileInput->DoElement() )
 	{
 		m_txtCardInitFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
@@ -619,10 +625,10 @@ void Brood::Application::DeckEditor::UpdateCardInitFile()
 	{
 		std::string dataFilePath = Brood::Application::StaticVariables::ST_Folders::stm_data.string();
 
-		dataFilePath += "\\" + m_txtDeckBgFileInput->GetText();
+		dataFilePath += "\\" + m_txtCardInitFileInput->GetText();
 
 		// checking if the .txt was provided or not
-		std::size_t found = m_txtDeckBgFileInput->GetText().find_last_of('.');
+		std::size_t found = m_txtCardInitFileInput->GetText().find_last_of('.');
 
 		if( found == std::string::npos )
 		{
@@ -632,15 +638,18 @@ void Brood::Application::DeckEditor::UpdateCardInitFile()
 		// loading the texture file
 		if( !m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->LoadCardFromInitFile( dataFilePath ) )
 		{
-			m_txtDeckBgFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor );
+			m_txtCardInitFileInput->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor );
 		}
 		else
 		{
-			/// TODO load the card info form the INIT file
+			// updaitng the display card
+			UpdateAllDispayElement();
+			m_gameData->GetDeckManagerPtr()->GetCurrActiveDeck()->SetCurrActiveCardIdx( 0);
+			m_gameData->GetDisplayCardPtr()->UpdateDisplayedText();
 		}
 
 		// resetting the m_eterPressed
-		m_txtDeckBgFileInput->SetEnterPressedFalse();
+		m_txtCardInitFileInput->SetEnterPressedFalse();
 	}
 }
 

@@ -59,7 +59,7 @@ class Brood::Application::EditorWorkspace :
 	// ================= public member variables =================  
 public:
 	// default constructor
-	EditorWorkspace();
+	EditorWorkspace( Brood::Application::Components::GameDataManager* a_gameData );
 
 	// default destructor
 	virtual ~EditorWorkspace();
@@ -81,6 +81,9 @@ public:
 	/// Calls Debugger for all UI elements in this class
 	void Debugger();
 
+	// setter function for game data
+	void SetGameDataManager( Brood::Application::Components::GameDataManager* a_gameDataManagerPtr );
+
 	// ================= private member function ==================  
 private:
 
@@ -101,9 +104,6 @@ private:
 
 	/// holds the index of current active editor workspace
 	unsigned m_activeEditorIdx;
-
-	// all the game data 
-	Brood::Application::Components::GameDataManager m_gameData;
 	
 	/// Ui for edit modes tabs
 	std::vector<Brood::BroodUI::Button*> m_editModesTabs;

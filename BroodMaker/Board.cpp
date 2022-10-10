@@ -132,7 +132,7 @@ void Brood::Application::Components::Board::InitializeBoard( unsigned a_numRows,
 	// setting the first tile as the active path
 	m_currActivePathPtr = m_boardPaths[ 0 ][ 0 ];
 
-	/// assigning the path and color
+	/// assigning the path color
 	for( unsigned currRowNum = 0; currRowNum < m_numRows; ++currRowNum )
 	{
 		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
@@ -155,6 +155,8 @@ void Brood::Application::Components::Board::InitializeBoard( Brood::Application:
 	InitializeBoard( a_boardData.stm_numRow, a_boardData.stm_numCol,
 					 a_boardData.stm_boardSizeX, a_boardData.stm_boardSizeY,
 					 a_boardData.stm_boardPosX, a_boardData.stm_boardPosY );
+
+	m_currActivePathPtr = m_boardPaths[ a_boardData.stm_currActiveNumRow ][ a_boardData.stm_currActiveNumCol ];
 }
 
 /// 
@@ -176,6 +178,60 @@ Brood::Application::Data::ST_BoardData Brood::Application::Components::Board::Ge
 	boardData.stm_boardPosY = this->m_boardBody.getPosition().y;
 
 	return boardData;
+}
+
+/// 
+/// @public
+/// @brief saves the board and its path data to passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::Board::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// saving the board data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+
+	// saving the path info of the board
+	for( unsigned currRowNum = 0; currRowNum < m_numRows; ++currRowNum )
+	{
+		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
+		{
+			a_fileAccessPtr->WriteOneLineToFile( m_boardPaths.at( currRowNum ).at( currColNum )->GetDataToSave().GetString() );
+		}
+	}
+}
+
+/// 
+/// @public
+/// @brief loads the board and its path data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::Board::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr,
+															  Brood::Application::Components::DeckManager* a_deckMangerPtr )
+{
+	// loading the board data
+	Brood::Application::Data::ST_BoardData boardData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	boardData.PopulateFromString( dataFromFile );
+	InitializeBoard( boardData );
+
+	// saving the path info of the board
+	for( unsigned currRowNum = 0; currRowNum < m_numRows; ++currRowNum )
+	{
+		for( unsigned currColNum = 0; currColNum < m_numCols; ++currColNum )
+		{
+			Brood::Application::Data::ST_PathPrefabData pathData;
+			a_fileAccessPtr->GetNextLine( dataFromFile );
+			m_boardPaths.at( currRowNum ).at( currColNum )->InitializePath( pathData,
+																			m_boardPaths.at( pathData.stm_nextTileRowNum ).at( pathData.stm_nextTileColNum ),
+																			m_boardPaths.at( pathData.stm_endBridgeTileRowNum ).at( pathData.stm_endBridgeTileColNum ),
+																			a_deckMangerPtr->GetDeckAtIdx( pathData.stm_assignedDeckId ) );
+		}
+	}
 }
 
 /// 

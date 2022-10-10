@@ -359,6 +359,36 @@ Brood::Application::Data::ST_DisplayCardData Brood::Application::Components::Dis
 	return displayCardData;
 }
 
+/// 
+/// @public
+/// @brief loads the DisplayCard data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::DisplayCard::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// saving the dice data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+}
+
+/// 
+/// @public
+/// @brief loads the DisplayCard and its path data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::DisplayCard::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// loading the DisplayCard data
+	Brood::Application::Data::ST_DisplayCardData displayCardData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	displayCardData.PopulateFromString( dataFromFile );
+	InitializeDisplayCard( displayCardData );
+}
+
 
 /// 
 /// @public

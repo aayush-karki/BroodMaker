@@ -29,8 +29,10 @@
 ///  
 Brood::Application::GameEditor::GameEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											sf::RectangleShape* a_panelPtr ) :
-	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
+	 m_panelBodyPtr( a_panelPtr )
 {
+	this->m_gameData = a_gameData;
+
 	InitializeWorkSpace();
 }
 
@@ -57,7 +59,7 @@ void Brood::Application::GameEditor::InitializeWorkSpace()
 
 	// creating a panel element to enter a game title
 	DyCreateTextInputPannelElement( m_panelBodyPtr, &m_txtGameNamePrompt, &m_txtGameInput,
-									"Game Title", "", "fun game" );
+									m_gameData->GetGameTitle(), "", "fun game" );
 
 	// initializing the UI to set the movement type
 	DyCreateDropdownInputPannelElement( m_panelBodyPtr, &m_txtMovementTypePromt, &m_ddiMovementType,
@@ -87,7 +89,7 @@ void Brood::Application::GameEditor::InitializeWorkSpace()
 								 std::to_string( ( int )m_gameData->GetDeckManagerPtr()->GetDeckList().size() ) );
 
 	// initializing the  m_titleScreenBtn
-	m_titleScreenBtn = DyCreateButton( { 550, 550 }, { 10, 150 }, "Game Name" );
+	m_titleScreenBtn = DyCreateButton( { 550, 550 }, { 10, 150 }, m_gameData->GetGameTitle() );
 }
 
 /// 
@@ -134,6 +136,8 @@ void Brood::Application::GameEditor::UpdateAllDispayElement()
 {
 	// game title
 	m_titleScreenBtn->SetText( m_gameData->GetGameTitle().empty() ? "Game Title" : m_gameData->GetGameTitle() );
+
+	m_txtGameInput->SetText( m_gameData->GetGameTitle().empty() ? "Game Title" : m_gameData->GetGameTitle() );
 
 	// movement type
 	unsigned itemIdx = ( int )m_gameData->GetDeckManagerPtr()->GetMovementType();

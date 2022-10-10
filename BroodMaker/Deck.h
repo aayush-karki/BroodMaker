@@ -18,6 +18,7 @@
 #include "Button.h"
 #include "CardInfo.h"
 #include "GlobalVariables.h"
+#include "FileAccess.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -71,6 +72,12 @@ public:
 	// returns the deck data to save 
 	Brood::Application::Data::ST_DeckPrefabData GetDataToSave();
 
+	// appends the the deck data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr, std::string a_gameTitle,
+	unsigned a_idx );
+
+	// appends the the deck data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr );
 
 	// ============= getter functions ========
 

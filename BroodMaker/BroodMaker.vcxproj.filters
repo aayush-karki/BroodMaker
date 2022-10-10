@@ -43,9 +43,6 @@
     <Filter Include="src\Application\Workspace\Editors\Header Files">
       <UniqueIdentifier>{01d4115c-d96d-49ab-abf3-d3373e4b3440}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Application\Workspace\Editors\Source Siles">
-      <UniqueIdentifier>{823e8581-9a64-4dd8-989b-215a6f7aae33}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Components\Managers">
       <UniqueIdentifier>{8d3a7ad8-c110-4dc6-b989-9cf8726946aa}</UniqueIdentifier>
     </Filter>
@@ -65,6 +62,9 @@
     <Filter Include="src\Components\units\Header Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src\Application\Workspace\Editors\Source Files">
+      <UniqueIdentifier>{823e8581-9a64-4dd8-989b-215a6f7aae33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,25 +150,25 @@
       <Filter>src\Components\units\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BoardEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TileEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CardEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DeckEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DiceEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PlayerEditor.cpp">
-      <Filter>src\Application\Workspace\Editors\Source Siles</Filter>
+      <Filter>src\Application\Workspace\Editors\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DeckManager.cpp">
       <Filter>src\Components\Managers\Source Files</Filter>

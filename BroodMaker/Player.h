@@ -17,6 +17,7 @@
 #pragma once
 #include "stdafx.h"
 
+#include "Board.h"
 #include "Path.h"
 #include "Data.h"
 
@@ -28,6 +29,7 @@ namespace Brood::Application
 	namespace Components
 	{
 		class Player;
+		class Board;
 		class Path;
 	}
 }
@@ -76,6 +78,13 @@ public:
 
 	// returns the player data to save 
 	Brood::Application::Data::ST_PlayerPrefabData GetDataToSave();
+
+	// appends the the player data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr );
+
+	// appends the the player data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr,
+						   Brood::Application::Components::Board* a_gameBoard );
 
 	// function to update the path iterator
 	void UpdatePathptr( Brood::Application::Components::Path* a_playerNewPathPtr );

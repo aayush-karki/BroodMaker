@@ -116,9 +116,6 @@ private:
 	/// shows the tile screen of game
 	Brood::BroodUI::Button* m_titleScreenBtn;
 
-	/// pointer to the game data
-	Brood::Application::Components::GameDataManager* m_gameData;
-
 	// ===========================================================
 	// =========== member variables for general game setting =====
 	// ===========================================================

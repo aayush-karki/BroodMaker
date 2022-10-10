@@ -113,9 +113,6 @@ private:
 	// ================= private member variable ==================  
 private:
 
-	/// pointer to the game data
-	Brood::Application::Components::GameDataManager* m_gameData;
-
 	/// holds the panel body
 	sf::RectangleShape* m_panelBodyPtr;
 

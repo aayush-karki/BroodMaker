@@ -16,7 +16,6 @@
 // ======================================================================
 
 #pragma once
-#include <fstream>
 #include "GlobalVariables.h"
 
 // ======================================================================
@@ -58,14 +57,21 @@ public:
 	// opens the passed file
 	bool OpenFile( std::string a_fullfileName );
 
+	// creates a file and returns the file
+	bool CreateFile( std::string a_fullfileName );
+
 	// gets next line form the file
 	bool GetNextLine( std::string& a_line );
+
+	// goes back to the beginning of the file
+	void Rewind();
 
 	// removes all content form the file and goes to 
 	// beginning of the file
 	void RemoveAllContent();
 
-	void WriteOneLineToFile( std::string& a_line );
+	// appends a line to the end
+	void WriteOneLineToFile( const std::string& a_line );
 
 	// checks if the eof reached or not
 	bool CheckEOF();

@@ -26,26 +26,21 @@
 /// @brief default constructor
 /// 
 Brood::Application::HomeWorkSpace::HomeWorkSpace() :
-	WorkSpace(), m_gameOrEditorBtn( nullptr ), m_toggleGameInfoLeftBtn( nullptr ),
-	m_toggleGameInfoRightBtn( nullptr ), m_currGameInfoIdx( 1 ),
-	m_showImportDialogBox( false ), m_importGameBtn( nullptr ),
-	m_loadPreviousEditsBtn( nullptr ), m_createNewEditBtn( nullptr ),
-	m_cancleBtn( nullptr ), m_showEnterFilenameDialogBox( false ),
-	m_fileNameTxt( nullptr ), m_enterFileNameFeildTxt( nullptr ),
-	m_openFileBtn( nullptr ), m_currWorkSpaceIdx( 0 ), m_isHomeWorkspace( true )
+	WorkSpace(), m_gameOrEditorBtn( nullptr ),
+	m_toggleGameInfoLeftBtn( nullptr ), m_toggleGameInfoRightBtn( nullptr ),
+	m_currGameInfoIdx( 1 ), m_showImportDialogBox( false ),
+	m_importGameBtn( nullptr ), m_loadPreviousEditsBtn( nullptr ),
+	m_createNewEditBtn( nullptr ), m_cancleBtn( nullptr ),
+	m_showEnterFilenameDialogBox( false ), m_fileNameTxt( nullptr ),
+	m_enterFileNameFeildTxt( nullptr ), m_openFileBtn( nullptr ),
+	m_currWorkSpaceIdx( 0 ), m_isHomeWorkspace( true ),
+	m_openFileBtnIdx( 0 )
 {
-	m_gameInfoFilePathList.push_back( "Exit" );
-	m_gameInfoFilePathList.push_back( "Add Game" );
-
 	/// @TODO load the game info file path
 	/// @TODO add the create games and exit to the file path
 	/// @TODO load the game texture
 
 	InitializeWorkSpace();
-
-
-	/// @TODO deleteme
-	m_isHomeWorkspace = false;
 }
 
 /// 
@@ -74,6 +69,15 @@ Brood::Application::HomeWorkSpace::~HomeWorkSpace()
 //
 void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 {
+	m_gameInfoFilePathList.push_back( "Exit" );
+	//m_gameInfoFilePathList.push_back( "Add Game" );
+	m_gameInfoFilePathList.push_back( "Add Edit" );
+
+	m_gameData = new Brood::Application::Components::GameDataManager();
+
+	// initialzing the game data
+	m_gameData->InitializeGameDataManger();
+
 	// initializing menubar
 	InitializeRibbionTabs();
 
@@ -88,10 +92,8 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 	m_toggleGameInfoRightBtn = DyCreateButton( { 150, 850 }, { 750, 50 }, "->",
 											   Brood::Application::StaticVariables::ST_ColorVariables::stm_AppSecondaryColor );
 
-	/// @TODO create this as a verticalmenus
-
 	// import games button
-	m_importGameBtn = DyCreateButton( { 500, 125 }, { 200, 250 }, "Import Games" );
+	//m_importGameBtn = DyCreateButton( { 500, 125 }, { 200, 250 }, "Import Games" );
 
 	// Load Previous Edits button
 	m_loadPreviousEditsBtn = DyCreateButton( { 500, 125 }, { 200, 375 }, "Load Previous Edits" );
@@ -103,7 +105,7 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 	m_cancleBtn = DyCreateButton( { 500, 125 }, { 200, 625 }, "Cancle" );
 
 	// Enter File Name textbox
-	m_fileNameTxt = DyCreateTextBox( { 500, 100 }, { 200, 250 }, "Enter File Name" );
+	m_fileNameTxt = DyCreateTextBox( { 500, 100 }, { 200, 250 }, "Enter File Name", true, "enter a filename" );
 
 	// Enter file name feild textbox
 	m_enterFileNameFeildTxt = DyCreateTextBox( { 500, 125 }, { 200, 350 }, "", true, "<Enter a File Name>" );
@@ -124,20 +126,23 @@ void Brood::Application::HomeWorkSpace::InitializeWorkSpace()
 	//m_openFile->SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_AppPrimaryColor );
 	//m_openFile->SetText( "Create New" );
 
-	// createing 2 workspace, namely, initialWorkSpace, editorWorSpace,
-	m_workSpacesList.push_back( new Brood::Application::EditorWorkspace() );
+	// createing 2 workspace, namely, editorWorSpace, and game workspace
+	m_workSpacesList.push_back( new Brood::Application::EditorWorkspace( m_gameData ) );
 }
 
 /// 
 /// @public
 /// @virtual
-/// @brief Draw funciton
+/// @brief Updating all the component
 /// 
-/// Draws all the component to the screen
+/// Updating all the component to the screen
 ///
 void Brood::Application::HomeWorkSpace::UpdateAllDispayElement()
 {
-	/// TODO fill this
+	for( Brood::Application::WorkSpace* currWorkSpace : m_workSpacesList )
+	{
+		currWorkSpace->UpdateAllDispayElement();
+	}
 }
 
 /// 
@@ -184,7 +189,7 @@ void Brood::Application::HomeWorkSpace::Draw( sf::RenderWindow& a_window )
 		/// @TODO deleteme 
 		if( m_showImportDialogBox )
 		{
-			m_importGameBtn->Draw( a_window );
+			//m_importGameBtn->Draw( a_window );
 			m_loadPreviousEditsBtn->Draw( a_window );
 			m_createNewEditBtn->Draw( a_window );
 			m_cancleBtn->Draw( a_window );
@@ -218,6 +223,8 @@ void Brood::Application::HomeWorkSpace::Debugger()
 {
 	Brood::Application::WorkSpace::Debugger();
 
+	m_gameData->Debugger();
+
 	m_ribbionTabs.Debugger();
 
 	for( unsigned idx = 0; idx < m_workSpacesList.size(); ++idx )
@@ -246,29 +253,32 @@ void Brood::Application::HomeWorkSpace::InitializeRibbionTabs()
 	m_ribbionTabs.SetBodyPosition( 0, 0 );
 	m_ribbionTabs.SetFont( &Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_font );
 	m_ribbionTabs.SetFontSize( 20 );
-	//m_ribbionTabs.SetBodyColor(sf::Color( 118, 134, 144, 255 ));
 	m_ribbionTabs.SetBodyColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_MainMenu );
 
 	m_ribbionTabs.AddMenuToMenuBar( "File" );
 	m_ribbionTabs.AddItemToMenu( 0, "Create New" );
-	m_ribbionTabs.AddItemToMenu( 0, "Import Game" );
+	// TODO uncomment me
+	//m_ribbionTabs.AddItemToMenu( 0, "Import Game" );
 	m_ribbionTabs.AddItemToMenu( 0, "Load Previous Edit" );
-	m_ribbionTabs.AddItemToMenu( 0, "Export Edit" );
+	// TODO uncomment me
+	//m_ribbionTabs.AddItemToMenu( 0, "Export Edit" );
 	m_ribbionTabs.AddItemToMenu( 0, "Save" );
 	m_ribbionTabs.AddItemToMenu( 0, "Quit" );
 
 	m_ribbionTabs.AddMenuToMenuBar( "Workspace" );
 	m_ribbionTabs.AddItemToMenu( 1, "Home wokspace: ON" );
 	m_ribbionTabs.AddItemToMenu( 1, "Editor wokspace: OFF" );
-	m_ribbionTabs.AddItemToMenu( 1, "Game wokspace: OFF" );
+	// TODO uncomment me
+	//m_ribbionTabs.AddItemToMenu( 1, "Game wokspace: OFF" );
 
 	m_ribbionTabs.AddMenuToMenuBar( "Debug" );
 	m_ribbionTabs.AddItemToMenu( 2, "Toggle Debugger: OFF" );
 
-	m_ribbionTabs.AddMenuToMenuBar( "Help" );
-	m_ribbionTabs.AddItemToMenu( 3, "How To Use" );
-	m_ribbionTabs.AddItemToMenu( 3, "Documentation" );
-	m_ribbionTabs.AddItemToMenu( 3, "About BroodMaker" );
+	// TODO uncomment me
+	//m_ribbionTabs.AddMenuToMenuBar( "Help" );
+	//m_ribbionTabs.AddItemToMenu( 3, "How To Use" );
+	//m_ribbionTabs.AddItemToMenu( 3, "Documentation" );
+	//m_ribbionTabs.AddItemToMenu( 3, "About BroodMaker" );
 }
 
 /// 
@@ -343,37 +353,74 @@ void Brood::Application::HomeWorkSpace::ExecuteMenuItem( unsigned a_iIdx, unsign
 
 			switch( a_jIdx )
 			{
+				//case 0:
+				//{
+				//	// Create New menu item
+				//	break;
+				//} // j = 0 case when i = 0
+				//case 1:
+				//{
+				//	// Import Game menu item
+				//	break;
+				//} // j = 1 case when i = 0
+				//case 2:
+				//{
+				//	// Load Previous Edit menu item
+				//	break;
+				//} // j = 2 case when i = 0
+				//case 3:
+				//{
+				//	// Export edit menu item
+				//	break;
+				//} // j = 3 case when i = 0
+				//case 4:
+				//{
+				//	// Save menu item
+				//	break;
+				//} // j = 4 case when i = 0
+				//case 5:
+				//{
+				//	// Quit menu item
+				//	Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = true;
+				//	break;
+				//} // j = 4 case when i = 0
+				//default:
+				//{
+				//	std::cerr << "menu item at index: " << a_jIdx << "not found for File menu" << std::endl;
+				//	break;
+				//}
+
+				// TODO this one is for version one. Uncomment above for full file menu
+				//
 				case 0:
 				{
 					// Create New menu item
+					ExecuteCreateNewEditDialogBox();
 					break;
 				} // j = 0 case when i = 0
 				case 1:
 				{
-					// Import Game menu item
+					// Load Previous Edit menu item
+					ExecuteLoadPreviousEditDialogBox();
 					break;
 				} // j = 1 case when i = 0
 				case 2:
 				{
-					// Load Previous Edit menu item
+					// Save menu item
+					// chekcing if the applicaition is in home or not
+					if( !m_isHomeWorkspace )
+					{
+						SaveGameData();
+					}
+
 					break;
 				} // j = 2 case when i = 0
 				case 3:
 				{
-					// Export edit menu item
-					break;
-				} // j = 3 case when i = 0
-				case 4:
-				{
-					// Save menu item
-					break;
-				} // j = 4 case when i = 0
-				case 5:
-				{
 					// Quit menu item
 					Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_exit = true;
 					break;
-				} // j = 4 case when i = 0
+				} // j = 3 case when i = 0
 				default:
 				{
 					std::cerr << "menu item at index: " << a_jIdx << "not found for File menu" << std::endl;
@@ -386,32 +433,29 @@ void Brood::Application::HomeWorkSpace::ExecuteMenuItem( unsigned a_iIdx, unsign
 		case 1:
 		{
 			// Workspace menu
-
 			switch( a_jIdx )
 			{
+				// homework space option is pressed
 				case 0:
 				{
-					// set homeworkspace as true
-					m_isHomeWorkspace = true;
-
-					// updating the items text
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 0 )->SetText( "Home wokspace: ON" );
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 1 )->SetText( "Editor wokspace : OFF" );
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 2 )->SetText( "Game wokspace : OFF" );
+					SwitchToHomeWorkspace();
 					break;
 				}
 				case 1:
 				{
-					// set homeworkspace as false
-					m_isHomeWorkspace = false;
+					if( !m_isHomeWorkspace )
+					{
+						break;
+					}
+					m_showImportDialogBox = true;
 
-					// 0th idx is for editor workspace
-					m_currWorkSpaceIdx = 0;
+					//m_showImportDialogBox = false;
+					//m_showEnterFilenameDialogBox = true;
+					//m_openFileBtn->SetText( "Open Edit File" );
+					//m_openFileBtnIdx = 1;
 
-					// updating the items text
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 0 )->SetText( "Home wokspace: OFF" );
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 1 )->SetText( "Editor wokspace : ON" );
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 2 )->SetText( "Game wokspace : OFF" );
+					// TODO uncomment me
+					//m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 2 )->SetText( "Game wokspace : OFF" );
 					break;
 				}
 				case 2:
@@ -426,7 +470,9 @@ void Brood::Application::HomeWorkSpace::ExecuteMenuItem( unsigned a_iIdx, unsign
 					// updating the items text
 					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 0 )->SetText( "Home wokspace: OFF" );
 					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 1 )->SetText( "Editor wokspace : OFF" );
-					m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 2 )->SetText( "Game wokspace : ON" );
+
+					// TODO uncomment me
+					//m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 2 )->SetText( "Game wokspace : ON" );
 					break;
 				}
 
@@ -459,35 +505,37 @@ void Brood::Application::HomeWorkSpace::ExecuteMenuItem( unsigned a_iIdx, unsign
 			}
 			break;
 		} // i = 2 case
-		case 3:
-		{
-			// help menu
 
-			switch( a_jIdx )
-			{
-				case 0:
-				{
-					// How To Use menu item
-					break;
-				}
-				case 1:
-				{
-					// Documentation menu item
-					break;
-				}
-				case 2:
-				{
-					// About BroodMaker menu item
-					break;
-				}
-				default:
-				{
-					std::cerr << "menu item at index: " << a_jIdx << "not found for help menu" << std::endl;
-					break;
-				}
-			}
-			break;
-		} // i = 3 case
+		// TODO Uncomment me for help menu
+
+		//case 3:
+		//{
+		//	// help menu
+		//	switch( a_jIdx )
+		//	{
+		//		case 0:
+		//		{
+		//			// How To Use menu item
+		//			break;
+		//		}
+		//		case 1:
+		//		{
+		//			// Documentation menu item
+		//			break;
+		//		}
+		//		case 2:
+		//		{
+		//			// About BroodMaker menu item
+		//			break;
+		//		}
+		//		default:
+		//		{
+		//			std::cerr << "menu item at index: " << a_jIdx << "not found for help menu" << std::endl;
+		//			break;
+		//		}
+		//	}
+		//	break;
+		//} // i = 3 case
 
 		default:
 		{
@@ -502,64 +550,48 @@ void Brood::Application::HomeWorkSpace::ExecuteMenuItem( unsigned a_iIdx, unsign
 /// 
 void Brood::Application::HomeWorkSpace::UpdateHomeWorkspace()
 {
+	// opening the place to choese to open a previous edit fill or a new one
 	if( m_showImportDialogBox )
 	{
-		if( m_importGameBtn->DoElement() )
+		/*if( m_importGameBtn->DoElement() )
 		{
 			m_showImportDialogBox = false;
 			m_showEnterFilenameDialogBox = true;
 			m_openFileBtn->SetText( "Open Game File" );
-		}
-		else if( m_loadPreviousEditsBtn->DoElement() )
+			m_openFileBtnIdx = 0;
+		}*/
+		if( m_loadPreviousEditsBtn->DoElement() )
 		{
-			m_showImportDialogBox = false;
-			m_showEnterFilenameDialogBox = true;
-			m_openFileBtn->SetText( "Open Edit File" );
+			// opening a dialog box so that user can enter file name to 
+			// load previous edit
+			ExecuteLoadPreviousEditDialogBox();
 		}
 		else if( m_createNewEditBtn->DoElement() )
 		{
-			m_showImportDialogBox = false;
-			/*	m_showEnterFilenameDialogBox = true;
-				m_openFileBtn->SetText( "Create Edit" );*/
-
-				// create a new edit
-
+			ExecuteCreateNewEditDialogBox();
 		}
 		else if( m_cancleBtn->DoElement() )
 		{
 			m_showImportDialogBox = false;
 		}
 	}
+	// opening the place to enter a previous edit or a new one
 	else if( m_showEnterFilenameDialogBox )
 	{
 		m_enterFileNameFeildTxt->DoElement();
 
-		if( m_enterFileNameFeildTxt->IsEnterPressed() &&
-			m_enterFileNameFeildTxt->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() )
-		{
-			/// @todo deleteme
-			std::cerr << "yup" << std::endl;
-			std::cerr << m_enterFileNameFeildTxt->GetText() << std::endl;
+		UpdateFileNameFeildDialog();
 
-			// resetting the m_eterPressed
-			m_enterFileNameFeildTxt->SetEnterPressedFalse();
-
-		}
-
-		if( m_openFileBtn->DoElement() )
+		if( m_cancleBtn->DoElement() )
 		{
 			m_showEnterFilenameDialogBox = false;
-			// do the intended thing by checking the 
-			// text in m_openFile 
 
-			// also clean the text box
-		}
-		else if( m_cancleBtn->DoElement() )
-		{
-			m_showEnterFilenameDialogBox = false;
-			// also clean the text box
+			// resetting the m_enterFileNameFeildTxt
+			m_enterFileNameFeildTxt->SetText( "" );
+			m_enterFileNameFeildTxt->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
 		}
 	}
+	// checking for the left button in the main screen
 	else if( m_toggleGameInfoLeftBtn->DoElement() )
 	{
 		if( m_currGameInfoIdx == 0 )
@@ -571,6 +603,7 @@ void Brood::Application::HomeWorkSpace::UpdateHomeWorkspace()
 			--m_currGameInfoIdx;
 		}
 	}
+	// checking for the right button in the main screen
 	else if( m_toggleGameInfoRightBtn->DoElement() )
 	{
 		if( m_currGameInfoIdx == m_gameInfoFilePathList.size() - 1 )
@@ -582,6 +615,8 @@ void Brood::Application::HomeWorkSpace::UpdateHomeWorkspace()
 			++m_currGameInfoIdx;
 		}
 	}
+	// checking for the middle button in the main screen
+	// has new edit and exit current;y
 	else if( m_gameOrEditorBtn->DoElement() )
 	{
 		// execute the item at the index
@@ -600,6 +635,252 @@ void Brood::Application::HomeWorkSpace::UpdateHomeWorkspace()
 		m_gameOrEditorBtn->SetText( m_gameInfoFilePathList.at( m_currGameInfoIdx ) );
 	}
 }
+
+/// 
+/// @private
+/// @brief Holds the logic to execute open file button was pressed
+/// 
+void Brood::Application::HomeWorkSpace::UpdateFileNameFeildDialog()
+{
+	// TODO this could be simplified as m_openFileBtn->DoElemet is called twice in this workspace
+	// first one is called in UpdateHomeWorkspace() 
+	if( m_enterFileNameFeildTxt->DoElement() )
+	{
+		m_enterFileNameFeildTxt->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_White );
+	}
+
+	// TODO this could be simplified as m_openFileBtn->DoElemet is called thrice in this workspace
+	// first one is called in UpdateHomeWorkspace()  and another time before this call
+	// further more this true for all the places the template of this funciton is used in the editor 
+	// workspace
+
+	// check if load the button waas pressed or enter was pressed
+	if( m_openFileBtn->DoElement() || ( m_enterFileNameFeildTxt->IsEnterPressed() &&
+										m_enterFileNameFeildTxt->GetElementIdPtr() == Brood::BroodUI::ElementSelection::GetLastActiveElementIdPtr() ) )
+	{
+		// if the text box is empty do nothing
+		if( m_enterFileNameFeildTxt->GetText().empty() )
+		{
+			return;
+		}
+
+		std::filesystem::path gameOrEditorFile = Brood::Application::StaticVariables::ST_Folders::stm_data;
+
+		gameOrEditorFile /= m_enterFileNameFeildTxt->GetText();
+		// checking if it has extension or not
+		gameOrEditorFile = ( gameOrEditorFile.parent_path() / gameOrEditorFile.stem() );
+		gameOrEditorFile += ".BroodM";
+
+
+		// resetting the m_eterPressed
+		m_enterFileNameFeildTxt->SetEnterPressedFalse();
+
+		// TODO do this for ever where we open a file like texture and stuff
+		if( m_openFileBtnIdx != 2 && !std::filesystem::exists( gameOrEditorFile ))
+		{
+			m_enterFileNameFeildTxt->SetFontColor( Brood::Application::StaticVariables::ST_ColorVariables::stm_ErrorColor );
+			return;
+		}
+
+		m_showEnterFilenameDialogBox = false;
+		m_enterFileNameFeildTxt->SetText( "" );
+
+		// load game is pressed
+		if( m_openFileBtnIdx == 0 )
+		{
+			// TODO add here what to do when load game is pressed
+		}
+		// load edit is pressed
+		else if( m_openFileBtnIdx == 1 )
+		{
+			// set homeworkspace as false
+			m_isHomeWorkspace = false;
+
+			// 0th idx is for editor workspace
+			m_currWorkSpaceIdx = 0;
+
+			// updating the items text
+			m_ribbionTabs.GetMenuList().at( 1 )->GetItemList().at( 0 )->SetText( "Home wokspace: OFF" );
+			m_ribbionTabs.GetMenuList().at( 1 )->GetItemList().at( 1 )->SetText( "Editor wokspace : ON" );
+
+			// create a new edit
+			ResetGameData();
+			LoadGameData( gameOrEditorFile );
+		}
+		else if( m_openFileBtnIdx == 2 )
+		{
+			// create a FileAccess object
+			Brood::Application::FileAccess editorFile;
+
+			editorFile.CreateFile( gameOrEditorFile.string() );
+
+			// set homeworkspace as false
+			m_isHomeWorkspace = false;
+
+			// 0th idx is for editor workspace
+			m_currWorkSpaceIdx = 0;
+
+			// updating the items text
+			m_ribbionTabs.GetMenuList().at( 1 )->GetItemList().at( 0 )->SetText( "Home wokspace: OFF" );
+			m_ribbionTabs.GetMenuList().at( 1 )->GetItemList().at( 1 )->SetText( "Editor wokspace : ON" );
+
+			// create a new edit
+			ResetGameData();
+			this->m_gameData->SetGameTitle( gameOrEditorFile.stem().string() );
+		}
+		UpdateAllDispayElement();
+	}
+}
+
+/// 
+/// @public
+/// @brief Swtichs to home workspace if it is not in it
+/// 
+void Brood::Application::HomeWorkSpace::SwitchToHomeWorkspace()
+{
+	if( !m_isHomeWorkspace )
+	{
+		// exit out of the editor space
+
+		// set homeworkspace as true
+		m_isHomeWorkspace = true;
+
+		// updating the items text
+		m_ribbionTabs.GetMenuList().at( 1 )->GetItemList().at( 0 )->SetText( "Home wokspace: ON" );
+		m_ribbionTabs.GetMenuList().at( 1 )->GetItemList().at( 1 )->SetText( "Editor wokspace : OFF" );
+
+		// TODO uncomment me
+		//m_ribbionTabs.GetMenuList().at( a_iIdx )->GetItemList().at( 2 )->SetText( "Game wokspace : OFF" );
+
+		// TODO adds a option to ask if they would like to save 
+
+		// create a new edit
+		ResetGameData();
+	}
+}
+
+/// 
+/// @public
+/// @brief opening a dialog box so that user can enter file name to 
+///		load previous edit
+/// 
+void Brood::Application::HomeWorkSpace::ExecuteLoadPreviousEditDialogBox()
+{
+	// checking if the current environment is in homeworkspace
+	if( !m_isHomeWorkspace )
+	{
+		SwitchToHomeWorkspace();
+	}
+
+	m_showImportDialogBox = false;
+	m_showEnterFilenameDialogBox = true;
+	m_openFileBtn->SetText( "Open Edit File" );
+	m_openFileBtnIdx = 1;
+}
+
+/// 
+/// @public
+/// @brief opening a dialog box so that user can enter file name to 
+///		create new edit
+/// 
+void Brood::Application::HomeWorkSpace::ExecuteCreateNewEditDialogBox()
+{
+	// checking if the current environment is in homeworkspace
+	if( !m_isHomeWorkspace )
+	{
+		SwitchToHomeWorkspace();
+	}
+
+	m_showImportDialogBox = false;
+	m_showEnterFilenameDialogBox = true;
+	m_openFileBtn->SetText( "Create Edit" );
+	m_openFileBtnIdx = 2;
+}
+
+/// 
+/// @public
+/// @brief resets the game manager 
+/// 
+void Brood::Application::HomeWorkSpace::ResetGameData()
+{
+	delete this->m_gameData;
+
+	this->m_gameData = new Brood::Application::Components::GameDataManager();
+	this->m_gameData->InitializeGameDataManger();
+
+	m_workSpacesList.front()->SetGameDataManager( this->m_gameData );
+
+}
+
+/// 
+/// @brief Seialies the m_gameData with to a file with game title
+/// 
+void Brood::Application::HomeWorkSpace::SaveGameData()
+{
+	// create a FileAccess object
+	Brood::Application::FileAccess editorFile;
+
+	std::filesystem::path saveFile = Brood::Application::StaticVariables::ST_Folders::stm_data / m_gameData->GetGameTitle();
+	saveFile += ".BroodM";
+
+	// creating/opening the file
+	editorFile.CreateFile( saveFile.string() );
+
+	// clearing all the content form the file
+	editorFile.RemoveAllContent();
+	
+	// saving the gameData
+	m_gameData->SaveDataToFile( &editorFile );
+
+	// saving deckManager and its decks and cards
+	m_gameData->GetDeckManagerPtr()->SaveDataToFile( &editorFile, m_gameData->GetGameTitle() );
+
+	// saving board and its paths
+	m_gameData->GetBoardPtr()->SaveDataToFile(&editorFile);
+
+	// saving dice
+	m_gameData->GetDicePtr()->SaveDataToFile( &editorFile );
+
+	// saving player manager and its player
+	m_gameData->GetPlayerManagerPtr()->SaveDataToFile( &editorFile );
+
+	// saving DisplayCard
+	m_gameData->GetDisplayCardPtr()->SaveDataToFile( &editorFile );
+}
+
+/// 
+/// @brief Loads m_gameData with the specified file
+/// 
+/// @returns flase if the passed file does not exist
+/// 
+bool Brood::Application::HomeWorkSpace::LoadGameData( std::filesystem::path a_gameOrEditorFile )
+{
+	// create a FileAccess object
+	Brood::Application::FileAccess editorFile;
+
+	editorFile.OpenFile( a_gameOrEditorFile.string() );
+
+	// loading GameData 
+	m_gameData->LoadDataFromFile( &editorFile );
+
+	// laoding deckManager and its decks and cards
+	m_gameData->GetDeckManagerPtr()->LoadDataFromFile( &editorFile );
+
+	// loading board and its paths
+	m_gameData->GetBoardPtr()->LoadDataFromFile( &editorFile, m_gameData->GetDeckManagerPtr());
+
+	// laoding dice
+	m_gameData->GetDicePtr()->LoadDataFromFile( &editorFile );
+
+	// laoding  player manager and its player
+	m_gameData->GetPlayerManagerPtr()->LoadDataFromFile( &editorFile, m_gameData->GetBoardPtr() );
+	
+	// laoding DisplayCard
+	m_gameData->GetDisplayCardPtr()->LoadDataFromFile( &editorFile );
+
+	return true;
+}
+
 
 
 // ======================================================================

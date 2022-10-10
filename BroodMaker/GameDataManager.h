@@ -68,6 +68,12 @@ public:
 	// returns the game Data manager data to save 
 	Brood::Application::Data::ST_GameData GetDataToSave();
 
+	// appends the the game data manager data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr );
+
+	// appends the the game data manager data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr);
+
 	// =========== setter functions ==========
 
 	/// setter funciton to set the game title for the game

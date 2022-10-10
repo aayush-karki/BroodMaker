@@ -22,9 +22,12 @@
 /// 
 /// @brief default constructor
 /// 
-Brood::Application::EditorWorkspace::EditorWorkspace() :
-	m_activeEditorIdx( 0 ), m_gameData()
+Brood::Application::EditorWorkspace::EditorWorkspace( Brood::Application::Components::GameDataManager* a_gameData ) :
+	m_activeEditorIdx( 0 )
 {
+	
+	this->m_gameData = a_gameData;
+
 	InitializeWorkSpace();
 }
 
@@ -44,9 +47,6 @@ Brood::Application::EditorWorkspace::~EditorWorkspace()
 //
 void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 {
-	// initialzing the game data
-	m_gameData.InitializeGameDataManger();
-
 	// initialzing the side panel
 	uint32_t windowWidth = Brood::Application::StaticVariables::ST_GlobalCoreVariables::stm_window_width;
 
@@ -66,25 +66,25 @@ void Brood::Application::EditorWorkspace::InitializeWorkSpace()
 	// ====== initializing the workspaces =======
 
 	// initializing game editor
-	m_editorWorkspaceList.push_back( new GameEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new GameEditor( this->m_gameData, &m_sidePanel ) );
 
 	// initializing boad editor
-	m_editorWorkspaceList.push_back( new BoardEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new BoardEditor( this->m_gameData, &m_sidePanel ) );
 
 	// initializing tile editor
-	m_editorWorkspaceList.push_back( new TileEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new TileEditor( this->m_gameData, &m_sidePanel ) );
 
 	// initializing player editor
-	m_editorWorkspaceList.push_back( new PlayerEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new PlayerEditor( this->m_gameData, &m_sidePanel ) );
 
 	// initializing dice editor
-	m_editorWorkspaceList.push_back( new DiceEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new DiceEditor( this->m_gameData, &m_sidePanel ) );
 
 	// initializing deck editor
-	m_editorWorkspaceList.push_back( new DeckEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new DeckEditor( this->m_gameData, &m_sidePanel ) );
 
 	// initializing card editor
-	m_editorWorkspaceList.push_back( new CardEditor( &m_gameData, &m_sidePanel ) );
+	m_editorWorkspaceList.push_back( new CardEditor( this->m_gameData, &m_sidePanel ) );
 
 }
 
@@ -139,8 +139,22 @@ void Brood::Application::EditorWorkspace::Draw( sf::RenderWindow& a_window )
 void Brood::Application::EditorWorkspace::Debugger()
 {
 	Brood::Application::WorkSpace::Debugger();
+}
 
-	m_gameData.Debugger();
+/// 
+/// @public
+/// @virtual
+/// @brief setter function for game data
+/// 
+void Brood::Application::EditorWorkspace::SetGameDataManager( Brood::Application::Components::GameDataManager* a_gameDataManagerPtr )
+{
+	this->m_gameData = a_gameDataManagerPtr;
+
+	// updating all the the editor Workspace
+	for( unsigned i = 0; i < m_editorWorkspaceList.size(); ++i )
+	{
+		m_editorWorkspaceList.at( i )->SetGameDataManager( this->m_gameData );
+	}
 }
 
 /// 
@@ -151,7 +165,10 @@ void Brood::Application::EditorWorkspace::Debugger()
 ///
 void Brood::Application::EditorWorkspace::UpdateAllDispayElement()
 {
-	m_editorWorkspaceList.at( m_activeEditorIdx )->UpdateAllDispayElement();
+	for( Brood::Application::WorkSpace* currWorkSpace : m_editorWorkspaceList )
+	{
+		currWorkSpace->UpdateAllDispayElement();
+	}
 }
 
 /// 
@@ -193,9 +210,9 @@ void Brood::Application::EditorWorkspace::InitializeEditModeTabs()
 	}
 
 	// setting the First tab--board edit as the active tab
+	UpdateActiveEditorIdx( 0 );
+	m_editModesTabs.at( 0 )->SetSelected( true );
 
-	// TODO set me back to 0
-	UpdateActiveEditorIdx( 2 );
 }
 
 /// 
@@ -243,7 +260,7 @@ void Brood::Application::EditorWorkspace::UpdateActiveEditorIdx( unsigned a_idx 
 	if( a_idx == 2 || m_activeEditorIdx == 2)
 	{
 		// toggling the draw line
-		m_gameData.GetBoardPtr()->ToggleDrawLine();
+		m_gameData->GetBoardPtr()->ToggleDrawLine();
 	}
 
 	m_editModesTabs.at( a_idx )->SetSelected( true );

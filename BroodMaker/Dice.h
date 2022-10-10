@@ -15,6 +15,7 @@
 #pragma once
 #include "Button.h"
 #include "Data.h"
+#include "FileAccess.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -69,6 +70,12 @@ public:
 
 	// returns the dice data to save 
 	Brood::Application::Data::ST_DicePrefabData GetDataToSave();
+
+	// appends the the dice data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr );
+
+	// appends the the dice data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr);
 
 	// setter function to set the body size
 	void SetBodySize( sf::Vector2f  a_size ) override;

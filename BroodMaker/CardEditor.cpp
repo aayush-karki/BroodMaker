@@ -29,9 +29,11 @@
 ///
 Brood::Application::CardEditor::CardEditor( Brood::Application::Components::GameDataManager* a_gameData,
 											sf::RectangleShape* a_panelPtr ) :
-	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr ),
+	m_panelBodyPtr( a_panelPtr ),
 	m_selectedSettingIdx( 0 )
 {
+	this->m_gameData = a_gameData;
+
 	InitializeWorkSpace();
 }
 
@@ -240,8 +242,6 @@ void Brood::Application::CardEditor::UpdateAllDispayElement()
 
 	m_txtCardSubmitPosX->SetText( std::to_string( displayCardPtr->GetSubmitPtr()->GetBodyPosition().x ) );
 	m_txtCardSubmitPosY->SetText( std::to_string( displayCardPtr->GetSubmitPtr()->GetBodyPosition().y ) );
-
-
 }
 
 /// 
@@ -1065,7 +1065,7 @@ void Brood::Application::CardEditor::DrawCardDisplayFcompPanel( sf::RenderWindow
 	m_txtCardUpValuePosX->Draw( a_window );
 	m_btnCardUpValueDecPosX->Draw( a_window );
 	m_txtCardUpValuePosXPrompt->Draw( a_window );
-	
+
 	// CardUpValue Size y
 	m_btnCardUpValueIncSizeY->Draw( a_window );
 	m_txtCardUpValueSizeY->Draw( a_window );
@@ -1606,7 +1606,7 @@ void Brood::Application::CardEditor::DrawCardDisplayBcompPanel( sf::RenderWindow
 	m_txtCardSubmitSizeX->Draw( a_window );
 	m_btnCardSubmitDecSizeX->Draw( a_window );
 	m_txtCardSubmitSizeXPrompt->Draw( a_window );
-	
+
 	// CardAnswerValue Position y
 	m_btnCardAnswerValueIncPosY->Draw( a_window );
 	m_txtCardAnswerValuePosY->Draw( a_window );

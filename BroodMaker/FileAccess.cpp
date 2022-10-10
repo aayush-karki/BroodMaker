@@ -46,13 +46,26 @@ Brood::Application::FileAccess::~FileAccess()
 /// 
 bool Brood::Application::FileAccess::OpenFile( std::string a_fullfileName )
 {
-	// File Open
-	m_filePath = a_fullfileName;
-
 	if( !m_filePath.empty() && !m_filePath.has_extension() )
 	{
 		m_filePath += ".txt";
 	}
+
+	// chekcing if the current file matches the passed file
+	if( !a_fullfileName.empty() && a_fullfileName == m_filePath )
+	{
+		Rewind();
+		return true;
+	}
+
+	if( m_fileHandler.is_open() )
+	{
+		m_fileHandler.close();
+	}
+
+	// File Open
+	m_filePath = a_fullfileName;
+
 
 	m_fileHandler.open( a_fullfileName, std::ios::in | std::ios::out );
 
@@ -64,6 +77,34 @@ bool Brood::Application::FileAccess::OpenFile( std::string a_fullfileName )
 	}
 
 
+	return true;
+}
+
+bool Brood::Application::FileAccess::CreateFile( std::string a_fullfileName )
+{
+	if( !m_filePath.empty() && !m_filePath.has_extension() )
+	{
+		m_filePath += ".txt";
+	}
+
+	if( m_filePath == a_fullfileName )
+	{
+		Rewind();
+		return true;
+	}
+
+	// if the file does not exist then create a new one
+	if( !std::filesystem::exists( a_fullfileName ) )
+	{
+		// creating a file
+		std::ofstream tempFile( a_fullfileName, std::ios::out );
+		tempFile << "this is cool " << std::endl;
+		tempFile.close();
+	}
+
+	bool isOpen = OpenFile( a_fullfileName );
+
+	// opening the created file
 	return true;
 }
 
@@ -89,14 +130,21 @@ bool  Brood::Application::FileAccess::GetNextLine( std::string& a_line )
 }
 
 /// 
+/// @brief points the pointer to beginning of the file
+/// 
+void Brood::Application::FileAccess::Rewind()
+{
+	m_fileHandler.clear();
+	m_fileHandler.seekg( 0, std::ios::beg );
+}
+
+/// 
 /// @brief removes all content form the file and points
 /// the pointer to beginning of the file
 /// 
 void  Brood::Application::FileAccess::RemoveAllContent()
 {
 	std::filesystem::resize_file( m_filePath, 0 );
-	m_fileHandler.clear();
-	m_fileHandler.seekg( 0, std::ios::beg );
 }
 
 /// 
@@ -105,7 +153,7 @@ void  Brood::Application::FileAccess::RemoveAllContent()
 ///
 /// @param  is the string that is added to the file 
 ///  
-void  Brood::Application::FileAccess::WriteOneLineToFile( std::string& a_line )
+void  Brood::Application::FileAccess::WriteOneLineToFile( const std::string& a_line )
 {
 	m_fileHandler << a_line << std::endl;
 }

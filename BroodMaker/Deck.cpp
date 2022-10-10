@@ -120,7 +120,7 @@ void Brood::Application::Components::Deck::InitializeDeck( Brood::Application::D
 		m_bodySprite.SetTextureFromFilePath( a_deckData.stm_textureFileName );
 	}
 
-	m_cardList.resize( a_deckData.stm_numTotalCard );
+	SetCardListSize( a_deckData.stm_numTotalCard );
 
 	if( !a_deckData.stm_cardInitFilename.empty() )
 	{
@@ -152,12 +152,74 @@ Brood::Application::Data::ST_DeckPrefabData Brood::Application::Components::Deck
 	deckData.stm_textureFileName = m_bodySprite.GetTextureFileName();
 
 	deckData.stm_numTotalCard = m_cardList.size();
-	deckData.stm_cardInitFilename = m_cardInitFilePath;
+	deckData.stm_cardInitFilename = m_cardInitFileName;
 
 	deckData.stm_undealtCardIdx = m_currUndealtCardIdx;
 	deckData.stm_currActiveCardIdx = m_currActiveCardIdx;
 
 	return deckData;
+}
+
+/// 
+/// @public
+/// @brief  initializes the deck with the passed data
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// @param a_gameTitle title of the game
+/// @param a_idx this deck index in the deck manager
+///
+void Brood::Application::Components::Deck::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr,
+														   std::string a_gameTitle, unsigned a_idx )
+{
+	// chekcing if card fileinit is there are not
+	if( m_cardInitFileName.empty() )
+	{
+		m_cardInitFileName = a_gameTitle + "_CardInit" + std::to_string( a_idx ) + ".BroodM";
+	}
+
+	// saving the cardinfo in the cardinit file
+	// create a FileAccess object
+	Brood::Application::FileAccess cardFile;
+
+	std::filesystem::path cardInitFile = Brood::Application::StaticVariables::ST_Folders::stm_data / m_cardInitFileName;
+
+	// checking it it has an extention or not
+	if( !cardInitFile.has_extension()
+		|| ( cardInitFile.extension().string() != ".BroodM" ) )
+	{
+		cardInitFile = ( cardInitFile.parent_path() / cardInitFile.stem() );
+		cardInitFile += ".BroodM";
+	}
+
+	// creating/opening the file
+	cardFile.CreateFile( cardInitFile.string() );
+
+	//  writing the card into the file
+	for( int idx = 0; idx < m_cardList.size(); ++idx )
+	{
+		cardFile.WriteOneLineToFile( m_cardList.at( idx )->GetDataToSave().GetString() );
+	}
+
+	// saving the deck data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+}
+
+/// 
+/// @public
+/// @brief loads the deck and its path data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+///
+void Brood::Application::Components::Deck::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// loading the deck data
+	Brood::Application::Data::ST_DeckPrefabData deckData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	deckData.PopulateFromString( dataFromFile );
+	InitializeDeck( deckData );
 }
 
 ///
@@ -237,7 +299,24 @@ void Brood::Application::Components::Deck::SetCurrActiveCardIdx( unsigned a_curr
 /// @param a_cardListSize 
 void Brood::Application::Components::Deck::SetCardListSize( unsigned a_cardListSize )
 {
-	m_cardList.resize( a_cardListSize, new CardInfo() );
+	unsigned prelastIdx = m_cardList.size();
+
+	// dynamically removing the extra deck
+	if( a_cardListSize < m_cardList.size() )
+	{
+		for( int idx = a_cardListSize - 1; idx < m_cardList.size(); ++idx )
+		{
+			delete m_cardList.at( idx );
+		}
+		m_cardList.resize( a_cardListSize );
+	}
+	else
+	{
+		for( int idx = m_cardList.size(); idx < m_cardList.size(); ++idx )
+		{
+			m_cardList.push_back( new Brood::Application::Components::CardInfo() );
+		}
+	}
 }
 
 /// 
@@ -248,17 +327,49 @@ void Brood::Application::Components::Deck::SetCardListSize( unsigned a_cardListS
 /// 
 bool Brood::Application::Components::Deck::LoadCardFromInitFile( std::string a_fileInitPath )
 {
-	// TODO LoadCardFromInitFile
-		/// open texture
-		//	if( !Brood::UtilityFuncs::LoadTextureFromFile( m_texture, a_texturePath ) )
-		//	{
-		//		return false;
-		//	}
-		// 
-		// saving the texture path
-	std::size_t found = a_fileInitPath.find_last_of( "/\\" );
-	m_cardInitFilePath = a_fileInitPath.substr( 0, found );
-	m_cardInitFileName = a_fileInitPath.substr( found + 1 );
+	// saving the cardinfo in the cardinit file
+	// create a FileAccess object
+	Brood::Application::FileAccess cardFile;
+
+	std::filesystem::path cardInitFile = Brood::Application::StaticVariables::ST_Folders::stm_data / a_fileInitPath;
+
+	// checking it it has an extention or not
+	if( !cardInitFile.has_extension()
+		|| ( cardInitFile.extension().string() != ".BroodM" ) )
+	{
+		cardInitFile = ( cardInitFile.parent_path() / cardInitFile.stem() );
+		cardInitFile += ".BroodM";
+	}
+
+	// creating/opening the file
+	if( !cardFile.OpenFile( cardInitFile.string() ) )
+	{
+		return false;
+	}
+
+	m_cardList.clear();
+	// loading hte card info
+	while( !cardFile.CheckEOF() )
+	{
+		// loading the board data
+		Brood::Application::Data::ST_CardInfoPrefabData cardData;
+		std::string dataFromFile;
+
+		cardFile.GetNextLine( dataFromFile );
+		
+		if( dataFromFile == "" )
+		{
+			break;
+		}
+
+		cardData.PopulateFromString( dataFromFile );
+
+		m_cardList.push_back( new CardInfo() );
+		m_cardList.back()->InitializeCard( cardData );
+	}
+
+	m_cardInitFileName = cardInitFile.filename().string();
+	m_currActiveCardIdx = 0;
 
 	return true;
 }

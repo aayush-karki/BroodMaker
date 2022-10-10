@@ -110,12 +110,12 @@ Brood::Application::Components::Player& Brood::Application::Components::Player::
 /// @param a_playerCurrPath path that teh player is currently on
 /// 
 void Brood::Application::Components::Player::InitializePlayer( Brood::Application::Data::ST_PlayerPrefabData& a_playerData,
-															   Brood::Application::Components::Path* a_playerCurrPath)
+															   Brood::Application::Components::Path* a_playerCurrPath )
 {
 	// setting up the body
-	m_playerBody.setSize( {a_playerData.stm_playerSizeX, a_playerData.stm_playerSizeY });
+	m_playerBody.setSize( { a_playerData.stm_playerSizeX, a_playerData.stm_playerSizeY } );
 	SetPositionOffsetX( a_playerData.stm_playerOffsetX );
-	SetPositionOffsetY( a_playerData.stm_playerOffsetY);
+	SetPositionOffsetY( a_playerData.stm_playerOffsetY );
 
 	if( !a_playerData.stm_textureFileName.empty() )
 	{
@@ -146,6 +146,38 @@ Brood::Application::Data::ST_PlayerPrefabData Brood::Application::Components::Pl
 	playerData.stm_currCol = m_playerCurrPathPtr->GetTilePtr()->GetCol();
 
 	return playerData;
+}
+
+/// 
+/// @public
+/// @brief loads the Player data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::Player::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// saving the dice data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+}
+
+/// 
+/// @public
+/// @brief loads the Player and its path data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::Player::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr,
+															   Brood::Application::Components::Board* a_gameBoard )
+{
+	// loading the Player data
+	Brood::Application::Data::ST_PlayerPrefabData playerData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	playerData.PopulateFromString( dataFromFile );
+	InitializePlayer( playerData,
+					  a_gameBoard->GetBoardPathList().at( playerData.stm_currRow ).at( playerData.stm_currCol ) );
 }
 
 /// 

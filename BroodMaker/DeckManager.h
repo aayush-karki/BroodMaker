@@ -15,6 +15,7 @@
 #pragma once
 #include "Deck.h"
 #include "Data.h"
+#include "FileAccess.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -82,6 +83,12 @@ public:
 
 	// returns the deck manager data to save 
 	Brood::Application::Data::ST_DeckManagerData GetDataToSave();
+
+	// appends the the deck manager data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr, std::string a_gameTile );
+
+	// appends the the deck manager data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr);
 
 	// ============= getter functions ========
 

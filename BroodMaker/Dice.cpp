@@ -127,7 +127,6 @@ void Brood::Application::Components::Dice::InitializeDice( Brood::Application::D
 	{
 		m_bodySprite.SetTextureFromFilePath( a_diceData.stm_textureFileName );
 	}
-
 }
 
 /// 
@@ -150,6 +149,36 @@ Brood::Application::Data::ST_DicePrefabData Brood::Application::Components::Dice
 	diceData.stm_numSides = m_numSides;
 
 	return diceData;
+}
+
+/// 
+/// @public
+/// @brief loads the dice data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::Dice::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// saving the dice data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+}
+
+/// 
+/// @public
+/// @brief loads the dice and its path data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::Dice::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// loading the dice data
+	Brood::Application::Data::ST_DicePrefabData diceData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	diceData.PopulateFromString( dataFromFile );
+	InitializeDice( diceData );
 }
 
 /// 

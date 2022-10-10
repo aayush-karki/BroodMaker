@@ -17,8 +17,10 @@
 
 #pragma once
 #include "GlobalVariables.h"
+#include "DeckManager.h"
 #include "Path.h"
 #include "Data.h"
+#include "FileAccess.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -28,6 +30,7 @@ namespace Brood::Application
 	namespace Components
 	{
 		class Board;
+		class Path;
 	}
 }
 // ======================================================================
@@ -72,6 +75,13 @@ public:
 
 	// returns the baord data to save 
 	Brood::Application::Data::ST_BoardData GetDataToSave();
+
+	// appends the the baord data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr);
+
+	// appends the the baord data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr,
+						   Brood::Application::Components::DeckManager* a_deckMangerPtr );
 
 	// ===== setter funcitons ==== 
 

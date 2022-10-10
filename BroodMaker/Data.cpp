@@ -39,7 +39,7 @@ void Brood::Application::Data::ST_GameData::PopulateFromString( std::string a_st
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_GameData::GetString()
+const std::string Brood::Application::Data::ST_GameData::GetString() const
 {
 	std::string dataString;
 
@@ -81,7 +81,7 @@ void Brood::Application::Data::ST_BoardData::PopulateFromString( std::string a_s
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_BoardData::GetString()
+const std::string Brood::Application::Data::ST_BoardData::GetString() const
 {
 	std::string dataString;
 
@@ -126,15 +126,15 @@ void Brood::Application::Data::ST_CardInfoPrefabData::PopulateFromString( std::s
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_CardInfoPrefabData::GetString()
+const std::string Brood::Application::Data::ST_CardInfoPrefabData::GetString() const
 {
 	std::string dataString;
 
-	dataString += std::to_string( stm_time );
-	dataString += std::to_string( stm_correctNumSteps );
-	dataString += std::to_string( stm_incorrectNumSteps );
-	dataString += stm_question;
-	dataString += stm_correctAnswer;
+	dataString += std::to_string( stm_time )+ " ";
+	dataString += std::to_string( stm_correctNumSteps )+ " ";
+	dataString += std::to_string( stm_incorrectNumSteps )+ " ";
+	dataString += stm_question.empty() ? "data " : stm_question + " ";
+	dataString += stm_correctAnswer+ " ";
 
 	return dataString;
 }
@@ -174,7 +174,7 @@ void Brood::Application::Data::ST_DeckPrefabData::PopulateFromString( std::strin
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_DeckPrefabData::GetString()
+const std::string Brood::Application::Data::ST_DeckPrefabData::GetString() const
 {
 	std::string dataString;
 
@@ -182,9 +182,9 @@ std::string Brood::Application::Data::ST_DeckPrefabData::GetString()
 	dataString += std::to_string( stm_deckSizeY ) + " ";
 	dataString += std::to_string( stm_deckPosX ) + " ";
 	dataString += std::to_string( stm_deckPosY ) + " ";
-	dataString += stm_textureFileName + " ";
+	dataString += stm_textureFileName.empty() ? "data " : stm_textureFileName + " ";
 	dataString += std::to_string( stm_numTotalCard ) + " ";
-	dataString += stm_cardInitFilename + " ";
+	dataString += stm_cardInitFilename.empty() ? "data " : stm_cardInitFilename + " ";
 	dataString += std::to_string( stm_undealtCardIdx ) + " ";
 	dataString += std::to_string( stm_currActiveCardIdx ) + " ";
 
@@ -221,7 +221,7 @@ void Brood::Application::Data::ST_DeckManagerData::PopulateFromString( std::stri
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_DeckManagerData::GetString()
+const std::string Brood::Application::Data::ST_DeckManagerData::GetString() const
 {
 	std::string dataString;
 
@@ -265,7 +265,7 @@ void Brood::Application::Data::ST_DicePrefabData::PopulateFromString( std::strin
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_DicePrefabData::GetString()
+const std::string Brood::Application::Data::ST_DicePrefabData::GetString() const
 {
 	std::string dataString;
 
@@ -273,7 +273,7 @@ std::string Brood::Application::Data::ST_DicePrefabData::GetString()
 	dataString += std::to_string( stm_diceSizeY ) + " ";
 	dataString += std::to_string( stm_dicePosX ) + " ";
 	dataString += std::to_string( stm_dicePosY ) + " ";
-	dataString += stm_textureFileName + " ";
+	dataString += stm_textureFileName.empty() ? "data ": stm_textureFileName + " ";
 	dataString += std::to_string( stm_numSides );
 
 	return dataString;
@@ -415,7 +415,7 @@ void Brood::Application::Data::ST_DisplayCardData::PopulateFromString( std::stri
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_DisplayCardData::GetString()
+const std::string Brood::Application::Data::ST_DisplayCardData::GetString() const
 {
 	std::string dataString;
 
@@ -426,8 +426,8 @@ std::string Brood::Application::Data::ST_DisplayCardData::GetString()
 	dataString += std::to_string( stm_displayCardPositionY ) + " ";
 
 	// saving file texture
-	dataString += stm_displayCardFrontTextureFilename + " ";
-	dataString += stm_displayCardBackTextureFilename + " ";
+	dataString += stm_displayCardFrontTextureFilename.empty() ? "data " : stm_displayCardFrontTextureFilename + " ";
+	dataString += stm_displayCardBackTextureFilename.empty() ? "data " : stm_displayCardBackTextureFilename + " ";
 
 	// displays time user have to complete the answer
 
@@ -567,7 +567,7 @@ void Brood::Application::Data::ST_PlayerPrefabData::PopulateFromString( std::str
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_PlayerPrefabData::GetString()
+const std::string Brood::Application::Data::ST_PlayerPrefabData::GetString() const
 {
 	std::string dataString;
 
@@ -575,7 +575,7 @@ std::string Brood::Application::Data::ST_PlayerPrefabData::GetString()
 	dataString += std::to_string( stm_playerSizeY ) + " ";
 	dataString += std::to_string( stm_playerOffsetX ) + " ";
 	dataString += std::to_string( stm_playerOffsetX ) + " ";
-	dataString += stm_textureFileName + " ";
+	dataString += stm_textureFileName.empty() ? "data " : stm_textureFileName + " ";
 	dataString += std::to_string( stm_currRow ) + " ";
 	dataString += std::to_string( stm_currCol ) + " ";
 
@@ -611,7 +611,7 @@ void Brood::Application::Data::ST_PlayerManagerData::PopulateFromString( std::st
 /// @return string containg all the data appended to it seperated 
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_PlayerManagerData::GetString()
+const std::string Brood::Application::Data::ST_PlayerManagerData::GetString() const
 {
 	std::string dataString;
 
@@ -658,7 +658,7 @@ void Brood::Application::Data::ST_PathPrefabData::PopulateFromString( std::strin
 /// seperated by ' '
 ///		by ' ' 
 /// 
-std::string Brood::Application::Data::ST_PathPrefabData::GetString()
+const std::string Brood::Application::Data::ST_PathPrefabData::GetString() const
 {
 	std::string dataString;
 
@@ -672,7 +672,7 @@ std::string Brood::Application::Data::ST_PathPrefabData::GetString()
 	dataString += std::to_string( stm_numberCardDraw ) + " ";
 	dataString += std::to_string( stm_assignedDeckId ) + " ";
 	dataString += std::to_string( stm_forceDiceRoll ) + " ";
-	dataString += stm_textureFileName;
+	dataString += stm_textureFileName.empty() ? "data " : stm_textureFileName;
 
 	return dataString;
 }

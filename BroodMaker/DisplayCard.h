@@ -18,6 +18,8 @@
 #include "Button.h"
 #include "TextBox.h"
 #include "Data.h"
+#include "FileAccess.h"
+
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -68,6 +70,12 @@ public:
 
 	// returns the display Card data to save 
 	Brood::Application::Data::ST_DisplayCardData GetDataToSave();
+
+	// appends the the displayCard data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr );
+
+	// appends the the displayCard data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr );
 
 	// ========= Getter funciton ==============
 

@@ -20,16 +20,15 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
-#include <cstdlib> // for rand
-//#include <ctime>
 #include <list>
-#include <string>
-#include <sstream>
-#include <filesystem>
 #include <algorithm>
-#include <random>       // std::default_random_engine
-#include <chrono>       // std::chrono::system_clock
+#include <random>
+#include <chrono>
 #include <limits>
+#include <string>
+#include <sstream> 
+#include <filesystem>
+#include <fstream>
 
 // sfml include files
 #include <SFML/Graphics.hpp>

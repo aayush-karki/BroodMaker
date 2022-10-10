@@ -25,7 +25,7 @@
 /// 
 Brood::Application::Components::GameDataManager::GameDataManager() :
 	m_board(), m_dice(), m_playerManager(), m_deckManager(),
-	m_gameTitle(), m_displayCard()
+	m_gameTitle("NewGameEdit"), m_displayCard()
 {}
 
 /// 
@@ -48,7 +48,7 @@ void Brood::Application::Components::GameDataManager::InitializeGameDataManger()
 	m_board.GetCurrentActivePath()->SetDeckPtr( m_deckManager.GetCurrActiveDeck());
 
 	// initializing  the playerManager
-	m_playerManager.InitializePlayerManger( m_board.GetBoardPathList().at( 0 ).at( 0 ) );
+	m_playerManager.InitializePlayerManager( m_board.GetBoardPathList().at( 0 ).at( 0 ) );
 
 	m_displayCard.SetCardInfoToDisplay( m_deckManager.GetCurrActiveDeck()->GetCurrActiveCardPtr() );
 }
@@ -98,6 +98,36 @@ Brood::Application::Data::ST_GameData Brood::Application::Components::GameDataMa
 	gameDataManager.stm_gameTitle = m_gameTitle;
 
 	return gameDataManager;
+}
+
+/// 
+/// @public
+/// @brief saves the game data manager data to passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::GameDataManager::SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// saving the game data manager data
+	a_fileAccessPtr->WriteOneLineToFile( GetDataToSave().GetString() );
+}
+
+/// 
+/// @public
+/// @brief loads the game data manager data from passed file
+/// 
+/// @param a_fileAccessPtr pointer to a file Access object
+/// 
+void Brood::Application::Components::GameDataManager::LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr )
+{
+	// loading the game data manager data
+	Brood::Application::Data::ST_GameData gameData;
+	std::string dataFromFile;
+
+	a_fileAccessPtr->GetNextLine( dataFromFile );
+
+	gameData.PopulateFromString( dataFromFile );
+	InitializeGameDataManager( gameData );
 }
 
 /// 

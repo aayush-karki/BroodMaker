@@ -31,9 +31,11 @@
 ///
 Brood::Application::PlayerEditor::PlayerEditor( Brood::Application::Components::GameDataManager* a_gameData,
 												sf::RectangleShape* a_panelPtr ) :
-	m_gameData( a_gameData ), m_panelBodyPtr( a_panelPtr )
+	m_panelBodyPtr( a_panelPtr )
 {
+	this->m_gameData = a_gameData;
 	InitializeWorkSpace();
+
 }
 
 /// 

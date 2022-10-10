@@ -15,6 +15,7 @@
 // ======================================================================
 #pragma once
 #include "EditorWorkspace.h"
+#include "FileAccess.h"
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -84,83 +85,109 @@ public:
 	// draw to the screen
 	virtual void Draw( sf::RenderWindow& a_window );
 
-
 	// debugger
 	virtual void Debugger();
 
 	// ================= private member function =================  
 private:
-	///> Initialize the Ribbion Tabs
+
+	// Initialize the Ribbion Tabs
 	void InitializeRibbionTabs();
 
-	///> checks if the ribbion tabs was pressed
+	// checks if the ribbion tabs was pressed
 	void UpdateRibbionTabs();
 
-	///> executes the menu item at the passed indexs
+	// executes the menu item at the passed indexs
 	void ExecuteMenuItem( unsigned a_iIdx, unsigned a_jIdx );
 
-	/// executes the logic for dialog box
+	// executes the logic for homeworkspace excluding the main menu
 	void UpdateHomeWorkspace();
+
+	// executes the logic for load game data
+	void UpdateFileNameFeildDialog();
+
+	// Swtichs to home workspace if it is not in it
+	void SwitchToHomeWorkspace();
+
+	// opening a dialog box so that user can enter file name to 
+	// load previous edit
+	void ExecuteLoadPreviousEditDialogBox();
+
+	// opening a dialog box so that user can enter file name to 
+	// create new edit
+	void ExecuteCreateNewEditDialogBox();
+
+	// resets the game data
+	void ResetGameData();
+
+	// saves the game data to the file
+	void SaveGameData();
+
+	// load the game data from the file
+	bool LoadGameData( std::filesystem::path a_gameOrEditorFile );
 
 	// ================= private member variables =================  
 private:
 
-	///> Ui for ribbon tabs
+	// save what to do when openfile button is pressed
+	// it currently has 2 states: open game file and open edit file
+	unsigned m_openFileBtnIdx;
+
+	/// Ui for ribbon tabs
 	Brood::BroodUI::MenuBar m_ribbionTabs;
 
-	// main uielement which shows the list of stored game files and
-	// editor files
-
+	/// main uielement which shows the list of stored game files and
+	///	 editor files
 	sf::RectangleShape m_gameOrEditorForeground;
 
-	///> main card that is in the middle of the screen that 
-	///		shows the current game/edit list
+	/// main card that is in the middle of the screen that 
+	///	shows the current game/edit list
 	Brood::BroodUI::Button* m_gameOrEditorBtn;
 
-	///> button to toggle left through the games/edits list
+	/// button to toggle left through the games/edits list
 	Brood::BroodUI::Button* m_toggleGameInfoLeftBtn;
 
-	///> button to toggle right through the games/edits list
+	/// button to toggle right through the games/edits list
 	Brood::BroodUI::Button* m_toggleGameInfoRightBtn;
 
-	///> index of the file that is loaded by the main button
+	/// index of the file that is loaded by the main button
 	int m_currGameInfoIdx;
 
-	///> true to show the import dialog box
+	/// true to show the import dialog box
 	bool m_showImportDialogBox;
 
-	///> button to import games
+	/// button to import games
 	Brood::BroodUI::Button* m_importGameBtn;
 
-	///> button to load previous edits
+	/// button to load previous edits
 	Brood::BroodUI::Button* m_loadPreviousEditsBtn;
 
-	///> button to create new edit
+	/// button to create new edit
 	Brood::BroodUI::Button* m_createNewEditBtn;
 
-	///> button to close the dialog box
+	/// button to close the dialog box
 	Brood::BroodUI::Button* m_cancleBtn;
 
-	///> true to show the filename dialog box
+	/// true to show the filename dialog box
 	bool m_showEnterFilenameDialogBox;
 
-	///> stores the filename prompt
+	/// stores the filename prompt
 	Brood::BroodUI::TextBox* m_fileNameTxt;
 
-	///> place to enter the filename
+	/// place to enter the filename
 	Brood::BroodUI::TextBox* m_enterFileNameFeildTxt;
 
-	///> button to open the entered file name
+	/// button to open the entered file name
 	Brood::BroodUI::Button* m_openFileBtn;
 
-	///> store the list of file path that corresponds to the game or editor file
+	/// store the list of file path that corresponds to the game or editor file
 	std::vector<std::string> m_gameInfoFilePathList;
 
-	///> list of texture to show in the gamOrEditor button 
+	/// list of texture to show in the gamOrEditor button 
 	std::vector<sf::Texture> m_gameListTexture;
 
-	///> list of workspace that the application uses.
-	///>	It holds 2 workspace, namely, editorWorSpace, and game workspace.
+	/// list of workspace that the application uses.
+	///	It holds 2 workspace, namely, editorWorSpace, and game workspace.
 	std::vector<Brood::Application::WorkSpace*> m_workSpacesList;
 
 	/// holds which workspace the applicaiton is currently on,

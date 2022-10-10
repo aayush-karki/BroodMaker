@@ -31,6 +31,9 @@
 ///		Basically have all the static system variables here...
 ///
 
+/// TODO initialize alll of the data here to match the default values
+
+
 // ======================================================================
 // ================= defining namespace =================================
 // ======================================================================
@@ -70,7 +73,7 @@ namespace Brood::Application
 struct Brood::Application::Data::ST_GameData
 {
 	/// name of the game; std:string
-	std::string stm_gameTitle;
+	std::string stm_gameTitle = "";
 
 	// =========== functions ============= 
 
@@ -79,7 +82,7 @@ struct Brood::Application::Data::ST_GameData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 
 	//int stm_totalTileTypes; /// total number of tile prefabs
 	//int stm_totalDeckTypes; /// total number of deck prefabs
@@ -117,28 +120,28 @@ struct Brood::Application::Data::ST_GameData
 struct Brood::Application::Data::ST_BoardData
 {
 	/// length of board
-	float stm_boardSizeX;
+	float stm_boardSizeX = 0;
 
 	/// height of board
-	float stm_boardSizeY;
+	float stm_boardSizeY = 0;
 
 	/// x-cordinate of board's upper left corner
-	float stm_boardPosX;
+	float stm_boardPosX = 0;
 
 	/// y-cordinate of board's upper left corner
-	float stm_boardPosY;
+	float stm_boardPosY = 0;
 
 	/// number of tile Row in the board
-	unsigned stm_numRow;
+	unsigned stm_numRow = 1;
 
 	/// number of tile column in the board
-	unsigned stm_numCol;
+	unsigned stm_numCol = 1;
 
 	/// tile row number of the active tile
-	unsigned stm_currActiveNumRow;
+	unsigned stm_currActiveNumRow = 0;
 
 	/// tile column number of the active tile
-	unsigned stm_currActiveNumCol;
+	unsigned stm_currActiveNumCol = 0;
 
 	// =========== functions ============= 
 
@@ -147,7 +150,7 @@ struct Brood::Application::Data::ST_BoardData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -170,24 +173,21 @@ struct Brood::Application::Data::ST_CardInfoPrefabData
 	// ===== data in the front of the card =====
 
 	/// number of second that the user has to answer the question
-	unsigned stm_time;
+	unsigned stm_time = 0;
 
 	/// number of steps the user takes when their answer is correct
-	unsigned stm_correctNumSteps;
+	unsigned stm_correctNumSteps = 0;
 
 	/// number of steps the user takes when their answer is incorrect
-	unsigned stm_incorrectNumSteps;
+	unsigned stm_incorrectNumSteps = 0;
 
 	// ===== data in the back of the card =====
 
 	/// question in the card
-	std::string stm_question;
+	std::string stm_question = "";
 
 	/// correct answer to the quesiton
-	std::string stm_correctAnswer;
-
-	/// index of the deck that this card is part of
-	unsigned stm_deckIndex;
+	std::string stm_correctAnswer = "";
 
 	// =========== functions ============= 
 
@@ -196,7 +196,7 @@ struct Brood::Application::Data::ST_CardInfoPrefabData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -218,31 +218,31 @@ struct Brood::Application::Data::ST_CardInfoPrefabData
 struct Brood::Application::Data::ST_DeckPrefabData
 {
 	/// length of deck
-	float stm_deckSizeX;
+	float stm_deckSizeX= 0;
 
 	/// height of deck
-	float stm_deckSizeY;
+	float stm_deckSizeY= 0;
 
 	/// x-cordinate of deck's upper left corner
-	float stm_deckPosX;
+	float stm_deckPosX= 0;
 
 	/// y-cordinate of deck's upper left corner
-	float stm_deckPosY;
+	float stm_deckPosY= 0;
 
 	/// filename for the texture
-	std::string stm_textureFileName;
+	std::string stm_textureFileName = "";
 
 	/// filename for the card init
-	std::string stm_cardInitFilename;
+	std::string stm_cardInitFilename = "";
 
 	/// number of card in this deck
-	unsigned stm_numTotalCard;
+	unsigned stm_numTotalCard= 1;
 
 	/// idx of undealt card in this deck
-	unsigned stm_undealtCardIdx;
+	unsigned stm_undealtCardIdx= 0;
 
 	/// idx of current active card in this deck
-	unsigned stm_currActiveCardIdx;
+	unsigned stm_currActiveCardIdx= 0;
 
 	// =========== functions ============= 
 
@@ -251,7 +251,7 @@ struct Brood::Application::Data::ST_DeckPrefabData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -271,16 +271,16 @@ struct Brood::Application::Data::ST_DeckManagerData
 {
 	/// movementType of the deck; 
 	/// Brood::Application::Components::ENUM_MovementType stored as unsigned
-	unsigned stm_movementType;
+	unsigned stm_movementType= 0;
 
 	/// incorrect penalty for the game
-	bool stm_incorrectPenalty;
+	bool stm_incorrectPenalty= false;
 
 	/// total number of deck
-	unsigned stm_numDecks;
+	unsigned stm_numDecks= 1;
 
 	/// current deck idx
-	unsigned stm_currDecksIdx;
+	unsigned stm_currDecksIdx= 0;
 
 	// =========== functions ============= 
 
@@ -289,7 +289,7 @@ struct Brood::Application::Data::ST_DeckManagerData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -308,22 +308,22 @@ struct Brood::Application::Data::ST_DeckManagerData
 struct Brood::Application::Data::ST_DicePrefabData
 {
 	/// number of side in the dice
-	unsigned stm_numSides;
+	unsigned stm_numSides= 6;
 
 	/// length of dice
-	float stm_diceSizeX;
+	float stm_diceSizeX= 0;
 
 	/// height of dice
-	float stm_diceSizeY;
+	float stm_diceSizeY= 0;
 
 	/// x-cordinate of dice's upper left corner
-	float stm_dicePosX;
+	float stm_dicePosX= 0;
 
 	/// y-cordinate of dice's upper left corner
-	float stm_dicePosY;
+	float stm_dicePosY= 0;
 
 	/// filename for the texture
-	std::string stm_textureFileName;
+	std::string stm_textureFileName = "";
 
 	// =========== functions ============= 
 
@@ -332,7 +332,7 @@ struct Brood::Application::Data::ST_DicePrefabData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -353,194 +353,194 @@ struct Brood::Application::Data::ST_DisplayCardData
 	// ========== Display Card Setting ==============
 
 	/// length of display card
-	float stm_displayCardSizeX;
+	float stm_displayCardSizeX= 0;
 
 	/// width of display card
-	float stm_displayCardSizeY;
+	float stm_displayCardSizeY= 0;
 
 	/// x-cordinate of display card's upper left corner
-	float stm_displayCardPositionX;
+	float stm_displayCardPositionX= 0;
 
 	/// y-cordinate of display card's upper left corner
-	float stm_displayCardPositionY;
+	float stm_displayCardPositionY= 0;
 
 	/// filename for the front card texture
-	std::string stm_displayCardFrontTextureFilename;
+	std::string stm_displayCardFrontTextureFilename = "";
 
 	/// filename for the back card texture
-	std::string stm_displayCardBackTextureFilename;
+	std::string stm_displayCardBackTextureFilename = "";
 
 	// ========= display Card front component setting ===========
 
 	/// length of front Time Prompt
-	float stm_frontTimePromptSizeX;
+	float stm_frontTimePromptSizeX= 0;
 
 	/// width of front Time Prompt
-	float stm_frontTimePromptSizeY;
+	float stm_frontTimePromptSizeY= 0;
 
 	/// x-cordinate of front Time Prompt's upper left corner
-	float stm_frontTimePromptPositionX;
+	float stm_frontTimePromptPositionX= 0;
 
 	/// y-cordinate of front Time Prompt's upper left corner
-	float stm_frontTimePromptPositonY;
+	float stm_frontTimePromptPositonY= 0;
 
 	/// length of front time value
-	float stm_frontTimeValueSizeX;
+	float stm_frontTimeValueSizeX= 0;
 
 	/// width of front time value
-	float stm_frontTimeValueSizeY;
+	float stm_frontTimeValueSizeY= 0;
 
 	/// y-cordinate of front time value's upper left corner
-	float stm_frontTimeValuePositionX;
+	float stm_frontTimeValuePositionX= 0;
 
 	/// x-cordinate of front time value's upper left corner
-	float stm_frontTimeValuePositonY;
+	float stm_frontTimeValuePositonY= 0;
 
 	/// length of up prompt
-	float stm_upPromptSizeX;
+	float stm_upPromptSizeX= 0;
 
 	/// width of up prompt
-	float stm_upPromptSizeY;
+	float stm_upPromptSizeY= 0;
 
 	/// x-cordinate of up prompt's upper left corner
-	float stm_upPromptPositionX;
+	float stm_upPromptPositionX= 0;
 
 	/// y-cordinate of up prompt's upper left corner
-	float stm_upPromptPositonY;
+	float stm_upPromptPositonY= 0;
 
 	/// length of up value
-	float stm_upValueSizeX;
+	float stm_upValueSizeX= 0;
 
 	/// width of up value
-	float stm_upValueSizeY;
+	float stm_upValueSizeY= 0;
 
 	/// x-cordinate of up value's upper left corner
-	float stm_upValuePositionX;
+	float stm_upValuePositionX= 0;
 
 	/// y-cordinate of up value's upper left corner
-	float stm_upValuePositonY;
+	float stm_upValuePositonY= 0;
 
 	/// length of down prompt
-	float stm_downPromptSizeX;
+	float stm_downPromptSizeX= 0;
 
 	/// width of down prompt
-	float stm_downPromptSizeY;
+	float stm_downPromptSizeY= 0;
 
 	/// x-cordinate of down prompt's upper left corner
-	float stm_downPromptPositionX;
+	float stm_downPromptPositionX= 0;
 
 	/// y-cordinate of down prompt's upper left corner
-	float stm_downPromptPositonY;
+	float stm_downPromptPositonY= 0;
 
 	/// length of down value
-	float stm_downValueSizeX;
+	float stm_downValueSizeX= 0;
 
 	/// width of down value
-	float stm_downValueSizeY;
+	float stm_downValueSizeY= 0;
 
 	/// x-cordinate of down value's upper left corner
-	float stm_downValuePositionX;
+	float stm_downValuePositionX= 0;
 
 	/// y-cordinate of down value's upper left corner
-	float stm_downValuePositonY;
+	float stm_downValuePositonY= 0;
 
 	/// length of turn card prompt
-	float stm_turnCardPromptSizeX;
+	float stm_turnCardPromptSizeX= 0;
 
 	/// width of turn card prompt
-	float stm_turnCardPromptSizeY;
+	float stm_turnCardPromptSizeY= 0;
 
 	/// x-cordinate of turn card prompt's upper left corner
-	float stm_turnCardPromptPositionX;
+	float stm_turnCardPromptPositionX= 0;
 
 	/// y-cordinate of turn card prompt's upper left corner
-	float stm_turnCardPromptPositonY;
+	float stm_turnCardPromptPositonY= 0;
 
 	// ========== display Card back component setting ============
 
 	/// length of back time prompt
-	float stm_backTimePromptSizeX;
+	float stm_backTimePromptSizeX= 0;
 
 	/// width of back time prompt
-	float stm_backTimePromptSizeY;
+	float stm_backTimePromptSizeY= 0;
 
 	/// x-cordinate of back time prompt's upper left corner
-	float stm_backTimePromptPositionX;
+	float stm_backTimePromptPositionX= 0;
 
 	/// y-cordinate of back time prompt's upper left corner
-	float stm_backTimePromptPositonY;
+	float stm_backTimePromptPositonY= 0;
 
 	/// length of back time value
-	float stm_backTimeValueSizeX;
+	float stm_backTimeValueSizeX= 0;
 
 	/// width of back time value
-	float stm_backTimeValueSizeY;
+	float stm_backTimeValueSizeY= 0;
 
 	/// x-cordinate of back time value's upper left corner
-	float stm_backTimeValuePositionX;
+	float stm_backTimeValuePositionX= 0;
 
 	/// y-cordinate of back time value's upper left corner
-	float stm_backTimeValuePositonY;
+	float stm_backTimeValuePositonY= 0;
 
 	/// length of question prompt
-	float stm_questionPromptSizeX;
+	float stm_questionPromptSizeX= 0;
 
 	/// width of question prompt
-	float stm_questionPromptSizeY;
+	float stm_questionPromptSizeY= 0;
 
 	/// x-cordinate of question prompt's upper left corner
-	float stm_questionPromptPositionX;
+	float stm_questionPromptPositionX= 0;
 
 	/// y-cordinate of question prompt's upper left corner
-	float stm_questionPromptPositonY;
+	float stm_questionPromptPositonY= 0;
 
 	/// length of question value
-	float stm_questionValueSizeX;
+	float stm_questionValueSizeX= 0;
 
 	/// width of question value
-	float stm_questionValueSizeY;
+	float stm_questionValueSizeY= 0;
 
 	/// x-cordinate of question value's upper left corner
-	float stm_questionValuePositionX;
+	float stm_questionValuePositionX= 0;
 
 	/// y-cordinate of question value's upper left corner
-	float stm_questionValuePositonY;
+	float stm_questionValuePositonY= 0;
 
 	/// length of answer prompt
-	float stm_answerPromptSizeX;
+	float stm_answerPromptSizeX= 0;
 
 	/// width of answer prompt
-	float stm_answerPromptSizeY;
+	float stm_answerPromptSizeY= 0;
 
 	/// x-cordinate of answer prompt's upper left corner
-	float stm_answerPromptPositionX;
+	float stm_answerPromptPositionX= 0;
 
 	/// y-cordinate of answer prompt's upper left corner
-	float stm_answerPromptPositonY;
+	float stm_answerPromptPositonY= 0;
 
 	/// length of answer value
-	float stm_answerValueSizeX;
+	float stm_answerValueSizeX= 0;
 
 	/// width of answer value
-	float stm_answerValueSizeY;
+	float stm_answerValueSizeY= 0;
 
 	/// x-cordinate of answer value's upper left corner
-	float stm_answerValuePositionX;
+	float stm_answerValuePositionX= 0;
 
 	/// y-cordinate of answer value's upper left corner
-	float stm_answerValuePositonY;
+	float stm_answerValuePositonY= 0;
 
 	/// length of submit button value
-	float stm_submitButtonValueSizeX;
+	float stm_submitButtonValueSizeX= 0;
 
 	/// width of submit button value
-	float stm_submitButtonValueSizeY;
+	float stm_submitButtonValueSizeY= 0;
 
 	/// x-cordinate of submit button value's upper left corner
-	float stm_submitButtonValuePositionX;
+	float stm_submitButtonValuePositionX= 0;
 
 	/// y-cordinate of submit button value's upper left corner
-	float stm_submitButtonValuePositonY;
+	float stm_submitButtonValuePositonY= 0;
 
 	// =========== functions ============= 
 	
@@ -549,7 +549,7 @@ struct Brood::Application::Data::ST_DisplayCardData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -568,25 +568,25 @@ struct Brood::Application::Data::ST_DisplayCardData
 struct Brood::Application::Data::ST_PlayerPrefabData
 {
 	/// tile row where the player is
-	float  stm_currRow;
+	float  stm_currRow= 0;
 
 	/// tile column where the player is 
-	float stm_currCol;
+	float stm_currCol= 0;
 
 	/// length of player
-	float stm_playerSizeX;
+	float stm_playerSizeX= 0;
 
 	/// height of player
-	float stm_playerSizeY;
+	float stm_playerSizeY= 0;
 
 	/// x-offset of player
-	int stm_playerOffsetX;
+	int stm_playerOffsetX= 0;
 
 	/// y-offset of player
-	int stm_playerOffsetY;
+	int stm_playerOffsetY= 0;
 
 	/// filename for the texture
-	std::string stm_textureFileName;
+	std::string stm_textureFileName = "";
 
 	// =========== functions ============= 
 
@@ -595,7 +595,7 @@ struct Brood::Application::Data::ST_PlayerPrefabData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -615,13 +615,13 @@ struct Brood::Application::Data::ST_PlayerPrefabData
 struct Brood::Application::Data::ST_PlayerManagerData
 {
 	/// minimum number of player; unsinged
-	unsigned stm_minPlayer;
+	unsigned stm_minPlayer= 1;
 
-	/// maximum number of player; unsinged
-	unsigned stm_maxPlayer;
+	/// maximum number of player= 0; unsinged
+	unsigned stm_maxPlayer= 1;
 
-	/// current player idx; unsinged
-	unsigned stm_currPlayerIdx;
+	/// current player idx= 0; unsinged
+	unsigned stm_currPlayerIdx= 0;
 
 	// =========== functions ============= 
 
@@ -630,7 +630,7 @@ struct Brood::Application::Data::ST_PlayerManagerData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================
@@ -651,39 +651,39 @@ struct  Brood::Application::Data::ST_PathPrefabData
 {
 	/// type of the tile  has number;
 	/// Brood::Application::Components::ENUM_TileType stored as unsigned
-	unsigned stm_tileType;
+	unsigned stm_tileType= 0;
 
 	/// tile row num
-	unsigned stm_RowNum;
+	unsigned stm_RowNum= 0;
 
 	/// tile column num
-	unsigned stm_ColNum;
+	unsigned stm_ColNum= 0;
 
 	/// next tile row num
-	unsigned stm_nextTileRowNum;
+	unsigned stm_nextTileRowNum= 0;
 
 	/// next tile column num
-	unsigned stm_nextTileColNum;
+	unsigned stm_nextTileColNum= 0;
 
 	/// end bridge tile row num
-	unsigned stm_endBridgeTileRowNum;
+	unsigned stm_endBridgeTileRowNum= 0;
 
 	/// end bridge tile column num
-	unsigned stm_endBridgeTileColNum;
+	unsigned stm_endBridgeTileColNum= 0;
 
 	/// nubmer of card to draw
-	unsigned stm_numberCardDraw;
+	unsigned stm_numberCardDraw= 0;
 
 	/// deck index that this tile is assigned to. 
 	/// when player lands on this tile they will 
 	/// draw adraw card from it.
-	unsigned  stm_assignedDeckId;
+	unsigned  stm_assignedDeckId= 0;
 
 	/// if true rolls dice instead of drawing a card
-	bool stm_forceDiceRoll;
+	bool stm_forceDiceRoll= false;
 
 	/// filename for the texture; std::string
-	std::string stm_textureFileName;
+	std::string stm_textureFileName = "";
 
 	// =========== functions ============= 
 
@@ -692,7 +692,7 @@ struct  Brood::Application::Data::ST_PathPrefabData
 
 	// creats a string and appends each data to its back
 	// seperated by ' '
-	std::string GetString();
+	const std::string GetString() const;
 };
 
 // ======================================================================

@@ -15,7 +15,9 @@
 #pragma once
 #include "stdafx.h"
 #include "Player.h"
+#include "Board.h"
 #include "Path.h"
+#include "FileAccess.h"	
 
 // ======================================================================
 // ================= defining namespace =================================
@@ -59,15 +61,22 @@ public:
 	PlayerManager& operator=( const Brood::Application::Components::PlayerManager& a_otherPlayerManager );
 
 	// initializes the player Manger
-	void InitializePlayerManger( Brood::Application::Components::Path* a_pathPtr );
+	void InitializePlayerManager( Brood::Application::Components::Path* a_pathPtr );
 
 
 	// initialize the player manager
 	void InitializePlayerManager( Brood::Application::Data::ST_PlayerManagerData& a_playerData,
 								  Brood::Application::Components::Path* a_playerCurrPath );
 
-	// returns the player data to save 
+	// returns the PlayerManager data to save 
 	Brood::Application::Data::ST_PlayerManagerData GetDataToSave();
+
+	// appends the the PlayerManager data to passed file 
+	void SaveDataToFile( Brood::Application::FileAccess* a_fileAccessPtr );
+
+	// appends the the PlayerManager data to passed file 
+	void LoadDataFromFile( Brood::Application::FileAccess* a_fileAccessPtr,
+						   Brood::Application::Components::Board* a_gameBoard );
 
 	// =========== getter function ===========
 
